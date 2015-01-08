@@ -1,0 +1,117 @@
+//
+// Activity and search results list
+// --------------------------------------------------
+
+
+#search-results,
+div#activity dl {
+    margin-left: $padding-side;
+}
+
+div#activity,
+#search-results {
+    dd {
+        margin-bottom: $line-height-computed;
+        padding-left: $padding-side;
+    }
+
+    dt {
+        margin-bottom: 2px;
+        padding-left: $padding-side;
+        background-position: 0 center;
+        background-repeat: no-repeat;
+    }
+
+    span.project:after {
+        content: " -";
+    }
+
+    span.description {
+        display: block;
+        color: $gray;
+        font-style: italic;
+    }
+}
+
+div#activity {
+    dt {
+        &.me .time {
+            border-bottom: 1px solid $gray-lighter;
+        }
+
+        .time {
+            color: $gray;
+        }
+    }
+
+    dd {
+        font-size: $font-size-small;
+    }
+
+    dt.grouped,
+    dd.grouped {
+        margin-left: $padding-side;
+    }
+}
+
+div#search-results-counts {
+    float: right;
+
+    ul {
+        @extend %clearfix;
+    }
+
+    li {
+        list-style-type: none;
+        float: left;
+        margin-left: 1em;
+    }
+}
+
+dt {
+    &.issue        { background-image: url(../../../images/ticket.png); }
+    &.issue-edit   { background-image: url(../../../images/ticket_edit.png); }
+    &.issue.closed { background-image: url(../../../images/ticket_checked.png); }
+    &.issue-closed { background-image: url(../../../images/ticket_checked.png); }
+    &.issue-note   { background-image: url(../../../images/ticket_note.png); }
+    &.changeset    { background-image: url(../../../images/changeset.png); }
+    &.news         { background-image: url(../../../images/news.png); }
+    &.message      { background-image: url(../../../images/message.png); }
+    &.reply        { background-image: url(../../../images/comments.png); }
+    &.wiki-page    { background-image: url(../../../images/wiki_edit.png); }
+    &.attachment   { background-image: url(../../../images/attachment.png); }
+    &.document     { background-image: url(../../../images/document.png); }
+    &.project      { background-image: url(../../../images/projects.png); }
+    &.time-entry   { background-image: url(../../../images/time.png); }
+}
+
+
+// Search form
+
+#search-form {
+    input,
+    select {
+        margin-right: 5px;
+    }
+
+    label {
+        display: inline-block;
+        margin-right: 5px;
+        @include checkbox;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+// Search results highlight
+
+.highlight {
+    background-color: #fe8;
+
+    &.token-1 { background-color: #fba; }
+    &.token-2 { background-color: #afb; }
+    &.token-3 { background-color: #aef; }
+}

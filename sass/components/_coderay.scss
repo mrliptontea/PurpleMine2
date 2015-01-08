@@ -1,0 +1,365 @@
+//
+// Syntax highlight - CodeRay
+// --------------------------------------------------
+
+.syntaxhl {
+    div {
+        display: inline;
+    }
+
+    .line-numbers {
+        padding: 2px 4px 2px 4px;
+        background-color: #eee;
+        margin: 0px 5px 0px 0px;
+    }
+
+    .code pre {
+        overflow: auto;
+    }
+
+    .debug {
+        color: white !important;
+        background: blue !important;
+    }
+
+    .annotation {
+        color: #007;
+    }
+
+    .attribute-name {
+        color: #b48;
+    }
+
+    .attribute-value {
+        color: #700;
+    }
+
+    .binary {
+        color: #509;
+    }
+
+    .char {
+        color: #D20;
+
+        .content {
+            color: #D20;
+        }
+
+        .delimiter {
+            color: #710;
+        }
+    }
+
+    .class {
+        color: #795DA3;
+        font-weight: bold;
+    }
+
+    .class-variable {
+        color: #369;
+    }
+
+    .color {
+        color: #0A0;
+    }
+
+    .comment {
+        color: #969896;
+
+        .char,
+        .delimiter {
+            color: #969896;
+        }
+    }
+
+    .complex {
+        color: #A08;
+    }
+
+    .constant {
+        color: #795DA3;
+    }
+
+    .decorator {
+        color: #B0B;
+    }
+
+    .definition {
+        color: #099;
+        font-weight: bold;
+    }
+
+    .delimiter {
+        color: black;
+    }
+
+    .directive {
+        color: #088;
+        font-weight: bold;
+    }
+
+    .doc {
+        color: #970;
+    }
+
+    .doc-string {
+        color: #D42;
+        font-weight: bold;
+    }
+
+    .doctype {
+        color: #34b;
+    }
+
+    .entity {
+        color: #800;
+        font-weight: bold;
+    }
+
+    .error {
+        color: #F00;
+        background-color: #FAA;
+    }
+
+    .escape {
+        color: #666;
+    }
+
+    .exception {
+        color: #C00;
+        font-weight: bold;
+    }
+
+    .float {
+        color: #06D;
+    }
+
+    .function {
+        color: #06B;
+        font-weight: bold;
+    }
+
+    .global-variable {
+        color: #d70;
+    }
+
+    .hex {
+        color: #02b;
+    }
+
+    .imaginary {
+        color: #f00;
+    }
+
+    .include {
+        color: #B44;
+        font-weight: bold;
+    }
+
+    .inline {
+        background-color: rgba(#000, .05);
+        color: black;
+    }
+
+    .inline-delimiter {
+        font-weight: bold;
+        color: #666;
+    }
+
+    .instance-variable {
+        color: #33B;
+    }
+
+    .integer {
+        color: #0086B3;
+    }
+
+    .key {
+        color: #606;
+
+        .char {
+            color: #60f;
+        }
+
+        .delimiter {
+            color: #404;
+        }
+    }
+
+    .keyword {
+        color: #B3113E;
+        font-weight: bold;
+    }
+
+    .label {
+        color: #970;
+        font-weight: bold;
+    }
+
+    .local-variable {
+        color: #369;
+    }
+
+    .namespace {
+        color: #707;
+        font-weight: bold;
+    }
+
+    .octal {
+        color: #40E;
+    }
+
+    .operator {}
+
+    .predefined {
+        color: #b21;
+    }
+
+    .predefined-constant {
+        color: #009595;
+    }
+
+    .predefined-type {
+        color: #0a5;
+        font-weight: bold;
+    }
+
+    .preprocessor {
+        color: #579;
+    }
+
+    .pseudo-class {
+        color: #00C;
+        font-weight: bold;
+    }
+
+    .regexp {
+        background-color: hsla(300, 100%, 50%, 0.06);
+
+        .content {
+            color: #808;
+        }
+
+        .delimiter {
+            color: #404;
+        }
+
+        .modifier {
+            color: #C2C;
+        }
+    }
+
+    .reserved {
+        color: #080;
+        font-weight: bold;
+    }
+
+    .shell {
+        background-color: hsla(120, 100%, 50%, 0.06);
+
+        .content {
+            color: #2B2;
+        }
+
+        .delimiter {
+            color: #161;
+        }
+    }
+
+    .string {
+        .char,
+        .content,
+        .delimiter,
+        .modifier {
+            color: #DF5000;
+        }
+    }
+
+    .symbol {
+        color: #d33;
+
+        .content,
+        .delimiter {
+            color: #d33;
+        }
+    }
+
+    .tag {
+        color: #070;
+    }
+
+    .type {
+        color: #339;
+        font-weight: bold;
+    }
+
+    .value {
+        color: #088;
+    }
+
+    .variable {
+        color: #037;
+    }
+
+    .insert {
+        background: hsla(120, 100%, 50%, 0.12);
+    }
+
+    .delete {
+        background: hsla(0, 100%, 50%, 0.12);
+    }
+
+    .change {
+        color: #bbf;
+        background: #007;
+    }
+
+    .head {
+        color: #f8f;
+        background: #505;
+
+        .filename {
+            color: white;
+        }
+    }
+
+    .delete .eyecatcher {
+        background-color: hsla(0, 100%, 50%, 0.2);
+        border: 1px solid hsla(0, 100%, 45%, 0.5);
+        margin: -1px;
+        border-bottom: none;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    .insert {
+        .eyecatcher {
+            background-color: hsla(120, 100%, 50%, 0.2);
+            border: 1px solid hsla(120, 100%, 25%, 0.5);
+            margin: -1px;
+            border-top: none;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        .insert {
+            color: #0c0;
+            background: transparent;
+            font-weight: bold;
+        }
+    }
+
+    .delete .delete {
+        color: #c00;
+        background: transparent;
+        font-weight: bold;
+    }
+
+    .change .change {
+        color: #88f;
+    }
+
+    .head .head {
+        color: #f4f;
+    }
+}

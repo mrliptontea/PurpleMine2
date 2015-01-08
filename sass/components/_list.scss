@@ -1,0 +1,500 @@
+//
+// Lists
+// --------------------------------------------------
+
+table.list {
+    width: 100%;
+    font-size: $font-size-list;
+    margin-bottom: $line-height-computed;
+
+    .autoscroll & {
+        margin-bottom: 0;
+    }
+
+    th {
+        padding: $table-cell-padding;
+        vertical-align: bottom;
+        color: $gray;
+        border-bottom: 2px solid $table-border-color;
+
+        a {
+            color: $gray-darker;
+        }
+    }
+
+    td {
+        padding: $table-cell-padding;
+        text-align: center;
+        vertical-align: top;
+        border-bottom: 1px solid $table-border-color;
+
+        &.checkbox {
+            width: 15px;
+            padding: $table-cell-padding 0 0;
+
+            input {
+                margin: 2px 0 0;
+            }
+        }
+
+        &.id,
+        &.tracker,
+        &.parent,
+        &.relations {
+            width: 2%;
+            text-align: center;
+        }
+
+        &.id {
+            font-weight: bold;
+            text-align: right;
+        }
+
+        &.name,
+        &.description,
+        &.subject,
+        &.comments,
+        &.roles {
+            text-align: left;
+        }
+
+        &.tick {
+            width: 15%;
+        }
+
+        &.buttons {
+            width: 15%;
+            white-space: nowrap;
+            text-align: right;
+
+            a {
+                padding-right: 5px;
+            }
+        }
+
+        &.reorder {
+            width: 15%;
+            white-space: nowrap;
+            text-align: center;
+        }
+    }
+
+    caption {
+        text-align: left;
+        padding: 0.5em 0.5em 0.5em 0;
+    }
+}
+
+tr.project {
+    .name a {
+        white-space: nowrap;
+    }
+
+    &.closed,
+    &.archived,
+    &.closed a,
+    &.archived a {
+        color: #aaa;
+    }
+
+    &.idnt .name span {
+        background: url(../../../images/bullet_arrow_right.png) no-repeat -5px 50%;
+        padding-left: 16px;
+    }
+
+    @for $i from 1 through 9 {
+        &.idnt-#{$i} .name {
+            padding-left: $table-cell-padding + 16px * ($i - 1);
+        }
+    }
+}
+
+tr.issue {
+    text-align: center;
+    white-space: nowrap;
+
+    &.string,
+    &.text,
+    .subject,
+    .category {
+        white-space: normal;
+    }
+
+    .autoscroll & {
+        .subject > a {
+            display: block;
+        }
+    }
+
+    &.relations {
+        white-space: normal;
+        text-align: left;
+
+        span {
+            white-space: nowrap;
+        }
+    }
+
+    &.done_ratio table.progress {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &.idnt .subject a {
+        background-image: url(../../../images/bullet_arrow_right.png);
+        background-repeat: no-repeat;
+
+        @if $color-trackers {
+            background-position: 0 0;
+        } @else {
+            background-position: -5px 0;
+        }
+
+        padding-left: 16px;
+    }
+
+    .controller-issues.action-index & {
+        &.assigned-to-me {
+            .assigned_to,
+            .subject {
+                a {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    @for $i from 1 through 9 {
+        &.idnt-#{$i} .subject {
+            padding-left: $table-cell-padding + 16px * ($i - 1);
+        }
+    }
+}
+
+.issues {
+    .description {
+        padding: 0;
+        text-align: left;
+
+        @media screen and (min-width: $screen-sm-min) {
+            > .wiki {
+                padding: $padding-wiki;
+                max-height: 20em;
+                overflow: auto;
+            }
+        }
+
+        pre {
+            white-space: normal;
+        }
+    }
+}
+
+tr {
+    span.expander {
+        margin-left: 0;
+        padding-left: 8px;
+        cursor: pointer;
+        background: url(../../../images/bullet_toggle_plus.png) no-repeat center center;
+        @include user-select(none);
+    }
+
+    &.open span.expander {
+        background-image: url(../../../images/bullet_toggle_minus.png);
+    }
+}
+
+// /* do you */ .even {
+// }
+
+td.center {
+    text-align: center;
+}
+
+.issue-report {
+    table-layout: fixed;
+}
+
+.sort {
+    padding-right: 16px;
+    background-position: right center;
+    background-repeat: no-repeat;
+
+    &.asc {
+        background-image: url(../../../images/sort_asc.png);
+    }
+
+    &.desc {
+        background-image: url(../../../images/sort_desc.png);
+    }
+}
+
+tr.builtin td.name {
+    font-style: italic;
+}
+
+tr.entry {
+    border: 1px solid $gray-lighter;
+
+    td {
+        white-space: nowrap;
+
+        &.filename {
+            width: 30%;
+            text-align: left;
+        }
+
+        &.filename_no_report {
+            width: 70%;
+            text-align: left;
+        }
+
+        &.size {
+            text-align: right;
+        }
+
+        &.revision,
+        &.author {
+            text-align: center;
+        }
+
+        &.age {
+            text-align: right;
+        }
+    }
+
+    &.file td {
+        &.filename a,
+        &.filename_no_report a {
+            margin-left: 16px;
+        }
+    }
+}
+
+
+/**
+ * Priorities
+ */
+
+@if $color-priorities {
+    @include priority('.priority-lowest',  $priority-lowest-bg,  $priority-lowest-text,  $priority-lowest-link);
+    @include priority('.priority-default', $priority-default-bg, $priority-default-text, $priority-default-link);
+    @include priority('.priority-high3',   $priority-high3-bg,   $priority-high3-text,   $priority-high3-link);
+    @include priority('.priority-high2',   $priority-high2-bg,   $priority-high2-text,   $priority-high2-link);
+    @include priority('.priority-highest', $priority-highest-bg, $priority-highest-text, $priority-highest-link);
+}
+
+@if $color-trackers {
+    @include tracker('.tracker-1', $tracker-1-bg, $tracker-1-text);
+    @include tracker('.tracker-2', $tracker-2-bg, $tracker-2-text);
+    @include tracker('.tracker-3', $tracker-3-bg, $tracker-3-text);
+    @include tracker('.tracker-4', $tracker-4-bg, $tracker-4-text);
+    @include tracker('.tracker-5', $tracker-5-bg, $tracker-5-text);
+    @include tracker('.tracker-6', $tracker-6-bg, $tracker-6-text);
+    @include tracker('.tracker-7', $tracker-7-bg, $tracker-7-text);
+}
+
+.odd {
+    background-color: $table-bg-accent;
+}
+
+
+/**
+ * List groups
+ */
+
+tr.group {
+    > td {
+        font-weight: bold;
+        text-align: left;
+        border-bottom: 1px solid $table-border-color;
+
+        a {
+            color: $brand-primary;
+        }
+    }
+
+    .toggle-all {
+        color: $gray-light;
+        font-weight: normal;
+        display: none;
+    }
+
+    &:hover .toggle-all {
+        display: inline;
+    }
+
+    .count {
+        display: inline-block;
+        padding: 1px 4px;
+        margin: 0 5px;
+        color: $brand-text;
+        background-color: $brand-primary;
+        border-radius: $border-radius-small;
+        font-size: $font-size-small;
+    }
+}
+
+.toggle-all:hover {
+    text-decoration: none;
+}
+
+
+/**
+ * Time entry in report
+ */
+
+tr.time-entry {
+    text-align: center;
+    white-space: nowrap;
+
+    td.issue,
+    td.comments {
+        text-align: left;
+        white-space: normal;
+    }
+
+    td.hours {
+        padding-right: 0.5em;
+        text-align: right;
+        font-weight: bold;
+
+        .hours-dec {
+            font-size: 0.9em;
+        }
+    }
+}
+
+
+/**
+ * Wiki page history entry
+ */
+
+tr.wiki-page-version {
+    td.updated_on,
+    td.author {
+        text-align: center;
+    }
+}
+
+/**
+ * Project versions list
+ */
+
+tr.version {
+    &.closed {
+        color: $gray;
+
+        a {
+            color: $gray;
+        }
+    }
+
+    td.name {
+        padding-left: 20px;
+    }
+
+    &.shared td.name {
+        background: url(../../../images/link.png) no-repeat 0 center;
+    }
+
+    td {
+        &.date,
+        &.status,
+        &.sharing {
+            text-align: center;
+            white-space: nowrap;
+        }
+    }
+}
+
+
+/**
+ * Users list
+ */
+
+tr.user {
+    td {
+        width: 13%;
+        white-space: nowrap;
+
+        &.username,
+        &.firstname,
+        &.lastname {
+            text-align: left;
+        }
+
+        &.email {
+            text-align: left;
+            width: 18%;
+        }
+    }
+
+    &.locked,
+    &.registered,
+    &.locked a,
+    &.registered a {
+        color: $gray-light;
+    }
+}
+
+
+/**
+ * Project members list
+ */
+
+table.members {
+    td.name {
+        padding-left: 20px;
+    }
+
+    td.group,
+    td.groupnonmember,
+    td.groupanonymous {
+        background: url(../../../images/group.png) no-repeat 0% 1px;
+    }
+}
+
+
+/**
+ * Plugins list
+ */
+
+table.plugins {
+    .configure {
+        text-align: right;
+    }
+
+    span.name {
+        font-size: $font-size-large;
+        font-weight: bold;
+        margin-bottom: .5em;
+    }
+
+    .description,
+    .url {
+        display: block;
+    }
+}
+
+
+/**
+ * Files list
+ */
+
+table.files {
+    tbody th {
+        text-align: left;
+    }
+
+    tr.file td {
+        &.filename {
+            text-align: left;
+            padding-left: 20px + $table-cell-padding;
+        }
+
+        &.digest {
+            font-family: $font-family-monospace;
+        }
+    }
+}

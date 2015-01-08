@@ -1,0 +1,140 @@
+//
+// Base styles
+// --------------------------------------------------
+
+html {
+    overflow-y: scroll;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $body-bg;
+    color: $text-color;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+}
+
+a {
+    color: $link-color;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        color: $link-hover-color;
+        text-decoration: $link-hover-decoration;
+    }
+
+    &.issue.closed {
+        color: $link-color-issue-closed;
+        text-decoration: $link-closed-decoration;
+    }
+
+    &.project.closed {
+        color: $link-color-project-closed;
+    }
+
+    &.user.locked {
+        color: $link-color-user-locked;
+    }
+}
+
+h1 {
+    margin: 0;
+    line-height: 30px;
+    font-size: 2em;             // ~28px
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: $line-height-computed;
+    line-height: $line-height-computed;
+    font-size: 1.43em;          // ~20px
+    font-weight: 500;
+
+    img {
+        vertical-align: middle;
+    }
+}
+
+h3 {
+    margin-top: 0;
+    margin-bottom: $line-height-computed;
+    line-height: $line-height-computed;
+    font-size: 1.14em;          // ~16px
+    font-weight: 500;
+}
+
+h4 {
+    margin-top: 0;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+p {
+    margin: 0 0 ($line-height-computed / 2);
+}
+
+small {
+    font-size: $font-size-small;
+}
+
+ul,
+ol {
+    margin-top: 0;
+    margin-bottom: ($line-height-computed / 2);
+
+    ul,
+    ol {
+        margin-bottom: 0;
+    }
+}
+
+dl {
+    margin-top: 0;
+    margin-bottom: $line-height-computed;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin-left: 0;
+}
+
+code, kbd, pre, samp {
+    font-family: $font-family-monospace;
+    font-size: 1em;
+}
+
+hr {
+    margin-top:    $line-height-computed;
+    margin-bottom: $line-height-computed;
+    border: 0;
+    border-top: 1px solid $hr-border;
+}
+
+abbr[title] {
+    cursor: help;
+    border-bottom: 1px dotted $abbr-border-color;
+}
+
+blockquote {
+    padding: floor($line-height-computed / 4) $padding-large-horizontal;
+    margin: 0 0 $line-height-computed;
+    border-left: 4px solid $blockquote-border-color;
+
+    p,
+    ul,
+    ol {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.clear {
+    @extend %clearfix;
+}

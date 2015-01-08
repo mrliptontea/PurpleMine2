@@ -1,0 +1,84 @@
+//
+// Calendar
+// --------------------------------------------------
+
+
+table.cal {
+    width: 100%;
+    margin-bottom: $line-height-computed;
+    border: 1px solid $table-border-color;
+
+    thead th {
+        width: 14%;
+        background-color: $table-bg-hover;
+        padding: $table-condensed-cell-padding;
+
+        &.week-number {
+            width: auto;
+        }
+    }
+
+    tbody tr {
+        height: 100px;
+    }
+
+    td {
+        border: 1px solid $table-border-color;
+        vertical-align: top;
+        font-size: $font-size-small;
+        padding: $table-condensed-cell-padding;
+
+        &.week-number {
+            background-color: $table-bg-hover;
+            border: 0 none;
+            text-align: right;
+            font-size: 1em;
+        }
+
+        p.day-num {
+            float: right;
+            text-align: right;
+            font-size: $font-size-large;
+        }
+
+        &.odd p.day-num {
+            color: $gray-light;
+        }
+
+        &.today {
+            background: $tooltip-bg;
+
+            p.day-num {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+table.cal .starting a,
+p.cal.legend .starting,
+table.cal .ending a,
+p.cal.legend .ending {
+    background-position: 0 center;
+    background-repeat: no-repeat;
+    background-image: url(../../../images/bullet_go.png);
+    padding-left: 20px;
+}
+
+table.cal .ending a,
+p.cal.legend .ending {
+    background-image: url(../../../images/bullet_end.png);
+    padding-left: 20px;
+}
+
+table.cal .starting.ending a,
+p.cal.legend .starting.ending {
+    background-image: url(../../../images/bullet_diamond.png);
+    padding-left: 20px;
+}
+
+p.cal.legend {
+    span {
+        display: block;
+    }
+}

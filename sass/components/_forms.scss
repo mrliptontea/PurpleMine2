@@ -1,0 +1,585 @@
+//
+// Forms
+// --------------------------------------------------
+
+form {
+    // display: inline;
+
+    td {
+        padding: $table-condensed-cell-padding;
+    }
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    @include box-sizing(border-box);
+}
+
+select,
+textarea,
+/*
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="url"],
+input[type="tel"],
+input[type="color"]
+*/
+input[type="search"],
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+    height: $input-height-base;
+    padding: $input-padding-vertical $input-padding-horizontal;
+    color: $input-color;
+    background-color: $input-bg;
+    border: 1px solid $input-border;
+    border-radius: $input-border-radius;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075);
+    @include transition(border-color ease-in-out .1s, box-shadow ease-in-out .1s);
+    @include form-control-focus();
+    @include placeholder();
+
+    &[disabled],
+    &[readonly],
+    fieldset[disabled] & {
+        background-color: $input-bg-disabled;
+        opacity: 1;
+    }
+}
+
+textarea {
+    resize: vertical;
+    height: auto;
+}
+
+input[type="search"] {
+    -webkit-appearance: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin: 4px 5px 0 0;
+    margin-top: 1px \9; // IE8-9
+    line-height: normal;
+}
+
+input[type="file"] {
+    display: block;
+}
+
+input[type="range"] {
+    display: block;
+    width: 100%;
+}
+
+input.autocomplete {
+    background-image: url(../images/aci.png); /* autocomplete indicator */
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 30px;
+
+    &.ajax-loading {
+        background-image: url(../images/preloader.gif);
+    }
+}
+
+select {
+    &[multiple],
+    &[size] {
+        height: auto;
+    }
+
+    option[disabled] {
+        color: $gray-lighter;
+    }
+}
+
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
+
+select.expandable {
+    vertical-align: top;
+}
+
+fieldset {
+    padding: ($line-height-computed / 2) 0;
+    margin: 0;
+    border: 0 none;
+    border-top: 1px solid $legend-border-color;
+    min-width: 0;
+}
+
+legend {
+    color: $legend-color;
+    padding-right: 5px;
+}
+
+
+/**
+ * Required fields' asterisk
+ */
+
+span.required {
+    position: relative;
+    top: 3px;
+    margin-left: -.2em;
+    color: #d00;
+    font-weight: normal;
+    font-size: 1.5em;
+    line-height: 0;
+}
+
+
+/**
+ * Field's hint
+ */
+
+em.info {
+    display: block;
+    padding: 2px 0;
+    color: $gray;
+    font-style: normal;
+    font-size: $font-size-small;
+
+    &.error {
+        padding-left: 20px;
+        background: url(../../../images/exclamation.png) no-repeat 0 50%;
+    }
+}
+
+
+/**
+ * Wiki editor
+ */
+.wiki-edit {
+    color: $wiki-text;
+    line-height: $wiki-line-height;
+    font-family: $font-family-monospace;
+}
+
+
+/**
+ * Tabular forms
+ */
+
+.tabular {
+    &.settings {
+        p {
+            padding-left: $label-wide-width + $label-space;
+        }
+
+        label {
+            width: $label-wide-width;
+            margin-left: -($label-wide-width + $label-space);
+        }
+    }
+
+    p {
+        margin: 0 0 ($line-height-computed / 2);
+        padding-left: $label-width + $label-space;
+        clear: left;
+        @extend %clearfix;
+
+        .jstEditor {
+            margin-bottom: 0;
+        }
+    }
+
+    input,
+    select {
+        max-width: 100%;
+    }
+
+    textarea {
+        display: block;
+        width: 100%;
+        resize: vertical;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        position: relative;
+        vertical-align: baseline;
+        top: 3px;
+    }
+
+    span[title] {
+        border-bottom: 1px dotted #aaa;
+    }
+
+    label {
+        float: left;
+        width: $label-width;
+        margin-top: $input-padding-vertical + 1px;
+        margin-bottom: $input-padding-vertical + 1px;
+        margin-left: -($label-width + $label-space);
+        text-align: right;
+        @include user-select(none);
+
+        &.floating {
+            margin-left: 0px;
+            text-align: left;
+            width: 270px;
+        }
+
+        &.block,
+        &.inline {
+            display: block;
+            float: none;
+            width: auto;
+            margin-left: 0;
+            padding-left: 16px;
+            text-align: left;
+            cursor: pointer;
+
+            > input {
+                float: left;
+                margin-top: 0;
+                margin-left: -16px;
+            }
+        }
+
+        &.inline {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        &.role-visibility {
+            padding-left: 34px;
+        }
+
+        > input[type="radio"],
+        > input[type="checkbox"] {
+            top: 1px;
+        }
+    }
+}
+
+/**
+ * Hack: first <p> in issue form ("private" option) is moved to the right with
+ * inline styles. Don't allow it break the layout
+ */
+#all_attributes > p[style] {
+    margin-right: 0 !important;
+    margin-bottom: 0;
+    padding-left: 0;
+
+    input {
+        top: 2px;
+    }
+
+    label {
+        margin-right: 0;
+        padding-left: 0;
+    }
+}
+
+
+/**
+ * Hack: align description edit icon with label
+ */
+label[for=issue_description] + a {
+    display: inline-block;
+    margin-top: $input-padding-vertical;
+
+    img {
+        vertical-align: middle;
+    }
+}
+
+
+/**
+ * Hack: better looking filter checkbox in sidebar in projects list
+ */
+label[for=closed] {
+    display: block;
+    margin-bottom: $line-height-computed / 2;
+    @include checkbox;
+}
+
+
+/**
+ * Input sizes
+ */
+
+.wiki-edit,
+#principal_search,
+#issue_subject,
+#time_entry_comments,
+#content_comments,
+#user_search,
+#user_login,
+#user_firstname,
+#user_lastname,
+#user_mail,
+#my_account_form select,
+#user_form select,
+#user_identity_url,
+#custom_field_possible_values,
+#custom_field_default_value {
+    width: 100%;
+}
+
+textarea.text_cf {
+    width: 100%;
+    resize: vertical;
+}
+
+input {
+    &.string_cf,
+    &.link_cf {
+        width: 100%;
+    }
+}
+
+select.bool_cf {
+    width: auto !important;
+}
+
+/**
+ * Add space below WYSIWYG
+ */
+
+.jstEditor {
+    margin-bottom: $line-height-computed / 2;
+}
+
+
+/**
+ * Attachments
+ */
+
+#attachments_fields {
+    input.description {
+        margin-left: 5px;
+        margin-right: 5px;
+        width: 340px;
+    }
+
+    > span {
+        display: block;
+        white-space: nowrap;
+        margin-bottom: $line-height-computed / 2;
+    }
+
+    input.filename {
+        width: 250px;
+        background-position: 4px center;
+        background-repeat: no-repeat;
+        background-image: url(../../../images/attachment.png);
+        padding-left: $input-padding-horizontal + 16px;
+    }
+
+    .ajax-waiting input.filename {
+        background-image: url(../../../images/hourglass.png);
+    }
+
+    .ajax-loading input.filename {
+        background-image: url(../../../images/loading.gif);
+    }
+
+    div.ui-progressbar {
+        width: 100px;
+        height: 14px;
+        margin: 2px 0 -5px 8px;
+        display: inline-block;
+    }
+}
+
+#add_attachment_form {
+    p {
+        margin-bottom: 0;
+    }
+}
+
+
+/**
+ * Issue form elements
+ */
+
+#issue-form {
+    fieldset {
+        &:last-child {
+            padding-bottom: 0;
+
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+#attributes {
+    .splitcontentleft,
+    .splitcontentright {
+        width: 100%;
+        float: left;
+        padding-right: 0;
+        padding-left: 0;
+
+        @media screen and (min-width: $screen-sm) {
+            width: auto;
+        }
+    }
+
+    .splitcontentleft {
+        @media screen and (min-width: $screen-sm) {
+            padding-right: $padding-side;
+        }
+    }
+
+    select {
+        width: 90%;
+
+        @media screen and (min-width: $screen-sm) {
+            width: 20em;
+        }
+    }
+
+    #issue_estimated_hours,
+    #issue_done_ratio {
+        min-width: 1em;
+        width: 75px;
+        text-align: right;
+        padding-left: 5px;
+    }
+}
+
+#watchers_form {
+    overflow: hidden;
+
+    .search_for_watchers {
+        display: block;
+
+        > a {
+            padding-left: 20px;
+            background: url(../../../images/add.png) no-repeat 0 50%;
+        }
+    }
+
+    #watchers_inputs {
+        margin-top: $input-padding-vertical + 1px;
+        margin-bottom: $line-height-computed / 2;
+        overflow: auto;
+        display: block;
+        -webkit-columns: 18em 4;
+           -moz-columns: 18em 4;
+                columns: 18em 4;
+        max-width: 80em;
+    }
+
+    label.floating {
+        display: block;
+        width: auto;
+        float: none;
+        margin: 0;
+        @include checkbox;
+
+        input[type="checkbox"] {
+            top: -1px;
+        }
+    }
+}
+
+
+/**
+ * Custom logic (boolean) field displayed as radio buttons
+ */
+
+.check_box_group {
+    display: block;
+    overflow-y: auto;
+
+    label {
+        float: none;
+        display: block;
+        width: auto;
+        margin-left: 0;
+        margin-bottom: 0;
+        font-weight: normal;
+        text-align: left;
+    }
+
+    &.bool_cf {
+        label {
+            display: inline-block;
+            margin-right: 10px;
+            padding-left: 20px;
+            @include user-select(none);
+            @extend %clearfix;
+
+            input[type="checkbox"],
+            input[type="radio"] {
+                top: 0;
+                float: left;
+                margin-left: -20px;
+            }
+        }
+    }
+}
+
+
+/**
+ * Filters
+ */
+
+fieldset#filters {
+    table {
+        td {
+            vertical-align: top;
+        }
+    }
+
+    td {
+        &.field {
+            min-width: 180px;
+            padding-right: $table-cell-padding * 2;
+        }
+
+        &.operator {
+            min-width: 180px;
+            padding-right: $table-cell-padding * 2;
+
+            select {
+                width: 100%;
+            }
+        }
+
+        &.values {
+            white-space: nowrap;
+            select {
+                min-width: 130px;
+            }
+        }
+
+        &.add-filter {
+            text-align: right;
+            vertical-align: top;
+        }
+    }
+}
+
+
+/**
+ * Reset label style for trackers selector in custom field editor
+ */
+
+label.no-css {
+    float: none;
+    width: auto;
+    margin-left: 0px;
+    text-align: left;
+    font-weight: inherit;
+}

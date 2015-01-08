@@ -1,0 +1,188 @@
+//
+// Gantt chart
+// --------------------------------------------------
+
+.gantt_hdr {
+    position: absolute;
+    top: 0;
+    height: 16px;
+    border: 1px solid $gray-lighter;
+    border-left-width: 0;
+    text-align: center;
+    overflow: hidden;
+
+    &.nwday {
+        background-color: $gray-lightest;
+    }
+}
+
+.gantt_subjects {
+    font-size: $font-size-small;
+
+    div {
+        line-height: 16px;
+        height: 16px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+.task {
+    position: absolute;
+    height: 8px;
+    font-size: 11px;
+    padding: 0;
+    margin: 2px 0 0;
+    line-height: 16px;
+    white-space: nowrap;
+
+    &.label {
+        width: 100%;
+        margin-top: 0;
+
+        &.project,
+        &.version {
+            font-weight: bold;
+        }
+    }
+}
+
+.task_late {
+    background-color: $progress-bar-danger-bg;
+    border: 1px solid darken($progress-bar-danger-bg, 10%);
+}
+
+.task_done {
+    background-color: $progress-bar-success-bg;
+    border: 1px solid darken($progress-bar-success-bg, 10%);
+}
+
+.task_todo {
+    background-color: $progress-bg;
+    border: 1px solid darken($progress-bg, 20%);
+
+    &.parent {
+        background-color: darken($progress-bg, 10%);
+        border: 1px solid darken($progress-bg, 30%);
+    }
+}
+
+.task.parent {
+    height: 3px;
+}
+
+.task.parent.marker {
+    &.starting {
+        position: absolute;
+        background: url(../../../images/task_parent_end.png) no-repeat 0 0;
+        width: 8px;
+        height: 16px;
+        margin-left: -4px;
+        left: 0px;
+        top: -1px;
+    }
+
+    &.ending {
+        position: absolute;
+        background: url(../../../images/task_parent_end.png) no-repeat 0 0;
+        width: 8px;
+        height: 16px;
+        margin-left: -4px;
+        right: 0px;
+        top: -1px;
+    }
+}
+
+.project,
+.version {
+    &.task_late,
+    &.task_done,
+    &.task_todo {
+        height: 2px;
+        margin-top: 3px;
+    }
+
+    &.task_todo {
+        background-color: $progress-bar-info-bg;
+        border: 1px solid darken($progress-bar-info-bg, 10%);
+    }
+
+    &.marker {
+        background-image: url(../../../images/version_marker.png);
+        background-repeat: no-repeat;
+        border: 0;
+        margin-left: -4px;
+        margin-top: 1px;
+    }
+}
+
+.version-behind-schedule a,
+.issue-behind-schedule a {
+    color: $brand-warning;
+
+    @if $color-trackers {
+        &.issue {
+            font-weight: 700;
+            background-color: $brand-warning;
+            color: $brand-text;
+        }
+    }
+}
+
+.version-overdue a,
+.issue-overdue a,
+.project-overdue a {
+    color: $brand-danger;
+
+    @if $color-trackers {
+        &.issue {
+            font-weight: 700;
+            background-color: $brand-danger;
+            color: $brand-text;
+        }
+    }
+}
+
+/**
+ * Tooltips
+ */
+
+.tooltip {
+    position: relative;
+    z-index: 24;
+
+    &:hover {
+        z-index: 25;
+    }
+
+    .tip {
+        display: none;
+        position: absolute;
+        text-align: left;
+        padding: $padding-base-vertical;
+        top: 9px;
+        left: 24px;
+        width: 270px;
+        background-color: $tooltip-bg;
+        border: 1px solid $tooltip-border;
+        color: $tooltip-text;
+        font-size: $font-size-small;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+    }
+
+    @if $sidebar-position == 'left' {
+        tr > td:last-child & {
+            .tip {
+                left: auto;
+                right: 2px;
+            }
+        }
+    }
+
+    &:hover {
+        .tip {
+            display: block;
+        }
+    }
+}

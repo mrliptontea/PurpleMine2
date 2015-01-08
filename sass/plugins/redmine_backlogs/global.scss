@@ -1,0 +1,314 @@
+@import "common";
+
+html {
+    overflow-y: scroll;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $text-color;
+    background-color: mix($gray-lighter, $header-bg, 70%);
+}
+
+a {
+    color: $link-color;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        color: $link-hover-color;
+        text-decoration: $link-hover-decoration;
+    }
+
+    &.issue.closed {
+        color: $link-color-issue-closed;
+        text-decoration: $link-closed-decoration;
+    }
+
+    &.project.closed {
+        color: $link-color-project-closed;
+    }
+
+    &.user.locked {
+        color: $link-color-user-locked;
+    }
+}
+
+
+/**
+ * Form elements
+ */
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    @include box-sizing(border-box);
+}
+
+select,
+textarea,
+input[type="search"],
+input[type="text"],
+input.name,
+input.editor,
+#col_width input {
+    height: $input-height-base;
+    padding: $input-padding-vertical $input-padding-horizontal;
+    color: $input-color;
+    background-color: $input-bg;
+    border: 1px solid $input-border;
+    border-radius: $input-border-radius;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075);
+    @include transition(border-color ease-in-out .1s, box-shadow ease-in-out .1s);
+    @include form-control-focus();
+    @include placeholder();
+}
+
+textarea {
+    resize: vertical;
+    height: auto;
+}
+
+button.ui-multiselect {
+    height: $input-height-base;
+    padding: $input-padding-vertical $input-padding-horizontal;
+    color: $input-color;
+    background: $input-bg;
+    border: 1px solid $input-border;
+    cursor: default;
+    white-space: nowrap;
+    overflow: hidden;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075);
+    @include transition(border-color ease-in-out .1s, box-shadow ease-in-out .1s);
+    @include box-sizing(border-box);
+
+    &:hover,
+    &:focus {
+        color: $input-color;
+    }
+
+    &:active {
+        @include translate(0, 0);
+    }
+
+    &.ui-state-active {
+        border-color: $input-border-focus;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075), 0 0 5px rgba($input-border-focus, .5);
+    }
+
+    .ui-icon {
+        margin-top: 1px;
+    }
+}
+
+
+/**
+ * Top toolbar
+ */
+
+#toolbar {
+    display: block;
+    padding: 10px $padding-side;
+    overflow: hidden;
+    position: relative;
+    background-color: $main-menu-bg;
+    box-shadow: $panel-shadow;
+    z-index: 1000;
+    @include clearfix;
+
+    .breadcrumbs {
+        float: left;
+        margin-right: 10px;
+
+        select {
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .home {
+            font-weight: bold;
+        }
+
+        .separator {
+            position: relative;
+            top: -1px;
+            padding: 0 .2em;
+            font-weight: bold;
+        }
+    }
+
+    .userselect {
+        float: left;
+        position: relative;
+
+        ul {
+            padding-left: 0;
+        }
+
+        br {
+            display: none;
+        }
+    }
+
+    .links {
+        float: right;
+
+        a {
+            padding-left: 5px;
+            cursor: pointer;
+            @include user-select(none);
+        }
+    }
+
+    input[type="search"],
+    input[type="text"],
+    select,
+    .ui-widget {
+        font-size: inherit;
+        font-family: inherit;
+    }
+
+    @media screen and (max-width: $screen-md-max) {
+        font-size: $font-size-small;
+
+        input[type="search"],
+        input[type="text"],
+        select,
+        .ui-widget {
+            $input-padding-vertical-small:   2px;
+            $input-padding-horizontal-small: 5px;
+
+            height: ($line-height-computed + ($input-padding-vertical-small * 2) + 2);
+            padding: $input-padding-vertical-small $input-padding-horizontal-small;
+        }
+
+        #project_quick_jump_box {
+            width: 128px;
+        }
+    }
+}
+
+#refresh {
+    .loading & {
+        background-image: url('images/bouncer.gif');
+        background-repeat: no-repeat;
+        background-position: -6px 1px;
+    }
+}
+
+
+/**
+ * Other elements
+ */
+
+.clearfix {
+    @include clearfix;
+}
+
+#content {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+}
+
+#helpers,
+.meta,
+.editors {
+    display: none;
+}
+
+/**
+ * .editor is the classname for field editors of sprint,
+ * story, task, impediment. These field editors get created
+ * at runtime whenever any of the above models are edited.
+ */
+
+.ui-dialog .editor {
+    display: block;
+}
+
+ul.ui-sortable {
+    min-height: 20px;
+}
+
+/**
+ * Story tooltip
+ */
+.ui-tooltip {
+    .ui-tooltip-tip,
+    .ui-tooltip-content {
+        background-color: $tooltip-bg;
+        border-color: $tooltip-border;
+    }
+
+    .ui-tooltip-content {
+        padding: $padding-base-vertical;
+        color: $tooltip-text;
+        font-size: $font-size-small;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+
+        > div {
+            max-height: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        hr {
+            margin-top:    $line-height-computed / 2;
+            margin-bottom: $line-height-computed / 2;
+            border: 0;
+            border-top: 1px solid $hr-border;
+        }
+
+        .wiki-anchor {
+            display: none;
+        }
+    }
+}
+
+.tooltip_text {
+    display: none;
+}
+
+/**
+ * drag-drop effect: disabled dropzones are greyed out
+ */
+
+.rb-sortable-disabled,
+.ui-sortable-disabled {
+    opacity: 0.5;
+    background-color: $gray-lighter;
+}
+
+.w-rb-header-collapsed {
+    height: 18px;
+    overflow: hidden;
+}
+
+
+/**
+ * Fix datepicker buttons position
+ */
+
+#ui-datepicker-div {
+    .ui-datepicker-prev,
+    .ui-datepicker-next {
+        top: 7px;
+    }
+
+    .ui-datepicker-prev-hover,
+    .ui-datepicker-next-hover {
+        top: 6px;
+    }
+}

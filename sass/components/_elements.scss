@@ -1,0 +1,849 @@
+//
+// Various layout elements
+// --------------------------------------------------
+
+
+/**
+ * Action buttons group
+ */
+
+.buttons {
+    margin-top: $line-height-computed;
+    margin-bottom: $line-height-computed;
+}
+
+
+/**
+ * Export actions
+ */
+
+.other-formats {
+    text-align: right;
+    margin: ($line-height-computed / 2) 0 0;
+
+    span + span:before {
+        content: "/ ";
+    }
+}
+
+
+/**
+ * Atom feed icon
+ */
+
+.atom {
+    background: url(../../../images/feed.png) no-repeat 1px 50%;
+    padding: 2px 0px 3px 16px;
+}
+
+
+/**
+ * Collapsible
+ */
+
+a.collapsible,
+.collapsible > legend {
+    color: $link-color;
+    cursor: pointer;
+    @include user-select(none);
+
+    &:hover {
+        color: $link-hover-color;
+    }
+
+    &:before {
+        content: '';
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-right: 3px;
+        vertical-align: middle;
+        border-top:   5px solid;
+        border-right: 5px solid transparent;
+        border-left:  5px solid transparent;
+        position: relative;
+        top: -1px;
+        @include rotate(0);
+        @include transition-transform(.1s);
+    }
+}
+
+a.collapsible.collapsed,
+.collapsible.collapsed > legend {
+    &:before {
+        @include rotate(-90deg);
+    }
+}
+
+
+/**
+ * Elements with context menus (doesn't really work on Windows)
+ */
+
+.hascontextmenu {
+    cursor: context-menu;
+}
+
+
+/**
+ * Actions for block
+ */
+
+.contextual {
+    float: right;
+    white-space: nowrap;
+    padding-left: $padding-base-vertical;
+
+    input, select {
+        font-size: .9em;
+    }
+}
+
+
+/**
+ * Accessibility specific styles
+ */
+
+.hidden-for-sighted {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+
+/**
+ * Responsive autoscroll
+ */
+
+.autoscroll {
+    overflow-x: auto;
+    margin-bottom: $line-height-computed;
+}
+
+
+/**
+ * Container
+ */
+
+.box {
+    padding: $panel-body-padding;
+    margin-bottom: $line-height-computed;
+    color: $panel-color;
+    background-color: $panel-bg;
+    border: 1px solid $panel-border;
+    border-radius: $border-radius-base;
+    word-wrap: break-word;
+    box-shadow: $panel-shadow;
+
+    .ui-dialog-content & {
+        padding: 0;
+        border: 0 none;
+        background: transparent;
+        box-shadow: none;
+    }
+}
+
+
+/**
+ * Column form layout
+ */
+
+.splitcontent {
+    @extend %clearfix;
+}
+
+.splitcontentleft,
+.splitcontentright {
+    width: 50%;
+    @include box-sizing(border-box);
+}
+
+.splitcontentleft {
+    float: left;
+    padding-right: ($padding-side / 2);
+}
+
+.splitcontentright {
+    float: right;
+    padding-left: ($padding-side / 2);
+}
+
+
+/**
+ * Watchers selection list
+ */
+
+#users_for_watcher {
+    height: 200px;
+    overflow: auto;
+
+    label {
+        display: block;
+        @include checkbox;
+    }
+}
+
+
+/**
+ * Watchers list
+ */
+
+#watchers {
+    select {
+        width: 100%;
+        display: block;
+    }
+
+    > .watchers {
+        > li {
+            display: block;
+            margin-bottom: $sidebar-padding-vertical;
+            @extend %clearfix;
+
+            @if $sidebar-position == 'left' {
+                padding-right: $sidebar-padding-horizontal;
+            } @else {
+                padding-left: $sidebar-padding-horizontal;
+            }
+
+            > a {
+                display: inline;
+                padding: 0;
+                background: transparent;
+            }
+
+            > .delete {
+                float: right;
+                opacity: 0.4;
+                vertical-align: middle;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+
+            img.gravatar {
+                vertical-align: top;
+                position: relative;
+                top: 1px;
+                margin-right: .5em;
+            }
+        }
+    }
+}
+
+
+/**
+ * Subtitle paragraph (can be seen on activity list)
+ */
+
+p.subtitle {
+    margin-top: ($line-height-computed / -2);
+    margin-bottom: $line-height-computed;
+    font-style: italic;
+}
+
+
+/**
+ * Breadcrumbs (can be seen in time entries report)
+ * No need to style them, but let this selector be here.
+ */
+
+// p.breadcrumb {
+// }
+
+
+/**
+ * Headers with icons
+ */
+
+h3.version {
+    background: url(../../../images/package.png) no-repeat 0 center;
+    padding-left: 20px;
+}
+
+div.issues h3 {
+    background: url(../../../images/ticket.png) no-repeat 0 center;
+    padding-left: 20px;
+}
+
+div.members h3 {
+    background: url(../../../images/group.png) no-repeat 0 center;
+    padding-left: 20px;
+}
+
+div.news h3 {
+    background: url(../../../images/news.png) no-repeat 0 center;
+    padding-left: 20px;
+}
+
+div.projects h3 {
+    background: url(../../../images/projects.png) no-repeat 0 center;
+    padding-left: 20px;
+}
+
+
+/**
+ * My page layout
+ */
+
+#block-form {
+    display: inline;
+}
+
+.block-receiver {
+    outline: 1px dashed $gray-light;
+    margin: $padding-side / -2;
+    margin-bottom: $line-height-computed;
+    padding: $padding-side / 2;
+    min-height: 20px;
+}
+
+.mypage-box {
+    margin-bottom: $line-height-computed;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &.ui-sortable-handle {
+        outline: 1px solid $gray-lighter;
+
+        &:hover {
+            outline: 1px solid $gray-light;
+        }
+    }
+
+    &.ui-sortable-placeholder {
+        visibility: visible !important;
+        background: $tooltip-bg;
+        outline: 1px dashed $tooltip-border;
+    }
+
+    &.ui-sortable-helper {
+        background: $body-bg;
+        box-shadow: $panel-shadow;
+    }
+}
+
+.handle {
+    cursor: move;
+}
+
+a.close-icon {
+    display: block;
+    margin-top: 5px;
+    overflow: hidden;
+    width: 12px;
+    height: 12px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-image: url(../../../images/close.png);
+
+    &:hover {
+        background-image: url(../../../images/close_hl.png);
+    }
+}
+
+
+/**
+ * Resetting font for SCM (repository files)
+ */
+table.filecontent tbody,
+table.filecontent td.line-code pre {
+    font-family: $font-family-monospace !important;
+}
+
+
+/**
+ * Projects list
+ */
+
+ul.projects {
+    padding-left: $padding-side;
+
+    &.root {
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        list-style-type: none;
+    }
+}
+
+#projects-index ul.projects {
+    ul.projects {
+        border-left: 2px solid $gray-lighter;
+    }
+
+    li.root {
+        margin-bottom: $line-height-computed;
+    }
+
+    li.child {
+        margin-top: $line-height-computed / 2;
+    }
+
+    a.project {
+        font-size: $font-size-h3;
+        font-weight: bold;
+    }
+}
+
+.my-project {
+    padding-right: 18px;
+    background: url(../../../images/fav.png) no-repeat right center;
+}
+
+#custom_field_tracker_ids {
+    label {
+        margin-right: 10px;
+    }
+}
+
+#notified-projects,
+#tracker_project_ids,
+#custom_field_project_ids {
+    > ul {
+        max-height: $line-height-computed * 12;
+        overflow-y: auto;
+    }
+}
+
+
+/**
+ * Time report
+ */
+
+table#time-report {
+    td.hours {
+        text-align: right;
+    }
+
+    th {
+        &.period,
+        &.total {
+            text-align: right;
+        }
+    }
+
+    tbody tr {
+        &.subtotal {
+            font-style: italic;
+            color: $gray;
+
+            td.hours {
+                color: $gray-light;
+            }
+        }
+
+        &.total {
+            font-weight: bold;
+            background-color: $table-bg-active;
+            border-top: 2px solid darken($table-border-color, 5%);
+        }
+    }
+
+    .hours-dec {
+        font-size: 0.9em;
+    }
+}
+
+.total-hours {
+    font-weight: bold;
+
+    .hours-int {
+        font-size: $font-size-large * 1.1;
+    }
+
+    .hours-dec {
+        font-size: $font-size-large;
+    }
+}
+
+
+/**
+ * Version issue list and page layout
+ */
+
+div#roadmap {
+    .related-issues {
+        margin-bottom: $line-height-computed;
+
+        td.checkbox {
+            display: none;
+        }
+    }
+
+    table.progress {
+        td {
+            height: 16px;
+        }
+        & + .percent {
+            position: relative;
+            top: 2px;
+        }
+    }
+
+    .wiki {
+        h1 {
+            &:first-child {
+                display: none;
+            }
+        }
+    }
+}
+
+body.controller-versions.action-show div#roadmap .related-issues {
+    width: 70%;
+}
+
+div#version-summary {
+    float: right;
+    width: 28%;
+
+    fieldset {
+        margin-bottom: $line-height-computed;
+
+        &.time-tracking table {
+            width: 100%;
+        }
+    }
+
+    th,
+    td.total-hours {
+        text-align: right;
+    }
+}
+
+
+/**
+ * Add form bottom space
+ */
+
+#new_document,
+#add-message,
+#add-news {
+    margin-bottom: $line-height-computed;
+}
+
+
+/**
+ * Attachments form
+ */
+
+a.remove-upload {
+    background: url(../../../images/delete.png) no-repeat 1px 50%;
+    display: inline-block;
+    padding-left: 16px;
+
+    &:hover {
+        text-decoration: none !important;
+    }
+}
+
+
+/**
+ * Ajax indicator
+ */
+
+#ajax-indicator {
+    position: fixed;
+    margin: (($line-height-computed + $padding-large-vertical * 2 + 1px * 2) / -2) ((200px + $padding-large-horizontal * 2 + 1px * 2) / -2);
+    padding: $padding-large-vertical $padding-large-horizontal;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    z-index: 100;
+    opacity: .9;
+    text-align: center;
+    color: $tooltip-text;
+    background-color: $tooltip-bg;
+    border: 1px solid $tooltip-border;
+    font-weight: bold;
+    box-shadow: $panel-shadow;
+
+    span {
+        background-position: 0% 40%;
+        background-repeat: no-repeat;
+        background-image: url(../../../images/loading.gif);
+        padding-left: 26px;
+        vertical-align: bottom;
+    }
+}
+
+
+/**
+ * Boards (forum)
+ */
+
+tr.message {
+    td {
+        &.subject {
+            padding-left: 20px + $table-cell-padding;
+            background-repeat: no-repeat;
+            background-position: $table-cell-padding ($table-cell-padding - 1px);
+        }
+
+        &.created_on {
+            white-space: nowrap;
+        }
+
+        &.last_message {
+            width: 30%;
+            white-space: nowrap;
+            text-align: left;
+
+            a:last-child {
+                font-weight: bold;
+            }
+        }
+    }
+
+    &.locked {
+        color: $gray;
+
+        td.subject {
+            background-image: url(../../../images/locked.png);
+        }
+    }
+
+    &.sticky td.subject {
+        background-image: url(../../../images/bullet_go.png);
+        font-weight: bold;
+    }
+}
+
+table.boards {
+    td {
+        &.last-message {
+            width: 30%;
+            white-space: nowrap;
+            text-align: left;
+
+            a:last-child {
+                font-weight: bold;
+            }
+        }
+    }
+
+    a.board {
+        background: url(../../../images/comment.png) no-repeat 0% 50%;
+        padding-left: 20px;
+    }
+}
+
+
+/**
+ * Topic page
+ */
+
+.controller-messages.action-show {
+    h2 {
+        margin-bottom: $line-height-computed / 2;
+    }
+
+    .message {
+        background: $gray-lightest;
+        border: 1px solid $gray-lighter;
+        border-radius: $panel-border-radius;
+
+        > h4,
+        > p {
+            color: $gray;
+            margin-bottom: 0;
+            padding: $padding-base-vertical $padding-base-horizontal;
+            border-bottom: 1px solid mix($gray-lighter, $gray-lightest, 50%);
+            font-size: $font-size-small;
+
+            a {
+                color: $gray-darker;
+
+                &.user {
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .wiki {
+            padding: $padding-base-horizontal;
+            background: $body-bg;
+            border-radius: 0 0 $panel-border-radius $panel-border-radius;
+        }
+
+        .contextual {
+            position: relative;
+            z-index: 1;
+            margin-top: $padding-base-vertical;
+            margin-right: $padding-base-vertical;
+
+            a {
+                margin-left: ceil($padding-base-vertical / 2);
+            }
+        }
+    }
+
+    .reply {
+        margin-bottom: $line-height-computed;
+    }
+
+    @if $use-gravatars {
+        .reply {
+            margin-left: 24px + $padding-base-horizontal;
+
+            > h4 {
+                position: relative;
+
+                &:before,
+                &:after {
+                    position: absolute;
+                    top: 6px;
+                    left: -14px;
+                    right: 100%;
+                    width: 0px;
+                    height: 0px;
+                    display: block;
+                    content: " ";
+                    border-color: transparent;
+                    border-style: solid solid outset;
+                    pointer-events: none;
+                }
+
+                &:after {
+                    border-width: 6px;
+                    border-right-color: $panel-bg;
+                    margin-top: 1px;
+                    margin-left: 2px;
+                }
+
+                &:before {
+                    border-right-color: $panel-border;
+                    border-width: 7px;
+                }
+            }
+
+            img.gravatar {
+                float: left;
+                margin-top: $line-height-computed - 24px;
+                margin-left: -(24px + $padding-base-horizontal * 2 + 1px);
+            }
+        }
+    }
+}
+
+h3.comments {
+    background: url(../../../images/comment.png) no-repeat 0% 50%;
+    padding-left: 20px;
+}
+
+#message_content {
+    height: $line-height-computed * 6;
+}
+
+
+/**
+ * News comments
+ */
+
+#comments {
+    > h4 {
+        margin-top: $line-height-computed;
+        margin-bottom: $line-height-computed / 2;
+    }
+}
+
+#comment_comments {
+    height: $line-height-computed * 6;
+}
+
+.summary {
+    font-style: italic;
+}
+
+
+/**
+ * Diff
+ */
+
+.text-diff {
+    margin-bottom: $line-height-computed;
+    padding: $panel-body-padding;
+    color: $panel-color;
+    background: $body-bg;
+    border: 1px solid $panel-border;
+    border-radius: $panel-border-radius;
+}
+
+.diff_out {
+    background: $diff-out-bg-light;
+
+    span {
+        background: $diff-out-bg;
+    }
+}
+
+.diff_in {
+    background: $diff-in-bg-light;
+
+    span {
+        background: $diff-in-bg;
+    }
+}
+
+
+/**
+ * Repository view
+ */
+
+#revision_selector {
+    display: inline;
+}
+
+#related-issues {
+    li img {
+        vertical-align: middle;
+    }
+}
+
+ul.properties {
+    padding: 0;
+    font-size: $font-size-small;
+    color: $gray;
+
+    li {
+        list-style-type: none;
+
+        span {
+            font-style: italic;
+        }
+    }
+}
+
+tr.changeset {
+    td.revision_graph {
+        width: 15%;
+        background-color: #fffffb;
+    }
+
+    td.author,
+    td.committed_on {
+        text-align: center;
+        width: 15%;
+        white-space: nowrap;
+    }
+
+    td.comments {
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    ul {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}

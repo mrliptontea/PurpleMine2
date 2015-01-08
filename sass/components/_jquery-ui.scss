@@ -1,0 +1,92 @@
+//
+// Tweaks for jQuery UI
+// --------------------------------------------------
+
+.ui-widget {
+    &,
+    input,
+    select,
+    textarea,
+    button
+    {
+        font-size: inherit;
+        font-family: inherit;
+    }
+}
+
+
+/**
+ * Widgets
+ */
+
+.ui-widget-content {
+    background: $panel-bg;
+    border-color: $panel-border;
+    border-radius: $panel-border-radius;
+    box-shadow: $panel-shadow;
+}
+
+.ui-state-hover,
+.ui-state-focus {
+    &,
+    .ui-widget-content &,
+    .ui-widget-header & {
+        color: $component-active-color;
+        background: $component-active-bg;
+        border-color: $component-active-border;
+        font-weight: inherit;
+    }
+}
+
+
+/**
+ * Menu (e.g. autocomplete)
+ */
+
+.ui-menu-item {
+    border-radius: $panel-border-radius;
+}
+
+
+/**
+ * Dialogs
+ */
+
+.modal {
+    background: $body-bg;
+    z-index: 50;
+
+    h3.title {
+        display: none;
+    }
+
+    p.buttons {
+        text-align: right;
+        margin-bottom: 0;
+    }
+}
+
+.ui-dialog .ui-dialog-content {
+    padding: $padding-base-horizontal;
+}
+
+.ui-widget-overlay {
+    background: #000;
+}
+
+
+/**
+ * Datepicker
+ */
+
+img.ui-datepicker-trigger {
+    cursor: pointer;
+    vertical-align: middle;
+    margin-left: 4px;
+}
+
+.ui-datepicker-title select {
+    width: 70px !important;
+    margin-top: -2px !important;
+    margin-right: 4px !important;
+}

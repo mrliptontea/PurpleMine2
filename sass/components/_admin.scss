@@ -1,0 +1,155 @@
+//
+// Admin
+// --------------------------------------------------
+
+#admin-menu {
+    #admin-index > & {
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            padding: $sidebar-padding-vertical 0;
+        }
+
+        a {
+            display: inline-block;
+            background-position: 0 center;
+            padding-left: 8 + 16px;
+        }
+    }
+
+    li {
+        list-style-type: none;
+
+        > a {
+            background-repeat: no-repeat;
+            background-position: $sidebar-padding-horizontal center;
+            padding-left: $sidebar-padding-horizontal + 8 + 16px;
+        }
+    }
+
+    .projects              { background-image: url(../../../images/projects.png); }
+    .users                 { background-image: url(../../../images/user.png); }
+    .groups                { background-image: url(../../../images/group.png); }
+    .roles                 { background-image: url(../../../images/database_key.png); }
+    .trackers              { background-image: url(../../../images/ticket.png); }
+    .issue_statuses        { background-image: url(../../../images/ticket_edit.png); }
+    .workflows             { background-image: url(../../../images/ticket_go.png); }
+    .custom_fields         { background-image: url(../../../images/textfield.png); }
+    .enumerations          { background-image: url(../../../images/text_list_bullets.png); }
+    .settings              { background-image: url(../../../images/changeset.png); }
+    .plugins               { background-image: url(../../../images/plugin.png); }
+    .info                  { background-image: url(../../../images/help.png); }
+    .server_authentication { background-image: url(../../../images/server_key.png); }
+}
+
+
+/**
+ * Groups
+ */
+
+table.members,
+table.memberships {
+    td.roles {
+        width: 45%;
+    }
+}
+
+
+/**
+ * Permissions
+ */
+
+table.permissions {
+    td.role {
+        color: $gray;
+        font-weight: normal;
+        text-align: center;
+        vertical-align: bottom;
+    }
+}
+
+
+/**
+ * Workflows
+ */
+
+table.transitions {
+    td.enabled {
+        background: $state-success;
+    }
+}
+
+#workflow_copy_form select {
+    width: 200px;
+}
+
+#workflow_form table select {
+    min-width: 60px;
+    width: 90%;
+}
+
+table.fields_permissions {
+    td.readonly {
+        background: $gray-light;
+    }
+
+    td.required {
+        background: $state-danger;
+    }
+}
+
+
+/**
+ * Enumerations
+ */
+
+.controller-enumerations.action-index {
+    #content {
+        > h3,
+        > .list {
+            margin-bottom: $line-height-computed / 2;
+        }
+
+        > p {
+            margin-bottom: $line-height-computed * 2;
+        }
+    }
+}
+
+
+/**
+ * Settings labels
+ */
+
+fieldset.settings label {
+    display: block;
+}
+
+
+/**
+ * Settings -> Notifications
+ */
+
+fieldset#notified_events {
+    .parent {
+        padding-left: 20px;
+    }
+}
+
+
+/**
+ * Settings -> Repositories
+ */
+
+.settings.enabled_scm {
+    table {
+        width: 100%;
+    }
+
+    td.scm_name {
+        font-weight: bold;
+    }
+}

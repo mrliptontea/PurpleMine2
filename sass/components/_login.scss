@@ -1,0 +1,27 @@
+//
+// Login form
+// --------------------------------------------------
+
+$login-input-width: 200px;
+
+#login-form {
+    table {
+        margin: $line-height-computed * 2 auto;
+    }
+
+    td {
+        padding: $table-cell-padding;
+    }
+}
+
+#username,
+#password,
+#openid_url {
+    width: $login-input-width;
+}
+
+#openid_url {
+    background: url(../../../images/openid-bg.gif) no-repeat;
+    background-position: ($login-input-width - 24px) center;
+    padding-right: 8px + 24px;
+}

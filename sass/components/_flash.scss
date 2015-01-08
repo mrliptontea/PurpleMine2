@@ -1,0 +1,62 @@
+//
+// Flash & error messages
+// --------------------------------------------------
+
+
+#errorExplanation,
+.flash,
+.nodata,
+.warning,
+.conflict {
+    padding: $padding-large-vertical $padding-large-horizontal;
+    padding-left: $padding-large-horizontal + 8px + 16px; // TODO ikony
+    margin-bottom: $line-height-computed;
+    background-position: $padding-large-horizontal 50%;
+    background-repeat: no-repeat;
+    border: 1px solid;
+    border-radius: $border-radius-large;
+
+    p:last-child,
+    ol:last-child,
+    ul:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@mixin flash($color, $background, $border, $link, $icon) {
+    color: $color;
+    background-image: url(../../../images/#{$icon}.png); // TODO ikony
+    background-color: $background;
+    border-color: $border;
+
+    a {
+        color: $link;
+        font-weight: bold;
+    }
+}
+
+.flash.notice {
+    @include flash($flash-success-text, $flash-success-bg, $flash-success-border, $flash-success-link, true);
+}
+
+.flash.warning,
+.conflict,
+.nodata {
+    @include flash($flash-warning-text, $flash-warning-bg, $flash-warning-border, $flash-warning-link, warning);
+}
+
+.nodata {
+    text-align: center;
+    padding-left: $padding-large-horizontal;
+}
+
+#errorExplanation,
+.flash.error {
+    @include flash($flash-error-text, $flash-error-bg, $flash-error-border, $flash-error-link, exclamation);
+}
+
+#errorExplanation {
+    h2, p {
+        display: none;
+    }
+}

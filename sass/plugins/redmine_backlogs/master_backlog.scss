@@ -1,0 +1,753 @@
+@import "common";
+
+$header-line-height:            floor($line-height-computed * 1.5);
+
+$header-left-width:             30px;
+$header-right-width:            230px;
+$header-right-width-wider:      300px;
+
+$story-left-width:              110px;
+$story-right-width:             130px;
+
+$story-id-width:                51px;
+$story-project-width:           50px;
+$story-status-width:            90px;
+
+@mixin rb-tracker($parent, $background, $color) {
+    #{$parent} .id .t a {
+        color: $color;
+        background-color: $background;
+
+        &:before {
+            color: mix($color, $background, 50%);
+        }
+
+        &:hover {
+            text-decoration: none;
+            background-color: darken($background, 10%);
+        }
+
+        /*
+        &.closed {
+            color: mix($color, $background, 50%);
+            text-decoration: $link-closed-decoration;
+        }
+        */
+    }
+}
+
+
+/**
+ * reserved classes are
+ * .backlog (used in master_backlog.js to initialize all backlogs)
+ * .model (used in backlog.js editable_inplace.js model.js)
+ * .sprint (used in backlog.js
+ * .stories (used in backlog.js for sortable)
+ * .editor
+ * .editable (bind click on)
+ * .close_sprint (bind click on)
+ */
+
+
+/**
+ * fluid, 2-colum layout
+ */
+
+#backlogs_container {
+    padding: $padding-side ($padding-side / 2);
+
+    .wrapper {
+        position: relative;
+        float: left;
+        left: 0;
+        width: 100%;
+    }
+
+    .left-col {
+        position: relative;
+        float: left;
+        left: 0;
+        width: 50%;
+    }
+
+    .right-col {
+        position: relative;
+        float: right;
+        right: 0;
+        width: 50%;
+    }
+
+    .backlogs-panel-inner {
+        padding: 0 ($padding-side / 2);
+    }
+}
+
+
+/**
+ * Fixed-Fluid-Fixed layout
+ */
+
+
+.fff-wrapper {
+}
+
+.fff-wrapmiddle {
+    float: left;
+    width: 100%;
+}
+
+.fff-middle {
+    margin-right: $story-right-width;
+    margin-left: $story-left-width;
+}
+
+.fff-left {
+    float: left;
+    width: $story-left-width;
+    margin-left: -100%;
+}
+
+.fff-right {
+    float: left;
+    width: $story-right-width;
+    margin-left: -$story-right-width;
+}
+
+.header {
+    .fff-middle {
+        margin-right: $header-right-width;
+        margin-left: $header-left-width;
+    }
+
+    .fff-left {
+        width: $header-left-width;
+    }
+
+    .fff-right {
+        width: $header-right-width;
+        margin-left: -$header-right-width;
+    }
+
+    @media screen and (min-width: $screen-md) {
+        .fff-middle {
+            margin-right: $header-right-width-wider;
+        }
+
+        .fff-right {
+            width: $header-right-width-wider;
+            margin-left: -$header-right-width-wider;
+        }
+    }
+}
+
+
+/**
+ * Just some space at the bottom of the page
+ */
+
+#dummy_backlog_container {
+    height: 150px;
+}
+
+
+/**
+ * Base backlog container
+ */
+
+#backlogs_container {
+    .closedbacklog,
+    .backlog {
+        display: block;
+        position: relative;
+        margin: 0 0 $padding-side;
+        background-color: $gray-lightest;
+        box-shadow: $panel-shadow;
+        border-radius: $border-radius-large $border-radius-large 0 0;
+    }
+}
+
+
+/**
+ * Backlog header
+ */
+
+#backlogs_container {
+    .header {
+        position: relative;
+        height: $header-line-height;
+        line-height: $header-line-height;
+        background-color: $header-bg;
+        border: 1px solid darken($header-bg, 5%);
+        color: $header-text;
+        border-radius: $border-radius-large $border-radius-large 0 0;
+
+        .name,
+        .velocity,
+        .date {
+            white-space: nowrap;
+        }
+
+        .name {
+            padding-left: $padding-base-horizontal;
+            font-weight: bold;
+            overflow: hidden;
+        }
+
+        .date {
+            float: left;
+            width: 80px;
+            text-align: center;
+
+            & + .date {
+                margin-left: $padding-base-horizontal;
+            }
+        }
+
+        .velocity {
+            text-align: right;
+            padding-right: $padding-base-horizontal;
+        }
+
+        .id,
+        .description,
+        .status {
+            display: none;
+        }
+
+        .saving {
+            background-image: url('images/ajax.gif');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .error {
+            background-image: url('images/error.png');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .editing {
+            $editor-padding: (($header-line-height - $input-height-base) / 2);
+
+            .editors {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                padding-top: $editor-padding;
+                background-color: $header-bg;
+                border-radius: $border-radius-large $border-radius-large 0 0;
+                z-index: 1;
+            }
+
+            label, .id.editor {
+                display: none;
+            }
+
+            .release_end_date.editor,
+            .release_start_date.editor,
+            .effective_date.editor,
+            .sprint_start_date.editor {
+                float: left;
+                position: relative;
+                width: 90px;
+                margin-left: $editor-padding * 2;
+                margin-bottom: $editor-padding;
+                padding: 0;
+                text-align: center;
+            }
+
+            .name.editor {
+                $name-width-minus: $header-right-width-wider + 35px;
+                float: left;
+                margin-left: $header-line-height - 2px;
+                min-width: 100px;
+                width: calc(100% - #{$name-width-minus}) !important;
+                position: relative;
+            }
+
+            .description.editor {
+                display: none;
+            }
+
+            .edit-actions {
+                float: right;
+                margin-right: $editor-padding * 2;
+                margin-bottom: $editor-padding;
+            }
+        }
+
+        .menu {
+            position: relative;
+            height: $header-line-height;
+            line-height: $line-height-base;
+            font-size: $font-size-small;
+            overflow: visible;
+            cursor: pointer;
+            border-right: 1px solid #888;
+            border-bottom: 0 none;
+            border-radius: ($border-radius-large - 1px) 0 0 0;
+            @include transition(background-color .07s);
+
+            &:hover {
+                z-index: 1000;
+                border-bottom: 1px solid $body-bg;
+                background-color: $body-bg;
+            }
+
+            .icon {
+                position: relative;
+                left: 6px;
+                top: 7px;
+                padding: 0;
+                background-image: url("images/ui-icons_888888_256x240.png");
+                background-position: -64px -16px;
+            }
+
+            .items {
+                display: none;
+                z-index: 999;
+                position: absolute;
+                left: -1px;
+                top: $header-line-height + 1px;
+                margin: 0;
+                padding: $padding-small-vertical 0;
+                list-style: none;
+                background-color: $body-bg;
+                border: 1px solid $gray-light;
+                border-top: 0 none;
+                border-radius: 0 0 $border-radius-base $border-radius-base;
+                box-shadow: 0 2px 1px rgba(#000, .1);
+
+                a {
+                    color: $gray-darker;
+                }
+            }
+
+            &:hover .items {
+                display: block;
+            }
+
+            .item {
+                white-space: nowrap;
+                min-width: 150px;
+
+                > a {
+                    display: block;
+                    padding: 4px 8px;
+
+                    &:hover {
+                        text-decoration: none;
+                        color: $component-active-color;
+                        background-color: $component-active-bg;
+                    }
+                }
+
+                ul {
+                    display: none;
+                    position: absolute;
+                    top: 0;
+                    left: 160px;
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    background-color: $gray-lightest;
+                }
+
+                &:hover ul {
+                    display: block;
+                }
+            }
+        }
+
+        .model.headertext {
+            cursor: pointer;
+        }
+    }
+
+    .close_sprint {
+        float: left;
+        overflow: hidden;
+        white-space: nowrap;
+        color: $header-link;
+    }
+
+    .closedbacklog {
+        .menu {
+            display: none;
+        }
+
+        .headertext {
+            cursor: default;
+            /*we have model class here, but are not editable*/
+        }
+    }
+}
+
+
+/**
+ * Backlog items
+ */
+
+#backlogs_container {
+    .stories {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        min-height: ($line-height-computed + $table-condensed-cell-padding * 2);
+        font-size: $font-size-list;
+
+        .v {
+            display: none;
+        }
+
+        .placeholder {
+            min-height: ($line-height-computed + $table-condensed-cell-padding * 2);
+            background-color: $gray;
+        }
+    }
+
+    .story {
+        display: block;
+        margin: 0;
+        padding: $table-condensed-cell-padding;
+        cursor: move;
+        background-color: $body-bg;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-top: 1px solid $gray-lighter;
+
+        &:nth-child(2n) {
+            background-color: $table-bg-accent;
+        }
+
+        &:hover {
+            background-color: $tooltip-bg;
+        }
+
+        &.saving {
+            background-image: url('images/ajax.gif');
+            color: $gray-light;
+        }
+
+        &.error {
+            background-image: url('images/error.png');
+            color: $brand-warning;
+        }
+
+        .tracker_id {
+            display: none;
+        }
+
+        .id {
+            position: relative;
+            width: $story-id-width;
+            float: left;
+
+            .t {
+                a {
+                    display: block;
+                    padding: $tracker-list-padding;
+                    font-weight: bold;
+                    text-align: right;
+                    color: $gray-dark;
+                    background-color: darken($gray-lightest, 3%);
+                    border-radius: $border-radius-small ($border-radius-small * 3) ($border-radius-small * 3) $border-radius-small;
+
+                    &:before {
+                        content: '#';
+                        margin-left: -1em;
+                        font-weight: normal;
+                        color: $gray-light;
+                    }
+
+                    &:hover {
+                        background-color: $gray-lighter;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        .project {
+            display: block;
+            position: relative;
+            float: left;
+            width: $story-project-width;
+            padding-left: 5px;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+
+            .t {
+                overflow: hidden;
+            }
+        }
+
+        .subject {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        &.closed .subject {
+            text-decoration: line-through;
+        }
+
+        .status_id {
+            float: left;
+            width: $story-status-width;
+            padding-left: 5px;
+            white-space: nowrap;
+        }
+
+        .story_points {
+            float: left;
+            width: $story-right-width - ($story-status-width + $padding-base-horizontal);
+            text-align: right;
+        }
+
+        .story_field {
+            overflow: hidden;
+        }
+
+        .fixed_version_id,
+        .higher_item_id,
+        .story_project,
+        .user_status {
+            display: none;
+        }
+
+        &.editing {
+            $input-padding-vertical-small:   2px;
+            $input-padding-horizontal-small: 5px;
+
+            background-color: $table-bg-hover;
+
+            .editors {
+                display: block;
+                text-align: right;
+
+                label {
+                    display: none;
+                }
+            }
+
+            .editor {
+                margin: 0;
+                padding: $input-padding-vertical-small $input-padding-horizontal-small;
+                height: ($line-height-computed + ($input-padding-vertical-small * 2) + 2);
+                font-size: inherit;
+                font-family: inherit;
+                vertical-align: top;
+                margin-right: 5px;
+
+                &.tracker_id {
+                    display: block;
+                    width: 100px;
+                    float: left;
+                }
+
+                &.status_id {
+                    float: left;
+                    width: 120px;
+                }
+
+                &.story_points {
+                    float: left;
+                    width: 60px;
+                    margin-right: 0;
+                }
+
+                &.subject {
+                    float: left;
+                    $subject-width-minus: 100px + 120px + 60px + 5px * 3;
+                    width: calc(100% - #{$subject-width-minus}) !important;
+                    height: 60px;
+                    overflow: auto;
+                }
+
+                &.category_id {
+                    display: block;
+                    left: 456px;
+                    margin: 0;
+                    top: 4px;
+                    width: 60px;
+                }
+            }
+
+            .story_field {
+                display: none;
+            }
+
+            .project,
+            select.project_id.editor {
+                display: none;
+            }
+
+            .edit-actions {
+                float: right;
+                margin-top: 5px;
+            }
+        }
+    }
+
+    .closedbacklog .story {
+        cursor: default;
+    }
+
+    /**
+     * override: display story subject in multiple lines
+     */
+
+    .rb-multilinesubject & .subject {
+        white-space: normal;
+        height: auto;
+        overflow: show;
+    }
+
+    @if $color-trackers {
+        @include rb-tracker('.tracker1', $tracker-1-bg, $tracker-1-text);
+        @include rb-tracker('.tracker2', $tracker-2-bg, $tracker-2-text);
+        @include rb-tracker('.tracker3', $tracker-3-bg, $tracker-3-text);
+        @include rb-tracker('.tracker4', $tracker-4-bg, $tracker-4-text);
+        @include rb-tracker('.tracker5', $tracker-5-bg, $tracker-5-text);
+        @include rb-tracker('.tracker6', $tracker-6-bg, $tracker-6-text);
+        @include rb-tracker('.tracker7', $tracker-7-bg, $tracker-7-text);
+    }
+}
+
+
+/**
+ * dialog
+ */
+
+.ui-dialog {
+    .ui-dialog-titlebar-close {
+        display: none;
+    }
+
+    .ui-dialog-title {
+        float: left;
+        margin-right: 0;
+    }
+
+    &.ui-widget-content {
+        box-shadow: 2px 2px 5px #777777;
+        border: none;
+    }
+
+    .ui-dialog-buttonpane.ui-widget-content {
+        border: none;
+    }
+
+    label {
+        display: block;
+        font-size: 11px;
+        text-transform: capitalize;
+        width: 100%;
+    }
+
+    .editor {
+        font-size: 12px;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+}
+
+#sprint_editor .description {
+    height: 65px;
+}
+
+
+/**
+ * In-place Sprint Editor
+ */
+
+#backlogs_container {
+
+    #backlogs_container .editing .editable {
+        display: none;
+    }
+
+    .editing .edit-actions {
+        white-space: nowrap;
+        margin-left: 5px;
+
+        a {
+            display: inline-block;
+            margin-bottom: 0;
+            text-align: center;
+            cursor: pointer;
+            font-weight: $btn-font-weight;
+            white-space: nowrap;
+            border: 1px solid;
+            @include button-size($input-padding-vertical, $input-padding-horizontal, $font-size-base, $line-height-base, $border-radius-base);
+            @include user-select(none);
+            @include transition(background-color ease-in-out .07s, border-color ease-in-out .07s, box-shadow ease-in-out .07s);
+
+            &.save {
+                @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+            }
+
+            &.cancel {
+                @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+            }
+
+            & + a {
+                margin-left: 3px;
+            }
+
+            &:hover,
+            &:active {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+/* In-place Story Editor */
+
+.debug {
+    .story {
+        .id,
+        .subject,
+        .status_id,
+        .story_points {
+            background-color: red;
+        }
+    }
+
+    .header {
+        .name,
+        .sprint_start_date,
+        .effective_date,
+        .actions {
+            background-color: red;
+        }
+    }
+
+    .menu,
+    .velocity,
+    #new_story {
+        background-color: red;
+    }
+}
+
+/* Naive but light handling of colors by user stories tracker */
+
+/* datepicker bugfix: hide until it opens itself */
+
+.ui-datepicker {
+    display: none;
+}
+
+/* show completed sprints */
+
+#show_completed_sprints {
+    margin-left: $padding-side / 2;
+    color: $gray-darkest;
+    cursor: pointer;
+}

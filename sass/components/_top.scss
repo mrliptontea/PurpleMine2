@@ -1,0 +1,163 @@
+//
+// Top menu
+// --------------------------------------------------
+
+#top-menu {
+    padding: $padding-small-vertical $padding-side;
+    background: $top-menu-bg;
+    color: $top-menu-text;
+    font-size: $font-size-small;
+    @extend %clearfix;
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        display: inline;
+        margin: 0 .5em 0 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    a {
+        color: $top-menu-link;
+        font-weight: bold;
+
+        &:hover {
+            color: $top-menu-link-hover;
+            text-decoration: none;
+        }
+    }
+
+    #loggedas {
+        float: right;
+    }
+}
+
+#account {
+    float: right;
+
+    > ul > li {
+        margin-left: .5em;
+        margin-right: 0;
+    }
+}
+
+
+//
+// Header
+// --------------------------------------------------
+
+#header {
+    background-color: $header-bg;
+    color: $header-text;
+    position: relative;
+
+    > h1 {
+        padding: 10px $padding-side;
+
+        > .root {
+            color: $header-root;
+            font-weight: 500;
+        }
+
+        > .ancestor {
+            font-size: 80%;
+        }
+    }
+
+    a {
+        color: $header-link;
+    }
+}
+
+#quick-search {
+    margin-top: ($header-title-line-height + $padding-large-vertical * 2 - $input-height-base - 1px) / 2;
+    margin-right: $padding-side;
+    float: right;
+    color: $header-text;
+
+    label {
+        font-weight: 500;
+    }
+
+    form {
+        display: inline;
+    }
+
+    input,
+    select {
+        margin-left: 5px;
+        color: $header-root;
+        background: darken($header-bg, 10%);
+        border-color: darken($header-bg, 15%);
+        @include transition(color ease-in-out .1s, background-color ease-in-out .1s, border-color ease-in-out .1s);
+
+        &:focus {
+            color: $input-color;
+            background-color: $input-bg;
+            border-color: darken($header-bg, 35%);
+            box-shadow: inset 0 1px 3px rgba(0,0,0,.3);
+        }
+    }
+
+    input {
+        width: 200px;
+    }
+}
+
+#main-menu {
+    background-color: $main-menu-bg;
+    border-bottom: 1px solid $main-menu-border;
+
+    ul {
+        margin: 0;
+        padding: 0 ($padding-side - $main-menu-padding-horizontal);
+        list-style: none;
+        color: $main-menu-link;
+        @extend %clearfix;
+
+        > li {
+            float: left;
+            margin-right: .5em;
+            margin-bottom: -1px;
+
+            > a {
+                display: block;
+                padding: $main-menu-padding-vertical 0;
+                @include transition(box-shadow .2s);
+
+                @media screen and (min-width: $screen-md-min) {
+                    padding-left: $main-menu-padding-horizontal;
+                    padding-right: $main-menu-padding-horizontal;
+                }
+
+                @media screen and (min-width: $screen-lg-min) {
+                    padding-left: $main-menu-padding-horizontal * 2;
+                    padding-right: $main-menu-padding-horizontal * 2;
+                }
+
+                &:hover,
+                &:focus {
+                    outline: 0 none;
+                    text-decoration: none;
+                    box-shadow: inset 0 (-$main-menu-shadow-width) 0 $main-menu-shadow-hover;
+                }
+
+                &.selected {
+                    padding-bottom: $main-menu-padding-vertical - $main-menu-shadow-width;
+                    color: $main-menu-link-active;
+                    border-bottom: 3px solid $main-menu-shadow-active;
+                    font-weight: bold;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+
+    a {
+        color: $main-menu-link;
+    }
+}

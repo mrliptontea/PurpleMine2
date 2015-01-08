@@ -1,0 +1,41 @@
+//
+// Media print specific styles
+// --------------------------------------------------
+
+@media print {
+    #top-menu,
+    #header,
+    #main-menu,
+    #sidebar,
+    #footer,
+    #wiki_add_attachment,
+    .hide-when-print,
+    .contextual,
+    .other-formats {
+        display: none;
+    }
+
+    #main {
+        background: #fff;
+    }
+
+    #content {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: #fff;
+        overflow: visible !important;
+    }
+
+    .autoscroll {
+        overflow-x: visible;
+    }
+
+    table.list {
+        th,
+        td {
+            border: 1px solid #aaa;
+        }
+    }
+}

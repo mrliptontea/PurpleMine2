@@ -1,0 +1,401 @@
+//
+// Variables
+// --------------------------------------------------
+
+
+//== Some key attributes
+//
+
+$fixed-layout:                  false !default;
+$sidebar-position:              left !default;
+$color-priorities:              true !default;
+$color-trackers:                true !default;
+$colored-issue:                 true !default;
+$use-gravatars:                 true !default;
+
+
+//== Colors
+//
+
+$holonglobe-body:               #584492 !default;
+$holonglobe-text:               #fff !default;
+$holonglobe-dot:                #deddef !default;
+
+$gray-base:                     #808080 !default;
+$gray-darkest:                  darken($gray-base, 40%) !default;
+$gray-darker:                   darken($gray-base, 33%) !default;
+$gray-dark:                     darken($gray-base, 17%) !default;
+$gray:                          $gray-base !default;
+$gray-light:                    lighten($gray-base, 17%) !default;
+$gray-lighter:                  lighten($gray-base, 35%) !default;
+$gray-lightest:                 lighten($gray-base, 46%) !default;
+
+$brand-primary:                 $holonglobe-body !default;
+$brand-text:                    $holonglobe-text !default;
+$brand-success:                 #019851 !default;
+$brand-info:                    #409ae3 !default;
+$brand-warning:                 #e67e22 !default;
+$brand-danger:                  #e74c3c !default;
+
+$state-success:                 #b5fbb7 !default;
+$state-info:                    #97cefb !default;
+$state-warning:                 #ffd699 !default;
+$state-danger:                  #f7a6a4 !default;
+
+
+//== Scaffolding
+//
+
+$body-bg:                       #fff !default;
+$text-color:                    $gray-dark !default;
+
+$link-color:                    #4183C4 !default;
+$link-hover-color:              darken($link-color, 10%) !default;
+$link-hover-decoration:         underline !default;
+$link-closed-decoration:        line-through !default;
+$link-color-issue-closed:       $gray !default;
+$link-color-project-closed:     $gray !default;
+$link-color-user-locked:        $gray !default;
+
+
+//== Typography
+//
+
+$font-family-sans-serif:        "Helvetica Neue", Helvetica, Arial, freesans, sans-serif !default;
+
+$font-family-monospace:         Consolas, "Liberation Mono", Menlo, "Courier New", Courier, monospace !default;
+$font-family-base:              $font-family-sans-serif !default;
+
+$font-size-base:                14px !default;
+$font-size-large:               1.285em !default;
+$font-size-large-px:            18px !default;
+$font-size-small:               .86em !default;
+$font-size-small-px:            12px !default;
+
+$font-size-h1:                  2.285em !default;
+$font-size-h2:                  1.857em !default;
+$font-size-h3:                  1.5em !default;
+$font-size-h4:                  1.286em !default;
+$font-size-h5:                  1em !default;
+$font-size-h6:                  1em !default;
+
+$line-height-base:              1.428571429 !default; // 20/14
+$line-height-computed:          floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+$headings-font-weight:          700 !default;
+$headings-line-height:          1.2 !default;
+
+
+//== Wiki
+//
+
+$wiki-text:                     #333 !default;
+$wiki-font-size:                16px !default;
+$wiki-line-height:              1.6 !default;
+
+
+//== Components
+//
+
+$padding-base-vertical:         6px !default;
+$padding-base-horizontal:       12px !default;
+$padding-large-vertical:        10px !default;
+$padding-large-horizontal:      16px !default;
+$padding-small-vertical:        5px !default;
+$padding-small-horizontal:      10px !default;
+
+$padding-side:                  20px !default;
+$padding-wiki:                  20px !default;
+
+$border-radius-base:            3px !default;
+$border-radius-large:           4px !default;
+$border-radius-small:           2px !default;
+
+$hr-border:                     $gray-light !default;
+$abbr-border-color:             $gray-light !default;
+$blockquote-border-color:       $gray-lighter !default;
+
+$component-active-color:        $brand-text !default;
+$component-active-bg:           $brand-primary !default;
+$component-active-border:       $brand-primary !default;
+
+$font-size-list:                .92em !default;
+
+
+//== Tables
+//
+
+$table-cell-padding:            8px !default;
+$table-condensed-cell-padding:  5px !default;
+
+$table-bg:                      transparent !default;
+$table-bg-accent:               darken($body-bg, 3%) !default;
+$table-bg-hover:                #f1f1f1 !default;
+$table-bg-active:               $table-bg-hover !default;
+
+$table-border-color:            darken($body-bg, 13.5%) !default;
+
+
+//== Trackers priorities
+//
+
+$priority-lowest-bg:            #defacb !default;
+$priority-lowest-text:          #565 !default;
+$priority-lowest-link:          #265 !default;
+
+$priority-default-bg:           #fff !default;
+$priority-default-text:         $text-color !default;
+$priority-default-link:         $link-color !default;
+
+$priority-high3-bg:             #d5eaff !default;
+$priority-high3-text:           #556 !default;
+$priority-high3-link:           #336 !default;
+
+$priority-high2-bg:             #ffe1d7 !default;
+$priority-high2-text:           #930 !default;
+$priority-high2-link:           #624 !default;
+
+$priority-highest-bg:           #ffa5a5 !default;
+$priority-highest-text:         #900 !default;
+$priority-highest-link:         #403 !default;
+
+
+//== Trackers links
+//
+
+$tracker-inline-padding:        2px 5px !default;
+$tracker-list-padding:          0 6px !default;
+
+$tracker-1-bg:                  $brand-danger !default;
+$tracker-1-text:                $brand-text !default;
+
+$tracker-2-bg:                  $brand-primary !default;
+$tracker-2-text:                $brand-text !default;
+
+$tracker-3-bg:                  $brand-warning !default;
+$tracker-3-text:                $brand-text !default;
+
+$tracker-4-bg:                  $brand-info !default;
+$tracker-4-text:                $brand-text !default;
+
+$tracker-5-bg:                  $brand-success !default;
+$tracker-5-text:                $brand-text !default;
+
+$tracker-6-bg:                  mix($brand-success, $brand-info, 50%) !default;
+$tracker-6-text:                $brand-text !default;
+
+$tracker-7-bg:                  mix($brand-primary, $brand-warning, 50%) !default;
+$tracker-7-text:                $brand-text !default;
+
+
+//== Diffs
+//
+
+$diff-out-color:                #522;
+$diff-out-bg:                   #fac0d8;
+$diff-out-bg-light:             #fcdcf1;
+
+$diff-in-color:                 #350;
+$diff-in-bg:                    #c8fbbf;
+$diff-in-bg-light:              #e1fcd8;
+
+//== Buttons
+//
+
+$btn-font-weight:               normal !default;
+
+$btn-default-color:             $gray-darkest !default;
+$btn-default-bg:                $gray-lightest !default;
+$btn-default-border:            $gray-lighter !default;
+
+$btn-primary-color:             #fff !default;
+$btn-primary-bg:                $brand-info !default;
+$btn-primary-border:            darken($btn-primary-bg, 5%) !default;
+
+$btn-success-color:             #fff !default;
+$btn-success-bg:                $brand-success !default;
+$btn-success-border:            darken($btn-success-bg, 5%) !default;
+
+
+//== Forms
+//
+
+$input-bg:                      #fff !default;
+$input-bg-disabled:             $gray-lighter !default;
+
+$input-color:                   $gray-dark !default;
+$input-border:                  #ccc !default;
+
+$input-border-radius:           $border-radius-small !default;
+
+$input-border-focus:            #51a7e8 !default;
+$input-color-placeholder:       #999 !default;
+
+$input-padding-vertical:        3px;
+$input-padding-horizontal:      8px;
+
+$input-height-base:             ($line-height-computed + ($input-padding-vertical * 2) + 2) !default;
+
+$label-width:                   160px;
+$label-wide-width:              280px;
+$label-space:                   10px;
+
+$legend-color:                  $gray-dark !default;
+$legend-border-color:           #e5e5e5 !default;
+
+
+//== Top
+//
+
+$top-menu-bg:                   darken($holonglobe-body, 15%) !default;
+$top-menu-text:                 $holonglobe-dot !default;
+$top-menu-link:                 $holonglobe-dot !default;
+$top-menu-link-hover:           $holonglobe-text !default;
+
+$header-bg:                     $holonglobe-body !default;
+$header-text:                   $holonglobe-text !default;
+$header-link:                   $holonglobe-text !default;
+$header-root:                   $holonglobe-dot !default;
+$header-title-size:             $font-size-h3 !default;
+$header-title-line-height:      $line-height-computed * 1.5 !default;
+
+$main-menu-bg:                  $gray-lightest !default;
+$main-menu-link:                $gray-darker !default;
+$main-menu-link-active:         #000 !default;
+$main-menu-border:              $gray-lighter !default;
+$main-menu-shadow-hover:        $gray-light !default;
+$main-menu-shadow-width:        3px !default;
+$main-menu-shadow-active:       $brand-primary !default;
+$main-menu-padding-vertical:    $padding-large-vertical !default;
+$main-menu-padding-horizontal:  5px !default;
+
+
+//== Pagination
+//
+
+$pagination-color:                     $link-color !default;
+$pagination-bg:                        #fff !default;
+$pagination-border:                    #ddd !default;
+
+$pagination-hover-color:               $link-hover-color !default;
+$pagination-hover-bg:                  $gray-lightest !default;
+$pagination-hover-border:              #ddd !default;
+
+$pagination-active-color:              #fff !default;
+$pagination-active-bg:                 $brand-primary !default;
+$pagination-active-border:             $brand-primary !default;
+
+
+//== Tabs
+//
+
+$tab-padding-vertical:          5px !default;
+$tab-padding-horizontal:        8px !default;
+$tab-border:                    $gray-lighter !default;
+$tab-hover-bg:                  $gray-lightest !default;
+$tab-hover-border:              $tab-hover-bg !default;
+$tab-active-bg:                 $body-bg !default;
+$tab-active-text:               $text-color !default;
+$tab-active-border:             $tab-border !default;
+
+
+//== Content and sidebar
+//
+
+$sidebar-width:                 270px !default;
+$sidebar-padding-vertical:      $padding-base-vertical !default;
+$sidebar-padding-horizontal:    $padding-side !default;
+$sidebar-link-hover-bg:         $gray-lightest !default;
+$sidebar-link-active-bg:        $body-bg !default;
+$sidebar-link-active-border:    $gray-lighter !default;
+$sidebar-link-active-side:      $brand-danger !default;
+$sidebar-link-active-text:      $gray-darkest !default;
+
+
+//== Flash messages (alerts)
+//
+
+$flash-success-bg:              #5cb85c !default;
+$flash-success-border:          darken($flash-success-bg, 5%) !default;
+$flash-success-text:            #fff !default;
+$flash-success-link:            #fff !default;
+
+$flash-warning-bg:              #fde3a7 !default;
+$flash-warning-border:          darken($flash-warning-bg, 15%) !default;
+$flash-warning-text:            #b45e10 !default;
+$flash-warning-link:            #a0540e !default;
+
+$flash-error-bg:                #d9534f !default;
+$flash-error-border:            darken($flash-error-bg, 5%) !default;
+$flash-error-text:              #fff !default;
+$flash-error-link:              #fff !default;
+
+
+//== Progress bars
+//
+
+$progress-bg:                   #fff !default;
+$progress-bar-bg:               $brand-primary !default;
+$progress-bar-success-bg:       lighten($brand-success, 10%) !default;
+$progress-bar-danger-bg:        lighten($brand-danger, 10%) !default;
+$progress-bar-info-bg:          lighten($brand-info, 20%) !default;
+
+
+//== Panels
+//
+
+$panel-body-padding:            15px !default;
+$panel-color:                   #555 !default;
+$panel-bg:                      #f5f5f5 !default;
+$panel-border:                  #ccc !default;
+$panel-border-radius:           $border-radius-base !default;
+$panel-shadow:                  0 1px 2px rgba(#000, .1),
+                                0 3px 8px rgba(#000, .07) !default;
+
+
+//== Tooltips
+//
+
+$tooltip-bg:                    #fff9c8 !default;
+$tooltip-border:                #ccb37b !default;
+$tooltip-text:                  #755e40 !default;
+$tooltip-link:                  #005f97 !default;
+
+
+//== Issue
+//
+
+$issue-bg:                      #f9f9f9 !default;
+$issue-border:                  #ccc !default;
+$issue-text:                    $text-color !default;
+
+$issue-padding:                 15px !default;
+$issue-gravatar-size:           50px !default;
+$issue-heading-size:            1.5 !default;
+
+
+//== Media queries breakpoints
+//
+
+$screen-xs:                     480px !default;
+
+$screen-sm:                     768px !default;
+$screen-sm-min:                 $screen-sm !default;
+
+$screen-md:                     992px !default;
+$screen-md-min:                 $screen-md !default;
+
+$screen-lg:                     1200px !default;
+$screen-lg-min:                 $screen-lg !default;
+
+$screen-xs-max:                 ($screen-sm-min - 1) !default;
+$screen-sm-max:                 ($screen-md-min - 1) !default;
+$screen-md-max:                 ($screen-lg-min - 1) !default;
+
+
+//== Content widths
+//
+
+$width-sm:                      $screen-sm - ($padding-side * 2);
+$width-md:                      $screen-md - ($padding-side * 2);
+$width-lg:                      $screen-lg - ($padding-side * 2);

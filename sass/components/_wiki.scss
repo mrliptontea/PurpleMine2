@@ -1,0 +1,233 @@
+div.wiki {
+    line-height: $wiki-line-height;
+    color: $wiki-text;
+
+    &.wiki-page {
+        font-size: $wiki-font-size;
+        margin-bottom: $line-height-computed;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: $headings-font-weight;
+        line-height: $headings-line-height;
+        margin-top: 1em;
+        margin-bottom: .5em;
+    }
+
+    h1 { font-size: $font-size-h1; }
+    h2 { font-size: $font-size-h2; }
+    h3 { font-size: $font-size-h3; }
+    h4 { font-size: $font-size-h4; }
+    h5 { font-size: $font-size-h5; }
+    h6 { font-size: $font-size-h6; }
+
+    h1,
+    h2 {
+        padding-bottom: 0.3em;
+        border-bottom: 1px solid $gray-lighter;
+    }
+
+    h6 {
+        color: $gray;
+    }
+
+    > a:first-child {
+        & + h1,
+        & + h2,
+        & + h3,
+        & + h4,
+        & + h5,
+        & + h6 {
+            margin-top: 0;
+        }
+    }
+
+    > *:last-child {
+        margin-bottom: 0;
+    }
+
+    .contextual {
+        a {
+            opacity: 0.4;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    table {
+        margin-bottom: $line-height-computed;
+        border: 1px solid $table-border-color;
+    }
+
+    td, th {
+        border: 1px solid $table-border-color;
+        padding: $table-cell-padding;
+    }
+
+    .noborder {
+        border: 0 none;
+
+        td, th {
+            border: 0 none;
+        }
+    }
+
+    .external {
+        padding-left: 12px;
+        background-position: 0% 60%;
+        background-repeat: no-repeat;
+        background-image: url(../../../images/external.png);
+    }
+
+    a.new {
+        color: $brand-danger;
+    }
+
+    code {
+        padding: .2em .33em;
+        background-color: #f7f7f7;
+        border-radius: $border-radius-base;
+        font-size: $font-size-small;
+    }
+
+    pre {
+        padding: 4px 8px;
+        background-color: #f7f7f7;
+        border: 1px solid #e9e9e9;
+        width: auto;
+        overflow-x: auto;
+        overflow-y: hidden;
+        border-radius: $border-radius-base;
+        font-size: $font-size-small;
+
+        code {
+            padding: 0;
+            background-color: transparent;
+            border-radius: 0;
+            font-size: 1em;
+        }
+    }
+
+    .toc {
+        padding: 0;
+        margin-bottom: $line-height-computed;
+        margin-left: 0;
+
+        &.right,
+        &.left {
+            padding: 8px;
+            background-color: $tooltip-bg;
+            border: 1px solid $tooltip-border;
+            border-radius: $border-radius-base;
+            box-shadow: $panel-shadow;
+
+            a {
+                font-weight: normal;
+                text-decoration: none;
+                color: $tooltip-text;
+
+                &:hover {
+                    color: darken($tooltip-text, 10%);
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        &.right {
+            float: right;
+            margin-left: $line-height-computed;
+            margin-right: 0;
+        }
+
+        &.left {
+            float: left;
+            margin-right: $line-height-computed;
+            margin-left: 0;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            font-size: $font-size-small;
+
+            ul ul {
+                font-size: 1em;
+            }
+        }
+
+        li {
+            list-style-type: none;
+            margin: 0;
+
+            li {
+                margin-left: 1.5em;
+            }
+        }
+
+        img {
+            vertical-align: middle;
+            max-width: 100%;
+        }
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    .wiki-anchor {
+        display: none;
+        margin-left: 5px;
+        text-decoration: none !important;
+        color: $gray-lighter !important;
+    }
+
+    &:hover {
+        .wiki-anchor {
+            display: inline;
+        }
+    }
+}
+
+p.footnote {
+    font-size: $font-size-small;
+    margin-bottom: 5px;
+
+    &:before {
+        content: "";
+        display: block;
+        width: 300px;
+        margin-top:  10px;
+        padding-top: 10px;
+        border-top: 1px solid $gray-lighter;
+    }
+
+    & + p.footnote:before {
+        display: none;
+    }
+}
+
+#preview fieldset {
+    margin-top: $line-height-computed;
+    padding: $padding-wiki;
+    background-image: url(../../../images/draft.png);
+}
+
+#wiki_add_attachment {
+    padding-top: $line-height-computed;
+    border-top: 1px solid $gray-lighter;
+
+    > p {
+        float: left;
+    }
+
+    #add_attachment_form {
+        clear: left;
+    }
+}
+
+.controller-wiki.action-show {
+    .other-formats {
+        float: right;
+        margin-top: 0;
+    }
+}

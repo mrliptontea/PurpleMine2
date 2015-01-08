@@ -1,0 +1,202 @@
+//
+// Buttons
+// --------------------------------------------------
+
+.icon {
+    background-position: 0% 50%;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+    padding-top: 2px;
+    padding-bottom: 3px;
+}
+
+.icon-add {
+    background-image: url(../../../images/add.png);
+}
+
+.icon-edit {
+    background-image: url(../../../images/edit.png);
+}
+
+.icon-copy {
+    background-image: url(../../../images/copy.png);
+}
+
+.icon-duplicate {
+    background-image: url(../../../images/duplicate.png);
+}
+
+.icon-del {
+    background-image: url(../../../images/delete.png);
+}
+
+.icon-move {
+    background-image: url(../../../images/move.png);
+}
+
+.icon-save {
+    background-image: url(../../../images/save.png);
+}
+
+.icon-cancel {
+    background-image: url(../../../images/cancel.png);
+}
+
+.icon-multiple {
+    background-image: url(../../../images/table_multiple.png);
+}
+
+.icon-folder {
+    background-image: url(../../../images/folder.png);
+}
+
+.open .icon-folder {
+    background-image: url(../../../images/folder_open.png);
+}
+
+.icon-package {
+    background-image: url(../../../images/package.png);
+}
+
+.icon-user {
+    background-image: url(../../../images/user.png);
+}
+
+.icon-projects {
+    background-image: url(../../../images/projects.png);
+}
+
+.icon-help {
+    background-image: url(../../../images/help.png);
+}
+
+.icon-attachment {
+    background-image: url(../../../images/attachment.png);
+}
+
+.icon-history {
+    background-image: url(../../../images/history.png);
+}
+
+.icon-time {
+    background-image: url(../../../images/time.png);
+}
+
+.icon-time-add {
+    background-image: url(../../../images/time_add.png);
+}
+
+.icon-stats {
+    background-image: url(../../../images/stats.png);
+}
+
+.icon-warning {
+    background-image: url(../../../images/warning.png);
+}
+
+.icon-fav {
+    background-image: url(../../../images/fav.png);
+}
+
+.icon-fav-off {
+    background-image: url(../../../images/fav_off.png);
+}
+
+.icon-reload {
+    background-image: url(../../../images/reload.png);
+}
+
+.icon-lock {
+    background-image: url(../../../images/locked.png);
+}
+
+.icon-unlock {
+    background-image: url(../../../images/unlock.png);
+}
+
+.icon-checked {
+    background-image: url(../../../images/true.png);
+}
+
+.icon-details {
+    background-image: url(../../../images/zoom_in.png);
+}
+
+.icon-report {
+    background-image: url(../../../images/report.png);
+}
+
+.icon-comment {
+    background-image: url(../../../images/comment.png);
+}
+
+.icon-summary {
+    background-image: url(../../../images/lightning.png);
+}
+
+.icon-server-authentication {
+    background-image: url(../../../images/server_key.png);
+}
+
+.icon-issue {
+    background-image: url(../../../images/ticket.png);
+}
+
+.icon-zoom-in {
+    background-image: url(../../../images/zoom_in.png);
+}
+
+.icon-zoom-out {
+    background-image: url(../../../images/zoom_out.png);
+}
+
+.icon-passwd {
+    background-image: url(../../../images/textfield_key.png);
+}
+
+.icon-test {
+    background-image: url(../../../images/bullet_go.png);
+}
+
+.icon-file {
+    background-image: url(../../../images/files/default.png);
+    &.text-plain {
+        background-image: url(../../../images/files/text.png);
+    }
+    &.text-x-c {
+        background-image: url(../../../images/files/c.png);
+    }
+    &.text-x-csharp {
+        background-image: url(../../../images/files/csharp.png);
+    }
+    &.text-x-java {
+        background-image: url(../../../images/files/java.png);
+    }
+    &.text-x-javascript {
+        background-image: url(../../../images/files/js.png);
+    }
+    &.text-x-php {
+        background-image: url(../../../images/files/php.png);
+    }
+    &.text-x-ruby {
+        background-image: url(../../../images/files/ruby.png);
+    }
+    &.text-xml {
+        background-image: url(../../../images/files/xml.png);
+    }
+    &.text-css {
+        background-image: url(../../../images/files/css.png);
+    }
+    &.text-html {
+        background-image: url(../../../images/files/html.png);
+    }
+    &.image-gif, &.image-jpeg, &.image-png, &.image-tiff {
+        background-image: url(../../../images/files/image.png);
+    }
+    &.application-pdf {
+        background-image: url(../../../images/files/pdf.png);
+    }
+    &.application-zip, &.application-x-gzip {
+        background-image: url(../../../images/files/zip.png);
+    }
+}

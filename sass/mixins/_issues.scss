@@ -1,0 +1,130 @@
+// Priority highlight
+
+@mixin priority($parent, $background, $color, $link) {
+    $border-color: darken(desaturate($background, 30%), 13.5%);
+
+    tr#{$parent} {
+        background: $background;
+        color: $color;
+
+        &.odd {
+            background: darken($background, 3%);
+        }
+
+        td {
+            border-color: $border-color;
+        }
+
+        a {
+            color: $link;
+
+            &:hover {
+                color: darken($link, 10%);
+            }
+        }
+    }
+
+    @if $colored-issue {
+        .issue.details#{$parent} {
+            color: $color;
+
+            @if '.priority-default' == $parent {
+                $border-color: $issue-border;
+                background: $issue-bg;
+            } @else {
+                background: $background;
+            }
+
+            &,
+            hr {
+                border-color: $border-color;
+            }
+
+            a {
+                color: $link;
+
+                &:hover {
+                    color: darken($link, 10%);
+                }
+            }
+
+            .next-prev-links {
+                color: mix($color, $gray-light, 25%);
+            }
+
+            > .description > .wiki {
+                border-top-color: $border-color;
+
+                a {
+                    color: $link-color;
+                    text-decoration: none;
+
+                    &:hover,
+                    &:focus {
+                        color: $link-hover-color;
+                        text-decoration: $link-hover-decoration;
+                    }
+
+                    &.new {
+                        color: $brand-danger;
+                    }
+                }
+            }
+
+            > .attachments {
+                background-color: lighten($background, 5%);
+                border-top-color: lighten($border-color, 5%);
+
+                span.author {
+                    color: mix($color, $gray, 25%);
+                }
+            }
+        }
+    }
+}
+
+
+// Tracker highlight
+
+@mixin tracker($parent, $background, $color) {
+    tr#{$parent} .id > a,
+    a#{$parent} {
+        color: $color;
+        background-color: $background;
+        border-radius: $border-radius-small ($border-radius-small * 3) ($border-radius-small * 3) $border-radius-small;
+
+        &:hover {
+            text-decoration: none;
+            background-color: darken($background, 10%);
+        }
+    }
+
+    a#{$parent} {
+        padding: $tracker-inline-padding;
+        margin-right: 1px;
+
+        &.closed {
+            color: mix($color, $background, 50%);
+            text-decoration: $link-closed-decoration;
+        }
+    }
+
+    tr#{$parent} .id > a {
+        display: block;
+        padding: $tracker-list-padding;
+
+        &:before {
+            content: '#';
+            color: mix($color, $background, 50%);
+        }
+    }
+
+    @if $colored-issue {
+        .issue.details a#{$parent} {
+            &,
+            &:hover {
+                color: $color;
+            }
+        }
+    }
+}

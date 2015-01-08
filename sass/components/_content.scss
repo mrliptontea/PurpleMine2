@@ -1,0 +1,152 @@
+#main {
+    @extend %clearfix;
+}
+
+
+//
+// Main container
+// --------------------------------------------------
+
+#content {
+    overflow: hidden;
+    padding: $padding-side;
+}
+
+
+//
+// Sidebar
+// --------------------------------------------------
+
+#sidebar {
+    float: $sidebar-position;
+    width: $sidebar-width - ($sidebar-padding-horizontal * 2) - 1px;
+    padding: $padding-side $sidebar-padding-horizontal;
+
+    @media screen and (min-width: 1px) {
+        $border: $sidebar-link-active-border;
+        $body:   $body-bg;
+        background-image: -webkit-linear-gradient($body 1%, $border 10%, $border 85%, $body);
+        background-image:      -o-linear-gradient($body 1%, $border 10%, $border 85%, $body);
+        background-image:         linear-gradient($body 1%, $border 10%, $border 85%, $body);
+        background-repeat: no-repeat;
+        background-size: 1px 100%;
+        padding-bottom: $padding-side * 3;
+
+        @if $sidebar-position == 'left' {
+            padding-right: $sidebar-padding-horizontal + 1px;
+            background-position: right 0;
+            box-shadow: inset -9px 0 6px -6px rgba(0, 0, 0, .05);
+        } @else {
+            padding-left: $sidebar-padding-horizontal + 1px;
+            background-position: left 0;
+            box-shadow: inset 9px 0 6px -6px rgba(0, 0, 0, .05);
+        }
+    }
+
+    .nosidebar & {
+        float: none;
+        width: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    h3 {
+        margin-top: $line-height-computed * 1.5;
+    }
+
+    > h3:first-child,
+    > form:first-child > h3 {
+        margin-top: 0;
+    }
+
+    ul {
+        margin: 0 0 ($line-height-computed / 2);
+        padding: 0;
+
+        @if $sidebar-position == 'left' {
+            margin-right: -($sidebar-padding-horizontal);
+        } @else {
+            margin-left: -($sidebar-padding-horizontal);
+        }
+    }
+
+    li {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+
+        > a {
+            display: block;
+            border: 1px solid transparent;
+            padding: $sidebar-padding-vertical $sidebar-padding-horizontal;
+
+            @if $sidebar-position == 'left' {
+                border-left-width: 3px;
+                border-radius: $border-radius-large 0 0 $border-radius-large;
+            } @else {
+                border-right-width: 3px;
+                border-radius: 0 $border-radius-large $border-radius-large 0;
+            }
+
+            &:hover {
+                background-color: $sidebar-link-hover-bg;
+                text-decoration: none;
+            }
+
+            &.selected {
+                background-color: $sidebar-link-active-bg;
+                color: $sidebar-link-active-text;
+                border-color: $sidebar-link-active-border;
+
+                @if $sidebar-position == 'left' {
+                    margin-right: -1px;
+                    border-left-color: $sidebar-link-active-side;
+                    border-right-color: $body-bg;
+                    box-shadow: -3px 1px 2px rgba(0, 0, 0, .1);
+                } @else {
+                    margin-left: -1px;
+                    border-left-color: $body-bg;
+                    border-right-color: $sidebar-link-active-side;
+                    box-shadow: 3px 1px 2px rgba(0, 0, 0, .1);
+                }
+            }
+        }
+    }
+}
+
+#footer {
+    font-size: $font-size-small;
+    margin: $line-height-computed $padding-side;
+    padding-top: $line-height-computed;
+    color: $gray-light;
+    border-top: 1px solid $gray-lighter;
+}
+
+@if $fixed-layout {
+    @media screen and (min-width: $screen-sm) {
+        #main-menu ul,
+        #main {
+            width: $width-sm;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    @media screen and (min-width: $screen-md) {
+        #main-menu ul,
+        #main {
+            width: $width-md;
+        }
+    }
+
+    @media screen and (min-width: $screen-lg) {
+        #main-menu ul,
+        #main {
+            width: $width-lg;
+        }
+    }
+
+    #main-menu ul > li > a {
+        padding: $main-menu-padding-vertical 1px;
+    }
+}

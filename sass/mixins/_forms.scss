@@ -1,0 +1,42 @@
+// Form control focus state
+//
+@mixin form-control-focus($color: $input-border-focus) {
+    &:focus {
+        border-color: $color;
+        outline: 0;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075), 0 0 5px rgba($color, .5);
+    }
+}
+
+// Form control sizing
+//
+@mixin input-size($parent, $input-height, $padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+    #{$parent} {
+        height: $input-height;
+        padding: $padding-vertical $padding-horizontal;
+        font-size: $font-size;
+        line-height: $line-height;
+        border-radius: $border-radius;
+    }
+
+    select#{$parent} {
+        height: $input-height;
+        line-height: $input-height;
+    }
+
+    textarea#{$parent},
+    select[multiple]#{$parent} {
+        height: auto;
+    }
+}
+
+@mixin checkbox() {
+    padding-left: 20px;
+    @include user-select(none);
+    @extend %clearfix;
+
+    input[type="checkbox"] {
+        float: left;
+        margin-left: -20px;
+    }
+}
