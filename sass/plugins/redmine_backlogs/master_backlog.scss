@@ -13,6 +13,10 @@ $story-id-width:                51px;
 $story-project-width:           50px;
 $story-status-width:            90px;
 
+$story-tracker-input-width:     100px;
+$story-status-input-width:      115px;
+$story-sp-input-width:          45px;
+
 @mixin rb-tracker($parent, $background, $color) {
     #{$parent} .id .t a {
         color: $color;
@@ -26,13 +30,6 @@ $story-status-width:            90px;
             text-decoration: none;
             background-color: darken($background, 10%);
         }
-
-        /*
-        &.closed {
-            color: mix($color, $background, 50%);
-            text-decoration: $link-closed-decoration;
-        }
-        */
     }
 }
 
@@ -546,24 +543,24 @@ $story-status-width:            90px;
 
                 &.tracker_id {
                     display: block;
-                    width: 100px;
+                    width: $story-tracker-input-width;
                     float: left;
                 }
 
                 &.status_id {
                     float: left;
-                    width: 120px;
+                    width: $story-status-input-width;
                 }
 
                 &.story_points {
                     float: left;
-                    width: 60px;
+                    width: $story-sp-input-width;
                     margin-right: 0;
                 }
 
                 &.subject {
                     float: left;
-                    $subject-width-minus: 100px + 120px + 60px + 5px * 3;
+                    $subject-width-minus: $story-tracker-input-width + $story-status-input-width + $story-sp-input-width + 5px * 3;
                     width: calc(100% - #{$subject-width-minus}) !important;
                     height: 60px;
                     overflow: auto;
@@ -674,7 +671,6 @@ $story-status-width:            90px;
 
     .editing .edit-actions {
         white-space: nowrap;
-        margin-left: 5px;
 
         a {
             display: inline-block;
@@ -703,6 +699,12 @@ $story-status-width:            90px;
             &:hover,
             &:active {
                 text-decoration: none;
+            }
+
+            @media screen and (max-width: $screen-md-max) {
+                font-size: $font-size-small-px;
+                line-height: $line-height-computed;
+                padding: $input-padding-vertical;
             }
         }
     }

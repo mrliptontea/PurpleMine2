@@ -17,10 +17,6 @@ $use-gravatars:                 true !default;
 //== Colors
 //
 
-$holonglobe-body:               #584492 !default;
-$holonglobe-text:               #fff !default;
-$holonglobe-dot:                #deddef !default;
-
 $gray-base:                     #808080 !default;
 $gray-darkest:                  darken($gray-base, 40%) !default;
 $gray-darker:                   darken($gray-base, 33%) !default;
@@ -30,11 +26,13 @@ $gray-light:                    lighten($gray-base, 17%) !default;
 $gray-lighter:                  lighten($gray-base, 35%) !default;
 $gray-lightest:                 lighten($gray-base, 46%) !default;
 
-$brand-primary:                 $holonglobe-body !default;
-$brand-text:                    $holonglobe-text !default;
+$brand-primary:                 #584492 !default;
+$brand-text:                    #fff !default;
+$brand-accent:                  #deddef !default;
+
 $brand-success:                 #019851 !default;
 $brand-info:                    #409ae3 !default;
-$brand-warning:                 #e67e22 !default;
+$brand-warning:                 #ff7300 !default;
 $brand-danger:                  #e74c3c !default;
 
 $state-success:                 #b5fbb7 !default;
@@ -115,6 +113,10 @@ $hr-border:                     $gray-light !default;
 $abbr-border-color:             $gray-light !default;
 $blockquote-border-color:       $gray-lighter !default;
 
+$component-color:               $gray-dark !default;
+$component-bg:                  lighten($gray-lightest, 2%) !default;
+$component-border:              lighten($gray-lighter, 2%) !default;
+
 $component-active-color:        $brand-text !default;
 $component-active-bg:           $brand-primary !default;
 $component-active-border:       $brand-primary !default;
@@ -172,13 +174,13 @@ $tracker-1-text:                $brand-text !default;
 $tracker-2-bg:                  $brand-primary !default;
 $tracker-2-text:                $brand-text !default;
 
-$tracker-3-bg:                  $brand-warning !default;
+$tracker-3-bg:                  $brand-success !default;
 $tracker-3-text:                $brand-text !default;
 
 $tracker-4-bg:                  $brand-info !default;
 $tracker-4-text:                $brand-text !default;
 
-$tracker-5-bg:                  $brand-success !default;
+$tracker-5-bg:                  $brand-warning !default;
 $tracker-5-text:                $brand-text !default;
 
 $tracker-6-bg:                  mix($brand-success, $brand-info, 50%) !default;
@@ -247,15 +249,15 @@ $legend-border-color:           #e5e5e5 !default;
 //== Top
 //
 
-$top-menu-bg:                   darken($holonglobe-body, 15%) !default;
-$top-menu-text:                 $holonglobe-dot !default;
-$top-menu-link:                 $holonglobe-dot !default;
-$top-menu-link-hover:           $holonglobe-text !default;
+$top-menu-bg:                   darken($brand-primary, 15%) !default;
+$top-menu-text:                 $brand-accent !default;
+$top-menu-link:                 $brand-accent !default;
+$top-menu-link-hover:           $brand-text !default;
 
-$header-bg:                     $holonglobe-body !default;
-$header-text:                   $holonglobe-text !default;
-$header-link:                   $holonglobe-text !default;
-$header-root:                   $holonglobe-dot !default;
+$header-bg:                     $brand-primary !default;
+$header-text:                   $brand-text !default;
+$header-link:                   $brand-text !default;
+$header-root:                   $brand-accent !default;
 $header-title-size:             $font-size-h3 !default;
 $header-title-line-height:      $line-height-computed * 1.5 !default;
 
