@@ -1,7 +1,24 @@
 {
-"version": 3,
-"mappings": "AAGI,iBACG,CACC,OAAO,CAAE,OAAiD,CAIlE,UAAW,CACP,aAAa,CCsEe,IAA4C,CDnE5E,MAAO,CACH,UAAU,CAAE,MAAM,CAClB,KAAK,CAAE,KAAK,CACZ,SAAS,CAAE,KAAK,CAChB,OAAO,CAAE,YAAY,CAGzB,QAAS,CACL,gBAAgB,CAAE,OAAO,CAG7B,QAAS,CACL,gBAAgB,CAAE,OAAO,CAG7B,QAAS,CACL,gBAAgB,CAAE,OAAO,CAG7B,QAAS,CACL,gBAAgB,CAAE,OAAO,CAG7B,QAAS,CACL,gBAAgB,CAAE,OAAO,CAG7B,QAAS,CACL,gBAAgB,CAAE,OAAO,CAG7B,QAAS,CACL,gBAAgB,CAAE,OAAO,CAG7B,QAAS,CACL,gBAAgB,CAAE,OAAO,CAG7B,QAAS,CACL,gBAAgB,CAAE,OAAO,CAG7B,QAAS,CACL,gBAAgB,CAAE,OAAO,CAG7B,SAAU,CACN,gBAAgB,CAAE,OAAO",
-"sources": ["../../sass/plugins/redmine_backlogs/statistics.scss","../../sass/_variables.scss"],
-"names": [],
-"file": "statistics.css"
+	"version": 3,
+	"file": "statistics.css",
+	"sources": [
+		"../../sass/plugins/redmine_backlogs/statistics.scss",
+		"../../sass/plugins/redmine_backlogs/_common.scss",
+		"../../sass/_variables.scss",
+		"../../sass/_mixins.scss",
+		"../../sass/mixins/_buttons.scss",
+		"../../sass/mixins/_center-block.scss",
+		"../../sass/mixins/_clearfix.scss",
+		"../../sass/mixins/_forms.scss",
+		"../../sass/mixins/_gradients.scss",
+		"../../sass/mixins/_opacity.scss",
+		"../../sass/mixins/_reset-filter.scss",
+		"../../sass/mixins/_tab-focus.scss",
+		"../../sass/mixins/_text-overflow.scss",
+		"../../sass/mixins/_vendor-prefixes.scss",
+		"../../sass/mixins/_issues.scss"
+	],
+	"sourcesContent": [],
+	"mappings": "AAEA,AAAM,AAAI,AAAM,AAGR,AAAS,AAIjB,AACI,AEsE4B,AFnEhC,AACI,AAAY,AACZ,AAAO,AACP,AAAW,AACX,AAAS,AAGb,AACI,AAAkB,AAGtB,AACI,AAAkB,AAGtB,AACI,AAAkB,AAGtB,AACI,AAAkB,AAGtB,AACI,AAAkB,AAGtB,AACI,AAAkB,AAGtB,AACI,AAAkB,AAGtB,AACI,AAAkB,AAGtB,AACI,AAAkB,AAGtB,AACI,AAAkB,AAGtB,AACI,AAAkB",
+	"names": []
 }

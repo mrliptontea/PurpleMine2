@@ -7,18 +7,16 @@ module.exports = function(grunt) {
       " * Copyright (c) <%= grunt.template.today('yyyy') %> <%= pkg.author %>\n */\n\n",
 
     sass: {
+      options: {
+        sourceMap: true,
+        outputStyle: 'compressed'
+      },
       dist: {
-        options: {
-          style: 'compressed'
-        },
         files: {
           'stylesheets/application.css': 'sass/application.scss'
         }
       },
       redmine_backlogs: {
-        options: {
-          style: 'compressed'
-        },
         files: {
           'plugins/redmine_backlogs/global.css':         'sass/plugins/redmine_backlogs/global.scss',
           'plugins/redmine_backlogs/master_backlog.css': 'sass/plugins/redmine_backlogs/master_backlog.scss',
@@ -36,7 +34,7 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('default', ['sass']);
