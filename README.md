@@ -22,6 +22,12 @@ To install PurpleMine, just download [.zip](https://github.com/HolonGlobe/Purple
 
 Then go to Redmine > Administration > Settings > Display and select PurpleMine2 from the list and save the changes.
 
+## Plugins
+
+This theme also features new look for [Redmine Backlogs][redmine_backlogs] plugin.
+
+To install it, simply copy and overwrite files in `plugin_assets/redmine_backlogs/stylesheets` or in `plugins/redmine_backlogs/assets/stylesheets` if it's not installed yet.
+
 ## License
 
 [WTFPL](http://www.wtfpl.net/)
@@ -29,3 +35,4 @@ Then go to Redmine > Administration > Settings > Display and select PurpleMine2 
 [SASS]: http://sass-lang.com/
 [normalize.css]: https://github.com/necolas/normalize.css
 [bootstrap-sass]: https://github.com/twbs/bootstrap-sass
+[redmine_backlogs]: https://github.com/backlogs/redmine_backlogs
