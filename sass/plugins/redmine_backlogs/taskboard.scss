@@ -131,7 +131,7 @@ $swimlane-width:                $issue-width + 2 * ($issue-margin + $issue-paddi
     min-height: $issue-height;
     margin: $issue-margin;
     padding: $issue-padding;
-    background-color: $tooltip-bg;
+    background-color: $highlight-bg;
     border: 0 none;
     border-radius: $border-radius-large;
     font-size: $font-size-small-px;
@@ -230,8 +230,8 @@ $swimlane-width:                $issue-width + 2 * ($issue-margin + $issue-paddi
     }
 
     .placeholder {
-        background-color: $tooltip-bg;
-        border: 1px dashed $tooltip-border;
+        background-color: $highlight-bg;
+        border: 1px dashed $highlight-border;
         height: 78px;
         width: 83px;
     }

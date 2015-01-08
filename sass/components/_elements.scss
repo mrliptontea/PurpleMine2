@@ -319,8 +319,8 @@ div.projects h3 {
 
     &.ui-sortable-placeholder {
         visibility: visible !important;
-        background: $tooltip-bg;
-        outline: 1px dashed $tooltip-border;
+        background: $highlight-bg;
+        outline: 1px dashed $highlight-border;
     }
 
     &.ui-sortable-helper {
@@ -561,9 +561,9 @@ a.remove-upload {
     z-index: 100;
     opacity: .9;
     text-align: center;
-    color: $tooltip-text;
-    background-color: $tooltip-bg;
-    border: 1px solid $tooltip-border;
+    color: $highlight-text;
+    background-color: $highlight-bg;
+    border: 1px solid $highlight-border;
     font-weight: bold;
     box-shadow: $panel-shadow;
 

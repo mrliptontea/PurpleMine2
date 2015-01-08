@@ -4,7 +4,7 @@ $header-line-height:            floor($line-height-computed * 1.5);
 
 $header-left-width:             30px;
 $header-right-width:            230px;
-$header-right-width-wider:      300px;
+$header-right-width-wider:      280px;
 
 $story-left-width:              110px;
 $story-right-width:             130px;
@@ -14,7 +14,7 @@ $story-project-width:           50px;
 $story-status-width:            90px;
 
 $story-tracker-input-width:     100px;
-$story-status-input-width:      115px;
+$story-status-input-width:      90px;
 $story-sp-input-width:          45px;
 
 @mixin rb-tracker($parent, $background, $color) {
@@ -178,6 +178,19 @@ $story-sp-input-width:          45px;
         color: $header-text;
         border-radius: $border-radius-large $border-radius-large 0 0;
 
+        input,
+        select {
+            border-color: $header-bg;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,.2);
+
+            &:focus {
+                color: $gray-darkest;
+                border-color: lighten($header-bg, 25%);
+                box-shadow: inset 0 1px 3px rgba(0,0,0,.2),
+                            0 0 0 1px lighten($header-bg, 25%);
+            }
+        }
+
         .name,
         .velocity,
         .date {
@@ -192,8 +205,9 @@ $story-sp-input-width:          45px;
 
         .date {
             float: left;
-            width: 80px;
+            width: 70px;
             text-align: center;
+            font-size: $font-size-small-px;
 
             & + .date {
                 margin-left: $padding-base-horizontal;
@@ -248,18 +262,19 @@ $story-sp-input-width:          45px;
             .sprint_start_date.editor {
                 float: left;
                 position: relative;
-                width: 90px;
+                width: 80px;
+                padding: 0;
                 margin-left: $editor-padding * 2;
                 margin-bottom: $editor-padding;
-                padding: 0;
                 text-align: center;
+                font-size: $font-size-small-px;
             }
 
             .name.editor {
                 $name-width-minus: $header-right-width-wider + 35px;
                 float: left;
                 margin-left: $header-line-height - 2px;
-                min-width: 100px;
+                min-width: 128px;
                 width: calc(100% - #{$name-width-minus}) !important;
                 position: relative;
             }
@@ -421,7 +436,7 @@ $story-sp-input-width:          45px;
         }
 
         &:hover {
-            background-color: $tooltip-bg;
+            background-color: $highlight-bg;
         }
 
         &.saving {
@@ -521,7 +536,26 @@ $story-sp-input-width:          45px;
             $input-padding-vertical-small:   2px;
             $input-padding-horizontal-small: 5px;
 
-            background-color: $table-bg-hover;
+            background-color: darken($highlight-bg, 10%);
+            border-color: $highlight-border;
+            cursor: default;
+
+            & + .story {
+                border-top-color: $highlight-border;
+            }
+
+            input,
+            select,
+            textarea {
+                border-color: $highlight-border;
+
+                &:focus {
+                    color: $gray-darkest;
+                    border-color: darken($highlight-border, 15%);
+                    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075),
+                                0 0 5px rgba(darken($highlight-border, 15%), .5);
+                }
+            }
 
             .editors {
                 display: block;

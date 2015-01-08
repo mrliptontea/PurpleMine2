@@ -118,18 +118,18 @@ div.wiki {
         &.right,
         &.left {
             padding: 8px;
-            background-color: $tooltip-bg;
-            border: 1px solid $tooltip-border;
+            background-color: $highlight-bg;
+            border: 1px solid $highlight-border;
             border-radius: $border-radius-base;
             box-shadow: $panel-shadow;
 
             a {
                 font-weight: normal;
                 text-decoration: none;
-                color: $tooltip-text;
+                color: $highlight-text;
 
                 &:hover {
-                    color: darken($tooltip-text, 10%);
+                    color: darken($highlight-text, 10%);
                     text-decoration: underline;
                 }
             }

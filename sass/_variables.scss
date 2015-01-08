@@ -219,6 +219,15 @@ $btn-success-bg:                $brand-success !default;
 $btn-success-border:            darken($btn-success-bg, 5%) !default;
 
 
+//== Highlights
+//
+
+$highlight-bg:                    #fff9c8 !default;
+$highlight-border:                #ccb37b !default;
+$highlight-text:                  #755e40 !default;
+$highlight-link:                  #005f97 !default;
+
+
 //== Forms
 //
 
@@ -358,10 +367,10 @@ $panel-shadow:                  0 1px 2px rgba(#000, .1),
 //== Tooltips
 //
 
-$tooltip-bg:                    #fff9c8 !default;
-$tooltip-border:                #ccb37b !default;
-$tooltip-text:                  #755e40 !default;
-$tooltip-link:                  #005f97 !default;
+$tooltip-bg:                    #fff !default;
+$tooltip-border:                #ccc !default;
+$tooltip-text:                  $gray-dark !default;
+$tooltip-link:                  $link-color !default;
 
 
 //== Issue

@@ -80,6 +80,11 @@ textarea {
     height: auto;
 }
 
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
+
 button.ui-multiselect {
     height: $input-height-base;
     padding: $input-padding-vertical $input-padding-horizontal;
@@ -427,9 +432,9 @@ body {
 
     .ui-datepicker-current-day {
         .ui-state-active {
-            color: $tooltip-text;
-            background: $tooltip-bg;
-            border-color: $tooltip-border;
+            color: $highlight-text;
+            background: $highlight-bg;
+            border-color: $highlight-border;
         }
     }
 

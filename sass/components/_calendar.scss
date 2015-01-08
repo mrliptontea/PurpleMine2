@@ -46,7 +46,7 @@ table.cal {
         }
 
         &.today {
-            background: $tooltip-bg;
+            background: $highlight-bg;
 
             p.day-num {
                 font-weight: bold;

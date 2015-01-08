@@ -247,8 +247,8 @@ img.ui-datepicker-trigger {
 
 .ui-datepicker-current-day {
     .ui-state-active {
-        color: $tooltip-text;
-        background: $tooltip-bg;
-        border-color: $tooltip-border;
+        color: $highlight-text;
+        background: $highlight-bg;
+        border-color: $highlight-border;
     }
 }
