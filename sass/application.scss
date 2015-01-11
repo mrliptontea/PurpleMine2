@@ -1,11 +1,12 @@
 @import "variables";
 @import "mixins";
 
+@import "lib/normalize";
+
 
 //== Redmine's core elements
 //
 
-@import "components/normalize";
 @import "components/base";
 @import "components/buttons";
 @import "components/forms";
