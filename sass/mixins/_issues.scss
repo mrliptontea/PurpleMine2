@@ -96,6 +96,7 @@
         border-radius: $border-radius-small ($border-radius-small * 3) ($border-radius-small * 3) $border-radius-small;
 
         &:hover {
+            color: $color;
             text-decoration: none;
             background-color: darken($background, 10%);
         }
