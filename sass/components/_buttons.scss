@@ -170,10 +170,10 @@ a[data-expands],
     cursor: pointer;
     position: relative;
     top: 3px;
-    padding: 1px 8px 2px 7px;
+    padding: 2px 8px;
     vertical-align: top;
     border: 1px solid;
-    background-image: url(../../../images/bullet_toggle_plus.png);
+    background-image: url(../images/bullet_toggle_plus.png);
     background-position: 2px 2px;
     background-repeat: no-repeat;
     border-radius: $border-radius-base;
@@ -183,7 +183,7 @@ a[data-expands],
 
 a[data-expands] {
     display: inline-block;
-    padding: 10px 10px 9px 9px;
+    padding: 10px;
     margin-right: 10px;
 
     img {

@@ -74,13 +74,6 @@ div.wiki {
         }
     }
 
-    .external {
-        padding-left: 12px;
-        background-position: 0% 60%;
-        background-repeat: no-repeat;
-        background-image: url(../../../images/external.png);
-    }
-
     a.new {
         color: $brand-danger;
     }
@@ -209,7 +202,13 @@ p.footnote {
 #preview fieldset {
     margin-top: $line-height-computed;
     padding: $padding-wiki;
-    background-image: url(../../../images/draft.png);
+    background-color: #fffbe5;
+    background-image: url(../images/draft.png);
+    background-position: center center;
+
+    html[lang="pl"] & {
+        background-image: url(../images/draft-pl.png);
+    }
 }
 
 #wiki_add_attachment {

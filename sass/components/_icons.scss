@@ -1,202 +1,897 @@
-//
-// Buttons
-// --------------------------------------------------
+$icon-success-color:                 $brand-success;
+$icon-success-hover-color:           darken($brand-success, 10%);
+$icon-warning-color:                 $brand-warning;
+$icon-warning-hover-color:           darken($brand-warning, 10%);
+$icon-danger-color:                  $brand-danger;
+$icon-danger-hover-color:            darken($brand-danger, 10%);
 
-.icon {
-    background-position: 0% 50%;
-    background-repeat: no-repeat;
-    padding-left: 20px;
-    padding-top: 2px;
-    padding-bottom: 3px;
+@if $use-font-awesome {
+    @import "../lib/font-awesome";
+
+    %fa-icon {
+        &:before {
+            @include fa-icon();
+            margin-right: $padding-small-vertical;
+        }
+    }
+
+    %fa-icon-after {
+        &:after {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome; // shortening font declaration
+            font-size: inherit; // can't have font-size inherit on line above, so need to override
+            text-rendering: auto; // optimizelegibility throws things off #1094
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            margin-left: $padding-small-vertical;
+        }
+    }
 }
 
-.icon-add {
-    background-image: url(../../../images/add.png);
+
+/**
+ * Context menu
+ */
+#context-menu {
+    a {
+        @extend %fa-icon;
+
+        &:before {
+            float: left;
+            margin-top: 3px;
+            margin-left: -16px;
+        }
+    }
+
+    li a.icon-checked {
+        background: transparent;
+    }
+
+    ul li a.submenu {
+        background-image: url(../images/bullet_arrow_right.png);
+    }
 }
 
-.icon-edit {
-    background-image: url(../../../images/edit.png);
+/**
+ * Buttons icons
+ */
+
+@if $use-font-awesome
+{
+    .icon {
+        @extend %fa-icon;
+
+        .contextual & {
+            margin-left: .5em;
+        }
+
+        p.buttons & {
+            margin-right: .5em;
+        }
+    }
+
+    .icon-add:before                   { content: $fa-var-plus-square; }
+    .icon-edit:before                  { content: $fa-var-pencil; }
+    .icon-copy:before                  { content: $fa-var-copy; }
+    .icon-duplicate:before             { content: $fa-var-clipboard; }
+    .icon-del:before                   { content: $fa-var-trash; }
+    .icon-move:before                  { content: $fa-var-arrows; }
+    .icon-save:before                  { content: $fa-var-save; }
+    .icon-cancel:before                { content: $fa-var-ban; }
+    .icon-multiple:before              { content: $fa-var-plus-circle; }
+    .icon-folder:before                { content: $fa-var-folder; }
+    .open .icon-folder:before          { content: $fa-var-folder-open; }
+    .icon-package:before               { content: $fa-var-cube; }
+    .icon-user:before                  { content: $fa-var-user; }
+    .icon-projects:before              { content: $fa-var-cubes; }
+    .icon-help:before                  { content: $fa-var-info-circle; }
+    .icon-attachment:before            { content: $fa-var-paperclip; }
+    .icon-history:before               { content: $fa-var-history; }
+    .icon-time:before                  { content: $fa-var-clock-o; }
+    .icon-time-add:before              { content: $fa-var-clock-o; }
+    .icon-stats:before                 { content: $fa-var-line-chart; }
+    .icon-warning:before               { content: $fa-var-warning; }
+    .icon-fav:before                   { content: $fa-var-star; }
+    .icon-fav-off:before               { content: $fa-var-star-o; }
+    .icon-reload:before                { content: $fa-var-refresh; }
+    .icon-lock:before                  { content: $fa-var-lock; }
+    .icon-unlock:before                { content: $fa-var-unlock; }
+    .icon-checked:before               { content: $fa-var-check-square; }
+    .icon-details:before               { content: $fa-var-search-plus; }
+    .icon-report:before                { content: $fa-var-pie-chart; }
+    .icon-comment:before               { content: $fa-var-comment; }
+    .icon-summary:before               { content: $fa-var-file-text; }
+    .icon-server-authentication:before { content: $fa-var-key; }
+    .icon-issue:before                 { content: $fa-var-ticket; }
+    .icon-zoom-in:before               { content: $fa-var-search-plus; }
+    .icon-zoom-out:before              { content: $fa-var-search-minus; }
+    .icon-passwd:before                { content: $fa-var-plus-circle; }
+    .icon-test:before                  { content: $fa-var-plus-circle; }
+}
+@else
+{
+    .icon {
+        background-position: 0% 50%;
+        background-repeat: no-repeat;
+        padding-left: 20px;
+        padding-top: 2px;
+        padding-bottom: 3px;
+    }
+
+    .icon-add                   { background-image: url(../../../images/add.png); }
+    .icon-edit                  { background-image: url(../../../images/edit.png); }
+    .icon-copy                  { background-image: url(../../../images/copy.png); }
+    .icon-duplicate             { background-image: url(../../../images/duplicate.png); }
+    .icon-del                   { background-image: url(../../../images/delete.png); }
+    .icon-move                  { background-image: url(../../../images/move.png); }
+    .icon-save                  { background-image: url(../../../images/save.png); }
+    .icon-cancel                { background-image: url(../../../images/cancel.png); }
+    .icon-multiple              { background-image: url(../../../images/table_multiple.png); }
+    .icon-folder                { background-image: url(../../../images/folder.png); }
+    .open .icon-folder          { background-image: url(../../../images/folder_open.png); }
+    .icon-package               { background-image: url(../../../images/package.png); }
+    .icon-user                  { background-image: url(../../../images/user.png); }
+    .icon-projects              { background-image: url(../../../images/projects.png); }
+    .icon-help                  { background-image: url(../../../images/help.png); }
+    .icon-attachment            { background-image: url(../../../images/attachment.png); }
+    .icon-history               { background-image: url(../../../images/history.png); }
+    .icon-time                  { background-image: url(../../../images/time.png); }
+    .icon-time-add              { background-image: url(../../../images/time_add.png); }
+    .icon-stats                 { background-image: url(../../../images/stats.png); }
+    .icon-warning               { background-image: url(../../../images/warning.png); }
+    .icon-fav                   { background-image: url(../../../images/fav.png); }
+    .icon-fav-off               { background-image: url(../../../images/fav_off.png); }
+    .icon-reload                { background-image: url(../../../images/reload.png); }
+    .icon-lock                  { background-image: url(../../../images/locked.png); }
+    .icon-unlock                { background-image: url(../../../images/unlock.png); }
+    .icon-checked               { background-image: url(../../../images/true.png); }
+    .icon-details               { background-image: url(../../../images/zoom_in.png); }
+    .icon-report                { background-image: url(../../../images/report.png); }
+    .icon-comment               { background-image: url(../../../images/comment.png); }
+    .icon-summary               { background-image: url(../../../images/lightning.png); }
+    .icon-server-authentication { background-image: url(../../../images/server_key.png); }
+    .icon-issue                 { background-image: url(../../../images/ticket.png); }
+    .icon-zoom-in               { background-image: url(../../../images/zoom_in.png); }
+    .icon-zoom-out              { background-image: url(../../../images/zoom_out.png); }
+    .icon-passwd                { background-image: url(../../../images/textfield_key.png); }
+    .icon-test                  { background-image: url(../../../images/bullet_go.png); }
 }
 
-.icon-copy {
-    background-image: url(../../../images/copy.png);
-}
 
-.icon-duplicate {
-    background-image: url(../../../images/duplicate.png);
-}
+/**
+ * Colorize some actions
+ */
 
-.icon-del {
-    background-image: url(../../../images/delete.png);
-}
-
-.icon-move {
-    background-image: url(../../../images/move.png);
-}
-
+.icon-add,
+.icon-edit,
 .icon-save {
-    background-image: url(../../../images/save.png);
-}
+    color: $icon-success-color;
 
-.icon-cancel {
-    background-image: url(../../../images/cancel.png);
-}
-
-.icon-multiple {
-    background-image: url(../../../images/table_multiple.png);
-}
-
-.icon-folder {
-    background-image: url(../../../images/folder.png);
-}
-
-.open .icon-folder {
-    background-image: url(../../../images/folder_open.png);
-}
-
-.icon-package {
-    background-image: url(../../../images/package.png);
-}
-
-.icon-user {
-    background-image: url(../../../images/user.png);
-}
-
-.icon-projects {
-    background-image: url(../../../images/projects.png);
-}
-
-.icon-help {
-    background-image: url(../../../images/help.png);
-}
-
-.icon-attachment {
-    background-image: url(../../../images/attachment.png);
-}
-
-.icon-history {
-    background-image: url(../../../images/history.png);
-}
-
-.icon-time {
-    background-image: url(../../../images/time.png);
-}
-
-.icon-time-add {
-    background-image: url(../../../images/time_add.png);
-}
-
-.icon-stats {
-    background-image: url(../../../images/stats.png);
-}
-
-.icon-warning {
-    background-image: url(../../../images/warning.png);
-}
-
-.icon-fav {
-    background-image: url(../../../images/fav.png);
-}
-
-.icon-fav-off {
-    background-image: url(../../../images/fav_off.png);
-}
-
-.icon-reload {
-    background-image: url(../../../images/reload.png);
-}
-
-.icon-lock {
-    background-image: url(../../../images/locked.png);
-}
-
-.icon-unlock {
-    background-image: url(../../../images/unlock.png);
-}
-
-.icon-checked {
-    background-image: url(../../../images/true.png);
-}
-
-.icon-details {
-    background-image: url(../../../images/zoom_in.png);
-}
-
-.icon-report {
-    background-image: url(../../../images/report.png);
-}
-
-.icon-comment {
-    background-image: url(../../../images/comment.png);
-}
-
-.icon-summary {
-    background-image: url(../../../images/lightning.png);
-}
-
-.icon-server-authentication {
-    background-image: url(../../../images/server_key.png);
-}
-
-.icon-issue {
-    background-image: url(../../../images/ticket.png);
-}
-
-.icon-zoom-in {
-    background-image: url(../../../images/zoom_in.png);
-}
-
-.icon-zoom-out {
-    background-image: url(../../../images/zoom_out.png);
-}
-
-.icon-passwd {
-    background-image: url(../../../images/textfield_key.png);
-}
-
-.icon-test {
-    background-image: url(../../../images/bullet_go.png);
-}
-
-.icon-file {
-    background-image: url(../../../images/files/default.png);
-    &.text-plain {
-        background-image: url(../../../images/files/text.png);
+    &:hover,
+    &:focus {
+        color: $icon-success-color;
     }
-    &.text-x-c {
-        background-image: url(../../../images/files/c.png);
+}
+
+.icon-del  {
+    color: $icon-danger-color;
+
+    &:hover,
+    &:focus {
+        color: $icon-danger-hover-color;
     }
-    &.text-x-csharp {
-        background-image: url(../../../images/files/csharp.png);
+}
+
+
+/**
+ * File types
+ */
+
+@if $use-font-awesome
+{
+    .icon-folder,
+    .icon-file {
+        &:before {
+            width: 16px;
+            text-align: center;
+        }
     }
-    &.text-x-java {
-        background-image: url(../../../images/files/java.png);
+
+    .icon-file {
+        &:before {
+            color: $gray;
+            content: $fa-var-file-o;
+        }
+
+        &.text-plain:before         { content: $fa-var-file-text-o; }
+        &.text-x-c:before           { content: $fa-var-file-code-o; }
+        &.text-x-csharp:before      { content: $fa-var-file-code-o; }
+        &.text-x-java:before        { content: $fa-var-file-code-o; }
+        &.text-x-php:before         { content: $fa-var-file-code-o; }
+        &.text-x-ruby:before        { content: $fa-var-file-code-o; }
+        &.text-xml:before           { content: $fa-var-file-code-o; }
+        &.text-css:before           { content: $fa-var-file-code-o; }
+        &.text-html:before          { content: $fa-var-file-code-o; }
+        &.text-x-sh:before          { content: $fa-var-file-text-o; }
+
+        &.application-javascript:before,
+        &.text-x-javascript:before  { content: $fa-var-file-code-o; }
+
+        &.application-pdf:before    { content: $fa-var-file-pdf-o; }
+        &.application-msword:before { content: $fa-var-file-word-o; }
+
+        &.application-vnd\.openxmlformats-officedocument\.spreadsheetml\.sheet:before,
+        &.application-vnd\.ms-excel:before   { content: $fa-var-file-excel-o; }
+
+        &.image-vnd\.microsoft\.icon:before,
+        &.image-gif:before,
+        &.image-jpeg:before,
+        &.image-png:before,
+        &.image-tiff:before {
+            content: $fa-var-file-image-o;
+        }
+
+        &.application-zip:before,
+        &.application-x-gzip:before {
+            content: $fa-var-file-zip-o;
+        }
     }
-    &.text-x-javascript {
-        background-image: url(../../../images/files/js.png);
+}
+@else
+{
+    .icon-file {
+        background-image: url(../../../images/files/default.png);
+
+        &.text-plain        { background-image: url(../../../images/files/text.png); }
+        &.text-x-c          { background-image: url(../../../images/files/c.png); }
+        &.text-x-csharp     { background-image: url(../../../images/files/csharp.png); }
+        &.text-x-java       { background-image: url(../../../images/files/java.png); }
+        &.text-x-javascript { background-image: url(../../../images/files/js.png); }
+        &.text-x-php        { background-image: url(../../../images/files/php.png); }
+        &.text-x-ruby       { background-image: url(../../../images/files/ruby.png); }
+        &.text-xml          { background-image: url(../../../images/files/xml.png); }
+        &.text-css          { background-image: url(../../../images/files/css.png); }
+        &.text-html         { background-image: url(../../../images/files/html.png); }
+        &.application-pdf   { background-image: url(../../../images/files/pdf.png); }
+
+        &.image-gif,
+        &.image-jpeg,
+        &.image-png,
+        &.image-tiff {
+            background-image: url(../../../images/files/image.png);
+        }
+
+        &.application-zip,
+        &.application-x-gzip {
+            background-image: url(../../../images/files/zip.png);
+        }
     }
-    &.text-x-php {
-        background-image: url(../../../images/files/php.png);
+}
+
+
+/**
+ * Admininistration menu sections
+ */
+@if $use-font-awesome
+{
+    #admin-menu {
+        #admin-index > & {
+            a {
+                padding-left: 0;
+            }
+        }
+
+        li {
+            > a {
+                @extend %fa-icon;
+                padding-left: $sidebar-padding-horizontal;
+
+                &:before {
+                    width: 1em;
+                    margin-right: .5em;
+                    color: $gray;
+                    text-align: center;
+                }
+
+                &:hover:before {
+                    color: $gray-darker;
+                }
+
+                &.selected:before {
+                    color: $gray-darkest;
+                }
+            }
+        }
+
+        .projects:before              { content: $fa-var-cubes; }
+        .users:before                 { content: $fa-var-user; }
+        .groups:before                { content: $fa-var-group; }
+        .roles:before                 { content: $fa-var-eye; }
+        .trackers:before              { content: $fa-var-ticket; }
+        .issue_statuses:before        { content: $fa-var-pencil-square; }
+        .workflows:before             { content: $fa-var-sitemap; }
+        .custom_fields:before         { content: $fa-var-edit; }
+        .enumerations:before          { content: $fa-var-list; }
+        .settings:before              { content: $fa-var-gear; }
+        .plugins:before               { content: $fa-var-puzzle-piece; }
+        .info:before                  { content: $fa-var-info-circle; }
+        .server_authentication:before { content: $fa-var-key; }
     }
-    &.text-x-ruby {
-        background-image: url(../../../images/files/ruby.png);
+}
+@else
+{
+    #admin-menu {
+        .projects              { background-image: url(../../../images/projects.png); }
+        .users                 { background-image: url(../../../images/user.png); }
+        .groups                { background-image: url(../../../images/group.png); }
+        .roles                 { background-image: url(../../../images/database_key.png); }
+        .trackers              { background-image: url(../../../images/ticket.png); }
+        .issue_statuses        { background-image: url(../../../images/ticket_edit.png); }
+        .workflows             { background-image: url(../../../images/ticket_go.png); }
+        .custom_fields         { background-image: url(../../../images/textfield.png); }
+        .enumerations          { background-image: url(../../../images/text_list_bullets.png); }
+        .settings              { background-image: url(../../../images/changeset.png); }
+        .plugins               { background-image: url(../../../images/plugin.png); }
+        .info                  { background-image: url(../../../images/help.png); }
+        .server_authentication { background-image: url(../../../images/server_key.png); }
     }
-    &.text-xml {
-        background-image: url(../../../images/files/xml.png);
+}
+
+
+/**
+ * Headers with icons
+ */
+
+@if $use-font-awesome
+{
+    h3.version,
+    h3.comments,
+    div.issues h3,
+    div.members h3,
+    div.news h3,
+    div.projects h3 {
+        @extend %fa-icon;
+
+        &:before {
+            width: 1em;
+            margin-right: .5em;
+            color: $gray-dark;
+            text-align: center;
+        }
     }
-    &.text-css {
-        background-image: url(../../../images/files/css.png);
+
+    h3.version:before      { content: $fa-var-cube; }
+    h3.comments:before     { content: $fa-var-comments; }
+    div.issues h3:before   { content: $fa-var-ticket; }
+    div.members h3:before  { content: $fa-var-user; }
+    div.news h3:before     { content: $fa-var-newspaper-o; }
+    div.projects h3:before { content: $fa-var-cubes; }
+}
+@else
+{
+    h3.version,
+    h3.comments,
+    div.issues h3,
+    div.members h3,
+    div.news h3,
+    div.projects h3 {
+        padding-left: 20px;
     }
-    &.text-html {
-        background-image: url(../../../images/files/html.png);
+
+    h3.version      { background: url(../../../images/package.png) no-repeat 0 center; }
+    h3.comments     { background: url(../../../images/comment.png) no-repeat 0 center; }
+    div.issues h3   { background: url(../../../images/ticket.png) no-repeat 0 center; }
+    div.members h3  { background: url(../../../images/group.png) no-repeat 0 center; }
+    div.news h3     { background: url(../../../images/news.png) no-repeat 0 center; }
+    div.projects h3 { background: url(../../../images/projects.png) no-repeat 0 center; }
+}
+
+
+/**
+ * Activity types icons
+ */
+
+@if $use-font-awesome
+{
+    dt {
+        &.issue,
+        &.issue-edit,
+        &.issue.closed,
+        &.issue-closed,
+        &.issue-note,
+        &.changeset,
+        &.news,
+        &.message,
+        &.reply,
+        &.wiki-page,
+        &.attachment,
+        &.document,
+        &.project,
+        &.time-entry {
+            @extend %fa-icon;
+
+            &:before {
+                float: left;
+                margin-left: -$padding-side;
+                line-height: $line-height-computed;
+            }
+        }
+
+        &.issue:before        { content: $fa-var-ticket; }
+        &.issue-edit:before   { content: $fa-var-edit; }
+        &.issue.closed:before { content: $fa-var-ticket; }
+        &.issue-closed:before { content: $fa-var-ticket; }
+        &.issue-note:before   { content: $fa-var-comment; }
+        &.changeset:before    { content: $fa-var-upload; }
+        &.news:before         { content: $fa-var-newspaper-o; }
+        &.message:before      { content: $fa-var-comment; }
+        &.reply:before        { content: $fa-var-comment-o; }
+        &.wiki-page:before    { content: $fa-var-file-text-o; }
+        &.attachment:before   { content: $fa-var-paperclip; }
+        &.document:before     { content: $fa-var-file-text; }
+        &.project:before      { content: $fa-var-cube; }
+        &.time-entry:before   { content: $fa-var-clock-o; }
     }
-    &.image-gif, &.image-jpeg, &.image-png, &.image-tiff {
-        background-image: url(../../../images/files/image.png);
+}
+@else
+{
+    dt {
+        &.issue        { background-image: url(../../../images/ticket.png); }
+        &.issue-edit   { background-image: url(../../../images/ticket_edit.png); }
+        &.issue.closed { background-image: url(../../../images/ticket_checked.png); }
+        &.issue-closed { background-image: url(../../../images/ticket_checked.png); }
+        &.issue-note   { background-image: url(../../../images/ticket_note.png); }
+        &.changeset    { background-image: url(../../../images/changeset.png); }
+        &.news         { background-image: url(../../../images/news.png); }
+        &.message      { background-image: url(../../../images/message.png); }
+        &.reply        { background-image: url(../../../images/comments.png); }
+        &.wiki-page    { background-image: url(../../../images/wiki_edit.png); }
+        &.attachment   { background-image: url(../../../images/attachment.png); }
+        &.document     { background-image: url(../../../images/document.png); }
+        &.project      { background-image: url(../../../images/projects.png); }
+        &.time-entry   { background-image: url(../../../images/time.png); }
     }
-    &.application-pdf {
-        background-image: url(../../../images/files/pdf.png);
+}
+
+
+/**
+ * Alternative icons
+ */
+
+@if $use-font-awesome
+{
+    .search_for_watchers > a {
+        @extend %fa-icon;
+
+        &:before {
+            color: $icon-success-color;
+            content: $fa-var-plus;
+        }
+
+        &:hover:before,
+        &:focus:before {
+            color: $icon-success-hover-color;
+        }
+
+        img {
+            display: none;
+        }
     }
-    &.application-zip, &.application-x-gzip {
-        background-image: url(../../../images/files/zip.png);
+
+    .atom {
+        @extend %fa-icon;
+
+        &:before {
+            content: $fa-var-rss-square;
+        }
+    }
+
+    .issues .buttons a {
+        &[data-method="delete"] {
+            @extend %fa-icon;
+
+            &:before {
+                content: $fa-var-chain-broken;
+            }
+
+            img {
+                display: none;
+            }
+        }
+    }
+
+    #main a.close-icon {
+        width: auto;
+        height: auto;
+        color: $icon-danger-color;
+        background: transparent;
+        @extend %fa-icon;
+
+        &:hover,
+        &:focus {
+            color: $icon-danger-hover-color;
+        }
+
+        &:before {
+            content: $fa-var-remove;
+        }
+    }
+
+    .my-project {
+        @extend %fa-icon-after;
+
+        &:after {
+            color: #f6ab02;
+            font-size: $font-size-small;
+            content: $fa-var-star;
+        }
+    }
+
+    .sort {
+        @extend %fa-icon-after;
+
+        &:after {
+            margin-left: .2em;
+        }
+
+        &.asc:after {
+            content: $fa-var-sort-amount-asc;
+        }
+
+        &.desc:after {
+            content: $fa-var-sort-amount-desc;
+        }
+
+        .sort-by-id &,
+        .sort-by-done-ratio &,
+        .sort-by-estimated-hours &,
+        .sort-by-spent-hours & {
+            &.asc:after  { content: $fa-var-sort-numeric-asc; }
+            &.desc:after { content: $fa-var-sort-numeric-desc; }
+        }
+
+        .sort-by-assigned-to &,
+        .sort-by-subject & {
+            &.asc:after  { content: $fa-var-sort-alpha-asc; }
+            &.desc:after { content: $fa-var-sort-alpha-desc; }
+        }
+    }
+
+    a.remove-upload {
+        opacity: .75;
+        color: $icon-danger-color;
+        text-align: center;
+        @extend %fa-icon;
+
+        &:hover,
+        &:focus {
+            opacity: 1;
+            color: $icon-danger-hover-color;
+            text-decoration: none;
+        }
+
+        &:before {
+            content: $fa-var-trash;
+        }
+    }
+
+    em.info.error {
+        @extend %fa-icon;
+
+        &:before {
+            content: $fa-var-exclamation-circle;
+        }
+    }
+
+    tr.message {
+        &.locked td.subject,
+        &.sticky td.subject {
+            @extend %fa-icon;
+        }
+
+        &.locked {
+            color: $gray;
+
+            td.subject {
+                &:before {
+                    content: $fa-var-lock;
+                }
+            }
+        }
+
+        &.sticky td.subject {
+            font-weight: bold;
+
+            &:before {
+                content: $fa-var-bookmark;
+            }
+        }
+    }
+
+    tr.version.shared td.name {
+        @extend %fa-icon;
+
+        &:before {
+            content: $fa-var-link;
+        }
+    }
+
+    table.boards {
+        a.board {
+            @extend %fa-icon;
+
+            &:before {
+                content: $fa-var-comments;
+            }
+        }
+    }
+
+    table.members {
+        td.group,
+        td.groupnonmember,
+        td.groupanonymous {
+            @extend %fa-icon;
+
+            &:before {
+                content: $fa-var-group;
+            }
+        }
+    }
+
+    div.wiki {
+        .external {
+            @extend %fa-icon;
+
+            &:before {
+                content: $fa-var-external-link;
+                margin-right: 3px;
+                font-size: 10px;
+            }
+        }
+    }
+}
+@else
+{
+    .search_for_watchers > a {
+        padding-left: 20px;
+        background: url(../../../images/add.png) no-repeat 0 50%;
+    }
+
+    .atom {
+        background: url(../../../images/feed.png) no-repeat 1px 50%;
+        padding: 2px 0px 3px 16px;
+    }
+
+    .my-project {
+        padding-right: 18px;
+        background: url(../../../images/fav.png) no-repeat right center;
+    }
+
+    .sort {
+        padding-right: 16px;
+        background-position: right center;
+        background-repeat: no-repeat;
+
+        &.asc {
+            background-image: url(../../../images/sort_asc.png);
+        }
+
+        &.desc {
+            background-image: url(../../../images/sort_desc.png);
+        }
+    }
+
+    a.remove-upload {
+        display: inline-block;
+        padding-left: 16px;
+        background: url(../../../images/delete.png) no-repeat 1px 50%;
+
+        &:hover {
+            text-decoration: none !important;
+        }
+    }
+
+    em.info.error {
+        padding-left: 20px;
+        background: url(../../../images/exclamation.png) no-repeat 0 50%;
+    }
+
+    tr.message {
+        &.locked {
+            color: $gray;
+
+            td.subject {
+                background-image: url(../../../images/locked.png);
+            }
+        }
+
+        &.sticky td.subject {
+            background-image: url(../../../images/bullet_go.png);
+            font-weight: bold;
+        }
+
+        td.subject {
+            padding-left: 20px + $table-cell-padding;
+            background-repeat: no-repeat;
+            background-position: $table-cell-padding ($table-cell-padding - 1px);
+        }
+    }
+
+    tr.version.shared td.name {
+        padding-left: 20px;
+        background: url(../../../images/link.png) no-repeat 0 center;
+    }
+
+    table.boards {
+        a.board {
+            background: url(../../../images/comment.png) no-repeat 0% 50%;
+            padding-left: 20px;
+        }
+    }
+
+    table.members {
+        td.name {
+            padding-left: 20px;
+        }
+
+        td.group,
+        td.groupnonmember,
+        td.groupanonymous {
+            background: url(../../../images/group.png) no-repeat 0% center;
+        }
+    }
+
+    div.wiki {
+        .external {
+            padding-left: 12px;
+            background-position: 0% 60%;
+            background-repeat: no-repeat;
+            background-image: url(../../../images/external.png);
+        }
+    }
+}
+
+
+/**
+ * Hacks and overrides for Font Awesome
+ */
+
+@if $use-font-awesome
+{
+    /**
+     * Attachments and watchers delete icon
+     */
+
+    .attachments,
+    .watchers {
+        a.delete {
+            @extend %fa-icon;
+
+            &:before {
+                color: $icon-danger-color;
+                content: $fa-var-trash;
+            }
+
+            &:hover:before,
+            &:focus:before {
+                color: $icon-danger-hover-color;
+            }
+
+            img {
+                display: none;
+            }
+        }
+    }
+
+
+    /**
+     * Issue edit form icon
+     */
+
+    #all_attributes label[for="issue_description"] + a {
+        @extend %fa-icon;
+
+        &:before {
+            color: $icon-success-color;
+            content: $fa-var-pencil;
+        }
+
+        &:hover:before,
+        &:focus:before {
+            color: $icon-success-hover-color;
+        }
+
+        img {
+            display: none;
+        }
+    }
+
+
+    /**
+     * Issue journal contextual icons
+     */
+
+    .journal .contextual {
+        a {
+            @extend %fa-icon;
+
+            &:before {
+                content: $fa-var-comment;
+            }
+
+            img {
+                display: none;
+            }
+
+            &:last-child {
+                &:before {
+                    color: $icon-success-color;
+                    content: $fa-var-pencil;
+                }
+
+                &:hover:before,
+                &:focus:before {
+                    color: $icon-success-hover-color;
+                }
+            }
+        }
+    }
+
+
+    /**
+     * Category and target vesion add icon
+     */
+
+    #issue_category_id + a,
+    #issue_fixed_version_id + a {
+        @extend %fa-icon;
+
+        &:before {
+            color: $icon-success-color;
+            content: $fa-var-plus-square;
+        }
+
+        &:hover:before,
+        &:focus:before {
+            color: $icon-success-hover-color;
+        }
+
+        img {
+            display: none;
+        }
+    }
+
+
+    /**
+     * jQuery UI datepicker trigger button
+     */
+
+    img.ui-datepicker-trigger {
+        position: relative;
+        top: -1px;
+        width: 14px;
+        height: 14px;
+        padding-left: 14px;
+        box-sizing: border-box;
+        background: url(../images/calendar_555555_14.png) no-repeat;
+    }
+
+
+    /**
+     * Lists toggle checkbox icon
+     */
+
+    table.list th.checkbox > a {
+        @extend %fa-icon;
+
+        &:before {
+            color: $icon-success-color;
+            content: $fa-var-check;
+            margin-right: 0;
+        }
+
+        img {
+            display: none;
+        }
     }
 }

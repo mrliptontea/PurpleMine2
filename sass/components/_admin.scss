@@ -10,7 +10,7 @@
         }
 
         li {
-            padding: $sidebar-padding-vertical 0;
+            padding: ($sidebar-padding-vertical + 1px) ($sidebar-padding-horizontal + 3px);
         }
 
         a {
@@ -29,20 +29,6 @@
             padding-left: $sidebar-padding-horizontal + 8 + 16px;
         }
     }
-
-    .projects              { background-image: url(../../../images/projects.png); }
-    .users                 { background-image: url(../../../images/user.png); }
-    .groups                { background-image: url(../../../images/group.png); }
-    .roles                 { background-image: url(../../../images/database_key.png); }
-    .trackers              { background-image: url(../../../images/ticket.png); }
-    .issue_statuses        { background-image: url(../../../images/ticket_edit.png); }
-    .workflows             { background-image: url(../../../images/ticket_go.png); }
-    .custom_fields         { background-image: url(../../../images/textfield.png); }
-    .enumerations          { background-image: url(../../../images/text_list_bullets.png); }
-    .settings              { background-image: url(../../../images/changeset.png); }
-    .plugins               { background-image: url(../../../images/plugin.png); }
-    .info                  { background-image: url(../../../images/help.png); }
-    .server_authentication { background-image: url(../../../images/server_key.png); }
 }
 
 

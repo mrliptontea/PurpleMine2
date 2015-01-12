@@ -1,0 +1,47 @@
+//
+// WYSIWYG icons
+// --------------------------------------------------
+
+@if $use-font-awesome
+{
+    .jstElements {
+        button {
+            padding: 0;
+            color: $btn-default-color;
+            background: $btn-default-bg;
+            background-image: none;
+            box-shadow: 0 1px 0 $btn-default-border;
+            @include fa-icon();
+
+            &:before {
+                text-align: center;
+            }
+        }
+
+        .jstb_strong:before { content: $fa-var-bold; }
+        .jstb_em:before     { content: $fa-var-italic; }
+        .jstb_ins:before    { content: $fa-var-underline; }
+        .jstb_del:before    { content: $fa-var-strikethrough; }
+        .jstb_code:before   { content: $fa-var-code; }
+        .jstb_h1:before     { content: $fa-var-header; }
+        .jstb_h2:before     { content: $fa-var-header; font-size: 11px; }
+        .jstb_h3:before     { content: $fa-var-header; font-size: 9px; }
+        .jstb_ul:before     { content: $fa-var-list-ul; }
+        .jstb_ol:before     { content: $fa-var-list-ol; }
+        .jstb_bq:before     { content: $fa-var-indent; }
+        .jstb_unbq:before   { content: $fa-var-outdent; }
+        .jstb_pre:before    { content: $fa-var-terminal; }
+        .jstb_link:before   { content: $fa-var-link; }
+        .jstb_img:before    { content: $fa-var-image; }
+
+        .jstb_help {
+            float: right;
+            margin-right: 0;
+            color: $link-color;
+
+            &:before {
+                content: $fa-var-question-circle;
+            }
+        }
+    }
+}

@@ -68,23 +68,6 @@ div#search-results-counts {
     }
 }
 
-dt {
-    &.issue        { background-image: url(../../../images/ticket.png); }
-    &.issue-edit   { background-image: url(../../../images/ticket_edit.png); }
-    &.issue.closed { background-image: url(../../../images/ticket_checked.png); }
-    &.issue-closed { background-image: url(../../../images/ticket_checked.png); }
-    &.issue-note   { background-image: url(../../../images/ticket_note.png); }
-    &.changeset    { background-image: url(../../../images/changeset.png); }
-    &.news         { background-image: url(../../../images/news.png); }
-    &.message      { background-image: url(../../../images/message.png); }
-    &.reply        { background-image: url(../../../images/comments.png); }
-    &.wiki-page    { background-image: url(../../../images/wiki_edit.png); }
-    &.attachment   { background-image: url(../../../images/attachment.png); }
-    &.document     { background-image: url(../../../images/document.png); }
-    &.project      { background-image: url(../../../images/projects.png); }
-    &.time-entry   { background-image: url(../../../images/time.png); }
-}
-
 
 // Search form
 

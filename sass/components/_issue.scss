@@ -99,6 +99,14 @@ div.attachments {
         top: -1px;
     }
 
+    .delete {
+        opacity: .5;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
     span.author {
         color: $gray;
         font-size: $font-size-small;

@@ -1,0 +1,30 @@
+//
+// Redmine Backlogs
+// --------------------------------------------------
+
+#backlogs_view_issues_sidebar {
+    > a {
+        display: block;
+        border: 1px solid transparent;
+        padding: $sidebar-padding-vertical $sidebar-padding-horizontal;
+
+        @if $sidebar-position == 'left' {
+            margin-right: -($sidebar-padding-horizontal);
+            border-left-width: 3px;
+            border-radius: $border-radius-large 0 0 $border-radius-large;
+        } @else {
+            margin-left: -($sidebar-padding-horizontal);
+            border-right-width: 3px;
+            border-radius: 0 $border-radius-large $border-radius-large 0;
+        }
+
+        &:hover {
+            background-color: $sidebar-link-hover-bg;
+            text-decoration: none;
+        }
+
+        & + br {
+            display: none;
+        }
+    }
+}
