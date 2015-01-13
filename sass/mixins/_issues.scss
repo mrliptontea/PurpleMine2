@@ -88,12 +88,15 @@
 
 @mixin tracker($parent, $background, $color) {
     tr#{$parent} .id > a,
-    a#{$parent} {
+    a#{$parent},
+    .relations > span > a#{$parent},
+    .parent > a#{$parent} {
         color: $color;
         background-color: $background;
         border-radius: $border-radius-small ($border-radius-small * 3) ($border-radius-small * 3) $border-radius-small;
 
         &:hover {
+            color: $color;
             text-decoration: none;
             background-color: darken($background, 10%);
         }

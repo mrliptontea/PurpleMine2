@@ -2,15 +2,34 @@
 // Login form
 // --------------------------------------------------
 
-$login-input-width: 200px;
+$login-form-width:              350px;
+$login-input-width:             200px;
 
 #login-form {
+    margin: $line-height-computed * 2 auto;
+
     table {
-        margin: $line-height-computed * 2 auto;
+        margin: auto;
     }
 
-    td {
-        padding: $table-cell-padding;
+    @media screen and (min-width: $screen-xs-max) {
+        width: $login-form-width;
+
+        padding: $panel-body-padding;
+        color: $panel-color;
+        background-color: $panel-bg;
+        border: 1px solid $panel-border;
+        border-radius: $border-radius-base;
+        box-shadow: $panel-shadow;
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            width: 90%; // make columns expand
+            padding: $table-cell-padding;
+        }
     }
 }
 
@@ -21,7 +40,8 @@ $login-input-width: 200px;
 }
 
 #openid_url {
-    background: url(../../../images/openid-bg.gif) no-repeat;
+    background-repeat: no-repeat;
     background-position: ($login-input-width - 24px) center;
+    background-image: url(../../../images/openid-bg.gif);
     padding-right: 8px + 24px;
 }

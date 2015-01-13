@@ -1,11 +1,11 @@
 @import "variables";
 @import "mixins";
 
+@import "lib/normalize";
 
 //== Redmine's core elements
 //
 
-@import "components/normalize";
 @import "components/base";
 @import "components/buttons";
 @import "components/forms";
@@ -19,8 +19,6 @@
 @import "components/issue";
 @import "components/login";
 @import "components/admin";
-@import "components/flash";
-@import "components/icons";
 @import "components/coderay";
 @import "components/gantt";
 @import "components/calendar";
@@ -28,4 +26,13 @@
 @import "components/wiki";
 @import "components/elements";
 @import "components/jquery-ui";
+@import "components/icons";
+@import "components/jstoolbar";
+@import "components/flash";
 @import "components/print";
+
+
+//== Tweaks for plugins
+//
+
+@import "components/plugins";

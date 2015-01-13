@@ -1,3 +1,4 @@
 /.sass-cache
 /node_modules
 /sass/_custom-variables.scss
+/.sublime-grunt.cache

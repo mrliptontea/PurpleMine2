@@ -28,16 +28,6 @@
 
 
 /**
- * Atom feed icon
- */
-
-.atom {
-    background: url(../../../images/feed.png) no-repeat 1px 50%;
-    padding: 2px 0px 3px 16px;
-}
-
-
-/**
  * Collapsible
  */
 
@@ -91,8 +81,9 @@ a.collapsible.collapsed,
 
 .contextual {
     float: right;
-    white-space: nowrap;
     padding-left: $padding-base-vertical;
+    white-space: nowrap;
+    cursor: default;
 
     input, select {
         font-size: .9em;
@@ -217,7 +208,7 @@ a.collapsible.collapsed,
 
             > .delete {
                 float: right;
-                opacity: 0.4;
+                opacity: .5;
                 vertical-align: middle;
 
                 &:hover {
@@ -257,36 +248,6 @@ p.subtitle {
 
 
 /**
- * Headers with icons
- */
-
-h3.version {
-    background: url(../../../images/package.png) no-repeat 0 center;
-    padding-left: 20px;
-}
-
-div.issues h3 {
-    background: url(../../../images/ticket.png) no-repeat 0 center;
-    padding-left: 20px;
-}
-
-div.members h3 {
-    background: url(../../../images/group.png) no-repeat 0 center;
-    padding-left: 20px;
-}
-
-div.news h3 {
-    background: url(../../../images/news.png) no-repeat 0 center;
-    padding-left: 20px;
-}
-
-div.projects h3 {
-    background: url(../../../images/projects.png) no-repeat 0 center;
-    padding-left: 20px;
-}
-
-
-/**
  * My page layout
  */
 
@@ -295,11 +256,11 @@ div.projects h3 {
 }
 
 .block-receiver {
-    outline: 1px dashed $gray-light;
+    min-height: 20px;
     margin: $padding-side / -2;
     margin-bottom: $line-height-computed;
     padding: $padding-side / 2;
-    min-height: 20px;
+    outline: 2px dashed $gray-light;
 }
 
 .mypage-box {
@@ -310,6 +271,7 @@ div.projects h3 {
     }
 
     &.ui-sortable-handle {
+        overflow: hidden;
         outline: 1px solid $gray-lighter;
 
         &:hover {
@@ -357,6 +319,19 @@ table.filecontent td.line-code pre {
     font-family: $font-family-monospace !important;
 }
 
+#browser {
+    font-size: 1em;
+
+    tr {
+        border: 0 none;
+    }
+
+    td {
+        padding: $table-condensed-cell-padding;
+        border: 0 none;
+    }
+}
+
 
 /**
  * Projects list
@@ -392,11 +367,6 @@ ul.projects {
         font-size: $font-size-h3;
         font-weight: bold;
     }
-}
-
-.my-project {
-    padding-right: 18px;
-    background: url(../../../images/fav.png) no-repeat right center;
 }
 
 #custom_field_tracker_ids {
@@ -533,21 +503,6 @@ div#version-summary {
 
 
 /**
- * Attachments form
- */
-
-a.remove-upload {
-    background: url(../../../images/delete.png) no-repeat 1px 50%;
-    display: inline-block;
-    padding-left: 16px;
-
-    &:hover {
-        text-decoration: none !important;
-    }
-}
-
-
-/**
  * Ajax indicator
  */
 
@@ -582,13 +537,15 @@ a.remove-upload {
  */
 
 tr.message {
-    td {
-        &.subject {
-            padding-left: 20px + $table-cell-padding;
-            background-repeat: no-repeat;
-            background-position: $table-cell-padding ($table-cell-padding - 1px);
-        }
+    &.locked {
+        color: $gray;
+    }
 
+    &.sticky td.subject {
+        font-weight: bold;
+    }
+
+    td {
         &.created_on {
             white-space: nowrap;
         }
@@ -603,19 +560,6 @@ tr.message {
             }
         }
     }
-
-    &.locked {
-        color: $gray;
-
-        td.subject {
-            background-image: url(../../../images/locked.png);
-        }
-    }
-
-    &.sticky td.subject {
-        background-image: url(../../../images/bullet_go.png);
-        font-weight: bold;
-    }
 }
 
 table.boards {
@@ -629,11 +573,6 @@ table.boards {
                 font-weight: bold;
             }
         }
-    }
-
-    a.board {
-        background: url(../../../images/comment.png) no-repeat 0% 50%;
-        padding-left: 20px;
     }
 }
 
@@ -733,11 +672,6 @@ table.boards {
             }
         }
     }
-}
-
-h3.comments {
-    background: url(../../../images/comment.png) no-repeat 0% 50%;
-    padding-left: 20px;
 }
 
 #message_content {

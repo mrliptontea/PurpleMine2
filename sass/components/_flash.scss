@@ -8,13 +8,24 @@
 .nodata,
 .warning,
 .conflict {
-    padding: $padding-large-vertical $padding-large-horizontal;
-    padding-left: $padding-large-horizontal + 8px + 16px; // TODO ikony
     margin-bottom: $line-height-computed;
-    background-position: $padding-large-horizontal 50%;
-    background-repeat: no-repeat;
+    padding: $padding-large-vertical $padding-large-horizontal;
+    padding-left: $padding-large-horizontal + 8px + 16px;
     border: 1px solid;
     border-radius: $border-radius-large;
+
+    @if $use-font-awesome {
+        @extend %fa-icon;
+
+        &:before {
+            float: left;
+            margin-left: -(8px + 16px);
+            line-height: $line-height-computed;
+        }
+    } @else {
+        background-position: $padding-large-horizontal 50%;
+        background-repeat: no-repeat;
+    }
 
     p:last-child,
     ol:last-child,
@@ -25,9 +36,20 @@
 
 @mixin flash($color, $background, $border, $link, $icon) {
     color: $color;
-    background-image: url(../../../images/#{$icon}.png); // TODO ikony
     background-color: $background;
     border-color: $border;
+
+    @if $use-font-awesome {
+        @if     $icon == 'true'        { $icon: $fa-var-check; }
+        @elseif $icon == 'warning'     { $icon: $fa-var-warning; }
+        @elseif $icon == 'exclamation' { $icon: $fa-var-exclamation-circle; }
+
+        &:before {
+            content: $icon;
+        }
+    } @else {
+        background-image: url(../../../images/#{$icon}.png);
+    }
 
     a {
         color: $link;
@@ -36,23 +58,30 @@
 }
 
 .flash.notice {
-    @include flash($flash-success-text, $flash-success-bg, $flash-success-border, $flash-success-link, true);
+    @include flash($flash-success-text, $flash-success-bg, $flash-success-border, $flash-success-link, 'true');
 }
 
 .flash.warning,
 .conflict,
 .nodata {
-    @include flash($flash-warning-text, $flash-warning-bg, $flash-warning-border, $flash-warning-link, warning);
+    @include flash($flash-warning-text, $flash-warning-bg, $flash-warning-border, $flash-warning-link, 'warning');
+}
+
+#errorExplanation,
+.flash.error {
+    @include flash($flash-error-text, $flash-error-bg, $flash-error-border, $flash-error-link, 'exclamation');
 }
 
 .nodata {
     text-align: center;
     padding-left: $padding-large-horizontal;
-}
 
-#errorExplanation,
-.flash.error {
-    @include flash($flash-error-text, $flash-error-bg, $flash-error-border, $flash-error-link, exclamation);
+    @if $use-font-awesome {
+        &:before {
+            float: none;
+            margin-left: 0;
+        }
+    }
 }
 
 #errorExplanation {

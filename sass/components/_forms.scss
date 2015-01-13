@@ -152,11 +152,6 @@ em.info {
     color: $gray;
     font-style: normal;
     font-size: $font-size-small;
-
-    &.error {
-        padding-left: 20px;
-        background: url(../../../images/exclamation.png) no-repeat 0 50%;
-    }
 }
 
 
@@ -292,7 +287,7 @@ em.info {
  */
 label[for=issue_description] + a {
     display: inline-block;
-    margin-top: $input-padding-vertical;
+    margin-top: $input-padding-vertical + 1px;
 
     img {
         vertical-align: middle;
@@ -462,11 +457,6 @@ select.bool_cf {
 
     .search_for_watchers {
         display: block;
-
-        > a {
-            padding-left: 20px;
-            background: url(../../../images/add.png) no-repeat 0 50%;
-        }
     }
 
     #watchers_inputs {

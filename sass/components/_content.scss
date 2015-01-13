@@ -43,6 +43,12 @@
         }
     }
 
+    @if $hide-sidebar-on-screen-xs {
+        @media screen and (max-width: $screen-xs-max) {
+            display: none;
+        }
+    }
+
     .nosidebar & {
         float: none;
         width: 0;

@@ -12,6 +12,8 @@ $color-priorities:              true !default;
 $color-trackers:                true !default;
 $colored-issue:                 true !default;
 $use-gravatars:                 true !default;
+$use-font-awesome:              true !default;
+$hide-sidebar-on-screen-xs:     true !default;
 
 
 //== Colors
@@ -222,10 +224,10 @@ $btn-success-border:            darken($btn-success-bg, 5%) !default;
 //== Highlights
 //
 
-$highlight-bg:                    #fff9c8 !default;
-$highlight-border:                #ccb37b !default;
-$highlight-text:                  #755e40 !default;
-$highlight-link:                  #005f97 !default;
+$highlight-bg:                  #fff9c8 !default;
+$highlight-border:              #ccb37b !default;
+$highlight-text:                #755e40 !default;
+$highlight-link:                #005f97 !default;
 
 
 //== Forms
@@ -284,17 +286,17 @@ $main-menu-padding-horizontal:  5px !default;
 //== Pagination
 //
 
-$pagination-color:                     $link-color !default;
-$pagination-bg:                        #fff !default;
-$pagination-border:                    #ddd !default;
+$pagination-color:              $link-color !default;
+$pagination-bg:                 #fff !default;
+$pagination-border:             #ddd !default;
 
-$pagination-hover-color:               $link-hover-color !default;
-$pagination-hover-bg:                  $gray-lightest !default;
-$pagination-hover-border:              #ddd !default;
+$pagination-hover-color:        $link-hover-color !default;
+$pagination-hover-bg:           $gray-lightest !default;
+$pagination-hover-border:       #ddd !default;
 
-$pagination-active-color:              #fff !default;
-$pagination-active-bg:                 $brand-primary !default;
-$pagination-active-border:             $brand-primary !default;
+$pagination-active-color:       #fff !default;
+$pagination-active-bg:          $brand-primary !default;
+$pagination-active-border:      $brand-primary !default;
 
 
 //== Tabs
