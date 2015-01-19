@@ -14,6 +14,7 @@ $colored-issue:                 true !default;
 $use-gravatars:                 true !default;
 $use-font-awesome:              true !default;
 $hide-sidebar-on-screen-xs:     true !default;
+$issue-subject-large:           true !default;
 
 
 //== Colors
@@ -80,6 +81,7 @@ $font-size-h5:                  1em !default;
 $font-size-h6:                  1em !default;
 
 $line-height-base:              1.428571429 !default; // 20/14
+$line-height-large:             1.33 !default;
 $line-height-computed:          floor(($font-size-base * $line-height-base)) !default; // ~20px
 
 $headings-font-weight:          700 !default;
@@ -240,6 +242,7 @@ $input-color:                   $gray-dark !default;
 $input-border:                  #ccc !default;
 
 $input-border-radius:           $border-radius-small !default;
+$input-border-radius-large:     $border-radius-large !default;
 
 $input-border-focus:            #51a7e8 !default;
 $input-color-placeholder:       #999 !default;

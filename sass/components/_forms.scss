@@ -343,6 +343,25 @@ select.bool_cf {
     width: auto !important;
 }
 
+@if $issue-subject-large {
+    $input-padding-large-vertical:   8px;
+    $input-padding-large-horizontal: 12px;
+    $input-height-large:             (ceil($font-size-large-px * $line-height-large) + ($input-padding-large-vertical * 2) + 2);
+
+    label[for="issue_subject"] {
+        margin-top: $input-padding-large-vertical * $line-height-large + 1px;
+    }
+
+    #issue_subject {
+        height: $input-height-large;
+        padding: $input-padding-large-vertical $input-padding-large-horizontal;
+        font-size: $font-size-large;
+        line-height: $line-height-large;
+        line-height: $line-height-large #{\0};
+        border-radius: $input-border-radius-large;
+    }
+}
+
 /**
  * Add space below WYSIWYG
  */

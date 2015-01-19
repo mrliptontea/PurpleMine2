@@ -105,8 +105,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     .icon-issue:before                 { content: $fa-var-ticket; }
     .icon-zoom-in:before               { content: $fa-var-search-plus; }
     .icon-zoom-out:before              { content: $fa-var-search-minus; }
-    .icon-passwd:before                { content: $fa-var-plus-circle; }
-    .icon-test:before                  { content: $fa-var-plus-circle; }
+    .icon-passwd:before                { content: $fa-var-key; }
+    .icon-test:before                  { content: $fa-var-arrow-circle-right; }
 }
 @else
 {
@@ -580,6 +580,55 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 
         &:before {
             content: $fa-var-exclamation-circle;
+        }
+    }
+
+    .message .contextual {
+        a {
+            opacity: .5;
+            @extend %fa-icon;
+
+            &:hover,
+            &:focus {
+                opacity: 1;
+            }
+
+            &:nth-child(1) {
+                &:before {
+                    content: $fa-var-comment;
+                }
+            }
+
+            &:nth-child(2) {
+                color: $icon-success-color;
+
+                &:hover,
+                &:focus {
+                    color: $icon-success-hover-color;
+                }
+
+                &:before {
+                    content: $fa-var-pencil;
+                }
+            }
+
+            &:nth-child(3) {
+                color: $icon-danger-color;
+
+                &:hover,
+                &:focus {
+                    color: $icon-danger-hover-color;
+                }
+
+                &:before {
+                    content: $fa-var-trash;
+                }
+            }
+
+
+            img {
+                display: none;
+            }
         }
     }
 

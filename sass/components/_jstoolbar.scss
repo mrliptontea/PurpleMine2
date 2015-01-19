@@ -2,15 +2,34 @@
 // WYSIWYG icons
 // --------------------------------------------------
 
+.jstElements {
+    @extend %clearfix;
+
+    .box & {
+        padding: 0;
+    }
+
+    button {
+        margin-bottom: 5px;
+        vertical-align: top;
+        box-shadow: none;
+    }
+
+    .jstb_help {
+        float: right;
+        margin-right: 0;
+        margin-left: -6px;
+    }
+}
+
 @if $use-font-awesome
 {
     .jstElements {
-        button {
+        button[type="button"] {
             padding: 0;
             color: $btn-default-color;
-            background: $btn-default-bg;
+            background: $body-bg;
             background-image: none;
-            box-shadow: 0 1px 0 $btn-default-border;
             @include fa-icon();
 
             &:before {
@@ -34,10 +53,12 @@
         .jstb_link:before   { content: $fa-var-link; }
         .jstb_img:before    { content: $fa-var-image; }
 
-        .jstb_help {
-            float: right;
-            margin-right: 0;
+        button.jstb_help {
             color: $link-color;
+
+            &:hover {
+                color: $link-hover-color;
+            }
 
             &:before {
                 content: $fa-var-question-circle;

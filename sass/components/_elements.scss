@@ -617,8 +617,13 @@ table.boards {
         .contextual {
             position: relative;
             z-index: 1;
-            margin-top: $padding-base-vertical;
             margin-right: $padding-base-vertical;
+
+            @if $use-font-awesome {
+                margin-top: $padding-small-vertical;
+            } @else {
+                margin-top: $padding-base-vertical;
+            }
 
             a {
                 margin-left: ceil($padding-base-vertical / 2);
