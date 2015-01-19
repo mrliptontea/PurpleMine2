@@ -1,11 +1,6 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
-    pkg: grunt.file.readJSON("package.json"),
-    banner: "/*! <%= pkg.title || pkg.name %> - " +
-      "<%= grunt.template.today('yyyy-mm-dd') %>\n" +
-      " * Copyright (c) <%= grunt.template.today('yyyy') %> <%= pkg.author %>\n */\n\n",
-
     sass: {
       options: {
         sourceMap: true,
