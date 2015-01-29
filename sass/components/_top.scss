@@ -112,6 +112,10 @@
     border-bottom: 1px solid $main-menu-border;
     background-color: $main-menu-bg;
 
+    @media screen and (max-width: $screen-sm-max) {
+        font-size: $font-size-small-px;
+    }
+
     ul {
         margin: 0;
         padding: 0 ($padding-side - $main-menu-padding-horizontal);
