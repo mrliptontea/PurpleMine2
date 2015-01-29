@@ -57,7 +57,7 @@ $story-sp-input-width:          45px;
         padding: 0 ($padding-side / 4);
     }
 
-    @media screen and (min-width: $screen-md) {
+    @media screen and (min-width: $screen-md-min) {
         padding: $padding-side ($padding-side / 2);
 
         .backlogs-panel-inner {
@@ -129,7 +129,7 @@ $story-sp-input-width:          45px;
         margin-left: -$header-right-width;
     }
 
-    @media screen and (min-width: $screen-md) {
+    @media screen and (min-width: $screen-md-min) {
         .fff-middle {
             margin-right: $header-right-width-wider;
         }
@@ -165,7 +165,7 @@ $story-sp-input-width:          45px;
         background-color: $gray-lightest;
         box-shadow: $panel-shadow;
 
-        @media screen and (min-width: $screen-md) {
+        @media screen and (min-width: $screen-md-min) {
             margin: 0 0 $padding-side;
         }
     }

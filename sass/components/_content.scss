@@ -131,7 +131,7 @@
 }
 
 @if $fixed-layout {
-    @media screen and (min-width: $screen-sm) {
+    @media screen and (min-width: $screen-sm-min) {
         #main-menu ul,
         #main {
             width: $width-sm;
@@ -140,14 +140,14 @@
         }
     }
 
-    @media screen and (min-width: $screen-md) {
+    @media screen and (min-width: $screen-md-min) {
         #main-menu ul,
         #main {
             width: $width-md;
         }
     }
 
-    @media screen and (min-width: $screen-lg) {
+    @media screen and (min-width: $screen-lg-min) {
         #main-menu ul,
         #main {
             width: $width-lg;

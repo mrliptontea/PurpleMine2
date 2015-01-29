@@ -12,7 +12,7 @@ $login-input-width:             200px;
         margin: auto;
     }
 
-    @media screen and (min-width: $screen-xs-max) {
+    @media screen and (min-width: $screen-sm-min) {
         width: $login-form-width;
 
         padding: $panel-body-padding;

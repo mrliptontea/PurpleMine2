@@ -442,13 +442,13 @@ select.bool_cf {
         padding-left: 0;
         float: left;
 
-        @media screen and (min-width: $screen-sm) {
+        @media screen and (min-width: $screen-sm-min) {
             width: auto;
         }
     }
 
     .splitcontentleft {
-        @media screen and (min-width: $screen-sm) {
+        @media screen and (min-width: $screen-sm-min) {
             padding-right: $padding-side;
         }
     }
@@ -456,7 +456,7 @@ select.bool_cf {
     select {
         width: 90%;
 
-        @media screen and (min-width: $screen-sm) {
+        @media screen and (min-width: $screen-sm-min) {
             width: 20em;
         }
     }
