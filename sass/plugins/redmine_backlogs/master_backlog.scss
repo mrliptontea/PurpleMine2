@@ -51,7 +51,19 @@ $story-sp-input-width:          45px;
  */
 
 #backlogs_container {
-    padding: $padding-side ($padding-side / 2);
+    padding: ($padding-side / 2) ($padding-side / 4);
+
+    .backlogs-panel-inner {
+        padding: 0 ($padding-side / 4);
+    }
+
+    @media screen and (min-width: $screen-md) {
+        padding: $padding-side ($padding-side / 2);
+
+        .backlogs-panel-inner {
+            padding: 0 ($padding-side / 2);
+        }
+    }
 
     .wrapper {
         position: relative;
@@ -72,10 +84,6 @@ $story-sp-input-width:          45px;
         right: 0;
         width: 50%;
         float: right;
-    }
-
-    .backlogs-panel-inner {
-        padding: 0 ($padding-side / 2);
     }
 }
 
@@ -152,10 +160,14 @@ $story-sp-input-width:          45px;
     .backlog {
         display: block;
         position: relative;
-        margin: 0 0 $padding-side;
+        margin: 0 0 ($padding-side / 2);
         border-radius: $border-radius-large $border-radius-large 0 0;
         background-color: $gray-lightest;
         box-shadow: $panel-shadow;
+
+        @media screen and (min-width: $screen-md) {
+            margin: 0 0 $padding-side;
+        }
     }
 }
 
