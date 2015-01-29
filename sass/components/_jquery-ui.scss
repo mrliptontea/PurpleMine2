@@ -217,37 +217,48 @@ img.ui-datepicker-trigger {
     .ui-datepicker-calendar {
         table-layout: fixed;
 
+        .ui-state-default {
+            border-color: $body-bg;
+            background: $body-bg;
+        }
+
+        .ui-state-focus,
+        .ui-state-hover {
+            border-color: $component-active-bg;
+            background: $component-active-bg;
+            color: $component-active-color;
+        }
+
+        .ui-state-active {
+            border-color: $highlight-border;
+            background: $highlight-bg;
+            color: $highlight-text;
+        }
+
+        .ui-datepicker-today {
+            .ui-state-highlight {
+                border-color: $component-active-border;
+            }
+        }
+
+        .ui-datepicker-current-day {
+            .ui-state-active {
+                border-color: $highlight-border;
+            }
+        }
+
         td {
+            padding: 0 1px 1px 0;
             text-align: right;
 
             a {
-                padding: .25em .2em .25em 0;
+                padding: .25em .3em .25em 0;
+                border-radius: $border-radius-base;
             }
 
             &.ui-datepicker-week-col {
                 padding-right: $table-condensed-cell-padding;
             }
         }
-    }
-}
-
-.ui-datepicker-today {
-    .ui-state-highlight {
-        border-color: $component-active-border;
-        background: $component-bg;
-        color: $component-color;
-    }
-
-    .ui-state-hover {
-        background: $component-active-bg;
-        color: $component-active-color;
-    }
-}
-
-.ui-datepicker-current-day {
-    .ui-state-active {
-        border-color: $highlight-border;
-        background: $highlight-bg;
-        color: $highlight-text;
     }
 }

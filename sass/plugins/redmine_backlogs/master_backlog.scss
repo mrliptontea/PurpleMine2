@@ -7,15 +7,15 @@ $header-right-width:            230px;
 $header-right-width-wider:      280px;
 
 $story-left-width:              110px;
-$story-right-width:             130px;
+$story-right-width:             110px;
 
 $story-id-width:                51px;
 $story-project-width:           50px;
-$story-status-width:            90px;
+$story-status-width:            70px;
 
 $story-tracker-input-width:     100px;
-$story-status-input-width:      90px;
-$story-sp-input-width:          45px;
+$story-status-input-width:      85px;
+$story-sp-input-width:          50px;
 
 @mixin rb-tracker($parent, $background, $color) {
     #{$parent} .id .t a {
@@ -597,6 +597,7 @@ $story-sp-input-width:          45px;
                 &.story_points {
                     width: $story-sp-input-width;
                     margin-right: 0;
+                    padding-left: 0;
                     float: left;
                 }
 

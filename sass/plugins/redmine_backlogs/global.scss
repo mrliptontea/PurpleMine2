@@ -335,8 +335,8 @@ body {
     }
 
     .ui-state-default {
-        border: 1px solid $component-border;
-        background: $component-bg;
+        border: 1px solid $body-bg;
+        background: $body-bg;
         color: $component-color;
         font-weight: normal;
         box-shadow: none;
@@ -401,14 +401,8 @@ body {
     }
 
     .ui-datepicker-calendar {
-        table-layout: fixed;
-
         td {
             text-align: right;
-
-            a {
-                padding: .25em .2em .25em 0;
-            }
 
             &.ui-datepicker-week-col {
                 padding-right: $table-condensed-cell-padding;
@@ -440,6 +434,24 @@ body {
     .ui-datepicker-buttonpane {
         button {
             padding: $input-padding-vertical $input-padding-horizontal;
+        }
+
+        .ui-state-default {
+            border-color: $component-border;
+            background: $component-bg;
+        }
+
+        .ui-state-focus,
+        .ui-state-hover {
+            border-color: $component-active-bg;
+            background: $component-active-bg;
+            color: $component-active-color;
+        }
+
+        .ui-state-active {
+            border-color: $highlight-border;
+            background: $highlight-bg;
+            color: $highlight-text;
         }
     }
 }
