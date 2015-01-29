@@ -3,16 +3,16 @@
 // --------------------------------------------------
 
 table.progress {
-    empty-cells: show;
-    float: left;
     margin-top: 1px;
     margin-right: 5px;
+    float: left;
     border: 1px solid rgba(#000, .1);
+    empty-cells: show;
 
     td {
+        height: 12px;
         padding: 0;
         border: 0 none;
-        height: 12px;
 
         &.closed {
             background-color: $progress-bar-success-bg;
@@ -33,11 +33,12 @@ p {
         margin-bottom: 0;
         font-size: $font-size-small;
     }
+
     &.progress-info {
+        margin-top: -4px;
         margin-bottom: 0;
         clear: left;
-        font-size: 80%;
-        margin-top: -4px;
         color: #777;
+        font-size: 80%;
     }
 }

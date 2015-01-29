@@ -11,14 +11,14 @@
 
     button {
         margin-bottom: 5px;
-        vertical-align: top;
         box-shadow: none;
+        vertical-align: top;
     }
 
     .jstb_help {
-        float: right;
         margin-right: 0;
         margin-left: -6px;
+        float: right;
     }
 }
 
@@ -27,9 +27,9 @@
     .jstElements {
         button[type="button"] {
             padding: 0;
-            color: $btn-default-color;
             background: $body-bg;
             background-image: none;
+            color: $btn-default-color;
             @include fa-icon();
 
             &:before {

@@ -3,10 +3,10 @@
 // --------------------------------------------------
 
 img.gravatar {
-    vertical-align: middle;
-    line-height: 1;
     border-radius: $border-radius-large;
+    line-height: 1;
     overflow: hidden;
+    vertical-align: middle;
 
     h2 &,
     h3 &,
@@ -21,14 +21,14 @@ img.gravatar {
 // For Administration -> /users
 
 .username img.gravatar {
-    vertical-align: top;
     position: relative;
     top: 1px;
     margin-right: .5em;
+    vertical-align: top;
 }
 
 /* Used on 12px Gravatar img tags without the icon background */
 .icon-gravatar {
-    float: left;
     margin-right: 5px;
+    float: left;
 }

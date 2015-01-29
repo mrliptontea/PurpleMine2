@@ -18,8 +18,8 @@ div#activity,
     dt {
         margin-bottom: 2px;
         padding-left: $padding-side;
-        background-position: 0 center;
         background-repeat: no-repeat;
+        background-position: 0 center;
     }
 
     span.project:after {
@@ -62,9 +62,9 @@ div#search-results-counts {
     }
 
     li {
-        list-style-type: none;
-        float: left;
         margin-left: 1em;
+        float: left;
+        list-style-type: none;
     }
 }
 

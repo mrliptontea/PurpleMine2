@@ -16,10 +16,10 @@ $login-input-width:             200px;
         width: $login-form-width;
 
         padding: $panel-body-padding;
-        color: $panel-color;
-        background-color: $panel-bg;
         border: 1px solid $panel-border;
         border-radius: $border-radius-base;
+        background-color: $panel-bg;
+        color: $panel-color;
         box-shadow: $panel-shadow;
 
         table {
@@ -40,8 +40,8 @@ $login-input-width:             200px;
 }
 
 #openid_url {
+    padding-right: 8px + 24px;
+    background-image: url("../../../images/openid-bg.gif");
     background-repeat: no-repeat;
     background-position: ($login-input-width - 24px) center;
-    background-image: url(../../../images/openid-bg.gif);
-    padding-right: 8px + 24px;
 }

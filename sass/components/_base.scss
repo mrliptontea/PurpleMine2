@@ -42,16 +42,16 @@ a {
 
 h1 {
     margin: 0;
-    line-height: 30px;
     font-size: 2em;             // ~28px
+    line-height: 30px;
 }
 
 h2 {
     margin-top: 0;
     margin-bottom: $line-height-computed;
-    line-height: $line-height-computed;
     font-size: 1.43em;          // ~20px
     font-weight: 500;
+    line-height: $line-height-computed;
 
     img {
         vertical-align: middle;
@@ -61,9 +61,9 @@ h2 {
 h3 {
     margin-top: 0;
     margin-bottom: $line-height-computed;
-    line-height: $line-height-computed;
     font-size: 1.14em;          // ~16px
     font-weight: 500;
+    line-height: $line-height-computed;
 }
 
 h4 {
@@ -104,7 +104,10 @@ dd {
     margin-left: 0;
 }
 
-code, kbd, pre, samp {
+code,
+kbd,
+pre,
+samp {
     font-family: $font-family-monospace;
     font-size: 1em;
 }
@@ -117,13 +120,13 @@ hr {
 }
 
 abbr[title] {
-    cursor: help;
     border-bottom: 1px dotted $abbr-border-color;
+    cursor: help;
 }
 
 blockquote {
-    padding: floor($line-height-computed / 4) $padding-large-horizontal;
     margin: 0 0 $line-height-computed;
+    padding: floor($line-height-computed / 4) $padding-large-horizontal;
     border-left: 4px solid $blockquote-border-color;
 
     p,

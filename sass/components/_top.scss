@@ -40,8 +40,8 @@
     float: right;
 
     > ul > li {
-        margin-left: .5em;
         margin-right: 0;
+        margin-left: .5em;
     }
 }
 
@@ -51,9 +51,9 @@
 // --------------------------------------------------
 
 #header {
+    position: relative;
     background-color: $header-bg;
     color: $header-text;
-    position: relative;
 
     > h1 {
         padding: 10px $padding-side;
@@ -90,16 +90,16 @@
     input,
     select {
         margin-left: 5px;
-        color: $header-root;
-        background: darken($header-bg, 10%);
         border-color: darken($header-bg, 15%);
+        background: darken($header-bg, 10%);
+        color: $header-root;
         @include transition(color ease-in-out .1s, background-color ease-in-out .1s, border-color ease-in-out .1s);
 
         &:focus {
-            color: $input-color;
-            background-color: $input-bg;
             border-color: darken($header-bg, 35%);
-            box-shadow: inset 0 1px 3px rgba(0,0,0,.3);
+            background-color: $input-bg;
+            color: $input-color;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, .3);
         }
     }
 
@@ -109,20 +109,20 @@
 }
 
 #main-menu {
-    background-color: $main-menu-bg;
     border-bottom: 1px solid $main-menu-border;
+    background-color: $main-menu-bg;
 
     ul {
         margin: 0;
         padding: 0 ($padding-side - $main-menu-padding-horizontal);
-        list-style: none;
         color: $main-menu-link;
+        list-style: none;
         @extend %clearfix;
 
         > li {
-            float: left;
             margin-right: .5em;
             margin-bottom: -1px;
+            float: left;
 
             > a {
                 display: block;
@@ -130,13 +130,13 @@
                 @include transition(box-shadow .2s);
 
                 @media screen and (min-width: $screen-md-min) {
-                    padding-left: $main-menu-padding-horizontal;
                     padding-right: $main-menu-padding-horizontal;
+                    padding-left: $main-menu-padding-horizontal;
                 }
 
                 @media screen and (min-width: $screen-lg-min) {
-                    padding-left: $main-menu-padding-horizontal * 2;
                     padding-right: $main-menu-padding-horizontal * 2;
+                    padding-left: $main-menu-padding-horizontal * 2;
                 }
 
                 &:hover,
@@ -148,8 +148,8 @@
 
                 &.selected {
                     padding-bottom: $main-menu-padding-vertical - $main-menu-shadow-width;
-                    color: $main-menu-link-active;
                     border-bottom: 3px solid $main-menu-shadow-active;
+                    color: $main-menu-link-active;
                     font-weight: bold;
                     box-shadow: none;
                 }

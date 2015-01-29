@@ -8,9 +8,9 @@
     }
 
     .line-numbers {
-        padding: 2px 4px 2px 4px;
+        margin: 0 5px 0 0;
+        padding: 2px 4px;
         background-color: #eee;
-        margin: 0px 5px 0px 0px;
     }
 
     .code pre {
@@ -18,8 +18,8 @@
     }
 
     .debug {
-        color: white !important;
-        background: blue !important;
+        background: #00f !important;
+        color: #fff !important;
     }
 
     .annotation {
@@ -39,10 +39,10 @@
     }
 
     .char {
-        color: #D20;
+        color: #d20;
 
         .content {
-            color: #D20;
+            color: #d20;
         }
 
         .delimiter {
@@ -51,7 +51,7 @@
     }
 
     .class {
-        color: #795DA3;
+        color: #795da3;
         font-weight: bold;
     }
 
@@ -60,7 +60,7 @@
     }
 
     .color {
-        color: #0A0;
+        color: #0a0;
     }
 
     .comment {
@@ -73,15 +73,15 @@
     }
 
     .complex {
-        color: #A08;
+        color: #a08;
     }
 
     .constant {
-        color: #795DA3;
+        color: #795da3;
     }
 
     .decorator {
-        color: #B0B;
+        color: #b0b;
     }
 
     .definition {
@@ -90,7 +90,7 @@
     }
 
     .delimiter {
-        color: black;
+        color: #000;
     }
 
     .directive {
@@ -103,7 +103,7 @@
     }
 
     .doc-string {
-        color: #D42;
+        color: #d42;
         font-weight: bold;
     }
 
@@ -117,8 +117,8 @@
     }
 
     .error {
-        color: #F00;
-        background-color: #FAA;
+        background-color: #faa;
+        color: #f00;
     }
 
     .escape {
@@ -126,16 +126,16 @@
     }
 
     .exception {
-        color: #C00;
+        color: #c00;
         font-weight: bold;
     }
 
     .float {
-        color: #06D;
+        color: #06d;
     }
 
     .function {
-        color: #06B;
+        color: #06b;
         font-weight: bold;
     }
 
@@ -152,26 +152,26 @@
     }
 
     .include {
-        color: #B44;
+        color: #b44;
         font-weight: bold;
     }
 
     .inline {
         background-color: rgba(#000, .05);
-        color: black;
+        color: #000;
     }
 
     .inline-delimiter {
-        font-weight: bold;
         color: #666;
+        font-weight: bold;
     }
 
     .instance-variable {
-        color: #33B;
+        color: #33b;
     }
 
     .integer {
-        color: #0086B3;
+        color: #0086b3;
     }
 
     .key {
@@ -187,7 +187,7 @@
     }
 
     .keyword {
-        color: #B3113E;
+        color: #b3113e;
         font-weight: bold;
     }
 
@@ -206,10 +206,8 @@
     }
 
     .octal {
-        color: #40E;
+        color: #40e;
     }
-
-    .operator {}
 
     .predefined {
         color: #b21;
@@ -229,12 +227,12 @@
     }
 
     .pseudo-class {
-        color: #00C;
+        color: #00c;
         font-weight: bold;
     }
 
     .regexp {
-        background-color: hsla(300, 100%, 50%, 0.06);
+        background-color: hsla(300, 100%, 50%, .06);
 
         .content {
             color: #808;
@@ -245,7 +243,7 @@
         }
 
         .modifier {
-            color: #C2C;
+            color: #c2c;
         }
     }
 
@@ -255,10 +253,10 @@
     }
 
     .shell {
-        background-color: hsla(120, 100%, 50%, 0.06);
+        background-color: hsla(120, 100%, 50%, .06);
 
         .content {
-            color: #2B2;
+            color: #2b2;
         }
 
         .delimiter {
@@ -271,7 +269,7 @@
         .content,
         .delimiter,
         .modifier {
-            color: #DF5000;
+            color: #df5000;
         }
     }
 
@@ -302,56 +300,56 @@
     }
 
     .insert {
-        background: hsla(120, 100%, 50%, 0.12);
+        background: hsla(120, 100%, 50%, .12);
     }
 
     .delete {
-        background: hsla(0, 100%, 50%, 0.12);
+        background: hsla(0, 100%, 50%, .12);
     }
 
     .change {
-        color: #bbf;
         background: #007;
+        color: #bbf;
     }
 
     .head {
-        color: #f8f;
         background: #505;
+        color: #f8f;
 
         .filename {
-            color: white;
+            color: #fff;
         }
     }
 
     .delete .eyecatcher {
-        background-color: hsla(0, 100%, 50%, 0.2);
-        border: 1px solid hsla(0, 100%, 45%, 0.5);
         margin: -1px;
-        border-bottom: none;
+        border: 1px solid hsla(0, 100%, 45%, .5);
+        border-bottom: 0 none;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
+        background-color: hsla(0, 100%, 50%, .2);
     }
 
     .insert {
         .eyecatcher {
-            background-color: hsla(120, 100%, 50%, 0.2);
-            border: 1px solid hsla(120, 100%, 25%, 0.5);
             margin: -1px;
-            border-top: none;
+            border: 1px solid hsla(120, 100%, 25%, .5);
+            border-top: 0 none;
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
+            background-color: hsla(120, 100%, 50%, .2);
         }
 
         .insert {
-            color: #0c0;
             background: transparent;
+            color: #0c0;
             font-weight: bold;
         }
     }
 
     .delete .delete {
-        color: #c00;
         background: transparent;
+        color: #c00;
         font-weight: bold;
     }
 

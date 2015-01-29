@@ -5,10 +5,10 @@
 #backlogs_view_issues_sidebar {
     > a {
         display: block;
-        border: 1px solid transparent;
         padding: $sidebar-padding-vertical $sidebar-padding-horizontal;
+        border: 1px solid transparent;
 
-        @if $sidebar-position == 'left' {
+        @if $sidebar-position == "left" {
             margin-right: -($sidebar-padding-horizontal);
             border-left-width: 3px;
             border-radius: $border-radius-large 0 0 $border-radius-large;
@@ -23,7 +23,7 @@
             text-decoration: none;
         }
 
-        & + br {
+        + br {
             display: none;
         }
     }

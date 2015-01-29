@@ -3,29 +3,29 @@
 // --------------------------------------------------
 
 .issue.details {
-    padding: $issue-padding;
     margin-bottom: $line-height-computed;
-    background-color: $issue-bg;
+    padding: $issue-padding;
     border: 1px solid $issue-border;
+    border-radius: $border-radius-base;
+    background-color: $issue-bg;
     color: $issue-text;
     word-wrap: break-word;
-    border-radius: $border-radius-base;
     box-shadow: $panel-shadow;
 
     @if $use-gravatars
     {
         > img.gravatar {
-            float: left;
             width: $issue-gravatar-size;
             height: $issue-gravatar-size;
             margin-right: 10px;
             margin-bottom: $line-height-computed / 2;
+            float: left;
         }
 
         table img.gravatar {
-            margin-right: 5px;
             position: relative;
             top: -1px;
+            margin-right: 5px;
         }
 
         > .subject,
@@ -37,15 +37,15 @@
     > .subject {
         h3 {
             margin-bottom: 5px;
-            line-height: $headings-line-height;
             color: $gray-darkest;
-            font-weight: bold;
             font-size: $issue-heading-size * 1em;
+            font-weight: bold;
+            line-height: $headings-line-height;
         }
 
         p {
-            font-size: $font-size-small;
             margin-bottom: 5px;
+            font-size: $font-size-small;
         }
     }
 
@@ -94,9 +94,9 @@ div.attachments {
     }
 
     img {
-        vertical-align: middle;
         position: relative;
         top: -1px;
+        vertical-align: middle;
     }
 
     .delete {
@@ -123,9 +123,9 @@ div.thumbnails {
     a {
         display: inline-block;
         margin-right: 2px;
-        background-color: $body-bg;
         border: 1px solid $gray-lighter;
         border-radius: $border-radius-base;
+        background-color: $body-bg;
 
         &:hover {
             border-color: $gray-light;
@@ -133,8 +133,8 @@ div.thumbnails {
     }
 
     img {
-        margin: 3px;
         top: 0;
+        margin: 3px;
         border-radius: $border-radius-base - 1;
     }
 }
@@ -181,15 +181,16 @@ table.attributes {
 
     th,
     td {
-        vertical-align: top;
-        text-align: left;
         padding: $table-condensed-cell-padding $table-condensed-cell-padding $table-condensed-cell-padding 0;
+        text-align: left;
+        vertical-align: top;
     }
 
     > tbody > tr {
         > th {
             width: 15%;
         }
+
         > td {
             width: 35%;
         }
@@ -225,8 +226,8 @@ table.attributes {
             border-bottom: 1px solid $gray-lighter;
 
             > .gravatar {
-                float: left;
                 margin-right: 5px;
+                float: left;
             }
         }
 
@@ -239,8 +240,8 @@ table.attributes {
         }
 
         .wiki {
-            margin-left: $journal-indent;
             margin-bottom: $line-height-computed / 2;
+            margin-left: $journal-indent;
         }
 
         i {
@@ -265,9 +266,9 @@ table.attributes {
     }
 
     .private-notes {
-        border-left: 3px solid $brand-warning;
-        padding-left: 3px;
         margin-left: -(3px + 3px);
+        padding-left: 3px;
+        border-left: 3px solid $brand-warning;
         border-radius: $border-radius-base 0 0 $border-radius-base;
     }
 }
@@ -284,20 +285,20 @@ table.attributes {
 span.private {
     position: relative;
     top: -1px;
-    text-transform: uppercase;
+    padding: $tracker-inline-padding;
+    border-radius: $border-radius-small;
     background: $brand-warning;
     color: $brand-text;
-    font-weight: bold;
-    padding: $tracker-inline-padding;
     font-size: .714em;
-    border-radius: $border-radius-small;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 div#issue-changesets {
-    float: right;
     width: 33%;
-    margin-left: $padding-side;
     margin-bottom: $line-height-computed;
+    margin-left: $padding-side;
+    float: right;
 
     div.changeset {
         padding: $table-cell-padding;

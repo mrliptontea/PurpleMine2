@@ -12,10 +12,9 @@
     input,
     select,
     textarea,
-    button
-    {
-        font-size: inherit;
+    button {
         font-family: inherit;
+        font-size: inherit;
     }
 }
 
@@ -25,9 +24,9 @@
  */
 
 .ui-widget-content {
-    color: $text-color;
-    background: $body-bg;
     border: 1px solid $panel-border;
+    background: $body-bg;
+    color: $text-color;
 
     a {
         color: $text-color;
@@ -35,23 +34,23 @@
 }
 
 .ui-widget-header {
-    color: $header-text;
-    background: $header-bg;
     border: 0 none;
+    background: $header-bg;
+    color: $header-text;
     font-weight: bold;
 
     a,
     button {
         &.ui-state-default {
-            color: $header-text;
-            background: $header-bg;
             border-color: $header-bg;
+            background: $header-bg;
+            color: $header-text;
         }
 
         &.ui-state-hover,
         &.ui-state-focus {
-            background: darken($header-bg, 10%);
             border-color: darken($header-bg, 12%);
+            background: darken($header-bg, 10%);
         }
 
         .ui-icon {
@@ -68,10 +67,10 @@
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
-    font-weight: normal;
-    color: $component-color;
-    background: $component-bg;
     border: 1px solid $component-border;
+    background: $component-bg;
+    color: $component-color;
+    font-weight: normal;
     box-shadow: none;
 }
 
@@ -90,8 +89,8 @@
 .ui-widget-header .ui-state-focus {
     border: 1px solid $component-active-border;
     background: $component-active-bg;
-    font-weight: normal;
     color: $component-active-color;
+    font-weight: normal;
 }
 
 .ui-state-hover a,
@@ -111,8 +110,8 @@
 .ui-widget-header .ui-state-active {
     border: 1px solid $component-active-border;
     background: $component-active-bg;
-    font-weight: normal;
     color: $component-active-color;
+    font-weight: normal;
 }
 
 .ui-state-active a,
@@ -145,8 +144,8 @@
     }
 
     p.buttons {
-        text-align: right;
         margin-bottom: 0;
+        text-align: right;
     }
 }
 
@@ -172,9 +171,9 @@
  */
 
 img.ui-datepicker-trigger {
+    margin-left: 4px;
     cursor: pointer;
     vertical-align: middle;
-    margin-left: 4px;
 }
 
 .ui-datepicker {
@@ -207,8 +206,8 @@ img.ui-datepicker-trigger {
     select.ui-datepicker-month,
     select.ui-datepicker-year {
         width: 49%;
-        margin: 0;
         height: 1.8em;
+        margin: 0;
     }
 
     select.ui-datepicker-year {
@@ -234,9 +233,9 @@ img.ui-datepicker-trigger {
 
 .ui-datepicker-today {
     .ui-state-highlight {
-        color: $component-color;
         border-color: $component-active-border;
         background: $component-bg;
+        color: $component-color;
     }
 
     .ui-state-hover {
@@ -247,8 +246,8 @@ img.ui-datepicker-trigger {
 
 .ui-datepicker-current-day {
     .ui-state-active {
-        color: $highlight-text;
-        background: $highlight-bg;
         border-color: $highlight-border;
+        background: $highlight-bg;
+        color: $highlight-text;
     }
 }

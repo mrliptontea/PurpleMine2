@@ -1,17 +1,22 @@
 div.wiki {
-    line-height: $wiki-line-height;
     color: $wiki-text;
+    line-height: $wiki-line-height;
 
     &.wiki-page {
-        font-size: $wiki-font-size;
         margin-bottom: $line-height-computed;
+        font-size: $wiki-font-size;
     }
 
-    h1, h2, h3, h4, h5, h6 {
-        font-weight: $headings-font-weight;
-        line-height: $headings-line-height;
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         margin-top: 1em;
         margin-bottom: .5em;
+        font-weight: $headings-font-weight;
+        line-height: $headings-line-height;
     }
 
     h1 { font-size: $font-size-h1; }
@@ -23,7 +28,7 @@ div.wiki {
 
     h1,
     h2 {
-        padding-bottom: 0.3em;
+        padding-bottom: .3em;
         border-bottom: 1px solid $gray-lighter;
     }
 
@@ -32,12 +37,12 @@ div.wiki {
     }
 
     > a:first-child {
-        & + h1,
-        & + h2,
-        & + h3,
-        & + h4,
-        & + h5,
-        & + h6 {
+        + h1,
+        + h2,
+        + h3,
+        + h4,
+        + h5,
+        + h6 {
             margin-top: 0;
         }
     }
@@ -48,7 +53,7 @@ div.wiki {
 
     .contextual {
         a {
-            opacity: 0.4;
+            opacity: .4;
 
             &:hover {
                 opacity: 1;
@@ -61,15 +66,17 @@ div.wiki {
         border: 1px solid $table-border-color;
     }
 
-    td, th {
-        border: 1px solid $table-border-color;
+    td,
+    th {
         padding: $table-cell-padding;
+        border: 1px solid $table-border-color;
     }
 
     .noborder {
         border: 0 none;
 
-        td, th {
+        td,
+        th {
             border: 0 none;
         }
     }
@@ -80,46 +87,46 @@ div.wiki {
 
     code {
         padding: .2em .33em;
-        background-color: #f7f7f7;
         border-radius: $border-radius-base;
+        background-color: #f7f7f7;
         font-size: $font-size-small;
     }
 
     pre {
-        padding: 4px 8px;
-        background-color: #f7f7f7;
-        border: 1px solid #e9e9e9;
         width: auto;
+        padding: 4px 8px;
+        border: 1px solid #e9e9e9;
+        border-radius: $border-radius-base;
+        background-color: #f7f7f7;
         overflow-x: auto;
         overflow-y: hidden;
-        border-radius: $border-radius-base;
         font-size: $font-size-small;
 
         code {
             padding: 0;
-            background-color: transparent;
             border-radius: 0;
+            background-color: transparent;
             font-size: 1em;
         }
     }
 
     .toc {
-        padding: 0;
         margin-bottom: $line-height-computed;
         margin-left: 0;
+        padding: 0;
 
         &.right,
         &.left {
             padding: 8px;
-            background-color: $highlight-bg;
             border: 1px solid $highlight-border;
             border-radius: $border-radius-base;
+            background-color: $highlight-bg;
             box-shadow: $panel-shadow;
 
             a {
+                color: $highlight-text;
                 font-weight: normal;
                 text-decoration: none;
-                color: $highlight-text;
 
                 &:hover {
                     color: darken($highlight-text, 10%);
@@ -129,15 +136,15 @@ div.wiki {
         }
 
         &.right {
-            float: right;
-            margin-left: $line-height-computed;
             margin-right: 0;
+            margin-left: $line-height-computed;
+            float: right;
         }
 
         &.left {
-            float: left;
             margin-right: $line-height-computed;
             margin-left: 0;
+            float: left;
         }
 
         ul {
@@ -160,18 +167,23 @@ div.wiki {
         }
 
         img {
-            vertical-align: middle;
             max-width: 100%;
+            vertical-align: middle;
         }
     }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     .wiki-anchor {
         display: none;
         margin-left: 5px;
-        text-decoration: none !important;
         color: $gray-lighter !important;
+        text-decoration: none !important;
     }
 
     &:hover {
@@ -182,19 +194,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p.footnote {
-    font-size: $font-size-small;
     margin-bottom: 5px;
+    font-size: $font-size-small;
 
     &:before {
-        content: "";
         display: block;
         width: 300px;
         margin-top:  10px;
         padding-top: 10px;
         border-top: 1px solid $gray-lighter;
+        content: "";
     }
 
-    & + p.footnote:before {
+    + p.footnote:before {
         display: none;
     }
 }
@@ -203,11 +215,11 @@ p.footnote {
     margin-top: $line-height-computed;
     padding: $padding-wiki;
     background-color: #fffbe5;
-    background-image: url(../images/draft.png);
+    background-image: url("../images/draft.png");
     background-position: center center;
 
     html[lang="pl"] & {
-        background-image: url(../images/draft-pl.png);
+        background-image: url("../images/draft-pl.png");
     }
 }
 
@@ -226,7 +238,7 @@ p.footnote {
 
 .controller-wiki.action-show {
     .other-formats {
-        float: right;
         margin-top: 0;
+        float: right;
     }
 }

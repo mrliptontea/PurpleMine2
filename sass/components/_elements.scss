@@ -18,8 +18,8 @@
  */
 
 .other-formats {
-    text-align: right;
     margin: ($line-height-computed / 2) 0 0;
+    text-align: right;
 
     span + span:before {
         content: "/ ";
@@ -33,8 +33,8 @@
 
 a.collapsible,
 .collapsible > legend {
-    color: $link-color;
     cursor: pointer;
+    color: $link-color;
     @include user-select(none);
 
     &:hover {
@@ -42,17 +42,17 @@ a.collapsible,
     }
 
     &:before {
-        content: '';
         display: inline-block;
+        position: relative;
+        top: -1px;
         width: 0;
         height: 0;
         margin-right: 3px;
-        vertical-align: middle;
         border-top:   5px solid;
         border-right: 5px solid transparent;
         border-left:  5px solid transparent;
-        position: relative;
-        top: -1px;
+        content: "";
+        vertical-align: middle;
         @include rotate(0);
         @include transition-transform(.1s);
     }
@@ -80,12 +80,13 @@ a.collapsible.collapsed,
  */
 
 .contextual {
-    float: right;
     padding-left: $padding-base-vertical;
-    white-space: nowrap;
+    float: right;
     cursor: default;
+    white-space: nowrap;
 
-    input, select {
+    input,
+    select {
         font-size: .9em;
     }
 }
@@ -97,8 +98,8 @@ a.collapsible.collapsed,
 
 .hidden-for-sighted {
     position: absolute;
-    left: -10000px;
     top: auto;
+    left: -10000px;
     width: 1px;
     height: 1px;
     overflow: hidden;
@@ -120,12 +121,12 @@ a.collapsible.collapsed,
  */
 
 .box {
-    padding: $panel-body-padding;
     margin-bottom: $line-height-computed;
-    color: $panel-color;
-    background-color: $panel-bg;
+    padding: $panel-body-padding;
     border: 1px solid $panel-border;
     border-radius: $border-radius-base;
+    background-color: $panel-bg;
+    color: $panel-color;
     word-wrap: break-word;
     box-shadow: $panel-shadow;
 
@@ -153,13 +154,13 @@ a.collapsible.collapsed,
 }
 
 .splitcontentleft {
-    float: left;
     padding-right: ($padding-side / 2);
+    float: left;
 }
 
 .splitcontentright {
-    float: right;
     padding-left: ($padding-side / 2);
+    float: right;
 }
 
 
@@ -184,8 +185,8 @@ a.collapsible.collapsed,
 
 #watchers {
     select {
-        width: 100%;
         display: block;
+        width: 100%;
     }
 
     > .watchers {
@@ -194,7 +195,7 @@ a.collapsible.collapsed,
             margin-bottom: $sidebar-padding-vertical;
             @extend %clearfix;
 
-            @if $sidebar-position == 'left' {
+            @if $sidebar-position == "left" {
                 padding-right: $sidebar-padding-horizontal;
             } @else {
                 padding-left: $sidebar-padding-horizontal;
@@ -217,10 +218,10 @@ a.collapsible.collapsed,
             }
 
             img.gravatar {
-                vertical-align: top;
                 position: relative;
                 top: 1px;
                 margin-right: .5em;
+                vertical-align: top;
             }
         }
     }
@@ -271,8 +272,8 @@ p.subtitle {
     }
 
     &.ui-sortable-handle {
-        overflow: hidden;
         outline: 1px solid $gray-lighter;
+        overflow: hidden;
 
         &:hover {
             outline: 1px solid $gray-light;
@@ -280,9 +281,9 @@ p.subtitle {
     }
 
     &.ui-sortable-placeholder {
-        visibility: visible !important;
-        background: $highlight-bg;
         outline: 1px dashed $highlight-border;
+        background: $highlight-bg;
+        visibility: visible !important;
     }
 
     &.ui-sortable-helper {
@@ -297,16 +298,16 @@ p.subtitle {
 
 a.close-icon {
     display: block;
-    margin-top: 5px;
-    overflow: hidden;
     width: 12px;
     height: 12px;
+    margin-top: 5px;
+    background-image: url("../../../images/close.png");
     background-repeat: no-repeat;
     cursor: pointer;
-    background-image: url(../../../images/close.png);
+    overflow: hidden;
 
     &:hover {
-        background-image: url(../../../images/close_hl.png);
+        background-image: url("../../../images/close_hl.png");
     }
 }
 
@@ -403,8 +404,8 @@ table#time-report {
 
     tbody tr {
         &.subtotal {
-            font-style: italic;
             color: $gray;
+            font-style: italic;
 
             td.hours {
                 color: $gray-light;
@@ -412,14 +413,14 @@ table#time-report {
         }
 
         &.total {
-            font-weight: bold;
-            background-color: $table-bg-active;
             border-top: 2px solid darken($table-border-color, 5%);
+            background-color: $table-bg-active;
+            font-weight: bold;
         }
     }
 
     .hours-dec {
-        font-size: 0.9em;
+        font-size: .9em;
     }
 }
 
@@ -453,7 +454,8 @@ div#roadmap {
         td {
             height: 16px;
         }
-        & + .percent {
+
+        + .percent {
             position: relative;
             top: 2px;
         }
@@ -473,8 +475,8 @@ body.controller-versions.action-show div#roadmap .related-issues {
 }
 
 div#version-summary {
-    float: right;
     width: 28%;
+    float: right;
 
     fieldset {
         margin-bottom: $line-height-computed;
@@ -508,25 +510,25 @@ div#version-summary {
 
 #ajax-indicator {
     position: fixed;
-    margin: (($line-height-computed + $padding-large-vertical * 2 + 1px * 2) / -2) ((200px + $padding-large-horizontal * 2 + 1px * 2) / -2);
-    padding: $padding-large-vertical $padding-large-horizontal;
     top: 50%;
     left: 50%;
     width: 200px;
-    z-index: 100;
-    opacity: .9;
-    text-align: center;
-    color: $highlight-text;
-    background-color: $highlight-bg;
+    margin: (($line-height-computed + $padding-large-vertical * 2 + 1px * 2) / -2) ((200px + $padding-large-horizontal * 2 + 1px * 2) / -2);
+    padding: $padding-large-vertical $padding-large-horizontal;
     border: 1px solid $highlight-border;
+    background-color: $highlight-bg;
+    color: $highlight-text;
     font-weight: bold;
+    text-align: center;
     box-shadow: $panel-shadow;
+    opacity: .9;
+    z-index: 100;
 
     span {
-        background-position: 0% 40%;
-        background-repeat: no-repeat;
-        background-image: url(../../../images/loading.gif);
         padding-left: 26px;
+        background-image: url("../../../images/loading.gif");
+        background-repeat: no-repeat;
+        background-position: 0% 40%;
         vertical-align: bottom;
     }
 }
@@ -552,8 +554,8 @@ tr.message {
 
         &.last_message {
             width: 30%;
-            white-space: nowrap;
             text-align: left;
+            white-space: nowrap;
 
             a:last-child {
                 font-weight: bold;
@@ -566,8 +568,8 @@ table.boards {
     td {
         &.last-message {
             width: 30%;
-            white-space: nowrap;
             text-align: left;
+            white-space: nowrap;
 
             a:last-child {
                 font-weight: bold;
@@ -587,16 +589,16 @@ table.boards {
     }
 
     .message {
-        background: $gray-lightest;
         border: 1px solid $gray-lighter;
         border-radius: $panel-border-radius;
+        background: $gray-lightest;
 
         > h4,
         > p {
-            color: $gray;
             margin-bottom: 0;
             padding: $padding-base-vertical $padding-base-horizontal;
             border-bottom: 1px solid mix($gray-lighter, $gray-lightest, 50%);
+            color: $gray;
             font-size: $font-size-small;
 
             a {
@@ -610,14 +612,14 @@ table.boards {
 
         .wiki {
             padding: $padding-base-horizontal;
-            background: $body-bg;
             border-radius: 0 0 $panel-border-radius $panel-border-radius;
+            background: $body-bg;
         }
 
         .contextual {
             position: relative;
-            z-index: 1;
             margin-right: $padding-base-vertical;
+            z-index: 1;
 
             @if $use-font-awesome {
                 margin-top: $padding-small-vertical;
@@ -644,36 +646,36 @@ table.boards {
 
                 &:before,
                 &:after {
+                    display: block;
                     position: absolute;
                     top: 6px;
-                    left: -14px;
                     right: 100%;
-                    width: 0px;
-                    height: 0px;
-                    display: block;
-                    content: " ";
-                    border-color: transparent;
+                    left: -14px;
+                    width: 0;
+                    height: 0;
                     border-style: solid solid outset;
+                    border-color: transparent;
+                    content: " ";
                     pointer-events: none;
                 }
 
                 &:after {
-                    border-width: 6px;
-                    border-right-color: $panel-bg;
                     margin-top: 1px;
                     margin-left: 2px;
+                    border-width: 6px;
+                    border-right-color: $panel-bg;
                 }
 
                 &:before {
-                    border-right-color: $panel-border;
                     border-width: 7px;
+                    border-right-color: $panel-border;
                 }
             }
 
             img.gravatar {
-                float: left;
                 margin-top: $line-height-computed - 24px;
                 margin-left: -(24px + $padding-base-horizontal * 2 + 1px);
+                float: left;
             }
         }
     }
@@ -711,10 +713,10 @@ table.boards {
 .text-diff {
     margin-bottom: $line-height-computed;
     padding: $panel-body-padding;
-    color: $panel-color;
-    background: $body-bg;
     border: 1px solid $panel-border;
     border-radius: $panel-border-radius;
+    background: $body-bg;
+    color: $panel-color;
 }
 
 .diff_out {
@@ -750,8 +752,8 @@ table.boards {
 
 ul.properties {
     padding: 0;
-    font-size: $font-size-small;
     color: $gray;
+    font-size: $font-size-small;
 
     li {
         list-style-type: none;
@@ -770,8 +772,8 @@ tr.changeset {
 
     td.author,
     td.committed_on {
-        text-align: center;
         width: 15%;
+        text-align: center;
         white-space: nowrap;
     }
 

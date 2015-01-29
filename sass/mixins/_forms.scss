@@ -15,9 +15,9 @@
     #{$parent} {
         height: $input-height;
         padding: $padding-vertical $padding-horizontal;
+        border-radius: $border-radius;
         font-size: $font-size;
         line-height: $line-height;
-        border-radius: $border-radius;
     }
 
     select#{$parent} {
@@ -37,7 +37,7 @@
     @extend %clearfix;
 
     input[type="checkbox"] {
-        float: left;
         margin-left: -20px;
+        float: left;
     }
 }

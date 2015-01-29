@@ -18,13 +18,13 @@
         @extend %fa-icon;
 
         &:before {
-            float: left;
             margin-left: -(8px + 16px);
+            float: left;
             line-height: $line-height-computed;
         }
     } @else {
-        background-position: $padding-large-horizontal 50%;
         background-repeat: no-repeat;
+        background-position: $padding-large-horizontal 50%;
     }
 
     p:last-child,
@@ -40,9 +40,9 @@
     border-color: $border;
 
     @if $use-font-awesome {
-        @if     $icon == 'true'        { $icon: $fa-var-check; }
-        @elseif $icon == 'warning'     { $icon: $fa-var-warning; }
-        @elseif $icon == 'exclamation' { $icon: $fa-var-exclamation-circle; }
+        @if     $icon == "true"        { $icon: $fa-var-check; }
+        @elseif $icon == "warning"     { $icon: $fa-var-warning; }
+        @elseif $icon == "exclamation" { $icon: $fa-var-exclamation-circle; }
 
         &:before {
             content: $icon;
@@ -58,34 +58,35 @@
 }
 
 .flash.notice {
-    @include flash($flash-success-text, $flash-success-bg, $flash-success-border, $flash-success-link, 'true');
+    @include flash($flash-success-text, $flash-success-bg, $flash-success-border, $flash-success-link, "true");
 }
 
 .flash.warning,
 .conflict,
 .nodata {
-    @include flash($flash-warning-text, $flash-warning-bg, $flash-warning-border, $flash-warning-link, 'warning');
+    @include flash($flash-warning-text, $flash-warning-bg, $flash-warning-border, $flash-warning-link, "warning");
 }
 
 #errorExplanation,
 .flash.error {
-    @include flash($flash-error-text, $flash-error-bg, $flash-error-border, $flash-error-link, 'exclamation');
+    @include flash($flash-error-text, $flash-error-bg, $flash-error-border, $flash-error-link, "exclamation");
 }
 
 .nodata {
-    text-align: center;
     padding-left: $padding-large-horizontal;
+    text-align: center;
 
     @if $use-font-awesome {
         &:before {
-            float: none;
             margin-left: 0;
+            float: none;
         }
     }
 }
 
 #errorExplanation {
-    h2, p {
+    h2,
+    p {
         display: none;
     }
 }

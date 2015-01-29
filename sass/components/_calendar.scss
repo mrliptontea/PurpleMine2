@@ -10,8 +10,8 @@ table.cal {
 
     thead th {
         width: 14%;
-        background-color: $table-bg-hover;
         padding: $table-condensed-cell-padding;
+        background-color: $table-bg-hover;
 
         &.week-number {
             width: auto;
@@ -23,22 +23,22 @@ table.cal {
     }
 
     td {
-        border: 1px solid $table-border-color;
-        vertical-align: top;
-        font-size: $font-size-small;
         padding: $table-condensed-cell-padding;
+        border: 1px solid $table-border-color;
+        font-size: $font-size-small;
+        vertical-align: top;
 
         &.week-number {
-            background-color: $table-bg-hover;
             border: 0 none;
-            text-align: right;
+            background-color: $table-bg-hover;
             font-size: 1em;
+            text-align: right;
         }
 
         p.day-num {
             float: right;
-            text-align: right;
             font-size: $font-size-large;
+            text-align: right;
         }
 
         &.odd p.day-num {
@@ -59,22 +59,22 @@ table.cal .starting a,
 p.cal.legend .starting,
 table.cal .ending a,
 p.cal.legend .ending {
-    background-position: 0 center;
-    background-repeat: no-repeat;
-    background-image: url(../../../images/bullet_go.png);
     padding-left: 20px;
+    background-image: url("../../../images/bullet_go.png");
+    background-repeat: no-repeat;
+    background-position: 0 center;
 }
 
 table.cal .ending a,
 p.cal.legend .ending {
-    background-image: url(../../../images/bullet_end.png);
     padding-left: 20px;
+    background-image: url("../../../images/bullet_end.png");
 }
 
 table.cal .starting.ending a,
 p.cal.legend .starting.ending {
-    background-image: url(../../../images/bullet_diamond.png);
     padding-left: 20px;
+    background-image: url("../../../images/bullet_diamond.png");
 }
 
 p.cal.legend {

@@ -19,16 +19,16 @@ $story-sp-input-width:          45px;
 
 @mixin rb-tracker($parent, $background, $color) {
     #{$parent} .id .t a {
-        color: $color;
         background-color: $background;
+        color: $color;
 
         &:before {
             color: mix($color, $background, 50%);
         }
 
         &:hover {
-            text-decoration: none;
             background-color: darken($background, 10%);
+            text-decoration: none;
         }
     }
 }
@@ -55,23 +55,23 @@ $story-sp-input-width:          45px;
 
     .wrapper {
         position: relative;
-        float: left;
         left: 0;
         width: 100%;
+        float: left;
     }
 
     .left-col {
         position: relative;
-        float: left;
         left: 0;
         width: 50%;
+        float: left;
     }
 
     .right-col {
         position: relative;
-        float: right;
         right: 0;
         width: 50%;
+        float: right;
     }
 
     .backlogs-panel-inner {
@@ -84,13 +84,9 @@ $story-sp-input-width:          45px;
  * Fixed-Fluid-Fixed layout
  */
 
-
-.fff-wrapper {
-}
-
 .fff-wrapmiddle {
-    float: left;
     width: 100%;
+    float: left;
 }
 
 .fff-middle {
@@ -99,15 +95,15 @@ $story-sp-input-width:          45px;
 }
 
 .fff-left {
-    float: left;
     width: $story-left-width;
     margin-left: -100%;
+    float: left;
 }
 
 .fff-right {
-    float: left;
     width: $story-right-width;
     margin-left: -$story-right-width;
+    float: left;
 }
 
 .header {
@@ -157,9 +153,9 @@ $story-sp-input-width:          45px;
         display: block;
         position: relative;
         margin: 0 0 $padding-side;
+        border-radius: $border-radius-large $border-radius-large 0 0;
         background-color: $gray-lightest;
         box-shadow: $panel-shadow;
-        border-radius: $border-radius-large $border-radius-large 0 0;
     }
 }
 
@@ -172,21 +168,21 @@ $story-sp-input-width:          45px;
     .header {
         position: relative;
         height: $header-line-height;
-        line-height: $header-line-height;
-        background-color: $header-bg;
         border: 1px solid darken($header-bg, 5%);
-        color: $header-text;
         border-radius: $border-radius-large $border-radius-large 0 0;
+        background-color: $header-bg;
+        color: $header-text;
+        line-height: $header-line-height;
 
         input,
         select {
             border-color: $header-bg;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,.2);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
 
             &:focus {
-                color: $gray-darkest;
                 border-color: lighten($header-bg, 25%);
-                box-shadow: inset 0 1px 3px rgba(0,0,0,.2),
+                color: $gray-darkest;
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2),
                             0 0 0 1px lighten($header-bg, 25%);
             }
         }
@@ -204,19 +200,19 @@ $story-sp-input-width:          45px;
         }
 
         .date {
-            float: left;
             width: 70px;
-            text-align: center;
+            float: left;
             font-size: $font-size-small-px;
+            text-align: center;
 
-            & + .date {
+            + .date {
                 margin-left: $padding-base-horizontal;
             }
         }
 
         .velocity {
-            text-align: right;
             padding-right: $padding-base-horizontal;
+            text-align: right;
         }
 
         .id,
@@ -226,13 +222,13 @@ $story-sp-input-width:          45px;
         }
 
         .saving {
-            background-image: url('images/ajax.gif');
+            background-image: url("images/ajax.gif");
             background-repeat: no-repeat;
             background-position: center;
         }
 
         .error {
-            background-image: url('images/error.png');
+            background-image: url("images/error.png");
             background-repeat: no-repeat;
             background-position: center;
         }
@@ -247,12 +243,13 @@ $story-sp-input-width:          45px;
                 left: 0;
                 width: 100%;
                 padding-top: $editor-padding;
-                background-color: $header-bg;
                 border-radius: $border-radius-large $border-radius-large 0 0;
+                background-color: $header-bg;
                 z-index: 1;
             }
 
-            label, .id.editor {
+            label,
+            .id.editor {
                 display: none;
             }
 
@@ -260,23 +257,24 @@ $story-sp-input-width:          45px;
             .release_start_date.editor,
             .effective_date.editor,
             .sprint_start_date.editor {
-                float: left;
                 position: relative;
                 width: 80px;
-                padding: 0;
-                margin-left: $editor-padding * 2;
                 margin-bottom: $editor-padding;
-                text-align: center;
+                margin-left: $editor-padding * 2;
+                padding: 0;
+                float: left;
                 font-size: $font-size-small-px;
+                text-align: center;
             }
 
             .name.editor {
                 $name-width-minus: $header-right-width-wider + 35px;
-                float: left;
-                margin-left: $header-line-height - 2px;
-                min-width: 128px;
-                width: calc(100% - #{$name-width-minus}) !important;
+
                 position: relative;
+                width: calc(100% - #{$name-width-minus}) !important;
+                min-width: 128px;
+                margin-left: $header-line-height - 2px;
+                float: left;
             }
 
             .description.editor {
@@ -284,34 +282,34 @@ $story-sp-input-width:          45px;
             }
 
             .edit-actions {
-                float: right;
                 margin-right: $editor-padding * 2;
                 margin-bottom: $editor-padding;
+                float: right;
             }
         }
 
         .menu {
             position: relative;
             height: $header-line-height;
-            line-height: $line-height-base;
-            font-size: $font-size-small;
-            overflow: visible;
-            cursor: pointer;
             border-right: 1px solid #888;
             border-bottom: 0 none;
-            border-radius: ($border-radius-large - 1px) 0 0 0;
+            border-radius: ($border-radius-large - 1px) 0 0;
+            cursor: pointer;
+            font-size: $font-size-small;
+            line-height: $line-height-base;
+            overflow: visible;
             @include transition(background-color .07s);
 
             &:hover {
-                z-index: 1000;
                 border-bottom: 1px solid $body-bg;
                 background-color: $body-bg;
+                z-index: 1000;
             }
 
             .icon {
                 position: relative;
-                left: 6px;
                 top: 7px;
+                left: 6px;
                 padding: 0;
                 background-image: url("images/ui-icons_888888_256x240.png");
                 background-position: -64px -16px;
@@ -319,18 +317,18 @@ $story-sp-input-width:          45px;
 
             .items {
                 display: none;
-                z-index: 999;
                 position: absolute;
-                left: -1px;
                 top: $header-line-height + 1px;
+                left: -1px;
                 margin: 0;
                 padding: $padding-small-vertical 0;
-                list-style: none;
-                background-color: $body-bg;
                 border: 1px solid $gray-light;
                 border-top: 0 none;
                 border-radius: 0 0 $border-radius-base $border-radius-base;
+                background-color: $body-bg;
+                list-style: none;
                 box-shadow: 0 2px 1px rgba(#000, .1);
+                z-index: 999;
 
                 a {
                     color: $gray-darker;
@@ -342,17 +340,17 @@ $story-sp-input-width:          45px;
             }
 
             .item {
-                white-space: nowrap;
                 min-width: 150px;
+                white-space: nowrap;
 
                 > a {
                     display: block;
                     padding: 4px 8px;
 
                     &:hover {
-                        text-decoration: none;
-                        color: $component-active-color;
                         background-color: $component-active-bg;
+                        color: $component-active-color;
+                        text-decoration: none;
                     }
                 }
 
@@ -363,8 +361,8 @@ $story-sp-input-width:          45px;
                     left: 160px;
                     margin: 0;
                     padding: 0;
-                    list-style: none;
                     background-color: $gray-lightest;
+                    list-style: none;
                 }
 
                 &:hover ul {
@@ -380,9 +378,9 @@ $story-sp-input-width:          45px;
 
     .close_sprint {
         float: left;
-        overflow: hidden;
-        white-space: nowrap;
         color: $header-link;
+        white-space: nowrap;
+        overflow: hidden;
     }
 
     .closedbacklog {
@@ -404,12 +402,12 @@ $story-sp-input-width:          45px;
 
 #backlogs_container {
     .stories {
-        list-style: none;
-        margin: 0;
-        padding: 0;
         position: relative;
         min-height: ($line-height-computed + $table-condensed-cell-padding * 2);
+        margin: 0;
+        padding: 0;
         font-size: $font-size-list;
+        list-style: none;
 
         .v {
             display: none;
@@ -425,11 +423,11 @@ $story-sp-input-width:          45px;
         display: block;
         margin: 0;
         padding: $table-condensed-cell-padding;
-        cursor: move;
+        border-top: 1px solid $gray-lighter;
         background-color: $body-bg;
         background-repeat: no-repeat;
         background-position: center;
-        border-top: 1px solid $gray-lighter;
+        cursor: move;
 
         &:nth-child(2n) {
             background-color: $table-bg-accent;
@@ -440,12 +438,12 @@ $story-sp-input-width:          45px;
         }
 
         &.saving {
-            background-image: url('images/ajax.gif');
+            background-image: url("images/ajax.gif");
             color: $gray-light;
         }
 
         &.error {
-            background-image: url('images/error.png');
+            background-image: url("images/error.png");
             color: $brand-warning;
         }
 
@@ -462,17 +460,17 @@ $story-sp-input-width:          45px;
                 a {
                     display: block;
                     padding: $tracker-list-padding;
+                    border-radius: $border-radius-small ($border-radius-small * 3) ($border-radius-small * 3) $border-radius-small;
+                    background-color: darken($gray-lightest, 3%);
+                    color: $gray-dark;
                     font-weight: bold;
                     text-align: right;
-                    color: $gray-dark;
-                    background-color: darken($gray-lightest, 3%);
-                    border-radius: $border-radius-small ($border-radius-small * 3) ($border-radius-small * 3) $border-radius-small;
 
                     &:before {
-                        content: '#';
                         margin-left: -1em;
-                        font-weight: normal;
                         color: $gray-light;
+                        font-weight: normal;
+                        content: "#";
                     }
 
                     &:hover {
@@ -486,9 +484,9 @@ $story-sp-input-width:          45px;
         .project {
             display: block;
             position: relative;
-            float: left;
             width: $story-project-width;
             padding-left: 5px;
+            float: left;
             text-align: center;
             white-space: nowrap;
             overflow: hidden;
@@ -499,9 +497,7 @@ $story-sp-input-width:          45px;
         }
 
         .subject {
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
+            @include text-overflow;
         }
 
         &.closed .subject {
@@ -509,15 +505,15 @@ $story-sp-input-width:          45px;
         }
 
         .status_id {
-            float: left;
             width: $story-status-width;
             padding-left: 5px;
+            float: left;
             white-space: nowrap;
         }
 
         .story_points {
-            float: left;
             width: $story-right-width - ($story-status-width + $padding-base-horizontal);
+            float: left;
             text-align: right;
         }
 
@@ -536,11 +532,11 @@ $story-sp-input-width:          45px;
             $input-padding-vertical-small:   2px;
             $input-padding-horizontal-small: 5px;
 
-            background-color: darken($highlight-bg, 10%);
             border-color: $highlight-border;
+            background-color: darken($highlight-bg, 10%);
             cursor: default;
 
-            & + .story {
+            + .story {
                 border-top-color: $highlight-border;
             }
 
@@ -550,8 +546,8 @@ $story-sp-input-width:          45px;
                 border-color: $highlight-border;
 
                 &:focus {
-                    color: $gray-darkest;
                     border-color: darken($highlight-border, 15%);
+                    color: $gray-darkest;
                     box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075),
                                 0 0 5px rgba(darken($highlight-border, 15%), .5);
                 }
@@ -567,13 +563,13 @@ $story-sp-input-width:          45px;
             }
 
             .editor {
-                margin: 0;
-                padding: $input-padding-vertical-small $input-padding-horizontal-small;
                 height: ($line-height-computed + ($input-padding-vertical-small * 2) + 2);
-                font-size: inherit;
-                font-family: inherit;
-                vertical-align: top;
+                margin: 0;
                 margin-right: 5px;
+                padding: $input-padding-vertical-small $input-padding-horizontal-small;
+                font-family: inherit;
+                font-size: inherit;
+                vertical-align: top;
 
                 &.tracker_id {
                     display: block;
@@ -582,30 +578,31 @@ $story-sp-input-width:          45px;
                 }
 
                 &.status_id {
-                    float: left;
                     width: $story-status-input-width;
+                    float: left;
                 }
 
                 &.story_points {
-                    float: left;
                     width: $story-sp-input-width;
                     margin-right: 0;
+                    float: left;
                 }
 
                 &.subject {
-                    float: left;
                     $subject-width-minus: $story-tracker-input-width + $story-status-input-width + $story-sp-input-width + 5px * 3;
+
                     width: calc(100% - #{$subject-width-minus}) !important;
                     height: 60px;
+                    float: left;
                     overflow: auto;
                 }
 
                 &.category_id {
                     display: block;
-                    left: 456px;
-                    margin: 0;
                     top: 4px;
+                    left: 456px;
                     width: 60px;
+                    margin: 0;
                 }
             }
 
@@ -619,8 +616,8 @@ $story-sp-input-width:          45px;
             }
 
             .edit-actions {
-                float: right;
                 margin-top: 5px;
+                float: right;
             }
         }
     }
@@ -634,8 +631,8 @@ $story-sp-input-width:          45px;
      */
 
     .rb-multilinesubject & .subject {
-        white-space: normal;
         height: auto;
+        white-space: normal;
         overflow: show;
     }
 
@@ -661,30 +658,30 @@ $story-sp-input-width:          45px;
     }
 
     .ui-dialog-title {
-        float: left;
         margin-right: 0;
+        float: left;
     }
 
     &.ui-widget-content {
-        box-shadow: 2px 2px 5px #777777;
-        border: none;
+        border: 0 none;
+        box-shadow: 2px 2px 5px #777;
     }
 
     .ui-dialog-buttonpane.ui-widget-content {
-        border: none;
+        border: 0 none;
     }
 
     label {
         display: block;
+        width: 100%;
         font-size: 11px;
         text-transform: capitalize;
-        width: 100%;
     }
 
     .editor {
-        font-size: 12px;
-        margin-bottom: 10px;
         width: 100%;
+        margin-bottom: 10px;
+        font-size: 12px;
     }
 }
 
@@ -709,11 +706,11 @@ $story-sp-input-width:          45px;
         a {
             display: inline-block;
             margin-bottom: 0;
-            text-align: center;
+            border: 1px solid;
             cursor: pointer;
             font-weight: $btn-font-weight;
+            text-align: center;
             white-space: nowrap;
-            border: 1px solid;
             @include button-size($input-padding-vertical, $input-padding-horizontal, $font-size-base, $line-height-base, $border-radius-base);
             @include user-select(none);
             @include transition(background-color ease-in-out .07s, border-color ease-in-out .07s, box-shadow ease-in-out .07s);
@@ -726,7 +723,7 @@ $story-sp-input-width:          45px;
                 @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
             }
 
-            & + a {
+            + a {
                 margin-left: 3px;
             }
 
@@ -736,9 +733,9 @@ $story-sp-input-width:          45px;
             }
 
             @media screen and (max-width: $screen-md-max) {
+                padding: $input-padding-vertical;
                 font-size: $font-size-small-px;
                 line-height: $line-height-computed;
-                padding: $input-padding-vertical;
             }
         }
     }
@@ -752,7 +749,7 @@ $story-sp-input-width:          45px;
         .subject,
         .status_id,
         .story_points {
-            background-color: red;
+            background-color: #f00;
         }
     }
 
@@ -761,14 +758,14 @@ $story-sp-input-width:          45px;
         .sprint_start_date,
         .effective_date,
         .actions {
-            background-color: red;
+            background-color: #f00;
         }
     }
 
     .menu,
     .velocity,
     #new_story {
-        background-color: red;
+        background-color: #f00;
     }
 }
 
@@ -784,6 +781,6 @@ $story-sp-input-width:          45px;
 
 #show_completed_sprints {
     margin-left: $padding-side / 2;
-    color: $gray-darkest;
     cursor: pointer;
+    color: $gray-darkest;
 }

@@ -18,12 +18,12 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     %fa-icon-after {
         &:after {
             display: inline-block;
+            margin-left: $padding-small-vertical;
             font: normal normal normal 14px/1 FontAwesome; // shortening font declaration
             font-size: inherit; // can't have font-size inherit on line above, so need to override
             text-rendering: auto; // optimizelegibility throws things off #1094
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            margin-left: $padding-small-vertical;
         }
     }
 }
@@ -37,9 +37,9 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
         @extend %fa-icon;
 
         &:before {
-            float: left;
             margin-top: 3px;
             margin-left: -16px;
+            float: left;
         }
     }
 
@@ -48,7 +48,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     }
 
     ul li a.submenu {
-        background-image: url(../images/bullet_arrow_right.png);
+        background-image: url("../images/bullet_arrow_right.png");
     }
 }
 
@@ -111,50 +111,50 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 @else
 {
     .icon {
-        background-position: 0% 50%;
-        background-repeat: no-repeat;
-        padding-left: 20px;
         padding-top: 2px;
         padding-bottom: 3px;
+        padding-left: 20px;
+        background-repeat: no-repeat;
+        background-position: 0% 50%;
     }
 
-    .icon-add                   { background-image: url(../../../images/add.png); }
-    .icon-edit                  { background-image: url(../../../images/edit.png); }
-    .icon-copy                  { background-image: url(../../../images/copy.png); }
-    .icon-duplicate             { background-image: url(../../../images/duplicate.png); }
-    .icon-del                   { background-image: url(../../../images/delete.png); }
-    .icon-move                  { background-image: url(../../../images/move.png); }
-    .icon-save                  { background-image: url(../../../images/save.png); }
-    .icon-cancel                { background-image: url(../../../images/cancel.png); }
-    .icon-multiple              { background-image: url(../../../images/table_multiple.png); }
-    .icon-folder                { background-image: url(../../../images/folder.png); }
-    .open .icon-folder          { background-image: url(../../../images/folder_open.png); }
-    .icon-package               { background-image: url(../../../images/package.png); }
-    .icon-user                  { background-image: url(../../../images/user.png); }
-    .icon-projects              { background-image: url(../../../images/projects.png); }
-    .icon-help                  { background-image: url(../../../images/help.png); }
-    .icon-attachment            { background-image: url(../../../images/attachment.png); }
-    .icon-history               { background-image: url(../../../images/history.png); }
-    .icon-time                  { background-image: url(../../../images/time.png); }
-    .icon-time-add              { background-image: url(../../../images/time_add.png); }
-    .icon-stats                 { background-image: url(../../../images/stats.png); }
-    .icon-warning               { background-image: url(../../../images/warning.png); }
-    .icon-fav                   { background-image: url(../../../images/fav.png); }
-    .icon-fav-off               { background-image: url(../../../images/fav_off.png); }
-    .icon-reload                { background-image: url(../../../images/reload.png); }
-    .icon-lock                  { background-image: url(../../../images/locked.png); }
-    .icon-unlock                { background-image: url(../../../images/unlock.png); }
-    .icon-checked               { background-image: url(../../../images/true.png); }
-    .icon-details               { background-image: url(../../../images/zoom_in.png); }
-    .icon-report                { background-image: url(../../../images/report.png); }
-    .icon-comment               { background-image: url(../../../images/comment.png); }
-    .icon-summary               { background-image: url(../../../images/lightning.png); }
-    .icon-server-authentication { background-image: url(../../../images/server_key.png); }
-    .icon-issue                 { background-image: url(../../../images/ticket.png); }
-    .icon-zoom-in               { background-image: url(../../../images/zoom_in.png); }
-    .icon-zoom-out              { background-image: url(../../../images/zoom_out.png); }
-    .icon-passwd                { background-image: url(../../../images/textfield_key.png); }
-    .icon-test                  { background-image: url(../../../images/bullet_go.png); }
+    .icon-add                   { background-image: url("../../../images/add.png"); }
+    .icon-edit                  { background-image: url("../../../images/edit.png"); }
+    .icon-copy                  { background-image: url("../../../images/copy.png"); }
+    .icon-duplicate             { background-image: url("../../../images/duplicate.png"); }
+    .icon-del                   { background-image: url("../../../images/delete.png"); }
+    .icon-move                  { background-image: url("../../../images/move.png"); }
+    .icon-save                  { background-image: url("../../../images/save.png"); }
+    .icon-cancel                { background-image: url("../../../images/cancel.png"); }
+    .icon-multiple              { background-image: url("../../../images/table_multiple.png"); }
+    .icon-folder                { background-image: url("../../../images/folder.png"); }
+    .open .icon-folder          { background-image: url("../../../images/folder_open.png"); }
+    .icon-package               { background-image: url("../../../images/package.png"); }
+    .icon-user                  { background-image: url("../../../images/user.png"); }
+    .icon-projects              { background-image: url("../../../images/projects.png"); }
+    .icon-help                  { background-image: url("../../../images/help.png"); }
+    .icon-attachment            { background-image: url("../../../images/attachment.png"); }
+    .icon-history               { background-image: url("../../../images/history.png"); }
+    .icon-time                  { background-image: url("../../../images/time.png"); }
+    .icon-time-add              { background-image: url("../../../images/time_add.png"); }
+    .icon-stats                 { background-image: url("../../../images/stats.png"); }
+    .icon-warning               { background-image: url("../../../images/warning.png"); }
+    .icon-fav                   { background-image: url("../../../images/fav.png"); }
+    .icon-fav-off               { background-image: url("../../../images/fav_off.png"); }
+    .icon-reload                { background-image: url("../../../images/reload.png"); }
+    .icon-lock                  { background-image: url("../../../images/locked.png"); }
+    .icon-unlock                { background-image: url("../../../images/unlock.png"); }
+    .icon-checked               { background-image: url("../../../images/true.png"); }
+    .icon-details               { background-image: url("../../../images/zoom_in.png"); }
+    .icon-report                { background-image: url("../../../images/report.png"); }
+    .icon-comment               { background-image: url("../../../images/comment.png"); }
+    .icon-summary               { background-image: url("../../../images/lightning.png"); }
+    .icon-server-authentication { background-image: url("../../../images/server_key.png"); }
+    .icon-issue                 { background-image: url("../../../images/ticket.png"); }
+    .icon-zoom-in               { background-image: url("../../../images/zoom_in.png"); }
+    .icon-zoom-out              { background-image: url("../../../images/zoom_out.png"); }
+    .icon-passwd                { background-image: url("../../../images/textfield_key.png"); }
+    .icon-test                  { background-image: url("../../../images/bullet_go.png"); }
 }
 
 
@@ -173,7 +173,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     }
 }
 
-.icon-del  {
+.icon-del {
     color: $icon-danger-color;
 
     &:hover,
@@ -215,13 +215,13 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
         &.text-x-sh:before          { content: $fa-var-file-text-o; }
 
         &.application-javascript:before,
-        &.text-x-javascript:before  { content: $fa-var-file-code-o; }
+        &.text-x-javascript:before { content: $fa-var-file-code-o; }
 
         &.application-pdf:before    { content: $fa-var-file-pdf-o; }
         &.application-msword:before { content: $fa-var-file-word-o; }
 
         &.application-vnd\.openxmlformats-officedocument\.spreadsheetml\.sheet:before,
-        &.application-vnd\.ms-excel:before   { content: $fa-var-file-excel-o; }
+        &.application-vnd\.ms-excel:before { content: $fa-var-file-excel-o; }
 
         &.image-vnd\.microsoft\.icon:before,
         &.image-gif:before,
@@ -240,30 +240,30 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 @else
 {
     .icon-file {
-        background-image: url(../../../images/files/default.png);
+        background-image: url("../../../images/files/default.png");
 
-        &.text-plain        { background-image: url(../../../images/files/text.png); }
-        &.text-x-c          { background-image: url(../../../images/files/c.png); }
-        &.text-x-csharp     { background-image: url(../../../images/files/csharp.png); }
-        &.text-x-java       { background-image: url(../../../images/files/java.png); }
-        &.text-x-javascript { background-image: url(../../../images/files/js.png); }
-        &.text-x-php        { background-image: url(../../../images/files/php.png); }
-        &.text-x-ruby       { background-image: url(../../../images/files/ruby.png); }
-        &.text-xml          { background-image: url(../../../images/files/xml.png); }
-        &.text-css          { background-image: url(../../../images/files/css.png); }
-        &.text-html         { background-image: url(../../../images/files/html.png); }
-        &.application-pdf   { background-image: url(../../../images/files/pdf.png); }
+        &.text-plain        { background-image: url("../../../images/files/text.png"); }
+        &.text-x-c          { background-image: url("../../../images/files/c.png"); }
+        &.text-x-csharp     { background-image: url("../../../images/files/csharp.png"); }
+        &.text-x-java       { background-image: url("../../../images/files/java.png"); }
+        &.text-x-javascript { background-image: url("../../../images/files/js.png"); }
+        &.text-x-php        { background-image: url("../../../images/files/php.png"); }
+        &.text-x-ruby       { background-image: url("../../../images/files/ruby.png"); }
+        &.text-xml          { background-image: url("../../../images/files/xml.png"); }
+        &.text-css          { background-image: url("../../../images/files/css.png"); }
+        &.text-html         { background-image: url("../../../images/files/html.png"); }
+        &.application-pdf   { background-image: url("../../../images/files/pdf.png"); }
 
         &.image-gif,
         &.image-jpeg,
         &.image-png,
         &.image-tiff {
-            background-image: url(../../../images/files/image.png);
+            background-image: url("../../../images/files/image.png");
         }
 
         &.application-zip,
         &.application-x-gzip {
-            background-image: url(../../../images/files/zip.png);
+            background-image: url("../../../images/files/zip.png");
         }
     }
 }
@@ -321,19 +321,19 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 @else
 {
     #admin-menu {
-        .projects              { background-image: url(../../../images/projects.png); }
-        .users                 { background-image: url(../../../images/user.png); }
-        .groups                { background-image: url(../../../images/group.png); }
-        .roles                 { background-image: url(../../../images/database_key.png); }
-        .trackers              { background-image: url(../../../images/ticket.png); }
-        .issue_statuses        { background-image: url(../../../images/ticket_edit.png); }
-        .workflows             { background-image: url(../../../images/ticket_go.png); }
-        .custom_fields         { background-image: url(../../../images/textfield.png); }
-        .enumerations          { background-image: url(../../../images/text_list_bullets.png); }
-        .settings              { background-image: url(../../../images/changeset.png); }
-        .plugins               { background-image: url(../../../images/plugin.png); }
-        .info                  { background-image: url(../../../images/help.png); }
-        .server_authentication { background-image: url(../../../images/server_key.png); }
+        .projects              { background-image: url("../../../images/projects.png"); }
+        .users                 { background-image: url("../../../images/user.png"); }
+        .groups                { background-image: url("../../../images/group.png"); }
+        .roles                 { background-image: url("../../../images/database_key.png"); }
+        .trackers              { background-image: url("../../../images/ticket.png"); }
+        .issue_statuses        { background-image: url("../../../images/ticket_edit.png"); }
+        .workflows             { background-image: url("../../../images/ticket_go.png"); }
+        .custom_fields         { background-image: url("../../../images/textfield.png"); }
+        .enumerations          { background-image: url("../../../images/text_list_bullets.png"); }
+        .settings              { background-image: url("../../../images/changeset.png"); }
+        .plugins               { background-image: url("../../../images/plugin.png"); }
+        .info                  { background-image: url("../../../images/help.png"); }
+        .server_authentication { background-image: url("../../../images/server_key.png"); }
     }
 }
 
@@ -378,12 +378,12 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
         padding-left: 20px;
     }
 
-    h3.version      { background: url(../../../images/package.png) no-repeat 0 center; }
-    h3.comments     { background: url(../../../images/comment.png) no-repeat 0 center; }
-    div.issues h3   { background: url(../../../images/ticket.png) no-repeat 0 center; }
-    div.members h3  { background: url(../../../images/group.png) no-repeat 0 center; }
-    div.news h3     { background: url(../../../images/news.png) no-repeat 0 center; }
-    div.projects h3 { background: url(../../../images/projects.png) no-repeat 0 center; }
+    h3.version      { background: url("../../../images/package.png") no-repeat 0 center; }
+    h3.comments     { background: url("../../../images/comment.png") no-repeat 0 center; }
+    div.issues h3   { background: url("../../../images/ticket.png") no-repeat 0 center; }
+    div.members h3  { background: url("../../../images/group.png") no-repeat 0 center; }
+    div.news h3     { background: url("../../../images/news.png") no-repeat 0 center; }
+    div.projects h3 { background: url("../../../images/projects.png") no-repeat 0 center; }
 }
 
 
@@ -411,8 +411,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
             @extend %fa-icon;
 
             &:before {
-                float: left;
                 margin-left: -$padding-side;
+                float: left;
                 line-height: $line-height-computed;
             }
         }
@@ -436,20 +436,20 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 @else
 {
     dt {
-        &.issue        { background-image: url(../../../images/ticket.png); }
-        &.issue-edit   { background-image: url(../../../images/ticket_edit.png); }
-        &.issue.closed { background-image: url(../../../images/ticket_checked.png); }
-        &.issue-closed { background-image: url(../../../images/ticket_checked.png); }
-        &.issue-note   { background-image: url(../../../images/ticket_note.png); }
-        &.changeset    { background-image: url(../../../images/changeset.png); }
-        &.news         { background-image: url(../../../images/news.png); }
-        &.message      { background-image: url(../../../images/message.png); }
-        &.reply        { background-image: url(../../../images/comments.png); }
-        &.wiki-page    { background-image: url(../../../images/wiki_edit.png); }
-        &.attachment   { background-image: url(../../../images/attachment.png); }
-        &.document     { background-image: url(../../../images/document.png); }
-        &.project      { background-image: url(../../../images/projects.png); }
-        &.time-entry   { background-image: url(../../../images/time.png); }
+        &.issue        { background-image: url("../../../images/ticket.png"); }
+        &.issue-edit   { background-image: url("../../../images/ticket_edit.png"); }
+        &.issue.closed { background-image: url("../../../images/ticket_checked.png"); }
+        &.issue-closed { background-image: url("../../../images/ticket_checked.png"); }
+        &.issue-note   { background-image: url("../../../images/ticket_note.png"); }
+        &.changeset    { background-image: url("../../../images/changeset.png"); }
+        &.news         { background-image: url("../../../images/news.png"); }
+        &.message      { background-image: url("../../../images/message.png"); }
+        &.reply        { background-image: url("../../../images/comments.png"); }
+        &.wiki-page    { background-image: url("../../../images/wiki_edit.png"); }
+        &.attachment   { background-image: url("../../../images/attachment.png"); }
+        &.document     { background-image: url("../../../images/document.png"); }
+        &.project      { background-image: url("../../../images/projects.png"); }
+        &.time-entry   { background-image: url("../../../images/time.png"); }
     }
 }
 
@@ -503,8 +503,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     #main a.close-icon {
         width: auto;
         height: auto;
-        color: $icon-danger-color;
         background: transparent;
+        color: $icon-danger-color;
         @extend %fa-icon;
 
         &:hover,
@@ -558,16 +558,16 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     }
 
     a.remove-upload {
-        opacity: .75;
         color: $icon-danger-color;
         text-align: center;
+        opacity: .75;
         @extend %fa-icon;
 
         &:hover,
         &:focus {
-            opacity: 1;
             color: $icon-danger-hover-color;
             text-decoration: none;
+            opacity: 1;
         }
 
         &:before {
@@ -692,8 +692,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
             @extend %fa-icon;
 
             &:before {
-                content: $fa-var-external-link;
                 margin-right: 3px;
+                content: $fa-var-external-link;
                 font-size: 10px;
             }
         }
@@ -703,37 +703,37 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 {
     .search_for_watchers > a {
         padding-left: 20px;
-        background: url(../../../images/add.png) no-repeat 0 50%;
+        background: url("../../../images/add.png") no-repeat 0 50%;
     }
 
     .atom {
-        background: url(../../../images/feed.png) no-repeat 1px 50%;
-        padding: 2px 0px 3px 16px;
+        padding: 2px 0 3px 16px;
+        background: url("../../../images/feed.png") no-repeat 1px 50%;
     }
 
     .my-project {
         padding-right: 18px;
-        background: url(../../../images/fav.png) no-repeat right center;
+        background: url("../../../images/fav.png") no-repeat right center;
     }
 
     .sort {
         padding-right: 16px;
-        background-position: right center;
         background-repeat: no-repeat;
+        background-position: right center;
 
         &.asc {
-            background-image: url(../../../images/sort_asc.png);
+            background-image: url("../../../images/sort_asc.png");
         }
 
         &.desc {
-            background-image: url(../../../images/sort_desc.png);
+            background-image: url("../../../images/sort_desc.png");
         }
     }
 
     a.remove-upload {
         display: inline-block;
         padding-left: 16px;
-        background: url(../../../images/delete.png) no-repeat 1px 50%;
+        background: url("../../../images/delete.png") no-repeat 1px 50%;
 
         &:hover {
             text-decoration: none !important;
@@ -742,7 +742,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 
     em.info.error {
         padding-left: 20px;
-        background: url(../../../images/exclamation.png) no-repeat 0 50%;
+        background: url("../../../images/exclamation.png") no-repeat 0 50%;
     }
 
     tr.message {
@@ -750,12 +750,12 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
             color: $gray;
 
             td.subject {
-                background-image: url(../../../images/locked.png);
+                background-image: url("../../../images/locked.png");
             }
         }
 
         &.sticky td.subject {
-            background-image: url(../../../images/bullet_go.png);
+            background-image: url("../../../images/bullet_go.png");
             font-weight: bold;
         }
 
@@ -768,13 +768,13 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 
     tr.version.shared td.name {
         padding-left: 20px;
-        background: url(../../../images/link.png) no-repeat 0 center;
+        background: url("../../../images/link.png") no-repeat 0 center;
     }
 
     table.boards {
         a.board {
-            background: url(../../../images/comment.png) no-repeat 0% 50%;
             padding-left: 20px;
+            background: url("../../../images/comment.png") no-repeat 0% 50%;
         }
     }
 
@@ -786,16 +786,16 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
         td.group,
         td.groupnonmember,
         td.groupanonymous {
-            background: url(../../../images/group.png) no-repeat 0% center;
+            background: url("../../../images/group.png") no-repeat 0% center;
         }
     }
 
     div.wiki {
         .external {
             padding-left: 12px;
-            background-position: 0% 60%;
+            background-image: url("../../../images/external.png");
             background-repeat: no-repeat;
-            background-image: url(../../../images/external.png);
+            background-position: 0% 60%;
         }
     }
 }
@@ -922,7 +922,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
         height: 14px;
         padding-left: 14px;
         box-sizing: border-box;
-        background: url(../images/calendar_555555_14.png) no-repeat;
+        background: url("../images/calendar_555555_14.png") no-repeat;
     }
 
 
@@ -934,9 +934,9 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
         @extend %fa-icon;
 
         &:before {
+            margin-right: 0;
             color: $icon-success-color;
             content: $fa-var-check;
-            margin-right: 0;
         }
 
         img {

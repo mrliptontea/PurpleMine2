@@ -4,8 +4,8 @@
 
 table.list {
     width: 100%;
-    font-size: $font-size-list;
     margin-bottom: $line-height-computed;
+    font-size: $font-size-list;
 
     .autoscroll & {
         margin-bottom: 0;
@@ -13,9 +13,9 @@ table.list {
 
     th {
         padding: $table-cell-padding;
-        vertical-align: bottom;
-        color: $gray;
         border-bottom: 2px solid $table-border-color;
+        color: $gray;
+        vertical-align: bottom;
 
         a {
             color: $gray-darker;
@@ -24,9 +24,9 @@ table.list {
 
     td {
         padding: $table-cell-padding;
+        border-bottom: 1px solid $table-border-color;
         text-align: center;
         vertical-align: top;
-        border-bottom: 1px solid $table-border-color;
 
         &.checkbox {
             width: 15px;
@@ -64,8 +64,8 @@ table.list {
 
         &.buttons {
             width: 15%;
-            white-space: nowrap;
             text-align: right;
+            white-space: nowrap;
 
             a {
                 padding-right: 5px;
@@ -74,14 +74,14 @@ table.list {
 
         &.reorder {
             width: 15%;
-            white-space: nowrap;
             text-align: center;
+            white-space: nowrap;
         }
     }
 
     caption {
+        padding: .5em .5em .5em 0;
         text-align: left;
-        padding: 0.5em 0.5em 0.5em 0;
     }
 }
 
@@ -98,8 +98,8 @@ tr.project {
     }
 
     &.idnt .name span {
-        background: url(../images/bullet_arrow_right.png) no-repeat -5px 50%;
         padding-left: 16px;
+        background: url("../images/bullet_arrow_right.png") no-repeat -5px 50%;
     }
 
     @for $i from 1 through 9 {
@@ -127,8 +127,8 @@ tr.issue {
     }
 
     &.relations {
-        white-space: normal;
         text-align: left;
+        white-space: normal;
 
         span {
             white-space: nowrap;
@@ -136,12 +136,13 @@ tr.issue {
     }
 
     &.done_ratio table.progress {
-        margin-left: auto;
         margin-right: auto;
+        margin-left: auto;
     }
 
     &.idnt .subject a {
-        background-image: url(../images/bullet_arrow_right.png);
+        padding-left: 16px;
+        background-image: url("../images/bullet_arrow_right.png");
         background-repeat: no-repeat;
 
         @if $color-trackers {
@@ -149,8 +150,6 @@ tr.issue {
         } @else {
             background-position: -5px 0;
         }
-
-        padding-left: 16px;
     }
 
     .controller-issues.action-index & {
@@ -178,8 +177,8 @@ tr.issue {
 
         @media screen and (min-width: $screen-sm-min) {
             > .wiki {
-                padding: $padding-wiki;
                 max-height: 20em;
+                padding: $padding-wiki;
                 overflow: auto;
             }
         }
@@ -194,13 +193,13 @@ tr {
     span.expander {
         margin-left: 0;
         padding-left: 8px;
+        background: url("../images/bullet_toggle_plus.png") no-repeat center center;
         cursor: pointer;
-        background: url(../images/bullet_toggle_plus.png) no-repeat center center;
         @include user-select(none);
     }
 
     &.open span.expander {
-        background-image: url(../images/bullet_toggle_minus.png);
+        background-image: url("../images/bullet_toggle_minus.png");
     }
 }
 
@@ -263,21 +262,21 @@ tr.entry {
  */
 
 @if $color-priorities {
-    @include priority('.priority-lowest',  $priority-lowest-bg,  $priority-lowest-text,  $priority-lowest-link);
-    @include priority('.priority-default', $priority-default-bg, $priority-default-text, $priority-default-link);
-    @include priority('.priority-high3',   $priority-high3-bg,   $priority-high3-text,   $priority-high3-link);
-    @include priority('.priority-high2',   $priority-high2-bg,   $priority-high2-text,   $priority-high2-link);
-    @include priority('.priority-highest', $priority-highest-bg, $priority-highest-text, $priority-highest-link);
+    @include priority(".priority-lowest",  $priority-lowest-bg,  $priority-lowest-text,  $priority-lowest-link);
+    @include priority(".priority-default", $priority-default-bg, $priority-default-text, $priority-default-link);
+    @include priority(".priority-high3",   $priority-high3-bg,   $priority-high3-text,   $priority-high3-link);
+    @include priority(".priority-high2",   $priority-high2-bg,   $priority-high2-text,   $priority-high2-link);
+    @include priority(".priority-highest", $priority-highest-bg, $priority-highest-text, $priority-highest-link);
 }
 
 @if $color-trackers {
-    @include tracker('.tracker-1', $tracker-1-bg, $tracker-1-text);
-    @include tracker('.tracker-2', $tracker-2-bg, $tracker-2-text);
-    @include tracker('.tracker-3', $tracker-3-bg, $tracker-3-text);
-    @include tracker('.tracker-4', $tracker-4-bg, $tracker-4-text);
-    @include tracker('.tracker-5', $tracker-5-bg, $tracker-5-text);
-    @include tracker('.tracker-6', $tracker-6-bg, $tracker-6-text);
-    @include tracker('.tracker-7', $tracker-7-bg, $tracker-7-text);
+    @include tracker(".tracker-1", $tracker-1-bg, $tracker-1-text);
+    @include tracker(".tracker-2", $tracker-2-bg, $tracker-2-text);
+    @include tracker(".tracker-3", $tracker-3-bg, $tracker-3-text);
+    @include tracker(".tracker-4", $tracker-4-bg, $tracker-4-text);
+    @include tracker(".tracker-5", $tracker-5-bg, $tracker-5-text);
+    @include tracker(".tracker-6", $tracker-6-bg, $tracker-6-text);
+    @include tracker(".tracker-7", $tracker-7-bg, $tracker-7-text);
 }
 
 .odd {
@@ -291,9 +290,9 @@ tr.entry {
 
 tr.group {
     > td {
+        border-bottom: 1px solid $table-border-color;
         font-weight: bold;
         text-align: left;
-        border-bottom: 1px solid $table-border-color;
 
         a {
             color: $brand-primary;
@@ -301,9 +300,9 @@ tr.group {
     }
 
     .toggle-all {
+        display: none;
         color: $gray-light;
         font-weight: normal;
-        display: none;
     }
 
     &:hover .toggle-all {
@@ -312,11 +311,11 @@ tr.group {
 
     .count {
         display: inline-block;
-        padding: 1px 4px;
         margin: 0 5px;
-        color: $brand-text;
-        background-color: $brand-primary;
+        padding: 1px 4px;
         border-radius: $border-radius-small;
+        background-color: $brand-primary;
+        color: $brand-text;
         font-size: $font-size-small;
     }
 }
@@ -341,12 +340,12 @@ tr.time-entry {
     }
 
     td.hours {
-        padding-right: 0.5em;
-        text-align: right;
+        padding-right: .5em;
         font-weight: bold;
+        text-align: right;
 
         .hours-dec {
-            font-size: 0.9em;
+            font-size: .9em;
         }
     }
 }
@@ -403,8 +402,8 @@ tr.user {
         }
 
         &.email {
-            text-align: left;
             width: 18%;
+            text-align: left;
         }
     }
 
@@ -427,9 +426,9 @@ table.plugins {
     }
 
     span.name {
+        margin-bottom: .5em;
         font-size: $font-size-large;
         font-weight: bold;
-        margin-bottom: .5em;
     }
 
     .description,
@@ -450,8 +449,8 @@ table.files {
 
     tr.file td {
         &.filename {
-            text-align: left;
             padding-left: 20px + $table-cell-padding;
+            text-align: left;
         }
 
         &.digest {

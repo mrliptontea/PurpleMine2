@@ -15,8 +15,8 @@
 
         a {
             display: inline-block;
-            background-position: 0 center;
             padding-left: 8 + 16px;
+            background-position: 0 center;
         }
     }
 
@@ -24,9 +24,9 @@
         list-style-type: none;
 
         > a {
+            padding-left: $sidebar-padding-horizontal + 8 + 16px;
             background-repeat: no-repeat;
             background-position: $sidebar-padding-horizontal center;
-            padding-left: $sidebar-padding-horizontal + 8 + 16px;
         }
     }
 }
@@ -73,8 +73,8 @@ table.transitions {
 }
 
 #workflow_form table select {
-    min-width: 60px;
     width: 90%;
+    min-width: 60px;
 }
 
 table.fields_permissions {

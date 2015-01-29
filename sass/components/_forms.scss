@@ -40,10 +40,10 @@ input[type="text"],
 input[type="password"] {
     height: $input-height-base;
     padding: $input-padding-vertical $input-padding-horizontal;
-    color: $input-color;
-    background-color: $input-bg;
     border: 1px solid $input-border;
     border-radius: $input-border-radius;
+    background-color: $input-bg;
+    color: $input-color;
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075);
     @include transition(border-color ease-in-out .1s, box-shadow ease-in-out .1s);
     @include form-control-focus();
@@ -83,13 +83,13 @@ input[type="range"] {
 }
 
 input.autocomplete {
-    background-image: url(../images/aci.png); /* autocomplete indicator */
+    padding-right: 30px;
+    background-image: url("../images/aci.png"); /* autocomplete indicator */
     background-repeat: no-repeat;
     background-position: right center;
-    padding-right: 30px;
 
     &.ajax-loading {
-        background-image: url(../images/preloader.gif);
+        background-image: url("../images/preloader.gif");
     }
 }
 
@@ -114,16 +114,16 @@ select.expandable {
 }
 
 fieldset {
-    padding: ($line-height-computed / 2) 0;
+    min-width: 0;
     margin: 0;
+    padding: ($line-height-computed / 2) 0;
     border: 0 none;
     border-top: 1px solid $legend-border-color;
-    min-width: 0;
 }
 
 legend {
-    color: $legend-color;
     padding-right: 5px;
+    color: $legend-color;
 }
 
 
@@ -136,8 +136,8 @@ span.required {
     top: 3px;
     margin-left: -.2em;
     color: #d00;
-    font-weight: normal;
     font-size: 1.5em;
+    font-weight: normal;
     line-height: 0;
 }
 
@@ -150,8 +150,8 @@ em.info {
     display: block;
     padding: 2px 0;
     color: $gray;
-    font-style: normal;
     font-size: $font-size-small;
+    font-style: normal;
 }
 
 
@@ -160,8 +160,8 @@ em.info {
  */
 .wiki-edit {
     color: $wiki-text;
-    line-height: $wiki-line-height;
     font-family: $font-family-monospace;
+    line-height: $wiki-line-height;
 }
 
 
@@ -206,8 +206,8 @@ em.info {
     input[type="radio"],
     input[type="checkbox"] {
         position: relative;
-        vertical-align: baseline;
         top: 3px;
+        vertical-align: baseline;
     }
 
     span[title] {
@@ -215,34 +215,34 @@ em.info {
     }
 
     label {
-        float: left;
         width: $label-width;
         margin-top: $input-padding-vertical + 1px;
         margin-bottom: $input-padding-vertical + 1px;
         margin-left: -($label-width + $label-space);
+        float: left;
         text-align: right;
         @include user-select(none);
 
         &.floating {
-            margin-left: 0px;
-            text-align: left;
             width: 270px;
+            margin-left: 0;
+            text-align: left;
         }
 
         &.block,
         &.inline {
             display: block;
-            float: none;
             width: auto;
             margin-left: 0;
             padding-left: 16px;
-            text-align: left;
+            float: none;
             cursor: pointer;
+            text-align: left;
 
             > input {
-                float: left;
                 margin-top: 0;
                 margin-left: -16px;
+                float: left;
             }
         }
 
@@ -355,10 +355,9 @@ select.bool_cf {
     #issue_subject {
         height: $input-height-large;
         padding: $input-padding-large-vertical $input-padding-large-horizontal;
+        border-radius: $input-border-radius-large;
         font-size: $font-size-large;
         line-height: $line-height-large;
-        line-height: $line-height-large #{\0};
-        border-radius: $input-border-radius-large;
     }
 }
 
@@ -377,38 +376,38 @@ select.bool_cf {
 
 #attachments_fields {
     input.description {
-        margin-left: 5px;
-        margin-right: 5px;
         width: 340px;
+        margin-right: 5px;
+        margin-left: 5px;
     }
 
     > span {
         display: block;
-        white-space: nowrap;
         margin-bottom: $line-height-computed / 2;
+        white-space: nowrap;
     }
 
     input.filename {
         width: 250px;
-        background-position: 4px center;
-        background-repeat: no-repeat;
-        background-image: url(../../../images/attachment.png);
         padding-left: $input-padding-horizontal + 16px;
+        background-image: url("../../../images/attachment.png");
+        background-repeat: no-repeat;
+        background-position: 4px center;
     }
 
     .ajax-waiting input.filename {
-        background-image: url(../../../images/hourglass.png);
+        background-image: url("../../../images/hourglass.png");
     }
 
     .ajax-loading input.filename {
-        background-image: url(../../../images/loading.gif);
+        background-image: url("../../../images/loading.gif");
     }
 
     div.ui-progressbar {
+        display: inline-block;
         width: 100px;
         height: 14px;
         margin: 2px 0 -5px 8px;
-        display: inline-block;
     }
 }
 
@@ -439,9 +438,9 @@ select.bool_cf {
     .splitcontentleft,
     .splitcontentright {
         width: 100%;
-        float: left;
         padding-right: 0;
         padding-left: 0;
+        float: left;
 
         @media screen and (min-width: $screen-sm) {
             width: auto;
@@ -464,10 +463,10 @@ select.bool_cf {
 
     #issue_estimated_hours,
     #issue_done_ratio {
-        min-width: 1em;
         width: 75px;
-        text-align: right;
+        min-width: 1em;
         padding-left: 5px;
+        text-align: right;
     }
 }
 
@@ -478,22 +477,23 @@ select.bool_cf {
         display: block;
     }
 
+    // scss-lint:disable VendorPrefixes
     #watchers_inputs {
+        display: block;
+        max-width: 80em;
         margin-top: $input-padding-vertical + 1px;
         margin-bottom: $line-height-computed / 2;
-        overflow: auto;
-        display: block;
         -webkit-columns: 18em 4;
            -moz-columns: 18em 4;
                 columns: 18em 4;
-        max-width: 80em;
+        overflow: auto;
     }
 
     label.floating {
         display: block;
         width: auto;
-        float: none;
         margin: 0;
+        float: none;
         @include checkbox;
 
         input[type="checkbox"] {
@@ -512,11 +512,11 @@ select.bool_cf {
     overflow-y: auto;
 
     label {
-        float: none;
         display: block;
         width: auto;
-        margin-left: 0;
         margin-bottom: 0;
+        margin-left: 0;
+        float: none;
         font-weight: normal;
         text-align: left;
     }
@@ -532,8 +532,8 @@ select.bool_cf {
             input[type="checkbox"],
             input[type="radio"] {
                 top: 0;
-                float: left;
                 margin-left: -20px;
+                float: left;
             }
         }
     }
@@ -568,6 +568,7 @@ fieldset#filters {
 
         &.values {
             white-space: nowrap;
+
             select {
                 min-width: 130px;
             }
@@ -586,9 +587,9 @@ fieldset#filters {
  */
 
 label.no-css {
-    float: none;
     width: auto;
-    margin-left: 0px;
-    text-align: left;
+    margin-left: 0;
+    float: none;
     font-weight: inherit;
+    text-align: left;
 }

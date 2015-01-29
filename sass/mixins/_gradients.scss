@@ -1,4 +1,5 @@
 // Gradients
+// scss-lint:disable VendorPrefixes
 
 
 // Horizontal gradient, from left to right
@@ -54,7 +55,7 @@
     background-repeat: no-repeat;
 }
 
-@mixin gradient-striped($color: rgba(255,255,255,.15), $angle: 45deg) {
+@mixin gradient-striped($color: rgba(255, 255, 255, .15), $angle: 45deg) {
     background-image: -webkit-linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
     background-image: -o-linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
     background-image: linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);

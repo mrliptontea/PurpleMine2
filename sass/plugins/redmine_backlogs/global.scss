@@ -6,15 +6,15 @@ html {
 }
 
 body {
-    margin: 0;
-    padding: 0;
     width: 100%;
     height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: mix($gray-lighter, $header-bg, 70%);
+    color: $text-color;
     font-family: $font-family-base;
     font-size: $font-size-base;
     line-height: $line-height-base;
-    color: $text-color;
-    background-color: mix($gray-lighter, $header-bg, 70%);
 }
 
 a {
@@ -65,10 +65,10 @@ input.editor,
 #col_width input {
     height: $input-height-base;
     padding: $input-padding-vertical $input-padding-horizontal;
-    color: $input-color;
-    background-color: $input-bg;
     border: 1px solid $input-border;
     border-radius: $input-border-radius;
+    background-color: $input-bg;
+    color: $input-color;
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075);
     @include transition(border-color ease-in-out .1s, box-shadow ease-in-out .1s);
     @include form-control-focus();
@@ -88,13 +88,13 @@ select:-moz-focusring {
 button.ui-multiselect {
     height: $input-height-base;
     padding: $input-padding-vertical $input-padding-horizontal;
-    color: $input-color;
-    background: $input-bg;
     border: 1px solid $input-border;
+    background: $input-bg;
     cursor: default;
+    color: $input-color;
     white-space: nowrap;
-    overflow: hidden;
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075);
+    overflow: hidden;
     @include transition(border-color ease-in-out .1s, box-shadow ease-in-out .1s);
     @include box-sizing(border-box);
 
@@ -124,21 +124,21 @@ button.ui-multiselect {
 
 #toolbar {
     display: block;
-    padding: 10px $padding-side;
-    overflow: hidden;
     position: relative;
+    padding: 10px $padding-side;
     background-color: $main-menu-bg;
     box-shadow: $panel-shadow;
+    overflow: hidden;
     z-index: 1000;
     @include clearfix;
 
     .breadcrumbs {
-        float: left;
         margin-right: 10px;
+        float: left;
 
         select {
-            vertical-align: middle;
             margin-right: 5px;
+            vertical-align: middle;
         }
 
         .home {
@@ -154,8 +154,8 @@ button.ui-multiselect {
     }
 
     .userselect {
-        float: left;
         position: relative;
+        float: left;
 
         ul {
             padding-left: 0;
@@ -180,8 +180,8 @@ button.ui-multiselect {
     input[type="text"],
     select,
     .ui-widget {
-        font-size: inherit;
         font-family: inherit;
+        font-size: inherit;
     }
 
     @media screen and (max-width: $screen-md-max) {
@@ -206,7 +206,7 @@ button.ui-multiselect {
 
 #refresh {
     .loading & {
-        background-image: url('images/bouncer.gif');
+        background-image: url("images/bouncer.gif");
         background-repeat: no-repeat;
         background-position: -6px 1px;
     }
@@ -253,8 +253,8 @@ ul.ui-sortable {
 .ui-tooltip {
     .ui-tooltip-tip,
     .ui-tooltip-content {
-        background-color: $tooltip-bg;
         border-color: $tooltip-border;
+        background-color: $tooltip-bg;
     }
 
     .ui-tooltip-content {
@@ -265,8 +265,8 @@ ul.ui-sortable {
 
         > div {
             max-height: 200px;
-            overflow: hidden;
             text-overflow: ellipsis;
+            overflow: hidden;
         }
 
         hr {
@@ -292,8 +292,8 @@ ul.ui-sortable {
 
 .rb-sortable-disabled,
 .ui-sortable-disabled {
-    opacity: 0.5;
     background-color: $gray-lighter;
+    opacity: .5;
 }
 
 .w-rb-header-collapsed {
@@ -312,34 +312,33 @@ body {
         input,
         select,
         textarea,
-        button
-        {
-            font-size: inherit;
+        button {
             font-family: inherit;
+            font-size: inherit;
         }
     }
 }
 
 #ui-datepicker-div {
     padding: 3px;
-    color: $text-color;
-    background: $body-bg;
-    font-size: $font-size-base;
     border: 1px solid $panel-border;
+    background: $body-bg;
+    color: $text-color;
+    font-size: $font-size-base;
     box-shadow: $panel-shadow;
 
     .ui-widget-header {
-        color: $header-text;
-        background: $header-bg;
         border: 0 none;
+        background: $header-bg;
+        color: $header-text;
         font-weight: bold;
     }
 
     .ui-state-default {
-        font-weight: normal;
-        color: $component-color;
-        background: $component-bg;
         border: 1px solid $component-border;
+        background: $component-bg;
+        color: $component-color;
+        font-weight: normal;
         box-shadow: none;
 
         a,
@@ -354,8 +353,8 @@ body {
     .ui-state-focus {
         border: 1px solid $component-active-border;
         background: $component-active-bg;
-        font-weight: normal;
         color: $component-active-color;
+        font-weight: normal;
     }
 
     .ui-datepicker-header {
@@ -381,8 +380,8 @@ body {
         }
 
         &.ui-state-hover {
-            background: darken($header-bg, 10%);
             border-color: darken($header-bg, 12%);
+            background: darken($header-bg, 10%);
         }
     }
 
@@ -393,8 +392,8 @@ body {
     select.ui-datepicker-month,
     select.ui-datepicker-year {
         width: 49%;
-        margin: 0;
         height: 1.8em;
+        margin: 0;
     }
 
     select.ui-datepicker-year {
@@ -419,9 +418,9 @@ body {
 
     .ui-datepicker-today {
         .ui-state-highlight {
-            color: $component-color;
             border-color: $component-active-border;
             background: $component-bg;
+            color: $component-color;
         }
 
         .ui-state-hover {
@@ -432,9 +431,9 @@ body {
 
     .ui-datepicker-current-day {
         .ui-state-active {
-            color: $highlight-text;
-            background: $highlight-bg;
             border-color: $highlight-border;
+            background: $highlight-bg;
+            color: $highlight-text;
         }
     }
 

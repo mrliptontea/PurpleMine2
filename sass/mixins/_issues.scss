@@ -28,7 +28,7 @@
         .issue.details#{$parent} {
             color: $color;
 
-            @if '.priority-default' == $parent {
+            @if ".priority-default" == $parent {
                 $border-color: $issue-border;
                 background: $issue-bg;
             } @else {
@@ -72,8 +72,8 @@
             }
 
             > .attachments {
-                background-color: lighten($background, 5%);
                 border-top-color: lighten($border-color, 5%);
+                background-color: lighten($background, 5%);
 
                 span.author {
                     color: mix($color, $gray, 25%);
@@ -91,20 +91,20 @@
     a#{$parent},
     .relations > span > a#{$parent},
     .parent > a#{$parent} {
-        color: $color;
-        background-color: $background;
         border-radius: $border-radius-small ($border-radius-small * 3) ($border-radius-small * 3) $border-radius-small;
+        background-color: $background;
+        color: $color;
 
         &:hover {
+            background-color: darken($background, 10%);
             color: $color;
             text-decoration: none;
-            background-color: darken($background, 10%);
         }
     }
 
     a#{$parent} {
-        padding: $tracker-inline-padding;
         margin-right: 1px;
+        padding: $tracker-inline-padding;
 
         &.closed {
             color: mix($color, $background, 50%);
@@ -117,8 +117,8 @@
         padding: $tracker-list-padding;
 
         &:before {
-            content: '#';
             color: mix($color, $background, 50%);
+            content: "#";
         }
     }
 

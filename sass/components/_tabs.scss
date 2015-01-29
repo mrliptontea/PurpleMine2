@@ -5,22 +5,22 @@
 .tabs {
     $tabs-buttons-width: 40px;
 
+    position: relative;
     margin-bottom: $line-height-computed;
     padding-right: $tabs-buttons-width;
     overflow: hidden;
-    position: relative;
 
     > ul {
         width: 2000px; // stop it from breaking
         margin: 0;
         padding-left: 0;
-        list-style: none;
         border-bottom: 1px solid $tab-border;
+        list-style: none;
         @extend %clearfix;
 
         > li {
-            float: left;
             margin-bottom: -1px;
+            float: left;
 
             > a {
                 display: block;
@@ -31,15 +31,15 @@
 
                 &:hover,
                 &:focus {
-                    text-decoration: none;
-                    background-color: $tab-hover-bg;
                     border-color: $tab-hover-border $tab-hover-border $tab-border;
+                    background-color: $tab-hover-bg;
+                    text-decoration: none;
                 }
 
                 &.selected {
-                    color: $tab-active-text;
-                    background: $tab-active-bg;
                     border-color: $tab-active-border $tab-active-border $tab-active-bg;
+                    background: $tab-active-bg;
+                    color: $tab-active-text;
                 }
             }
         }
@@ -54,17 +54,17 @@
         background-color: $body-bg;
 
         > button {
-            float: left;
+            width: 50%;
+            height: $tab-padding-vertical * 2 + $line-height-computed;
             margin: 0;
             padding: 0;
-            width: 50%;
+            float: left;
             border: 0 none;
-            opacity: .8;
-            height: $tab-padding-vertical * 2 + $line-height-computed;
             background-color: $body-bg;
-            background-position: center center;
             background-repeat: no-repeat;
+            background-position: center center;
             box-shadow: none;
+            opacity: .8;
             @include transition(opacity .1s);
 
             &:hover,
@@ -78,11 +78,11 @@
         }
 
         .tab-left {
-            background-image: url(../images/bullet_arrow_left.png);
+            background-image: url("../images/bullet_arrow_left.png");
         }
 
         .tab-right {
-            background-image: url(../images/bullet_arrow_right.png);
+            background-image: url("../images/bullet_arrow_right.png");
         }
     }
 }
@@ -92,7 +92,7 @@
  */
 
 #tab-content-modules fieldset p {
-    margin: 3px 0 4px 0;
+    margin: 3px 0 4px;
 }
 
 #tab-content-members,

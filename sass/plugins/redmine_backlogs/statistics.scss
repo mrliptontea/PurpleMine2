@@ -12,52 +12,52 @@ table {
 }
 
 .score {
-    text-align: center;
+    display: inline-block;
     width: 1.5em;
     font-size: large;
-    display: inline-block;
+    text-align: center;
 }
 
 .score_0 {
-    background-color: #FF0000;
+    background-color: #f00;
 }
 
 .score_1 {
-    background-color: #FF5300;
+    background-color: #ff5300;
 }
 
 .score_2 {
-    background-color: #FF8100;
+    background-color: #ff8100;
 }
 
 .score_3 {
-    background-color: #FFA100;
+    background-color: #ffa100;
 }
 
 .score_4 {
-    background-color: #FFBB00;
+    background-color: #fb0;
 }
 
 .score_5 {
-    background-color: #FFD300;
+    background-color: #ffd300;
 }
 
 .score_6 {
-    background-color: #FFEC00;
+    background-color: #ffec00;
 }
 
 .score_7 {
-    background-color: #E9FB00;
+    background-color: #e9fb00;
 }
 
 .score_8 {
-    background-color: #B1F100;
+    background-color: #b1f100;
 }
 
 .score_9 {
-    background-color: #74E600;
+    background-color: #74e600;
 }
 
 .score_10 {
-    background-color: #00CC00;
+    background-color: #0c0;
 }
