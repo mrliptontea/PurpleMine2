@@ -315,9 +315,21 @@ a.close-icon {
 /**
  * Resetting font for SCM (repository files)
  */
-table.filecontent tbody,
-table.filecontent td.line-code pre {
-    font-family: $font-family-monospace !important;
+#content table.filecontent {
+    width: 100%;
+
+    tbody,
+    td.line-code pre {
+        font-family: $font-family-monospace;
+    }
+
+    td.line-code {
+        padding: 2px 5px;
+
+        pre {
+            font-size: 13px;
+        }
+    }
 }
 
 #browser {
