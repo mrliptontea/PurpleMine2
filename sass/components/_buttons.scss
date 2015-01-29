@@ -72,6 +72,14 @@ button {
 
 
 /**
+ * Repository's 'View differences' button
+ */
+form[action*="repository/diff"] {
+    margin-bottom: $line-height-computed / 2;
+}
+
+
+/**
  * New _something_ form buttons layout
  */
 
