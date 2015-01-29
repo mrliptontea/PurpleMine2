@@ -209,63 +209,145 @@ table.attributes {
     }
 }
 
-#history {
-    $journal-gravatar: 24px;
-    $journal-indent: 0;
+$journal-gravatar: 24px;
+$journal-indent: 0;
+
+@if $use-gravatars {
+    $journal-indent: $journal-gravatar + 5px;
+}
+
+.journal {
+    margin-bottom: $line-height-computed / 2;
+    overflow: auto;
+
+    h4 {
+        margin-bottom: 5px;
+
+        > .gravatar {
+            margin-right: 5px;
+            float: left;
+        }
+    }
+
+    @if $bubble-journal-wiki-note {
+        &.has-details h4 {
+            border-bottom: 1px solid $gray-lighter;
+        }
+    } @else {
+        h4 {
+            border-bottom: 1px solid $gray-lighter;
+        }
+    }
+
+    .details {
+        padding-left: $journal-indent + 15px;
+
+        img {
+            margin: 0 0 -3px 4px;
+        }
+    }
+
+    .wiki {
+        margin-bottom: $line-height-computed / 2;
+        margin-left: $journal-indent;
+    }
 
     @if $use-gravatars {
-        $journal-indent: $journal-gravatar + 5px;
-    }
-
-    .journal {
-        margin-bottom: $line-height-computed / 2;
-        overflow: auto;
-
-        h4 {
-            margin-bottom: 5px;
-            border-bottom: 1px solid $gray-lighter;
-
-            > .gravatar {
-                margin-right: 5px;
-                float: left;
-            }
-        }
-
-        .details {
-            padding-left: $journal-indent + 15px;
-
-            img {
-                margin: 0 0 -3px 4px;
-            }
-        }
-
-        .wiki {
-            margin-bottom: $line-height-computed / 2;
+        form {
             margin-left: $journal-indent;
-        }
 
-        i {
-            &:first-of-type,
-            &:last-of-type {
-                padding: $tracker-inline-padding;
-                border-radius: $border-radius-small;
-                font-size: .9285em;
-                font-style: normal;
-            }
-
-            &:first-of-type {
-                background-color: mix($body-bg, $diff-out-bg, 64%);
-                color: $diff-out-color;
-            }
-
-            &:last-of-type {
-                background-color: mix($body-bg, $diff-in-bg, 64%);
-                color: $diff-in-color;
+            .wiki {
+                margin-left: 0;
             }
         }
     }
 
-    .private-notes {
+    i {
+        &:first-of-type,
+        &:last-of-type {
+            padding: $tracker-inline-padding;
+            border-radius: $border-radius-small;
+            font-size: .9285em;
+            font-style: normal;
+        }
+
+        &:first-of-type {
+            background-color: mix($body-bg, $diff-out-bg, 64%);
+            color: $diff-out-color;
+        }
+
+        &:last-of-type {
+            background-color: mix($body-bg, $diff-in-bg, 64%);
+            color: $diff-in-color;
+        }
+    }
+
+    @if $bubble-journal-wiki-note {
+        &.has-notes {
+            .wiki {
+                position: relative;
+                min-height: $line-height-computed;
+                padding: $padding-base-vertical $padding-base-horizontal;
+                border: 1px solid $gray-lighter;
+                border-left: 2px solid $gray-light;
+                border-radius: $panel-border-radius;
+                background: $body-bg;
+                box-shadow: 0 1px 2px rgba(#000, .1);
+
+                @if $use-gravatars {
+                    &:before,
+                    &:after {
+                        display: block;
+                        position: absolute;
+                        top: 6px;
+                        right: 100%;
+                        left: -16px;
+                        width: 0;
+                        height: 0;
+                        border-style: solid solid outset;
+                        border-color: transparent;
+                        content: " ";
+                        pointer-events: none;
+                    }
+
+                    &:after {
+                        margin-top: 1px;
+                        margin-left: 4px;
+                        border-width: 6px;
+                        border-top-color: $body-bg;
+                        border-right-color: $body-bg;
+                    }
+
+                    &:before {
+                        border-width: 8px;
+                        border-top-color: $gray-light;
+                        border-right-color: $gray-light;
+                    }
+                }
+            }
+
+            form .wiki {
+                background-color: #fffbe5;
+
+                .preview {
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+.private-notes {
+    @if $bubble-journal-wiki-note {
+        &.has-notes .wiki {
+            border-left-color: $brand-warning;
+
+            &:before {
+                border-top-color: $brand-warning;
+                border-right-color: $brand-warning;
+            }
+        }
+    } @else {
         margin-left: -(3px + 3px);
         padding-left: 3px;
         border-left: 3px solid $brand-warning;
