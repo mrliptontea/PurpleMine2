@@ -625,7 +625,6 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
                 }
             }
 
-
             img {
                 display: none;
             }
@@ -693,8 +692,77 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 
             &:before {
                 margin-right: 3px;
-                content: $fa-var-external-link;
                 font-size: 10px;
+                content: $fa-var-external-link;
+            }
+        }
+
+        [href*="edit"] {
+            @extend %fa-icon;
+            color: $icon-success-color;
+
+            &:hover,
+            &:focus {
+                color: $icon-success-color;
+            }
+
+            &:before {
+                content: $fa-var-pencil;
+            }
+
+            img {
+                display: none;
+            }
+        }
+    }
+
+    #attach_files_link {
+        @extend %fa-icon;
+
+        &:before {
+            margin-right: .3em;
+            content: $fa-var-paperclip;
+        }
+    }
+
+    .other-formats {
+        %other-format {
+            @extend %fa-icon;
+
+            &:before {
+                margin-right: .3em;
+            }
+        }
+
+        .pdf {
+            @extend %other-format;
+
+            &:before {
+                content: $fa-var-file-pdf-o;
+            }
+        }
+
+        .html {
+            @extend %other-format;
+
+            &:before {
+                content: $fa-var-file-code-o;
+            }
+        }
+
+        .txt {
+            @extend %other-format;
+
+            &:before {
+                content: $fa-var-file-text-o;
+            }
+        }
+
+        .csv {
+            @extend %other-format;
+
+            &:before {
+                content: $fa-var-file-excel-o;
             }
         }
     }
