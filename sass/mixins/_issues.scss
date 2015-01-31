@@ -52,7 +52,7 @@
                 color: mix($color, $gray-light, 25%);
             }
 
-            > .description > .wiki {
+            .wiki {
                 border-top-color: $border-color;
 
                 a {
@@ -123,7 +123,8 @@
     }
 
     @if $colored-issue {
-        .issue.details a#{$parent} {
+        .issue.details a#{$parent},
+        .issue.details .wiki a#{$parent} {
             &,
             &:hover {
                 color: $color;
