@@ -127,7 +127,8 @@ abbr[title] {
 blockquote {
     margin: 0 0 $line-height-computed;
     padding: floor($line-height-computed / 4) $padding-large-horizontal;
-    border-left: 4px solid $blockquote-border-color;
+    border-left: 4px solid $blockquote-border-color-fallback;
+    border-left-color: $blockquote-border-color;
 
     p,
     ul,

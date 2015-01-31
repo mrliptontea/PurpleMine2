@@ -116,7 +116,8 @@ $border-radius-small:           2px !default;
 
 $hr-border:                     $gray-light !default;
 $abbr-border-color:             $gray-light !default;
-$blockquote-border-color:       $gray-lighter !default;
+$blockquote-border-color-fallback: $gray-lighter !default;
+$blockquote-border-color:       rgba(#000, .15) !default;
 
 $component-color:               $gray-dark !default;
 $component-bg:                  lighten($gray-lightest, 2%) !default;
