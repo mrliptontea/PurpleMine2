@@ -32,7 +32,11 @@
                 $border-color: $issue-border;
                 background: $issue-bg;
             } @else {
-                background: $background;
+                @if lightness($background) < 85% {
+                    background: lighten($background, 6%);
+                } @else {
+                    background: $background;
+                }
             }
 
             &,
@@ -78,6 +82,10 @@
                 span.author {
                     color: mix($color, $gray, 25%);
                 }
+            }
+
+            .list td {
+                border-bottom-color: $border-color;
             }
         }
     }
