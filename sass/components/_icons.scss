@@ -26,6 +26,10 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
             -moz-osx-font-smoothing: grayscale;
         }
     }
+
+    table.list .buttons > a:before {
+        font-size: 14px;
+    }
 }
 
 
@@ -701,6 +705,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
         [href*="edit"] {
             @extend %fa-icon;
             color: $icon-success-color;
+            font-size: $font-size-base;
 
             &:hover,
             &:focus {
@@ -1006,6 +1011,80 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
             margin-right: 0;
             color: $icon-success-color;
             content: $fa-var-check;
+        }
+
+        img {
+            display: none;
+        }
+    }
+
+
+    /**
+     * Time entries list icons
+     */
+
+    .time-entry .buttons > a {
+        @extend %fa-icon;
+
+        &[href*="edit"]:before {
+            color: $icon-success-color;
+            content: $fa-var-pencil;
+        }
+
+        &[data-method="delete"]:before {
+            color: $icon-danger-color;
+            content: $fa-var-trash;
+        }
+
+        img {
+            display: none;
+        }
+    }
+
+
+    /**
+     * Files list
+     */
+
+    .file .buttons > a {
+        @extend %fa-icon;
+
+        &[data-method="delete"]:before {
+            color: $icon-danger-color;
+            content: $fa-var-trash;
+        }
+
+        img {
+            display: none;
+        }
+    }
+
+
+    /**
+     * Commit keywords
+     */
+
+    .delete-commit-keywords {
+        @extend %fa-icon;
+        font-size: $font-size-base;
+
+        &:before {
+            color: $icon-danger-color;
+            content: $fa-var-trash;
+        }
+
+        img {
+            display: none;
+        }
+    }
+
+    .add-commit-keywords {
+        @extend %fa-icon;
+        font-size: $font-size-base;
+
+        &:before {
+            color: $icon-success-color;
+            content: $fa-var-plus-square;
         }
 
         img {
