@@ -575,6 +575,7 @@ fieldset#filters {
         }
 
         &.add-filter {
+            padding-top: $table-condensed-cell-padding * 2;
             text-align: right;
             vertical-align: top;
         }
