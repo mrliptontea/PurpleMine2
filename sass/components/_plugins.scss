@@ -28,3 +28,41 @@
         }
     }
 }
+
+
+//
+// Redmine Time Tracker
+// --------------------------------------------------
+
+@if $use-font-awesome {
+    .icon.icon-start,
+    .icon.icon-stop {
+        background-image: none;
+    }
+
+    .icon.icon-start {
+        color: $icon-success-color;
+
+        &:hover,
+        &:focus {
+            color: $icon-success-color;
+        }
+
+        &:before {
+            content: $fa-var-clock-o;
+        }
+    }
+
+    .icon.icon-stop {
+        color: $icon-danger-color;
+
+        &:hover,
+        &:focus {
+            color: $icon-danger-color;
+        }
+
+        &:before {
+            content: $fa-var-history;
+        }
+    }
+}
