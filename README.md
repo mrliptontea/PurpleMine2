@@ -4,7 +4,7 @@ A free Redmine theme for modern browsers.
 
 ![Screenshot](https://github.com/HolonGlobe/PurpleMine2/raw/master/screenshots/issues-list.png)
 
-Compatible with Redmine 2.5+ and browsers: IE8+, latest Firefox and Google Chrome (others where not tested).
+Compatible with Redmine 2.5+ and browsers: IE9+, latest Firefox and Google Chrome (others where not tested).
 
 It's written in [SASS] (SCSS to be precise). It uses [normalize.css] and benefits from some parts of [Bootstrap][bootstrap-sass] like mixins, structure and stuff.
 
@@ -18,7 +18,7 @@ It's written in [SASS] (SCSS to be precise). It uses [normalize.css] and benefit
 
 ## How install it
 
-To install PurpleMine, just download [.zip](https://github.com/HolonGlobe/PurpleMine2/archive/master.zip) and unpack it to your Redmine's `/public/themes` folder.
+To install PurpleMine, just download [.zip](https://github.com/HolonGlobe/PurpleMine2/archive/master.zip) and unpack it to your Redmine's `public/themes` folder.
 
 Then go to Redmine > Administration > Settings > Display and select PurpleMine2 from the list and save the changes.
 
@@ -26,7 +26,7 @@ Then go to Redmine > Administration > Settings > Display and select PurpleMine2 
 
 This theme also features new look for [Redmine Backlogs][redmine_backlogs] plugin.
 
-To install it, simply copy and overwrite files in `plugin_assets/redmine_backlogs/stylesheets` or in `plugins/redmine_backlogs/assets/stylesheets` if it's not installed yet.
+To install it, simply copy stylesheets from `PurpleMine2/plugins/redmine_backlogs` and overwrite files in `{redmine}/public/plugin_assets/redmine_backlogs/stylesheets`.
 
 ## License
 
