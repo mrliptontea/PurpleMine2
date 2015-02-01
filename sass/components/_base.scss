@@ -97,11 +97,13 @@ dl {
 }
 
 dt {
+    margin-top: $line-height-computed;
     font-weight: bold;
 }
 
 dd {
-    margin-left: 0;
+    margin-bottom: $line-height-computed;
+    margin-left: $line-height-computed;
 }
 
 code,
