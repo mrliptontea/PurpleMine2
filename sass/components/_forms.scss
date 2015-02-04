@@ -444,21 +444,21 @@ select.bool_cf {
 
         @media screen and (min-width: $screen-sm-min) {
             width: auto;
+            min-width: 36em;
         }
     }
 
     .splitcontentleft {
         @media screen and (min-width: $screen-sm-min) {
-            padding-right: $padding-side;
+            margin-right: $padding-side;
         }
     }
 
+    textarea.text_cf,
+    input.string_cf,
+    input.link_cf,
     select {
         width: 90%;
-
-        @media screen and (min-width: $screen-sm-min) {
-            width: 20em;
-        }
     }
 
     #issue_estimated_hours,

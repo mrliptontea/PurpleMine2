@@ -541,7 +541,7 @@ $story-sp-input-width:          50px;
         }
 
         &.editing {
-            $input-padding-vertical-small:   2px;
+            $input-padding-vertical-small:   3px;
             $input-padding-horizontal-small: 5px;
 
             border-color: $highlight-border;
@@ -567,6 +567,7 @@ $story-sp-input-width:          50px;
 
             .editors {
                 display: block;
+                margin-left: $story-tracker-input-width + 5px;
                 text-align: right;
 
                 label {
@@ -586,6 +587,7 @@ $story-sp-input-width:          50px;
                 &.tracker_id {
                     display: block;
                     width: $story-tracker-input-width;
+                    margin-left: -($story-tracker-input-width + 5px);
                     float: left;
                 }
 
@@ -602,7 +604,7 @@ $story-sp-input-width:          50px;
                 }
 
                 &.subject {
-                    $subject-width-minus: $story-tracker-input-width + $story-status-input-width + $story-sp-input-width + 5px * 3;
+                    $subject-width-minus: $story-status-input-width + $story-sp-input-width + 5px * 2;
 
                     width: calc(100% - #{$subject-width-minus}) !important;
                     height: 60px;

@@ -191,7 +191,7 @@ button.ui-multiselect {
         input[type="text"],
         select,
         .ui-widget {
-            $input-padding-vertical-small:   2px;
+            $input-padding-vertical-small:   3px;
             $input-padding-horizontal-small: 5px;
 
             height: ($line-height-computed + ($input-padding-vertical-small * 2) + 2);

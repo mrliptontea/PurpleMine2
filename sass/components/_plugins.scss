@@ -65,4 +65,8 @@
             content: $fa-var-history;
         }
     }
+
+    .time-tracker-quick-menu:empty {
+        display: none;
+    }
 }
