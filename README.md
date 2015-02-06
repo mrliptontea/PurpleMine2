@@ -6,7 +6,7 @@ A free Redmine theme for modern browsers.
 
 Compatible with Redmine 2.5+ and browsers: IE9+, latest Firefox and Google Chrome (others where not tested).
 
-It's written in [SASS] (SCSS to be precise). It uses [normalize.css] and benefits from some parts of [Bootstrap][bootstrap-sass] like mixins, structure and stuff.
+It's written in [SCSS]. It uses [normalize.css] and benefits from some parts of [Bootstrap][bootstrap-sass] like mixins, structure and stuff.
 
 ## Main features
 
@@ -32,7 +32,7 @@ To install it, simply copy stylesheets from `PurpleMine2/plugins/redmine_backlog
 
 [WTFPL](http://www.wtfpl.net/)
 
-[SASS]: http://sass-lang.com/
+[SCSS]: http://sass-lang.com/
 [normalize.css]: https://github.com/necolas/normalize.css
 [bootstrap-sass]: https://github.com/twbs/bootstrap-sass
 [redmine_backlogs]: https://github.com/backlogs/redmine_backlogs
