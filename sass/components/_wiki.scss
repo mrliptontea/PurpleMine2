@@ -65,9 +65,35 @@ div.wiki {
         }
     }
 
+    ul,
+    ol {
+        padding-left: 2em;
+
+        ol {
+            list-style-type: lower-roman;
+
+            ol {
+                list-style-type: lower-alpha;
+            }
+        }
+    }
+
+    li > p {
+        margin-top: ($line-height-computed / 2);
+    }
+
     table {
+        // scss-lint:disable DuplicateProperty
+        display: block;
+        width: 100%;
         margin-bottom: $line-height-computed;
-        border: 1px solid $table-border-color;
+        overflow: auto;
+        word-break: normal;
+        word-break: keep-all;
+    }
+
+    tr:nth-child(2n) {
+        background-color: $table-bg-accent;
     }
 
     td,
@@ -202,8 +228,11 @@ h5,
 h6 {
     .wiki-anchor {
         display: none;
+        position: relative;
+        top: -(1em - $font-size-small);
         margin-left: 5px;
         color: $gray-lighter !important;
+        font-size: $font-size-small;
         text-decoration: none !important;
     }
 
@@ -216,13 +245,12 @@ h6 {
 
 p.footnote {
     margin-bottom: 5px;
-    font-size: $font-size-small;
 
     &:before {
         display: block;
         width: 300px;
-        margin-top:  10px;
-        padding-top: 10px;
+        margin-top:  $line-height-computed;
+        padding-top: $line-height-computed / 2;
         border-top: 1px solid $gray-lighter;
         content: "";
     }

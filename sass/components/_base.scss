@@ -132,12 +132,12 @@ blockquote {
     border-left: 4px solid $blockquote-border-color-fallback;
     border-left-color: $blockquote-border-color;
 
-    p,
-    ul,
-    ol {
-        &:last-child {
-            margin-bottom: 0;
-        }
+    >:first-child {
+        margin-top: 0;
+    }
+
+    >:last-child {
+        margin-bottom: 0;
     }
 }
 
