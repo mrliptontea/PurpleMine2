@@ -126,6 +126,12 @@
  * Menu (e.g. autocomplete)
  */
 
+.ui-menu {
+    padding: 3px;
+    border-radius: $panel-border-radius;
+    box-shadow: $panel-shadow;
+}
+
 .ui-menu-item {
     border-radius: $panel-border-radius;
 }
