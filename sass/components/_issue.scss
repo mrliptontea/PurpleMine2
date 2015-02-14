@@ -208,11 +208,13 @@ table.attributes {
     }
 }
 
-$journal-gravatar: 24px;
-$journal-indent: 0;
+$journal-gravatar:              24px;
+$journal-gravatar-margin:       8px;
+$journal-gravatar-padding:      4px;
+$journal-indent:                0;
 
 @if $use-gravatars {
-    $journal-indent: $journal-gravatar + 5px;
+    $journal-indent: $journal-gravatar + $journal-gravatar-margin + $journal-gravatar-padding;
 }
 
 .journal {
@@ -220,26 +222,42 @@ $journal-indent: 0;
     overflow: auto;
 
     h4 {
-        margin-bottom: 5px;
+        margin: 0;
+        padding: (2px + $journal-gravatar-padding) 8px;
+        border-radius: $border-radius-base;
+        background-color: $gray-lightest;
+        color: $gray;
+        font-size: $font-size-list;
+        line-height: $journal-gravatar - 2px * 2;
 
         > .gravatar {
-            margin-right: 5px;
+            margin-top: -1px;
+            margin-right: $journal-gravatar-margin;
+            margin-left: -(8px - $journal-gravatar-padding);
             float: left;
         }
-    }
 
-    @if $bubble-journal-wiki-note {
-        &.has-details h4 {
-            border-bottom: 1px solid $gray-lighter;
+        a {
+            color: $gray-dark;
         }
-    } @else {
-        h4 {
-            border-bottom: 1px solid $gray-lighter;
+
+        .user {
+            font-weight: bold;
+        }
+
+        .journal-link {
+            color: $gray;
         }
     }
 
     .details {
-        padding-left: $journal-indent + 15px;
+        margin-top: 5px;
+        padding-left: $journal-indent + $padding-base-horizontal;
+        font-size: $font-size-list;
+
+        li {
+            margin-bottom: .2em;
+        }
 
         img {
             margin: 0 0 -3px 4px;
@@ -247,6 +265,7 @@ $journal-indent: 0;
     }
 
     .wiki {
+        margin-top: 5px;
         margin-bottom: $line-height-computed / 2;
         margin-left: $journal-indent;
     }
@@ -264,21 +283,22 @@ $journal-indent: 0;
     i {
         &:first-of-type,
         &:last-of-type {
-            padding: $tracker-inline-padding;
+            padding: 2px 4px;
             border-radius: $border-radius-small;
             font-size: .9285em;
             font-style: normal;
         }
+    }
 
-        &:first-of-type {
-            background-color: mix($body-bg, $diff-out-bg, 64%);
-            color: $diff-out-color;
-        }
+    del > i:first-of-type,
+    i:first-of-type {
+        background-color: mix($body-bg, $diff-out-bg, 64%);
+        color: $diff-out-color;
+    }
 
-        &:last-of-type {
-            background-color: mix($body-bg, $diff-in-bg, 64%);
-            color: $diff-in-color;
-        }
+    i:last-of-type {
+        background-color: mix($body-bg, $diff-in-bg, 64%);
+        color: $diff-in-color;
     }
 
     @if $bubble-journal-wiki-note {
@@ -286,12 +306,12 @@ $journal-indent: 0;
             .wiki {
                 position: relative;
                 min-height: $line-height-computed;
+                margin-top: 0;
                 padding: $padding-large-vertical $padding-base-horizontal;
                 border: 1px solid $gray-lighter;
                 border-left: 2px solid $gray-light;
                 border-radius: $panel-border-radius;
                 background: $body-bg;
-                box-shadow: 0 1px 2px rgba(#000, .1);
 
                 @if $use-gravatars {
                     &:before,
@@ -364,13 +384,11 @@ $journal-indent: 0;
 }
 
 span.private {
-    position: relative;
-    top: -1px;
     padding: $tracker-inline-padding;
     border-radius: $border-radius-small;
     background: $brand-warning;
     color: $brand-text;
-    font-size: .714em;
+    font-size: $font-size-small;
     font-weight: bold;
     text-transform: uppercase;
 }
