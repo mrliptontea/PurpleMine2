@@ -376,13 +376,19 @@ span.private {
 }
 
 div#issue-changesets {
-    width: 33%;
     margin-bottom: $line-height-computed;
-    margin-left: $padding-side;
-    float: right;
+
+    @media screen and (min-width: $screen-md-min) {
+        width: 33%;
+        margin-left: $padding-side;
+        float: right;
+    }
 
     div.changeset {
         padding: $table-cell-padding;
-        border-bottom: 1px solid $gray-lighter;
+
+        + div.changeset {
+            border-top: 1px solid $gray-lighter;
+        }
     }
 }
