@@ -54,8 +54,18 @@ table.list {
         &.description,
         &.subject,
         &.comments,
-        &.roles {
+        &.roles,
+        &.author,
+        &.assigned_to,
+        &.string {
             text-align: left;
+        }
+
+        &.estimated_hours,
+        &.remaining_hours,
+        &.spent_hours,
+        &.story_points {
+            text-align: right;
         }
 
         &.tick {
