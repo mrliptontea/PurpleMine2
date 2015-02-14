@@ -262,25 +262,6 @@ em.info {
     }
 }
 
-/**
- * Hack: first <p> in issue form ("private" option) is moved to the right with
- * inline styles. Don't allow it break the layout
- */
-#all_attributes > p[style] {
-    margin-right: 0 !important;
-    margin-bottom: 0;
-    padding-left: 0;
-
-    input {
-        top: 2px;
-    }
-
-    label {
-        margin-right: 0;
-        padding-left: 0;
-    }
-}
-
 
 /**
  * Hack: align description edit icon with label
@@ -349,7 +330,7 @@ select.bool_cf {
     $input-height-large:             (ceil($font-size-large-px * $line-height-large) + ($input-padding-large-vertical * 2) + 2);
 
     label[for="issue_subject"] {
-        margin-top: $input-padding-large-vertical * $line-height-large + 1px;
+        margin-top: floor($input-padding-large-vertical * $line-height-large + 1px);
     }
 
     #issue_subject {
@@ -434,7 +415,7 @@ select.bool_cf {
     }
 }
 
-#attributes {
+#all_attributes {
     .splitcontentleft,
     .splitcontentright {
         width: 100%;
@@ -446,19 +427,19 @@ select.bool_cf {
             width: auto;
             min-width: 36em;
         }
+
+        textarea.text_cf,
+        input.string_cf,
+        input.link_cf,
+        select {
+            width: 90%;
+        }
     }
 
     .splitcontentleft {
         @media screen and (min-width: $screen-sm-min) {
             margin-right: $padding-side;
         }
-    }
-
-    textarea.text_cf,
-    input.string_cf,
-    input.link_cf,
-    select {
-        width: 90%;
     }
 
     #issue_estimated_hours,
@@ -468,7 +449,27 @@ select.bool_cf {
         padding-left: 5px;
         text-align: right;
     }
+
+    /**
+     * Hack: first <p> in issue form ("private" option) is moved to the right with
+     * inline styles. Don't allow it break the layout
+     */
+    > p[style] {
+        margin-right: 0 !important;
+        margin-bottom: 0;
+        padding-left: 0;
+
+        input {
+            top: 2px;
+        }
+
+        label {
+            margin-right: 0;
+            padding-left: 0;
+        }
+    }
 }
+
 
 #watchers_form {
     overflow: hidden;
