@@ -1,0 +1,131 @@
+var PurpleMine = PurpleMine || {};
+
+PurpleMine.SidebarToggler = (function()
+{
+    "use strict";
+
+    var self; // Make it work for browsers without Function.prototype.bind
+
+    function SidebarToggler()
+    {
+        self = this;
+
+        this.sidebarVisible = true;
+        this.sidebarHiding  = null;
+        this.$toggler       = null;
+        this.$main          = $("#main");
+        this.$sidebar       = $("#sidebar");
+
+        if (window.localStorage)
+        {
+            this.sidebarVisible =
+                null === localStorage.getItem("PurpleMine:sidebarHidden");
+        }
+
+        if (this.$sidebar.length > 0 &&
+            false === this.$main.hasClass("nosidebar"))
+        {
+            this.buildButton();
+            this.bindKeyHandler();
+        }
+
+        if (false === this.sidebarVisible)
+        {
+            this.hideSidebar(true);
+        }
+    }
+
+    SidebarToggler.prototype.bindKeyHandler = function()
+    {
+        var body = document.getElementsByTagName("body")[0];
+
+        window.onkeydown = function(event)
+        {
+            if (body === event.target && 83 === event.keyCode && // "s"
+                false === event.ctrlKey && false === event.altKey &&
+                false === event.shiftKey)
+            {
+                self.toggleSidebar();
+            }
+        };
+    };
+
+    SidebarToggler.prototype.buildButton = function()
+    {
+        var togglerLabel = document.documentElement.lang === "pl" ?
+                            "Pokaż/ukryj panel boczny" :
+                            "Toggle sidebar",
+            togglerClass = "sidebar-toggler",
+            togglerHtml;
+
+        if ("left" === this.$sidebar.css("float"))
+        {
+            togglerClass += " sidebar-toggler--left";
+        }
+        else
+        {
+            togglerClass += " sidebar-toggler--right";
+        }
+
+        togglerHtml = "<a href=\"javascript:;\" class=\"" + togglerClass +
+                        "\" title=\"" + togglerLabel + "\"></a>";
+        this.$toggler = $(togglerHtml);
+
+        this.$main.append(this.$toggler);
+        this.$toggler.on("click", this.toggleSidebar);
+    };
+
+    SidebarToggler.prototype.toggleSidebar = function()
+    {
+        if (self.sidebarVisible)
+        {
+            self.hideSidebar();
+        }
+        else
+        {
+            self.showSidebar();
+        }
+    };
+
+    SidebarToggler.prototype.hideSidebar = function(immediate)
+    {
+        if (true === immediate)
+        {
+            this.$sidebar.addClass("sidebar-hiding sidebar-hidden");
+        }
+        else
+        {
+            this.$sidebar.addClass("sidebar-hiding");
+            this.sidebarHiding = setTimeout(function sidebarTimeout()
+            {
+                self.$sidebar.addClass("sidebar-hidden");
+            }, 500);
+        }
+
+        this.$toggler.addClass("sidebar-hidden");
+        this.sidebarVisible = false;
+
+        if (window.localStorage)
+        {
+            localStorage.setItem("PurpleMine:sidebarHidden", "x");
+        }
+    };
+
+    SidebarToggler.prototype.showSidebar = function()
+    {
+        clearTimeout(this.sidebarHiding);
+        this.$sidebar
+                .removeClass("sidebar-hidden", 0)
+                .removeClass("sidebar-hiding");
+
+        this.$toggler.removeClass("sidebar-hidden");
+        this.sidebarVisible = true;
+
+        if (window.localStorage)
+        {
+            localStorage.removeItem("PurpleMine:sidebarHidden");
+        }
+    };
+
+    return SidebarToggler;
+}());

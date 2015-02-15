@@ -1,0 +1,121 @@
+@if $enable-sidebar-toggler {
+    $toggler-position-v:        1px;
+    $toggler-position-h:        1px;
+    $arrow-right:               "../images/bullet_arrow_right.png";
+    $arrow-left:                "../images/bullet_arrow_left.png";
+
+    @if $use-font-awesome {
+        $arrow-right:           $fa-var-caret-square-o-right;
+        $arrow-left:            $fa-var-caret-square-o-left;
+    }
+
+    #main {
+        position: relative;
+    }
+
+    #sidebar {
+        @if $fixed-layout {
+            opacity: 1;
+            @include transition(margin .5s, opacity .5s);
+        } @else {
+            @include transition(margin .5s);
+        }
+
+        &.sidebar-hiding {
+            @if $fixed-layout {
+                opacity: 0;
+            }
+            @if $sidebar-position == "left" {
+                margin-left: -$sidebar-width;
+            } @else {
+                margin-right: -$sidebar-width;
+            }
+        }
+
+        &.sidebar-hidden {
+            display: none;
+        }
+    }
+
+    .sidebar-toggler {
+        @include user-select(none);
+
+        display: block;
+        position: absolute;
+        top: $toggler-position-v;
+
+        @if $use-font-awesome {
+            @extend %fa-icon;
+            color: $gray-light;
+            line-height: 1;
+
+            &:before {
+                margin-right: 0;
+            }
+
+            &:hover,
+            &:focus,
+            &:active {
+                color: $gray;
+            }
+        } @else {
+            width: 15px;
+            height: 15px;
+            border-radius: $border-radius-base;
+            background-repeat: no-repeat;
+            background-position: center center;
+
+            &:hover,
+            &:focus,
+            &:active {
+                background-color: $gray-lighter;
+            }
+        }
+
+        @if $sidebar-position == "left" {
+            left: $toggler-position-h;
+
+            @if $use-font-awesome {
+                &:before {
+                    content: $arrow-left;
+                }
+            } @else {
+                background-image: url($arrow-left);
+            }
+        } @else {
+            right: $toggler-position-h;
+
+            @if $use-font-awesome {
+                &:before {
+                    content: $arrow-right;
+                }
+            } @else {
+                background-image: url($arrow-right);
+            }
+        }
+
+        &.sidebar-hidden {
+            @if $sidebar-position == "left" {
+                @if $use-font-awesome {
+                    &:before {
+                        content: $arrow-right;
+                    }
+                } @else {
+                    background-image: url($arrow-right);
+                }
+            } @else {
+                @if $use-font-awesome {
+                    &:before {
+                        content: $arrow-left;
+                    }
+                } @else {
+                    background-image: url($arrow-left);
+                }
+            }
+        }
+    }
+} @else {
+    .sidebar-toggler {
+        display: none;
+    }
+}
