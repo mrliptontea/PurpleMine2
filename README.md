@@ -4,17 +4,19 @@ A free Redmine theme for modern browsers.
 
 ![Screenshot](https://github.com/HolonGlobe/PurpleMine2/raw/master/screenshots/issues-list.png)
 
-Compatible with Redmine 2.5+ and browsers: IE9+, latest Firefox and Google Chrome (others where not tested).
+Compatible with Redmine 2.5+ and browsers: IE9+, latest Firefox and Google Chrome (others were not tested).
 
-It's written in [SCSS]. It uses [normalize.css] and benefits from some parts of [Bootstrap][bootstrap-sass] like mixins, structure and stuff.
+It's written in [SCSS]. It uses [normalize.css] and benefits from some parts of [Bootstrap][bootstrap-sass] like mixins, structure, and stuff.
 
 ## Main features
 
-* Bigger, easier to read fonts
-* Wiki content with Github-ish style
-* Sidebar moved to the left for better ergonomy (it's customizable via `_variables.scss`)
-* Coloring trackers links (on lists, issue pages and even in the wiki content)
-* Highlighting issues priority on the list and on the issue page
+* Bigger, easier to read fonts,
+* Github-like wiki content look,
+* Sidebar moved to the left for better ergonomy,
+* Coloring trackers links (on lists, issue pages and even in the wiki content),
+* Highlighting issues priority on the list and on the issue page,
+* Toggling sidebar visibility,
+* Easy to customize via variables.
 
 ## How install it
 
@@ -24,9 +26,29 @@ Then go to Redmine > Administration > Settings > Display and select PurpleMine2 
 
 ## Plugins
 
-This theme also features new look for [Redmine Backlogs][redmine_backlogs] plugin.
+This theme also features a new look for [Redmine Backlogs][redmine_backlogs] plugin. To install it, simply copy stylesheets from `PurpleMine2/plugins/redmine_backlogs` and overwrite files in `{redmine}/plugins/redmine_backlogs/assets/stylesheets` and restart Redmine.
 
-To install it, simply copy stylesheets from `PurpleMine2/plugins/redmine_backlogs` and overwrite files in `{redmine}/public/plugin_assets/redmine_backlogs/stylesheets`.
+Also, [Redmine Time Tracker][redmine_time_tracker] plugin should look nice with PurpleMine.
+
+## How to customize it
+
+If you want to customize PurpleMine to your needs, first, make sure that you have installed [node.js](http://nodejs.org/) and `npm` is available in your terminal.
+
+If haven't yet, you need to install grunt:
+
+    npm install grunt-cli -g
+
+Then, from the directory that contains PurpleMine run:
+
+    npm install
+
+Now all the dependencies should be ready to use. Run one more command:
+
+    grunt watch
+
+And now the grunt is watching for changes in files placed in `src/` folder. Just change what you need, and it'll run SASS preprocessor automatically.
+
+Regrettably, optional file include is not possible in SASS, so I would recommend creating a new file, e.g. `_my_variables.scss` and importing it a the beginning of the `application.scss` file. That way all the variables with the `!default` flag could be overridden.
 
 ## License
 
@@ -36,3 +58,4 @@ To install it, simply copy stylesheets from `PurpleMine2/plugins/redmine_backlog
 [normalize.css]: https://github.com/necolas/normalize.css
 [bootstrap-sass]: https://github.com/twbs/bootstrap-sass
 [redmine_backlogs]: https://github.com/backlogs/redmine_backlogs
+[redmine_time_tracker]: https://github.com/hicknhack-software/redmine_time_tracker
