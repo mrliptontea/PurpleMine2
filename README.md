@@ -50,6 +50,22 @@ And now the grunt is watching for changes in files placed in `src/` folder. Just
 
 Regrettably, optional file include is not possible in SASS, so I would recommend creating a new file, e.g. `_my_variables.scss` and importing it a the beginning of the `application.scss` file. That way all the variables with the `!default` flag could be overridden.
 
+## Changelog
+
+v1.1.0 (2015-02-15):
+
++ Changed issue's journal appearance
++ jQuery UI menus look improved
++ Removed box-shadow from boxes
++ Bumped grunt-sass version
++ Toggling sidebar visibility
++ Recompressed images
++ Changelog added
+
+v1.0.0 (2015-02-06):
+
+Initial version
+
 ## License
 
 [WTFPL](http://www.wtfpl.net/)
