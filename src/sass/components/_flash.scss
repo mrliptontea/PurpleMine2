@@ -57,14 +57,14 @@
     }
 }
 
-.flash.notice {
-    @include flash($flash-success-text, $flash-success-bg, $flash-success-border, $flash-success-link, "true");
-}
-
-.flash.warning,
+.warning,
 .conflict,
 .nodata {
     @include flash($flash-warning-text, $flash-warning-bg, $flash-warning-border, $flash-warning-link, "warning");
+}
+
+.flash.notice {
+    @include flash($flash-success-text, $flash-success-bg, $flash-success-border, $flash-success-link, "true");
 }
 
 #errorExplanation,
