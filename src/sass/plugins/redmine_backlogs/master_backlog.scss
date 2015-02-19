@@ -352,6 +352,7 @@ $story-sp-input-width:          50px;
             }
 
             .item {
+                position: relative;
                 min-width: 150px;
                 white-space: nowrap;
 
@@ -366,19 +367,34 @@ $story-sp-input-width:          50px;
                     }
                 }
 
+                > .ui-icon {
+                    position: absolute;
+                    top: 4px;
+                    right: 8px;
+                    left: auto;
+                    background-position: -32px -16px;
+                }
+
                 ul {
                     display: none;
                     position: absolute;
-                    top: 0;
-                    left: 160px;
+                    top: -1px;
+                    left: 100%;
                     margin: 0;
                     padding: 0;
-                    background-color: $gray-lightest;
+                    border: 1px solid $gray-light;
+                    border-left: 0 none;
+                    background-color: $body-bg;
                     list-style: none;
+                    box-shadow: 0 2px 1px rgba(#000, .1);
                 }
 
-                &:hover ul {
-                    display: block;
+                &:hover {
+                    background-color: $gray-lightest;
+
+                    ul {
+                        display: block;
+                    }
                 }
             }
         }

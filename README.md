@@ -56,6 +56,7 @@ Latest (master):
 
 * Fixed .warning style
 + Coloring status on issue page (it'll look like label)
+* Fixed master backlog sub-menu accessibility
 
 v1.1.0 (2015-02-15):
 
