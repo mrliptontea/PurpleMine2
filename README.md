@@ -57,6 +57,9 @@ Latest (master):
 * Fixed .warning style
 + Coloring status on issue page (it'll look like label)
 * Fixed master backlog sub-menu accessibility
++ Changed font weight to normal for sub-projects in project list
+* Fixed watch task path for .js
+- Removed unnecessary classes from .sidebar-toggler
 
 v1.1.0 (2015-02-15):
 

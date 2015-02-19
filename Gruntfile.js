@@ -43,7 +43,7 @@ module.exports = function(grunt) {
         tasks: ['css']
       },
       js: {
-        files: ['<%= src %>javascripts/src/*.js'],
+        files: ['<%= src %>javascripts/**/*.js'],
         tasks: ['js']
       }
     }

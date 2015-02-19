@@ -58,15 +58,6 @@ PurpleMine.SidebarToggler = (function()
             togglerClass = "sidebar-toggler",
             togglerHtml;
 
-        if ("left" === this.$sidebar.css("float"))
-        {
-            togglerClass += " sidebar-toggler--left";
-        }
-        else
-        {
-            togglerClass += " sidebar-toggler--right";
-        }
-
         togglerHtml = "<a href=\"javascript:;\" class=\"" + togglerClass +
                         "\" title=\"" + togglerLabel + "\"></a>";
         this.$toggler = $(togglerHtml);
