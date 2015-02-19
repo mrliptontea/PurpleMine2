@@ -11,6 +11,7 @@ $sidebar-position:              left !default;
 $color-priorities:              true !default;
 $color-trackers:                true !default;
 $colored-issue:                 true !default;
+$color-status:                  true !default;
 $use-gravatars:                 true !default;
 $use-font-awesome:              true !default;
 $issue-subject-large:           true !default;
@@ -390,6 +391,9 @@ $issue-text:                    $text-color !default;
 $issue-padding:                 15px !default;
 $issue-gravatar-size:           50px !default;
 $issue-heading-size:            1.5 !default;
+
+$issue-attribute-padding-v:     3px;
+$issue-attribute-padding-h:     5px;
 
 
 //== Media queries breakpoints

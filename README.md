@@ -52,6 +52,11 @@ Regrettably, optional file include is not possible in SASS, so I would recommend
 
 ## Changelog
 
+Latest (master):
+
+* Fixed .warning style
++ Coloring status on issue page (it'll look like label)
+
 v1.1.0 (2015-02-15):
 
 + Changed issue's journal appearance

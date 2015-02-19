@@ -180,7 +180,7 @@ table.attributes {
 
     th,
     td {
-        padding: $table-condensed-cell-padding $table-condensed-cell-padding $table-condensed-cell-padding 0;
+        padding: $issue-attribute-padding-v $issue-attribute-padding-h $issue-attribute-padding-v 0;
         text-align: left;
         vertical-align: top;
     }
@@ -192,6 +192,29 @@ table.attributes {
 
         > td {
             width: 35%;
+        }
+    }
+}
+
+@if $color-status {
+    .attributes td.status {
+        display: inline-block;
+        width: auto;
+        margin-top: $issue-attribute-padding-v;
+        padding: 1px $table-cell-padding;
+        border-radius: $border-radius-base;
+        background-color: $brand-primary;
+        color: $brand-text;
+        font-size: $font-size-small;
+        font-weight: bold;
+        text-transform: uppercase;
+
+        .status-1 & {
+            background-color: $brand-info;
+        }
+
+        .closed & {
+            background-color: $brand-danger;
         }
     }
 }
