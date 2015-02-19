@@ -60,6 +60,7 @@ Latest (master):
 + Changed font weight to normal for sub-projects in project list
 * Fixed watch task path for .js
 - Removed unnecessary classes from .sidebar-toggler
+* Fixed external link icon, when URI contains the word 'edit'
 
 v1.1.0 (2015-02-15):
 

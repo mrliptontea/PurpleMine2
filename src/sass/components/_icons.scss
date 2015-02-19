@@ -702,7 +702,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
             }
         }
 
-        [href*="edit"] {
+        .contextual [href*="edit"] {
             @extend %fa-icon;
             color: $icon-success-color;
             font-size: $font-size-base;
