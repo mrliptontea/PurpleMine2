@@ -378,6 +378,10 @@ ul.projects {
     a.project {
         font-size: $font-size-h3;
         font-weight: bold;
+
+        &.child {
+            font-weight: normal;
+        }
     }
 }
 
