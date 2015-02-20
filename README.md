@@ -63,6 +63,7 @@ Latest (master):
 * Fixed external link icon, when URI contains the word 'edit'
 * Fixed wiki page headers links font-size
 + Changed some trackers default colors
++ Bolded user name on issue page if it's current user
 
 v1.1.0 (2015-02-15):
 
