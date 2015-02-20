@@ -61,6 +61,7 @@ Latest (master):
 * Fixed watch task path for .js
 - Removed unnecessary classes from .sidebar-toggler
 * Fixed external link icon, when URI contains the word 'edit'
+* Fixed wiki page headers links font-size
 
 v1.1.0 (2015-02-15):
 
