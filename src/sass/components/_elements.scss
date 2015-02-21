@@ -611,10 +611,10 @@ table.boards {
         > h4,
         > p {
             margin-bottom: 0;
-            padding: $padding-base-vertical $padding-base-horizontal;
+            padding: $bubble-padding-vertical $bubble-padding-horizontal;
             border-bottom: 1px solid mix($gray-lighter, $gray-lightest, 50%);
             color: $gray;
-            font-size: $font-size-small;
+            font-size: $font-size-list;
 
             a {
                 color: $gray-darker;
@@ -626,24 +626,24 @@ table.boards {
         }
 
         .wiki {
-            padding: $padding-base-horizontal;
+            padding: $bubble-padding-horizontal;
             border-radius: 0 0 $panel-border-radius $panel-border-radius;
             background: $body-bg;
         }
 
         .contextual {
             position: relative;
-            margin-right: $padding-base-vertical;
+            margin-right: $bubble-padding-vertical;
             z-index: 1;
 
             @if $use-font-awesome {
                 margin-top: $padding-small-vertical;
             } @else {
-                margin-top: $padding-base-vertical;
+                margin-top: $bubble-padding-vertical;
             }
 
             a {
-                margin-left: ceil($padding-base-vertical / 2);
+                margin-left: ceil($bubble-padding-vertical / 2);
             }
         }
     }
@@ -654,7 +654,7 @@ table.boards {
 
     @if $use-gravatars {
         .reply {
-            margin-left: 24px + $padding-base-horizontal;
+            margin-left: $bubble-gravatar-size + $bubble-gravatar-space;
 
             > h4 {
                 position: relative;
@@ -663,7 +663,7 @@ table.boards {
                 &:after {
                     display: block;
                     position: absolute;
-                    top: 6px;
+                    top: 9px;
                     right: 100%;
                     left: -14px;
                     width: 0;
@@ -688,8 +688,8 @@ table.boards {
             }
 
             img.gravatar {
-                margin-top: $line-height-computed - 24px;
-                margin-left: -(24px + $padding-base-horizontal * 2 + 1px);
+                margin-top: $line-height-computed - $bubble-gravatar-size;
+                margin-left: -($bubble-gravatar-size + $bubble-gravatar-space + $bubble-padding-horizontal + 1px);
                 float: left;
             }
         }

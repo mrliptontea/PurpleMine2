@@ -15,7 +15,6 @@ $color-status:                  true !default;
 $use-gravatars:                 true !default;
 $use-font-awesome:              true !default;
 $issue-subject-large:           true !default;
-$bubble-journal-wiki-note:      true !default;
 $enable-sidebar-toggler:        true !default;
 
 
@@ -394,6 +393,14 @@ $issue-heading-size:            1.5 !default;
 
 $issue-attribute-padding-v:     3px;
 $issue-attribute-padding-h:     5px;
+
+
+//== Speech "bubbles"
+//
+$bubble-gravatar-size:          24px;
+$bubble-gravatar-space:         12px;
+$bubble-padding-vertical:       8px;
+$bubble-padding-horizontal:     15px;
 
 
 //== Media queries breakpoints

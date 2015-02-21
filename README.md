@@ -64,6 +64,7 @@ Latest (master):
 * Fixed wiki page headers links font-size
 + Changed some trackers default colors
 + Bolded user name on issue page if it's current user
+* Issue's journal appearance changed once again
 
 v1.1.0 (2015-02-15):
 
