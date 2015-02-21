@@ -247,13 +247,13 @@ table.attributes {
 
     &:before {
         display: block;
-        content: "";
         position: absolute;
         top: -($line-height-computed + 2px);
         left: 22px;
         width: 4px;
         height: $line-height-computed;
         background-color: darken($body-bg, 5%);
+        content: "";
         z-index: -1;
     }
 
@@ -354,15 +354,15 @@ table.attributes {
             }
 
             &:before {
-                position: absolute;
                 display: block;
-                content: "";
+                position: absolute;
                 top: 5px;
                 left: -($bubble-padding-horizontal * 1.5 + 6px / 2);
                 width: 6px;
                 height: 6px;
                 border-radius: 50%;
                 background-color: $gray-light;
+                content: "";
             }
         }
 

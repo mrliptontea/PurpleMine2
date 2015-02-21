@@ -65,6 +65,7 @@ Latest (master):
 + Changed some trackers default colors
 + Bolded user name on issue page if it's current user
 * Issue's journal appearance changed once again
++ Some improvements in wiki formatting
 
 v1.1.0 (2015-02-15):
 

@@ -74,8 +74,8 @@ $font-size-large-px:            18px !default;
 $font-size-small:               .86em !default;
 $font-size-small-px:            12px !default;
 
-$font-size-h1:                  2.285em !default;
-$font-size-h2:                  1.857em !default;
+$font-size-h1:                  2.25em !default;
+$font-size-h2:                  1.75em !default;
 $font-size-h3:                  1.5em !default;
 $font-size-h4:                  1.286em !default;
 $font-size-h5:                  1em !default;
@@ -86,7 +86,7 @@ $line-height-large:             1.33 !default;
 $line-height-computed:          floor(($font-size-base * $line-height-base)) !default; // ~20px
 
 $headings-font-weight:          700 !default;
-$headings-line-height:          1.2 !default;
+$headings-line-height:          1.4 !default;
 
 
 //== Wiki
