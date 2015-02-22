@@ -194,10 +194,12 @@ table.attributes {
     > tbody > tr {
         > th {
             width: 15%;
+            font-weight: normal;
         }
 
         > td {
             width: 35%;
+            color: $gray-darkest;
         }
     }
 }

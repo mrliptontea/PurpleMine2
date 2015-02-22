@@ -1,6 +1,10 @@
 // Priority highlight
 
 @mixin priority($parent, $background, $color, $link) {
+    @if lightness($background) < 85% {
+        $background: lighten($background, 6%);
+    }
+
     $border-color: darken(desaturate($background, 30%), 13.5%);
 
     tr#{$parent} {
@@ -32,11 +36,7 @@
                 $border-color: $issue-border;
                 background: $issue-bg;
             } @else {
-                @if lightness($background) < 85% {
-                    background: lighten($background, 6%);
-                } @else {
-                    background: $background;
-                }
+                background: $background;
             }
 
             &,
@@ -56,9 +56,11 @@
                 color: mix($color, $gray-light, 25%);
             }
 
-            .wiki {
+            > .description > .wiki {
                 border-top-color: $border-color;
+            }
 
+            .wiki {
                 a {
                     color: $link-color;
                     text-decoration: none;

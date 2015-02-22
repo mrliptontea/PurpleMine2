@@ -67,6 +67,7 @@ Latest (master):
 * Issue's journal appearance changed once again
 + Some improvements in wiki formatting
 + Introduced HistoryTabs for filtering issue journals
+* Improved issue page styles and adjusted default priority colors
 
 v1.1.0 (2015-02-15):
 
