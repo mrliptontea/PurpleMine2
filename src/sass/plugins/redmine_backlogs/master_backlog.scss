@@ -308,18 +308,19 @@ $story-sp-input-width:          50px;
             position: relative;
             height: $header-line-height;
             border-right: 1px solid #888;
-            border-bottom: 0 none;
+            border-bottom: 1px solid $header-bg;
             border-radius: ($border-radius-large - 1px) 0 0;
             cursor: pointer;
             font-size: $font-size-small;
             line-height: $line-height-base;
             overflow: visible;
-            @include transition(background-color .07s);
+            @include transition(background-color .07s .2s, border-color .07s .2s);
 
             &:hover {
-                border-bottom: 1px solid $body-bg;
+                border-color: $body-bg;
                 background-color: $body-bg;
                 z-index: 1000;
+                @include transition(background-color .07s .05s, border-color .07s .05s);
             }
 
             .icon {
@@ -332,7 +333,6 @@ $story-sp-input-width:          50px;
             }
 
             .items {
-                display: none;
                 position: absolute;
                 top: $header-line-height + 1px;
                 left: -1px;
@@ -344,7 +344,9 @@ $story-sp-input-width:          50px;
                 background-color: $body-bg;
                 list-style: none;
                 box-shadow: 0 2px 1px rgba(#000, .1);
+                visibility: hidden;
                 z-index: 999;
+                @include transition(visibility 0s .2s);
 
                 a {
                     color: $gray-darker;
@@ -352,7 +354,8 @@ $story-sp-input-width:          50px;
             }
 
             &:hover .items {
-                display: block;
+                visibility: visible;
+                @include transition(visibility 0s .05s);
             }
 
             .item {

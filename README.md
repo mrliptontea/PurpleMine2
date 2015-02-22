@@ -68,6 +68,7 @@ Latest (master):
 + Some improvements in wiki formatting
 + Introduced HistoryTabs for filtering issue journals
 * Improved issue page styles and adjusted default priority colors
+* Backlogs: added delay before hiding backlog menu
 
 v1.1.0 (2015-02-15):
 
