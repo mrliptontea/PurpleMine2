@@ -9,7 +9,12 @@
 
     tr#{$parent} {
         background: $background;
-        color: $color;
+
+        @if ".priority-default" == $parent {
+            color: $color;
+        } @else {
+            color: darken($color, 10%);
+        }
 
         &.odd {
             background: darken($background, 3%);
@@ -79,7 +84,12 @@
 
             > .attachments {
                 border-top-color: lighten($border-color, 5%);
-                background-color: lighten($background, 5%);
+
+                @if ".priority-default" == $parent {
+                    background-color: lighten($issue-bg, 1.5%);
+                } @else {
+                    background-color: lighten($background, 5%);
+                }
 
                 span.author {
                     color: mix($color, $gray, 25%);
@@ -106,7 +116,11 @@
         color: $color;
 
         &:hover {
-            background-color: darken($background, 10%);
+            @if hue($background) > 15deg and hue($background) < 40deg {
+                background-color: darken(adjust-hue($background, -8deg), 8%);
+            } @else {
+                background-color: darken($background, 10%);
+            }
             color: $color;
             text-decoration: none;
         }

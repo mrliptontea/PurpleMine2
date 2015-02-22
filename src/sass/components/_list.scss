@@ -270,7 +270,7 @@ tr.entry {
 /**
  * Priorities
  */
-
+// scss-lint:disable SpaceAfterComma
 @if $color-priorities {
     @include priority(".priority-lowest",  $priority-lowest-bg,  $priority-lowest-text,  $priority-lowest-link);
     @include priority(".priority-default", $priority-default-bg, $priority-default-text, $priority-default-link);
@@ -321,12 +321,14 @@ tr.group {
 
     .count {
         display: inline-block;
+        min-width: 1em;
         margin: 0 5px;
         padding: 1px 4px;
         border-radius: $border-radius-small;
         background-color: $brand-primary;
         color: $brand-text;
         font-size: $font-size-small;
+        text-align: center;
     }
 }
 

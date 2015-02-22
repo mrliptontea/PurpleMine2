@@ -9,6 +9,12 @@ table.progress {
     border: 1px solid rgba(#000, .1);
     empty-cells: show;
 
+    td.done_ratio & {
+        float: none;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
     td {
         height: 12px;
         padding: 0;
