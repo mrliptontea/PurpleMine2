@@ -237,6 +237,36 @@ table.attributes {
     }
 }
 
+#history {
+    overflow: auto;
+
+    > .tabs {
+        margin-bottom: $line-height-computed + 2px * 2;
+    }
+
+    &.hide-details {
+        .journal,
+        .details {
+            display: none;
+        }
+
+        .has-notes {
+            display: block;
+        }
+    }
+
+    &.hide-notes {
+        .journal,
+        .wiki {
+            display: none;
+        }
+
+        .has-details {
+            display: block;
+        }
+    }
+}
+
 .journal {
     position: relative;
     margin-bottom: $line-height-computed + 2px * 2;
@@ -245,10 +275,10 @@ table.attributes {
         margin-left: $bubble-gravatar-size + $bubble-gravatar-space;
     }
 
-    &:before {
+    &:after {
         display: block;
         position: absolute;
-        top: -($line-height-computed + 2px);
+        bottom: -($line-height-computed + 2px);
         left: 22px;
         width: 4px;
         height: $line-height-computed;
@@ -257,7 +287,7 @@ table.attributes {
         z-index: -1;
     }
 
-    &:first-of-type:before {
+    &:last-child:after {
         display: none;
         content: none;
     }
@@ -447,20 +477,42 @@ span.private {
     text-transform: uppercase;
 }
 
-div#issue-changesets {
+#issue-changesets {
     margin-bottom: $line-height-computed;
 
     @media screen and (min-width: $screen-md-min) {
-        width: 33%;
+        width: 45%;
         margin-left: $padding-side;
         float: right;
     }
 
+    @media screen and (min-width: $screen-lg-min) {
+        width: 33%;
+    }
+
+    .odd {
+        background-color: $issue-bg;
+    }
+
     div.changeset {
-        padding: $table-cell-padding;
+        padding: $bubble-padding-vertical $bubble-padding-horizontal;
+        border: 1px solid $issue-border;
+
+        &:first-of-type {
+            border-radius: $panel-border-radius $panel-border-radius 0 0;
+        }
+
+
+        &:last-of-type {
+            border-radius: 0 0 $panel-border-radius $panel-border-radius;
+        }
+
+        > p {
+            font-size: $font-size-list;
+        }
 
         + div.changeset {
-            border-top: 1px solid $gray-lighter;
+            border-top: 0 none;
         }
     }
 }

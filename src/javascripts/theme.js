@@ -4,4 +4,5 @@ $(function()
     "use strict";
 
     new PurpleMine.SidebarToggler();
+    new PurpleMine.HistoryTabs();
 });
