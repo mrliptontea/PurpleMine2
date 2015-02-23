@@ -69,6 +69,7 @@ Latest (master):
 + Introduced HistoryTabs for filtering issue journals
 * Improved issue page styles and adjusted default priority colors
 * Backlogs: added delay before hiding backlog menu
+* Changed ancestor project name in top to equal font size, but different weight
 
 v1.1.0 (2015-02-15):
 
