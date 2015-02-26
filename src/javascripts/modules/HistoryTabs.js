@@ -37,6 +37,7 @@ PurpleMine.HistoryTabs = (function()
         if (this.$history.length > 0)
         {
             this.buildTabs();
+            this.markFirstOfTypes();
         }
     }
 
@@ -58,6 +59,12 @@ PurpleMine.HistoryTabs = (function()
 
         this.$tabs = this.$tabsContainer.find(".history-tab");
         this.$tabs.on("click", this.tabClick);
+    };
+
+    HistoryTabs.prototype.markFirstOfTypes = function()
+    {
+        this.$history.find(".has-notes:first").addClass("first-of-notes");
+        this.$history.find(".has-details:first").addClass("first-of-details");
     };
 
     HistoryTabs.prototype.tabClick = function()

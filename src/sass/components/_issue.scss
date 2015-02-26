@@ -248,7 +248,8 @@ table.attributes {
 
     &.hide-details {
         .journal,
-        .details {
+        .details,
+        .first-of-notes:before {
             display: none;
         }
 
@@ -259,7 +260,8 @@ table.attributes {
 
     &.hide-notes {
         .journal,
-        .wiki {
+        .wiki,
+        .first-of-details:before {
             display: none;
         }
 
@@ -277,10 +279,10 @@ table.attributes {
         margin-left: $bubble-gravatar-size + $bubble-gravatar-space;
     }
 
-    &:after {
+    &:before {
         display: block;
         position: absolute;
-        bottom: -($line-height-computed + 2px);
+        top: -($line-height-computed + 2px);
         left: 22px;
         width: 4px;
         height: $line-height-computed;
@@ -289,9 +291,8 @@ table.attributes {
         z-index: -1;
     }
 
-    &:last-child:after {
+    .tabs + &:before {
         display: none;
-        content: none;
     }
 
     > div {
