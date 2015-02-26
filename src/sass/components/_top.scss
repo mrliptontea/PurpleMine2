@@ -103,6 +103,15 @@
         }
     }
 
+    option {
+        background-color: $input-bg;
+        color: $input-color;
+
+        &[disabled] {
+            color: $gray-lighter;
+        }
+    }
+
     input {
         width: 200px;
     }

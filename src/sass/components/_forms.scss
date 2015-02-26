@@ -101,8 +101,13 @@ select {
         height: auto;
     }
 
-    option[disabled] {
-        color: $gray-lighter;
+    option {
+        padding-right: $input-padding-horizontal;
+        padding-left: $input-padding-horizontal;
+
+        &[disabled] {
+            color: $gray-lighter;
+        }
     }
 }
 

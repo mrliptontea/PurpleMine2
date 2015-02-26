@@ -142,6 +142,10 @@ form[action*="repository/diff"] {
  */
 
 .query-columns {
+    select {
+        width: auto !important;
+    }
+
     .buttons {
         vertical-align: middle;
 
