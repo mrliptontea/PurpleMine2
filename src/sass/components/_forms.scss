@@ -101,13 +101,41 @@ select {
         height: auto;
     }
 
-    option {
-        padding-right: $input-padding-horizontal;
-        padding-left: $input-padding-horizontal;
+    option[disabled] {
+        color: $gray-lighter;
+    }
+}
 
-        &[disabled] {
-            color: $gray-lighter;
+/**
+ * Browser hacks: unfortunately every browser has different capabilities when it
+ * comes to styling <select> and <option> tags.
+ */
+
+
+// Mozilla Firefox
+@-moz-document url-prefix() {
+    select {
+        &[multiple] {
+            padding: 0;
         }
+
+        option {
+            padding: $input-padding-vertical $input-padding-horizontal;
+            border-bottom: 1px dotted $gray-lighter;
+        }
+    }
+}
+
+// Google Chrome and Safari
+@supports (-webkit-appearance: none) {
+    select[multiple] {
+        padding: 0;
+    }
+
+    // For some reason nested selectors will not work
+    select[multiple] option {
+        padding: $input-padding-vertical $input-padding-horizontal;
+        border-bottom: 1px dotted $gray-lighter;
     }
 }
 
