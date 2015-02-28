@@ -514,12 +514,12 @@ select.bool_cf {
     // scss-lint:disable VendorPrefixes
     #watchers_inputs {
         display: block;
-        max-width: 80em;
+        max-width: 64em;
         margin-top: $input-padding-vertical + 1px;
         margin-bottom: $line-height-computed / 2;
-        -webkit-columns: 18em 4;
-           -moz-columns: 18em 4;
-                columns: 18em 4;
+        -webkit-columns: 18em 3;
+           -moz-columns: 18em 3;
+                columns: 18em 3;
         overflow: auto;
     }
 
