@@ -137,7 +137,7 @@ $table-cell-padding:            8px !default;
 $table-condensed-cell-padding:  5px !default;
 
 $table-bg:                      transparent !default;
-$table-bg-accent:               darken($body-bg, 3%) !default;
+$table-bg-accent:               rgba(#000, .03) !default;
 $table-bg-hover:                #f1f1f1 !default;
 $table-bg-active:               $table-bg-hover !default;
 
