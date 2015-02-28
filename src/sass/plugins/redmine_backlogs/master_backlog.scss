@@ -547,7 +547,7 @@ $story-sp-input-width:          50px;
         }
 
         .story_points {
-            width: $story-right-width - ($story-status-width + $padding-base-horizontal);
+            width: $story-right-width - ($story-status-width + $padding-base-horizontal + 1px);
             float: left;
             text-align: right;
         }
@@ -616,14 +616,16 @@ $story-sp-input-width:          50px;
 
                 &.status_id {
                     width: $story-status-input-width;
+                    padding-right: 0;
                     float: left;
                 }
 
                 &.story_points {
                     width: $story-sp-input-width;
                     margin-right: 0;
-                    padding-left: 0;
+                    padding-right: 0;
                     float: left;
+                    text-align: left;
                 }
 
                 &.subject {
