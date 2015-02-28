@@ -27,11 +27,11 @@ PurpleMine.SidebarToggler = (function()
         {
             this.buildButton();
             this.bindKeyHandler();
-        }
 
-        if (false === this.sidebarVisible)
-        {
-            this.hideSidebar(true);
+            if (false === this.sidebarVisible)
+            {
+                this.hideSidebar(true);
+            }
         }
     }
 
