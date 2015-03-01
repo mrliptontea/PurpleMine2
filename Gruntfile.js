@@ -22,7 +22,13 @@ module.exports = function(grunt) {
           'plugins/redmine_backlogs/statistics.css':
             '<%= src %>sass/plugins/redmine_backlogs/statistics.scss',
           'plugins/redmine_backlogs/taskboard.css':
-            '<%= src %>sass/plugins/redmine_backlogs/taskboard.scss'
+            '<%= src %>sass/plugins/redmine_backlogs/taskboard.scss',
+          'plugins/redmine_backlogs/jquery/jquery-ui.css':
+            '<%= src %>sass/plugins/redmine_backlogs/jquery/jquery-ui.scss',
+          'plugins/redmine_backlogs/jquery/jquery.multiselect.css':
+            '<%= src %>sass/plugins/redmine_backlogs/jquery/jquery.multiselect.scss',
+          'plugins/redmine_backlogs/jquery/jquery.qtip.css':
+            '<%= src %>sass/plugins/redmine_backlogs/jquery/jquery.qtip.scss'
         }
       }
     },

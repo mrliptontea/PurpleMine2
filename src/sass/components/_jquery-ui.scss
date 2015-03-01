@@ -39,6 +39,10 @@
     color: $header-text;
     font-weight: bold;
 
+    a {
+        color: $header-text;
+    }
+
     a,
     button {
         &.ui-state-default {
@@ -112,6 +116,10 @@
     background: $component-active-bg;
     color: $component-active-color;
     font-weight: normal;
+
+    .ui-icon {
+        background-image: url("/stylesheets/jquery/images/ui-icons_ffffff_256x240.png");
+    }
 }
 
 .ui-state-active a,

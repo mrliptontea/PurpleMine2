@@ -251,24 +251,7 @@ ul.ui-sortable {
  * Story tooltip
  */
 .ui-tooltip {
-    .ui-tooltip-tip,
     .ui-tooltip-content {
-        border-color: $tooltip-border;
-        background-color: $tooltip-bg;
-    }
-
-    .ui-tooltip-content {
-        padding: $padding-base-vertical;
-        color: $tooltip-text;
-        font-size: $font-size-small;
-        box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
-
-        > div {
-            max-height: 200px;
-            text-overflow: ellipsis;
-            overflow: hidden;
-        }
-
         hr {
             margin-top:    $line-height-computed / 2;
             margin-bottom: $line-height-computed / 2;
@@ -278,6 +261,30 @@ ul.ui-sortable {
 
         .wiki-anchor {
             display: none;
+        }
+    }
+
+    .issue-description {
+        max-height: 10em;
+        margin-top: 12px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .issue-field {
+        margin: 2px 0 0;
+        padding-left: 160px;
+        overflow: hidden;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        > label {
+            margin-left: -160px;
+            padding-right: 5px;
+            float: left;
+            font-weight: bold;
         }
     }
 }
@@ -315,144 +322,6 @@ body {
         button {
             font-family: inherit;
             font-size: inherit;
-        }
-    }
-}
-
-#ui-datepicker-div {
-    width: 16em;
-    padding: 3px;
-    border: 1px solid $panel-border;
-    background: $body-bg;
-    color: $text-color;
-    font-size: $font-size-base;
-    box-shadow: $panel-shadow;
-
-    .ui-widget-header {
-        border: 0 none;
-        background: $header-bg;
-        color: $header-text;
-        font-weight: bold;
-    }
-
-    .ui-state-default {
-        border: 1px solid $body-bg;
-        background: $body-bg;
-        color: $component-color;
-        font-weight: normal;
-        box-shadow: none;
-
-        a,
-        a:link,
-        a:visited {
-            color: $component-color;
-            text-decoration: none;
-        }
-    }
-
-    .ui-state-hover,
-    .ui-state-focus {
-        border: 1px solid $component-active-border;
-        background: $component-active-bg;
-        color: $component-active-color;
-        font-weight: normal;
-    }
-
-    .ui-datepicker-header {
-        padding: .3em;
-    }
-
-    .ui-datepicker-prev {
-        left: .3em;
-    }
-
-    .ui-datepicker-next {
-        right: .3em;
-    }
-
-    .ui-datepicker-prev,
-    .ui-datepicker-next {
-        top: .3em;
-        border: 0 none;
-        background: transparent;
-
-        .ui-icon {
-            background-image: url("/stylesheets/jquery/images/ui-icons_ffffff_256x240.png");
-        }
-
-        &.ui-state-hover {
-            border-color: darken($header-bg, 12%);
-            background: darken($header-bg, 10%);
-        }
-    }
-
-    .ui-datepicker-title {
-        margin: 0 (1.8em + .3em);
-    }
-
-    select.ui-datepicker-month,
-    select.ui-datepicker-year {
-        width: 49%;
-        height: 1.8em;
-        margin: 0;
-    }
-
-    select.ui-datepicker-year {
-        margin-left: 1%;
-    }
-
-    .ui-datepicker-calendar {
-        td {
-            text-align: right;
-
-            &.ui-datepicker-week-col {
-                padding-right: $table-condensed-cell-padding;
-            }
-        }
-    }
-
-    .ui-datepicker-today {
-        .ui-state-highlight {
-            border-color: $component-active-border;
-            background: $component-bg;
-            color: $component-color;
-        }
-
-        .ui-state-hover {
-            background: $component-active-bg;
-            color: $component-active-color;
-        }
-    }
-
-    .ui-datepicker-current-day {
-        .ui-state-active {
-            border-color: $highlight-border;
-            background: $highlight-bg;
-            color: $highlight-text;
-        }
-    }
-
-    .ui-datepicker-buttonpane {
-        button {
-            padding: $input-padding-vertical $input-padding-horizontal;
-        }
-
-        .ui-state-default {
-            border-color: $component-border;
-            background: $component-bg;
-        }
-
-        .ui-state-focus,
-        .ui-state-hover {
-            border-color: $component-active-bg;
-            background: $component-active-bg;
-            color: $component-active-color;
-        }
-
-        .ui-state-active {
-            border-color: $highlight-border;
-            background: $highlight-bg;
-            color: $highlight-text;
         }
     }
 }

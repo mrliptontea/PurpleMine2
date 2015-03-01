@@ -314,13 +314,13 @@ $story-sp-input-width:          50px;
             font-size: $font-size-small;
             line-height: $line-height-base;
             overflow: visible;
-            @include transition(background-color .07s .2s, border-color .07s .2s);
+            @include transition(background-color 0s .1s, border-color 0s .1s);
 
             &:hover {
                 border-color: $body-bg;
                 background-color: $body-bg;
                 z-index: 1000;
-                @include transition(background-color .07s .05s, border-color .07s .05s);
+                @include transition(background-color 0s 0s, border-color 0s 0s);
             }
 
             .icon {
@@ -332,21 +332,21 @@ $story-sp-input-width:          50px;
                 background-position: -64px -16px;
             }
 
-            .items {
+            ul {
                 position: absolute;
                 top: $header-line-height + 1px;
                 left: -1px;
                 margin: 0;
                 padding: $padding-small-vertical 0;
-                border: 1px solid $gray-light;
-                border-top: 0 none;
+                border: 1px solid $header-bg;
+                border-top-width: 0;
                 border-radius: 0 0 $border-radius-base $border-radius-base;
                 background-color: $body-bg;
                 list-style: none;
                 box-shadow: 0 2px 1px rgba(#000, .1);
                 visibility: hidden;
                 z-index: 999;
-                @include transition(visibility 0s .2s);
+                @include transition(visibility 0s .1s);
 
                 a {
                     color: $gray-darker;
@@ -355,12 +355,12 @@ $story-sp-input-width:          50px;
 
             &:hover .items {
                 visibility: visible;
-                @include transition(visibility 0s .05s);
+                @include transition(visibility 0s 0s);
             }
 
             .item {
                 position: relative;
-                min-width: 150px;
+                min-width: 100px;
                 white-space: nowrap;
 
                 > a {
@@ -383,24 +383,18 @@ $story-sp-input-width:          50px;
                 }
 
                 ul {
-                    display: none;
                     position: absolute;
-                    top: -1px;
+                    top: -($padding-small-vertical + 1px);
                     left: 100%;
-                    margin: 0;
-                    padding: 0;
-                    border: 1px solid $gray-light;
-                    border-left: 0 none;
-                    background-color: $body-bg;
-                    list-style: none;
-                    box-shadow: 0 2px 1px rgba(#000, .1);
+                    border-width: 1px;
                 }
 
                 &:hover {
-                    background-color: $gray-lightest;
+                    background-color: darken($body-bg, 8%);
 
                     ul {
-                        display: block;
+                        visibility: visible;
+                        @include transition(visibility 0s 0s);
                     }
                 }
             }
