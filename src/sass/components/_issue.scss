@@ -192,14 +192,36 @@ table.attributes {
     }
 
     > tbody > tr {
-        > th {
-            width: 15%;
+        th {
             font-weight: normal;
         }
 
-        > td {
-            width: 35%;
+        td {
             color: $gray-darkest;
+        }
+    }
+
+    @media screen and (min-width: $screen-md-min) {
+        > tbody > tr {
+            > th,
+            > td {
+                width: 25%;
+            }
+        }
+    }
+
+    @media screen and (min-width: $screen-lg-min) {
+        width: auto;
+        min-width: $screen-sm-min;
+
+        > tbody > tr {
+            > th {
+                width: 14em;
+            }
+
+            > td {
+                width: auto;
+            }
         }
     }
 }
