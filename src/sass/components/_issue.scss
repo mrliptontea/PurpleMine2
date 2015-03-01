@@ -41,11 +41,11 @@
 
     > .subject {
         h3 {
-            margin-bottom: 5px;
+            margin-bottom: .3em;
             color: $gray-darkest;
             font-size: $issue-heading-size * 1em;
             font-weight: bold;
-            line-height: $headings-line-height;
+            line-height: 1.2;
         }
 
         p {
