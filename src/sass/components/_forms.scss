@@ -101,6 +101,10 @@ select {
         height: auto;
     }
 
+    &[size="1"] {
+        height: $input-height-base;
+    }
+
     option[disabled] {
         color: $gray-lighter;
     }
