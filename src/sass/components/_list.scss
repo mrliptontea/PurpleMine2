@@ -68,12 +68,7 @@ table.list {
             text-align: right;
         }
 
-        &.tick {
-            width: 15%;
-        }
-
         &.buttons {
-            width: 15%;
             text-align: right;
             white-space: nowrap;
 
@@ -83,7 +78,6 @@ table.list {
         }
 
         &.reorder {
-            width: 15%;
             text-align: center;
             white-space: nowrap;
         }
@@ -344,6 +338,16 @@ tr.group {
 tr.time-entry {
     text-align: center;
 
+    td.project,
+    td.spent_on,
+    td.activity {
+        width: 6em;
+    }
+
+    td.user {
+        width: 12em;
+    }
+
     td.issue,
     td.comments {
         text-align: left;
@@ -351,6 +355,7 @@ tr.time-entry {
     }
 
     td.hours {
+        width: 5em;
         padding-right: .5em;
         font-weight: bold;
         text-align: right;
@@ -467,5 +472,20 @@ table.files {
         &.digest {
             font-family: $font-family-monospace;
         }
+    }
+}
+
+/**
+ * Admin lists
+ */
+
+.controller-enumerations {
+    td.name {
+        width: 50%;
+    }
+
+    td.tick,
+    td.reorder {
+        width: 15%;
     }
 }
