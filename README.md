@@ -70,6 +70,7 @@ Latest (master):
 * Improved issue page styles and adjusted default priority colors
 * Backlogs: added delay before hiding backlog menu
 * Changed ancestor project name in top to equal font size, but different weight
+* Fixed context menu position regression introduced by sidebar toggle
 
 v1.1.0 (2015-02-15):
 
