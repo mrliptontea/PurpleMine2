@@ -124,15 +124,32 @@
             color: $color;
             text-decoration: none;
         }
+
+        &:focus,
+        &:active {
+            text-decoration: none;
+        }
     }
 
     a#{$parent} {
         margin-right: 1px;
         padding: $tracker-inline-padding;
+        font-weight: normal;
 
         &.closed {
-            color: mix($color, $background, 50%);
-            text-decoration: $link-closed-decoration;
+            position: relative;
+            color: mix($color, $background, 75%);
+            text-decoration: none;
+
+            &:after {
+                display: block;
+                position: absolute;
+                top: 50%;
+                right: 5px;
+                left: 5px;
+                border-top: 1px solid rgba($color, .35);
+                content: "";
+            }
         }
     }
 
