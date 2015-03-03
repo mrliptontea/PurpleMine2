@@ -511,6 +511,13 @@ $story-sp-input-width:          50px;
             }
         }
 
+        .fff-left > .project,
+        .fff-wrapmiddle > .subject,
+        .fff-right > .status_id,
+        .fff-right > .story_points {
+            min-height: floor(.92 * $font-size-base * $line-height-base);
+        }
+
         .project {
             display: block;
             position: relative;

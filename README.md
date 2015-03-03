@@ -52,6 +52,10 @@ Regrettably, optional file include is not possible in SASS, so I would recommend
 
 ## Changelog
 
+Latest (master):
+
+* Backlogs: make it possible to click on empty field
+
 v1.2.0 (2015-03-03):
 
 * Fixed .warning style
