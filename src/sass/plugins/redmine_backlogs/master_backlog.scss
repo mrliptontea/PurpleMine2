@@ -451,7 +451,7 @@ $story-sp-input-width:          50px;
     .story {
         display: block;
         margin: 0;
-        padding: $table-condensed-cell-padding;
+        padding: 0 $table-condensed-cell-padding;
         border-top: 1px solid $gray-lighter;
         background-color: $body-bg;
         background-repeat: no-repeat;
@@ -483,6 +483,7 @@ $story-sp-input-width:          50px;
         .id {
             position: relative;
             width: $story-id-width;
+            margin: $table-condensed-cell-padding 0;
             float: left;
 
             .t {
@@ -514,7 +515,7 @@ $story-sp-input-width:          50px;
             display: block;
             position: relative;
             width: $story-project-width;
-            padding-left: 5px;
+            padding: $table-condensed-cell-padding 0 $table-condensed-cell-padding $table-condensed-cell-padding;
             float: left;
             text-align: center;
             white-space: nowrap;
@@ -527,6 +528,7 @@ $story-sp-input-width:          50px;
 
         .subject {
             @include text-overflow;
+            padding: $table-condensed-cell-padding 0;
         }
 
         &.closed .subject {
@@ -535,13 +537,14 @@ $story-sp-input-width:          50px;
 
         .status_id {
             width: $story-status-width;
-            padding-left: 5px;
+            padding: $table-condensed-cell-padding 0 $table-condensed-cell-padding $table-condensed-cell-padding;
             float: left;
             white-space: nowrap;
         }
 
         .story_points {
             width: $story-right-width - ($story-status-width + $padding-base-horizontal + 1px);
+            padding: $table-condensed-cell-padding $table-condensed-cell-padding $table-condensed-cell-padding 0;
             float: left;
             text-align: right;
         }
@@ -585,7 +588,9 @@ $story-sp-input-width:          50px;
             .editors {
                 display: block;
                 margin-left: $story-tracker-input-width + 5px;
+                padding: $table-condensed-cell-padding 0;
                 text-align: right;
+                @include clearfix;
 
                 label {
                     display: none;
@@ -628,6 +633,7 @@ $story-sp-input-width:          50px;
                     width: calc(100% - #{$subject-width-minus}) !important;
                     height: 60px;
                     float: left;
+                    white-space: normal;
                     overflow: auto;
                 }
 
