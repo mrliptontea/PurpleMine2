@@ -212,7 +212,6 @@ table.attributes {
 
     @media screen and (min-width: $screen-lg-min) {
         width: auto;
-        min-width: $screen-sm-min;
 
         > tbody > tr {
             > th {
@@ -221,6 +220,7 @@ table.attributes {
 
             > td {
                 width: auto;
+                min-width: 16em;
             }
         }
     }
@@ -230,6 +230,7 @@ table.attributes {
     .attributes td.status {
         display: inline-block;
         width: auto;
+        min-width: 1em;
         margin-top: $issue-attribute-padding-v;
         padding: 1px $table-cell-padding;
         border-radius: $border-radius-base;
@@ -237,6 +238,7 @@ table.attributes {
         color: $brand-text;
         font-size: $font-size-small;
         font-weight: bold;
+        text-align: center;
         text-transform: uppercase;
 
         .status-1 & {
