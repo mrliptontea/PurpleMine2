@@ -452,7 +452,7 @@ select.bool_cf {
     }
 }
 
-#all_attributes {
+#issue-form {
     .splitcontentleft,
     .splitcontentright {
         width: 100%;
@@ -486,24 +486,25 @@ select.bool_cf {
         padding-left: .2em;
         text-align: right;
     }
+}
 
-    /**
-     * Hack: first <p> in issue form ("private" option) is moved to the right with
-     * inline styles. Don't allow it break the layout
-     */
-    > p[style] {
-        margin-right: 0 !important;
-        margin-bottom: 0;
+
+/**
+ * Hack: first <p> in issue form ("private" option) is moved to the right with
+ * inline styles. Don't allow it break the layout
+ */
+#all_attributes > p[style] {
+    margin-right: 0 !important;
+    margin-bottom: 0;
+    padding-left: 0;
+
+    input {
+        top: 2px;
+    }
+
+    label {
+        margin-right: 0;
         padding-left: 0;
-
-        input {
-            top: 2px;
-        }
-
-        label {
-            margin-right: 0;
-            padding-left: 0;
-        }
     }
 }
 
