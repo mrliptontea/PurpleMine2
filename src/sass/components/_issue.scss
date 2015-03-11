@@ -526,12 +526,13 @@ span.private {
         border: 1px solid $issue-border;
 
         &:first-of-type {
-            border-radius: $panel-border-radius $panel-border-radius 0 0;
+            border-top-right-radius: $panel-border-radius;
+            border-top-left-radius: $panel-border-radius;
         }
 
-
         &:last-of-type {
-            border-radius: 0 0 $panel-border-radius $panel-border-radius;
+            border-bottom-right-radius: $panel-border-radius;
+            border-bottom-left-radius: $panel-border-radius;
         }
 
         > p {
