@@ -316,17 +316,58 @@ a.close-icon {
  */
 #content table.filecontent {
     width: 100%;
+    background: $body-bg;
+
+    th.filename {
+        border-color: $brand-primary;
+        border-bottom-color: darken($body-bg, 10%);
+        background-color: $brand-primary;
+        color: $brand-text;
+    }
+
+    tbody {
+        font-size: $font-size-list;
+    }
 
     tbody,
     td.line-code pre {
         font-family: $font-family-monospace;
     }
 
-    td.line-code {
-        padding: 2px 5px;
+    th.line-num {
+        border-color: darken($body-bg, 10%);
+        background-color: darken($body-bg, 5%);
+        color: $gray;
+    }
 
-        pre {
-            font-size: 13px;
+    th.line-num,
+    td.line-code {
+        padding: .15em .4em;
+    }
+
+    th.line-num,
+    td.line-code,
+    td.line-code pre {
+        font-size: 1em;
+    }
+
+    tr:hover {
+        background-color: darken($body-bg, 2%);
+
+        th.line-num {
+            background-color: darken($body-bg, 10%);
+        }
+    }
+
+    tr:target {
+        th.line-num {
+            border-color: darken(adjust-hue($highlight-bg, -8deg), 15%);
+            background-color: darken(adjust-hue($highlight-bg, -8deg), 7%);
+            color: $highlight-text;
+        }
+
+        td.line-code {
+            background-color: $highlight-bg;
         }
     }
 }

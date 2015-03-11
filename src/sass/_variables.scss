@@ -201,11 +201,11 @@ $tracker-7-text:                $brand-text !default;
 
 $diff-out-color:                #430;
 $diff-out-bg:                   #ffeaaa;
-$diff-out-bg-light:             #ffefbf;
+$diff-out-bg-light:             rgba($diff-out-bg, .5);
 
 $diff-in-color:                 #350;
 $diff-in-bg:                    #bffbbf;
-$diff-in-bg-light:              #d8fcd8;
+$diff-in-bg-light:              rgba($diff-in-bg, .5);
 
 
 //== Changesets

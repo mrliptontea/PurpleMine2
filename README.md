@@ -58,6 +58,7 @@ Latest (master):
 * Corrected issue form columns widths so they will be equal in all fieldsets
 * Changesets will look similar to issue's journal
 + Improved revision page layout and added Font Awesome icons
++ Improved file content view
 
 v1.2.0 (2015-03-03):
 
