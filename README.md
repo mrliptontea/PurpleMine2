@@ -55,8 +55,8 @@ Regrettably, optional file include is not possible in SASS, so I would recommend
 Latest (master):
 
 * Backlogs: make it possible to click on empty field
-* Corrected border radius for changesets divs
 * Corrected issue form columns widths so they will be equal in all fieldsets
+* Changesets will look similar to issue's journal
 
 v1.2.0 (2015-03-03):
 
