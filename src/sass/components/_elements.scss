@@ -446,11 +446,7 @@ ul.projects {
  * Time report
  */
 
-table#time-report {
-    td.hours {
-        text-align: right;
-    }
-
+#time-report {
     th {
         &.period,
         &.total {
@@ -475,8 +471,8 @@ table#time-report {
         }
     }
 
-    .hours-dec {
-        font-size: .9em;
+    td.hours {
+        text-align: right;
     }
 }
 

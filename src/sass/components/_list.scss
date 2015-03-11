@@ -355,10 +355,17 @@ tr.time-entry {
     }
 
     td.hours {
-        width: 5em;
-        padding-right: .5em;
         font-weight: bold;
+    }
+}
+
+.time-entries,
+tr.time-entry {
+    td.hours {
+        width: 1%;
+        padding-right: .5em;
         text-align: right;
+        white-space: nowrap;
 
         .hours-dec {
             font-size: .9em;
@@ -366,6 +373,19 @@ tr.time-entry {
     }
 }
 
+.mypage-box {
+    td.hours {
+        font-weight: bold;
+
+        em {
+            font-style: normal;
+        }
+    }
+
+    tr.time-entry td.hours {
+        font-weight: normal;
+    }
+}
 
 /**
  * Wiki page history entry
