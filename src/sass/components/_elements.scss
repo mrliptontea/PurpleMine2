@@ -755,13 +755,26 @@ table.boards {
  * Repository view
  */
 
-#revision_selector {
-    display: inline;
+.revision-info {
+    margin-bottom: $line-height-computed;
+
+    tbody > tr > td {
+        padding-right: $table-cell-padding;
+        padding-bottom: $table-condensed-cell-padding;
+    }
 }
 
 #related-issues {
-    li img {
-        vertical-align: middle;
+    margin: $line-height-computed 0;
+
+    li > a {
+        margin-left: .5em;
+
+        @if $use-font-awesome == false {
+            img {
+                vertical-align: middle;
+            }
+        }
     }
 }
 
@@ -801,5 +814,54 @@ tr.changeset {
     ul {
         margin-top: 0;
         margin-bottom: 0;
+    }
+}
+
+#content #changes-legend {
+    font-size: 1em;
+
+    .change {
+        background-position: 5px center;
+    }
+
+    .change-A { color: $changeset-add-color; }
+    .change-M { color: $changeset-modified-color; }
+    .change-C { color: $changeset-copied-color; }
+    .change-R { color: $changeset-renamed-color; }
+    .change-D { color: $changeset-deleted-color; }
+}
+
+.changeset-changes {
+    .change {
+        padding-top: $table-condensed-cell-padding;
+        color: $gray-dark;
+
+        a {
+            @include link-variant($gray-dark);
+        }
+    }
+
+    .change-A {
+        &:before { color: $changeset-add-color; }
+        a { @include link-variant($changeset-add-color); }
+    }
+
+    .change-M {
+        &:before { color: $changeset-modified-color; }
+        a { @include link-variant($changeset-modified-color); }
+    }
+
+    .change-C {
+        &:before { color: $changeset-copied-color; }
+        a { @include link-variant($changeset-copied-color); }
+    }
+
+    .change-R {
+        &:before { color: $changeset-renamed-color; }
+        a { @include link-variant($changeset-renamed-color); }
+    }
+
+    .change-D {
+        color: $changeset-deleted-color;
     }
 }

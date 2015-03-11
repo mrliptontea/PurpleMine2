@@ -3,10 +3,12 @@
 // --------------------------------------------------
 
 form {
-    // display: inline;
-
     td {
         padding: $table-condensed-cell-padding;
+    }
+
+    .contextual > & {
+        display: inline;
     }
 }
 

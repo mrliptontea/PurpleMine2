@@ -207,6 +207,15 @@ $diff-in-color:                 #350;
 $diff-in-bg:                    #bffbbf;
 $diff-in-bg-light:              #d8fcd8;
 
+
+//== Changesets
+//
+$changeset-add-color:           $brand-success;
+$changeset-modified-color:      $brand-warning;
+$changeset-copied-color:        $brand-info;
+$changeset-renamed-color:       $brand-primary;
+$changeset-deleted-color:       $brand-danger;
+
 //== Buttons
 //
 

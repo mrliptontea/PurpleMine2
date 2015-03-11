@@ -1,0 +1,10 @@
+// Link variant
+
+@mixin link-variant($default-color, $hover-color: darken($default-color, 10%)) {
+    color: $default-color;
+
+    &:focus,
+    &:hover {
+        color: $hover-color;
+    }
+}
