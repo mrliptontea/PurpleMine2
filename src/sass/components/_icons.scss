@@ -757,11 +757,11 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
         &:before {
             position: relative;
             top: -.12em;
-            content: $fa-var-circle;
             font-size: .7143em;
+            content: $fa-var-circle;
         }
 
-        &.folder:before          { top: 0; content: $fa-var-folder; font-size: 1em; }
+        &.folder:before          { top: 0; font-size: 1em; content: $fa-var-folder; }
         &.folder.change-A:before { content: $fa-var-folder-open; }
         &.folder.change-M:before { content: $fa-var-folder-open; }
         &.change-A:before        { content: $fa-var-plus-circle; }
@@ -773,7 +773,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 
     .changeset-changes ul > li.change {
         &.folder:before {
-            top: $table-condensed-cell-padding - 1px;
+            top: $table-condensed-cell-padding - 2px;
             margin-left: -20px;
         }
 
