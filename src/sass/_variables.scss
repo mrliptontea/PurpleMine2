@@ -218,11 +218,13 @@ $journal-new-value-bg:          rgba(#bffbbf, .3) !default;
 
 //== Changesets
 //
-$changeset-add-color:           $brand-success;
-$changeset-modified-color:      $brand-warning;
-$changeset-copied-color:        $brand-info;
-$changeset-renamed-color:       $brand-primary;
-$changeset-deleted-color:       $brand-danger;
+
+$changeset-add-color:           $brand-success !default;
+$changeset-modified-color:      $brand-warning !default;
+$changeset-copied-color:        $brand-info !default;
+$changeset-renamed-color:       $brand-primary !default;
+$changeset-deleted-color:       $brand-danger !default;
+
 
 //== Buttons
 //
@@ -266,14 +268,14 @@ $input-border-radius-large:     $border-radius-large !default;
 $input-border-focus:            #51a7e8 !default;
 $input-color-placeholder:       #999 !default;
 
-$input-padding-vertical:        3px;
-$input-padding-horizontal:      8px;
+$input-padding-vertical:        3px !default;
+$input-padding-horizontal:      8px !default;
 
 $input-height-base:             ($line-height-computed + ($input-padding-vertical * 2) + 2) !default;
 
-$label-width:                   160px;
-$label-wide-width:              280px;
-$label-space:                   10px;
+$label-width:                   160px !default;
+$label-wide-width:              280px !default;
+$label-space:                   10px !default;
 
 $legend-color:                  $gray-dark !default;
 $legend-border-color:           #e5e5e5 !default;
@@ -408,16 +410,16 @@ $issue-padding:                 15px !default;
 $issue-gravatar-size:           50px !default;
 $issue-heading-size:            1.5 !default;
 
-$issue-attribute-padding-v:     3px;
-$issue-attribute-padding-h:     5px;
+$issue-attribute-padding-v:     3px !default;
+$issue-attribute-padding-h:     5px !default;
 
 
 //== Speech "bubbles"
 //
-$bubble-gravatar-size:          24px;
-$bubble-gravatar-space:         12px;
-$bubble-padding-vertical:       8px;
-$bubble-padding-horizontal:     15px;
+$bubble-gravatar-size:          24px !default;
+$bubble-gravatar-space:         12px !default;
+$bubble-padding-vertical:       8px !default;
+$bubble-padding-horizontal:     15px !default;
 
 
 //== Media queries breakpoints
@@ -442,6 +444,6 @@ $screen-md-max:                 ($screen-lg-min - 1) !default;
 //== Content widths
 //
 
-$width-sm:                      $screen-sm - ($padding-side * 2);
-$width-md:                      $screen-md - ($padding-side * 2);
-$width-lg:                      $screen-lg - ($padding-side * 2);
+$width-sm:                      $screen-sm - ($padding-side * 2) !default;
+$width-md:                      $screen-md - ($padding-side * 2) !default;
+$width-lg:                      $screen-lg - ($padding-side * 2) !default;
