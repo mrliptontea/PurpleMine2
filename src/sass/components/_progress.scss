@@ -10,9 +10,9 @@ table.progress {
     empty-cells: show;
 
     td.done_ratio & {
-        float: none;
         margin-right: auto;
         margin-left: auto;
+        float: none;
     }
 
     td {
@@ -31,6 +31,10 @@ table.progress {
         &.todo {
             background-color: $progress-bg;
         }
+    }
+
+    .issue & td {
+        padding: 0;
     }
 }
 
