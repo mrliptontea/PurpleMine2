@@ -2,9 +2,8 @@
 // Activity and search results list
 // --------------------------------------------------
 
-
-#search-results,
-#activity dl {
+#activity dl,
+#search-results {
     margin-left: $padding-side;
 }
 
@@ -12,11 +11,10 @@
 #search-results {
     dd {
         margin-bottom: $line-height-computed;
-        padding-left: $padding-side;
     }
 
     dt {
-        margin-bottom: 2px;
+        margin-bottom: .1em;
         padding-left: $padding-side;
         background-repeat: no-repeat;
         background-position: 0 center;
@@ -34,16 +32,28 @@
 }
 
 #activity {
+    $activity-avatar: 24px;
+    $activity-avatar-space: 5px;
+    $activity-indent: 20px;
+
+    @if $use-gravatars {
+        $activity-indent: $activity-indent + $activity-avatar + $activity-avatar-space;
+    }
+
     h3,
     h4 {
         margin: 0 0 $line-height-computed;
         padding-bottom: .2em;
-        border-bottom: 1px dotted $gray-lighter;
+        border-bottom: 1px dotted $gray-light;
         font-size: $font-size-h4;
         font-weight: normal;
     }
 
     dt {
+        &.grouped {
+            margin-left: $activity-indent;
+        }
+
         &.me .time {
             border-bottom: 1px solid $gray-lighter;
         }
@@ -51,15 +61,19 @@
         .time {
             color: $gray;
         }
+
+        @if $use-gravatars {
+            .gravatar {
+                margin-top: -2px;
+                margin-right: $activity-avatar-space;
+                float: left;
+            }
+        }
     }
 
     dd {
         font-size: $font-size-small;
-    }
-
-    dt.grouped,
-    dd.grouped {
-        margin-left: $padding-side;
+        overflow: hidden;
     }
 }
 
