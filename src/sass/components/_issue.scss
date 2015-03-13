@@ -467,13 +467,13 @@ div.thumbnails {
 
     del > i:first-of-type,
     i:first-of-type {
-        background-color: mix($body-bg, $diff-out-bg, 64%);
-        color: $diff-out-color;
+        background-color: $journal-old-value-bg;
+        color: $journal-old-value-color;
     }
 
     i:last-of-type {
-        background-color: mix($body-bg, $diff-in-bg, 64%);
-        color: $diff-in-color;
+        background-color: $journal-new-value-bg;
+        color: $journal-new-value-color;
     }
 }
 

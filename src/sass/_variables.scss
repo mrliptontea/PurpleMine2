@@ -199,13 +199,21 @@ $tracker-7-text:                $brand-text !default;
 //== Diffs
 //
 
-$diff-out-color:                #430;
-$diff-out-bg:                   #ffeaaa;
-$diff-out-bg-light:             rgba($diff-out-bg, .5);
+$diff-out-color:                #511 !default;
+$diff-out-bg:                   #fbb !default;
+$diff-out-bg-light:             rgba($diff-out-bg, .3) !default;
 
-$diff-in-color:                 #350;
-$diff-in-bg:                    #bffbbf;
-$diff-in-bg-light:              rgba($diff-in-bg, .5);
+$diff-in-color:                 #350 !default;
+$diff-in-bg:                    #afa !default;
+$diff-in-bg-light:              rgba($diff-in-bg, .3) !default;
+
+
+//== Journal changes
+//
+$journal-old-value-color:       #430 !default;
+$journal-old-value-bg:          rgba(#ffeaaa, .3) !default;
+$journal-new-value-color:       #350 !default;
+$journal-new-value-bg:          rgba(#bffbbf, .3) !default;
 
 
 //== Changesets
