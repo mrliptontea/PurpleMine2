@@ -127,7 +127,14 @@
             &:before { content: $fa-var-image; }
         }
 
+        .jstb_cut {
+            @extend %jstb-icon;
+
+            &:before { content: $fa-var-scissors; }
+        }
+
         button.jstb_help {
+            @extend %jstb-icon;
             color: $link-color;
 
             &:hover {
