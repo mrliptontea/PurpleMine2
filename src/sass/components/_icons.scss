@@ -118,6 +118,12 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     .icon-zoom-out:before              { content: $fa-var-search-minus; }
     .icon-passwd:before                { content: $fa-var-key; }
     .icon-test:before                  { content: $fa-var-arrow-circle-right; }
+    .icon-phone:before                 { content: $fa-var-phone; }
+    .icon-email:before                 { content: $fa-var-envelope; }
+    .icon-skype:before                 { content: $fa-var-skype; }
+    .icon-facebook:before              { content: $fa-var-facebook-square; }
+    .icon-linkedin:before              { content: $fa-var-linkedin-square; }
+    .icon-twitter:before               { content: $fa-var-twitter-square; }
 }
 @else
 {

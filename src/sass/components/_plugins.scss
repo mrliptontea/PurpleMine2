@@ -70,3 +70,128 @@
         display: none;
     }
 }
+
+
+//
+// Redmine CRM People
+// --------------------------------------------------
+
+#content {
+    .person.details {
+        margin-bottom: $line-height-computed;
+        padding: $issue-padding;
+        border: 1px solid $issue-border;
+        border-radius: $border-radius-base;
+        background-color: $issue-bg;
+
+        .avatar {
+            width: 64px;
+            max-width: 64px;
+            overflow: hidden;
+        }
+
+        .name,
+        .subject_info {
+            padding: 0 0 0 $issue-padding;
+        }
+
+        .name {
+            > h1 {
+                margin-bottom: 5px;
+            }
+
+            > p {
+                margin-bottom: 0;
+            }
+        }
+
+        .subject_info {
+            border-left: 1px solid $issue-border;
+
+            > ul {
+                margin: 0;
+            }
+        }
+
+        @if $use-font-awesome {
+            .icon {
+                background-image: none;
+            }
+        }
+    }
+
+    .department.issue.details {
+        > p {
+            clear: both;
+        }
+
+        > .author {
+            margin-bottom: 0;
+            clear: none;
+        }
+    }
+}
+
+#sidebar {
+    .person.attributes {
+        font-size: $font-size-list;
+
+        th,
+        td {
+            padding: $table-condensed-cell-padding;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .icon {
+            padding-left: $table-condensed-cell-padding + 20px;
+            background-position: $table-condensed-cell-padding $table-condensed-cell-padding;
+        }
+
+        @if $use-font-awesome {
+            .icon {
+                background-image: none;
+
+                > a {
+                    @extend %fa-icon;
+                }
+            }
+        }
+
+        .email {
+            td a {
+                display: block;
+                max-width: floor($sidebar-width / 3);
+                text-overflow: ellipsis;
+                overflow: hidden;
+
+                &:hover {
+                    position: absolute;
+                    max-width: 100%;
+                    margin: -$table-condensed-cell-padding;
+                    padding: $table-condensed-cell-padding;
+                    background: $body-bg;
+                    box-shadow: $panel-shadow;
+                }
+            }
+        }
+    }
+
+    .person_data {
+        td.avatar,
+        td.name {
+            padding: 0 0 $table-cell-padding;
+        }
+
+        td.avatar {
+            width: 40px;
+        }
+
+        td.name {
+            h4 {
+                margin: 0;
+                letter-spacing: 0;
+            }
+        }
+    }
+}

@@ -4,11 +4,11 @@
 
 
 #search-results,
-div#activity dl {
+#activity dl {
     margin-left: $padding-side;
 }
 
-div#activity,
+#activity,
 #search-results {
     dd {
         margin-bottom: $line-height-computed;
@@ -33,7 +33,16 @@ div#activity,
     }
 }
 
-div#activity {
+#activity {
+    h3,
+    h4 {
+        margin: 0 0 $line-height-computed;
+        padding-bottom: .2em;
+        border-bottom: 1px dotted $gray-lighter;
+        font-size: $font-size-h4;
+        font-weight: normal;
+    }
+
     dt {
         &.me .time {
             border-bottom: 1px solid $gray-lighter;
@@ -54,7 +63,7 @@ div#activity {
     }
 }
 
-div#search-results-counts {
+#search-results-counts {
     float: right;
 
     ul {

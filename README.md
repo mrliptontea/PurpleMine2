@@ -28,7 +28,7 @@ Then go to Redmine > Administration > Settings > Display and select PurpleMine2 
 
 This theme also features a new look for [Redmine Backlogs][redmine_backlogs] plugin. To install it, simply copy stylesheets from `PurpleMine2/plugins/redmine_backlogs` and overwrite files in `{redmine}/plugins/redmine_backlogs/assets/stylesheets` and restart Redmine.
 
-Also, [Redmine Time Tracker][redmine_time_tracker] plugin should look nice with PurpleMine.
+Also, [Redmine Time Tracker][redmine_time_tracker] and [Redmine People][redmine_crm_people] plugins should look nice with PurpleMine.
 
 ## How to customize it
 
@@ -60,6 +60,8 @@ Latest (master):
 + Improved revision page layout and added Font Awesome icons
 + Improved file content view
 * Fixed #1: Font Awesome icons will no longer break plugins' icons
++ Introduced styles for [People][redmine_crm_people] plugin
+* Enhanced styles for activities list
 
 v1.2.0 (2015-03-03):
 
@@ -104,3 +106,4 @@ Initial version
 [bootstrap-sass]: https://github.com/twbs/bootstrap-sass
 [redmine_backlogs]: https://github.com/backlogs/redmine_backlogs
 [redmine_time_tracker]: https://github.com/hicknhack-software/redmine_time_tracker
+[redmine_crm_people]: http://www.redminecrm.com/projects/people/
