@@ -59,6 +59,7 @@ Latest (master):
 * Changesets will look similar to issue's journal
 + Improved revision page layout and added Font Awesome icons
 + Improved file content view
+* Fixed #1: Font Awesome icons will no longer break plugins' icons
 
 v1.2.0 (2015-03-03):
 

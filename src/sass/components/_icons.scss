@@ -64,6 +64,13 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 {
     .icon {
         @extend %fa-icon;
+        padding-left: 20px;
+        background-repeat: no-repeat;
+        background-position: 0% 50%;
+
+        &:before {
+            margin-left: -20px;
+        }
 
         .contextual & {
             margin-left: .5em;
@@ -268,48 +275,115 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
  */
 @if $use-font-awesome
 {
+    %admin-icon {
+        @extend %fa-icon;
+
+        &:before {
+            width: 20px;
+            margin-left: -(5px + 20px);
+            color: $gray;
+            text-align: center;
+        }
+
+        &:hover:before {
+            color: $gray-darker;
+        }
+
+        &.selected:before {
+            color: $gray-darkest;
+        }
+    }
+
     #admin-menu {
         #admin-index > & {
             a {
-                padding-left: 0;
+                padding-left: 5px + 20px;
             }
         }
 
         li {
             > a {
-                @extend %fa-icon;
-                padding-left: $sidebar-padding-horizontal;
-
-                &:before {
-                    width: 1em;
-                    margin-right: .5em;
-                    color: $gray;
-                    text-align: center;
-                }
-
-                &:hover:before {
-                    color: $gray-darker;
-                }
-
-                &.selected:before {
-                    color: $gray-darkest;
-                }
+                padding-left: $sidebar-padding-horizontal + 5px + 20px;
             }
         }
 
-        .projects:before              { content: $fa-var-cubes; }
-        .users:before                 { content: $fa-var-user; }
-        .groups:before                { content: $fa-var-group; }
-        .roles:before                 { content: $fa-var-eye; }
-        .trackers:before              { content: $fa-var-ticket; }
-        .issue_statuses:before        { content: $fa-var-pencil-square; }
-        .workflows:before             { content: $fa-var-sitemap; }
-        .custom_fields:before         { content: $fa-var-edit; }
-        .enumerations:before          { content: $fa-var-list; }
-        .settings:before              { content: $fa-var-gear; }
-        .plugins:before               { content: $fa-var-puzzle-piece; }
-        .info:before                  { content: $fa-var-info-circle; }
-        .server_authentication:before { content: $fa-var-key; }
+        .projects {
+            @extend %admin-icon;
+
+            &:before { content: $fa-var-cubes; }
+        }
+
+        .users {
+            @extend %admin-icon;
+
+            &:before { content: $fa-var-user; }
+        }
+
+        .groups {
+            @extend %admin-icon;
+
+            &:before { content: $fa-var-group; }
+        }
+
+        .roles {
+            @extend %admin-icon;
+
+            &:before { content: $fa-var-eye; }
+        }
+
+        .trackers {
+            @extend %admin-icon;
+
+            &:before { content: $fa-var-ticket; }
+        }
+
+        .issue_statuses {
+            @extend %admin-icon;
+
+            &:before { content: $fa-var-pencil-square; }
+        }
+
+        .workflows {
+            @extend %admin-icon;
+
+            &:before { content: $fa-var-sitemap; }
+        }
+
+        .custom_fields {
+            @extend %admin-icon;
+
+            &:before { content: $fa-var-edit; }
+        }
+
+        .enumerations {
+            @extend %admin-icon;
+
+            &:before { content: $fa-var-list; }
+        }
+
+        .settings {
+            @extend %admin-icon;
+
+            &:before { content: $fa-var-gear; }
+        }
+
+        .plugins {
+            @extend %admin-icon;
+
+            &:before { content: $fa-var-puzzle-piece; }
+        }
+
+        .info {
+            @extend %admin-icon;
+
+            &:before { content: $fa-var-info-circle; }
+        }
+
+        .server_authentication {
+            @extend %admin-icon;
+
+            &:before { content: $fa-var-key; }
+        }
     }
 }
 @else
