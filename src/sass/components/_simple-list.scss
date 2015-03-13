@@ -11,10 +11,10 @@
 #search-results {
     dd {
         margin-bottom: $line-height-computed;
+        padding-top: .1em;
     }
 
     dt {
-        margin-bottom: .1em;
         padding-left: $padding-side;
         background-repeat: no-repeat;
         background-position: 0 center;
@@ -74,6 +74,10 @@
     dd {
         font-size: $font-size-small;
         overflow: hidden;
+
+        &.grouped {
+            margin-left: $activity-indent;
+        }
     }
 }
 
