@@ -170,6 +170,10 @@
         box-shadow: $panel-shadow;
     }
 
+    .ui-dialog-content {
+        padding: 1em;
+    }
+
     .ui-dialog-titlebar-close {
         right: .5em;
     }
