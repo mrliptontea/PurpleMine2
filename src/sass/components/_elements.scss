@@ -48,9 +48,9 @@ a.collapsible,
         width: 0;
         height: 0;
         margin-right: 3px;
-        border-top:   5px solid;
-        border-right: 5px solid transparent;
-        border-left:  5px solid transparent;
+        border-top:   6px solid;
+        border-right: 4px solid transparent;
+        border-left:  4px solid transparent;
         content: "";
         vertical-align: middle;
         @include rotate(0);
