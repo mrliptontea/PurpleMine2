@@ -1,5 +1,7 @@
 //
 // Redmine Backlogs
+// https://github.com/HolonGlobe/redmine_backlogs
+// Forked from: https://github.com/backlogs/redmine_backlogs
 // --------------------------------------------------
 
 #backlogs_view_issues_sidebar {
@@ -32,6 +34,7 @@
 
 //
 // Redmine Time Tracker
+// https://github.com/fernandokosh/redmine_time_tracker
 // --------------------------------------------------
 
 @if $use-font-awesome {
@@ -74,6 +77,7 @@
 
 //
 // Redmine CRM People
+// http://www.redminecrm.com/projects/people/
 // --------------------------------------------------
 
 #content {
@@ -192,6 +196,24 @@
                 margin: 0;
                 letter-spacing: 0;
             }
+        }
+    }
+}
+
+
+//
+// Redmine codebutton
+// https://github.com/mediatainment/redmine_codebutton
+// --------------------------------------------------
+
+#toolbar-code-options {
+    select {
+        width: 100%;
+    }
+
+    .buttons {
+        > input {
+            margin-left: .5em;
         }
     }
 }

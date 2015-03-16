@@ -133,6 +133,14 @@
             &:before { content: $fa-var-scissors; }
         }
 
+        // For plugin https://github.com/mediatainment/redmine_codebutton
+        .jstb_codehighlight {
+            @extend %jstb-icon;
+            color: $brand-danger;
+
+            &:before { content: $fa-var-code; }
+        }
+
         button.jstb_help {
             @extend %jstb-icon;
             color: $link-color;
