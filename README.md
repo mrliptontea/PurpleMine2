@@ -62,6 +62,8 @@ Latest (master):
 * Fixed #1: Font Awesome icons will no longer break plugins' icons
 + Introduced styles for [People][redmine_crm_people] plugin
 * Enhanced styles for activities list
+* Regular buttons (e.g. `Cancel`) will look like links in dialog windows
+* Fixed look of collapsible arrow in Firefox
 
 v1.2.0 (2015-03-03):
 
