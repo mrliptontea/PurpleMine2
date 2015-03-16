@@ -173,6 +173,10 @@
     .ui-dialog-titlebar-close {
         right: .5em;
     }
+
+    input[type="button"] {
+        @include button-variant($btn-link-color, $btn-link-bg, $btn-link-border);
+    }
 }
 
 .ui-widget-overlay {
