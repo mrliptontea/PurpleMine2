@@ -304,7 +304,7 @@ ul.ui-sortable {
 }
 
 .w-rb-header-collapsed {
-    height: 18px;
+    height: 27px; // 14px * .86 * 1.42857 + 2 * 5px
     overflow: hidden;
 }
 
