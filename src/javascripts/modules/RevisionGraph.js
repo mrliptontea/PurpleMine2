@@ -142,15 +142,19 @@ PurpleMine.RevisionGraph = function(holder, commits_hash, graph_space)
     top.toFront();
 };
 
-setTimeout(function()
+$(function()
 {
     "use strict";
 
-    if (window.drawRevisionGraph)
+    setTimeout(function()
     {
-        // override Redmine's function
-        window.drawRevisionGraph = PurpleMine.RevisionGraph;
-        // make graph redraw itself
-        $(window).resize();
-    }
-}, 100);
+        if (window.drawRevisionGraph)
+        {
+            // override Redmine's function
+            window.drawRevisionGraph = PurpleMine.RevisionGraph;
+            // make graph redraw itself
+            $(window).resize();
+        }
+    }, 0);
+});
+
