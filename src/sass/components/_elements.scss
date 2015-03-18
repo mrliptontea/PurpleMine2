@@ -798,6 +798,10 @@ table.boards {
     tbody > tr > td {
         padding-right: $table-cell-padding;
         padding-bottom: $table-condensed-cell-padding;
+
+        + td {
+            font-family: $font-family-monospace;
+        }
     }
 }
 
@@ -835,6 +839,10 @@ tr.changeset {
         background-color: #fffffb;
     }
 
+    td.id {
+        font-family: $font-family-monospace;
+    }
+
     td.author,
     td.committed_on {
         width: 15%;
@@ -851,6 +859,12 @@ tr.changeset {
     ul {
         margin-top: 0;
         margin-bottom: 0;
+    }
+}
+
+.revision-graph {
+    circle {
+        // @include translate(0, $table-cell-padding - 1px);
     }
 }
 
