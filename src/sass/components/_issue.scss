@@ -536,12 +536,12 @@ span.private {
             margin: 0;
             padding: $padding-base-vertical $padding-base-horizontal;
             color: $gray;
-            text-align: right;
             @include clearfix;
 
             > a {
-                margin-right: .5em;
-                float: left;
+                margin-left: .5em;
+                float: right;
+                font-family: $font-family-monospace;
                 font-weight: bold;
             }
 
