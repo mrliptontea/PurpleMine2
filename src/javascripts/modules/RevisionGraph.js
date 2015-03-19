@@ -146,15 +146,12 @@ $(function()
 {
     "use strict";
 
-    setTimeout(function()
+    if (window.drawRevisionGraph)
     {
-        if (window.drawRevisionGraph)
-        {
-            // override Redmine's function
-            window.drawRevisionGraph = PurpleMine.RevisionGraph;
-            // make graph redraw itself
-            $(window).resize();
-        }
-    }, 0);
+        // override Redmine's function
+        window.drawRevisionGraph = PurpleMine.RevisionGraph;
+        // make graph redraw itself
+        $(window).resize();
+    }
 });
 
