@@ -25,12 +25,13 @@ table.list {
     td {
         padding: $table-cell-padding;
         border-bottom: 1px solid $table-border-color;
-        text-align: center;
+        text-align: left;
         vertical-align: top;
 
         &.checkbox {
             width: 15px;
             padding: $table-cell-padding 0 0;
+            text-align: center;
 
             input {
                 margin: 2px 0 0;
@@ -38,11 +39,10 @@ table.list {
         }
 
         &.id,
-        &.tracker,
         &.parent,
-        &.relations {
+        &.relations,
+        &.tracker {
             width: 2%;
-            text-align: center;
         }
 
         &.id {
@@ -50,21 +50,12 @@ table.list {
             text-align: right;
         }
 
-        &.name,
-        &.description,
-        &.subject,
-        &.comments,
-        &.roles,
-        &.author,
-        &.assigned_to,
-        &.string {
-            text-align: left;
-        }
-
         &.estimated_hours,
         &.remaining_hours,
         &.spent_hours,
-        &.story_points {
+        &.story_points,
+        &.int,
+        &.float {
             text-align: right;
         }
 
@@ -77,8 +68,18 @@ table.list {
             }
         }
 
-        &.reorder {
+        &.created_on,
+        &.updated_on,
+        &.start_date,
+        &.due_date,
+        &.is_private,
+        &.reorder,
+        &.bool,
+        &.date {
             text-align: center;
+        }
+
+        &.reorder {
             white-space: nowrap;
         }
     }
