@@ -105,7 +105,9 @@ tr.project {
 
     &.idnt .name span {
         padding-left: 16px;
-        background: url("../images/bullet_arrow_right.png") no-repeat -5px 50%;
+        @extend %image-arrow-right;
+        background-repeat: no-repeat;
+        background-position: -5px 50%;
     }
 
     @for $i from 1 through 9 {
@@ -148,7 +150,7 @@ tr.issue {
 
     &.idnt .subject a {
         padding-left: 16px;
-        background-image: url("../images/bullet_arrow_right.png");
+        @extend %image-arrow-right;
         background-repeat: no-repeat;
 
         @if $color-trackers {
@@ -199,13 +201,15 @@ tr {
     span.expander {
         margin-left: 0;
         padding-left: 8px;
-        background: url("../images/bullet_toggle_plus.png") no-repeat center center;
+        @extend %image-toggle-plus;
+        background-repeat: no-repeat;
+        background-position: center center;
         cursor: pointer;
         @include user-select(none);
     }
 
     &.open span.expander {
-        background-image: url("../images/bullet_toggle_minus.png");
+        @extend %image-toggle-minus;
     }
 }
 

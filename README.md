@@ -66,6 +66,7 @@ Latest (master):
 * Fixed look of collapsible arrow in Firefox
 + Overrode Redmine's revision graph function to make it look better
 + Animated collapsible fieldsets
++ Custom image based icons changed to base64 embedded data
 
 v1.2.0 (2015-03-03):
 

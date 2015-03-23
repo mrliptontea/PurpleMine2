@@ -52,7 +52,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     }
 
     ul li a.submenu {
-        background-image: url("../images/bullet_arrow_right.png");
+        @extend %image-arrow-right;
     }
 }
 
@@ -1087,7 +1087,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
         height: 14px;
         padding-left: 14px;
         box-sizing: border-box;
-        background: url("../images/calendar_555555_14.png") no-repeat;
+        @extend %image-calendar;
+        background-repeat: no-repeat;
     }
 
 

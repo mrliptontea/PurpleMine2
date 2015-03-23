@@ -1,13 +1,8 @@
 @if $enable-sidebar-toggler {
     $toggler-position-v:        1px;
     $toggler-position-h:        1px;
-    $arrow-right:               "../images/bullet_arrow_right.png";
-    $arrow-left:                "../images/bullet_arrow_left.png";
-
-    @if $use-font-awesome {
-        $arrow-right:           $fa-var-caret-square-o-right;
-        $arrow-left:            $fa-var-caret-square-o-left;
-    }
+    $arrow-right:               $fa-var-caret-square-o-right;
+    $arrow-left:                $fa-var-caret-square-o-left;
 
     #main {
         position: relative;
@@ -80,7 +75,7 @@
                     content: $arrow-left;
                 }
             } @else {
-                background-image: url($arrow-left);
+                @extend %image-arrow-left;
             }
         } @else {
             right: $toggler-position-h;
@@ -90,7 +85,7 @@
                     content: $arrow-right;
                 }
             } @else {
-                background-image: url($arrow-right);
+                @extend %image-arrow-right;
             }
         }
 
@@ -101,7 +96,7 @@
                         content: $arrow-right;
                     }
                 } @else {
-                    background-image: url($arrow-right);
+                    @extend %image-arrow-right;
                 }
             } @else {
                 @if $use-font-awesome {
@@ -109,7 +104,7 @@
                         content: $arrow-left;
                     }
                 } @else {
-                    background-image: url($arrow-left);
+                    @extend %image-arrow-left;
                 }
             }
         }

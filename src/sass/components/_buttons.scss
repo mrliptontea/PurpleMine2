@@ -169,7 +169,7 @@ a[data-expands],
     padding: 2px 8px;
     border: 1px solid;
     border-radius: $border-radius-base;
-    background-image: url("../images/bullet_toggle_plus.png");
+    @extend %image-toggle-plus;
     background-repeat: no-repeat;
     background-position: 2px 2px;
     cursor: pointer;

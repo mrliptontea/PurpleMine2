@@ -88,7 +88,7 @@ input[type="range"] {
 
 input.autocomplete {
     padding-right: 30px;
-    background-image: url("../images/aci.png"); /* autocomplete indicator */
+    @extend %image-aci;
     background-repeat: no-repeat;
     background-position: right center;
 

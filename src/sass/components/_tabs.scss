@@ -80,11 +80,11 @@
         }
 
         .tab-left {
-            background-image: url("../images/bullet_arrow_left.png");
+            @extend %image-arrow-left;
         }
 
         .tab-right {
-            background-image: url("../images/bullet_arrow_right.png");
+            @extend %image-arrow-right;
         }
     }
 }
