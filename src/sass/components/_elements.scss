@@ -76,8 +76,8 @@ a.collapsible.collapsed,
 
         > div {
             display: block !important;
-            visibility: visible;
             opacity: 1;
+            visibility: visible;
             @include transition(visibility 0s 0s, opacity $collapsible-animation-time);
         }
 
@@ -86,8 +86,8 @@ a.collapsible.collapsed,
             @include transition(max-height $collapsible-animation-time);
 
             > div {
-                visibility: hidden;
                 opacity: 0;
+                visibility: hidden;
                 @include transition(visibility 0s $collapsible-animation-time, opacity $collapsible-animation-time);
             }
         }
