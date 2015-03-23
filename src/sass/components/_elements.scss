@@ -54,7 +54,10 @@ a.collapsible,
         content: "";
         vertical-align: middle;
         @include rotate(0);
-        @include transition-transform(.1s);
+
+        @if $collapsible-animation-time > 0 {
+            @include transition-transform($collapsible-animation-time);
+        }
     }
 }
 
@@ -62,6 +65,32 @@ a.collapsible.collapsed,
 .collapsible.collapsed > legend {
     &:before {
         @include rotate(-90deg);
+    }
+}
+
+@if $collapsible-animation-time > 0 {
+    fieldset.collapsible {
+        max-height: 2500px; // should be enough with all the possible filters
+        overflow: hidden;
+        @include transition(max-height $collapsible-animation-time ease-out);
+
+        > div {
+            display: block !important;
+            visibility: visible;
+            opacity: 1;
+            @include transition(visibility 0s 0s, opacity $collapsible-animation-time);
+        }
+
+        &.collapsed {
+            max-height: 0;
+            @include transition(max-height $collapsible-animation-time);
+
+            > div {
+                visibility: hidden;
+                opacity: 0;
+                @include transition(visibility 0s $collapsible-animation-time, opacity $collapsible-animation-time);
+            }
+        }
     }
 }
 

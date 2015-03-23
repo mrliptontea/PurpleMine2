@@ -65,6 +65,7 @@ Latest (master):
 * Regular buttons (e.g. `Cancel`) will look like links in dialog windows
 * Fixed look of collapsible arrow in Firefox
 + Overrode Redmine's revision graph function to make it look better
++ Animated collapsible fieldsets
 
 v1.2.0 (2015-03-03):
 
