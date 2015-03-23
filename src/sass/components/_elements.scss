@@ -70,6 +70,7 @@ a.collapsible.collapsed,
 
 @if $collapsible-animation-time > 0 {
     fieldset.collapsible {
+        min-height: $line-height-computed;
         max-height: 2500px; // should be enough with all the possible filters
         overflow: hidden;
         @include transition(max-height $collapsible-animation-time ease-out);
