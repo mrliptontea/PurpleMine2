@@ -56,6 +56,13 @@ Latest (master):
 
 + Introduced option `$wiki-page-more-vertical-space` (by default `true`) to improve wiki pages' readability even more
 * Fixed bottom margin of `pre` tag
++ Added a few helper classes from Bootstrap:
+    * `wiki-pager` - acts like Bootstrap's `pager`. Add `wiki-pager--aligned` modifier to align links to the sides.
+    * `lead` for paragraphs that should stand out.
+    * `text-left`, `text-right`, `text-center`, `text-justify`, `text-nowrap` alignment classes.
+    * `text-lowercase`, `text-uppercase`, `text-capitalize` text transformation classes.
+    * `text-muted`, `text-primary`, `text-success`, `text-info`, `text-warning`, `text-danger` for setting color of the text.
+    * `bg-primary`, `bg-success`, `bg-info`, `bg-warning`, `bg-danger` for setting color of the background.
 
 v1.3.0 (2015-04-01):
 
