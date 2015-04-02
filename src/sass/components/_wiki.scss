@@ -1,6 +1,37 @@
 .wiki.wiki-page {
     margin-bottom: $line-height-computed;
     font-size: $wiki-font-size;
+
+    @if $wiki-page-more-vertical-space {
+        /**
+         * Anchors will make headers more separated,
+         * and it will look better when you open page with hash in URL
+         */
+        a[name]:empty {
+            display: block;
+            overflow: hidden;
+        }
+
+        /**
+         * Add some space between list items
+         */
+        ul,
+        ol {
+            li {
+                margin-top: .25em;
+            }
+
+            ul,
+            ol {
+                margin-top: .25em;
+                margin-bottom: .25em;
+
+                li {
+                    margin-top: .125em;
+                }
+            }
+        }
+    }
 }
 
 .controller-wiki .wiki > .preview {

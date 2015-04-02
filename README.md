@@ -52,6 +52,10 @@ Regrettably, optional file include is not possible in SASS, so I would recommend
 
 ## Changelog
 
+Latest (master):
+
++ Introduced option `$wiki-page-more-vertical-space` (by default `true`) to improve wiki pages' readability even more
+
 v1.3.0 (2015-04-01):
 
 * Backlogs: make it possible to click on empty field
