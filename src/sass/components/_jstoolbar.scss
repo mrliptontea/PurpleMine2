@@ -20,6 +20,26 @@
         margin-left: -6px;
         float: right;
     }
+
+    .box & {
+        button {
+            margin-right: 2px;
+        }
+
+        .jstSpacer {
+            margin-right: 4px;
+        }
+
+        @media (min-width: $screen-lg) {
+            button {
+                margin-right: 4px;
+            }
+
+            .jstSpacer {
+                margin-right: 6px;
+            }
+        }
+    }
 }
 
 @if $use-font-awesome
