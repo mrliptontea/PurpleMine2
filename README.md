@@ -64,6 +64,7 @@ Latest (master):
     * `text-muted`, `text-primary`, `text-success`, `text-info`, `text-warning`, `text-danger` for setting color of the text.
     * `bg-primary`, `bg-success`, `bg-info`, `bg-warning`, `bg-danger` for setting color of the background.
 * WYSIWYG's icons will squeeze a little bit on smaller screens
+* Images in headers will be aligned to the middle vertically
 
 v1.3.0 (2015-04-01):
 
