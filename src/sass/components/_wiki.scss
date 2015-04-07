@@ -72,6 +72,10 @@ div.wiki {
         color: $gray;
     }
 
+    .text-normal {
+        font-weight: normal;
+    }
+
     > a:first-child {
         + h1,
         + h2,
@@ -417,17 +421,17 @@ p.footnote {
 .text-warning    { color: $brand-warning; }
 .text-danger     { color: $brand-danger; }
 
-.bg-primary      { background-color: $brand-primary; }
+.bg-primary      { background-color: $brand-primary; color: $brand-text; }
 .bg-success      { background-color: $state-success; }
 .bg-info         { background-color: $state-info; }
 .bg-warning      { background-color: $state-warning; }
 .bg-danger       { background-color: $state-danger; }
 
 p {
-    &.bg-primary
-    &.bg-success
-    &.bg-info
-    &.bg-warning
+    &.bg-primary,
+    &.bg-success,
+    &.bg-info,
+    &.bg-warning,
     &.bg-danger {
         padding: $panel-body-padding;
     }

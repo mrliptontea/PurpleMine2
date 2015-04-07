@@ -65,6 +65,7 @@ Latest (master):
     * `bg-primary`, `bg-success`, `bg-info`, `bg-warning`, `bg-danger` for setting color of the background.
 * WYSIWYG's icons will squeeze a little bit on smaller screens
 * Images in headers will be aligned to the middle vertically
++ Introduced `text-normal` class for resetting font's weight
 
 v1.3.0 (2015-04-01):
 
