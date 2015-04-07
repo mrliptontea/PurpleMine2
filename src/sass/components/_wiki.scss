@@ -258,6 +258,20 @@ div.wiki {
             vertical-align: middle;
         }
     }
+
+    .toc-active-prev + .toc {
+        padding-left: $padding-large-horizontal;
+        border-left: 4px solid $toc-active-border;
+
+        a {
+            color: $toc-active-link;
+
+            &:focus,
+            &:hover {
+                color: $toc-active-link-hover;
+            }
+        }
+    }
 }
 
 h1,

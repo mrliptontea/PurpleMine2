@@ -97,6 +97,10 @@ $wiki-text:                     #333 !default;
 $wiki-font-size:                16px !default;
 $wiki-line-height:              1.6 !default;
 
+$toc-active-link:               darken($link-color, 10%) !default;
+$toc-active-link-hover:         darken($toc-active-link, 10%) !default;
+$toc-active-border:             $link-color !default;
+
 
 //== Components
 //

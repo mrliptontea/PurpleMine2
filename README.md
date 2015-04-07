@@ -66,6 +66,14 @@ Latest (master):
 * WYSIWYG's icons will squeeze a little bit on smaller screens
 * Images in headers will be aligned to the middle vertically
 + Introduced `text-normal` class for resetting font's weight
++ Added class `toc-active-prev` that will "highlight" TOC as "active". Must be applied to direct predecessor of `{{toc}}`. Fox example for page of chapter 2 of your guide you would do this:
+
+        p(toc-active-prev). [[some_page|Chapter 1: Introduction]]
+
+        {{toc}}
+
+        [[some_other_page|Chapter 3: Advanced usage]]
+        [[yet_another_page|Chapter 4: FAQ]]
 
 v1.3.0 (2015-04-01):
 
