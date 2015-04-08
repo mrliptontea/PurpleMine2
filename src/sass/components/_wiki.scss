@@ -91,6 +91,16 @@ div.wiki {
         margin-bottom: 0;
     }
 
+    blockquote {
+        >:first-child {
+            margin-top: 0;
+        }
+
+        >:last-child {
+            margin-bottom: 0;
+        }
+    }
+
     .contextual {
         a {
             opacity: .4;
