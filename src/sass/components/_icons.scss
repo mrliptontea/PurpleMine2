@@ -609,6 +609,11 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
             margin-left: .2em;
         }
 
+        &.asc,
+        &.desc {
+            background-image: none;
+        }
+
         &.asc:after {
             content: $fa-var-sort-amount-asc;
         }
