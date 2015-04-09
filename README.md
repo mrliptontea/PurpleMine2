@@ -75,6 +75,7 @@ Latest (master):
         [[some_other_page|Chapter 3: Advanced usage]]
         [[yet_another_page|Chapter 4: FAQ]]
 * Fixed #2: Make sure that `.sort` with Font Awesome icons won't have background image
+* Fixed attachments div's layout for wiki pages
 
 v1.3.0 (2015-04-01):
 

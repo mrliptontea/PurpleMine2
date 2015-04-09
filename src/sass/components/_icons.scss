@@ -788,7 +788,13 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 
         &:before {
             margin-right: .3em;
-            content: $fa-var-paperclip;
+            color: $icon-success-color;
+            content: $fa-var-plus;
+        }
+
+        &:hover:before,
+        &:focus:before {
+            color: $icon-success-hover-color;
         }
     }
 

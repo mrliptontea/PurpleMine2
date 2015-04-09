@@ -151,6 +151,11 @@
             background-color: $brand-danger;
         }
     }
+
+    div.attachments {
+        margin: $issue-padding (-$issue-padding) (-$issue-padding);
+        padding: $issue-padding;
+    }
 }
 
 div.fileover {
@@ -158,8 +163,7 @@ div.fileover {
 }
 
 div.attachments {
-    margin: $issue-padding (-$issue-padding) (-$issue-padding);
-    padding: $issue-padding;
+    padding: $line-height-computed 0;
     border-top: 1px solid $issue-border;
 
     p {
