@@ -52,30 +52,19 @@ Regrettably, optional file include is not possible in SASS, so I would recommend
 
 ## Changelog
 
-Latest (master):
+v1.4.0 (2015-04-10):
 
 + Introduced option `$wiki-page-more-vertical-space` (by default `true`) to improve wiki pages' readability even more
 * Fixed bottom margin of `pre` tag
-+ Added a few helper classes from Bootstrap:
-    * `wiki-pager` - acts like Bootstrap's `pager`. Add `wiki-pager--aligned` modifier to align links to the sides.
-    * `lead` for paragraphs that should stand out.
-    * `text-left`, `text-right`, `text-center`, `text-justify`, `text-nowrap` alignment classes.
-    * `text-lowercase`, `text-uppercase`, `text-capitalize` text transformation classes.
-    * `text-muted`, `text-primary`, `text-success`, `text-info`, `text-warning`, `text-danger` for setting color of the text.
-    * `bg-primary`, `bg-success`, `bg-info`, `bg-warning`, `bg-danger` for setting color of the background.
++ Added a few helper classes from Bootstrap
 * WYSIWYG's icons will squeeze a little bit on smaller screens
 * Images in headers will be aligned to the middle vertically
 + Introduced `text-normal` class for resetting font's weight
-+ Added class `toc-active-prev` that will "highlight" TOC as "active". Must be applied to direct predecessor of `{{toc}}`. Fox example for page of chapter 2 of your guide you would do this:
-
-        p(toc-active-prev). [[some_page|Chapter 1: Introduction]]
-
-        {{toc}}
-
-        [[some_other_page|Chapter 3: Advanced usage]]
-        [[yet_another_page|Chapter 4: FAQ]]
++ Added class `toc-active-prev` that will "highlight" TOC as "active".
 * Fixed #2: Make sure that `.sort` with Font Awesome icons won't have background image
 * Fixed attachments div's layout for wiki pages
+
+For more details, see [release v1.4.0](https://github.com/HolonGlobe/PurpleMine2/releases/tag/v1.4.0)
 
 v1.3.0 (2015-04-01):
 
