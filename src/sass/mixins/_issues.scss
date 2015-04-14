@@ -144,11 +144,18 @@
             &:after {
                 display: block;
                 position: absolute;
-                top: 50%;
                 right: 5px;
+                bottom: 0;
                 left: 5px;
-                border-top: 1px solid rgba($color, .35);
+                height: calc(50% - 2px/2);
+                border-top: 2px solid rgba($color, .95);
                 content: "";
+                @include rotate(-4deg);
+                @include transition(border-color .1s);
+            }
+
+            &:hover:after {
+                border-top-color: rgba($color, .25);
             }
         }
     }
