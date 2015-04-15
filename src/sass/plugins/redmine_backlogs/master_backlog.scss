@@ -32,7 +32,6 @@ $story-sp-input-width:          50px;
             } @else {
                 background-color: darken($background, 10%);
             }
-            text-decoration: none;
         }
     }
 }
@@ -491,20 +490,33 @@ $story-sp-input-width:          50px;
                     display: block;
                     padding: $tracker-list-padding;
                     border-radius: $border-radius-small ($border-radius-small * 3) ($border-radius-small * 3) $border-radius-small;
-                    background-color: darken($gray-lightest, 3%);
-                    color: $gray-dark;
+                    @if $color-trackers {
+                        background-color: $tracker-default-bg;
+                        color: $tracker-default-text;
+                    } @else {
+                        background-color: darken($gray-lightest, 3%);
+                        color: $gray-dark;
+                    }
                     font-weight: bold;
                     text-align: right;
 
                     &:before {
                         margin-left: -1em;
-                        color: $gray-light;
+                        @if $color-trackers {
+                            color: mix($tracker-default-text, $tracker-default-bg, 50%);
+                        } @else {
+                            color: $gray-light;
+                        }
                         font-weight: normal;
                         content: "#";
                     }
 
                     &:hover {
-                        background-color: $gray-lighter;
+                        @if $color-trackers {
+                            background-color: darken($tracker-default-bg, 10%);
+                        } @else {
+                            background-color: $gray-lighter;
+                        }
                         text-decoration: none;
                     }
                 }
@@ -684,13 +696,13 @@ $story-sp-input-width:          50px;
     }
 
     @if $color-trackers {
-        @include rb-tracker('.tracker1', $tracker-1-bg, $tracker-1-text);
-        @include rb-tracker('.tracker2', $tracker-2-bg, $tracker-2-text);
-        @include rb-tracker('.tracker3', $tracker-3-bg, $tracker-3-text);
-        @include rb-tracker('.tracker4', $tracker-4-bg, $tracker-4-text);
-        @include rb-tracker('.tracker5', $tracker-5-bg, $tracker-5-text);
-        @include rb-tracker('.tracker6', $tracker-6-bg, $tracker-6-text);
-        @include rb-tracker('.tracker7', $tracker-7-bg, $tracker-7-text);
+        @each $tracker-id, $tracker-colors in $tracker-colors-map {
+            @include rb-tracker(
+                ".tracker#{$tracker-id}",
+                map-get($tracker-colors, background),
+                map-get($tracker-colors, color)
+            );
+        }
     }
 }
 

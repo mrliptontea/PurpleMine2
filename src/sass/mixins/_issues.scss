@@ -111,7 +111,6 @@
     a#{$parent},
     .relations > span > a#{$parent},
     .parent > a#{$parent} {
-        border-radius: $border-radius-small ($border-radius-small * 3) ($border-radius-small * 3) $border-radius-small;
         background-color: $background;
         color: $color;
 
@@ -122,36 +121,15 @@
                 background-color: darken($background, 10%);
             }
             color: $color;
-            text-decoration: none;
-        }
-
-        &:focus,
-        &:active {
-            text-decoration: none;
         }
     }
 
     a#{$parent} {
-        margin-right: 1px;
-        padding: $tracker-inline-padding;
-        font-weight: normal;
-
         &.closed {
-            position: relative;
             color: mix($color, $background, 75%);
-            text-decoration: none;
 
             &:after {
-                display: block;
-                position: absolute;
-                right: 5px;
-                bottom: 0;
-                left: 5px;
-                height: calc(50% - 2px/2);
-                border-top: 2px solid rgba($color, .95);
-                content: "";
-                @include rotate(-4deg);
-                @include transition(border-color .1s);
+                border-top-color: rgba($color, .95);
             }
 
             &:hover:after {
@@ -161,12 +139,8 @@
     }
 
     tr#{$parent} .id > a {
-        display: block;
-        padding: $tracker-list-padding;
-
         &:before {
             color: mix($color, $background, 50%);
-            content: "#";
         }
     }
 

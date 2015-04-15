@@ -181,26 +181,41 @@ $priority-highest-link:         #a03 !default;
 $tracker-inline-padding:        1px 5px !default;
 $tracker-list-padding:          0 6px !default;
 
-$tracker-1-bg:                  $brand-danger !default;
-$tracker-1-text:                $brand-text !default;
+$tracker-default-bg:            #668 !default;
+$tracker-default-text:          $brand-text !default;
 
-$tracker-2-bg:                  $brand-info !default;
-$tracker-2-text:                $brand-text !default;
-
-$tracker-3-bg:                  $brand-success !default;
-$tracker-3-text:                $brand-text !default;
-
-$tracker-4-bg:                  $brand-primary !default;
-$tracker-4-text:                $brand-text !default;
-
-$tracker-5-bg:                  $brand-warning !default;
-$tracker-5-text:                $brand-text !default;
-
-$tracker-6-bg:                  mix($brand-success, $brand-info, 50%) !default;
-$tracker-6-text:                $brand-text !default;
-
-$tracker-7-bg:                  mix($brand-primary, $brand-warning, 50%) !default;
-$tracker-7-text:                $brand-text !default;
+$tracker-default-colors-map: (
+    1: (
+        background:             $brand-danger,
+        color:                  $brand-text
+    ),
+    2: (
+        background:             $brand-info,
+        color:                  $brand-text
+    ),
+    3: (
+        background:             $brand-success,
+        color:                  $brand-text
+    ),
+    4: (
+        background:             $brand-primary,
+        color:                  $brand-text
+    ),
+    5: (
+        background:             $brand-warning,
+        color:                  $brand-text
+    ),
+    6: (
+        background:             mix($brand-success, $brand-info, 50%),
+        color:                  $brand-text
+    ),
+    7: (
+        background:             mix($brand-primary, $brand-warning, 50%),
+        color:                  $brand-text
+    )
+) !default;
+$tracker-custom-colors-map:     () !default;
+$tracker-colors-map:            map-merge($tracker-default-colors-map, $tracker-custom-colors-map);
 
 
 //== Diffs
