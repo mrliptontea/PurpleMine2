@@ -280,13 +280,82 @@ tr.entry {
 }
 
 @if $color-trackers {
-    @include tracker(".tracker-1", $tracker-1-bg, $tracker-1-text);
-    @include tracker(".tracker-2", $tracker-2-bg, $tracker-2-text);
-    @include tracker(".tracker-3", $tracker-3-bg, $tracker-3-text);
-    @include tracker(".tracker-4", $tracker-4-bg, $tracker-4-text);
-    @include tracker(".tracker-5", $tracker-5-bg, $tracker-5-text);
-    @include tracker(".tracker-6", $tracker-6-bg, $tracker-6-text);
-    @include tracker(".tracker-7", $tracker-7-bg, $tracker-7-text);
+    tr.issue .id > a,
+    a.issue,
+    .relations > span > a.issue,
+    .parent > a.issue {
+        border-radius: $border-radius-small ($border-radius-small * 3) ($border-radius-small * 3) $border-radius-small;
+        background-color: $tracker-default-bg;
+        color: $tracker-default-text;
+
+        &:hover {
+            background-color: darken($tracker-default-bg, 10%);
+            color: $tracker-default-text;
+            text-decoration: none;
+        }
+
+        &:focus,
+        &:active {
+            text-decoration: none;
+        }
+    }
+
+    a.issue {
+        margin-right: 1px;
+        padding: $tracker-inline-padding;
+        font-weight: normal;
+
+        &.closed {
+            position: relative;
+            color: mix($tracker-default-text, $tracker-default-bg, 75%);
+            text-decoration: none;
+
+            &:after {
+                display: block;
+                position: absolute;
+                right: 5px;
+                bottom: 0;
+                left: 5px;
+                height: calc(50% - 2px/2);
+                border-top: 2px solid rgba($tracker-default-text, .95);
+                content: "";
+                @include rotate(-4deg);
+                @include transition(border-color .1s);
+            }
+
+            &:hover:after {
+                border-top-color: rgba($tracker-default-text, .25);
+            }
+        }
+    }
+
+    tr.issue .id > a {
+        display: block;
+        padding: $tracker-list-padding;
+
+        &:before {
+            color: mix($tracker-default-text, $tracker-default-bg, 50%);
+            content: "#";
+        }
+    }
+
+    @if $colored-issue {
+        .issue.details a.issue,
+        .issue.details .wiki a.issue {
+            &,
+            &:hover {
+                color: $tracker-default-text;
+            }
+        }
+    }
+
+    @each $tracker-id, $tracker-colors in $tracker-colors-map {
+        @include tracker(
+            ".tracker-#{$tracker-id}",
+            map-get($tracker-colors, background),
+            map-get($tracker-colors, color)
+        );
+    }
 }
 
 .odd {
