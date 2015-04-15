@@ -80,6 +80,13 @@ small {
     font-size: $font-size-small;
 }
 
+table {
+    th,
+    td {
+        padding: $table-condensed-cell-padding $table-cell-padding;
+    }
+}
+
 ul,
 ol {
     margin-top: 0;
