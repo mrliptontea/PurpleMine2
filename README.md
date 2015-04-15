@@ -56,6 +56,13 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
+Latest (master):
+
+* Fixed #5: Added default style for colored issue links.
+* Introduced `$tracker-colors-map` and removed `$tracker-X-bg` variables.
+  See d220db1 comments for more details.
+* Fixed #6: Added default padding for table cells.
+
 v1.4.1 (2015-04-14):
 
 * Fixed #3: Closed tasks will be more appreciable.
