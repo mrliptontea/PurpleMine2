@@ -49,7 +49,7 @@ table.cal {
             background: $highlight-bg;
 
             p.day-num {
-                font-weight: bold;
+                font-weight: $font-weight-bold;
             }
         }
     }

@@ -52,7 +52,7 @@
 
     .class {
         color: #795da3;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
     }
 
     .class-variable {
@@ -86,7 +86,7 @@
 
     .definition {
         color: #099;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
     }
 
     .delimiter {
@@ -95,7 +95,7 @@
 
     .directive {
         color: #088;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
     }
 
     .doc {
@@ -104,7 +104,7 @@
 
     .doc-string {
         color: #d42;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
     }
 
     .doctype {
@@ -113,7 +113,7 @@
 
     .entity {
         color: #800;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
     }
 
     .error {
@@ -127,7 +127,7 @@
 
     .exception {
         color: #c00;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
     }
 
     .float {
@@ -136,7 +136,7 @@
 
     .function {
         color: #06b;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
     }
 
     .global-variable {
@@ -153,7 +153,7 @@
 
     .include {
         color: #b44;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
     }
 
     .inline {
@@ -163,7 +163,7 @@
 
     .inline-delimiter {
         color: #666;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
     }
 
     .instance-variable {
@@ -188,12 +188,12 @@
 
     .keyword {
         color: #b3113e;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
     }
 
     .label {
         color: #970;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
     }
 
     .local-variable {
@@ -202,7 +202,7 @@
 
     .namespace {
         color: #707;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
     }
 
     .octal {
@@ -219,7 +219,7 @@
 
     .predefined-type {
         color: #0a5;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
     }
 
     .preprocessor {
@@ -228,7 +228,7 @@
 
     .pseudo-class {
         color: #00c;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
     }
 
     .regexp {
@@ -249,7 +249,7 @@
 
     .reserved {
         color: #080;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
     }
 
     .shell {
@@ -288,7 +288,7 @@
 
     .type {
         color: #339;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
     }
 
     .value {
@@ -343,14 +343,14 @@
         .insert {
             background: transparent;
             color: #0c0;
-            font-weight: bold;
+            font-weight: $font-weight-bold;
         }
     }
 
     .delete .delete {
         background: transparent;
         color: #c00;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
     }
 
     .change .change {

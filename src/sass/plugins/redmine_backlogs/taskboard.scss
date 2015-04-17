@@ -73,7 +73,7 @@ $swimlane-width:                $issue-width + 2 * ($issue-margin + $issue-paddi
         border-right: 1px dotted mix($header-bg, $header-text, 70%);
         background-color: $header-bg;
         color: $header-text;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
         text-align: center;
         vertical-align: middle;
 
@@ -161,7 +161,7 @@ $swimlane-width:                $issue-width + 2 * ($issue-margin + $issue-paddi
         a {
             color: $gray-darkest;
             font-size: $font-size-small-px;
-            font-weight: bold;
+            font-weight: $font-weight-bold;
         }
 
         .assignee {
@@ -198,7 +198,7 @@ $swimlane-width:                $issue-width + 2 * ($issue-margin + $issue-paddi
         border-radius: 50%;
         background-color: $brand-warning;
         color: $brand-text;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
         line-height: 36px;
         text-align: center;
 
@@ -244,7 +244,7 @@ $swimlane-width:                $issue-width + 2 * ($issue-margin + $issue-paddi
         border-radius: $border-radius-base;
         background-color: $body-bg;
         font-size: $font-size-small-px;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
         line-height: 16px;
         text-align: right;
         opacity: .8;

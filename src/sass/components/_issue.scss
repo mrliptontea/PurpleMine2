@@ -36,7 +36,7 @@
 
         &.assigned-to-me {
             .assigned-to .user {
-                font-weight: bold;
+                font-weight: $font-weight-bold;
             }
         }
 
@@ -45,7 +45,7 @@
                 margin-bottom: .3em;
                 color: $gray-darkest;
                 font-size: $issue-heading-size * 1em;
-                font-weight: bold;
+                font-weight: $font-weight-bold;
                 line-height: 1.2;
             }
 
@@ -138,7 +138,7 @@
             background-color: $brand-primary;
             color: $brand-text;
             font-size: $font-size-small;
-            font-weight: bold;
+            font-weight: $font-weight-bold;
             text-align: center;
             text-transform: uppercase;
         }
@@ -352,7 +352,7 @@ div.thumbnails {
             color: $gray-darker;
 
             &.user {
-                font-weight: bold;
+                font-weight: $font-weight-bold;
             }
         }
 
@@ -506,7 +506,7 @@ span.private {
     background: $brand-warning;
     color: $brand-text;
     font-size: $font-size-small;
-    font-weight: bold;
+    font-weight: $font-weight-bold;
     text-transform: uppercase;
 }
 
@@ -546,14 +546,14 @@ span.private {
                 margin-left: .5em;
                 float: right;
                 font-family: $font-family-monospace;
-                font-weight: bold;
+                font-weight: $font-weight-bold;
             }
 
             .author a {
                 color: $gray-darker;
 
                 &.user {
-                    font-weight: bold;
+                    font-weight: $font-weight-bold;
                 }
             }
 

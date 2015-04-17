@@ -13,6 +13,7 @@ body {
     background-color: mix($gray-lighter, $header-bg, 70%);
     color: $text-color;
     font-family: $font-family-base;
+    font-weight: $font-weight-normal;
     font-size: $font-size-base;
     line-height: $line-height-base;
 }
@@ -142,14 +143,14 @@ button.ui-multiselect {
         }
 
         .home {
-            font-weight: bold;
+            font-weight: $font-weight-bold;
         }
 
         .separator {
             position: relative;
             top: -1px;
             padding: 0 .2em;
-            font-weight: bold;
+            font-weight: $font-weight-bold;
         }
     }
 
@@ -284,7 +285,7 @@ ul.ui-sortable {
             margin-left: -160px;
             padding-right: 5px;
             float: left;
-            font-weight: bold;
+            font-weight: $font-weight-bold;
         }
     }
 }

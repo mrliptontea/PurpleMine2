@@ -98,7 +98,7 @@
         &.ui-multiselect-optgroup-label {
             margin-bottom: 2px;
             border-bottom: 1px solid $panel-border;
-            font-weight: bold;
+            font-weight: $font-weight-bold;
             text-align: center;
 
             a {

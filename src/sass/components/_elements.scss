@@ -448,7 +448,7 @@ ul.projects {
 
     a.project {
         font-size: $font-size-h3;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
 
         &.child {
             font-weight: normal;
@@ -497,7 +497,7 @@ ul.projects {
         &.total {
             border-top: 2px solid darken($table-border-color, 5%);
             background-color: $table-bg-active;
-            font-weight: bold;
+            font-weight: $font-weight-bold;
         }
     }
 
@@ -507,7 +507,7 @@ ul.projects {
 }
 
 .total-hours {
-    font-weight: bold;
+    font-weight: $font-weight-bold;
 
     .hours-int {
         font-size: $font-size-large * 1.1;
@@ -600,7 +600,7 @@ div#version-summary {
     border: 1px solid $highlight-border;
     background-color: $highlight-bg;
     color: $highlight-text;
-    font-weight: bold;
+    font-weight: $font-weight-bold;
     text-align: center;
     box-shadow: $panel-shadow;
     opacity: .9;
@@ -626,7 +626,7 @@ tr.message {
     }
 
     &.sticky td.subject {
-        font-weight: bold;
+        font-weight: $font-weight-bold;
     }
 
     td {
@@ -640,7 +640,7 @@ tr.message {
             white-space: nowrap;
 
             a:last-child {
-                font-weight: bold;
+                font-weight: $font-weight-bold;
             }
         }
     }
@@ -654,7 +654,7 @@ table.boards {
             white-space: nowrap;
 
             a:last-child {
-                font-weight: bold;
+                font-weight: $font-weight-bold;
             }
         }
     }
@@ -687,7 +687,7 @@ table.boards {
                 color: $gray-darker;
 
                 &.user {
-                    font-weight: bold;
+                    font-weight: $font-weight-bold;
                 }
             }
         }

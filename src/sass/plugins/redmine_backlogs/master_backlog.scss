@@ -210,7 +210,7 @@ $story-sp-input-width:          50px;
 
         .name {
             padding-left: $padding-base-horizontal;
-            font-weight: bold;
+            font-weight: $font-weight-bold;
             overflow: hidden;
         }
 
@@ -497,7 +497,7 @@ $story-sp-input-width:          50px;
                         background-color: darken($gray-lightest, 3%);
                         color: $gray-dark;
                     }
-                    font-weight: bold;
+                    font-weight: $font-weight-bold;
                     text-align: right;
 
                     &:before {

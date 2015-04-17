@@ -718,7 +718,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
         }
 
         &.sticky td.subject {
-            font-weight: bold;
+            font-weight: $font-weight-bold;
 
             &:before {
                 content: $fa-var-bookmark;
@@ -932,7 +932,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 
         &.sticky td.subject {
             background-image: url("../../../images/bullet_go.png");
-            font-weight: bold;
+            font-weight: $font-weight-bold;
         }
 
         td.subject {

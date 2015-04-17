@@ -46,7 +46,7 @@ table.list {
         }
 
         &.id {
-            font-weight: bold;
+            font-weight: $font-weight-bold;
             text-align: right;
         }
 
@@ -165,7 +165,7 @@ tr.issue {
             .assigned_to,
             .subject {
                 a {
-                    font-weight: bold;
+                    font-weight: $font-weight-bold;
                 }
             }
         }
@@ -370,7 +370,7 @@ tr.entry {
 tr.group {
     > td {
         border-bottom: 1px solid $table-border-color;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
         text-align: left;
 
         a {
@@ -430,7 +430,7 @@ tr.time-entry {
     }
 
     td.hours {
-        font-weight: bold;
+        font-weight: $font-weight-bold;
     }
 }
 
@@ -449,7 +449,7 @@ tr.time-entry {
 
 .mypage-box {
     td.hours {
-        font-weight: bold;
+        font-weight: $font-weight-bold;
 
         em {
             font-style: normal;
@@ -538,7 +538,7 @@ table.plugins {
     span.name {
         margin-bottom: .5em;
         font-size: $font-size-large;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
     }
 
     .description,
