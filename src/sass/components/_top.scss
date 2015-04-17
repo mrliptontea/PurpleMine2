@@ -9,6 +9,85 @@
     font-size: $font-size-small;
     @extend %clearfix;
 
+    @if $top-menu-collapse {
+        $toggler-position-v:    $padding-small-vertical + 1px;
+        $toggler-position-h:    $padding-small-vertical - 1px;
+
+        max-height: floor($font-size-base * $font-size-small-unitless * $line-height-base) + $padding-small-vertical;
+        padding-bottom: 0;
+        overflow: hidden;
+
+        &.expanded {
+            max-height: none;
+        }
+
+        a {
+            display: inline-block;
+            margin-bottom: $padding-small-vertical;
+            white-space: nowrap;
+        }
+
+        .top-menu-toggler {
+            display: block;
+            position: absolute;
+            top: $toggler-position-v;
+            left: $toggler-position-h;
+            @include user-select(none);
+
+            @if $use-font-awesome {
+                font-size: 14px;
+
+                &:before {
+                    content: $fa-var-caret-square-o-down;
+                }
+            } @else {
+                @extend %image-arrow-down;
+            }
+
+            @if $use-font-awesome {
+                @extend %fa-icon;
+                color: mix($top-menu-link, $top-menu-bg, 33%);
+                line-height: 1;
+
+                &:before {
+                    margin-right: 0;
+                }
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: mix($top-menu-link-hover, $top-menu-bg, 50%);
+                }
+            } @else {
+                width: 15px;
+                height: 15px;
+                border-radius: $border-radius-base;
+                background-repeat: no-repeat;
+                background-position: center center;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: lighten($top-menu-bg, 15%);
+                }
+            }
+
+            &.expanded {
+                @if $use-font-awesome {
+                    &:before {
+                        content: $fa-var-caret-square-o-up;
+                    }
+                } @else {
+                    @extend %image-arrow-up;
+                }
+            }
+
+            @media screen and (min-width: $top-menu-collapse-breakpoint) {
+                display: none;
+            }
+        }
+    }
+
     ul {
         margin: 0;
         padding: 0;
@@ -32,6 +111,7 @@
     }
 
     #loggedas {
+        margin-left: 1em;
         float: right;
     }
 }
