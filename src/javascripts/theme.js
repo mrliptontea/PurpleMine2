@@ -5,5 +5,5 @@ $(function()
 
     new PurpleMine.SidebarToggler();
     new PurpleMine.HistoryTabs();
-    new PurpleMine.TopMenuCollapse();
+    new PurpleMine.MenuCollapse();
 });

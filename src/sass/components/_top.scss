@@ -3,6 +3,7 @@
 // --------------------------------------------------
 
 #top-menu {
+    position: relative;
     padding: $padding-small-vertical $padding-side;
     background: $top-menu-bg;
     color: $top-menu-text;
@@ -11,7 +12,7 @@
 
     @if $top-menu-collapse {
         $toggler-position-v:    $padding-small-vertical + 1px;
-        $toggler-position-h:    $padding-small-vertical - 1px;
+        $toggler-position-h:    1px;
 
         max-height: floor($font-size-base * $font-size-small-unitless * $line-height-base) + $padding-small-vertical;
         padding-bottom: 0;
@@ -31,7 +32,11 @@
             display: block;
             position: absolute;
             top: $toggler-position-v;
-            left: $toggler-position-h;
+            @if $sidebar-position == "left" {
+                left: $toggler-position-h;
+            } @else {
+                right: $toggler-position-h;
+            }
             @include user-select(none);
 
             @if $use-font-awesome {
@@ -41,7 +46,7 @@
                     content: $fa-var-caret-square-o-down;
                 }
             } @else {
-                @extend %image-arrow-down;
+                @extend %image-arrow-down-white;
             }
 
             @if $use-font-awesome {
@@ -78,7 +83,7 @@
                         content: $fa-var-caret-square-o-up;
                     }
                 } @else {
-                    @extend %image-arrow-up;
+                    @extend %image-arrow-up-white;
                 }
             }
 
@@ -198,11 +203,88 @@
 }
 
 #main-menu {
-    border-bottom: 1px solid $main-menu-border;
     background-color: $main-menu-bg;
+    box-shadow: inset 0 -1px $main-menu-border;
 
-    @media screen and (max-width: $screen-sm-max) {
-        font-size: $font-size-small-px;
+    @if $main-menu-collapse {
+        $toggler-position-v:    $main-menu-padding-vertical + 3px;
+        $toggler-position-h:    1px;
+
+        position: relative;
+        max-height: $line-height-computed + $main-menu-padding-vertical * 2;
+        overflow: hidden;
+
+        &.expanded {
+            max-height: none;
+        }
+
+        .main-menu-toggler {
+            display: block;
+            position: absolute;
+            top: $toggler-position-v;
+            @if $sidebar-position == "left" {
+                left: $toggler-position-h;
+            } @else {
+                right: $toggler-position-h;
+            }
+            @include user-select(none);
+
+            @if $use-font-awesome {
+                font-size: 14px;
+
+                &:before {
+                    content: $fa-var-caret-square-o-down;
+                }
+            } @else {
+                @extend %image-arrow-down;
+            }
+
+            @if $use-font-awesome {
+                @extend %fa-icon;
+                color: mix($main-menu-link, $main-menu-bg, 33%);
+                line-height: 1;
+
+                &:before {
+                    margin-right: 0;
+                }
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color: mix($main-menu-link, $main-menu-bg, 50%);
+                }
+            } @else {
+                width: 15px;
+                height: 15px;
+                border-radius: $border-radius-base;
+                background-repeat: no-repeat;
+                background-position: center center;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: darken($main-menu-bg, 15%);
+                }
+            }
+
+            &.expanded {
+                @if $use-font-awesome {
+                    &:before {
+                        content: $fa-var-caret-square-o-up;
+                    }
+                } @else {
+                    @extend %image-arrow-up;
+                }
+            }
+
+            @media screen and (min-width: $main-menu-collapse-breakpoint) {
+                display: none;
+            }
+        }
+    } @else {
+        @media screen and (max-width: $screen-sm-max) {
+            font-size: $font-size-small-px;
+        }
     }
 
     ul {
@@ -214,17 +296,22 @@
 
         > li {
             margin-right: .5em;
-            margin-bottom: -1px;
             float: left;
 
             > a {
                 display: block;
-                padding: $main-menu-padding-vertical 0;
+                white-space: nowrap;
                 @include transition(box-shadow .2s);
 
-                @media screen and (min-width: $screen-md-min) {
-                    padding-right: $main-menu-padding-horizontal;
-                    padding-left: $main-menu-padding-horizontal;
+                @if $main-menu-collapse {
+                    padding: $main-menu-padding-vertical $main-menu-padding-horizontal;
+                } @else {
+                    padding: $main-menu-padding-vertical 0;
+
+                    @media screen and (min-width: $screen-md-min) {
+                        padding-right: $main-menu-padding-horizontal;
+                        padding-left: $main-menu-padding-horizontal;
+                    }
                 }
 
                 @media screen and (min-width: $screen-lg-min) {

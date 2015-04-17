@@ -18,6 +18,7 @@ $issue-subject-large:           true !default;
 $enable-sidebar-toggler:        true !default;
 $wiki-page-more-vertical-space: true !default;
 $top-menu-collapse:             false !default;
+$main-menu-collapse:            false !default;
 
 
 //== Colors
@@ -473,6 +474,7 @@ $screen-sm-max:                 ($screen-md-min - 1) !default;
 $screen-md-max:                 ($screen-lg-min - 1) !default;
 
 $top-menu-collapse-breakpoint:  $screen-lg-min !default;
+$main-menu-collapse-breakpoint: $screen-lg-min !default;
 
 
 //== Content widths
