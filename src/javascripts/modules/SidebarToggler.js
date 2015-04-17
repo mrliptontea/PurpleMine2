@@ -4,7 +4,7 @@ PurpleMine.SidebarToggler = (function()
 {
     "use strict";
 
-    var self; // Make it work for browsers without Function.prototype.bind
+    var self;
     var translations = {
         en: {
             toggler: "Toggle sidebar"
@@ -16,6 +16,11 @@ PurpleMine.SidebarToggler = (function()
 
     function SidebarToggler()
     {
+        if (self)
+        {
+            return self;
+        }
+
         self = this;
 
         this.sidebarVisible = true;
@@ -38,26 +43,31 @@ PurpleMine.SidebarToggler = (function()
             $("#context-menu").appendTo("#wrapper3");
         }
 
+        handleSidebar();
+    }
+
+    function handleSidebar()
+    {
         if (window.localStorage)
         {
-            this.sidebarVisible =
+            self.sidebarVisible =
                 null === localStorage.getItem("PurpleMine:sidebarHidden");
         }
 
-        if (this.$sidebar.length > 0 &&
-            false === this.$main.hasClass("nosidebar"))
+        if (self.$sidebar.length > 0 &&
+            false === self.$main.hasClass("nosidebar"))
         {
-            this.buildButton();
-            this.bindKeyHandler();
+            buildButton();
+            bindKeyHandler();
 
-            if (false === this.sidebarVisible)
+            if (false === self.sidebarVisible)
             {
-                this.hideSidebar(true);
+                self.hideSidebar(true);
             }
         }
     }
 
-    SidebarToggler.prototype.bindKeyHandler = function()
+    function bindKeyHandler()
     {
         var body = document.getElementsByTagName("body")[0];
 
@@ -70,20 +80,20 @@ PurpleMine.SidebarToggler = (function()
                 self.toggleSidebar();
             }
         };
-    };
+    }
 
-    SidebarToggler.prototype.buildButton = function()
+    function buildButton()
     {
         var togglerClass = "sidebar-toggler",
             togglerHtml;
 
         togglerHtml = "<a href=\"javascript:;\" class=\"" + togglerClass +
-                        "\" title=\"" + this._.toggler + "\"></a>";
-        this.$toggler = $(togglerHtml);
+                        "\" title=\"" + self._.toggler + "\"></a>";
+        self.$toggler = $(togglerHtml);
 
-        this.$main.append(this.$toggler);
-        this.$toggler.on("click", this.toggleSidebar);
-    };
+        self.$main.append(self.$toggler);
+        self.$toggler.on("click", self.toggleSidebar);
+    }
 
     SidebarToggler.prototype.toggleSidebar = function()
     {

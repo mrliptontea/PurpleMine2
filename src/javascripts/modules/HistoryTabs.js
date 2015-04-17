@@ -4,7 +4,7 @@ PurpleMine.HistoryTabs = (function()
 {
     "use strict";
 
-    var self; // Make it work for browsers without Function.prototype.bind
+    var self;
     var translations = {
         en: {
             all    : "All",
@@ -20,6 +20,11 @@ PurpleMine.HistoryTabs = (function()
 
     function HistoryTabs()
     {
+        if (self)
+        {
+            return self;
+        }
+
         self = this;
 
         this.$tabsContainer = null;
@@ -36,12 +41,12 @@ PurpleMine.HistoryTabs = (function()
 
         if (this.$history.length > 0)
         {
-            this.buildTabs();
-            this.markFirstOfTypes();
+            buildTabs();
+            markFirstOfTypes();
         }
     }
 
-    HistoryTabs.prototype.buildTabs = function()
+    function buildTabs()
     {
         var html = "",
             liStart = "<li><a href=\"javascript:;\" class=\"",
@@ -49,25 +54,25 @@ PurpleMine.HistoryTabs = (function()
             liEnd = "</a></li>";
 
         html += "<div class=\"tabs\"><ul>";
-        html += liStart + "selected " + liMid + "all\">" + this._.all + liEnd;
-        html += liStart + liMid + "notes\">" + this._.notes + liEnd;
-        html += liStart + liMid + "details\">" + this._.details + liEnd;
+        html += liStart + "selected " + liMid + "all\">" + self._.all + liEnd;
+        html += liStart + liMid + "notes\">" + self._.notes + liEnd;
+        html += liStart + liMid + "details\">" + self._.details + liEnd;
         html += "</ul></div>";
 
-        this.$tabsContainer = $(html);
-        $("#history > h3").after(this.$tabsContainer);
+        self.$tabsContainer = $(html);
+        $("#history > h3").after(self.$tabsContainer);
 
-        this.$tabs = this.$tabsContainer.find(".history-tab");
-        this.$tabs.on("click", this.tabClick);
-    };
+        self.$tabs = self.$tabsContainer.find(".history-tab");
+        self.$tabs.on("click", tabClick);
+    }
 
-    HistoryTabs.prototype.markFirstOfTypes = function()
+    function markFirstOfTypes()
     {
-        this.$history.find(".has-notes:first").addClass("first-of-notes");
-        this.$history.find(".has-details:first").addClass("first-of-details");
-    };
+        self.$history.find(".has-notes:first").addClass("first-of-notes");
+        self.$history.find(".has-details:first").addClass("first-of-details");
+    }
 
-    HistoryTabs.prototype.tabClick = function()
+    var tabClick = function()
     {
         var $this = $(this),
             tab = $this.attr("data-tab");

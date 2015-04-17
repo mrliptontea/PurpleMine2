@@ -4,7 +4,7 @@ PurpleMine.MenuCollapse = (function()
 {
     "use strict";
 
-    var self; // Make it work for browsers without Function.prototype.bind
+    var self;
     var translations = {
         en: {
             topMenuToggler : "Expand/collapse top menu",
