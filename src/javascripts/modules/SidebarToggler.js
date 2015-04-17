@@ -5,6 +5,14 @@ PurpleMine.SidebarToggler = (function()
     "use strict";
 
     var self; // Make it work for browsers without Function.prototype.bind
+    var translations = {
+        en: {
+            toggler: "Toggle sidebar"
+        },
+        pl: {
+            toggler: "Pokaż/ukryj panel boczny"
+        }
+    };
 
     function SidebarToggler()
     {
@@ -15,6 +23,14 @@ PurpleMine.SidebarToggler = (function()
         this.$toggler       = null;
         this.$main          = $("#main");
         this.$sidebar       = $("#sidebar");
+        this.lang           = document.documentElement.lang;
+
+        if (typeof translations[this.lang] === "undefined")
+        {
+            this.lang = "en";
+        }
+
+        this._ = translations[this.lang];
 
         // Fix issue with context menu position
         if ("relative" === this.$main.css("position"))
@@ -58,14 +74,11 @@ PurpleMine.SidebarToggler = (function()
 
     SidebarToggler.prototype.buildButton = function()
     {
-        var togglerLabel = document.documentElement.lang === "pl" ?
-                            "Pokaż/ukryj panel boczny" :
-                            "Toggle sidebar",
-            togglerClass = "sidebar-toggler",
+        var togglerClass = "sidebar-toggler",
             togglerHtml;
 
         togglerHtml = "<a href=\"javascript:;\" class=\"" + togglerClass +
-                        "\" title=\"" + togglerLabel + "\"></a>";
+                        "\" title=\"" + this._.toggler + "\"></a>";
         this.$toggler = $(togglerHtml);
 
         this.$main.append(this.$toggler);

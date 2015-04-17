@@ -1,8 +1,6 @@
 @if $enable-sidebar-toggler {
     $toggler-position-v:        1px;
     $toggler-position-h:        1px;
-    $arrow-right:               $fa-var-caret-square-o-right;
-    $arrow-left:                $fa-var-caret-square-o-left;
 
     #main {
         position: relative;
@@ -72,7 +70,7 @@
 
             @if $use-font-awesome {
                 &:before {
-                    content: $arrow-left;
+                    content: $fa-var-caret-square-o-left;
                 }
             } @else {
                 @extend %image-arrow-left;
@@ -82,7 +80,7 @@
 
             @if $use-font-awesome {
                 &:before {
-                    content: $arrow-right;
+                    content: $fa-var-caret-square-o-right;
                 }
             } @else {
                 @extend %image-arrow-right;
@@ -93,7 +91,7 @@
             @if $sidebar-position == "left" {
                 @if $use-font-awesome {
                     &:before {
-                        content: $arrow-right;
+                        content: $fa-var-caret-square-o-right;
                     }
                 } @else {
                     @extend %image-arrow-right;
@@ -101,7 +99,7 @@
             } @else {
                 @if $use-font-awesome {
                     &:before {
-                        content: $arrow-left;
+                        content: $fa-var-caret-square-o-left;
                     }
                 } @else {
                     @extend %image-arrow-left;

@@ -27,7 +27,7 @@ PurpleMine.HistoryTabs = (function()
         this.$history       = $("#history");
         this.lang           = document.documentElement.lang;
 
-        if ("undefined" === translations[this.lang])
+        if (typeof translations[this.lang] === "undefined")
         {
             this.lang = "en";
         }
