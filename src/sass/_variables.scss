@@ -90,6 +90,8 @@ $line-height-computed:          floor(($font-size-base * $line-height-base)) !de
 
 $headings-font-weight:          700 !default;
 $headings-line-height:          1.4 !default;
+$headings-anchor-color:         $gray-lighter !default;
+$headings-anchor-color-active:  $gray-light !default;
 
 
 //== Wiki
