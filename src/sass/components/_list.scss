@@ -128,12 +128,6 @@ tr.issue {
         white-space: normal;
     }
 
-    .autoscroll & {
-        .subject > a {
-            display: block;
-        }
-    }
-
     &.relations {
         text-align: left;
         white-space: normal;

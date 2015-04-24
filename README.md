@@ -62,6 +62,7 @@ Latest (master):
 + Header matching current URL fragment will have `#` prepended
 + Introduced `$font-weight-normal` and `$font-weight-bold` variables to give better control on the appearance of text with custom fonts
 * Fixed #9: Added `$main-menu-collapse` and applied the same logic as in #8
+* Fixed #12: Removed `display: block` from issue's subject link to allow context menu to popup upon right click next to subject
 
 v1.5.0 (2015-04-15):
 
