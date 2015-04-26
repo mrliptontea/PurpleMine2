@@ -141,7 +141,18 @@
     color: $header-text;
 
     > h1 {
-        padding: 10px $padding-side;
+        padding: $header-padding-vertical $header-padding-horizontal;
+
+        @if $use-logo {
+            padding-left: $logo-image-width + $logo-position-horizontal + $logo-space;
+            background-image: url("../images/logo/logo.png");
+            background-repeat: no-repeat;
+            background-position: $logo-position-horizontal $logo-position-vertical;
+
+            @if $use-retina-logo {
+                @include img-retina("../images/logo/logo@2x.png", $logo-image-width, $logo-image-height);
+            }
+        }
 
         > .root {
             color: $header-root;
@@ -159,8 +170,8 @@
 }
 
 #quick-search {
-    margin-top: ($header-title-line-height + $padding-large-vertical * 2 - $input-height-base - 1px) / 2;
-    margin-right: $padding-side;
+    margin-top: floor(($header-title-line-height + $header-padding-vertical * 2 - $input-height-base) / 2) - 1px;
+    margin-right: $header-padding-horizontal;
     float: right;
     color: $header-text;
 

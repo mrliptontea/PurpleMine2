@@ -63,6 +63,7 @@ Latest (master):
 + Introduced `$font-weight-normal` and `$font-weight-bold` variables to give better control on the appearance of text with custom fonts
 * Fixed #9: Added `$main-menu-collapse` and applied the same logic as in #8
 * Fixed #12: Removed `display: block` from issue's subject link to allow context menu to popup upon right click next to subject
+* Resolved #11: Company logo can be added to the header
 
 v1.5.0 (2015-04-15):
 
