@@ -33,8 +33,8 @@
 
 a.collapsible,
 .collapsible > legend {
-    cursor: pointer;
     color: $link-color;
+    cursor: pointer;
     @include user-select(none);
 
     &:hover {
@@ -76,6 +76,7 @@ a.collapsible.collapsed,
         @include transition(max-height $collapsible-animation-time ease-out);
 
         > div {
+            // scss-lint:disable ImportantRule
             display: block !important;
             opacity: 1;
             visibility: visible;
@@ -112,8 +113,8 @@ a.collapsible.collapsed,
 .contextual {
     padding-left: $padding-base-vertical;
     float: right;
-    cursor: default;
     white-space: nowrap;
+    cursor: default;
 
     input,
     select {
@@ -310,6 +311,7 @@ p.subtitle {
     }
 
     &.ui-sortable-placeholder {
+        // scss-lint:disable ImportantRule
         outline: 1px dashed $highlight-border;
         background: $highlight-bg;
         visibility: visible !important;

@@ -1,5 +1,7 @@
 scss_files: "**/*.scss"
 
+exclude: 'src/sass/lib/**'
+
 linters:
   BangFormat:
     enabled: true
@@ -11,6 +13,9 @@ linters:
 
   ColorKeyword:
     enabled: true
+
+  ColorVariable:
+    enabled: false
 
   Comment:
     enabled: false

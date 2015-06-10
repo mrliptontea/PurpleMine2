@@ -277,8 +277,8 @@ em.info {
             margin-left: 0;
             padding-left: 16px;
             float: none;
-            cursor: pointer;
             text-align: left;
+            cursor: pointer;
 
             > input {
                 margin-top: 0;
@@ -361,6 +361,7 @@ input {
 }
 
 select.bool_cf {
+    // scss-lint:disable ImportantRule
     width: auto !important;
 }
 
@@ -495,6 +496,7 @@ select.bool_cf {
  * inline styles. Don't allow it break the layout
  */
 #all_attributes > p[style] {
+    // scss-lint:disable ImportantRule
     margin-right: 0 !important;
     margin-bottom: 0;
     padding-left: 0;
@@ -517,7 +519,7 @@ select.bool_cf {
         display: block;
     }
 
-    // scss-lint:disable VendorPrefixes
+    // scss-lint:disable VendorPrefix
     #watchers_inputs {
         display: block;
         max-width: 64em;

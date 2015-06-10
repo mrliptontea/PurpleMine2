@@ -23,7 +23,7 @@
     float: $sidebar-position;
 
     @media screen and (min-width: 1px) {
-        // scss-lint:disable VendorPrefixes
+        // scss-lint:disable VendorPrefix
         $border: $sidebar-link-active-border;
         $body:   $body-bg;
 

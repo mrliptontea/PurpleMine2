@@ -8,10 +8,10 @@ button {
     display: inline-block;
     margin-bottom: 0;
     border: 1px solid;
-    cursor: pointer;
     font-weight: $btn-font-weight;
     text-align: center;
     white-space: nowrap;
+    cursor: pointer;
     @include button-size($input-padding-vertical, $input-padding-horizontal, $font-size-base, $line-height-base, $border-radius-base);
     @include user-select(none);
     @include transition(background-color ease-in-out .07s, border-color ease-in-out .07s, box-shadow ease-in-out .07s);
@@ -143,6 +143,7 @@ form[action*="repository/diff"] {
 
 .query-columns {
     select {
+        // scss-lint:disable ImportantRule
         width: auto !important;
     }
 

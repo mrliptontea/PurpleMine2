@@ -912,6 +912,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
         background: url("../../../images/delete.png") no-repeat 1px 50%;
 
         &:hover {
+            // scss-lint:disable ImportantRule
             text-decoration: none !important;
         }
     }

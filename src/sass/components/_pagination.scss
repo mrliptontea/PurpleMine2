@@ -24,8 +24,8 @@
     .page.current {
         border-color: $pagination-active-border;
         background-color: $pagination-active-bg;
-        cursor: default;
         color: $pagination-active-color;
+        cursor: default;
         z-index: 2;
     }
 

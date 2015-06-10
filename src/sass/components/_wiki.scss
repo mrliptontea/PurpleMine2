@@ -185,7 +185,6 @@ div.wiki {
         // scss-lint:disable DuplicateProperty
         padding: .2em .33em;
         border-radius: $border-radius-base;
-        background-color: #f5f5f5; // IE8 fallback
         background-color: rgba(#000, .04);
         font-size: $font-size-small;
     }
@@ -198,7 +197,6 @@ div.wiki {
         border: 1px solid #e7e7e7;
         border-radius: $border-radius-base;
         border-color: rgba(#000, .068);
-        background-color: #f7f7f7; // IE8 fallback
         background-color: rgba(#000, .03);
         overflow-x: auto;
         overflow-y: hidden;
@@ -308,6 +306,7 @@ h4,
 h5,
 h6 {
     .wiki-anchor {
+        // scss-lint:disable ImportantRule
         display: none;
         position: relative;
         top: -(1em - $font-size-small);

@@ -12,8 +12,8 @@ body {
     background-color: $body-bg;
     color: $text-color;
     font-family: $font-family-base;
-    font-weight: $font-weight-normal;
     font-size: $font-size-base;
+    font-weight: $font-weight-normal;
     line-height: $line-height-base;
 }
 
@@ -137,8 +137,7 @@ abbr[title] {
 blockquote {
     margin: 0 0 $line-height-computed;
     padding: floor($line-height-computed / 4) $padding-large-horizontal;
-    border-left: 4px solid $blockquote-border-color-fallback;
-    border-left-color: $blockquote-border-color;
+    border-left: 4px solid $blockquote-border-color;
 
     >:first-child {
         margin-top: 0;
