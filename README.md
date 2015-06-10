@@ -56,7 +56,7 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
-Latest (master):
+v1.6.0 (2015-06-10):
 
 * Fixed #8: Setting `$top-menu-collapse` to `true` will enable script allowing to toggle if top menu should be collapsed (no wrapping) or expanded (wrapped, with auto height)
 + Header matching current URL fragment will have `#` prepended
