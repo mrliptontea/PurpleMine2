@@ -115,31 +115,15 @@
     }
 }
 
-.version-behind-schedule a,
-.issue-behind-schedule a {
+.version-behind-schedule,
+.issue-behind-schedule {
     color: $brand-warning;
-
-    @if $color-trackers {
-        &.issue {
-            background-color: $brand-warning;
-            color: $brand-text;
-            font-weight: 700;
-        }
-    }
 }
 
-.version-overdue a,
-.issue-overdue a,
-.project-overdue a {
+.version-overdue,
+.issue-overdue,
+.project-overdue {
     color: $brand-danger;
-
-    @if $color-trackers {
-        &.issue {
-            background-color: $brand-danger;
-            color: $brand-text;
-            font-weight: 700;
-        }
-    }
 }
 
 /**

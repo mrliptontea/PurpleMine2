@@ -58,6 +58,7 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 Latest (master):
 
+* Coloring issue's title instead of link in Gantt diagram for overdue issues
 * Updated npm packages: grunt-sass from 0.18.0 to 1.0.0 and grunt-contrib-uglify 0.7.0 to 0.9.1
 
 v1.6.0 (2015-06-10):
