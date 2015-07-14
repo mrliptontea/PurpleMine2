@@ -58,6 +58,8 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 Latest (master):
 
+* Added styles for optgroup (Firefox only)
+* Fixed #13: #header was missing clearfix and was breaking the layout is some cases
 * Coloring issue's title instead of link in Gantt diagram for overdue issues
 * Updated npm packages: grunt-sass from 0.18.0 to 1.0.0 and grunt-contrib-uglify 0.7.0 to 0.9.1
 

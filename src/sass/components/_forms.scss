@@ -112,11 +112,11 @@ select {
     }
 }
 
+
 /**
  * Browser hacks: unfortunately every browser has different capabilities when it
  * comes to styling <select> and <option> tags.
  */
-
 
 // Mozilla Firefox
 @-moz-document url-prefix() {
@@ -125,9 +125,15 @@ select {
             padding: 0;
         }
 
-        option {
+        option,
+        optgroup:before {
             padding: $input-padding-vertical $input-padding-horizontal;
             border-bottom: 1px dotted $gray-lighter;
+        }
+
+        optgroup > option {
+            padding-right: $input-padding-horizontal * 2;
+            padding-left: $input-padding-horizontal * 2;
         }
     }
 }
