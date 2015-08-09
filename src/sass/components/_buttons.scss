@@ -12,7 +12,7 @@ button {
     text-align: center;
     white-space: nowrap;
     cursor: pointer;
-    @include button-size($input-padding-vertical, $input-padding-horizontal, $font-size-base, $line-height-base, $border-radius-base);
+    @include button-size($btn-padding-vertical, $btn-padding-horizontal, $font-size-base, $line-height-base, $border-radius-base);
     @include user-select(none);
     @include transition(background-color ease-in-out .07s, border-color ease-in-out .07s, box-shadow ease-in-out .07s);
     @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);

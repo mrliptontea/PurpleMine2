@@ -7,33 +7,52 @@
 }
 
 @mixin button-variant($color, $bg, $border) {
-    $focus-bg:      darken($bg, 8%);
-    $focus-border:  darken($border, 8%);
-    $active-shadow: inset 0 1px 3px rgba(#000, .3);
+    $correction: 1;
+    @if hue($bg) > 120 and hue($bg) < 160 or lightness($bg) > 90 {
+        $correction: .5;
+    }
+    $normal-shadow: darken($border, 12% * $correction);
+    $focus-bg:      darken($bg, 12% * $correction);
+    $focus-border:  darken($border, 12% * $correction);
+    $focus-shadow:  darken($focus-border, 12% * $correction);
+    $active-bg:     darken($bg, 12% * $correction);
+    $active-border: darken($border, 15% * $correction);
+    $active-shadow: inset 0 3px 4px -2px $active-border;
 
-    color: $color;
-    border-color: $border;
-    background-color: $bg;
-    box-shadow: 0 1px 0 $border;
-
-    @if lightness($bg) > 90 {
+    @if lightness($bg) > 98 {
         $focus-bg:      darken($bg, 5%);
         $focus-border:  darken($border, 5%);
-        $active-shadow: inset 0 1px 2px rgba(#000, .1);
+        $normal-shadow: none;
+        $focus-shadow:  none;
+    }
+
+    background-color: $bg;
+    color: $color;
+    @if $normal-shadow == "none" {
+        border-color: $border;
+        box-shadow: none;
+    } @else {
+        border-color: $border $border $normal-shadow;
+        box-shadow: 0 1px 0 $normal-shadow;
     }
 
     &:hover,
     &:focus {
-        border-color: $focus-border;
         background-color: $focus-bg;
         color: $color;
-        box-shadow: 0 1px 0 $focus-border;
+        @if $focus-shadow == "none" {
+            border-color: $focus-border;
+            box-shadow: none;
+        } @else {
+            border-color: $focus-border $focus-border $focus-shadow;
+            box-shadow: 0 1px 0 $focus-shadow;
+        }
     }
 
     &:active {
-        border-color: $border;
-        background-color: $bg;
-        @include translate(0, 1px);
+        border-color: $active-border;
+        background-color: $active-bg;
         box-shadow: $active-shadow;
+        @include translate(0, 1px);
     }
 }

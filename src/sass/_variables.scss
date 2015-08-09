@@ -261,6 +261,8 @@ $changeset-deleted-color:       $brand-danger !default;
 //
 
 $btn-font-weight:               normal !default;
+$btn-padding-vertical:          3px !default;
+$btn-padding-horizontal:        12px !default;
 
 $btn-link-color:                $link-color !default;
 $btn-link-bg:                   $body-bg !default;
@@ -272,11 +274,11 @@ $btn-default-border:            $gray-lighter !default;
 
 $btn-primary-color:             #fff !default;
 $btn-primary-bg:                $brand-info !default;
-$btn-primary-border:            darken($btn-primary-bg, 5%) !default;
+$btn-primary-border:            $btn-primary-bg !default;
 
 $btn-success-color:             #fff !default;
 $btn-success-bg:                $brand-success !default;
-$btn-success-border:            darken($btn-success-bg, 5%) !default;
+$btn-success-border:            $btn-success-bg !default;
 
 
 //== Highlights
@@ -303,7 +305,7 @@ $input-border-radius-large:     $border-radius-large !default;
 $input-border-focus:            #51a7e8 !default;
 $input-color-placeholder:       #999 !default;
 
-$input-padding-vertical:        3px !default;
+$input-padding-vertical:        $btn-padding-vertical !default;
 $input-padding-horizontal:      8px !default;
 
 $input-height-base:             ($line-height-computed + ($input-padding-vertical * 2) + 2) !default;

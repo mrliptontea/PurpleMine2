@@ -791,12 +791,6 @@ $story-sp-input-width:          50px;
             &:active {
                 text-decoration: none;
             }
-
-            @media screen and (max-width: $screen-md-max) {
-                padding: $input-padding-vertical;
-                font-size: $font-size-small-px;
-                line-height: $line-height-computed;
-            }
         }
     }
 }
