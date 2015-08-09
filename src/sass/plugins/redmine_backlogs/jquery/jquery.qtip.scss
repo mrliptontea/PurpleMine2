@@ -18,7 +18,7 @@
     font-size: $font-size-list;
     text-align: left;
     word-wrap: break-word;
-    box-shadow: 0 2px 2px rgba(#000, .2);
+    @include nice-shadow(2);
     overflow: hidden;
 }
 

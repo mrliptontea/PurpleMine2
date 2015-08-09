@@ -145,12 +145,12 @@
         left: 24px;
         width: 270px;
         padding: $padding-base-vertical;
-        border: 1px solid $tooltip-border;
+        border: $tooltip-border-width solid $tooltip-border;
         background-color: $tooltip-bg;
         color: $tooltip-text;
         font-size: $font-size-small;
         text-align: left;
-        box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+        @include nice-shadow(3);
     }
 
     @if $sidebar-position == "left" {

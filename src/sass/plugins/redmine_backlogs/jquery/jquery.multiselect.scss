@@ -59,8 +59,8 @@
     position: absolute;
     padding: 3px;
     text-align: left;
-    box-shadow: $panel-shadow;
     z-index: 10000;
+    @include nice-shadow(2);
 }
 
 .ui-multiselect-checkboxes {

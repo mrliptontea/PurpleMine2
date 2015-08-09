@@ -382,7 +382,7 @@ $swimlane-width:                $issue-width + 2 * ($issue-margin + $issue-paddi
     &.ui-widget-content {
         border: 0 none;
         background: none;
-        box-shadow: 2px 2px 5px #777;
+        @include nice-shadow(5);
     }
 
     .ui-dialog-buttonpane.ui-widget-content {

@@ -212,6 +212,10 @@
     text-decoration: none;
 }
 
+.ui-sortable-helper {
+    @include nice-shadow(4);
+}
+
 
 /* Interaction Cues
 ----------------------------------*/
@@ -694,6 +698,7 @@
     margin: 0;
     padding: 2px;
     list-style: none;
+    @include nice-shadow(2);
 
     .ui-menu {
         margin-top: -3px;
@@ -1056,15 +1061,16 @@ button.ui-button::-moz-focus-inner {
 
 .ui-datepicker {
     width: 16em;
-    padding: 3px;
-    border: 1px solid $panel-border;
+    padding: .3em .6em .6em;
+    border: 0 none;
     background: $body-bg;
     color: $text-color;
     font-size: $font-size-base;
-    box-shadow: $panel-shadow;
+    @include nice-shadow(3);
 
     .ui-datepicker-header {
         position: relative;
+        margin: 0 -.3em;
         padding: .3em;
         border: 0 none;
         background: $header-bg;
@@ -1189,6 +1195,7 @@ button.ui-button::-moz-focus-inner {
     }
 
     .ui-datepicker-calendar {
+        margin: 0;
         table-layout: fixed;
 
         td {
@@ -1244,8 +1251,13 @@ button.ui-button::-moz-focus-inner {
     }
 
     .ui-datepicker-buttonpane {
+        margin: .6em 0 0;
+        padding: .6em 0 0;
+        @include clearfix;
+
         button {
-            padding: $input-padding-vertical $input-padding-horizontal;
+            margin: 0;
+            padding: $btn-padding-vertical $btn-padding-horizontal;
         }
 
         .ui-state-default {

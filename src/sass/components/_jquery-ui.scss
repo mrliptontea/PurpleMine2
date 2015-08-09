@@ -129,6 +129,10 @@
     text-decoration: none;
 }
 
+.ui-sortable-helper {
+    @include nice-shadow(4);
+}
+
 
 /**
  * Menu (e.g. autocomplete)
@@ -137,7 +141,7 @@
 .ui-menu {
     padding: 3px;
     border-radius: $panel-border-radius;
-    box-shadow: $panel-shadow;
+    @include nice-shadow(2);
 }
 
 .ui-menu-item {
@@ -167,7 +171,7 @@
     &.ui-widget-content {
         padding: 3px;
         border: 0 none;
-        box-shadow: $panel-shadow;
+        @include nice-shadow(5);
     }
 
     .ui-dialog-content {
@@ -199,10 +203,12 @@ img.ui-datepicker-trigger {
 }
 
 .ui-datepicker {
-    padding: 3px;
-    box-shadow: $panel-shadow;
+    padding: .3em .6em .6em;
+    border: 0 none;
+    @include nice-shadow(3);
 
     .ui-datepicker-header {
+        margin: 0 -.3em;
         padding: .3em;
     }
 
@@ -237,6 +243,7 @@ img.ui-datepicker-trigger {
     }
 
     .ui-datepicker-calendar {
+        margin: 0;
         table-layout: fixed;
 
         .ui-state-default {
@@ -283,6 +290,17 @@ img.ui-datepicker-trigger {
                 padding-right: $table-condensed-cell-padding;
                 color: $gray-light;
             }
+        }
+    }
+
+    .ui-datepicker-buttonpane {
+        margin: .6em 0 0;
+        padding: .6em 0 0;
+        @include clearfix;
+
+        button {
+            margin: 0;
+            padding: $btn-padding-vertical $btn-padding-horizontal;
         }
     }
 }

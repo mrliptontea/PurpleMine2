@@ -167,7 +167,7 @@ $story-sp-input-width:          50px;
         margin: 0 0 ($padding-side / 2);
         border-radius: $border-radius-large $border-radius-large 0 0;
         background-color: $gray-lightest;
-        box-shadow: $panel-shadow;
+        @include nice-shadow(1);
 
         @media screen and (min-width: $screen-md-min) {
             margin: 0 0 $padding-side;
@@ -724,7 +724,7 @@ $story-sp-input-width:          50px;
 
     &.ui-widget-content {
         border: 0 none;
-        box-shadow: 2px 2px 5px #777;
+        @include nice-shadow(5);
     }
 
     .ui-dialog-buttonpane.ui-widget-content {

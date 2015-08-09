@@ -37,6 +37,13 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
  * Context menu
  */
 #context-menu {
+    > ul,
+    > ul > li > ul {
+        // scss-lint:disable ImportantRule
+        border: 0 none !important;
+        @include nice-shadow(2);
+    }
+
     a {
         @extend %fa-icon;
 

@@ -319,7 +319,7 @@ p.subtitle {
 
     &.ui-sortable-helper {
         background: $body-bg;
-        box-shadow: $panel-shadow;
+        @include nice-shadow(4);
     }
 }
 
@@ -604,7 +604,7 @@ div#version-summary {
     color: $highlight-text;
     font-weight: $font-weight-bold;
     text-align: center;
-    box-shadow: $panel-shadow;
+    @include nice-shadow(3);
     opacity: .9;
     z-index: 100;
 
