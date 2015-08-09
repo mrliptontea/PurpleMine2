@@ -223,10 +223,10 @@ $swimlane-width:                $issue-width + 2 * ($issue-margin + $issue-paddi
         border: 0 none;
         border-radius: $border-radius-large;
         background-color: $gray-lighter;
-        cursor: move;
         color: $gray-darker;
         font-size: 10px;
         line-height: 1.3;
+        cursor: move;
     }
 
     .placeholder {

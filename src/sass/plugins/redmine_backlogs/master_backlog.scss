@@ -1,3 +1,4 @@
+// scss-lint:disable ImportantRule
 @import "common";
 
 $header-line-height:            floor($line-height-computed * 1.5);
@@ -309,9 +310,9 @@ $story-sp-input-width:          50px;
             border-right: 1px solid #888;
             border-bottom: 1px solid $header-bg;
             border-radius: ($border-radius-large - 1px) 0 0;
-            cursor: pointer;
             font-size: $font-size-small;
             line-height: $line-height-base;
+            cursor: pointer;
             overflow: visible;
             @include transition(background-color 0s .1s, border-color 0s .1s);
 
@@ -766,10 +767,10 @@ $story-sp-input-width:          50px;
             display: inline-block;
             margin-bottom: 0;
             border: 1px solid;
-            cursor: pointer;
             font-weight: $btn-font-weight;
             text-align: center;
             white-space: nowrap;
+            cursor: pointer;
             @include button-size($input-padding-vertical, $input-padding-horizontal, $font-size-base, $line-height-base, $border-radius-base);
             @include user-select(none);
             @include transition(background-color ease-in-out .07s, border-color ease-in-out .07s, box-shadow ease-in-out .07s);
@@ -840,6 +841,6 @@ $story-sp-input-width:          50px;
 
 #show_completed_sprints {
     margin-left: $padding-side / 2;
-    cursor: pointer;
     color: $gray-darkest;
+    cursor: pointer;
 }
