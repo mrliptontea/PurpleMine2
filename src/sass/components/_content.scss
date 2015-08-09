@@ -1,5 +1,12 @@
 #main {
     @extend %clearfix;
+
+    @if $flexbox-layout {
+        // scss-lint:disable VendorPrefix
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+    }
 }
 
 
@@ -9,7 +16,15 @@
 
 #content {
     padding: $padding-side;
-    overflow: hidden;
+
+    @if $flexbox-layout {
+        // scss-lint:disable VendorPrefix
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    } @else {
+        overflow: hidden;
+    }
 }
 
 
@@ -18,38 +33,56 @@
 // --------------------------------------------------
 
 #sidebar {
-    width: $sidebar-width - ($sidebar-padding-horizontal * 2) - 1px;
+    // scss-lint:disable VendorPrefix
+    $sidebar-width-computed: $sidebar-width - ($sidebar-padding-horizontal * 2) - 1px;
+
     padding: $padding-side $sidebar-padding-horizontal;
-    float: $sidebar-position;
 
-    @media screen and (min-width: 1px) {
-        // scss-lint:disable VendorPrefix
-        $border: $sidebar-link-active-border;
-        $body:   $body-bg;
-
-        padding-bottom: $padding-side * 3;
-        background-image: -webkit-linear-gradient($body 1%, $border 10%, $border 85%, $body);
-        background-image:      -o-linear-gradient($body 1%, $border 10%, $border 85%, $body);
-        background-image:         linear-gradient($body 1%, $border 10%, $border 85%, $body);
-        background-repeat: no-repeat;
-        background-size: 1px 100%;
+    @if $flexbox-layout {
+        -webkit-flex: 0 0 $sidebar-width-computed;
+        -ms-flex: 0 0 $sidebar-width-computed;
+        flex: 0 0 $sidebar-width-computed;
 
         @if $sidebar-position == "left" {
-            padding-right: $sidebar-padding-horizontal + 1px;
-            background-position: right 0;
+            -webkit-order: -1;
+            -ms-flex-order: -1;
+            order: -1;
+        } @else {
+            -webkit-order: 1;
+            -ms-flex-order: 1;
+            order: 1;
+        }
+    } @else {
+        width: $sidebar-width-computed;
+        float: $sidebar-position;
+    }
+
+    @media screen and (min-width: 1px) {
+        padding-bottom: $padding-side * 3;
+
+        @if $sidebar-position == "left" {
+            border-right: 1px solid $sidebar-link-active-border;
             box-shadow: inset -9px 0 6px -6px rgba(0, 0, 0, .05);
         } @else {
-            padding-left: $sidebar-padding-horizontal + 1px;
-            background-position: left 0;
+            border-left: 1px solid $sidebar-link-active-border;
             box-shadow: inset 9px 0 6px -6px rgba(0, 0, 0, .05);
         }
     }
 
     .nosidebar & {
-        width: 0;
         margin: 0;
         padding: 0;
-        float: none;
+        border: 0 none;
+
+        @if $flexbox-layout {
+            // scss-lint:disable VendorPrefix
+            -webkit-flex: 0 0 auto;
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+        } @else {
+            width: 0;
+            float: none;
+        }
     }
 
     h3 {
@@ -117,7 +150,7 @@
 }
 
 #footer {
-    margin: $line-height-computed $padding-side;
+    margin: 0 $padding-side $line-height-computed;
     padding-top: $line-height-computed;
     border-top: 1px solid $gray-lighter;
     color: $gray-light;

@@ -7,20 +7,42 @@
 
     position: relative;
     margin-bottom: $line-height-computed;
-    padding-right: $tabs-buttons-width;
     overflow: hidden;
 
+    @if not $flexbox-layout {
+        padding-right: $tabs-buttons-width;
+    }
+
     > ul {
-        width: 2000px; // stop it from breaking
+        // scss-lint:disable VendorPrefix
         margin: 0;
         padding-left: 0;
         border-bottom: 1px solid $tab-border;
         list-style: none;
-        @extend %clearfix;
+
+        @if $flexbox-layout {
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            height: $line-height-computed + $tab-padding-vertical * 2 + 1px;
+            -webkit-flex-wrap: nowrap;
+            -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+        } @else {
+            width: 2000px;
+            @extend %clearfix;
+        }
 
         > li {
             margin-bottom: -1px;
-            float: left;
+
+            @if $flexbox-layout {
+                -webkit-flex: 0 1 auto;
+                -ms-flex: 0 1 auto;
+                flex: 0 1 auto;
+            } @else {
+                float: left;
+            }
 
             > a {
                 display: block;
@@ -30,6 +52,7 @@
                 border: 1px solid transparent;
                 border-radius: $border-radius-base $border-radius-base 0 0;
                 text-align: center;
+                white-space: nowrap;
 
                 &:hover,
                 &:focus {
@@ -53,11 +76,12 @@
         right: 0;
         width: $tabs-buttons-width;
         padding-left: 5px;
+        border-bottom: 1px solid $tab-border;
         background-color: $body-bg;
 
         > button {
             width: 50%;
-            height: $tab-padding-vertical * 2 + $line-height-computed;
+            height: $tab-padding-vertical * 2 + $line-height-computed + 1px;
             margin: 0;
             padding: 0;
             float: left;

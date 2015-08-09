@@ -4,7 +4,7 @@ A free Redmine theme for modern browsers.
 
 ![Screenshot](https://github.com/HolonGlobe/PurpleMine2/raw/master/screenshots/issues-list.png)
 
-Compatible with Redmine 2.5+ and browsers: IE9+, latest Firefox and Google Chrome (others were not tested).
+Compatible with Redmine 2.5+ and browsers: IE10+/Edge, latest Firefox and Google Chrome (others were not tested).
 
 It's written in [SCSS]. It uses [normalize.css] and benefits from some parts of [Bootstrap][bootstrap-sass] like mixins, structure, and stuff.
 
@@ -62,6 +62,7 @@ Latest (master):
 * Fixed #13: #header was missing clearfix and was breaking the layout is some cases
 * Coloring issue's title instead of link in Gantt diagram for overdue issues
 * Updated npm packages: grunt-sass from 0.18.0 to 1.0.0 and grunt-contrib-uglify 0.7.0 to 0.9.1
+* Use flexbox layout by default (can be changed by setting `$flexbox-layout` to `false`)
 
 v1.6.0 (2015-06-10):
 
