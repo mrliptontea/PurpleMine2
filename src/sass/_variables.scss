@@ -152,9 +152,17 @@ $collapsible-animation-time:    .3s !default;
 $table-cell-padding:            8px !default;
 $table-condensed-cell-padding:  5px !default;
 
+$table-list-header-border:      0 0 2px !default;
+$table-list-item-border:        0 0 1px !default;
+$table-list-color-odd-rows:     true !default;
+$table-list-color-even-rows:    false !default;
+$table-list-highlight-rows:     false !default;
+
 $table-bg:                      transparent !default;
-$table-bg-accent:               rgba(#000, .03) !default;
-$table-bg-hover:                #f1f1f1 !default;
+$table-accent-factor:           .03 !default;
+$table-hover-factor:            .03 !default;
+$table-bg-accent:               rgba(#000, $table-accent-factor) !default;
+$table-bg-hover:                rgba(#000, $table-hover-factor) !default;
 $table-bg-active:               $table-bg-hover !default;
 
 $table-border-color:            darken($body-bg, 13.5%) !default;

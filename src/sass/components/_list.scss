@@ -11,9 +11,16 @@ table.list {
         margin-bottom: 0;
     }
 
+    @if $table-list-highlight-rows {
+        > tbody > tr:hover {
+            background-color: $table-bg-hover;
+        }
+    }
+
     th {
         padding: $table-cell-padding;
-        border-bottom: 2px solid $table-border-color;
+        border: 2px solid $table-border-color;
+        border-width: $table-list-header-border;
         color: $gray;
         vertical-align: bottom;
 
@@ -24,7 +31,8 @@ table.list {
 
     td {
         padding: $table-cell-padding;
-        border-bottom: 1px solid $table-border-color;
+        border: 1px solid $table-border-color;
+        border-width: $table-list-item-border;
         text-align: left;
         vertical-align: top;
 
@@ -207,9 +215,6 @@ tr {
     }
 }
 
-// /* do you */ .even {
-// }
-
 td.center {
     text-align: center;
 }
@@ -352,8 +357,16 @@ tr.entry {
     }
 }
 
-.odd {
-    background-color: $table-bg-accent;
+@if $table-list-color-odd-rows {
+    .odd {
+        background-color: $table-bg-accent;
+    }
+}
+
+@if $table-list-color-even-rows {
+    .even {
+        background-color: $table-bg-accent;
+    }
 }
 
 

@@ -16,8 +16,16 @@
             color: darken($color, 10%);
         }
 
-        &.odd {
-            background: darken($background, 3%);
+        @if $table-list-color-odd-rows {
+            &.odd {
+                background: darken($background, $table-accent-factor * 100%);
+            }
+        }
+
+        @if $table-list-color-even-rows {
+            &.even {
+                background: darken($background, $table-accent-factor * 100%);
+            }
         }
 
         td {
@@ -29,6 +37,24 @@
 
             &:hover {
                 color: darken($link, 10%);
+            }
+        }
+    }
+
+    @if $table-list-highlight-rows {
+        table.list > tbody > tr#{$parent}:hover {
+            background: darken($background, $table-hover-factor * 100%);
+        }
+
+        @if $table-list-color-odd-rows {
+            &.odd {
+                background: darken($background, ($table-accent-factor + $table-hover-factor) * 100%);
+            }
+        }
+
+        @if $table-list-color-even-rows {
+            &.even {
+                background: darken($background, ($table-accent-factor + $table-hover-factor) * 100%);
             }
         }
     }
