@@ -63,6 +63,7 @@ Latest (master):
 * Coloring issue's title instead of link in Gantt diagram for overdue issues
 * Updated npm packages: grunt-sass from 0.18.0 to 1.0.0 and grunt-contrib-uglify 0.7.0 to 0.9.1
 * Use flexbox layout by default (can be changed by setting `$flexbox-layout` to `false`)
+* Fixed animation issue when showing sidebar
 
 v1.6.0 (2015-06-10):
 

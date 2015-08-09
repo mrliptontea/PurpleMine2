@@ -134,9 +134,12 @@ PurpleMine.SidebarToggler = (function()
     SidebarToggler.prototype.showSidebar = function()
     {
         clearTimeout(this.sidebarHiding);
-        this.$sidebar
-                .removeClass("sidebar-hidden", 0)
-                .removeClass("sidebar-hiding");
+
+        self.$sidebar.removeClass("sidebar-hidden");
+        setTimeout(function sidebarTimeout()
+        {
+            self.$sidebar.removeClass("sidebar-hiding");
+        }, 50);
 
         this.$toggler.removeClass("sidebar-hidden");
         this.sidebarVisible = true;
