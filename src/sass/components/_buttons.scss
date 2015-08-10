@@ -153,6 +153,8 @@ form[action*="repository/diff"] {
         input[type="button"] {
             width: 32px;
             margin-bottom: 4px;
+            padding-right: 1px;
+            padding-left: 1px;
             @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
         }
     }
