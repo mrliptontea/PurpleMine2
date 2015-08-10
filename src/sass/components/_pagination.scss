@@ -31,11 +31,12 @@
 
     .items,
     .per-page {
-        margin-left: $padding-small-vertical;
+        display: inline-block;
+        margin: ($padding-small-vertical + 1px) 0 ($padding-small-vertical + 1px) $padding-small-vertical;
     }
 }
 
 p.pagination {
-    float: left;
     margin-bottom: 0;
+    float: left;
 }
