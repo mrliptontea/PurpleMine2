@@ -364,17 +364,12 @@ p.footnote {
 
     > p {
         float: left;
+        margin-bottom: 0;
     }
 
     #add_attachment_form {
+        padding-top: $line-height-computed;
         clear: left;
-    }
-}
-
-.controller-wiki.action-show {
-    .other-formats {
-        margin-top: 0;
-        float: right;
     }
 }
 

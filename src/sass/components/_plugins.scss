@@ -29,6 +29,10 @@
             display: none;
         }
     }
+
+    .burndown_chart {
+        max-width: $sidebar-width-computed;
+    }
 }
 
 
@@ -79,6 +83,12 @@
 // Redmine CRM People
 // http://www.redminecrm.com/projects/people/
 // --------------------------------------------------
+
+#people_list {
+    table.index {
+        margin-bottom: $line-height-computed;
+    }
+}
 
 #content {
     .person.details {

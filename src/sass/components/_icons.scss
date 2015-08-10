@@ -774,19 +774,19 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
                 content: $fa-var-external-link;
             }
         }
+    }
 
-        .contextual [href*="edit"] {
-            @extend %fa-icon;
-            font-size: $font-size-base;
-            @include link-variant($icon-success-color, $icon-success-hover-color);
+    .contextual [href*="edit"] {
+        @extend %fa-icon;
+        font-size: $font-size-base;
+        @include link-variant($icon-success-color, $icon-success-hover-color);
 
-            &:before {
-                content: $fa-var-pencil;
-            }
+        &:before {
+            content: $fa-var-pencil;
+        }
 
-            img {
-                display: none;
-            }
+        img {
+            display: none;
         }
     }
 

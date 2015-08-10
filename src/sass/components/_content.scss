@@ -34,8 +34,6 @@
 
 #sidebar {
     // scss-lint:disable VendorPrefix
-    $sidebar-width-computed: $sidebar-width - ($sidebar-padding-horizontal * 2) - 1px;
-
     padding: $padding-side $sidebar-padding-horizontal;
 
     @if $flexbox-layout {

@@ -395,6 +395,7 @@ $tab-active-border:             $tab-border !default;
 $sidebar-width:                 270px !default;
 $sidebar-padding-vertical:      $padding-base-vertical !default;
 $sidebar-padding-horizontal:    $padding-side !default;
+$sidebar-width-computed:        $sidebar-width - ($sidebar-padding-horizontal * 2) - 1px !default;
 $sidebar-link-hover-bg:         $gray-lightest !default;
 $sidebar-link-active-bg:        $body-bg !default;
 $sidebar-link-active-border:    $gray-lighter !default;

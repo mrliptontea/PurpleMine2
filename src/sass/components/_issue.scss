@@ -168,10 +168,11 @@ div.attachments {
 
     p {
         margin: 10px 0 0;
+    }
 
-        &:first-child {
-            margin-top: 0;
-        }
+    p:first-child,
+    .contextual + p {
+        margin-top: 0;
     }
 
     img {

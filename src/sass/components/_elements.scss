@@ -24,6 +24,16 @@
     span + span:before {
         content: "/ ";
     }
+
+    .pagination + &,
+    #wiki_add_attachment + & {
+        margin-top: 0;
+        float: right;
+    }
+
+    .pagination + & {
+        margin-top: $padding-small-vertical + 1px;
+    }
 }
 
 
