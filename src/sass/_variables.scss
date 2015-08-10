@@ -363,6 +363,9 @@ $main-menu-padding-horizontal:  5px !default;
 //== Pagination
 //
 
+$pagination-padding-vertical:   $btn-padding-vertical !default;
+$pagination-padding-horizontal: 10px !default;
+
 $pagination-color:              $link-color !default;
 $pagination-bg:                 #fff !default;
 $pagination-border:             #ddd !default;

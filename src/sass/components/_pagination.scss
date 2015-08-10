@@ -6,7 +6,7 @@
     .next,
     .page {
         display: inline-block;
-        padding: $padding-small-vertical $padding-small-horizontal;
+        padding: $pagination-padding-vertical $pagination-padding-horizontal;
         border: 1px solid $pagination-border;
         border-radius: $border-radius-base;
         background-color: $pagination-bg;
@@ -32,7 +32,7 @@
     .items,
     .per-page {
         display: inline-block;
-        margin: ($padding-small-vertical + 1px) 0 ($padding-small-vertical + 1px) $padding-small-vertical;
+        margin: ($pagination-padding-vertical + 1px) 0 ($pagination-padding-vertical + 1px) $pagination-padding-vertical;
     }
 }
 
