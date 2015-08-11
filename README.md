@@ -68,6 +68,7 @@ Latest (master):
 * Few visual tweaks: nicer shadows, improved datepickers layout
 + Configurable list borders and highlighting of hovered and even/odd rows
 + Introduce `$pagination-padding-` variables and make pagination buttons' height equal to buttons by default
+* Fixed #16: remove `white-space: nowrap` from external links to prevent breaking the page with flexbox layout
 
 v1.6.0 (2015-06-10):
 

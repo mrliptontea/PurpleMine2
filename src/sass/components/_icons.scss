@@ -766,7 +766,6 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     div.wiki {
         .external {
             @extend %fa-icon;
-            white-space: nowrap;
 
             &:before {
                 margin-right: 3px;
