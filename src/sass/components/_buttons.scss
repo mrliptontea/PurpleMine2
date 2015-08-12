@@ -37,11 +37,10 @@ button {
 
 
 /**
- * Issue form buttons layout
+ * Form buttons layout
  */
 
-#issue-form,
-#history .journal form {
+form {
     input[type="submit"] {
         margin-right: 5px;
 
@@ -56,17 +55,6 @@ button {
         + a + a {
             margin-left: 5px;
         }
-    }
-}
-
-
-/**
- * Project's repository form buttons layout
- */
-
-#repository-form {
-    input[type="submit"] {
-        margin-right: 5px;
     }
 }
 
@@ -80,54 +68,11 @@ form[action*="repository/diff"] {
 
 
 /**
- * New _something_ form buttons layout
- */
-
-#add_attachment_form,
-#new_time_entry,
-#new_project,
-#new_document,
-#new_group,
-#new_user {
-    input[type="submit"] {
-        margin-right: 5px;
-
-        + input {
-            @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
-        }
-    }
-}
-
-
-/**
- * Wiki form buttons layout
- */
-
-#wiki_form {
-    input[type="submit"] {
-        margin-right: 5px;
-    }
-}
-
-
-/**
  * Forum and news message form buttons layout
  */
 
 #message-form,
 #news-form {
-    input[type="submit"] {
-        margin-right: 5px;
-
-        + a {
-            margin-right: 5px;
-        }
-
-        + a + a {
-            margin-left: 5px;
-        }
-    }
-
     #message_sticky,
     #message_locked {
         position: relative;
