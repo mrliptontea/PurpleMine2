@@ -768,6 +768,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
             @extend %fa-icon;
 
             &:before {
+                display: inline;
                 margin-right: 3px;
                 font-size: 10px;
                 content: $fa-var-external-link;

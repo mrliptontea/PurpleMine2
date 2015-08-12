@@ -128,6 +128,12 @@ div.wiki {
         }
     }
 
+    a {
+        // scss-lint:disable DuplicateProperty
+        word-break: break-all;
+        word-break: break-word;
+    }
+
     p,
     ul,
     ol {
@@ -182,7 +188,6 @@ div.wiki {
     }
 
     code {
-        // scss-lint:disable DuplicateProperty
         padding: .2em .33em;
         border-radius: $border-radius-base;
         background-color: rgba(#000, .04);
@@ -190,7 +195,6 @@ div.wiki {
     }
 
     pre {
-        // scss-lint:disable DuplicateProperty
         width: auto;
         margin-bottom: 1.15em;
         padding: 4px 8px;
@@ -208,6 +212,11 @@ div.wiki {
             background-color: transparent;
             font-size: 1em;
         }
+    }
+
+    img {
+        max-width: 100%;
+        vertical-align: middle;
     }
 
     .toc {
@@ -276,11 +285,6 @@ div.wiki {
                     }
                 }
             }
-        }
-
-        img {
-            max-width: 100%;
-            vertical-align: middle;
         }
     }
 
