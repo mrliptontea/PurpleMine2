@@ -58,7 +58,9 @@
     }
 
     @media screen and (min-width: 1px) {
-        padding-bottom: $padding-side * 3;
+        @if not $flexbox-layout {
+            padding-bottom: $padding-side * 3;
+        }
 
         @if $sidebar-position == "left" {
             border-right: 1px solid $sidebar-link-active-border;
