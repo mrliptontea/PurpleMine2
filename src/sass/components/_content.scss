@@ -1,11 +1,11 @@
 #main {
-    @extend %clearfix;
-
     @if $flexbox-layout {
         // scss-lint:disable VendorPrefix
         display: -ms-flexbox;
         display: -webkit-flex;
         display: flex;
+    } @else {
+        @extend %clearfix;
     }
 }
 
@@ -19,6 +19,8 @@
 
     @if $flexbox-layout {
         // scss-lint:disable VendorPrefix
+        $side-space: $sidebar-width + $padding-side * 2;
+        width: calc(100% - #{$side-space});
         -webkit-flex: 1 1 auto;
         -ms-flex: 1 1 auto;
         flex: 1 1 auto;
