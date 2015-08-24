@@ -27,19 +27,19 @@ a {
         color: $link-hover-color;
         text-decoration: $link-hover-decoration;
     }
+}
 
-    &.issue.closed {
-        color: $link-color-issue-closed;
-        text-decoration: $link-closed-decoration;
-    }
+.issue.closed {
+    color: $link-color-issue-closed;
+    text-decoration: $link-closed-decoration;
+}
 
-    &.project.closed {
-        color: $link-color-project-closed;
-    }
+.project.closed {
+    color: $link-color-project-closed;
+}
 
-    &.user.locked {
-        color: $link-color-user-locked;
-    }
+.user.locked {
+    color: $link-color-user-locked;
 }
 
 
