@@ -70,6 +70,7 @@ Latest (master):
 + Introduce `$pagination-padding-` variables and make pagination buttons' height equal to buttons by default
 * Fixed #16: remove `white-space: nowrap` from external links to prevent breaking the page with flexbox layout
 * Fixed colored trackers in tooltips in Backlogs plugin
+* Fixed broken codebutton modal after making buttons wider
 
 v1.6.0 (2015-06-10):
 

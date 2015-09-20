@@ -222,8 +222,6 @@
     }
 
     .buttons {
-        > input {
-            margin-left: .5em;
-        }
+        white-space: nowrap;
     }
 }
