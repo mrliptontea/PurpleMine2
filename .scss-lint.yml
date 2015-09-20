@@ -1,4 +1,4 @@
-scss_files: "**/*.scss"
+scss_files: "src/sass/**/*.scss"
 
 exclude: 'src/sass/lib/**'
 
