@@ -1,23 +1,22 @@
 {
   "name": "PurpleMine2",
-  "version": "2.0.0",
-  "description": "A free Redmine 2.5+ theme written in SASS",
+  "description": "A free Redmine 2.5+ theme written in SCSS",
   "keywords": [
     "redmine",
     "theme",
     "sass",
     "scss"
   ],
-  "author": "HolonGlobe",
+  "author": "mrliptontea",
   "repository": {
     "type": "git",
-    "url": "git@github.com:HolonGlobe/PurpleMine2.git"
+    "url": "git@github.com:mrliptontea/PurpleMine2.git"
   },
-  "license": "WTFPL",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/HolonGlobe/PurpleMine2/issues"
+    "url": "https://github.com/mrliptontea/PurpleMine2/issues"
   },
-  "homepage": "https://github.com/HolonGlobe/PurpleMine2",
+  "homepage": "https://github.com/mrliptontea/PurpleMine2",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-uglify": "^0.9.1",

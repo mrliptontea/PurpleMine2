@@ -71,6 +71,7 @@ Latest (master):
 * Fixed #16: remove `white-space: nowrap` from external links to prevent breaking the page with flexbox layout
 * Fixed colored trackers in tooltips in Backlogs plugin
 * Fixed broken codebutton modal after making buttons wider
+* Changed the license to MIT
 
 v1.6.0 (2015-06-10):
 
@@ -155,10 +156,6 @@ v1.1.0 (2015-02-15):
 v1.0.0 (2015-02-06):
 
 Initial version
-
-## License
-
-[WTFPL](http://www.wtfpl.net/)
 
 [SCSS]: http://sass-lang.com/
 [normalize.css]: https://github.com/necolas/normalize.css
