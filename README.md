@@ -56,7 +56,7 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
-Latest (master):
+v1.7.0 (2015-09-25):
 
 * Added styles for optgroup (Firefox only)
 * Fixed #13: #header was missing clearfix and was breaking the layout is some cases
