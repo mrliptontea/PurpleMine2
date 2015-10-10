@@ -2,6 +2,10 @@
 
 A free Redmine theme for modern browsers.
 
+![The MIT License](https://img.shields.io/badge/license-MIT-584492.svg?style=flat-square) [![Release](https://img.shields.io/github/release/mrliptontea/PurpleMine2.svg?style=flat-square)](https://github.com/mrliptontea/PurpleMine2/releases) [![Issues](https://img.shields.io/github/issues/mrliptontea/PurpleMine2.svg?style=flat-square)](https://github.com/mrliptontea/PurpleMine2/issues)
+
+---
+
 ![Screenshot](https://github.com/mrliptontea/PurpleMine2/raw/master/screenshots/issues-list.png)
 
 Compatible with Redmine 2.5+ and browsers: IE10+/Edge, latest Firefox and Google Chrome (others were not tested).
