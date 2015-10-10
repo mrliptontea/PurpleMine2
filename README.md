@@ -56,6 +56,10 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
+v1.7.1 (2015-10-10):
+
++ Improved styling for [Stuff To Do][stuff_to_do] plugin
+
 v1.7.0 (2015-09-25):
 
 * Added styles for optgroup (Firefox only)
@@ -163,3 +167,4 @@ Initial version
 [redmine_backlogs]: https://github.com/backlogs/redmine_backlogs
 [redmine_time_tracker]: https://github.com/hicknhack-software/redmine_time_tracker
 [redmine_crm_people]: http://www.redminecrm.com/projects/people/
+[stuff_to_do]: https://github.com/raafael911/stuff_to_do_plugin

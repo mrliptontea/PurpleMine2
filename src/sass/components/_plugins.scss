@@ -225,3 +225,91 @@
         white-space: nowrap;
     }
 }
+
+
+//
+// Redmine Stuff To Do
+// https://github.com/raafael911/stuff_to_do_plugin
+// --------------------------------------------------
+
+#stuff-to-do {
+    p {
+        @if $sidebar-position == "left" {
+            margin-right: -($sidebar-padding-horizontal);
+        } @else {
+            margin-left: -($sidebar-padding-horizontal);
+        }
+
+        > a {
+            display: block;
+            padding: $sidebar-padding-vertical $sidebar-padding-horizontal;
+
+            @if $sidebar-position == "left" {
+                border-radius: $border-radius-large 0 0 $border-radius-large;
+            } @else {
+                border-radius: 0 $border-radius-large $border-radius-large 0;
+            }
+
+            &:hover {
+                background-color: $sidebar-link-hover-bg;
+                text-decoration: none;
+            }
+        }
+
+        > br {
+            display: none;
+        }
+    }
+}
+
+// Note: the following applies to the latest version
+// of Stuff To Do plugin from the master branch.
+
+.controller-stuff_to_do {
+    .menu {
+        label,
+        select {
+            margin-bottom: 5px;
+        }
+    }
+
+    .stuff-to-do-item {
+        padding: $table-cell-padding;
+        border: 1px solid $table-border-color;
+        border-width: $table-list-item-border;
+        background-color: $body-bg;
+    }
+
+    .pane {
+        ol {
+            padding: 0;
+        }
+
+        .issue-details {
+            width: 80%;
+            margin: 0;
+
+            @if $use-font-awesome {
+                a {
+                    img {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .progress {
+            width: 20%;
+            margin: 0;
+        }
+
+        .estimate {
+            top: $table-cell-padding - 1px;
+            right: $table-cell-padding;
+            left: auto;
+            font-size: $font-size-small;
+            width: 20%;
+            text-align: right;
+        }
+    }
+}
