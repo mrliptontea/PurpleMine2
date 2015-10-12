@@ -33,13 +33,12 @@ table.list {
         padding: $table-cell-padding;
         border: 1px solid $table-border-color;
         border-width: $table-list-item-border;
-        text-align: left;
+        text-align: center;
         vertical-align: top;
 
         &.checkbox {
             width: 15px;
             padding: $table-cell-padding 0 0;
-            text-align: center;
 
             input {
                 margin: 2px 0 0;
@@ -58,6 +57,24 @@ table.list {
             text-align: right;
         }
 
+        &.assigned_to,
+        &.author,
+        &.activity,
+        &.category,
+        &.comments,
+        &.description,
+        &.fixed_version,
+        &.name,
+        &.priority,
+        &.relations,
+        &.roles,
+        &.status,
+        &.string,
+        &.subject,
+        &.user {
+            text-align: left;
+        }
+
         &.estimated_hours,
         &.remaining_hours,
         &.spent_hours,
@@ -74,18 +91,6 @@ table.list {
             a {
                 padding-right: 5px;
             }
-        }
-
-        &.project,
-        &.created_on,
-        &.updated_on,
-        &.start_date,
-        &.due_date,
-        &.is_private,
-        &.reorder,
-        &.bool,
-        &.date {
-            text-align: center;
         }
 
         &.reorder {

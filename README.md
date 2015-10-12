@@ -63,6 +63,7 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 Latest (master):
 
 * Fixed `.pagination` float in project members settings
+* Lists' cells are aligned to center by default (as in Redmine's default theme)
 
 v1.7.1 (2015-10-10):
 
