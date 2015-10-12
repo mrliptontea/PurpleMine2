@@ -166,3 +166,9 @@
 #tab-content-memberships .splitcontentright select {
     width: 100%;
 }
+
+#principals_for_new_member {
+    .pagination {
+        float: none;
+    }
+}

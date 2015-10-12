@@ -60,6 +60,10 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
+Latest (master):
+
+* Fixed `.pagination` float in project members settings
+
 v1.7.1 (2015-10-10):
 
 + Improved styling for [Stuff To Do][stuff_to_do] plugin
