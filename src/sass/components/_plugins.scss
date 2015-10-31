@@ -313,3 +313,39 @@
         }
     }
 }
+
+
+
+//
+// Redmine Checkout
+// https://github.com/thorin/redmine_checkout
+// --------------------------------------------------
+
+#checkout_url{
+  height:23px !important;
+}
+
+
+
+//
+// Redmine WikiNG
+// https://github.com/martin-denizet/wiking
+// --------------------------------------------------
+
+div.wiking.warning {
+  color: #863D09;
+  background-image: none !important;
+}
+div.wiking.notice:before {
+  content: "\f05a";
+  color: #00365f;
+}
+div.wiking.notice {
+  background-image: none !important;
+}
+div.wiking.tip{
+  background-image: none !important;
+}
+div.wiking.tip:before {
+  content: "\f0e5";
+}
