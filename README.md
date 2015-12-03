@@ -60,6 +60,10 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
+Latest (master):
+
+* Fixed #19: missing text wrapping for long text custom fields
+
 v1.7.2 (2015-10-12):
 
 * Fixed `.pagination` float in project members settings

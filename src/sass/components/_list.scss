@@ -71,6 +71,7 @@ table.list {
         &.status,
         &.string,
         &.subject,
+        &.text,
         &.user {
             text-align: left;
         }
@@ -134,14 +135,14 @@ tr.issue {
     text-align: center;
     white-space: nowrap;
 
-    &.string,
-    &.text,
+    .string,
+    .text,
     .subject,
     .category {
         white-space: normal;
     }
 
-    &.relations {
+    .relations {
         text-align: left;
         white-space: normal;
 
@@ -150,21 +151,11 @@ tr.issue {
         }
     }
 
-    &.done_ratio table.progress {
-        margin-right: auto;
-        margin-left: auto;
-    }
-
     &.idnt .subject a {
-        padding-left: 16px;
+        padding-left: 10px;
         @extend %image-arrow-right;
         background-repeat: no-repeat;
-
-        @if $color-trackers {
-            background-position: 0 0;
-        } @else {
-            background-position: -5px 0;
-        }
+        background-position: -5px 0;
     }
 
     .controller-issues.action-index & {
