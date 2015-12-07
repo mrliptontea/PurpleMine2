@@ -63,6 +63,7 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 Latest (master):
 
 * Fixed #19: missing text wrapping for long text custom fields
+* Fixed #20: applied Font Awesome font-family for icons in Time Tracker overview
 
 v1.7.2 (2015-10-12):
 

@@ -42,39 +42,51 @@
 // --------------------------------------------------
 
 @if $use-font-awesome {
-    .icon.icon-start,
-    .icon.icon-stop {
-        background-image: none;
+    .tt_list_button {
+        font-size: 14px;
+        @extend %fa-icon;
     }
 
-    .icon.icon-start {
-        color: $icon-success-color;
+    .icon,
+    .tt_list_button {
+        &.icon-start,
+        &.icon-stop {
+            background-image: none;
+        }
 
-        &:hover,
-        &:focus {
+        &.icon-start {
             color: $icon-success-color;
+
+            &:hover,
+            &:focus {
+                color: $icon-success-color;
+            }
+
+            &:before {
+                content: $fa-var-clock-o;
+            }
         }
 
-        &:before {
-            content: $fa-var-clock-o;
-        }
-    }
-
-    .icon.icon-stop {
-        color: $icon-danger-color;
-
-        &:hover,
-        &:focus {
+        &.icon-stop {
             color: $icon-danger-color;
-        }
 
-        &:before {
-            content: $fa-var-history;
+            &:hover,
+            &:focus {
+                color: $icon-danger-color;
+            }
+
+            &:before {
+                content: $fa-var-history;
+            }
         }
     }
 
     .time-tracker-quick-menu:empty {
         display: none;
+    }
+
+    #user-time-bookings-list {
+        clear: both;
     }
 }
 
