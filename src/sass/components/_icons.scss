@@ -1034,6 +1034,15 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
             color: $icon-success-hover-color;
         }
 
+        .icon {
+            padding-left: 0;
+
+            &:before {
+                margin: 0;
+                content: "";
+            }
+        }
+
         img {
             display: none;
         }
