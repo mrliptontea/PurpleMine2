@@ -621,13 +621,24 @@ fieldset#filters {
                 min-width: 130px;
             }
         }
-
-        &.add-filter {
-            padding-top: $table-condensed-cell-padding * 2;
-            text-align: right;
-            vertical-align: top;
-        }
     }
+
+    .add-filter {
+        text-align: right;
+    }
+
+    td.add-filter {
+        padding-top: $table-condensed-cell-padding * 2;
+        vertical-align: top;
+    }
+
+    div.add-filter {
+        padding-top: $table-condensed-cell-padding;
+    }
+}
+
+#filters-table {
+    float: left;
 }
 
 

@@ -22,7 +22,7 @@
                 float: left;
             }
 
-            table img.gravatar {
+            .assigned-to img.gravatar {
                 position: relative;
                 top: -3px;
                 margin-right: 5px;
@@ -128,7 +128,8 @@
     }
 
     @if $color-status {
-        .attributes td.status {
+        .attributes td.status,
+        .attribute.status .value {
             display: inline-block;
             width: auto;
             min-width: 1em;
@@ -143,13 +144,56 @@
             text-transform: uppercase;
         }
 
-        &.status-1 .attributes td.status {
-            background-color: $brand-info;
+        &.status-1 {
+            .attributes td.status,
+            .attribute.status .value {
+                background-color: $brand-info;
+            }
         }
 
-        &.closed .attributes td.status {
-            background-color: $brand-danger;
+        &.closed {
+            .attributes td.status,
+            .attribute.status .value {
+                background-color: $brand-danger;
+            }
         }
+    }
+
+    .splitcontentleft {
+        @media screen and (min-width: $screen-lg-min) {
+            width: auto;
+        }
+    }
+
+    .attribute {
+        @extend %clearfix;
+
+        .label,
+        .value {
+            padding: $issue-attribute-padding-v $issue-attribute-padding-h $issue-attribute-padding-v 0;
+        }
+
+        .label {
+            width: 25%;
+            float: left;
+
+            @media screen and (min-width: $screen-lg-min) {
+                width: 14em;
+            }
+        }
+
+        .value {
+            color: $gray-darkest;
+
+            @media screen and (min-width: $screen-lg-min) {
+                width: auto;
+                min-width: 14em + 16em;
+            }
+        }
+    }
+
+    table.progress {
+        width: 80px;
     }
 
     div.attachments {

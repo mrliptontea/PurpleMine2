@@ -2,9 +2,23 @@
 // Pagination (multiple pages)
 // --------------------------------------------------
 .pagination {
-    .previous,
-    .next,
-    .page {
+    .pages {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        display: inline-block;
+        margin-right: .3em;
+        list-style: none;
+    }
+
+    li > a,
+    li > span,
+    > .previous,
+    > .next,
+    > .page {
         display: inline-block;
         padding: $pagination-padding-vertical $pagination-padding-horizontal;
         border: 1px solid $pagination-border;
@@ -12,7 +26,10 @@
         background-color: $pagination-bg;
         color: $pagination-color;
         text-decoration: none;
+        white-space: nowrap;
+    }
 
+    a {
         &:hover,
         &:focus {
             border-color: $pagination-hover-border;
@@ -21,7 +38,8 @@
         }
     }
 
-    .page.current {
+    .page.current,
+    .current > span {
         border-color: $pagination-active-border;
         background-color: $pagination-active-bg;
         color: $pagination-active-color;

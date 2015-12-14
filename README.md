@@ -65,6 +65,7 @@ Latest (master):
 * Fixed #19: missing text wrapping for long text custom fields
 * Fixed #20: applied Font Awesome font-family for icons in Time Tracker overview
 * Fixed duplicated pencil icon for Description in issue form in Redmine 3.1.2+
+* Fixed #21: added styling for compatibility with layout changes in Redmine 3.2.0
 
 v1.7.2 (2015-10-12):
 
