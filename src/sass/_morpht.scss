@@ -12,8 +12,13 @@ $brand-primary: #D5D5D5; /* header background color */
         color: #85C7FF;
       }
     }
+    /* hide "Logged in as" */
     #loggedas {
-      color: transparent; /* hide "Logged in as" */
+      color: transparent;
+      pointer-events: none;
+      a {
+        pointer-events: auto;
+      }
     }
   }
   #header {
