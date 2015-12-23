@@ -12,6 +12,9 @@ $brand-primary: #D5D5D5; /* header background color */
         color: #85C7FF;
       }
     }
+    #loggedas {
+      color: transparent; /* hide "Logged in as" */
+    }
   }
   #header {
     background-image: url('/themes/PurpleMine2/images/logo-morpht.svg'); /* fallback */
@@ -34,5 +37,13 @@ $brand-primary: #D5D5D5; /* header background color */
   }
   #header > h1 > .root {
     color: #333;
+  }
+}
+
+/* Login */
+
+#wrapper {
+  .button-login-text {
+    background-image: none;
   }
 }
