@@ -85,6 +85,7 @@ table {
     th,
     td {
         padding: $table-condensed-cell-padding $table-cell-padding;
+        text-align: left;
     }
 }
 
