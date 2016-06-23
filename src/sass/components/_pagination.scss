@@ -29,6 +29,13 @@
         white-space: nowrap;
     }
 
+    .spacer > span {
+        padding: 0;
+        border: 0 none;
+        background: transparent;
+        color: $text-color;
+    }
+
     a {
         &:hover,
         &:focus {
