@@ -42,22 +42,24 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
         @include nice-shadow(2);
     }
 
-    a {
-        @extend %fa-icon;
+    @if $use-font-awesome {
+        a {
+            @extend %fa-icon;
 
-        &:before {
-            margin-top: 3px;
-            margin-left: -16px;
-            float: left;
+            &:before {
+                margin-top: 3px;
+                margin-left: -16px;
+                float: left;
+            }
         }
-    }
 
-    li a.icon-checked {
-        background: transparent;
-    }
+        li a.icon-checked {
+            background: transparent;
+        }
 
-    ul li a.submenu {
-        @extend %image-arrow-right;
+        ul li a.submenu {
+            @extend %image-arrow-right;
+        }
     }
 }
 
@@ -86,6 +88,11 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
         }
     }
 
+    .icon-only {
+        @extend %fa-icon;
+        white-space: nowrap;
+    }
+
     .icon-add:before                   { content: $fa-var-plus-square; }
     .icon-edit:before                  { content: $fa-var-pencil; }
     .icon-copy:before                  { content: $fa-var-copy; }
@@ -112,7 +119,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     .icon-reload:before                { content: $fa-var-refresh; }
     .icon-lock:before                  { content: $fa-var-lock; }
     .icon-unlock:before                { content: $fa-var-unlock; }
-    .icon-checked:before               { content: $fa-var-check-square; }
+    .icon-checked:before               { content: $fa-var-check; }
     .icon-details:before               { content: $fa-var-search-plus; }
     .icon-report:before                { content: $fa-var-pie-chart; }
     .icon-comment:before               { content: $fa-var-comment; }
@@ -186,7 +193,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 
 .icon-add,
 .icon-edit,
-.icon-save {
+.icon-save,
+.icon-checked {
     @include link-variant($icon-success-color, $icon-success-hover-color);
 }
 
