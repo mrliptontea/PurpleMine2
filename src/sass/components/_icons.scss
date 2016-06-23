@@ -1071,7 +1071,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
                 display: none;
             }
 
-            &:last-child {
+            &:nth-child(2) {
                 &:before {
                     color: $icon-success-color;
                     content: $fa-var-pencil;
