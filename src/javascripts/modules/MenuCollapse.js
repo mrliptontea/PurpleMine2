@@ -7,12 +7,10 @@ PurpleMine.MenuCollapse = (function()
     var self;
     var translations = {
         en: {
-            topMenuToggler : "Expand/collapse top menu",
-            mainMenuToggler: "Expand/collapse main menu"
+            topMenuToggler : "Expand/collapse top menu"
         },
         pl: {
-            topMenuToggler : "Zwiń/rozwiń górne menu",
-            mainMenuToggler: "Zwiń/rozwiń główne menu"
+            topMenuToggler : "Zwiń/rozwiń górne menu"
         }
     };
 
@@ -37,9 +35,6 @@ PurpleMine.MenuCollapse = (function()
         this.menus = {
             top: {
                 $el: $("#top-menu")
-            },
-            main: {
-                $el: $("#main-menu")
             }
         };
 

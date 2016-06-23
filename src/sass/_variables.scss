@@ -21,7 +21,6 @@ $issue-subject-large:           true !default;
 $enable-sidebar-toggler:        true !default;
 $wiki-page-more-vertical-space: true !default;
 $top-menu-collapse:             false !default;
-$main-menu-collapse:            false !default;
 
 
 //== Colors
@@ -350,6 +349,7 @@ $logo-position-vertical:        center !default;
 $logo-space:                    floor($header-padding-vertical / 2) !default;
 
 $main-menu-bg:                  $gray-lightest !default;
+$main-menu-bg-hover:            $gray-lightest !default;
 $main-menu-link:                $gray-darker !default;
 $main-menu-link-active:         #000 !default;
 $main-menu-border:              $gray-lighter !default;
@@ -358,6 +358,7 @@ $main-menu-shadow-width:        3px !default;
 $main-menu-shadow-active:       $brand-primary !default;
 $main-menu-padding-vertical:    $padding-large-vertical !default;
 $main-menu-padding-horizontal:  5px !default;
+$main-menu-dropdown-bg:         lighten($main-menu-bg, 3%);
 
 
 //== Pagination
@@ -499,7 +500,6 @@ $screen-sm-max:                 ($screen-md-min - 1) !default;
 $screen-md-max:                 ($screen-lg-min - 1) !default;
 
 $top-menu-collapse-breakpoint:  $screen-lg-min !default;
-$main-menu-collapse-breakpoint: $screen-lg-min !default;
 
 
 //== Content widths
