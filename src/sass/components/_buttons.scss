@@ -131,6 +131,12 @@ a[data-expands] {
     margin-right: 10px;
     padding: 10px;
 
+    > .toggle-multiselect {
+        padding: 0;
+        border: 0 none;
+        background: transparent;
+    }
+
     img {
         display: none;
     }
