@@ -66,6 +66,11 @@ Latest (master):
 * Fixed #20: applied Font Awesome font-family for icons in Time Tracker overview
 * Fixed duplicated pencil icon for Description in issue form in Redmine 3.1.2+
 * Fixed #21: added styling for compatibility with layout changes in Redmine 3.2.0
+* Fixed #23: set width for progress bars
+* Fixed #25: proper styles for pagination
+* Fixed #28: correct icon will be displayed for users that cannot edit notes in journal
+* Fixed #30: styles will now compile with latest Sass
+* Fixed #32, #33: improve @shawndibble's styles for new main menu styles in Redmine 3.3
 
 v1.7.2 (2015-10-12):
 
