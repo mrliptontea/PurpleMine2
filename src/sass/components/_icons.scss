@@ -6,8 +6,6 @@ $icon-danger-color:                  $brand-danger;
 $icon-danger-hover-color:            darken($brand-danger, 10%);
 
 @if $use-font-awesome {
-    @import "../lib/font-awesome";
-
     %fa-icon {
         &:before {
             @include fa-icon();
