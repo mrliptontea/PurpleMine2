@@ -3,11 +3,16 @@
 // --------------------------------------------------
 
 table.progress {
+    width: 80px;
     margin-top: 1px;
     margin-right: 5px;
     float: left;
     border: 1px solid rgba(#000, .1);
     empty-cells: show;
+
+    .version-overview & {
+        width: 40em;
+    }
 
     td.done_ratio & {
         margin-right: auto;
