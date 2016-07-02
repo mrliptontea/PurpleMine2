@@ -283,17 +283,10 @@ em.info {
             float: none;
             text-align: left;
             cursor: pointer;
-
-            > input {
-                margin-top: 0;
-                margin-left: -16px;
-                float: left;
-            }
         }
 
         &.inline {
             display: inline-block;
-            margin-right: 10px;
         }
 
         &.role-visibility {
@@ -305,6 +298,32 @@ em.info {
             top: 1px;
         }
     }
+}
+
+label.inline {
+    display: inline-block;
+    margin-right: $padding-base-horizontal;
+    padding-left: 16px;
+    float: none;
+    text-align: left;
+    cursor: pointer;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+label.inline,
+label.block {
+    > input {
+        margin-top: .2em;
+        margin-left: -16px;
+        float: left;
+    }
+}
+
+fieldset > p > label:first-child {
+    margin-right: $padding-base-horizontal;
 }
 
 
