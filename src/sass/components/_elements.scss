@@ -598,7 +598,8 @@ div#version-summary {
 
 #new_document,
 #add-message,
-#add-news {
+#add-news,
+#edit-news {
     margin-bottom: $line-height-computed;
 }
 
@@ -782,6 +783,29 @@ table.boards {
 
 #message_content {
     height: $line-height-computed * 6;
+}
+
+
+/**
+ * News
+ */
+.news-article {
+    margin-bottom: $line-height-computed;
+
+    header {
+        h3 {
+            margin-bottom: .3em;
+            line-height: 1.2;
+
+            > a {
+                font-weight: $font-weight-bold;
+            }
+        }
+    }
+}
+
+.author .user {
+    font-weight: $font-weight-bold;
 }
 
 
