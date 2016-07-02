@@ -443,7 +443,9 @@ $progress-bar-info-bg:          lighten($brand-info, 20%) !default;
 //== Panels
 //
 
-$panel-body-padding:            15px !default;
+$panel-body-padding-vertical:   15px !default;
+$panel-body-padding-horizontal: 15px !default;
+$panel-body-padding:            $panel-body-padding-vertical $panel-body-padding-horizontal !default;
 $panel-color:                   #555 !default;
 $panel-bg:                      #f9f9f9 !default;
 $panel-border:                  #ccc !default;

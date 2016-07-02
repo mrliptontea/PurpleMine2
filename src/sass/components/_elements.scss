@@ -181,6 +181,10 @@ a.collapsible.collapsed,
     >:last-child {
         margin-bottom: 0;
     }
+
+    > h3 {
+        margin-bottom: $panel-body-padding-vertical;
+    }
 }
 
 
