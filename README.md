@@ -71,6 +71,7 @@ Latest (master):
 * Fixed #28: correct icon will be displayed for users that cannot edit notes in journal
 * Fixed #30: styles will now compile with latest Sass
 * Fixed #32, #33: improve @shawndibble's styles for new main menu styles in Redmine 3.3
+* Various small visual tweaks
 
 v1.7.2 (2015-10-12):
 
