@@ -15,12 +15,6 @@
         vertical-align: top;
     }
 
-    .jstb_help {
-        margin-right: 0;
-        margin-left: -6px;
-        float: right;
-    }
-
     .box & {
         button {
             margin-right: 2px;
@@ -28,6 +22,14 @@
 
         .jstSpacer {
             margin-right: 4px;
+        }
+
+        @media (min-width: $screen-md) {
+            .jstb_help {
+                margin-right: 0;
+                margin-left: -6px;
+                float: right;
+            }
         }
 
         @media (min-width: $screen-lg) {
