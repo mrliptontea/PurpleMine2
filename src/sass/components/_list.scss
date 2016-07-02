@@ -587,3 +587,22 @@ table.files {
         text-align: center;
     }
 }
+
+
+/**
+ * Totals
+ */
+
+.query-totals {
+    > span {
+        margin-right: $padding-base-horizontal;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .value {
+        font-weight: $font-weight-bold;
+    }
+}
