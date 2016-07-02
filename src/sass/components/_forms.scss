@@ -496,14 +496,15 @@ select.bool_cf {
 
 
 /**
- * Hack: first <p> in issue form ("private" option) is moved to the right with
- * inline styles. Don't allow it break the layout
+ * #all_attributes > p[style] is targeting Redmine 2.x
  */
+#issue_is_private_wrap,
 #all_attributes > p[style] {
     // scss-lint:disable ImportantRule
     margin-right: 0 !important;
     margin-bottom: 0;
     padding-left: 0;
+    float: right;
 
     input {
         top: 2px;
