@@ -368,20 +368,20 @@ $pagination-padding-vertical:   $btn-padding-vertical !default;
 $pagination-padding-horizontal: 10px !default;
 
 $pagination-color:              $link-color !default;
-$pagination-bg:                 #fff !default;
+$pagination-bg:                 #f9f9f9 !default;
 $pagination-border:             #ddd !default;
 
 $pagination-hover-color:        $link-hover-color !default;
 $pagination-hover-bg:           $gray-lightest !default;
-$pagination-hover-border:       #ddd !default;
+$pagination-hover-border:       #bbb !default;
 
 $pagination-active-color:       #fff !default;
 $pagination-active-bg:          $brand-primary !default;
 $pagination-active-border:      $brand-primary !default;
 
-$pagination-inactive-color:     $gray-light !default;
-$pagination-inactive-bg:        $pagination-bg !default;
-$pagination-inactive-border:    $pagination-border !default;
+$pagination-inactive-color:     #ccc !default;
+$pagination-inactive-bg:        #fff !default;
+$pagination-inactive-border:    #eee !default;
 
 
 //== Tabs

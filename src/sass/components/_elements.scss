@@ -4,40 +4,6 @@
 
 
 /**
- * Action buttons group
- */
-
-.buttons {
-    margin-top: $line-height-computed;
-    margin-bottom: $line-height-computed;
-}
-
-
-/**
- * Export actions
- */
-
-.other-formats {
-    margin: ($line-height-computed / 2) 0 0;
-    text-align: right;
-
-    span + span:before {
-        content: "/ ";
-    }
-
-    .pagination + &,
-    #wiki_add_attachment + & {
-        margin-top: 0;
-        float: right;
-    }
-
-    .pagination + & {
-        margin-top: $pagination-padding-vertical + 1px;
-    }
-}
-
-
-/**
  * Collapsible
  */
 
