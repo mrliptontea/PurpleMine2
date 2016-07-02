@@ -29,6 +29,13 @@
         white-space: nowrap;
     }
 
+    li > span {
+        border-color: $pagination-inactive-border;
+        background-color: $pagination-inactive-bg;
+        color: $pagination-inactive-color;
+        cursor: default;
+    }
+
     .spacer > span {
         padding: 0;
         border: 0 none;
