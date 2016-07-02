@@ -847,6 +847,14 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
                 content: $fa-var-file-excel-o;
             }
         }
+
+        .png {
+            @extend %other-format;
+
+            &:before {
+                content: $fa-var-file-image-o;
+            }
+        }
     }
 
     #changes-legend > li.change,
