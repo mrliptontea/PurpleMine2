@@ -1,0 +1,54 @@
+/* Header */
+
+$brand-primary: #D5D5D5; /* header background color */
+
+#wrapper {
+  #top-menu {
+    background: #111;
+    a {
+      color: #FFF;
+      font-weight: normal;
+      &:hover {
+        color: #85C7FF;
+      }
+    }
+    /* hide "Logged in as" */
+    #loggedas {
+      color: transparent;
+      pointer-events: none;
+      a {
+        pointer-events: auto;
+      }
+    }
+  }
+  #header {
+    background-image: url('/themes/PurpleMine2/images/logo-morpht.svg'); /* fallback */
+    background-image: url('/themes/PurpleMine2/images/logo-morpht.svg'), linear-gradient(#E6E6E6, #D5D5D5); /* W3C */
+    background-repeat: no-repeat, repeat-x;
+    background-position: 20px 5px, 0 0;
+    background-size: auto 38px;
+    h1 {
+      color: #333;
+      font-size: 1.5em;
+      font-weight: normal;
+      margin-left: 170px !important;
+      border-left: 1px solid #BCBCBC;
+    }
+    #quick-search,
+    #quick-search a,
+    #quick-search select {
+      color: #333;
+    }
+  }
+  #header > h1 > .root {
+    color: #333;
+  }
+}
+
+/* Login */
+
+#wrapper {
+  .button-login-text {
+    background-image: none;
+  }
+}
