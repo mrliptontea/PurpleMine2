@@ -72,6 +72,7 @@ Latest (master):
 * Fixed #30: styles will now compile with latest Sass
 * Fixed #32, #33: improve @shawndibble's styles for new main menu styles in Redmine 3.3
 * Various small visual tweaks
+* Fixed #36: npm dependencies can be installed on production environments + update grunt to its latest version
 
 v1.7.2 (2015-10-12):
 
