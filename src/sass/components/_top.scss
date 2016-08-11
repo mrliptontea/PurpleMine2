@@ -155,13 +155,22 @@
             }
         }
 
-        > .root {
+        .root {
             color: $header-root;
             font-weight: 500;
         }
 
-        > .ancestor {
+        .ancestor {
             font-weight: 500;
+        }
+
+        .root,
+        .ancestor {
+            display: inline-block;
+        }
+
+        .current-project {
+            display: inline-block;
         }
     }
 

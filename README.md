@@ -72,6 +72,7 @@ Latest (master):
 * Fixed #30: styles will now compile with latest Sass
 * Fixed #32, #33: improve @shawndibble's styles for new main menu styles in Redmine 3.3
 * Various small visual tweaks
+* Fixed #34: project breadcrumbs in the header should wrap nicely
 * Fixed #35: `.icon-only` class should now display only icons, buttons with icons should de displayed correctly with Font-Awesome disabled
 * Fixed #36: npm dependencies can be installed on production environments + update grunt to its latest version
 
