@@ -86,7 +86,12 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 
     .icon-only {
         @extend %fa-icon;
+        font-size: 0;
         white-space: nowrap;
+
+        &:before {
+            font-size: $font-size-base;
+        }
     }
 
     .icon-add:before                   { content: $fa-var-plus-square; }
@@ -141,6 +146,26 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
         padding-left: 20px;
         background-repeat: no-repeat;
         background-position: 0% 50%;
+    }
+
+    .icon-only {
+        padding-left: 16px;
+        background-repeat: no-repeat;
+        background-position: 0% 50%;
+    }
+
+    a.icon-only {
+        display: inline-block;
+        width: 0;
+        height: 16px;
+        padding-top: 0;
+        padding-bottom: 0;
+        overflow: hidden;
+        vertical-align: text-bottom;
+
+        &:after {
+            content: "&nbsp;";
+        }
     }
 
     .icon-add                   { background-image: url("../../../images/add.png"); }
@@ -780,7 +805,6 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 
     .contextual [href*="edit"] {
         @extend %fa-icon;
-        font-size: $font-size-base;
         @include link-variant($icon-success-color, $icon-success-hover-color);
 
         &:before {
@@ -1076,14 +1100,18 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
             }
 
             &:nth-child(2) {
+                @include link-variant($icon-success-color, $icon-success-hover-color);
+
                 &:before {
-                    color: $icon-success-color;
                     content: $fa-var-pencil;
                 }
+            }
 
-                &:hover:before,
-                &:focus:before {
-                    color: $icon-success-hover-color;
+            &:nth-child(3) {
+                @include link-variant($icon-danger-color, $icon-danger-hover-color);
+
+                &:before {
+                    content: $fa-var-trash;
                 }
             }
         }
