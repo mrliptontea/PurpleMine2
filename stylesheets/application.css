@@ -22,12 +22,19 @@
   background-repeat: no-repeat, repeat-x;
   background-position: 20px 5px, 0 0;
   background-size: auto 38px; }
+  @media (max-width: 899px) {
+    #wrapper #header {
+      background-position: 15px 13px;
+      background-color: #D5D5D5; } }
   #wrapper #header h1 {
     color: #333;
     font-size: 1.5em;
     font-weight: normal;
     margin-left: 170px !important;
     border-left: 1px solid #BCBCBC; }
+  @media (max-width: 899px) {
+    #wrapper #header #quick-search {
+      display: none; } }
   #wrapper #header #quick-search,
   #wrapper #header #quick-search a,
   #wrapper #header #quick-search select {

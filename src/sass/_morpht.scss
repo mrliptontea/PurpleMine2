@@ -27,12 +27,21 @@ $brand-primary: #D5D5D5; /* header background color */
     background-repeat: no-repeat, repeat-x;
     background-position: 20px 5px, 0 0;
     background-size: auto 38px;
+    @media (max-width: 899px) {
+      background-position: 15px 13px;
+      background-color: #D5D5D5;
+    }
     h1 {
       color: #333;
       font-size: 1.5em;
       font-weight: normal;
       margin-left: 170px !important;
       border-left: 1px solid #BCBCBC;
+    }
+    #quick-search {
+      @media (max-width: 899px) {
+        display: none;
+      }
     }
     #quick-search,
     #quick-search a,
