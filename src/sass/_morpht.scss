@@ -1,4 +1,4 @@
-/* Header */
+/* Header *********************************************************************/
 
 $brand-primary: #D5D5D5; /* header background color */
 
@@ -28,8 +28,12 @@ $brand-primary: #D5D5D5; /* header background color */
     background-position: 20px 5px, 0 0;
     background-size: auto 38px;
     @media (max-width: 899px) {
-      background-position: 15px 13px;
+      background-position: 15px 13px, 0 0;
       background-color: #D5D5D5;
+    }
+    a.mobile-toggle-button {
+      color: #333;
+      border-left: #ccc;
     }
     h1 {
       color: #333;
@@ -54,7 +58,7 @@ $brand-primary: #D5D5D5; /* header background color */
   }
 }
 
-/* Login */
+/* Login **********************************************************************/
 
 #wrapper {
   .button-login-text {
