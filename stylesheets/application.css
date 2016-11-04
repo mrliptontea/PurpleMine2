@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* Header */
+/* Header *********************************************************************/
 /* header background color */
 #wrapper #top-menu {
   background: #111;
@@ -24,8 +24,11 @@
   background-size: auto 38px; }
   @media (max-width: 899px) {
     #wrapper #header {
-      background-position: 15px 13px;
+      background-position: 15px 13px, 0 0;
       background-color: #D5D5D5; } }
+  #wrapper #header a.mobile-toggle-button {
+    color: #333;
+    border-left: #ccc; }
   #wrapper #header h1 {
     color: #333;
     font-size: 1.5em;
@@ -42,7 +45,7 @@
 #wrapper #header > h1 > .root {
   color: #333; }
 
-/* Login */
+/* Login **********************************************************************/
 #wrapper .button-login-text {
   background-image: none; }
 
