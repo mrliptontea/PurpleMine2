@@ -479,6 +479,15 @@ div.thumbnails {
         }
     }
 
+    .thumbnails {
+        margin: 0;
+        padding: 0 $bubble-padding-horizontal $bubble-padding-vertical;
+
+        img {
+            vertical-align: middle;
+        }
+    }
+
     .wiki,
     form {
         padding: $issue-padding;

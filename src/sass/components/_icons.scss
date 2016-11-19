@@ -25,6 +25,30 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
         }
     }
 
+    @-webkit-keyframes spin {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+        }
+    }
+
+    @keyframes spin {
+        0% {
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+        }
+    }
+
     table.list .buttons > a:before {
         font-size: 14px;
     }
@@ -78,10 +102,6 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
         &:before {
             margin-left: -20px;
         }
-
-        .contextual & {
-            margin-left: .5em;
-        }
     }
 
     .icon-only {
@@ -115,6 +135,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     .icon-time-add:before              { content: $fa-var-clock-o; }
     .icon-stats:before                 { content: $fa-var-line-chart; }
     .icon-warning:before               { content: $fa-var-warning; }
+    .icon-error:before                 { content: $fa-var-exclamation; }
     .icon-fav:before                   { content: $fa-var-star; }
     .icon-fav-off:before               { content: $fa-var-star-o; }
     .icon-reload:before                { content: $fa-var-refresh; }
@@ -137,6 +158,17 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     .icon-facebook:before              { content: $fa-var-facebook-square; }
     .icon-linkedin:before              { content: $fa-var-linkedin-square; }
     .icon-twitter:before               { content: $fa-var-twitter-square; }
+    .icon-magnifier:before             { content: $fa-var-search; }
+    .icon-email:before                 { content: $fa-var-envelope; }
+    .icon-email-disabled:before        { content: $fa-var-envelope-o; }
+    .icon-move-up:before               { content: $fa-var-angle-up; }
+    .icon-move-top:before              { content: $fa-var-angle-double-up; }
+    .icon-move-down:before             { content: $fa-var-angle-down; }
+    .icon-move-bottom:before           { content: $fa-var-angle-double-down; }
+    .icon-ok:before                    { content: $fa-var-check; }
+    .icon-not-ok:before                { content: $fa-var-times; }
+    .icon-link-break:before            { content: $fa-var-chain-broken; }
+    .icon-list:before                  { content: $fa-var-list-ul; }
 }
 @else
 {
@@ -189,6 +221,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     .icon-time-add              { background-image: url("../../../images/time_add.png"); }
     .icon-stats                 { background-image: url("../../../images/stats.png"); }
     .icon-warning               { background-image: url("../../../images/warning.png"); }
+    .icon-error                 { background-image: url("../../../images/exclamation.png"); }
     .icon-fav                   { background-image: url("../../../images/fav.png"); }
     .icon-fav-off               { background-image: url("../../../images/fav_off.png"); }
     .icon-reload                { background-image: url("../../../images/reload.png"); }
@@ -205,6 +238,39 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     .icon-zoom-out              { background-image: url("../../../images/zoom_out.png"); }
     .icon-passwd                { background-image: url("../../../images/textfield_key.png"); }
     .icon-test                  { background-image: url("../../../images/bullet_go.png"); }
+    .icon-magnifier             { background-image: url("../../../images/magnifier.png"); }
+    .icon-email                 { background-image: url("../../../images/email.png"); }
+    .icon-email-disabled        { background-image: url("../../../images/email_disabled.png"); }
+    .icon-move-up               { background-image: url("../../../images/1uparrow.png"); }
+    .icon-move-top              { background-image: url("../../../images/2uparrow.png"); }
+    .icon-move-down             { background-image: url("../../../images/1downarrow.png"); }
+    .icon-move-bottom           { background-image: url("../../../images/2downarrow.png"); }
+    .icon-ok                    { background-image: url("../../../images/true.png"); }
+    .icon-not-ok                { background-image: url("../../../images/false.png"); }
+    .icon-link-break            { background-image: url("../../../images/link_break.png"); }
+    .icon-list                  { background-image: url("../../../images/text_list_bullets.png"); }
+}
+
+
+/**
+ * Checkbox toggler
+ */
+
+@if $use-font-awesome
+{
+    a.toggle-checkboxes {
+        @extend %fa-icon;
+
+        &:before { content: $fa-var-check-square-o; }
+    }
+}
+else
+{
+    a.toggle-checkboxes {
+        margin-left: 5px;
+        padding-left: 12px;
+        background: url("../../../images/toggle_check.png") no-repeat 0% 50%;
+    }
 }
 
 
@@ -442,6 +508,51 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
         .plugins               { background-image: url("../../../images/plugin.png"); }
         .info                  { background-image: url("../../../images/help.png"); }
         .server_authentication { background-image: url("../../../images/server_key.png"); }
+    }
+}
+
+
+/**
+ * Drag-and-drop sorting
+ */
+
+@if $use-font-awesome
+{
+    .sort-handle {
+        @extend %fa-icon;
+        @include link-variant($icon-success-color, $icon-success-hover-color);
+        cursor: move;
+        text-align: center;
+
+        &:before {
+            width: 16px;
+            margin: 0;
+            content: $fa-var-arrows-v;
+        }
+
+        &.ajax-loading {
+            &:before {
+                color: $gray;
+                -webkit-animation: spin 1s linear infinite;
+                animation: spin 1s linear infinite;
+                content: $fa-var-refresh;
+            }
+        }
+    }
+}
+else
+{
+    .sort-handle {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background: url("../../../images/reorder.png") no-repeat 0 50%;
+        vertical-align: middle;
+        cursor: move;
+
+        &.ajax-loading {
+            background-image: url("../../../images/loading.gif");
+        }
     }
 }
 

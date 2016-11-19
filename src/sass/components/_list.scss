@@ -7,17 +7,8 @@ table.list {
     margin-bottom: $line-height-computed;
     font-size: $font-size-list;
 
-    .autoscroll & {
-        margin-bottom: 0;
-    }
-
-    @if $table-list-highlight-rows {
-        > tbody > tr:hover {
-            background-color: $table-bg-hover;
-        }
-    }
-
-    th {
+    th,
+    .table-list-header {
         padding: $table-cell-padding;
         border: 2px solid $table-border-color;
         border-width: $table-list-header-border;
@@ -26,6 +17,22 @@ table.list {
 
         a {
             color: $gray-darker;
+        }
+    }
+
+    tr.ui-sortable-helper {
+        background-color: $highlight-bg;
+    }
+}
+
+table.list {
+    .autoscroll & {
+        margin-bottom: 0;
+    }
+
+    @if $table-list-highlight-rows {
+        > tbody > tr:hover {
+            background-color: $table-bg-hover;
         }
     }
 
@@ -85,6 +92,13 @@ table.list {
             text-align: right;
         }
 
+        &.reorder {
+            white-space: nowrap;
+        }
+    }
+
+    td,
+    div {
         &.buttons {
             text-align: right;
             white-space: nowrap;
@@ -92,10 +106,10 @@ table.list {
             a {
                 padding-right: 5px;
             }
-        }
 
-        &.reorder {
-            white-space: nowrap;
+            img {
+                vertical-align: middle;
+            }
         }
     }
 
@@ -103,6 +117,12 @@ table.list {
         padding: .5em .5em .5em 0;
         text-align: left;
     }
+}
+
+.table-list-cell {
+    display: table-cell;
+    padding: $table-cell-padding;
+    vertical-align: top;
 }
 
 tr.project {
@@ -571,6 +591,7 @@ table.files {
         }
     }
 }
+
 
 /**
  * Admin lists
