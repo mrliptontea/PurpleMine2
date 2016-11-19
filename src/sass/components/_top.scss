@@ -307,6 +307,7 @@
                     color: $icon-success-color;
                     font-size: 2em;
                     font-weight: bold;
+                    text-align: center;
 
                     &:hover,
                     &:focus {
@@ -359,8 +360,17 @@
     }
 
     .tabs-buttons {
+        display: none !important;
+        padding-left: 0;
+        background-color: $main-menu-bg;
+
         > button {
             height: $main-menu-padding-vertical * 2 + $line-height-computed - 1px;
+            background-color: $main-menu-bg;
         }
+    }
+
+    ul + .tabs-buttons {
+        display: block !important;
     }
 }
