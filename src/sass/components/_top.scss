@@ -331,7 +331,7 @@
         background: $main-menu-dropdown-bg;
         list-style: none;
         overflow: hidden;
-        z-index: 99;
+        z-index: 1001;
         @include nice-shadow(2);
 
         &.visible {
