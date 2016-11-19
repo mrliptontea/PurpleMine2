@@ -323,7 +323,7 @@ label.block {
 }
 
 fieldset > p > label:first-child {
-    margin-right: $padding-base-horizontal;
+    margin-right: $label-space;
 }
 
 
@@ -412,6 +412,18 @@ select.bool_cf {
 
 .jstEditor {
     margin-bottom: $line-height-computed / 2;
+}
+
+/**
+ * User form
+ */
+#user_form {
+    @extend %clearfix;
+    margin-bottom: $line-height-computed;
+
+    ~ p {
+        margin-bottom: 0;
+    }
 }
 
 
