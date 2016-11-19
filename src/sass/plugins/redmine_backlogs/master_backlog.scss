@@ -525,7 +525,7 @@ $story-sp-input-width:          50px;
         }
 
         .fff-left > .project,
-        .fff-wrapmiddle > .subject,
+        .fff-wrapmiddle > .fff-middle,
         .fff-right > .status_id,
         .fff-right > .story_points {
             min-height: floor(.92 * $font-size-base * $line-height-base);
@@ -546,9 +546,12 @@ $story-sp-input-width:          50px;
             }
         }
 
+        .fff-middle {
+            padding: $table-condensed-cell-padding 0;
+        }
+
         .subject {
             @include text-overflow;
-            padding: $table-condensed-cell-padding 0;
         }
 
         &.closed .subject {
