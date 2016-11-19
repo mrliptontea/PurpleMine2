@@ -75,6 +75,8 @@ Latest (master):
 * Fixed #34: project breadcrumbs in the header should wrap nicely
 * Fixed #35: `.icon-only` class should now display only icons, buttons with icons should de displayed correctly with Font-Awesome disabled
 * Fixed #36: npm dependencies can be installed on production environments + update grunt to its latest version
+* Fixed #37: added support for drag'n'drop re-ordering in issue statuses, roles, and trackers settings
+* Fixed #38: corrected z-index for dropdown new item menu on backlogs page (thanks to @futaz, see PR #39)
 
 v1.7.2 (2015-10-12):
 
