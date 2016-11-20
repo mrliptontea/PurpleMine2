@@ -2,7 +2,7 @@
 
 A free Redmine theme for modern browsers.
 
-![The MIT License](https://img.shields.io/badge/license-MIT-584492.svg?style=flat-square) [![Release](https://img.shields.io/github/release/mrliptontea/PurpleMine2.svg?style=flat-square)](https://github.com/mrliptontea/PurpleMine2/releases) [![Issues](https://img.shields.io/github/issues/mrliptontea/PurpleMine2.svg?style=flat-square)](https://github.com/mrliptontea/PurpleMine2/issues)
+![The MIT License](https://img.shields.io/badge/license-MIT-584492.svg?style=flat-square) [![Release](https://img.shields.io/github/release/mrliptontea/PurpleMine2.svg?style=flat-square)](https://github.com/mrliptontea/PurpleMine2/releases) [![Issues](https://img.shields.io/github/issues/mrliptontea/PurpleMine2.svg?style=flat-square)](https://github.com/mrliptontea/PurpleMine2/issues) [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 ---
 
@@ -60,7 +60,7 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
-Latest (master):
+v1.8.0 (2016-11-20):
 
 * Fixed #19: missing text wrapping for long text custom fields
 * Fixed #20: applied Font Awesome font-family for icons in Time Tracker overview
@@ -77,6 +77,10 @@ Latest (master):
 * Fixed #36: npm dependencies can be installed on production environments + update grunt to its latest version
 * Fixed #37: added support for drag'n'drop re-ordering in issue statuses, roles, and trackers settings
 * Fixed #38: corrected z-index for dropdown new item menu on backlogs page (thanks to @futaz, see PR #39)
+* Changed indentation to 2 spaces (to match with Redmine's coding style)
+* Introduced [autoprefixer](https://github.com/postcss/autoprefixer) via [PostCSS](http://postcss.org)
+* Updated [scss-lint](https://github.com/brigade/scss-lint) rules
+* Added [JavaScript Standard Style](http://standardjs.com)
 
 v1.7.2 (2015-10-12):
 
