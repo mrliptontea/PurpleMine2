@@ -8,6 +8,15 @@
   }
 }
 
+// Placeholder text
+//
+@mixin placeholder($color: $input-color-placeholder) {
+  &::placeholder {
+    color: $color;
+    opacity: 1; // See https://github.com/twbs/bootstrap/pull/11526
+  }
+}
+
 
 // Form control sizing
 //
@@ -32,9 +41,9 @@
 }
 
 @mixin checkbox() {
-  padding-left: 20px;
-  @include user-select(none);
   @extend %clearfix;
+  padding-left: 20px;
+  user-select: none;
 
   input[type="checkbox"] {
     margin-left: -20px;

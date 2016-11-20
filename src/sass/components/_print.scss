@@ -20,13 +20,12 @@
   }
 
   #content {
-    // scss-lint:disable ImportantRule
     width: 100%;
     margin: 0;
     padding: 0;
     border: 0;
     background: #fff;
-    overflow: visible !important;
+    overflow: visible !important; // scss-lint:disable ImportantRule
   }
 
   .autoscroll {

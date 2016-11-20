@@ -14,18 +14,13 @@
   }
 
   > ul {
-    // scss-lint:disable VendorPrefix
     margin: 0;
     padding-left: 0;
     border-bottom: 1px solid $tab-border;
     list-style: none;
 
     @if $flexbox-layout {
-      display: -ms-flexbox;
-      display: -webkit-flex;
       display: flex;
-      -webkit-flex-wrap: nowrap;
-      -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
       height: $line-height-computed + $tab-padding-vertical * 2 + 1px;
     } @else {
@@ -37,8 +32,6 @@
       margin-bottom: -1px;
 
       @if $flexbox-layout {
-        -webkit-flex: 0 1 auto;
-        -ms-flex: 0 1 auto;
         flex: 0 1 auto;
       } @else {
         float: left;
@@ -85,6 +78,7 @@
       margin: 0;
       padding: 0;
       float: left;
+      transition: opacity .1s;
       border: 0 none;
       border-radius: 0;
       background-color: $body-bg;
@@ -92,7 +86,6 @@
       background-position: center center;
       box-shadow: none;
       opacity: .8;
-      @include transition(opacity .1s);
 
       &:hover,
       &:active {
@@ -140,9 +133,9 @@
     }
 
     label {
+      @include checkbox;
       display: block;
       margin-bottom: 3px;
-      @include checkbox;
     }
 
     label[for=principal_search] {

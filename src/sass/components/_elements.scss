@@ -10,7 +10,7 @@ a.collapsible,
 .collapsible > legend {
   color: $link-color;
   cursor: pointer;
-  @include user-select(none);
+  user-select: none;
 
   &:hover {
     color: $link-hover-color;
@@ -23,15 +23,15 @@ a.collapsible,
     width: 0;
     height: 0;
     margin-right: 3px;
+    transform: rotate(0);
     border-top:   6px solid;
     border-right: 4px solid transparent;
     border-left:  4px solid transparent;
     content: "";
     vertical-align: middle;
-    @include rotate(0);
 
     @if $collapsible-animation-time > 0 {
-      @include transition-transform($collapsible-animation-time);
+      transition: transform $collapsible-animation-time;
     }
   }
 }
@@ -39,7 +39,7 @@ a.collapsible,
 a.collapsible.collapsed,
 .collapsible.collapsed > legend {
   &::before {
-    @include rotate(-90deg);
+    transform: rotate(-90deg);
   }
 }
 
@@ -47,25 +47,24 @@ a.collapsible.collapsed,
   fieldset.collapsible {
     min-height: $line-height-computed;
     max-height: 2500px; // should be enough with all the possible filters
+    transition: max-height $collapsible-animation-time ease-out;
     overflow: hidden;
-    @include transition(max-height $collapsible-animation-time ease-out);
 
     > div {
-      // scss-lint:disable ImportantRule
-      display: block !important;
+      display: block !important; // scss-lint:disable ImportantRule
+      transition: visibility 0s 0s, opacity $collapsible-animation-time;
       opacity: 1;
       visibility: visible;
-      @include transition(visibility 0s 0s, opacity $collapsible-animation-time);
     }
 
     &.collapsed {
       max-height: 0;
-      @include transition(max-height $collapsible-animation-time);
+      transition: max-height $collapsible-animation-time;
 
       > div {
+        transition: visibility 0s $collapsible-animation-time, opacity $collapsible-animation-time;
         opacity: 0;
         visibility: hidden;
-        @include transition(visibility 0s $collapsible-animation-time, opacity $collapsible-animation-time);
       }
     }
   }
@@ -165,7 +164,7 @@ a.collapsible.collapsed,
 .splitcontentleft,
 .splitcontentright {
   width: 50%;
-  @include box-sizing(border-box);
+  box-sizing: border-box;
 }
 
 .splitcontentleft {
@@ -187,8 +186,8 @@ a.collapsible.collapsed,
   overflow: auto;
 
   label {
-    display: block;
     @include checkbox;
+    display: block;
   }
 }
 
@@ -204,9 +203,9 @@ a.collapsible.collapsed,
 
   > .watchers {
     > li {
+      @extend %clearfix;
       display: block;
       margin-bottom: $sidebar-padding-vertical;
-      @extend %clearfix;
 
       @if $sidebar-position == "left" {
         padding-right: $sidebar-padding-horizontal;
@@ -283,15 +282,14 @@ p.subtitle {
   }
 
   &.ui-sortable-placeholder {
-    // scss-lint:disable ImportantRule
     outline: 1px dashed $highlight-border;
     background: $highlight-bg;
-    visibility: visible !important;
+    visibility: visible !important; // scss-lint:disable ImportantRule
   }
 
   &.ui-sortable-helper {
-    background: $body-bg;
     @include nice-shadow(4);
+    background: $body-bg;
   }
 }
 
@@ -561,6 +559,7 @@ div#version-summary {
 //
 
 #ajax-indicator {
+  @include nice-shadow(3);
   position: fixed;
   top: 50%;
   left: 50%;
@@ -572,7 +571,6 @@ div#version-summary {
   color: $highlight-text;
   font-weight: $font-weight-bold;
   text-align: center;
-  @include nice-shadow(3);
   opacity: .9;
   z-index: 100;
 

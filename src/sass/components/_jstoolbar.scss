@@ -45,11 +45,11 @@
 @if $use-font-awesome {
   .jstElements {
     %jstb-icon {
+      @include fa-icon;
       padding: 0;
       background: $body-bg;
       background-image: none;
       color: $btn-default-color;
-      @include fa-icon();
 
       &::before {
         text-align: center;

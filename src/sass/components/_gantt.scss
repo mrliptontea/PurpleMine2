@@ -20,9 +20,9 @@
   font-size: $font-size-small;
 
   div {
+    @include text-overflow;
     height: 16px;
     line-height: 16px;
-    @include text-overflow;
   }
 }
 
@@ -143,6 +143,7 @@
   }
 
   .tip {
+    @include nice-shadow(3);
     display: none;
     position: absolute;
     top: 9px;
@@ -154,7 +155,6 @@
     color: $tooltip-text;
     font-size: $font-size-small;
     text-align: left;
-    @include nice-shadow(3);
   }
 
   @if $sidebar-position == "left" {

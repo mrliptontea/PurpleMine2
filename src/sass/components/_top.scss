@@ -3,12 +3,12 @@
 // --------------------------------------------------
 
 #top-menu {
+  @extend %clearfix;
   position: relative;
   padding: $padding-small-vertical $padding-side;
   background: $top-menu-bg;
   color: $top-menu-text;
   font-size: $font-size-small;
-  @extend %clearfix;
 
   @if $top-menu-collapse {
     $toggler-position-v:    $padding-small-vertical + 1px;
@@ -37,7 +37,7 @@
       } @else {
         right: $toggler-position-h;
       }
-      @include user-select(none);
+      user-select: none;
 
       @if $use-font-awesome {
         font-size: 14px;
@@ -136,10 +136,10 @@
 // --------------------------------------------------
 
 #header {
+  @extend %clearfix;
   position: relative;
   background-color: $header-bg;
   color: $header-text;
-  @extend %clearfix;
 
   > h1 {
     padding: $header-padding-vertical $header-padding-horizontal;
@@ -196,10 +196,12 @@
   input,
   select {
     margin-left: 5px;
+    transition: color ease-in-out .1s,
+                background-color ease-in-out .1s,
+                border-color ease-in-out .1s;
     border-color: darken($header-bg, 15%);
     background: darken($header-bg, 10%);
     color: $header-root;
-    @include transition(color ease-in-out .1s, background-color ease-in-out .1s, border-color ease-in-out .1s);
 
     &:focus {
       border-color: darken($header-bg, 35%);
@@ -247,11 +249,11 @@
   }
 
   > ul {
+    @extend %clearfix;
     margin: 0;
     padding: 0 ($padding-side - $main-menu-padding-horizontal);
     color: $main-menu-link;
     list-style: none;
-    @extend %clearfix;
 
     > li {
       position: relative;
@@ -272,10 +274,10 @@
       > a {
         display: block;
         padding: $main-menu-padding-vertical $main-menu-padding-horizontal;
+        transition: box-shadow .15s;
         color: $main-menu-link;
         line-height: $line-height-computed;
         white-space: nowrap;
-        @include transition(box-shadow .15s);
 
         @media screen and (min-width: $screen-lg-min) {
           padding-right: $main-menu-padding-horizontal * 2;
@@ -323,6 +325,7 @@
   }
 
   .menu-children {
+    @include nice-shadow(2);
     display: none;
     position: absolute;
     min-width: 130px;
@@ -333,7 +336,6 @@
     list-style: none;
     overflow: hidden;
     z-index: 1001;
-    @include nice-shadow(2);
 
     &.visible {
       display: block;
@@ -360,8 +362,7 @@
   }
 
   .tabs-buttons {
-    // scss-lint:disable ImportantRule
-    display: none !important;
+    display: none !important; // scss-lint:disable ImportantRule
     padding-left: 0;
     background-color: $main-menu-bg;
 
@@ -372,7 +373,6 @@
   }
 
   ul + .tabs-buttons {
-    // scss-lint:disable ImportantRule
-    display: block !important;
+    display: block !important; // scss-lint:disable ImportantRule
   }
 }

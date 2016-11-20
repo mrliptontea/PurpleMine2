@@ -590,10 +590,10 @@ span.private {
     }
 
     > p {
+      @include clearfix;
       margin: 0;
       padding: $padding-base-vertical $padding-base-horizontal;
       color: $gray;
-      @include clearfix;
 
       > a {
         margin-left: .5em;

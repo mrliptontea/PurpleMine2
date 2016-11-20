@@ -140,7 +140,6 @@ div.wiki {
   }
 
   a {
-    // scss-lint:disable DuplicateProperty
     word-break: break-all;
     word-break: break-word;
   }
@@ -166,7 +165,6 @@ div.wiki {
   }
 
   table {
-    // scss-lint:disable DuplicateProperty
     display: block;
     width: 100%;
     margin-bottom: $line-height-computed;
@@ -321,14 +319,13 @@ h4,
 h5,
 h6 {
   .wiki-anchor {
-    // scss-lint:disable ImportantRule
     display: none;
     position: relative;
     top: -(1em - $font-size-small);
     margin-left: 5px;
-    color: $headings-anchor-color !important;
+    color: $headings-anchor-color !important; // scss-lint:disable ImportantRule
     font-size: $font-size-small;
-    text-decoration: none !important;
+    text-decoration: none !important; // scss-lint:disable ImportantRule
   }
 
   &:hover {

@@ -24,10 +24,12 @@ linters:
     enabled: true
 
   DeclarationOrder:
-    enabled: false
+    enabled: true
 
   DuplicateProperty:
     enabled: true
+    ignore_consecutive:
+      - word-break
 
   ElsePlacement:
     enabled: true
@@ -167,6 +169,9 @@ linters:
     enabled: true
 
   UrlQuotes:
+    enabled: true
+
+  VendorPrefix:
     enabled: true
 
   ZeroUnit:

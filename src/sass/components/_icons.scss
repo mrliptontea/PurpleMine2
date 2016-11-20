@@ -8,7 +8,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 @if $use-font-awesome {
   %fa-icon {
     &::before {
-      @include fa-icon();
+      @include fa-icon;
       margin-right: $padding-small-vertical;
     }
   }
@@ -25,26 +25,12 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     }
   }
 
-  @-webkit-keyframes spin {
-    0% {
-      -webkit-transform: rotate(0deg);
-      transform: rotate(0deg);
-    }
-
-    100% {
-      -webkit-transform: rotate(359deg);
-      transform: rotate(359deg);
-    }
-  }
-
   @keyframes spin {
     0% {
-      -webkit-transform: rotate(0deg);
       transform: rotate(0deg);
     }
 
     100% {
-      -webkit-transform: rotate(359deg);
       transform: rotate(359deg);
     }
   }
@@ -61,9 +47,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 #context-menu {
   > ul,
   > ul > li > ul {
-    // scss-lint:disable ImportantRule
-    border: 0 none !important;
     @include nice-shadow(2);
+    border: 0 none !important; // scss-lint:disable ImportantRule
   }
 
   @if $use-font-awesome {
@@ -516,7 +501,6 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     &.ajax-loading {
       &::before {
         color: $gray;
-        -webkit-animation: spin 1s linear infinite;
         animation: spin 1s linear infinite;
         content: $fa-var-refresh;
       }
@@ -692,11 +676,11 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   }
 
   #main a.close-icon {
+    @extend %fa-icon;
     width: auto;
     height: auto;
     background: transparent;
     color: $icon-danger-color;
-    @extend %fa-icon;
 
     &:hover,
     &:focus {
@@ -754,10 +738,10 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   }
 
   a.remove-upload {
+    @extend %fa-icon;
     color: $icon-danger-color;
     text-align: center;
     opacity: .75;
-    @extend %fa-icon;
 
     &:hover,
     &:focus {
@@ -781,8 +765,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 
   .message .contextual {
     a {
-      opacity: .5;
       @extend %fa-icon;
+      opacity: .5;
 
       &:hover,
       &:focus {
@@ -1033,8 +1017,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     background: url("../../../images/delete.png") no-repeat 1px 50%;
 
     &:hover {
-      // scss-lint:disable ImportantRule
-      text-decoration: none !important;
+      text-decoration: none !important; // scss-lint:disable ImportantRule
     }
   }
 
@@ -1215,13 +1198,13 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   // jQuery UI datepicker trigger button
 
   img.ui-datepicker-trigger {
+    @extend %image-calendar;
     position: relative;
     top: -1px;
     width: 14px;
     height: 14px;
     padding-left: 14px;
     box-sizing: border-box;
-    @extend %image-calendar;
     background-repeat: no-repeat;
   }
 

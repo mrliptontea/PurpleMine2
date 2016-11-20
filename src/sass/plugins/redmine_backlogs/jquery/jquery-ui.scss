@@ -1,4 +1,4 @@
-// scss-lint:disable Comment ImportantRule
+// scss-lint:disable Comment
 @import "../common";
 
 /*
@@ -66,7 +66,7 @@
 ----------------------------------*/
 
 .ui-state-disabled {
-  cursor: default !important;
+  cursor: default !important; // scss-lint:disable ImportantRule
 }
 
 /* Icons
@@ -631,7 +631,7 @@
   }
 
   .ui-accordion-header-active {
-    border-bottom: 0 !important;
+    border-bottom: 0 !important; // scss-lint:disable ImportantRule
   }
 
   .ui-accordion-header a {
@@ -694,11 +694,11 @@
 ----------------------------------*/
 
 .ui-menu {
+  @include nice-shadow(2);
   display: block;
   margin: 0;
   padding: 2px;
   list-style: none;
-  @include nice-shadow(2);
 
   .ui-menu {
     margin-top: -3px;
@@ -732,7 +732,7 @@
   margin-right: .1em;
   padding: 0;
   text-align: center;
-  text-decoration: none !important;
+  text-decoration: none !important; // scss-lint:disable ImportantRule
   cursor: pointer;
   overflow: visible;
   zoom: 1;
@@ -1006,7 +1006,7 @@ button.ui-button::-moz-focus-inner {
       margin: 0 .2em 1px 0;
       padding: 0;
       float: left;
-      border-bottom: 0 !important;
+      border-bottom: 0 !important; // scss-lint:disable ImportantRule
       list-style: none;
       white-space: nowrap;
 
@@ -1048,7 +1048,7 @@ button.ui-button::-moz-focus-inner {
   }
 
   .ui-tabs-hide {
-    display: none !important;
+    display: none !important; // scss-lint:disable ImportantRule
   }
 }
 
@@ -1060,13 +1060,13 @@ button.ui-button::-moz-focus-inner {
 ----------------------------------*/
 
 .ui-datepicker {
+  @include nice-shadow(3);
   width: 16em;
   padding: .3em .6em .6em;
   border: 0 none;
   background: $body-bg;
   color: $text-color;
   font-size: $font-size-base;
-  @include nice-shadow(3);
 
   .ui-datepicker-header {
     position: relative;
@@ -1251,9 +1251,9 @@ button.ui-button::-moz-focus-inner {
   }
 
   .ui-datepicker-buttonpane {
+    @include clearfix;
     margin: .6em 0 0;
     padding: .6em 0 0;
-    @include clearfix;
 
     button {
       margin: 0;

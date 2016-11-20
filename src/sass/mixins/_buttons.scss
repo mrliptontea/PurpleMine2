@@ -50,9 +50,9 @@
   }
 
   &:active {
+    transform: translate(0, 1px);
     border-color: $active-border;
     background-color: $active-bg;
     box-shadow: $active-shadow;
-    @include translate(0, 1px);
   }
 }

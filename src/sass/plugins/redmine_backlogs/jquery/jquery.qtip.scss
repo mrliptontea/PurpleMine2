@@ -10,6 +10,7 @@
 }
 
 .ui-tooltip-content {
+  @include nice-shadow(2);
   position: relative;
   padding: 10px;
   border: 1px solid $tooltip-border;
@@ -18,7 +19,6 @@
   font-size: $font-size-list;
   text-align: left;
   word-wrap: break-word;
-  @include nice-shadow(2);
   overflow: hidden;
 }
 

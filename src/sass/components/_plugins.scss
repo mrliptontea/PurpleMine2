@@ -43,8 +43,8 @@
 
 @if $use-font-awesome {
   .tt_list_button {
-    font-size: 14px;
     @extend %fa-icon;
+    font-size: 14px;
   }
 
   .icon,

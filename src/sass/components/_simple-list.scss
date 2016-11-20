@@ -105,9 +105,9 @@
   }
 
   label {
+    @include checkbox;
     display: inline-block;
     margin-right: 5px;
-    @include checkbox;
   }
 
   p:last-child {

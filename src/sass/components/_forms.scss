@@ -19,7 +19,7 @@ textarea {
   font-family: inherit;
   font-size: $font-size-base;
   line-height: $line-height-base;
-  @include box-sizing(border-box);
+  box-sizing: border-box;
 }
 
 select,
@@ -38,16 +38,16 @@ input[type="search"],
 input[type="email"],
 input[type="text"],
 input[type="password"] {
+  @include form-control-focus;
+  @include placeholder;
   height: $input-height-base;
   padding: $input-padding-vertical $input-padding-horizontal;
+  transition: border-color ease-in-out .1s, box-shadow ease-in-out .1s;
   border: 1px solid $input-border;
   border-radius: $input-border-radius;
   background-color: $input-bg;
   color: $input-color;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075);
-  @include transition(border-color ease-in-out .1s, box-shadow ease-in-out .1s);
-  @include form-control-focus();
-  @include placeholder();
 
   &[disabled],
   &[readonly],
@@ -91,8 +91,8 @@ input[type="range"] {
 
 input {
   &.autocomplete {
-    padding-right: 30px;
     @extend %image-aci;
+    padding-right: 30px;
     background-repeat: no-repeat;
     background-position: right center;
 
@@ -126,8 +126,7 @@ select {
   }
 
   &.bool_cf {
-    // scss-lint:disable ImportantRule
-    width: auto !important;
+    width: auto !important; // scss-lint:disable ImportantRule
   }
 }
 
@@ -246,10 +245,10 @@ em.info {
   }
 
   p {
+    @extend %clearfix;
     margin: 0 0 ($line-height-computed / 2);
     padding-left: $label-width + $label-space;
     clear: left;
-    @extend %clearfix;
 
     .jstEditor {
       margin-bottom: 0;
@@ -285,7 +284,7 @@ em.info {
     margin-left: -($label-width + $label-space);
     float: left;
     text-align: right;
-    @include user-select(none);
+    user-select: none;
 
     &.floating {
       width: 270px;
@@ -359,9 +358,9 @@ label[for=issue_description] + a {
 //
 
 label[for=closed] {
+  @include checkbox;
   display: block;
   margin-bottom: $line-height-computed / 2;
-  @include checkbox;
 }
 
 
@@ -523,8 +522,7 @@ label[for=closed] {
 
 #issue_is_private_wrap,
 #all_attributes > p[style] {
-  // scss-lint:disable ImportantRule
-  margin-right: 0 !important;
+  margin-right: 0 !important; // scss-lint:disable ImportantRule
   margin-bottom: 0;
   padding-left: 0;
   float: right;
@@ -547,24 +545,21 @@ label[for=closed] {
     display: block;
   }
 
-  // scss-lint:disable VendorPrefix
   #watchers_inputs {
     display: block;
     max-width: 64em;
     margin-top: $input-padding-vertical + 1px;
     margin-bottom: $line-height-computed / 2;
-    -webkit-columns: 18em 3;
-       -moz-columns: 18em 3;
-            columns: 18em 3;
+    columns: 18em 3;
     overflow: auto;
   }
 
   label.floating {
+    @include checkbox;
     display: block;
     width: auto;
     margin: 0;
     float: none;
-    @include checkbox;
 
     input[type="checkbox"] {
       top: -1px;
@@ -592,11 +587,11 @@ label[for=closed] {
 
   &.bool_cf {
     label {
+      @extend %clearfix;
       display: inline-block;
       margin-right: 10px;
       padding-left: 20px;
-      @include user-select(none);
-      @extend %clearfix;
+      user-select: none;
 
       input[type="checkbox"],
       input[type="radio"] {

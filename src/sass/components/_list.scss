@@ -136,8 +136,8 @@ tr.project {
   }
 
   &.idnt .name span {
-    padding-left: 16px;
     @extend %image-arrow-right;
+    padding-left: 16px;
     background-repeat: no-repeat;
     background-position: -5px 50%;
   }
@@ -170,8 +170,8 @@ tr.issue {
   }
 
   &.idnt .subject a {
-    padding-left: 10px;
     @extend %image-arrow-right;
+    padding-left: 10px;
     background-repeat: no-repeat;
     background-position: -5px 0;
   }
@@ -215,13 +215,13 @@ tr.issue {
 
 tr {
   span.expander {
+    @extend %image-toggle-plus;
     margin-left: 0;
     padding-left: 8px;
-    @extend %image-toggle-plus;
     background-repeat: no-repeat;
     background-position: center center;
     cursor: pointer;
-    @include user-select(none);
+    user-select: none;
   }
 
   &.open span.expander {
@@ -283,8 +283,8 @@ tr.entry {
 //== Priorities
 //
 
-// scss-lint:disable SpaceAfterComma
 @if $color-priorities {
+  // scss-lint:disable SpaceAfterComma
   @include priority(".priority-lowest",  $priority-lowest-bg,  $priority-lowest-text,  $priority-lowest-link);
   @include priority(".priority-default", $priority-default-bg, $priority-default-text, $priority-default-link);
   @include priority(".priority-high3",   $priority-high3-bg,   $priority-high3-text,   $priority-high3-link);
@@ -330,10 +330,10 @@ tr.entry {
         bottom: 0;
         left: 5px;
         height: calc(50% - 2px/2);
+        transform: rotate(-4deg);
+        transition: border-color .1s;
         border-top: 2px solid rgba($tracker-default-text, .95);
         content: "";
-        @include rotate(-4deg);
-        @include transition(border-color .1s);
       }
 
       &:hover::after {

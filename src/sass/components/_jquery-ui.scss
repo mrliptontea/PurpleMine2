@@ -135,9 +135,9 @@
 //
 
 .ui-menu {
+  @include nice-shadow(2);
   padding: 3px;
   border-radius: $panel-border-radius;
-  @include nice-shadow(2);
 }
 
 .ui-menu-item {
@@ -164,9 +164,9 @@
 
 .ui-dialog {
   &.ui-widget-content {
+    @include nice-shadow(5);
     padding: 3px;
     border: 0 none;
-    @include nice-shadow(5);
   }
 
   .ui-dialog-content {
@@ -197,9 +197,9 @@ img.ui-datepicker-trigger {
 }
 
 .ui-datepicker {
+  @include nice-shadow(3);
   padding: .3em .6em .6em;
   border: 0 none;
-  @include nice-shadow(3);
 
   .ui-datepicker-header {
     margin: 0 -.3em;
@@ -288,9 +288,9 @@ img.ui-datepicker-trigger {
   }
 
   .ui-datepicker-buttonpane {
+    @include clearfix;
     margin: .6em 0 0;
     padding: .6em 0 0;
-    @include clearfix;
 
     button {
       margin: 0;
