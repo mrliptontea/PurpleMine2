@@ -4,81 +4,81 @@
 
 
 table.cal {
-    width: 100%;
-    margin-bottom: $line-height-computed;
+  width: 100%;
+  margin-bottom: $line-height-computed;
+  border: 1px solid $table-border-color;
+
+  thead th {
+    width: 14%;
+    padding: $table-condensed-cell-padding;
+    background-color: $table-bg-hover;
+
+    &.week-number {
+      width: auto;
+    }
+  }
+
+  tbody tr {
+    height: 100px;
+  }
+
+  td {
+    padding: $table-condensed-cell-padding;
     border: 1px solid $table-border-color;
+    font-size: $font-size-small;
+    vertical-align: top;
 
-    thead th {
-        width: 14%;
-        padding: $table-condensed-cell-padding;
-        background-color: $table-bg-hover;
-
-        &.week-number {
-            width: auto;
-        }
+    &.week-number {
+      border: 0 none;
+      background-color: $table-bg-hover;
+      font-size: 1em;
+      text-align: right;
     }
 
-    tbody tr {
-        height: 100px;
+    p.day-num {
+      float: right;
+      font-size: $font-size-large;
+      text-align: right;
     }
 
-    td {
-        padding: $table-condensed-cell-padding;
-        border: 1px solid $table-border-color;
-        font-size: $font-size-small;
-        vertical-align: top;
-
-        &.week-number {
-            border: 0 none;
-            background-color: $table-bg-hover;
-            font-size: 1em;
-            text-align: right;
-        }
-
-        p.day-num {
-            float: right;
-            font-size: $font-size-large;
-            text-align: right;
-        }
-
-        &.odd p.day-num {
-            color: $gray-light;
-        }
-
-        &.today {
-            background: $highlight-bg;
-
-            p.day-num {
-                font-weight: $font-weight-bold;
-            }
-        }
+    &.odd p.day-num {
+      color: $gray-light;
     }
+
+    &.today {
+      background: $highlight-bg;
+
+      p.day-num {
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
 }
 
 table.cal .starting a,
 p.cal.legend .starting,
 table.cal .ending a,
 p.cal.legend .ending {
-    padding-left: 20px;
-    background-image: url("../../../images/bullet_go.png");
-    background-repeat: no-repeat;
-    background-position: 0 center;
+  padding-left: 20px;
+  background-image: url("../../../images/bullet_go.png");
+  background-repeat: no-repeat;
+  background-position: 0 center;
 }
 
 table.cal .ending a,
 p.cal.legend .ending {
-    padding-left: 20px;
-    background-image: url("../../../images/bullet_end.png");
+  padding-left: 20px;
+  background-image: url("../../../images/bullet_end.png");
 }
 
 table.cal .starting.ending a,
 p.cal.legend .starting.ending {
-    padding-left: 20px;
-    background-image: url("../../../images/bullet_diamond.png");
+  padding-left: 20px;
+  background-image: url("../../../images/bullet_diamond.png");
 }
 
 p.cal.legend {
-    span {
-        display: block;
-    }
+  span {
+    display: block;
+  }
 }

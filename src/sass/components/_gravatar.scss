@@ -3,18 +3,18 @@
 // --------------------------------------------------
 
 img.gravatar {
-    border-radius: $border-radius-large;
-    line-height: 1;
-    overflow: hidden;
-    vertical-align: middle;
+  border-radius: $border-radius-large;
+  line-height: 1;
+  overflow: hidden;
+  vertical-align: middle;
 
-    h2 &,
-    h3 &,
-    h4 & {
-        position: relative;
-        top: -1px;
-        margin-right: 5px;
-    }
+  h2 &,
+  h3 &,
+  h4 & {
+    position: relative;
+    top: -1px;
+    margin-right: 5px;
+  }
 }
 
 
@@ -22,16 +22,16 @@ img.gravatar {
 //
 
 .username img.gravatar {
-    position: relative;
-    top: 1px;
-    margin-right: .5em;
-    vertical-align: top;
+  position: relative;
+  top: 1px;
+  margin-right: .5em;
+  vertical-align: top;
 }
 
 //== Gravatar
 //   Used on 12px Gravatar img tags without the icon background
 
 .icon-gravatar {
-    margin-right: 5px;
-    float: left;
+  margin-right: 5px;
+  float: left;
 }

@@ -1,63 +1,63 @@
 @import "common";
 
 table {
-    th,
-    td {
-        padding: $table-condensed-cell-padding $table-cell-padding;
-    }
+  th,
+  td {
+    padding: $table-condensed-cell-padding $table-cell-padding;
+  }
 }
 
 .ui-widget {
-    margin-bottom: $line-height-computed;
+  margin-bottom: $line-height-computed;
 }
 
 .score {
-    display: inline-block;
-    width: 1.5em;
-    font-size: large;
-    text-align: center;
+  display: inline-block;
+  width: 1.5em;
+  font-size: large;
+  text-align: center;
 }
 
 .score_0 {
-    background-color: #f00;
+  background-color: #f00;
 }
 
 .score_1 {
-    background-color: #ff5300;
+  background-color: #ff5300;
 }
 
 .score_2 {
-    background-color: #ff8100;
+  background-color: #ff8100;
 }
 
 .score_3 {
-    background-color: #ffa100;
+  background-color: #ffa100;
 }
 
 .score_4 {
-    background-color: #fb0;
+  background-color: #fb0;
 }
 
 .score_5 {
-    background-color: #ffd300;
+  background-color: #ffd300;
 }
 
 .score_6 {
-    background-color: #ffec00;
+  background-color: #ffec00;
 }
 
 .score_7 {
-    background-color: #e9fb00;
+  background-color: #e9fb00;
 }
 
 .score_8 {
-    background-color: #b1f100;
+  background-color: #b1f100;
 }
 
 .score_9 {
-    background-color: #74e600;
+  background-color: #74e600;
 }
 
 .score_10 {
-    background-color: #0c0;
+  background-color: #0c0;
 }

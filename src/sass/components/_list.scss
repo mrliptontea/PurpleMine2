@@ -3,280 +3,280 @@
 // --------------------------------------------------
 
 table.list {
-    width: 100%;
-    margin-bottom: $line-height-computed;
-    font-size: $font-size-list;
+  width: 100%;
+  margin-bottom: $line-height-computed;
+  font-size: $font-size-list;
 
-    .autoscroll & {
-        margin-bottom: 0;
+  .autoscroll & {
+    margin-bottom: 0;
+  }
+
+  th,
+  .table-list-header {
+    padding: $table-cell-padding;
+    border: 2px solid $table-border-color;
+    border-width: $table-list-header-border;
+    color: $gray;
+    vertical-align: bottom;
+
+    a {
+      color: $gray-darker;
+    }
+  }
+
+  tr.ui-sortable-helper {
+    background-color: $highlight-bg;
+  }
+
+  @if $table-list-highlight-rows {
+    > tbody > tr:hover {
+      background-color: $table-bg-hover;
+    }
+  }
+
+  td {
+    padding: $table-cell-padding;
+    border: 1px solid $table-border-color;
+    border-width: $table-list-item-border;
+    text-align: center;
+    vertical-align: top;
+
+    &.checkbox {
+      width: 15px;
+      padding: $table-cell-padding 0 0;
+
+      input {
+        margin: 2px 0 0;
+      }
     }
 
-    th,
-    .table-list-header {
-        padding: $table-cell-padding;
-        border: 2px solid $table-border-color;
-        border-width: $table-list-header-border;
-        color: $gray;
-        vertical-align: bottom;
-
-        a {
-            color: $gray-darker;
-        }
+    &.id,
+    &.parent,
+    &.relations,
+    &.tracker {
+      width: 2%;
     }
 
-    tr.ui-sortable-helper {
-        background-color: $highlight-bg;
+    &.id {
+      font-weight: $font-weight-bold;
+      text-align: right;
     }
 
-    @if $table-list-highlight-rows {
-        > tbody > tr:hover {
-            background-color: $table-bg-hover;
-        }
+    &.assigned_to,
+    &.author,
+    &.activity,
+    &.category,
+    &.comments,
+    &.description,
+    &.fixed_version,
+    &.name,
+    &.priority,
+    &.relations,
+    &.roles,
+    &.status,
+    &.string,
+    &.subject,
+    &.text,
+    &.user {
+      text-align: left;
     }
 
-    td {
-        padding: $table-cell-padding;
-        border: 1px solid $table-border-color;
-        border-width: $table-list-item-border;
-        text-align: center;
-        vertical-align: top;
-
-        &.checkbox {
-            width: 15px;
-            padding: $table-cell-padding 0 0;
-
-            input {
-                margin: 2px 0 0;
-            }
-        }
-
-        &.id,
-        &.parent,
-        &.relations,
-        &.tracker {
-            width: 2%;
-        }
-
-        &.id {
-            font-weight: $font-weight-bold;
-            text-align: right;
-        }
-
-        &.assigned_to,
-        &.author,
-        &.activity,
-        &.category,
-        &.comments,
-        &.description,
-        &.fixed_version,
-        &.name,
-        &.priority,
-        &.relations,
-        &.roles,
-        &.status,
-        &.string,
-        &.subject,
-        &.text,
-        &.user {
-            text-align: left;
-        }
-
-        &.estimated_hours,
-        &.remaining_hours,
-        &.spent_hours,
-        &.story_points,
-        &.int,
-        &.float {
-            text-align: right;
-        }
-
-        &.reorder {
-            white-space: nowrap;
-        }
+    &.estimated_hours,
+    &.remaining_hours,
+    &.spent_hours,
+    &.story_points,
+    &.int,
+    &.float {
+      text-align: right;
     }
 
-    td,
-    div {
-        &.buttons {
-            text-align: right;
-            white-space: nowrap;
-
-            a {
-                padding-right: 5px;
-            }
-
-            img {
-                vertical-align: middle;
-            }
-        }
+    &.reorder {
+      white-space: nowrap;
     }
+  }
 
-    caption {
-        padding: .5em .5em .5em 0;
-        text-align: left;
+  td,
+  div {
+    &.buttons {
+      text-align: right;
+      white-space: nowrap;
+
+      a {
+        padding-right: 5px;
+      }
+
+      img {
+        vertical-align: middle;
+      }
     }
+  }
+
+  caption {
+    padding: .5em .5em .5em 0;
+    text-align: left;
+  }
 }
 
 .table-list-cell {
-    display: table-cell;
-    padding: $table-cell-padding;
-    vertical-align: top;
+  display: table-cell;
+  padding: $table-cell-padding;
+  vertical-align: top;
 }
 
 tr.project {
-    .name a {
-        white-space: nowrap;
-    }
+  .name a {
+    white-space: nowrap;
+  }
 
-    &.closed,
-    &.archived,
-    &.closed a,
-    &.archived a {
-        color: #aaa;
-    }
+  &.closed,
+  &.archived,
+  &.closed a,
+  &.archived a {
+    color: #aaa;
+  }
 
-    &.idnt .name span {
-        padding-left: 16px;
-        @extend %image-arrow-right;
-        background-repeat: no-repeat;
-        background-position: -5px 50%;
-    }
+  &.idnt .name span {
+    padding-left: 16px;
+    @extend %image-arrow-right;
+    background-repeat: no-repeat;
+    background-position: -5px 50%;
+  }
 
-    @for $i from 1 through 9 {
-        &.idnt-#{$i} .name {
-            padding-left: $table-cell-padding + 16px * ($i - 1);
-        }
+  @for $i from 1 through 9 {
+    &.idnt-#{$i} .name {
+      padding-left: $table-cell-padding + 16px * ($i - 1);
     }
+  }
 }
 
 tr.issue {
-    text-align: center;
-    white-space: nowrap;
+  text-align: center;
+  white-space: nowrap;
 
-    .string,
-    .text,
-    .subject,
-    .category {
-        white-space: normal;
+  .string,
+  .text,
+  .subject,
+  .category {
+    white-space: normal;
+  }
+
+  .relations {
+    text-align: left;
+    white-space: normal;
+
+    span {
+      white-space: nowrap;
     }
+  }
 
-    .relations {
-        text-align: left;
-        white-space: normal;
+  &.idnt .subject a {
+    padding-left: 10px;
+    @extend %image-arrow-right;
+    background-repeat: no-repeat;
+    background-position: -5px 0;
+  }
 
-        span {
-            white-space: nowrap;
+  .controller-issues.action-index & {
+    &.assigned-to-me {
+      .assigned_to,
+      .subject {
+        a {
+          font-weight: $font-weight-bold;
         }
+      }
     }
+  }
 
-    &.idnt .subject a {
-        padding-left: 10px;
-        @extend %image-arrow-right;
-        background-repeat: no-repeat;
-        background-position: -5px 0;
+  @for $i from 1 through 9 {
+    &.idnt-#{$i} .subject {
+      padding-left: $table-cell-padding + 16px * ($i - 1);
     }
-
-    .controller-issues.action-index & {
-        &.assigned-to-me {
-            .assigned_to,
-            .subject {
-                a {
-                    font-weight: $font-weight-bold;
-                }
-            }
-        }
-    }
-
-    @for $i from 1 through 9 {
-        &.idnt-#{$i} .subject {
-            padding-left: $table-cell-padding + 16px * ($i - 1);
-        }
-    }
+  }
 }
 
 .issues {
-    .description {
-        padding: 0;
-        text-align: left;
+  .description {
+    padding: 0;
+    text-align: left;
 
-        @media screen and (min-width: $screen-sm-min) {
-            > .wiki {
-                max-height: 20em;
-                padding: $padding-wiki;
-                overflow: auto;
-            }
-        }
-
-        pre {
-            white-space: normal;
-        }
+    @media screen and (min-width: $screen-sm-min) {
+      > .wiki {
+        max-height: 20em;
+        padding: $padding-wiki;
+        overflow: auto;
+      }
     }
+
+    pre {
+      white-space: normal;
+    }
+  }
 }
 
 tr {
-    span.expander {
-        margin-left: 0;
-        padding-left: 8px;
-        @extend %image-toggle-plus;
-        background-repeat: no-repeat;
-        background-position: center center;
-        cursor: pointer;
-        @include user-select(none);
-    }
+  span.expander {
+    margin-left: 0;
+    padding-left: 8px;
+    @extend %image-toggle-plus;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+    @include user-select(none);
+  }
 
-    &.open span.expander {
-        @extend %image-toggle-minus;
-    }
+  &.open span.expander {
+    @extend %image-toggle-minus;
+  }
 }
 
 td.center {
-    text-align: center;
+  text-align: center;
 }
 
 .issue-report {
-    table-layout: fixed;
+  table-layout: fixed;
 }
 
 tr.builtin td.name {
-    font-style: italic;
+  font-style: italic;
 }
 
 tr.entry {
-    border: 1px solid $gray-lighter;
+  border: 1px solid $gray-lighter;
 
-    td {
-        white-space: nowrap;
+  td {
+    white-space: nowrap;
 
-        &.filename {
-            width: 30%;
-            text-align: left;
-        }
-
-        &.filename_no_report {
-            width: 70%;
-            text-align: left;
-        }
-
-        &.size {
-            text-align: right;
-        }
-
-        &.revision,
-        &.author {
-            text-align: center;
-        }
-
-        &.age {
-            text-align: right;
-        }
+    &.filename {
+      width: 30%;
+      text-align: left;
     }
 
-    &.file td {
-        &.filename a,
-        &.filename_no_report a {
-            margin-left: 16px;
-        }
+    &.filename_no_report {
+      width: 70%;
+      text-align: left;
     }
+
+    &.size {
+      text-align: right;
+    }
+
+    &.revision,
+    &.author {
+      text-align: center;
+    }
+
+    &.age {
+      text-align: right;
+    }
+  }
+
+  &.file td {
+    &.filename a,
+    &.filename_no_report a {
+      margin-left: 16px;
+    }
+  }
 }
 
 
@@ -285,102 +285,102 @@ tr.entry {
 
 // scss-lint:disable SpaceAfterComma
 @if $color-priorities {
-    @include priority(".priority-lowest",  $priority-lowest-bg,  $priority-lowest-text,  $priority-lowest-link);
-    @include priority(".priority-default", $priority-default-bg, $priority-default-text, $priority-default-link);
-    @include priority(".priority-high3",   $priority-high3-bg,   $priority-high3-text,   $priority-high3-link);
-    @include priority(".priority-high2",   $priority-high2-bg,   $priority-high2-text,   $priority-high2-link);
-    @include priority(".priority-highest", $priority-highest-bg, $priority-highest-text, $priority-highest-link);
+  @include priority(".priority-lowest",  $priority-lowest-bg,  $priority-lowest-text,  $priority-lowest-link);
+  @include priority(".priority-default", $priority-default-bg, $priority-default-text, $priority-default-link);
+  @include priority(".priority-high3",   $priority-high3-bg,   $priority-high3-text,   $priority-high3-link);
+  @include priority(".priority-high2",   $priority-high2-bg,   $priority-high2-text,   $priority-high2-link);
+  @include priority(".priority-highest", $priority-highest-bg, $priority-highest-text, $priority-highest-link);
 }
 
 @if $color-trackers {
-    tr.issue .id > a,
-    a.issue,
-    .relations > span > a.issue,
-    .parent > a.issue {
-        border-radius: $border-radius-small ($border-radius-small * 3) ($border-radius-small * 3) $border-radius-small;
-        background-color: $tracker-default-bg;
-        color: $tracker-default-text;
+  tr.issue .id > a,
+  a.issue,
+  .relations > span > a.issue,
+  .parent > a.issue {
+    border-radius: $border-radius-small ($border-radius-small * 3) ($border-radius-small * 3) $border-radius-small;
+    background-color: $tracker-default-bg;
+    color: $tracker-default-text;
 
-        &:hover {
-            background-color: darken($tracker-default-bg, 10%);
-            color: $tracker-default-text;
-            text-decoration: none;
-        }
-
-        &:focus,
-        &:active {
-            text-decoration: none;
-        }
+    &:hover {
+      background-color: darken($tracker-default-bg, 10%);
+      color: $tracker-default-text;
+      text-decoration: none;
     }
 
-    a.issue {
-        margin-right: 1px;
-        padding: $tracker-inline-padding;
-        font-weight: normal;
-
-        &.closed {
-            position: relative;
-            color: mix($tracker-default-text, $tracker-default-bg, 75%);
-            text-decoration: none;
-
-            &::after {
-                display: block;
-                position: absolute;
-                right: 5px;
-                bottom: 0;
-                left: 5px;
-                height: calc(50% - 2px/2);
-                border-top: 2px solid rgba($tracker-default-text, .95);
-                content: "";
-                @include rotate(-4deg);
-                @include transition(border-color .1s);
-            }
-
-            &:hover::after {
-                border-top-color: rgba($tracker-default-text, .25);
-            }
-        }
+    &:focus,
+    &:active {
+      text-decoration: none;
     }
+  }
 
-    tr.issue .id > a {
+  a.issue {
+    margin-right: 1px;
+    padding: $tracker-inline-padding;
+    font-weight: normal;
+
+    &.closed {
+      position: relative;
+      color: mix($tracker-default-text, $tracker-default-bg, 75%);
+      text-decoration: none;
+
+      &::after {
         display: block;
-        padding: $tracker-list-padding;
+        position: absolute;
+        right: 5px;
+        bottom: 0;
+        left: 5px;
+        height: calc(50% - 2px/2);
+        border-top: 2px solid rgba($tracker-default-text, .95);
+        content: "";
+        @include rotate(-4deg);
+        @include transition(border-color .1s);
+      }
 
-        &::before {
-            color: mix($tracker-default-text, $tracker-default-bg, 50%);
-            content: "#";
-        }
+      &:hover::after {
+        border-top-color: rgba($tracker-default-text, .25);
+      }
     }
+  }
 
-    @if $colored-issue {
-        .issue.details a.issue,
-        .issue.details .wiki a.issue {
-            &,
-            &:hover {
-                color: $tracker-default-text;
-            }
-        }
-    }
+  tr.issue .id > a {
+    display: block;
+    padding: $tracker-list-padding;
 
-    @each $tracker-id, $tracker-colors in $tracker-colors-map {
-        @include tracker(
-            ".tracker-#{$tracker-id}",
-            map-get($tracker-colors, background),
-            map-get($tracker-colors, color)
-        );
+    &::before {
+      color: mix($tracker-default-text, $tracker-default-bg, 50%);
+      content: "#";
     }
+  }
+
+  @if $colored-issue {
+    .issue.details a.issue,
+    .issue.details .wiki a.issue {
+      &,
+      &:hover {
+        color: $tracker-default-text;
+      }
+    }
+  }
+
+  @each $tracker-id, $tracker-colors in $tracker-colors-map {
+    @include tracker(
+      ".tracker-#{$tracker-id}",
+      map-get($tracker-colors, background),
+      map-get($tracker-colors, color)
+    );
+  }
 }
 
 @if $table-list-color-odd-rows {
-    .odd {
-        background-color: $table-bg-accent;
-    }
+  .odd {
+    background-color: $table-bg-accent;
+  }
 }
 
 @if $table-list-color-even-rows {
-    .even {
-        background-color: $table-bg-accent;
-    }
+  .even {
+    background-color: $table-bg-accent;
+  }
 }
 
 
@@ -388,41 +388,41 @@ tr.entry {
 //
 
 tr.group {
-    > td {
-        border-bottom: 1px solid $table-border-color;
-        font-weight: $font-weight-bold;
-        text-align: left;
+  > td {
+    border-bottom: 1px solid $table-border-color;
+    font-weight: $font-weight-bold;
+    text-align: left;
 
-        a {
-            color: $brand-primary;
-        }
+    a {
+      color: $brand-primary;
     }
+  }
 
-    .toggle-all {
-        display: none;
-        color: $gray-light;
-        font-weight: normal;
-    }
+  .toggle-all {
+    display: none;
+    color: $gray-light;
+    font-weight: normal;
+  }
 
-    &:hover .toggle-all {
-        display: inline;
-    }
+  &:hover .toggle-all {
+    display: inline;
+  }
 
-    .count {
-        display: inline-block;
-        min-width: 1em;
-        margin: 0 5px;
-        padding: 1px 4px;
-        border-radius: $border-radius-small;
-        background-color: $brand-primary;
-        color: $brand-text;
-        font-size: $font-size-small;
-        text-align: center;
-    }
+  .count {
+    display: inline-block;
+    min-width: 1em;
+    margin: 0 5px;
+    padding: 1px 4px;
+    border-radius: $border-radius-small;
+    background-color: $brand-primary;
+    color: $brand-text;
+    font-size: $font-size-small;
+    text-align: center;
+  }
 }
 
 .toggle-all:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 
@@ -430,86 +430,86 @@ tr.group {
 //
 
 tr.time-entry {
-    text-align: center;
+  text-align: center;
 
-    td.project,
-    td.spent_on,
-    td.activity {
-        width: 6em;
-    }
+  td.project,
+  td.spent_on,
+  td.activity {
+    width: 6em;
+  }
 
-    td.user {
-        width: 12em;
-    }
+  td.user {
+    width: 12em;
+  }
 
-    td.issue,
-    td.comments {
-        text-align: left;
-        white-space: normal;
-    }
+  td.issue,
+  td.comments {
+    text-align: left;
+    white-space: normal;
+  }
 
-    td.hours {
-        font-weight: $font-weight-bold;
-    }
+  td.hours {
+    font-weight: $font-weight-bold;
+  }
 }
 
 .time-entries,
 tr.time-entry {
-    td.hours {
-        width: 1%;
-        text-align: right;
-        white-space: nowrap;
+  td.hours {
+    width: 1%;
+    text-align: right;
+    white-space: nowrap;
 
-        .hours-dec {
-            font-size: .9em;
-        }
+    .hours-dec {
+      font-size: .9em;
     }
+  }
 }
 
 .mypage-box {
-    td.hours {
-        font-weight: $font-weight-bold;
+  td.hours {
+    font-weight: $font-weight-bold;
 
-        em {
-            font-style: normal;
-        }
+    em {
+      font-style: normal;
     }
+  }
 
-    tr.time-entry td.hours {
-        font-weight: normal;
-    }
+  tr.time-entry td.hours {
+    font-weight: normal;
+  }
 }
 
 //== Wiki page history entry
 //
 
 tr.wiki-page-version {
-    td.updated_on,
-    td.author {
-        text-align: center;
-    }
+  td.updated_on,
+  td.author {
+    text-align: center;
+  }
 }
 
 //== Project versions list
 //
 
 tr.version {
-    &.closed {
-        color: $gray;
+  &.closed {
+    color: $gray;
 
-        a {
-            color: $gray;
-        }
+    a {
+      color: $gray;
     }
+  }
 
-    td {
-        &.date,
-        &.status,
-        &.sharing {
-            text-align: center;
-            white-space: nowrap;
-        }
+  td {
+    &.date,
+    &.status,
+    &.sharing {
+      text-align: center;
+      white-space: nowrap;
     }
+  }
 }
 
 
@@ -517,28 +517,28 @@ tr.version {
 //
 
 tr.user {
-    td {
-        width: 13%;
-        white-space: nowrap;
+  td {
+    width: 13%;
+    white-space: nowrap;
 
-        &.username,
-        &.firstname,
-        &.lastname {
-            text-align: left;
-        }
-
-        &.email {
-            width: 18%;
-            text-align: left;
-        }
+    &.username,
+    &.firstname,
+    &.lastname {
+      text-align: left;
     }
 
-    &.locked,
-    &.registered,
-    &.locked a,
-    &.registered a {
-        color: $gray-light;
+    &.email {
+      width: 18%;
+      text-align: left;
     }
+  }
+
+  &.locked,
+  &.registered,
+  &.locked a,
+  &.registered a {
+    color: $gray-light;
+  }
 }
 
 
@@ -546,20 +546,20 @@ tr.user {
 //
 
 table.plugins {
-    .configure {
-        text-align: right;
-    }
+  .configure {
+    text-align: right;
+  }
 
-    span.name {
-        margin-bottom: .5em;
-        font-size: $font-size-large;
-        font-weight: $font-weight-bold;
-    }
+  span.name {
+    margin-bottom: .5em;
+    font-size: $font-size-large;
+    font-weight: $font-weight-bold;
+  }
 
-    .description,
-    .url {
-        display: block;
-    }
+  .description,
+  .url {
+    display: block;
+  }
 }
 
 
@@ -567,20 +567,20 @@ table.plugins {
 //
 
 table.files {
-    tbody th {
-        text-align: left;
+  tbody th {
+    text-align: left;
+  }
+
+  tr.file td {
+    &.filename {
+      padding-left: 20px + $table-cell-padding;
+      text-align: left;
     }
 
-    tr.file td {
-        &.filename {
-            padding-left: 20px + $table-cell-padding;
-            text-align: left;
-        }
-
-        &.digest {
-            font-family: $font-family-monospace;
-        }
+    &.digest {
+      font-family: $font-family-monospace;
     }
+  }
 }
 
 
@@ -588,15 +588,15 @@ table.files {
 //
 
 .controller-enumerations {
-    td.name {
-        width: 50%;
-    }
+  td.name {
+    width: 50%;
+  }
 
-    td.tick,
-    td.reorder {
-        width: 15%;
-        text-align: center;
-    }
+  td.tick,
+  td.reorder {
+    width: 15%;
+    text-align: center;
+  }
 }
 
 
@@ -604,15 +604,15 @@ table.files {
 //
 
 .query-totals {
-    > span {
-        margin-right: $padding-base-horizontal;
+  > span {
+    margin-right: $padding-base-horizontal;
 
-        &:last-child {
-            margin-right: 0;
-        }
+    &:last-child {
+      margin-right: 0;
     }
+  }
 
-    .value {
-        font-weight: $font-weight-bold;
-    }
+  .value {
+    font-weight: $font-weight-bold;
+  }
 }

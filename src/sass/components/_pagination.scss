@@ -2,82 +2,82 @@
 // Pagination (multiple pages)
 // --------------------------------------------------
 .pagination {
-    .pages {
-        display: inline-block;
-        margin: 0;
-        padding: 0;
-    }
+  .pages {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
 
-    li {
-        display: inline-block;
-        margin-right: .3em;
-        list-style: none;
-    }
+  li {
+    display: inline-block;
+    margin-right: .3em;
+    list-style: none;
+  }
 
-    li > a,
-    li > span,
-    > .previous,
-    > .next,
-    > .page {
-        display: inline-block;
-        padding: $pagination-padding-vertical $pagination-padding-horizontal;
-        border: 1px solid $pagination-border;
-        border-radius: $border-radius-base;
-        background-color: $pagination-bg;
-        color: $pagination-color;
-        text-decoration: none;
-        white-space: nowrap;
-    }
+  li > a,
+  li > span,
+  > .previous,
+  > .next,
+  > .page {
+    display: inline-block;
+    padding: $pagination-padding-vertical $pagination-padding-horizontal;
+    border: 1px solid $pagination-border;
+    border-radius: $border-radius-base;
+    background-color: $pagination-bg;
+    color: $pagination-color;
+    text-decoration: none;
+    white-space: nowrap;
+  }
 
-    li > span {
-        border-color: $pagination-inactive-border;
-        background-color: $pagination-inactive-bg;
-        color: $pagination-inactive-color;
-        cursor: default;
-    }
+  li > span {
+    border-color: $pagination-inactive-border;
+    background-color: $pagination-inactive-bg;
+    color: $pagination-inactive-color;
+    cursor: default;
+  }
 
-    .spacer > span {
-        padding: 0;
-        border: 0 none;
-        background: transparent;
-        color: $text-color;
-    }
+  .spacer > span {
+    padding: 0;
+    border: 0 none;
+    background: transparent;
+    color: $text-color;
+  }
 
-    a {
-        &:hover,
-        &:focus {
-            border-color: $pagination-hover-border;
-            background-color: $pagination-hover-bg;
-            color: $pagination-hover-color;
-        }
+  a {
+    &:hover,
+    &:focus {
+      border-color: $pagination-hover-border;
+      background-color: $pagination-hover-bg;
+      color: $pagination-hover-color;
     }
+  }
 
-    .page.current,
-    .current > span {
-        border-color: $pagination-active-border;
-        background-color: $pagination-active-bg;
-        color: $pagination-active-color;
-        cursor: default;
-        z-index: 2;
-    }
+  .page.current,
+  .current > span {
+    border-color: $pagination-active-border;
+    background-color: $pagination-active-bg;
+    color: $pagination-active-color;
+    cursor: default;
+    z-index: 2;
+  }
 
-    .items,
-    .per-page {
-        display: inline-block;
-        margin: ($pagination-padding-vertical + 1px) 0 ($pagination-padding-vertical + 1px) $pagination-padding-vertical;
-    }
+  .items,
+  .per-page {
+    display: inline-block;
+    margin: ($pagination-padding-vertical + 1px) 0 ($pagination-padding-vertical + 1px) $pagination-padding-vertical;
+  }
 }
 
 p.pagination {
-    margin-bottom: 0;
-    float: left;
+  margin-bottom: 0;
+  float: left;
 
-    + h1,
-    + h2,
-    + h3,
-    + h4,
-    + h5,
-    + h6 {
-        clear: both;
-    }
+  + h1,
+  + h2,
+  + h3,
+  + h4,
+  + h5,
+  + h6 {
+    clear: both;
+  }
 }

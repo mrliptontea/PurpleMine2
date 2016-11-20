@@ -19,22 +19,22 @@ $story-status-input-width:      85px;
 $story-sp-input-width:          50px;
 
 @mixin rb-tracker($parent, $background, $color) {
-    #{$parent} .id .t a {
-        background-color: $background;
-        color: $color;
+  #{$parent} .id .t a {
+    background-color: $background;
+    color: $color;
 
-        &::before {
-            color: mix($color, $background, 50%);
-        }
-
-        &:hover {
-            @if hue($background) > 15deg and hue($background) < 40deg {
-                background-color: darken(adjust-hue($background, -8deg), 8%);
-            } @else {
-                background-color: darken($background, 10%);
-            }
-        }
+    &::before {
+      color: mix($color, $background, 50%);
     }
+
+    &:hover {
+      @if hue($background) > 15deg and hue($background) < 40deg {
+        background-color: darken(adjust-hue($background, -8deg), 8%);
+      } @else {
+        background-color: darken($background, 10%);
+      }
+    }
+  }
 }
 
 
@@ -52,40 +52,40 @@ $story-sp-input-width:          50px;
 //
 
 #backlogs_container {
-    padding: ($padding-side / 2) ($padding-side / 4);
+  padding: ($padding-side / 2) ($padding-side / 4);
+
+  .backlogs-panel-inner {
+    padding: 0 ($padding-side / 4);
+  }
+
+  @media screen and (min-width: $screen-md-min) {
+    padding: $padding-side ($padding-side / 2);
 
     .backlogs-panel-inner {
-        padding: 0 ($padding-side / 4);
+      padding: 0 ($padding-side / 2);
     }
+  }
 
-    @media screen and (min-width: $screen-md-min) {
-        padding: $padding-side ($padding-side / 2);
+  .wrapper {
+    position: relative;
+    left: 0;
+    width: 100%;
+    float: left;
+  }
 
-        .backlogs-panel-inner {
-            padding: 0 ($padding-side / 2);
-        }
-    }
+  .left-col {
+    position: relative;
+    left: 0;
+    width: 50%;
+    float: left;
+  }
 
-    .wrapper {
-        position: relative;
-        left: 0;
-        width: 100%;
-        float: left;
-    }
-
-    .left-col {
-        position: relative;
-        left: 0;
-        width: 50%;
-        float: left;
-    }
-
-    .right-col {
-        position: relative;
-        right: 0;
-        width: 50%;
-        float: right;
-    }
+  .right-col {
+    position: relative;
+    right: 0;
+    width: 50%;
+    float: right;
+  }
 }
 
 
@@ -93,52 +93,52 @@ $story-sp-input-width:          50px;
 //
 
 .fff-wrapmiddle {
-    width: 100%;
-    float: left;
+  width: 100%;
+  float: left;
 }
 
 .fff-middle {
-    margin-right: $story-right-width;
-    margin-left: $story-left-width;
+  margin-right: $story-right-width;
+  margin-left: $story-left-width;
 }
 
 .fff-left {
-    width: $story-left-width;
-    margin-left: -100%;
-    float: left;
+  width: $story-left-width;
+  margin-left: -100%;
+  float: left;
 }
 
 .fff-right {
-    width: $story-right-width;
-    margin-left: -$story-right-width;
-    float: left;
+  width: $story-right-width;
+  margin-left: -$story-right-width;
+  float: left;
 }
 
 .header {
-    .fff-middle {
-        margin-right: $header-right-width;
-        margin-left: $header-left-width;
-    }
+  .fff-middle {
+    margin-right: $header-right-width;
+    margin-left: $header-left-width;
+  }
 
-    .fff-left {
-        width: $header-left-width;
+  .fff-left {
+    width: $header-left-width;
+  }
+
+  .fff-right {
+    width: $header-right-width;
+    margin-left: -$header-right-width;
+  }
+
+  @media screen and (min-width: $screen-md-min) {
+    .fff-middle {
+      margin-right: $header-right-width-wider;
     }
 
     .fff-right {
-        width: $header-right-width;
-        margin-left: -$header-right-width;
+      width: $header-right-width-wider;
+      margin-left: -$header-right-width-wider;
     }
-
-    @media screen and (min-width: $screen-md-min) {
-        .fff-middle {
-            margin-right: $header-right-width-wider;
-        }
-
-        .fff-right {
-            width: $header-right-width-wider;
-            margin-left: -$header-right-width-wider;
-        }
-    }
+  }
 }
 
 
@@ -146,7 +146,7 @@ $story-sp-input-width:          50px;
 //
 
 #dummy_backlog_container {
-    height: 150px;
+  height: 150px;
 }
 
 
@@ -154,19 +154,19 @@ $story-sp-input-width:          50px;
 //
 
 #backlogs_container {
-    .closedbacklog,
-    .backlog {
-        display: block;
-        position: relative;
-        margin: 0 0 ($padding-side / 2);
-        border-radius: $border-radius-large $border-radius-large 0 0;
-        background-color: $gray-lightest;
-        @include nice-shadow(1);
+  .closedbacklog,
+  .backlog {
+    display: block;
+    position: relative;
+    margin: 0 0 ($padding-side / 2);
+    border-radius: $border-radius-large $border-radius-large 0 0;
+    background-color: $gray-lightest;
+    @include nice-shadow(1);
 
-        @media screen and (min-width: $screen-md-min) {
-            margin: 0 0 $padding-side;
-        }
+    @media screen and (min-width: $screen-md-min) {
+      margin: 0 0 $padding-side;
     }
+  }
 }
 
 
@@ -174,246 +174,246 @@ $story-sp-input-width:          50px;
 //
 
 #backlogs_container {
-    .header {
-        position: relative;
-        height: $header-line-height;
-        border: 1px solid darken($header-bg, 5%);
+  .header {
+    position: relative;
+    height: $header-line-height;
+    border: 1px solid darken($header-bg, 5%);
+    border-radius: $border-radius-large $border-radius-large 0 0;
+    background-color: $header-bg;
+    color: $header-text;
+    line-height: $header-line-height;
+
+    input,
+    select {
+      border-color: $header-bg;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+
+      &:focus {
+        border-color: lighten($header-bg, 25%);
+        color: $gray-darkest;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2),
+              0 0 0 1px lighten($header-bg, 25%);
+      }
+    }
+
+    .name,
+    .velocity,
+    .date {
+      white-space: nowrap;
+    }
+
+    .name {
+      padding-left: $padding-base-horizontal;
+      font-weight: $font-weight-bold;
+      overflow: hidden;
+    }
+
+    .date {
+      width: 70px;
+      float: left;
+      font-size: $font-size-small-px;
+      text-align: center;
+
+      + .date {
+        margin-left: $padding-base-horizontal;
+      }
+    }
+
+    .velocity {
+      padding-right: $padding-base-horizontal;
+      text-align: right;
+    }
+
+    .id,
+    .description,
+    .status {
+      display: none;
+    }
+
+    .saving {
+      background-image: url("images/ajax.gif");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .error {
+      background-image: url("images/error.png");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .editing {
+      $editor-padding: (($header-line-height - $input-height-base) / 2);
+
+      .editors {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding-top: $editor-padding;
         border-radius: $border-radius-large $border-radius-large 0 0;
         background-color: $header-bg;
-        color: $header-text;
-        line-height: $header-line-height;
+        z-index: 1;
+      }
 
-        input,
-        select {
-            border-color: $header-bg;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+      label,
+      .id.editor {
+        display: none;
+      }
 
-            &:focus {
-                border-color: lighten($header-bg, 25%);
-                color: $gray-darkest;
-                box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2),
-                            0 0 0 1px lighten($header-bg, 25%);
-            }
-        }
-
-        .name,
-        .velocity,
-        .date {
-            white-space: nowrap;
-        }
-
-        .name {
-            padding-left: $padding-base-horizontal;
-            font-weight: $font-weight-bold;
-            overflow: hidden;
-        }
-
-        .date {
-            width: 70px;
-            float: left;
-            font-size: $font-size-small-px;
-            text-align: center;
-
-            + .date {
-                margin-left: $padding-base-horizontal;
-            }
-        }
-
-        .velocity {
-            padding-right: $padding-base-horizontal;
-            text-align: right;
-        }
-
-        .id,
-        .description,
-        .status {
-            display: none;
-        }
-
-        .saving {
-            background-image: url("images/ajax.gif");
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        .error {
-            background-image: url("images/error.png");
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        .editing {
-            $editor-padding: (($header-line-height - $input-height-base) / 2);
-
-            .editors {
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                padding-top: $editor-padding;
-                border-radius: $border-radius-large $border-radius-large 0 0;
-                background-color: $header-bg;
-                z-index: 1;
-            }
-
-            label,
-            .id.editor {
-                display: none;
-            }
-
-            .release_end_date.editor,
-            .release_start_date.editor,
-            .effective_date.editor,
-            .sprint_start_date.editor {
-                position: relative;
-                width: 80px;
-                margin-bottom: $editor-padding;
-                margin-left: $editor-padding * 2;
-                padding: 0;
-                float: left;
-                font-size: $font-size-small-px;
-                text-align: center;
-            }
-
-            .name.editor {
-                $name-width-minus: $header-right-width-wider + 35px;
-
-                position: relative;
-                width: calc(100% - #{$name-width-minus}) !important;
-                min-width: 128px;
-                margin-left: $header-line-height - 2px;
-                float: left;
-            }
-
-            .description.editor {
-                display: none;
-            }
-
-            .edit-actions {
-                margin-right: $editor-padding * 2;
-                margin-bottom: $editor-padding;
-                float: right;
-            }
-        }
-
-        .menu {
-            position: relative;
-            height: $header-line-height;
-            border-right: 1px solid #888;
-            border-bottom: 1px solid $header-bg;
-            border-radius: ($border-radius-large - 1px) 0 0;
-            font-size: $font-size-small;
-            line-height: $line-height-base;
-            cursor: pointer;
-            overflow: visible;
-            @include transition(background-color 0s .1s, border-color 0s .1s);
-
-            &:hover {
-                border-color: $body-bg;
-                background-color: $body-bg;
-                z-index: 1000;
-                @include transition(background-color 0s 0s, border-color 0s 0s);
-            }
-
-            .icon {
-                position: relative;
-                top: 7px;
-                left: 6px;
-                padding: 0;
-                background-image: url("images/ui-icons_888888_256x240.png");
-                background-position: -64px -16px;
-            }
-
-            ul {
-                position: absolute;
-                top: $header-line-height + 1px;
-                left: -1px;
-                margin: 0;
-                padding: $padding-small-vertical 0;
-                border: 1px solid $header-bg;
-                border-top-width: 0;
-                border-radius: 0 0 $border-radius-base $border-radius-base;
-                background-color: $body-bg;
-                list-style: none;
-                box-shadow: 0 2px 1px rgba(#000, .1);
-                visibility: hidden;
-                z-index: 999;
-                @include transition(visibility 0s .1s);
-
-                a {
-                    color: $gray-darker;
-                }
-            }
-
-            &:hover .items {
-                visibility: visible;
-                @include transition(visibility 0s 0s);
-            }
-
-            .item {
-                position: relative;
-                min-width: 100px;
-                white-space: nowrap;
-
-                > a {
-                    display: block;
-                    padding: 4px 8px;
-
-                    &:hover {
-                        background-color: $component-active-bg;
-                        color: $component-active-color;
-                        text-decoration: none;
-                    }
-                }
-
-                > .ui-icon {
-                    position: absolute;
-                    top: 4px;
-                    right: 8px;
-                    left: auto;
-                    background-position: -32px -16px;
-                }
-
-                ul {
-                    position: absolute;
-                    top: -($padding-small-vertical + 1px);
-                    left: 100%;
-                    border-width: 1px;
-                }
-
-                &:hover {
-                    background-color: darken($body-bg, 8%);
-
-                    ul {
-                        visibility: visible;
-                        @include transition(visibility 0s 0s);
-                    }
-                }
-            }
-        }
-
-        .model.headertext {
-            cursor: pointer;
-        }
-    }
-
-    .close_sprint {
+      .release_end_date.editor,
+      .release_start_date.editor,
+      .effective_date.editor,
+      .sprint_start_date.editor {
+        position: relative;
+        width: 80px;
+        margin-bottom: $editor-padding;
+        margin-left: $editor-padding * 2;
+        padding: 0;
         float: left;
-        color: $header-link;
+        font-size: $font-size-small-px;
+        text-align: center;
+      }
+
+      .name.editor {
+        $name-width-minus: $header-right-width-wider + 35px;
+
+        position: relative;
+        width: calc(100% - #{$name-width-minus}) !important;
+        min-width: 128px;
+        margin-left: $header-line-height - 2px;
+        float: left;
+      }
+
+      .description.editor {
+        display: none;
+      }
+
+      .edit-actions {
+        margin-right: $editor-padding * 2;
+        margin-bottom: $editor-padding;
+        float: right;
+      }
+    }
+
+    .menu {
+      position: relative;
+      height: $header-line-height;
+      border-right: 1px solid #888;
+      border-bottom: 1px solid $header-bg;
+      border-radius: ($border-radius-large - 1px) 0 0;
+      font-size: $font-size-small;
+      line-height: $line-height-base;
+      cursor: pointer;
+      overflow: visible;
+      @include transition(background-color 0s .1s, border-color 0s .1s);
+
+      &:hover {
+        border-color: $body-bg;
+        background-color: $body-bg;
+        z-index: 1000;
+        @include transition(background-color 0s 0s, border-color 0s 0s);
+      }
+
+      .icon {
+        position: relative;
+        top: 7px;
+        left: 6px;
+        padding: 0;
+        background-image: url("images/ui-icons_888888_256x240.png");
+        background-position: -64px -16px;
+      }
+
+      ul {
+        position: absolute;
+        top: $header-line-height + 1px;
+        left: -1px;
+        margin: 0;
+        padding: $padding-small-vertical 0;
+        border: 1px solid $header-bg;
+        border-top-width: 0;
+        border-radius: 0 0 $border-radius-base $border-radius-base;
+        background-color: $body-bg;
+        list-style: none;
+        box-shadow: 0 2px 1px rgba(#000, .1);
+        visibility: hidden;
+        z-index: 999;
+        @include transition(visibility 0s .1s);
+
+        a {
+          color: $gray-darker;
+        }
+      }
+
+      &:hover .items {
+        visibility: visible;
+        @include transition(visibility 0s 0s);
+      }
+
+      .item {
+        position: relative;
+        min-width: 100px;
         white-space: nowrap;
-        overflow: hidden;
-    }
 
-    .closedbacklog {
-        .menu {
-            display: none;
+        > a {
+          display: block;
+          padding: 4px 8px;
+
+          &:hover {
+            background-color: $component-active-bg;
+            color: $component-active-color;
+            text-decoration: none;
+          }
         }
 
-        .headertext {
-            cursor: default;
+        > .ui-icon {
+          position: absolute;
+          top: 4px;
+          right: 8px;
+          left: auto;
+          background-position: -32px -16px;
         }
+
+        ul {
+          position: absolute;
+          top: -($padding-small-vertical + 1px);
+          left: 100%;
+          border-width: 1px;
+        }
+
+        &:hover {
+          background-color: darken($body-bg, 8%);
+
+          ul {
+            visibility: visible;
+            @include transition(visibility 0s 0s);
+          }
+        }
+      }
     }
+
+    .model.headertext {
+      cursor: pointer;
+    }
+  }
+
+  .close_sprint {
+    float: left;
+    color: $header-link;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .closedbacklog {
+    .menu {
+      display: none;
+    }
+
+    .headertext {
+      cursor: default;
+    }
+  }
 }
 
 
@@ -421,281 +421,281 @@ $story-sp-input-width:          50px;
 //
 
 #backlogs_container {
-    .stories {
-        position: relative;
-        min-height: ($line-height-computed + $table-condensed-cell-padding * 2);
-        margin: 0;
-        padding: 0;
-        font-size: $font-size-list;
-        list-style: none;
+  .stories {
+    position: relative;
+    min-height: ($line-height-computed + $table-condensed-cell-padding * 2);
+    margin: 0;
+    padding: 0;
+    font-size: $font-size-list;
+    list-style: none;
 
-        .v {
-            display: none;
-        }
-
-        .placeholder {
-            min-height: ($line-height-computed + $table-condensed-cell-padding * 2);
-            background-color: $gray;
-        }
+    .v {
+      display: none;
     }
 
-    .story {
+    .placeholder {
+      min-height: ($line-height-computed + $table-condensed-cell-padding * 2);
+      background-color: $gray;
+    }
+  }
+
+  .story {
+    display: block;
+    margin: 0;
+    padding: 0 $table-condensed-cell-padding;
+    border-top: 1px solid $gray-lighter;
+    background-color: $body-bg;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: move;
+
+    &:nth-child(2n) {
+      background-color: $gray-lightest;
+    }
+
+    &:hover {
+      background-color: $highlight-bg;
+    }
+
+    &.saving {
+      background-image: url("images/ajax.gif");
+      color: $gray-light;
+    }
+
+    &.error {
+      background-image: url("images/error.png");
+      color: $brand-warning;
+    }
+
+    .tracker_id {
+      display: none;
+    }
+
+    .id {
+      position: relative;
+      width: $story-id-width;
+      margin: $table-condensed-cell-padding 0;
+      float: left;
+
+      .t {
+        a {
+          display: block;
+          padding: $tracker-list-padding;
+          border-radius: $border-radius-small ($border-radius-small * 3) ($border-radius-small * 3) $border-radius-small;
+          @if $color-trackers {
+            background-color: $tracker-default-bg;
+            color: $tracker-default-text;
+          } @else {
+            background-color: darken($gray-lightest, 3%);
+            color: $gray-dark;
+          }
+          font-weight: $font-weight-bold;
+          text-align: right;
+
+          &::before {
+            margin-left: -1em;
+            @if $color-trackers {
+              color: mix($tracker-default-text, $tracker-default-bg, 50%);
+            } @else {
+              color: $gray-light;
+            }
+            font-weight: normal;
+            content: "#";
+          }
+
+          &:hover {
+            @if $color-trackers {
+              background-color: darken($tracker-default-bg, 10%);
+            } @else {
+              background-color: $gray-lighter;
+            }
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .fff-left > .project,
+    .fff-wrapmiddle > .fff-middle,
+    .fff-right > .status_id,
+    .fff-right > .story_points {
+      min-height: floor(.92 * $font-size-base * $line-height-base);
+    }
+
+    .project {
+      display: block;
+      position: relative;
+      width: $story-project-width;
+      padding: $table-condensed-cell-padding 0 $table-condensed-cell-padding $table-condensed-cell-padding;
+      float: left;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+
+      .t {
+        overflow: hidden;
+      }
+    }
+
+    .fff-middle {
+      padding: $table-condensed-cell-padding 0;
+    }
+
+    .subject {
+      @include text-overflow;
+    }
+
+    &.closed .subject {
+      text-decoration: line-through;
+    }
+
+    .status_id {
+      width: $story-status-width;
+      padding: $table-condensed-cell-padding 0 $table-condensed-cell-padding $table-condensed-cell-padding;
+      float: left;
+      white-space: nowrap;
+    }
+
+    .story_points {
+      width: $story-right-width - ($story-status-width + $padding-base-horizontal + 1px);
+      padding: $table-condensed-cell-padding $table-condensed-cell-padding $table-condensed-cell-padding 0;
+      float: left;
+      text-align: right;
+    }
+
+    .story_field {
+      overflow: hidden;
+    }
+
+    .fixed_version_id,
+    .higher_item_id,
+    .story_project,
+    .user_status {
+      display: none;
+    }
+
+    &.editing {
+      $input-padding-vertical-small:   3px;
+      $input-padding-horizontal-small: 5px;
+
+      border-color: $highlight-border;
+      background-color: darken($highlight-bg, 10%);
+      cursor: default;
+
+      + .story {
+        border-top-color: $highlight-border;
+      }
+
+      input,
+      select,
+      textarea {
+        border-color: $highlight-border;
+
+        &:focus {
+          border-color: darken($highlight-border, 15%);
+          color: $gray-darkest;
+          box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075),
+                0 0 5px rgba(darken($highlight-border, 15%), .5);
+        }
+      }
+
+      .editors {
         display: block;
+        margin-left: $story-tracker-input-width + 5px;
+        padding: $table-condensed-cell-padding 0;
+        text-align: right;
+        @include clearfix;
+
+        label {
+          display: none;
+        }
+      }
+
+      .editor {
+        height: ($line-height-computed + ($input-padding-vertical-small * 2) + 2);
         margin: 0;
-        padding: 0 $table-condensed-cell-padding;
-        border-top: 1px solid $gray-lighter;
-        background-color: $body-bg;
-        background-repeat: no-repeat;
-        background-position: center;
-        cursor: move;
+        margin-right: 5px;
+        padding: $input-padding-vertical-small $input-padding-horizontal-small;
+        font-family: inherit;
+        font-size: inherit;
+        vertical-align: top;
 
-        &:nth-child(2n) {
-            background-color: $gray-lightest;
+        &.tracker_id {
+          display: block;
+          width: $story-tracker-input-width;
+          margin-left: -($story-tracker-input-width + 5px);
+          float: left;
         }
 
-        &:hover {
-            background-color: $highlight-bg;
+        &.status_id {
+          width: $story-status-input-width;
+          padding-right: 0;
+          float: left;
         }
 
-        &.saving {
-            background-image: url("images/ajax.gif");
-            color: $gray-light;
+        &.story_points {
+          width: $story-sp-input-width;
+          margin-right: 0;
+          padding-right: 0;
+          float: left;
+          text-align: left;
         }
 
-        &.error {
-            background-image: url("images/error.png");
-            color: $brand-warning;
+        &.subject {
+          $subject-width-minus: $story-status-input-width + $story-sp-input-width + 5px * 2;
+
+          width: calc(100% - #{$subject-width-minus}) !important;
+          height: 60px;
+          float: left;
+          white-space: normal;
+          overflow: auto;
         }
 
-        .tracker_id {
-            display: none;
+        &.category_id {
+          display: block;
+          top: 4px;
+          left: 456px;
+          width: 60px;
+          margin: 0;
         }
+      }
 
-        .id {
-            position: relative;
-            width: $story-id-width;
-            margin: $table-condensed-cell-padding 0;
-            float: left;
+      .story_field {
+        display: none;
+      }
 
-            .t {
-                a {
-                    display: block;
-                    padding: $tracker-list-padding;
-                    border-radius: $border-radius-small ($border-radius-small * 3) ($border-radius-small * 3) $border-radius-small;
-                    @if $color-trackers {
-                        background-color: $tracker-default-bg;
-                        color: $tracker-default-text;
-                    } @else {
-                        background-color: darken($gray-lightest, 3%);
-                        color: $gray-dark;
-                    }
-                    font-weight: $font-weight-bold;
-                    text-align: right;
+      .project,
+      select.project_id.editor {
+        display: none;
+      }
 
-                    &::before {
-                        margin-left: -1em;
-                        @if $color-trackers {
-                            color: mix($tracker-default-text, $tracker-default-bg, 50%);
-                        } @else {
-                            color: $gray-light;
-                        }
-                        font-weight: normal;
-                        content: "#";
-                    }
-
-                    &:hover {
-                        @if $color-trackers {
-                            background-color: darken($tracker-default-bg, 10%);
-                        } @else {
-                            background-color: $gray-lighter;
-                        }
-                        text-decoration: none;
-                    }
-                }
-            }
-        }
-
-        .fff-left > .project,
-        .fff-wrapmiddle > .fff-middle,
-        .fff-right > .status_id,
-        .fff-right > .story_points {
-            min-height: floor(.92 * $font-size-base * $line-height-base);
-        }
-
-        .project {
-            display: block;
-            position: relative;
-            width: $story-project-width;
-            padding: $table-condensed-cell-padding 0 $table-condensed-cell-padding $table-condensed-cell-padding;
-            float: left;
-            text-align: center;
-            white-space: nowrap;
-            overflow: hidden;
-
-            .t {
-                overflow: hidden;
-            }
-        }
-
-        .fff-middle {
-            padding: $table-condensed-cell-padding 0;
-        }
-
-        .subject {
-            @include text-overflow;
-        }
-
-        &.closed .subject {
-            text-decoration: line-through;
-        }
-
-        .status_id {
-            width: $story-status-width;
-            padding: $table-condensed-cell-padding 0 $table-condensed-cell-padding $table-condensed-cell-padding;
-            float: left;
-            white-space: nowrap;
-        }
-
-        .story_points {
-            width: $story-right-width - ($story-status-width + $padding-base-horizontal + 1px);
-            padding: $table-condensed-cell-padding $table-condensed-cell-padding $table-condensed-cell-padding 0;
-            float: left;
-            text-align: right;
-        }
-
-        .story_field {
-            overflow: hidden;
-        }
-
-        .fixed_version_id,
-        .higher_item_id,
-        .story_project,
-        .user_status {
-            display: none;
-        }
-
-        &.editing {
-            $input-padding-vertical-small:   3px;
-            $input-padding-horizontal-small: 5px;
-
-            border-color: $highlight-border;
-            background-color: darken($highlight-bg, 10%);
-            cursor: default;
-
-            + .story {
-                border-top-color: $highlight-border;
-            }
-
-            input,
-            select,
-            textarea {
-                border-color: $highlight-border;
-
-                &:focus {
-                    border-color: darken($highlight-border, 15%);
-                    color: $gray-darkest;
-                    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075),
-                                0 0 5px rgba(darken($highlight-border, 15%), .5);
-                }
-            }
-
-            .editors {
-                display: block;
-                margin-left: $story-tracker-input-width + 5px;
-                padding: $table-condensed-cell-padding 0;
-                text-align: right;
-                @include clearfix;
-
-                label {
-                    display: none;
-                }
-            }
-
-            .editor {
-                height: ($line-height-computed + ($input-padding-vertical-small * 2) + 2);
-                margin: 0;
-                margin-right: 5px;
-                padding: $input-padding-vertical-small $input-padding-horizontal-small;
-                font-family: inherit;
-                font-size: inherit;
-                vertical-align: top;
-
-                &.tracker_id {
-                    display: block;
-                    width: $story-tracker-input-width;
-                    margin-left: -($story-tracker-input-width + 5px);
-                    float: left;
-                }
-
-                &.status_id {
-                    width: $story-status-input-width;
-                    padding-right: 0;
-                    float: left;
-                }
-
-                &.story_points {
-                    width: $story-sp-input-width;
-                    margin-right: 0;
-                    padding-right: 0;
-                    float: left;
-                    text-align: left;
-                }
-
-                &.subject {
-                    $subject-width-minus: $story-status-input-width + $story-sp-input-width + 5px * 2;
-
-                    width: calc(100% - #{$subject-width-minus}) !important;
-                    height: 60px;
-                    float: left;
-                    white-space: normal;
-                    overflow: auto;
-                }
-
-                &.category_id {
-                    display: block;
-                    top: 4px;
-                    left: 456px;
-                    width: 60px;
-                    margin: 0;
-                }
-            }
-
-            .story_field {
-                display: none;
-            }
-
-            .project,
-            select.project_id.editor {
-                display: none;
-            }
-
-            .edit-actions {
-                margin-top: 5px;
-                float: right;
-            }
-        }
+      .edit-actions {
+        margin-top: 5px;
+        float: right;
+      }
     }
+  }
 
-    .closedbacklog .story {
-        cursor: default;
-    }
+  .closedbacklog .story {
+    cursor: default;
+  }
 
-    // Override: display story subject in multiple lines
-    .rb-multilinesubject & .subject {
-        height: auto;
-        white-space: normal;
-        overflow: show;
-    }
+  // Override: display story subject in multiple lines
+  .rb-multilinesubject & .subject {
+    height: auto;
+    white-space: normal;
+    overflow: show;
+  }
 
-    @if $color-trackers {
-        @each $tracker-id, $tracker-colors in $tracker-colors-map {
-            @include rb-tracker(
-                ".tracker#{$tracker-id}",
-                map-get($tracker-colors, background),
-                map-get($tracker-colors, color)
-            );
-        }
+  @if $color-trackers {
+    @each $tracker-id, $tracker-colors in $tracker-colors-map {
+      @include rb-tracker(
+        ".tracker#{$tracker-id}",
+        map-get($tracker-colors, background),
+        map-get($tracker-colors, color)
+      );
     }
+  }
 }
 
 
@@ -703,40 +703,40 @@ $story-sp-input-width:          50px;
 //
 
 .ui-dialog {
-    .ui-dialog-titlebar-close {
-        display: none;
-    }
+  .ui-dialog-titlebar-close {
+    display: none;
+  }
 
-    .ui-dialog-title {
-        margin-right: 0;
-        float: left;
-    }
+  .ui-dialog-title {
+    margin-right: 0;
+    float: left;
+  }
 
-    &.ui-widget-content {
-        border: 0 none;
-        @include nice-shadow(5);
-    }
+  &.ui-widget-content {
+    border: 0 none;
+    @include nice-shadow(5);
+  }
 
-    .ui-dialog-buttonpane.ui-widget-content {
-        border: 0 none;
-    }
+  .ui-dialog-buttonpane.ui-widget-content {
+    border: 0 none;
+  }
 
-    label {
-        display: block;
-        width: 100%;
-        font-size: 11px;
-        text-transform: capitalize;
-    }
+  label {
+    display: block;
+    width: 100%;
+    font-size: 11px;
+    text-transform: capitalize;
+  }
 
-    .editor {
-        width: 100%;
-        margin-bottom: 10px;
-        font-size: 12px;
-    }
+  .editor {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
 }
 
 #sprint_editor .description {
-    height: 65px;
+  height: 65px;
 }
 
 
@@ -745,43 +745,43 @@ $story-sp-input-width:          50px;
 
 #backlogs_container {
 
-    #backlogs_container .editing .editable {
-        display: none;
+  #backlogs_container .editing .editable {
+    display: none;
+  }
+
+  .editing .edit-actions {
+    white-space: nowrap;
+
+    a {
+      display: inline-block;
+      margin-bottom: 0;
+      border: 1px solid;
+      font-weight: $btn-font-weight;
+      text-align: center;
+      white-space: nowrap;
+      cursor: pointer;
+      @include button-size($input-padding-vertical, $input-padding-horizontal, $font-size-base, $line-height-base, $border-radius-base);
+      @include user-select(none);
+      @include transition(background-color ease-in-out .07s, border-color ease-in-out .07s, box-shadow ease-in-out .07s);
+
+      &.save {
+        @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+      }
+
+      &.cancel {
+        @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+      }
+
+      + a {
+        margin-left: 3px;
+      }
+
+      &:hover,
+      &:active {
+        text-decoration: none;
+      }
     }
-
-    .editing .edit-actions {
-        white-space: nowrap;
-
-        a {
-            display: inline-block;
-            margin-bottom: 0;
-            border: 1px solid;
-            font-weight: $btn-font-weight;
-            text-align: center;
-            white-space: nowrap;
-            cursor: pointer;
-            @include button-size($input-padding-vertical, $input-padding-horizontal, $font-size-base, $line-height-base, $border-radius-base);
-            @include user-select(none);
-            @include transition(background-color ease-in-out .07s, border-color ease-in-out .07s, box-shadow ease-in-out .07s);
-
-            &.save {
-                @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
-            }
-
-            &.cancel {
-                @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
-            }
-
-            + a {
-                margin-left: 3px;
-            }
-
-            &:hover,
-            &:active {
-                text-decoration: none;
-            }
-        }
-    }
+  }
 }
 
 
@@ -789,29 +789,29 @@ $story-sp-input-width:          50px;
 //
 
 .debug {
-    .story {
-        .id,
-        .subject,
-        .status_id,
-        .story_points {
-            background-color: #f00;
-        }
+  .story {
+    .id,
+    .subject,
+    .status_id,
+    .story_points {
+      background-color: #f00;
     }
+  }
 
-    .header {
-        .name,
-        .sprint_start_date,
-        .effective_date,
-        .actions {
-            background-color: #f00;
-        }
+  .header {
+    .name,
+    .sprint_start_date,
+    .effective_date,
+    .actions {
+      background-color: #f00;
     }
+  }
 
-    .menu,
-    .velocity,
-    #new_story {
-        background-color: #f00;
-    }
+  .menu,
+  .velocity,
+  #new_story {
+    background-color: #f00;
+  }
 }
 
 
@@ -819,9 +819,9 @@ $story-sp-input-width:          50px;
 //
 
 #show_completed_sprints {
-    margin-left: $padding-side / 2;
-    color: $gray-darkest;
-    cursor: pointer;
+  margin-left: $padding-side / 2;
+  color: $gray-darkest;
+  cursor: pointer;
 }
 
 
@@ -829,5 +829,5 @@ $story-sp-input-width:          50px;
 //
 
 .ui-datepicker {
-    display: none;
+  display: none;
 }

@@ -66,9 +66,9 @@ linters:
     filename_extension: false
 
   Indentation:
-    enabled: false
+    enabled: true
     character: space
-    width: 4
+    width: 2
 
   LeadingZero:
     enabled: true

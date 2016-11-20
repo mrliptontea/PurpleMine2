@@ -1,37 +1,37 @@
 @import "../common";
 
 .qtip {
-    position: absolute;
-    top: -31000px;
-    left: -31000px;
-    width: auto;
-    max-width: 500px;
-    outline: none;
+  position: absolute;
+  top: -31000px;
+  left: -31000px;
+  width: auto;
+  max-width: 500px;
+  outline: none;
 }
 
 .ui-tooltip-content {
-    position: relative;
-    padding: 10px;
-    border: 1px solid $tooltip-border;
-    background-color: $tooltip-bg;
-    color: $tooltip-text;
-    font-size: $font-size-list;
-    text-align: left;
-    word-wrap: break-word;
-    @include nice-shadow(2);
-    overflow: hidden;
+  position: relative;
+  padding: 10px;
+  border: 1px solid $tooltip-border;
+  background-color: $tooltip-bg;
+  color: $tooltip-text;
+  font-size: $font-size-list;
+  text-align: left;
+  word-wrap: break-word;
+  @include nice-shadow(2);
+  overflow: hidden;
 }
 
 .ui-tooltip-tip {
-    border-color: $tooltip-border;
-    background-color: $tooltip-bg;
+  border-color: $tooltip-border;
+  background-color: $tooltip-bg;
 }
 
 .ui-tooltip-tip {
-    position: absolute;
-    margin: 0 auto;
-    border: 0 none;
-    background: transparent;
-    overflow: hidden;
-    z-index: 10;
+  position: absolute;
+  margin: 0 auto;
+  border: 0 none;
+  background: transparent;
+  overflow: hidden;
+  z-index: 10;
 }

@@ -3,622 +3,622 @@
 // --------------------------------------------------
 
 .issue {
-    &.details {
-        margin-bottom: $line-height-computed;
-        padding: $issue-padding;
-        border: 1px solid $issue-border;
-        border-radius: $border-radius-base;
-        background-color: $issue-bg;
-        color: $issue-text;
-        word-wrap: break-word;
+  &.details {
+    margin-bottom: $line-height-computed;
+    padding: $issue-padding;
+    border: 1px solid $issue-border;
+    border-radius: $border-radius-base;
+    background-color: $issue-bg;
+    color: $issue-text;
+    word-wrap: break-word;
 
-        @if $use-gravatars {
-            > img.gravatar {
-                width: $issue-gravatar-size;
-                height: $issue-gravatar-size;
-                margin-right: 10px;
-                margin-bottom: $line-height-computed / 2;
-                float: left;
-            }
+    @if $use-gravatars {
+      > img.gravatar {
+        width: $issue-gravatar-size;
+        height: $issue-gravatar-size;
+        margin-right: 10px;
+        margin-bottom: $line-height-computed / 2;
+        float: left;
+      }
 
-            .assigned-to img.gravatar {
-                position: relative;
-                top: -3px;
-                margin-right: 5px;
-            }
+      .assigned-to img.gravatar {
+        position: relative;
+        top: -3px;
+        margin-right: 5px;
+      }
 
-            > .subject,
-            > .author {
-                padding-left: $issue-gravatar-size + 10px;
-            }
-        }
-
-        &.assigned-to-me {
-            .assigned-to .user {
-                font-weight: $font-weight-bold;
-            }
-        }
-
-        > .subject {
-            h3 {
-                margin-bottom: .3em;
-                color: $gray-darkest;
-                font-size: $issue-heading-size * 1em;
-                font-weight: $font-weight-bold;
-                line-height: 1.2;
-            }
-
-            p {
-                margin-bottom: 5px;
-                font-size: $font-size-small;
-            }
-        }
-
-        > .author {
-            margin-bottom: $line-height-computed;
-        }
-
-        > hr {
-            margin: $issue-padding (-$issue-padding);
-            border-top-color: $issue-border;
-        }
-
-        > .description {
-            > p {
-                margin-bottom: $issue-padding;
-            }
-
-            > .wiki {
-                margin: 0 (-$issue-padding) (-$issue-padding);
-                padding: $padding-wiki;
-                border-top: 1px solid $issue-border;
-                background: $body-bg;
-            }
-        }
-
-        .next-prev-links {
-            color: $gray-light;
-        }
+      > .subject,
+      > .author {
+        padding-left: $issue-gravatar-size + 10px;
+      }
     }
 
-    .attributes {
-        width: 100%;
-
-        th,
-        td {
-            padding: $issue-attribute-padding-v $issue-attribute-padding-h $issue-attribute-padding-v 0;
-            text-align: left;
-            vertical-align: top;
-        }
-
-        > tbody > tr {
-            th {
-                font-weight: normal;
-            }
-
-            td {
-                color: $gray-darkest;
-            }
-        }
-
-        @media screen and (min-width: $screen-md-min) {
-            > tbody > tr {
-                > th,
-                > td {
-                    width: 25%;
-                }
-            }
-        }
-
-        @media screen and (min-width: $screen-lg-min) {
-            width: auto;
-
-            > tbody > tr {
-                > th {
-                    width: 14em;
-                }
-
-                > td {
-                    width: auto;
-                    min-width: 16em;
-                }
-            }
-        }
+    &.assigned-to-me {
+      .assigned-to .user {
+        font-weight: $font-weight-bold;
+      }
     }
 
-    @if $color-status {
-        .attributes td.status,
-        .attribute.status .value {
-            display: inline-block;
-            width: auto;
-            min-width: 1em;
-            margin-top: $issue-attribute-padding-v;
-            padding: 1px $table-cell-padding;
-            border-radius: $border-radius-base;
-            background-color: $brand-primary;
-            color: $brand-text;
-            font-size: $font-size-small;
-            font-weight: $font-weight-bold;
-            text-align: center;
-            text-transform: uppercase;
-        }
+    > .subject {
+      h3 {
+        margin-bottom: .3em;
+        color: $gray-darkest;
+        font-size: $issue-heading-size * 1em;
+        font-weight: $font-weight-bold;
+        line-height: 1.2;
+      }
 
-        &.status-1 {
-            .attributes td.status,
-            .attribute.status .value {
-                background-color: $brand-info;
-            }
-        }
-
-        &.closed {
-            .attributes td.status,
-            .attribute.status .value {
-                background-color: $brand-danger;
-            }
-        }
+      p {
+        margin-bottom: 5px;
+        font-size: $font-size-small;
+      }
     }
 
-    .splitcontentleft {
-        @media screen and (min-width: $screen-lg-min) {
-            width: auto;
-        }
+    > .author {
+      margin-bottom: $line-height-computed;
     }
 
-    .attribute {
-        @extend %clearfix;
-
-        .label,
-        .value {
-            padding: $issue-attribute-padding-v $issue-attribute-padding-h $issue-attribute-padding-v 0;
-        }
-
-        .label {
-            width: 25%;
-            float: left;
-
-            @media screen and (min-width: $screen-lg-min) {
-                width: 14em;
-            }
-        }
-
-        .value {
-            color: $gray-darkest;
-
-            @media screen and (min-width: $screen-lg-min) {
-                width: auto;
-                min-width: 14em + 16em;
-            }
-        }
+    > hr {
+      margin: $issue-padding (-$issue-padding);
+      border-top-color: $issue-border;
     }
 
-    table.progress {
-        width: 80px;
+    > .description {
+      > p {
+        margin-bottom: $issue-padding;
+      }
+
+      > .wiki {
+        margin: 0 (-$issue-padding) (-$issue-padding);
+        padding: $padding-wiki;
+        border-top: 1px solid $issue-border;
+        background: $body-bg;
+      }
     }
 
-    div.attachments {
-        margin: $issue-padding (-$issue-padding) (-$issue-padding);
-        padding: $issue-padding;
+    .next-prev-links {
+      color: $gray-light;
     }
+  }
+
+  .attributes {
+    width: 100%;
+
+    th,
+    td {
+      padding: $issue-attribute-padding-v $issue-attribute-padding-h $issue-attribute-padding-v 0;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    > tbody > tr {
+      th {
+        font-weight: normal;
+      }
+
+      td {
+        color: $gray-darkest;
+      }
+    }
+
+    @media screen and (min-width: $screen-md-min) {
+      > tbody > tr {
+        > th,
+        > td {
+          width: 25%;
+        }
+      }
+    }
+
+    @media screen and (min-width: $screen-lg-min) {
+      width: auto;
+
+      > tbody > tr {
+        > th {
+          width: 14em;
+        }
+
+        > td {
+          width: auto;
+          min-width: 16em;
+        }
+      }
+    }
+  }
+
+  @if $color-status {
+    .attributes td.status,
+    .attribute.status .value {
+      display: inline-block;
+      width: auto;
+      min-width: 1em;
+      margin-top: $issue-attribute-padding-v;
+      padding: 1px $table-cell-padding;
+      border-radius: $border-radius-base;
+      background-color: $brand-primary;
+      color: $brand-text;
+      font-size: $font-size-small;
+      font-weight: $font-weight-bold;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    &.status-1 {
+      .attributes td.status,
+      .attribute.status .value {
+        background-color: $brand-info;
+      }
+    }
+
+    &.closed {
+      .attributes td.status,
+      .attribute.status .value {
+        background-color: $brand-danger;
+      }
+    }
+  }
+
+  .splitcontentleft {
+    @media screen and (min-width: $screen-lg-min) {
+      width: auto;
+    }
+  }
+
+  .attribute {
+    @extend %clearfix;
+
+    .label,
+    .value {
+      padding: $issue-attribute-padding-v $issue-attribute-padding-h $issue-attribute-padding-v 0;
+    }
+
+    .label {
+      width: 25%;
+      float: left;
+
+      @media screen and (min-width: $screen-lg-min) {
+        width: 14em;
+      }
+    }
+
+    .value {
+      color: $gray-darkest;
+
+      @media screen and (min-width: $screen-lg-min) {
+        width: auto;
+        min-width: 14em + 16em;
+      }
+    }
+  }
+
+  table.progress {
+    width: 80px;
+  }
+
+  div.attachments {
+    margin: $issue-padding (-$issue-padding) (-$issue-padding);
+    padding: $issue-padding;
+  }
 }
 
 div.fileover {
-    background-color: $highlight-bg;
+  background-color: $highlight-bg;
 }
 
 div.attachments {
-    padding: $line-height-computed 0;
-    border-top: 1px solid $issue-border;
+  padding: $line-height-computed 0;
+  border-top: 1px solid $issue-border;
 
-    p {
-        margin: 10px 0 0;
+  p {
+    margin: 10px 0 0;
+  }
+
+  p:first-child,
+  .contextual + p {
+    margin-top: 0;
+  }
+
+  img {
+    position: relative;
+    top: -1px;
+    vertical-align: middle;
+  }
+
+  .delete {
+    opacity: .5;
+
+    &:hover {
+      opacity: 1;
     }
+  }
 
-    p:first-child,
-    .contextual + p {
-        margin-top: 0;
-    }
-
-    img {
-        position: relative;
-        top: -1px;
-        vertical-align: middle;
-    }
-
-    .delete {
-        opacity: .5;
-
-        &:hover {
-            opacity: 1;
-        }
-    }
-
-    span.author {
-        color: $gray;
-        font-size: $font-size-small;
-    }
+  span.author {
+    color: $gray;
+    font-size: $font-size-small;
+  }
 }
 
 div.thumbnails {
-    margin-top: $issue-padding;
+  margin-top: $issue-padding;
 
-    div {
-        display: inline;
+  div {
+    display: inline;
+  }
+
+  a {
+    display: inline-block;
+    margin-right: 2px;
+    border: 1px solid $gray-lighter;
+    border-radius: $border-radius-base;
+    background-color: $body-bg;
+
+    &:hover {
+      border-color: $gray-light;
     }
+  }
 
-    a {
-        display: inline-block;
-        margin-right: 2px;
-        border: 1px solid $gray-lighter;
-        border-radius: $border-radius-base;
-        background-color: $body-bg;
-
-        &:hover {
-            border-color: $gray-light;
-        }
-    }
-
-    img {
-        top: 0;
-        margin: 3px;
-        border-radius: $border-radius-base - 1;
-    }
+  img {
+    top: 0;
+    margin: 3px;
+    border-radius: $border-radius-base - 1;
+  }
 }
 
 #issue_tree,
 #relations {
-    > p {
-        margin-bottom: 0;
+  > p {
+    margin-bottom: 0;
+  }
+
+  .issues {
+    margin: ($line-height-computed / 2) 0 0;
+
+    tr:last-child > td {
+      border-bottom: 0 none;
     }
 
-    .issues {
-        margin: ($line-height-computed / 2) 0 0;
-
-        tr:last-child > td {
-            border-bottom: 0 none;
-        }
-
-        td.checkbox {
-            display: none;
-        }
-
-        td.subject {
-            padding-left: 0;
-        }
-
-        td.buttons {
-            vertical-align: middle;
-        }
-    }
-}
-
-#relations {
     td.checkbox {
-        display: none;
+      display: none;
+    }
+
+    td.subject {
+      padding-left: 0;
     }
 
     td.buttons {
-        padding: 0;
+      vertical-align: middle;
     }
+  }
+}
+
+#relations {
+  td.checkbox {
+    display: none;
+  }
+
+  td.buttons {
+    padding: 0;
+  }
 }
 
 #new-relation-form {
-    text-align: right;
+  text-align: right;
 
-    > p {
-        margin-bottom: 0;
+  > p {
+    margin-bottom: 0;
 
-        > input {
-            margin-right: 5px;
-        }
+    > input {
+      margin-right: 5px;
     }
+  }
 }
 
 #history {
-    overflow: auto;
+  overflow: auto;
 
-    > .tabs {
-        margin-bottom: $line-height-computed + 2px * 2;
+  > .tabs {
+    margin-bottom: $line-height-computed + 2px * 2;
+  }
+
+  &.hide-details {
+    .journal,
+    .details,
+    .first-of-notes::before {
+      display: none;
     }
 
-    &.hide-details {
-        .journal,
-        .details,
-        .first-of-notes::before {
-            display: none;
-        }
+    .has-notes {
+      display: block;
+    }
+  }
 
-        .has-notes {
-            display: block;
-        }
+  &.hide-notes {
+    .journal,
+    .wiki,
+    .first-of-details::before {
+      display: none;
     }
 
-    &.hide-notes {
-        .journal,
-        .wiki,
-        .first-of-details::before {
-            display: none;
-        }
-
-        .has-details {
-            display: block;
-        }
+    .has-details {
+      display: block;
     }
+  }
 }
 
 .journal {
-    position: relative;
-    margin-bottom: $line-height-computed + 2px * 2;
+  position: relative;
+  margin-bottom: $line-height-computed + 2px * 2;
 
-    @if $use-gravatars {
-        margin-left: $bubble-gravatar-size + $bubble-gravatar-space;
+  @if $use-gravatars {
+    margin-left: $bubble-gravatar-size + $bubble-gravatar-space;
+  }
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: -($line-height-computed + 2px);
+    left: 22px;
+    width: 4px;
+    height: $line-height-computed;
+    background-color: darken($body-bg, 5%);
+    content: "";
+    z-index: -1;
+  }
+
+  .tabs + &::before {
+    display: none;
+  }
+
+  > div {
+    border: 1px solid $issue-border;
+    border-radius: $panel-border-radius;
+
+    &:target {
+      border-color: darken($issue-border, 25%);
+
+      @if $use-gravatars {
+        h4::before {
+          border-right-color: darken($issue-border, 25%);
+        }
+      }
+    }
+  }
+
+  h4 {
+    margin: 0;
+    padding: $bubble-padding-vertical $bubble-padding-horizontal;
+    border-radius: $panel-border-radius $panel-border-radius 0 0;
+    background-color: $issue-bg;
+    color: $gray;
+    font-size: $font-size-list;
+
+    a {
+      color: $gray-darker;
+
+      &.user {
+        font-weight: $font-weight-bold;
+      }
     }
 
-    &::before {
+    .journal-link {
+      color: $gray;
+    }
+  }
+
+  @if $use-gravatars {
+    h4 {
+      position: relative;
+
+      &::before,
+      &::after {
         display: block;
         position: absolute;
-        top: -($line-height-computed + 2px);
-        left: 22px;
-        width: 4px;
-        height: $line-height-computed;
-        background-color: darken($body-bg, 5%);
+        top: 9px;
+        right: 100%;
+        left: -14px;
+        width: 0;
+        height: 0;
+        border-style: solid solid outset;
+        border-color: transparent;
+        content: " ";
+        pointer-events: none;
+      }
+
+      &::after {
+        margin-top: 1px;
+        margin-left: 2px;
+        border-width: 6px;
+        border-right-color: $issue-bg;
+      }
+
+      &::before {
+        border-width: 7px;
+        border-right-color: $issue-border;
+      }
+
+      > .gravatar {
+        margin-top: $line-height-computed - $bubble-gravatar-size;
+        margin-left: -($bubble-gravatar-size + $bubble-gravatar-space + $bubble-padding-horizontal + 1px);
+        float: left;
+      }
+    }
+  }
+
+  .details {
+    margin: 0;
+    padding: $bubble-padding-vertical 0;
+    padding-left: $bubble-padding-horizontal * 3;
+    border-top: 1px solid mix($body-bg, $issue-border, 50%);
+    font-size: $font-size-list;
+    list-style: none;
+
+    li {
+      position: relative;
+      margin-bottom: $bubble-padding-vertical / 2;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::before {
+        display: block;
+        position: absolute;
+        top: 5px;
+        left: -($bubble-padding-horizontal * 1.5 + 6px / 2);
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: $gray-light;
         content: "";
-        z-index: -1;
+      }
     }
 
-    .tabs + &::before {
-        display: none;
+    img {
+      margin: 0 0 -3px 4px;
+    }
+  }
+
+  .thumbnails {
+    margin: 0;
+    padding: 0 $bubble-padding-horizontal $bubble-padding-vertical;
+
+    img {
+      vertical-align: middle;
+    }
+  }
+
+  .wiki,
+  form {
+    padding: $issue-padding;
+    border-top: 1px solid mix($body-bg, $issue-border, 50%);
+  }
+
+  form {
+    padding-top: 5px;
+    background-color: $gray-lightest;
+
+    > p {
+      margin-bottom: $issue-padding;
     }
 
-    > div {
-        border: 1px solid $issue-border;
-        border-radius: $panel-border-radius;
+    > .wiki {
+      margin: 0 (-$issue-padding) (-$issue-padding);
+      padding: 0;
+      border: 0 none;
 
-        &:target {
-            border-color: darken($issue-border, 25%);
-
-            @if $use-gravatars {
-                h4::before {
-                    border-right-color: darken($issue-border, 25%);
-                }
-            }
-        }
-    }
-
-    h4 {
-        margin: 0;
-        padding: $bubble-padding-vertical $bubble-padding-horizontal;
-        border-radius: $panel-border-radius $panel-border-radius 0 0;
-        background-color: $issue-bg;
-        color: $gray;
-        font-size: $font-size-list;
-
-        a {
-            color: $gray-darker;
-
-            &.user {
-                font-weight: $font-weight-bold;
-            }
-        }
-
-        .journal-link {
-            color: $gray;
-        }
-    }
-
-    @if $use-gravatars {
-        h4 {
-            position: relative;
-
-            &::before,
-            &::after {
-                display: block;
-                position: absolute;
-                top: 9px;
-                right: 100%;
-                left: -14px;
-                width: 0;
-                height: 0;
-                border-style: solid solid outset;
-                border-color: transparent;
-                content: " ";
-                pointer-events: none;
-            }
-
-            &::after {
-                margin-top: 1px;
-                margin-left: 2px;
-                border-width: 6px;
-                border-right-color: $issue-bg;
-            }
-
-            &::before {
-                border-width: 7px;
-                border-right-color: $issue-border;
-            }
-
-            > .gravatar {
-                margin-top: $line-height-computed - $bubble-gravatar-size;
-                margin-left: -($bubble-gravatar-size + $bubble-gravatar-space + $bubble-padding-horizontal + 1px);
-                float: left;
-            }
-        }
-    }
-
-    .details {
-        margin: 0;
-        padding: $bubble-padding-vertical 0;
-        padding-left: $bubble-padding-horizontal * 3;
-        border-top: 1px solid mix($body-bg, $issue-border, 50%);
-        font-size: $font-size-list;
-        list-style: none;
-
-        li {
-            position: relative;
-            margin-bottom: $bubble-padding-vertical / 2;
-
-            &:last-child {
-                margin-bottom: 0;
-            }
-
-            &::before {
-                display: block;
-                position: absolute;
-                top: 5px;
-                left: -($bubble-padding-horizontal * 1.5 + 6px / 2);
-                width: 6px;
-                height: 6px;
-                border-radius: 50%;
-                background-color: $gray-light;
-                content: "";
-            }
-        }
-
-        img {
-            margin: 0 0 -3px 4px;
-        }
-    }
-
-    .thumbnails {
-        margin: 0;
-        padding: 0 $bubble-padding-horizontal $bubble-padding-vertical;
-
-        img {
-            vertical-align: middle;
-        }
-    }
-
-    .wiki,
-    form {
+      .preview {
         padding: $issue-padding;
-        border-top: 1px solid mix($body-bg, $issue-border, 50%);
+      }
     }
+  }
 
-    form {
-        padding-top: 5px;
-        background-color: $gray-lightest;
-
-        > p {
-            margin-bottom: $issue-padding;
-        }
-
-        > .wiki {
-            margin: 0 (-$issue-padding) (-$issue-padding);
-            padding: 0;
-            border: 0 none;
-
-            .preview {
-                padding: $issue-padding;
-            }
-        }
+  i {
+    &:first-of-type,
+    &:last-of-type {
+      padding: 2px 4px;
+      border-radius: $border-radius-small;
+      font-size: .9285em;
+      font-style: normal;
     }
+  }
 
-    i {
-        &:first-of-type,
-        &:last-of-type {
-            padding: 2px 4px;
-            border-radius: $border-radius-small;
-            font-size: .9285em;
-            font-style: normal;
-        }
-    }
+  del > i:first-of-type,
+  i:first-of-type {
+    background-color: $journal-old-value-bg;
+    color: $journal-old-value-color;
+  }
 
-    del > i:first-of-type,
-    i:first-of-type {
-        background-color: $journal-old-value-bg;
-        color: $journal-old-value-color;
-    }
-
-    i:last-of-type {
-        background-color: $journal-new-value-bg;
-        color: $journal-new-value-color;
-    }
+  i:last-of-type {
+    background-color: $journal-new-value-bg;
+    color: $journal-new-value-color;
+  }
 }
 
 .private-notes {
-    > div {
-        border-left-color: $brand-warning;
+  > div {
+    border-left-color: $brand-warning;
 
-        h4::before {
-            border-right-color: $brand-warning;
-        }
+    h4::before {
+      border-right-color: $brand-warning;
     }
+  }
 }
 
 #activity dt,
 .journal {
-    clear: left;
+  clear: left;
 }
 
 .journal-link {
-    float: right;
+  float: right;
 }
 
 span.private {
-    padding: $tracker-inline-padding;
-    border-radius: $border-radius-small;
-    background: $brand-warning;
-    color: $brand-text;
-    font-size: $font-size-small;
-    font-weight: $font-weight-bold;
-    text-transform: uppercase;
+  padding: $tracker-inline-padding;
+  border-radius: $border-radius-small;
+  background: $brand-warning;
+  color: $brand-text;
+  font-size: $font-size-small;
+  font-weight: $font-weight-bold;
+  text-transform: uppercase;
 }
 
 #issue-changesets {
-    margin-bottom: $line-height-computed;
+  margin-bottom: $line-height-computed;
 
-    @media screen and (min-width: $screen-md-min) {
-        width: 45%;
-        margin-left: $padding-side;
+  @media screen and (min-width: $screen-md-min) {
+    width: 45%;
+    margin-left: $padding-side;
+    float: right;
+  }
+
+  @media screen and (min-width: $screen-lg-min) {
+    width: 33%;
+    min-width: 28em;
+  }
+
+  div.changeset {
+    margin-top: $line-height-computed / 2 + 2px * 2;
+    border: 1px solid $issue-border;
+    border-radius: $panel-border-radius;
+    background-color: $issue-bg;
+    font-size: $font-size-list;
+    overflow: hidden;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    > p {
+      margin: 0;
+      padding: $padding-base-vertical $padding-base-horizontal;
+      color: $gray;
+      @include clearfix;
+
+      > a {
+        margin-left: .5em;
         float: right;
+        font-family: $font-family-monospace;
+        font-weight: $font-weight-bold;
+      }
+
+      .author a {
+        color: $gray-darker;
+
+        &.user {
+          font-weight: $font-weight-bold;
+        }
+      }
+
+      > br {
+        display: none;
+      }
     }
 
-    @media screen and (min-width: $screen-lg-min) {
-        width: 33%;
-        min-width: 28em;
+    > .wiki {
+      padding: $padding-base-vertical $padding-base-horizontal;
+      border-top: 1px solid mix($body-bg, $issue-border, 50%);
+      background-color: $body-bg;
     }
-
-    div.changeset {
-        margin-top: $line-height-computed / 2 + 2px * 2;
-        border: 1px solid $issue-border;
-        border-radius: $panel-border-radius;
-        background-color: $issue-bg;
-        font-size: $font-size-list;
-        overflow: hidden;
-
-        &:first-of-type {
-            margin-top: 0;
-        }
-
-        > p {
-            margin: 0;
-            padding: $padding-base-vertical $padding-base-horizontal;
-            color: $gray;
-            @include clearfix;
-
-            > a {
-                margin-left: .5em;
-                float: right;
-                font-family: $font-family-monospace;
-                font-weight: $font-weight-bold;
-            }
-
-            .author a {
-                color: $gray-darker;
-
-                &.user {
-                    font-weight: $font-weight-bold;
-                }
-            }
-
-            > br {
-                display: none;
-            }
-        }
-
-        > .wiki {
-            padding: $padding-base-vertical $padding-base-horizontal;
-            border-top: 1px solid mix($body-bg, $issue-border, 50%);
-            background-color: $body-bg;
-        }
-    }
+  }
 }

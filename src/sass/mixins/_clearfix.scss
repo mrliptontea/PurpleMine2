@@ -11,24 +11,24 @@
 // Source: http://nicolasgallagher.com/micro-clearfix-hack/
 
 @mixin clearfix() {
-    &::before,
-    &::after {
-        display: table; // 1
-        content: " "; // 2
-    }
+  &::before,
+  &::after {
+    display: table; // 1
+    content: " "; // 2
+  }
 
-    &::after {
-        clear: both;
-    }
+  &::after {
+    clear: both;
+  }
 }
 
 
 // Lighter (for output CSS) cleafix with placeholder
 
 %clearfix {
-    &::after {
-        display: table;
-        clear: both;
-        content: "";
-    }
+  &::after {
+    display: table;
+    clear: both;
+    content: "";
+  }
 }

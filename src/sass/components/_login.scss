@@ -6,42 +6,42 @@ $login-form-width:              350px;
 $login-input-width:             200px;
 
 #login-form {
-    margin: $line-height-computed * 2 auto;
+  margin: $line-height-computed * 2 auto;
+
+  table {
+    margin: auto;
+  }
+
+  @media screen and (min-width: $screen-sm-min) {
+    width: $login-form-width;
+
+    padding: $panel-body-padding;
+    border: 1px solid $panel-border;
+    border-radius: $border-radius-base;
+    background-color: $panel-bg;
+    color: $panel-color;
+    box-shadow: $panel-shadow;
 
     table {
-        margin: auto;
+      width: 100%;
     }
 
-    @media screen and (min-width: $screen-sm-min) {
-        width: $login-form-width;
-
-        padding: $panel-body-padding;
-        border: 1px solid $panel-border;
-        border-radius: $border-radius-base;
-        background-color: $panel-bg;
-        color: $panel-color;
-        box-shadow: $panel-shadow;
-
-        table {
-            width: 100%;
-        }
-
-        td {
-            width: 90%; // make columns expand
-            padding: $table-cell-padding;
-        }
+    td {
+      width: 90%; // make columns expand
+      padding: $table-cell-padding;
     }
+  }
 }
 
 #username,
 #password,
 #openid_url {
-    width: $login-input-width;
+  width: $login-input-width;
 }
 
 #openid_url {
-    padding-right: 8px + 24px;
-    background-image: url("../../../images/openid-bg.gif");
-    background-repeat: no-repeat;
-    background-position: ($login-input-width - 24px) center;
+  padding-right: 8px + 24px;
+  background-image: url("../../../images/openid-bg.gif");
+  background-repeat: no-repeat;
+  background-position: ($login-input-width - 24px) center;
 }

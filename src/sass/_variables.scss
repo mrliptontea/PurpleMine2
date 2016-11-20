@@ -201,34 +201,34 @@ $tracker-default-bg:            #668 !default;
 $tracker-default-text:          $brand-text !default;
 
 $tracker-default-colors-map: (
-    1: (
-        background:             $brand-danger,
-        color:                  $brand-text
-    ),
-    2: (
-        background:             $brand-info,
-        color:                  $brand-text
-    ),
-    3: (
-        background:             $brand-success,
-        color:                  $brand-text
-    ),
-    4: (
-        background:             $brand-primary,
-        color:                  $brand-text
-    ),
-    5: (
-        background:             $brand-warning,
-        color:                  $brand-text
-    ),
-    6: (
-        background:             mix($brand-success, $brand-info, 50%),
-        color:                  $brand-text
-    ),
-    7: (
-        background:             mix($brand-primary, $brand-warning, 50%),
-        color:                  $brand-text
-    )
+  1: (
+    background:             $brand-danger,
+    color:                  $brand-text
+  ),
+  2: (
+    background:             $brand-info,
+    color:                  $brand-text
+  ),
+  3: (
+    background:             $brand-success,
+    color:                  $brand-text
+  ),
+  4: (
+    background:             $brand-primary,
+    color:                  $brand-text
+  ),
+  5: (
+    background:             $brand-warning,
+    color:                  $brand-text
+  ),
+  6: (
+    background:             mix($brand-success, $brand-info, 50%),
+    color:                  $brand-text
+  ),
+  7: (
+    background:             mix($brand-primary, $brand-warning, 50%),
+    color:                  $brand-text
+  )
 ) !default;
 $tracker-custom-colors-map:     () !default;
 $tracker-colors-map:            map-merge($tracker-default-colors-map, $tracker-custom-colors-map);
@@ -452,7 +452,7 @@ $panel-bg:                      #f9f9f9 !default;
 $panel-border:                  #ccc !default;
 $panel-border-radius:           $border-radius-base !default;
 $panel-shadow:                  0 1px 2px rgba(#000, .1),
-                                0 3px 8px rgba(#000, .07) !default;
+                0 3px 8px rgba(#000, .07) !default;
 
 
 //== Tooltips

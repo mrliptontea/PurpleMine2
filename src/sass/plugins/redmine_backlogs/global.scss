@@ -1,45 +1,45 @@
 @import "common";
 
 html {
-    overflow-y: scroll;
-    height: 100%;
+  overflow-y: scroll;
+  height: 100%;
 }
 
 body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: mix($gray-lighter, $header-bg, 70%);
-    color: $text-color;
-    font-family: $font-family-base;
-    font-size: $font-size-base;
-    font-weight: $font-weight-normal;
-    line-height: $line-height-base;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: mix($gray-lighter, $header-bg, 70%);
+  color: $text-color;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-base;
 }
 
 a {
-    color: $link-color;
-    text-decoration: none;
+  color: $link-color;
+  text-decoration: none;
 
-    &:hover,
-    &:focus {
-        color: $link-hover-color;
-        text-decoration: $link-hover-decoration;
-    }
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
 }
 
 .issue.closed {
-    color: $link-color-issue-closed;
-    text-decoration: $link-closed-decoration;
+  color: $link-color-issue-closed;
+  text-decoration: $link-closed-decoration;
 }
 
 .project.closed {
-    color: $link-color-project-closed;
+  color: $link-color-project-closed;
 }
 
 .user.locked {
-    color: $link-color-user-locked;
+  color: $link-color-user-locked;
 }
 
 
@@ -50,10 +50,10 @@ button,
 input,
 select,
 textarea {
-    font-family: inherit;
-    font-size: $font-size-base;
-    line-height: $line-height-base;
-    @include box-sizing(border-box);
+  font-family: inherit;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  @include box-sizing(border-box);
 }
 
 select,
@@ -63,58 +63,58 @@ input[type="text"],
 input.name,
 input.editor,
 #col_width input {
-    height: $input-height-base;
-    padding: $input-padding-vertical $input-padding-horizontal;
-    border: 1px solid $input-border;
-    border-radius: $input-border-radius;
-    background-color: $input-bg;
-    color: $input-color;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075);
-    @include transition(border-color ease-in-out .1s, box-shadow ease-in-out .1s);
-    @include form-control-focus();
-    @include placeholder();
+  height: $input-height-base;
+  padding: $input-padding-vertical $input-padding-horizontal;
+  border: 1px solid $input-border;
+  border-radius: $input-border-radius;
+  background-color: $input-bg;
+  color: $input-color;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075);
+  @include transition(border-color ease-in-out .1s, box-shadow ease-in-out .1s);
+  @include form-control-focus();
+  @include placeholder();
 }
 
 textarea {
-    resize: vertical;
-    height: auto;
+  resize: vertical;
+  height: auto;
 }
 
 select:-moz-focusring {
-    color: transparent;
-    text-shadow: 0 0 0 #000;
+  color: transparent;
+  text-shadow: 0 0 0 #000;
 }
 
 button.ui-multiselect {
-    height: $input-height-base;
-    padding: $input-padding-vertical $input-padding-horizontal;
-    border: 1px solid $input-border;
-    background: $input-bg;
+  height: $input-height-base;
+  padding: $input-padding-vertical $input-padding-horizontal;
+  border: 1px solid $input-border;
+  background: $input-bg;
+  color: $input-color;
+  white-space: nowrap;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075);
+  cursor: default;
+  overflow: hidden;
+  @include transition(border-color ease-in-out .1s, box-shadow ease-in-out .1s);
+  @include box-sizing(border-box);
+
+  &:hover,
+  &:focus {
     color: $input-color;
-    white-space: nowrap;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075);
-    cursor: default;
-    overflow: hidden;
-    @include transition(border-color ease-in-out .1s, box-shadow ease-in-out .1s);
-    @include box-sizing(border-box);
+  }
 
-    &:hover,
-    &:focus {
-        color: $input-color;
-    }
+  &:active {
+    @include translate(0, 0);
+  }
 
-    &:active {
-        @include translate(0, 0);
-    }
+  &.ui-state-active {
+    border-color: $input-border-focus;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075), 0 0 5px rgba($input-border-focus, .5);
+  }
 
-    &.ui-state-active {
-        border-color: $input-border-focus;
-        box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075), 0 0 5px rgba($input-border-focus, .5);
-    }
-
-    .ui-icon {
-        margin-top: 1px;
-    }
+  .ui-icon {
+    margin-top: 1px;
+  }
 }
 
 
@@ -122,93 +122,93 @@ button.ui-multiselect {
 //
 
 #toolbar {
-    display: block;
+  display: block;
+  position: relative;
+  padding: 10px $padding-side;
+  background-color: $main-menu-bg;
+  box-shadow: $panel-shadow;
+  overflow: hidden;
+  z-index: 1000;
+  @include clearfix;
+
+  .breadcrumbs {
+    margin-right: 10px;
+    float: left;
+
+    select {
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+
+    .home {
+      font-weight: $font-weight-bold;
+    }
+
+    .separator {
+      position: relative;
+      top: -1px;
+      padding: 0 .2em;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  .userselect {
     position: relative;
-    padding: 10px $padding-side;
-    background-color: $main-menu-bg;
-    box-shadow: $panel-shadow;
-    overflow: hidden;
-    z-index: 1000;
-    @include clearfix;
+    float: left;
 
-    .breadcrumbs {
-        margin-right: 10px;
-        float: left;
-
-        select {
-            margin-right: 5px;
-            vertical-align: middle;
-        }
-
-        .home {
-            font-weight: $font-weight-bold;
-        }
-
-        .separator {
-            position: relative;
-            top: -1px;
-            padding: 0 .2em;
-            font-weight: $font-weight-bold;
-        }
+    ul {
+      padding-left: 0;
     }
 
-    .userselect {
-        position: relative;
-        float: left;
-
-        ul {
-            padding-left: 0;
-        }
-
-        br {
-            display: none;
-        }
+    br {
+      display: none;
     }
+  }
 
-    .links {
-        float: right;
+  .links {
+    float: right;
 
-        a {
-            padding-left: 5px;
-            cursor: pointer;
-            @include user-select(none);
-        }
+    a {
+      padding-left: 5px;
+      cursor: pointer;
+      @include user-select(none);
     }
+  }
+
+  input[type="search"],
+  input[type="text"],
+  select,
+  .ui-widget {
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  @media screen and (max-width: $screen-md-max) {
+    font-size: $font-size-small;
 
     input[type="search"],
     input[type="text"],
     select,
     .ui-widget {
-        font-family: inherit;
-        font-size: inherit;
+      $input-padding-vertical-small:   3px;
+      $input-padding-horizontal-small: 5px;
+
+      height: ($line-height-computed + ($input-padding-vertical-small * 2) + 2);
+      padding: $input-padding-vertical-small $input-padding-horizontal-small;
     }
 
-    @media screen and (max-width: $screen-md-max) {
-        font-size: $font-size-small;
-
-        input[type="search"],
-        input[type="text"],
-        select,
-        .ui-widget {
-            $input-padding-vertical-small:   3px;
-            $input-padding-horizontal-small: 5px;
-
-            height: ($line-height-computed + ($input-padding-vertical-small * 2) + 2);
-            padding: $input-padding-vertical-small $input-padding-horizontal-small;
-        }
-
-        #project_quick_jump_box {
-            width: 128px;
-        }
+    #project_quick_jump_box {
+      width: 128px;
     }
+  }
 }
 
 #refresh {
-    .loading & {
-        background-image: url("images/bouncer.gif");
-        background-repeat: no-repeat;
-        background-position: -6px 1px;
-    }
+  .loading & {
+    background-image: url("images/bouncer.gif");
+    background-repeat: no-repeat;
+    background-position: -6px 1px;
+  }
 }
 
 
@@ -216,76 +216,76 @@ button.ui-multiselect {
 //
 
 .clearfix {
-    @include clearfix;
+  @include clearfix;
 }
 
 #content {
-    margin: 0;
-    padding: 0;
-    overflow: visible;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
 }
 
 #helpers,
 .meta,
 .editors {
-    display: none;
+  display: none;
 }
 
 // .editor is the classname for field editors of sprint,
 // story, task, impediment. These field editors get created
 // at runtime whenever any of the above models are edited.
 .ui-dialog .editor {
-    display: block;
+  display: block;
 }
 
 ul.ui-sortable {
-    min-height: 20px;
+  min-height: 20px;
 }
 
 //== Story tooltip
 //
 
 .ui-tooltip {
-    .ui-tooltip-content {
-        hr {
-            margin-top:    $line-height-computed / 2;
-            margin-bottom: $line-height-computed / 2;
-            border: 0;
-            border-top: 1px solid $hr-border;
-        }
-
-        .wiki-anchor {
-            display: none;
-        }
+  .ui-tooltip-content {
+    hr {
+      margin-top:    $line-height-computed / 2;
+      margin-bottom: $line-height-computed / 2;
+      border: 0;
+      border-top: 1px solid $hr-border;
     }
 
-    .issue-description {
-        max-height: 10em;
-        margin-top: 12px;
-        text-overflow: ellipsis;
-        overflow: hidden;
+    .wiki-anchor {
+      display: none;
+    }
+  }
+
+  .issue-description {
+    max-height: 10em;
+    margin-top: 12px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .issue-field {
+    margin: 2px 0 0;
+    padding-left: 160px;
+    overflow: hidden;
+
+    &:first-child {
+      margin-top: 0;
     }
 
-    .issue-field {
-        margin: 2px 0 0;
-        padding-left: 160px;
-        overflow: hidden;
-
-        &:first-child {
-            margin-top: 0;
-        }
-
-        > label {
-            margin-left: -160px;
-            padding-right: 5px;
-            float: left;
-            font-weight: $font-weight-bold;
-        }
+    > label {
+      margin-left: -160px;
+      padding-right: 5px;
+      float: left;
+      font-weight: $font-weight-bold;
     }
+  }
 }
 
 .tooltip_text {
-    display: none;
+  display: none;
 }
 
 //== drag-drop effect: disabled dropzones are greyed out
@@ -293,13 +293,13 @@ ul.ui-sortable {
 
 .rb-sortable-disabled,
 .ui-sortable-disabled {
-    background-color: $gray-lighter;
-    opacity: .5;
+  background-color: $gray-lighter;
+  opacity: .5;
 }
 
 .w-rb-header-collapsed {
-    height: 27px; // 14px * .86 * 1.42857 + 2 * 5px
-    overflow: hidden;
+  height: 27px; // 14px * .86 * 1.42857 + 2 * 5px
+  overflow: hidden;
 }
 
 
@@ -307,14 +307,14 @@ ul.ui-sortable {
 //
 
 body {
-    .ui-widget {
-        &,
-        input,
-        select,
-        textarea,
-        button {
-            font-family: inherit;
-            font-size: inherit;
-        }
+  .ui-widget {
+    &,
+    input,
+    select,
+    textarea,
+    button {
+      font-family: inherit;
+      font-size: inherit;
     }
+  }
 }

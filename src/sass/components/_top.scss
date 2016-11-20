@@ -3,131 +3,131 @@
 // --------------------------------------------------
 
 #top-menu {
-    position: relative;
-    padding: $padding-small-vertical $padding-side;
-    background: $top-menu-bg;
-    color: $top-menu-text;
-    font-size: $font-size-small;
-    @extend %clearfix;
+  position: relative;
+  padding: $padding-small-vertical $padding-side;
+  background: $top-menu-bg;
+  color: $top-menu-text;
+  font-size: $font-size-small;
+  @extend %clearfix;
 
-    @if $top-menu-collapse {
-        $toggler-position-v:    $padding-small-vertical + 1px;
-        $toggler-position-h:    1px;
+  @if $top-menu-collapse {
+    $toggler-position-v:    $padding-small-vertical + 1px;
+    $toggler-position-h:    1px;
 
-        max-height: floor($font-size-base * $font-size-small-unitless * $line-height-base) + $padding-small-vertical;
-        padding-bottom: 0;
-        overflow: hidden;
+    max-height: floor($font-size-base * $font-size-small-unitless * $line-height-base) + $padding-small-vertical;
+    padding-bottom: 0;
+    overflow: hidden;
 
-        &.expanded {
-            max-height: none;
-        }
-
-        a {
-            display: inline-block;
-            margin-bottom: $padding-small-vertical;
-            white-space: nowrap;
-        }
-
-        .top-menu-toggler {
-            display: block;
-            position: absolute;
-            top: $toggler-position-v;
-            @if $sidebar-position == "left" {
-                left: $toggler-position-h;
-            } @else {
-                right: $toggler-position-h;
-            }
-            @include user-select(none);
-
-            @if $use-font-awesome {
-                font-size: 14px;
-
-                &::before {
-                    content: $fa-var-caret-square-o-down;
-                }
-            } @else {
-                @extend %image-arrow-down-white;
-            }
-
-            @if $use-font-awesome {
-                @extend %fa-icon;
-                color: mix($top-menu-link, $top-menu-bg, 33%);
-                line-height: 1;
-
-                &::before {
-                    margin-right: 0;
-                }
-
-                &:hover,
-                &:focus,
-                &:active {
-                    color: mix($top-menu-link-hover, $top-menu-bg, 50%);
-                }
-            } @else {
-                width: 15px;
-                height: 15px;
-                border-radius: $border-radius-base;
-                background-repeat: no-repeat;
-                background-position: center center;
-
-                &:hover,
-                &:focus,
-                &:active {
-                    background-color: lighten($top-menu-bg, 15%);
-                }
-            }
-
-            &.expanded {
-                @if $use-font-awesome {
-                    &::before {
-                        content: $fa-var-caret-square-o-up;
-                    }
-                } @else {
-                    @extend %image-arrow-up-white;
-                }
-            }
-
-            @media screen and (min-width: $top-menu-collapse-breakpoint) {
-                display: none;
-            }
-        }
-    }
-
-    ul {
-        margin: 0;
-        padding: 0;
-    }
-
-    li {
-        display: inline;
-        margin: 0 .5em 0 0;
-        padding: 0;
-        list-style-type: none;
+    &.expanded {
+      max-height: none;
     }
 
     a {
-        color: $top-menu-link;
-        font-weight: $font-weight-bold;
+      display: inline-block;
+      margin-bottom: $padding-small-vertical;
+      white-space: nowrap;
+    }
 
-        &:hover {
-            color: $top-menu-link-hover;
-            text-decoration: none;
+    .top-menu-toggler {
+      display: block;
+      position: absolute;
+      top: $toggler-position-v;
+      @if $sidebar-position == "left" {
+        left: $toggler-position-h;
+      } @else {
+        right: $toggler-position-h;
+      }
+      @include user-select(none);
+
+      @if $use-font-awesome {
+        font-size: 14px;
+
+        &::before {
+          content: $fa-var-caret-square-o-down;
         }
-    }
+      } @else {
+        @extend %image-arrow-down-white;
+      }
 
-    #loggedas {
-        margin-left: 1em;
-        float: right;
+      @if $use-font-awesome {
+        @extend %fa-icon;
+        color: mix($top-menu-link, $top-menu-bg, 33%);
+        line-height: 1;
+
+        &::before {
+          margin-right: 0;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: mix($top-menu-link-hover, $top-menu-bg, 50%);
+        }
+      } @else {
+        width: 15px;
+        height: 15px;
+        border-radius: $border-radius-base;
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        &:hover,
+        &:focus,
+        &:active {
+          background-color: lighten($top-menu-bg, 15%);
+        }
+      }
+
+      &.expanded {
+        @if $use-font-awesome {
+          &::before {
+            content: $fa-var-caret-square-o-up;
+          }
+        } @else {
+          @extend %image-arrow-up-white;
+        }
+      }
+
+      @media screen and (min-width: $top-menu-collapse-breakpoint) {
+        display: none;
+      }
     }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline;
+    margin: 0 .5em 0 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  a {
+    color: $top-menu-link;
+    font-weight: $font-weight-bold;
+
+    &:hover {
+      color: $top-menu-link-hover;
+      text-decoration: none;
+    }
+  }
+
+  #loggedas {
+    margin-left: 1em;
+    float: right;
+  }
 }
 
 #account {
-    float: right;
+  float: right;
 
-    > ul > li {
-        margin-right: 0;
-        margin-left: .5em;
-    }
+  > ul > li {
+    margin-right: 0;
+    margin-left: .5em;
+  }
 }
 
 
@@ -136,243 +136,243 @@
 // --------------------------------------------------
 
 #header {
-    position: relative;
-    background-color: $header-bg;
-    color: $header-text;
-    @extend %clearfix;
+  position: relative;
+  background-color: $header-bg;
+  color: $header-text;
+  @extend %clearfix;
 
-    > h1 {
-        padding: $header-padding-vertical $header-padding-horizontal;
+  > h1 {
+    padding: $header-padding-vertical $header-padding-horizontal;
 
-        @if $use-logo {
-            padding-left: $logo-image-width + $logo-position-horizontal + $logo-space;
-            background-image: url("../images/logo/logo.png");
-            background-repeat: no-repeat;
-            background-position: $logo-position-horizontal $logo-position-vertical;
+    @if $use-logo {
+      padding-left: $logo-image-width + $logo-position-horizontal + $logo-space;
+      background-image: url("../images/logo/logo.png");
+      background-repeat: no-repeat;
+      background-position: $logo-position-horizontal $logo-position-vertical;
 
-            @if $use-retina-logo {
-                @include img-retina("../images/logo/logo@2x.png", $logo-image-width, $logo-image-height);
-            }
-        }
-
-        .root {
-            color: $header-root;
-            font-weight: 500;
-        }
-
-        .ancestor {
-            font-weight: 500;
-        }
-
-        .root,
-        .ancestor {
-            display: inline-block;
-        }
-
-        .current-project {
-            display: inline-block;
-        }
+      @if $use-retina-logo {
+        @include img-retina("../images/logo/logo@2x.png", $logo-image-width, $logo-image-height);
+      }
     }
 
-    a {
-        color: $header-link;
+    .root {
+      color: $header-root;
+      font-weight: 500;
     }
+
+    .ancestor {
+      font-weight: 500;
+    }
+
+    .root,
+    .ancestor {
+      display: inline-block;
+    }
+
+    .current-project {
+      display: inline-block;
+    }
+  }
+
+  a {
+    color: $header-link;
+  }
 }
 
 #quick-search {
-    margin-top: floor(($header-title-line-height + $header-padding-vertical * 2 - $input-height-base) / 2) - 1px;
-    margin-right: $header-padding-horizontal;
-    float: right;
-    color: $header-text;
+  margin-top: floor(($header-title-line-height + $header-padding-vertical * 2 - $input-height-base) / 2) - 1px;
+  margin-right: $header-padding-horizontal;
+  float: right;
+  color: $header-text;
 
-    label {
-        font-weight: 500;
+  label {
+    font-weight: 500;
+  }
+
+  form {
+    display: inline;
+  }
+
+  input,
+  select {
+    margin-left: 5px;
+    border-color: darken($header-bg, 15%);
+    background: darken($header-bg, 10%);
+    color: $header-root;
+    @include transition(color ease-in-out .1s, background-color ease-in-out .1s, border-color ease-in-out .1s);
+
+    &:focus {
+      border-color: darken($header-bg, 35%);
+      background-color: $input-bg;
+      color: $input-color;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, .3);
     }
+  }
 
-    form {
-        display: inline;
+  option {
+    background-color: $input-bg;
+    color: $input-color;
+
+    &[disabled] {
+      color: $gray-lighter;
     }
+  }
 
-    input,
-    select {
-        margin-left: 5px;
-        border-color: darken($header-bg, 15%);
-        background: darken($header-bg, 10%);
-        color: $header-root;
-        @include transition(color ease-in-out .1s, background-color ease-in-out .1s, border-color ease-in-out .1s);
-
-        &:focus {
-            border-color: darken($header-bg, 35%);
-            background-color: $input-bg;
-            color: $input-color;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, .3);
-        }
-    }
-
-    option {
-        background-color: $input-bg;
-        color: $input-color;
-
-        &[disabled] {
-            color: $gray-lighter;
-        }
-    }
-
-    input {
-        width: 200px;
-    }
+  input {
+    width: 200px;
+  }
 }
 
 #main-menu {
-    clear: both;
-    background-color: $main-menu-bg;
-    color: $text-color;
-    box-shadow: inset 0 -1px $main-menu-border;
+  clear: both;
+  background-color: $main-menu-bg;
+  color: $text-color;
+  box-shadow: inset 0 -1px $main-menu-border;
 
-    &.tabs {
-        margin-bottom: 0;
-        overflow: inherit;
-
-        > ul {
-           height: auto;
-
-           > li {
-                > a {
-                    border: 0 none;
-                    border-radius: 0;
-                    background: transparent;
-                }
-           }
-        }
-    }
+  &.tabs {
+    margin-bottom: 0;
+    overflow: inherit;
 
     > ul {
-        margin: 0;
-        padding: 0 ($padding-side - $main-menu-padding-horizontal);
-        color: $main-menu-link;
-        list-style: none;
-        @extend %clearfix;
+      height: auto;
 
-        > li {
-            position: relative;
-            margin-right: .5em;
-            float: left;
-
-            &:hover {
-                > .new-object {
-                    border-bottom: 1px solid $main-menu-dropdown-bg;
-                    z-index: 100;
-                }
-
-                > .menu-children {
-                    display: block;
-                }
-            }
-
-            > a {
-                display: block;
-                padding: $main-menu-padding-vertical $main-menu-padding-horizontal;
-                color: $main-menu-link;
-                line-height: $line-height-computed;
-                white-space: nowrap;
-                @include transition(box-shadow .15s);
-
-                @media screen and (min-width: $screen-lg-min) {
-                    padding-right: $main-menu-padding-horizontal * 2;
-                    padding-left: $main-menu-padding-horizontal * 2;
-                }
-
-                &:hover,
-                &:focus {
-                    outline: 0 none;
-                    text-decoration: none;
-                    box-shadow: inset 0 (-$main-menu-shadow-width) 0 $main-menu-shadow-hover;
-                }
-
-                &.selected {
-                    padding-bottom: $main-menu-padding-vertical - $main-menu-shadow-width;
-                    border-bottom: 3px solid $main-menu-shadow-active;
-                    color: $main-menu-link-active;
-                    font-weight: $font-weight-bold;
-                    box-shadow: none;
-                }
-
-                &.new-object {
-                    position: relative;
-                    min-width: 1.1em;
-                    padding-bottom: $main-menu-padding-vertical - 1px;
-                    border: 1px solid $main-menu-border;
-                    border-width: 0 1px;
-                    background-color: $main-menu-dropdown-bg;
-                    color: $icon-success-color;
-                    font-size: 2em;
-                    font-weight: bold;
-                    text-align: center;
-
-                    &:hover,
-                    &:focus {
-                        box-shadow: none;
-                    }
-                }
-            }
+      > li {
+        > a {
+          border: 0 none;
+          border-radius: 0;
+          background: transparent;
         }
+      }
+    }
+  }
+
+  > ul {
+    margin: 0;
+    padding: 0 ($padding-side - $main-menu-padding-horizontal);
+    color: $main-menu-link;
+    list-style: none;
+    @extend %clearfix;
+
+    > li {
+      position: relative;
+      margin-right: .5em;
+      float: left;
+
+      &:hover {
+        > .new-object {
+          border-bottom: 1px solid $main-menu-dropdown-bg;
+          z-index: 100;
+        }
+
+        > .menu-children {
+          display: block;
+        }
+      }
+
+      > a {
+        display: block;
+        padding: $main-menu-padding-vertical $main-menu-padding-horizontal;
+        color: $main-menu-link;
+        line-height: $line-height-computed;
+        white-space: nowrap;
+        @include transition(box-shadow .15s);
+
+        @media screen and (min-width: $screen-lg-min) {
+          padding-right: $main-menu-padding-horizontal * 2;
+          padding-left: $main-menu-padding-horizontal * 2;
+        }
+
+        &:hover,
+        &:focus {
+          outline: 0 none;
+          text-decoration: none;
+          box-shadow: inset 0 (-$main-menu-shadow-width) 0 $main-menu-shadow-hover;
+        }
+
+        &.selected {
+          padding-bottom: $main-menu-padding-vertical - $main-menu-shadow-width;
+          border-bottom: 3px solid $main-menu-shadow-active;
+          color: $main-menu-link-active;
+          font-weight: $font-weight-bold;
+          box-shadow: none;
+        }
+
+        &.new-object {
+          position: relative;
+          min-width: 1.1em;
+          padding-bottom: $main-menu-padding-vertical - 1px;
+          border: 1px solid $main-menu-border;
+          border-width: 0 1px;
+          background-color: $main-menu-dropdown-bg;
+          color: $icon-success-color;
+          font-size: 2em;
+          font-weight: bold;
+          text-align: center;
+
+          &:hover,
+          &:focus {
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+
+  a {
+    color: $main-menu-link;
+  }
+
+  .menu-children {
+    display: none;
+    position: absolute;
+    min-width: 130px;
+    margin: 0 1px;
+    padding: 0;
+    border-radius: 0 0 $border-radius-base $border-radius-base;
+    background: $main-menu-dropdown-bg;
+    list-style: none;
+    overflow: hidden;
+    z-index: 1001;
+    @include nice-shadow(2);
+
+    &.visible {
+      display: block;
     }
 
     a {
-        color: $main-menu-link;
+      display: block;
+      padding: $tab-padding-vertical ($tab-padding-horizontal * 2);
+      border-top: 1px solid $main-menu-border;
+      color: $main-menu-link;
+
+      &:hover,
+      &:focus {
+        outline: 0 none;
+        background-color: $component-active-bg;
+        color: $component-active-color;
+        text-decoration: none;
+      }
     }
 
-    .menu-children {
-        display: none;
-        position: absolute;
-        min-width: 130px;
-        margin: 0 1px;
-        padding: 0;
-        border-radius: 0 0 $border-radius-base $border-radius-base;
-        background: $main-menu-dropdown-bg;
-        list-style: none;
-        overflow: hidden;
-        z-index: 1001;
-        @include nice-shadow(2);
-
-        &.visible {
-            display: block;
-        }
-
-        a {
-            display: block;
-            padding: $tab-padding-vertical ($tab-padding-horizontal * 2);
-            border-top: 1px solid $main-menu-border;
-            color: $main-menu-link;
-
-            &:hover,
-            &:focus {
-                outline: 0 none;
-                background-color: $component-active-bg;
-                color: $component-active-color;
-                text-decoration: none;
-            }
-        }
-
-        > li:first-child > a {
-            border: 0 none;
-        }
+    > li:first-child > a {
+      border: 0 none;
     }
+  }
 
-    .tabs-buttons {
-        // scss-lint:disable ImportantRule
-        display: none !important;
-        padding-left: 0;
-        background-color: $main-menu-bg;
+  .tabs-buttons {
+    // scss-lint:disable ImportantRule
+    display: none !important;
+    padding-left: 0;
+    background-color: $main-menu-bg;
 
-        > button {
-            height: $main-menu-padding-vertical * 2 + $line-height-computed - 1px;
-            background-color: $main-menu-bg;
-        }
+    > button {
+      height: $main-menu-padding-vertical * 2 + $line-height-computed - 1px;
+      background-color: $main-menu-bg;
     }
+  }
 
-    ul + .tabs-buttons {
-        // scss-lint:disable ImportantRule
-        display: block !important;
-    }
+  ul + .tabs-buttons {
+    // scss-lint:disable ImportantRule
+    display: block !important;
+  }
 }
