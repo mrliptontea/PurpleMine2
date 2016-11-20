@@ -1,9 +1,9 @@
-$(function()
-{
+$(function () {
   /* global PurpleMine */
-  "use strict";
+  'use strict'
 
-  new PurpleMine.SidebarToggler();
-  new PurpleMine.HistoryTabs();
-  new PurpleMine.MenuCollapse();
-});
+  /* eslint-disable no-new */
+  new PurpleMine.SidebarToggler()
+  new PurpleMine.HistoryTabs()
+  new PurpleMine.MenuCollapse()
+})

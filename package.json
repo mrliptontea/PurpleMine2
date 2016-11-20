@@ -17,6 +17,9 @@
     "url": "https://github.com/mrliptontea/PurpleMine2/issues"
   },
   "homepage": "https://github.com/mrliptontea/PurpleMine2",
+  "scripts": {
+    "lint": "standard && scss-lint"
+  },
   "dependencies": {
     "autoprefixer": "^6.5.3",
     "grunt": "^1.0.1",
@@ -24,5 +27,14 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-postcss": "^0.8.0",
     "grunt-sass": "^1.0.0"
+  },
+  "devDependencies": {
+    "standard": "^8.5.0"
+  },
+  "standard": {
+    "globals": [ "$", "localStorage" ],
+    "ignore": [
+      "/javascripts"
+    ]
   }
 }

@@ -1,6 +1,6 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
   grunt.initConfig({
-    src: "src/",
+    src: 'src/',
 
     sass: {
       options: {
@@ -64,15 +64,15 @@ module.exports = function(grunt) {
         tasks: ['js']
       }
     }
-  });
+  })
 
-  grunt.loadNpmTasks('grunt-sass');
-  grunt.loadNpmTasks('grunt-postcss');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks("grunt-contrib-uglify");
+  grunt.loadNpmTasks('grunt-sass')
+  grunt.loadNpmTasks('grunt-postcss')
+  grunt.loadNpmTasks('grunt-contrib-watch')
+  grunt.loadNpmTasks('grunt-contrib-uglify')
 
-  grunt.registerTask('css', ['sass', 'postcss']);
-  grunt.registerTask('js', ['uglify']);
+  grunt.registerTask('css', ['sass', 'postcss'])
+  grunt.registerTask('js', ['uglify'])
 
-  grunt.registerTask('default', ['css', 'js']);
-};
+  grunt.registerTask('default', ['css', 'js'])
+}

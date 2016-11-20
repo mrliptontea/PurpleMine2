@@ -1,154 +1,135 @@
-var PurpleMine = PurpleMine || {};
+var PurpleMine = PurpleMine || {}
 
-PurpleMine.SidebarToggler = (function()
-{
-  "use strict";
+PurpleMine.SidebarToggler = (function () {
+  'use strict'
 
-  var self;
+  var instance
   var translations = {
     en: {
-      toggler: "Toggle sidebar"
+      toggler: 'Toggle sidebar'
     },
     pl: {
-      toggler: "Pokaż/ukryj panel boczny"
+      toggler: 'Pokaż/ukryj panel boczny'
     }
-  };
+  }
 
-  function SidebarToggler()
-  {
-    if (self)
-    {
-      return self;
+  function SidebarToggler () {
+    if (instance) {
+      return instance
     }
 
-    self = this;
+    instance = this
 
-    this.sidebarVisible = true;
-    this.sidebarHiding  = null;
-    this.$toggler       = null;
-    this.$main          = $("#main");
-    this.$sidebar       = $("#sidebar");
-    this.lang           = document.documentElement.lang;
+    this.sidebarVisible = true
+    this.sidebarHiding = null
+    this.$toggler = null
+    this.$main = $('#main')
+    this.$sidebar = $('#sidebar')
+    this.lang = document.documentElement.lang
 
-    if (typeof translations[this.lang] === "undefined")
-    {
-      this.lang = "en";
+    if (typeof translations[this.lang] === 'undefined') {
+      this.lang = 'en'
     }
 
-    this._ = translations[this.lang];
+    this._ = translations[this.lang]
 
     // Fix issue with context menu position
-    if ("relative" === this.$main.css("position"))
-    {
-      $("#context-menu").appendTo("#wrapper3");
+    if (this.$main.css('position') === 'relative') {
+      $('#context-menu').appendTo('#wrapper3')
     }
 
-    handleSidebar();
+    handleSidebar()
   }
 
-  function handleSidebar()
-  {
-    if (window.localStorage)
-    {
-      self.sidebarVisible =
-        null === localStorage.getItem("PurpleMine:sidebarHidden");
+  function handleSidebar () {
+    if (window.localStorage) {
+      instance.sidebarVisible =
+        localStorage.getItem('PurpleMine:sidebarHidden') === null
     }
 
-    if (self.$sidebar.length > 0 &&
-      false === self.$main.hasClass("nosidebar"))
-    {
-      buildButton();
-      bindKeyHandler();
+    if (
+      instance.$sidebar.length > 0 &&
+      instance.$main.hasClass('nosidebar') === false
+    ) {
+      buildButton()
+      bindKeyHandler()
 
-      if (false === self.sidebarVisible)
-      {
-        self.hideSidebar(true);
+      if (instance.sidebarVisible === false) {
+        instance.hideSidebar(true)
       }
     }
   }
 
-  function bindKeyHandler()
-  {
-    var body = document.getElementsByTagName("body")[0];
+  function bindKeyHandler () {
+    var body = document.getElementsByTagName('body')[0]
 
-    window.onkeydown = function(event)
-    {
-      if (body === event.target && 83 === event.keyCode && // "s"
-        false === event.ctrlKey && false === event.altKey &&
-        false === event.shiftKey)
-      {
-        self.toggleSidebar();
+    window.onkeydown = function (event) {
+      if (
+        body === event.target &&
+        event.keyCode === 83 && // "s"
+        event.ctrlKey === false &&
+        event.altKey === false &&
+        event.shiftKey === false
+      ) {
+        instance.toggleSidebar()
       }
-    };
+    }
   }
 
-  function buildButton()
-  {
-    var togglerClass = "sidebar-toggler",
-      togglerHtml;
+  function buildButton () {
+    var togglerClass = 'sidebar-toggler'
+    var togglerHtml = '<a href="javascript:;" class="' +
+      togglerClass +
+      '" title="' +
+      instance._.toggler +
+      '"></a>'
+    instance.$toggler = $(togglerHtml)
 
-    togglerHtml = "<a href=\"javascript:;\" class=\"" + togglerClass +
-            "\" title=\"" + self._.toggler + "\"></a>";
-    self.$toggler = $(togglerHtml);
-
-    self.$main.append(self.$toggler);
-    self.$toggler.on("click", self.toggleSidebar);
+    instance.$main.append(instance.$toggler)
+    instance.$toggler.on('click', instance.toggleSidebar)
   }
 
-  SidebarToggler.prototype.toggleSidebar = function()
-  {
-    if (self.sidebarVisible)
-    {
-      self.hideSidebar();
+  SidebarToggler.prototype.toggleSidebar = function () {
+    if (instance.sidebarVisible) {
+      instance.hideSidebar()
+    } else {
+      instance.showSidebar()
     }
-    else
-    {
-      self.showSidebar();
-    }
-  };
+  }
 
-  SidebarToggler.prototype.hideSidebar = function(immediate)
-  {
-    if (true === immediate)
-    {
-      this.$sidebar.addClass("sidebar-hiding sidebar-hidden");
-    }
-    else
-    {
-      this.$sidebar.addClass("sidebar-hiding");
-      this.sidebarHiding = setTimeout(function sidebarTimeout()
-      {
-        self.$sidebar.addClass("sidebar-hidden");
-      }, 500);
+  SidebarToggler.prototype.hideSidebar = function (immediate) {
+    if (immediate === true) {
+      this.$sidebar.addClass('sidebar-hiding sidebar-hidden')
+    } else {
+      this.$sidebar.addClass('sidebar-hiding')
+      this.sidebarHiding = setTimeout(function sidebarTimeout () {
+        instance.$sidebar.addClass('sidebar-hidden')
+      }, 500)
     }
 
-    this.$toggler.addClass("sidebar-hidden");
-    this.sidebarVisible = false;
+    this.$toggler.addClass('sidebar-hidden')
+    this.sidebarVisible = false
 
-    if (window.localStorage)
-    {
-      localStorage.setItem("PurpleMine:sidebarHidden", "x");
+    if (window.localStorage) {
+      localStorage.setItem('PurpleMine:sidebarHidden', 'x')
     }
-  };
+  }
 
-  SidebarToggler.prototype.showSidebar = function()
-  {
-    clearTimeout(this.sidebarHiding);
+  SidebarToggler.prototype.showSidebar = function () {
+    clearTimeout(this.sidebarHiding)
 
-    self.$sidebar.removeClass("sidebar-hidden");
-    setTimeout(function sidebarTimeout()
-    {
-      self.$sidebar.removeClass("sidebar-hiding");
-    }, 50);
+    instance.$sidebar.removeClass('sidebar-hidden')
+    setTimeout(function sidebarTimeout () {
+      instance.$sidebar.removeClass('sidebar-hiding')
+    }, 50)
 
-    this.$toggler.removeClass("sidebar-hidden");
-    this.sidebarVisible = true;
+    this.$toggler.removeClass('sidebar-hidden')
+    this.sidebarVisible = true
 
-    if (window.localStorage)
-    {
-      localStorage.removeItem("PurpleMine:sidebarHidden");
+    if (window.localStorage) {
+      localStorage.removeItem('PurpleMine:sidebarHidden')
     }
-  };
+  }
 
-  return SidebarToggler;
-}());
+  return SidebarToggler
+}())

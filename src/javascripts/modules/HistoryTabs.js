@@ -1,98 +1,87 @@
-var PurpleMine = PurpleMine || {};
+var PurpleMine = PurpleMine || {}
 
-PurpleMine.HistoryTabs = (function()
-{
-  "use strict";
+PurpleMine.HistoryTabs = (function () {
+  'use strict'
 
-  var self;
+  var instance
   var translations = {
     en: {
-      all    : "All",
-      notes  : "Notes",
-      details: "Changes"
+      all: 'All',
+      notes: 'Notes',
+      details: 'Changes'
     },
     pl: {
-      all    : "Wszystko",
-      notes  : "Notatki",
-      details: "Zmiany"
-    }
-  };
-
-  function HistoryTabs()
-  {
-    if (self)
-    {
-      return self;
-    }
-
-    self = this;
-
-    this.$tabsContainer = null;
-    this.$tabs          = null;
-    this.$history       = $("#history");
-    this.lang           = document.documentElement.lang;
-
-    if (typeof translations[this.lang] === "undefined")
-    {
-      this.lang = "en";
-    }
-
-    this._ = translations[this.lang];
-
-    if (this.$history.length > 0)
-    {
-      buildTabs();
-      markFirstOfTypes();
+      all: 'Wszystko',
+      notes: 'Notatki',
+      details: 'Zmiany'
     }
   }
 
-  function buildTabs()
-  {
-    var html = "",
-      liStart = "<li><a href=\"javascript:;\" class=\"",
-      liMid = "history-tab\" data-tab=\"",
-      liEnd = "</a></li>";
+  function HistoryTabs () {
+    if (instance) {
+      return instance
+    }
 
-    html += "<div class=\"tabs\"><ul>";
-    html += liStart + "selected " + liMid + "all\">" + self._.all + liEnd;
-    html += liStart + liMid + "notes\">" + self._.notes + liEnd;
-    html += liStart + liMid + "details\">" + self._.details + liEnd;
-    html += "</ul></div>";
+    instance = this
 
-    self.$tabsContainer = $(html);
-    $("#history > h3").after(self.$tabsContainer);
+    this.$tabsContainer = null
+    this.$tabs = null
+    this.$history = $('#history')
+    this.lang = document.documentElement.lang
 
-    self.$tabs = self.$tabsContainer.find(".history-tab");
-    self.$tabs.on("click", tabClick);
+    if (typeof translations[this.lang] === 'undefined') {
+      this.lang = 'en'
+    }
+
+    this._ = translations[this.lang]
+
+    if (this.$history.length > 0) {
+      buildTabs()
+      markFirstOfTypes()
+    }
   }
 
-  function markFirstOfTypes()
-  {
-    self.$history.find(".has-notes:first").addClass("first-of-notes");
-    self.$history.find(".has-details:first").addClass("first-of-details");
+  function buildTabs () {
+    var html = ''
+    var liStart = '<li><a href="javascript:;" class="'
+    var liMid = 'history-tab" data-tab="'
+    var liEnd = '</a></li>'
+
+    html += '<div class="tabs"><ul>'
+    html += liStart + 'selected ' + liMid + 'all">' + instance._.all + liEnd
+    html += liStart + liMid + 'notes">' + instance._.notes + liEnd
+    html += liStart + liMid + 'details">' + instance._.details + liEnd
+    html += '</ul></div>'
+
+    instance.$tabsContainer = $(html)
+    $('#history > h3').after(instance.$tabsContainer)
+
+    instance.$tabs = instance.$tabsContainer.find('.history-tab')
+    instance.$tabs.on('click', tabClick)
   }
 
-  var tabClick = function()
-  {
-    var $this = $(this),
-      tab = $this.attr("data-tab");
+  function markFirstOfTypes () {
+    instance.$history.find('.has-notes:first').addClass('first-of-notes')
+    instance.$history.find('.has-details:first').addClass('first-of-details')
+  }
 
-    self.$tabs.removeClass("selected");
-    $this.addClass("selected");
+  var tabClick = function () {
+    var $this = $(this)
+    var tab = $this.attr('data-tab')
 
-    self.$history
-        .removeClass("hide-details")
-        .removeClass("hide-notes");
+    instance.$tabs.removeClass('selected')
+    $this.addClass('selected')
 
-    if ("notes" === tab)
-    {
-      self.$history.addClass("hide-details");
+    instance.$history
+        .removeClass('hide-details')
+        .removeClass('hide-notes')
+
+    if (tab === 'notes') {
+      instance.$history.addClass('hide-details')
+    } else if (tab === 'details') {
+      instance.$history.addClass('hide-notes')
     }
-    else if ("details" === tab)
-    {
-      self.$history.addClass("hide-notes");
-    }
-  };
+  }
 
-  return HistoryTabs;
-}());
+  return HistoryTabs
+}())
