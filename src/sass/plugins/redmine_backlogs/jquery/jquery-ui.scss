@@ -1,4 +1,4 @@
-// scss-lint:disable ImportantRule
+// scss-lint:disable Comment ImportantRule
 @import "../common";
 
 /*
@@ -32,7 +32,7 @@
 .ui-helper-clearfix {
     display: inline-block;
 
-    &:after {
+    &::after {
         display: block;
         height: 0;
         clear: both;
@@ -521,7 +521,7 @@
 
 .ui-widget-overlay {
     background: #000;
-    opacity: .30;
+    opacity: .3;
 }
 
 .ui-widget-shadow {
@@ -529,7 +529,7 @@
     padding: 8px;
     border-radius: 8px;
     background: #aaa;
-    opacity: .30;
+    opacity: .3;
 }
 
 /* Resizable

@@ -44,7 +44,7 @@
             color: $gray-light;
             line-height: 1;
 
-            &:before {
+            &::before {
                 margin-right: 0;
             }
 
@@ -71,7 +71,7 @@
             left: $toggler-position-h;
 
             @if $use-font-awesome {
-                &:before {
+                &::before {
                     content: $fa-var-caret-square-o-left;
                 }
             } @else {
@@ -81,7 +81,7 @@
             right: $toggler-position-h;
 
             @if $use-font-awesome {
-                &:before {
+                &::before {
                     content: $fa-var-caret-square-o-right;
                 }
             } @else {
@@ -92,7 +92,7 @@
         &.sidebar-hidden {
             @if $sidebar-position == "left" {
                 @if $use-font-awesome {
-                    &:before {
+                    &::before {
                         content: $fa-var-caret-square-o-right;
                     }
                 } @else {
@@ -100,7 +100,7 @@
                 }
             } @else {
                 @if $use-font-awesome {
-                    &:before {
+                    &::before {
                         content: $fa-var-caret-square-o-left;
                     }
                 } @else {

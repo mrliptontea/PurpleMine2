@@ -112,8 +112,7 @@
     }
 }
 
-/* remove label borders in IE6 because IE6 does not support transparency */
-
+// Remove label borders in IE6 because IE6 does not support transparency
 * html .ui-multiselect-checkboxes label {
     border: 0 none;
 }

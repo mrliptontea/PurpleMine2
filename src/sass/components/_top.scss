@@ -42,7 +42,7 @@
             @if $use-font-awesome {
                 font-size: 14px;
 
-                &:before {
+                &::before {
                     content: $fa-var-caret-square-o-down;
                 }
             } @else {
@@ -54,7 +54,7 @@
                 color: mix($top-menu-link, $top-menu-bg, 33%);
                 line-height: 1;
 
-                &:before {
+                &::before {
                     margin-right: 0;
                 }
 
@@ -79,7 +79,7 @@
 
             &.expanded {
                 @if $use-font-awesome {
-                    &:before {
+                    &::before {
                         content: $fa-var-caret-square-o-up;
                     }
                 } @else {
@@ -360,6 +360,7 @@
     }
 
     .tabs-buttons {
+        // scss-lint:disable ImportantRule
         display: none !important;
         padding-left: 0;
         background-color: $main-menu-bg;
@@ -371,6 +372,7 @@
     }
 
     ul + .tabs-buttons {
+        // scss-lint:disable ImportantRule
         display: block !important;
     }
 }

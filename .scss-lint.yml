@@ -18,7 +18,7 @@ linters:
     enabled: false
 
   Comment:
-    enabled: false
+    enabled: true
 
   DebugStatement:
     enabled: true
@@ -30,8 +30,7 @@ linters:
     enabled: true
 
   ElsePlacement:
-    enabled: false
-    style: same_line
+    enabled: true
 
   EmptyLineBetweenBlocks:
     enabled: true
@@ -94,6 +93,9 @@ linters:
     enabled: true
     extra_properties: []
 
+  PseudoElement:
+    enabled: true
+
   QualifyingElement:
     enabled: false
 
@@ -124,6 +126,12 @@ linters:
   SpaceAfterPropertyName:
     enabled: true
 
+  SpaceAfterVariableName:
+    enabled: true
+
+  SpaceAroundOperator:
+    enabled: true
+
   SpaceBeforeBrace:
     enabled: true
     style: space
@@ -140,8 +148,14 @@ linters:
   TrailingSemicolon:
     enabled: true
 
+  TrailingWhitespace:
+    enabled: true
+
   TrailingZero:
-    enabled: false
+    enabled: true
+
+  TransitionAll:
+    enabled: true
 
   UnnecessaryMantissa:
     enabled: true
@@ -153,4 +167,7 @@ linters:
     enabled: true
 
   UrlQuotes:
+    enabled: true
+
+  ZeroUnit:
     enabled: true

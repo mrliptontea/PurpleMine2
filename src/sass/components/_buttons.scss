@@ -37,9 +37,8 @@ button {
 }
 
 
-/**
- * Form buttons layout
- */
+//== Form buttons layout
+//
 
 form {
     input[type="submit"] {
@@ -51,26 +50,25 @@ form {
 
         + a {
             margin-right: 5px;
-        }
 
-        + a + a {
-            margin-left: 5px;
+            + a {
+                margin-left: 5px;
+            }
         }
     }
 }
 
 
-/**
- * Repository's 'View differences' button
- */
+//== Repository's 'View differences' button
+//
+
 form[action*="repository/diff"] {
     margin-bottom: $line-height-computed / 2;
 }
 
 
-/**
- * Forum and news message form buttons layout
- */
+//== Forum and news message form buttons layout
+//
 
 #message-form,
 #news-form {
@@ -83,9 +81,8 @@ form[action*="repository/diff"] {
 }
 
 
-/**
- * Button links
- */
+//== Button links
+//
 
 p.buttons,
 .other-formats > span,
@@ -126,18 +123,16 @@ p.buttons,
 }
 
 
-/**
- * Action buttons group
- */
+//== Action buttons group
+//
 
 p.buttons {
     margin-bottom: $line-height-computed;
 }
 
 
-/**
- * Export actions
- */
+//== Export actions
+//
 
 .other-formats {
     margin: $line-height-computed 0 0;
@@ -151,9 +146,8 @@ p.buttons {
 }
 
 
-/**
- * Query builder buttons
- */
+//== Query builder buttons
+//
 
 .query-columns {
     select {
@@ -175,9 +169,8 @@ p.buttons {
 }
 
 
-/**
- * Button for toggling multiselect (in filters)
- */
+//== Button for toggling multiselect (in filters)
+//
 
 a[data-expands],
 .toggle-multiselect {

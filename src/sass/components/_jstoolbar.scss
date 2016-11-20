@@ -7,15 +7,7 @@
 
     .box & {
         padding: 0;
-    }
 
-    button {
-        margin-bottom: 5px;
-        box-shadow: none;
-        vertical-align: top;
-    }
-
-    .box & {
         button {
             margin-right: 2px;
         }
@@ -42,10 +34,15 @@
             }
         }
     }
+
+    button {
+        margin-bottom: 5px;
+        box-shadow: none;
+        vertical-align: top;
+    }
 }
 
-@if $use-font-awesome
-{
+@if $use-font-awesome {
     .jstElements {
         %jstb-icon {
             padding: 0;
@@ -54,7 +51,7 @@
             color: $btn-default-color;
             @include fa-icon();
 
-            &:before {
+            &::before {
                 text-align: center;
             }
         }
@@ -62,97 +59,97 @@
         .jstb_strong {
             @extend %jstb-icon;
 
-            &:before { content: $fa-var-bold; }
+            &::before { content: $fa-var-bold; }
         }
 
         .jstb_em {
             @extend %jstb-icon;
 
-            &:before { content: $fa-var-italic; }
+            &::before { content: $fa-var-italic; }
         }
 
         .jstb_ins {
             @extend %jstb-icon;
 
-            &:before { content: $fa-var-underline; }
+            &::before { content: $fa-var-underline; }
         }
 
         .jstb_del {
             @extend %jstb-icon;
 
-            &:before { content: $fa-var-strikethrough; }
+            &::before { content: $fa-var-strikethrough; }
         }
 
         .jstb_code {
             @extend %jstb-icon;
 
-            &:before { content: $fa-var-code; }
+            &::before { content: $fa-var-code; }
         }
 
         .jstb_h1 {
             @extend %jstb-icon;
 
-            &:before { content: $fa-var-header; }
+            &::before { content: $fa-var-header; }
         }
 
         .jstb_h2 {
             @extend %jstb-icon;
 
-            &:before { font-size: .7857em; content: $fa-var-header; }
+            &::before { font-size: .7857em; content: $fa-var-header; }
         }
 
         .jstb_h3 {
             @extend %jstb-icon;
 
-            &:before { font-size: .6429em; content: $fa-var-header; }
+            &::before { font-size: .6429em; content: $fa-var-header; }
         }
 
         .jstb_ul {
             @extend %jstb-icon;
 
-            &:before { content: $fa-var-list-ul; }
+            &::before { content: $fa-var-list-ul; }
         }
 
         .jstb_ol {
             @extend %jstb-icon;
 
-            &:before { content: $fa-var-list-ol; }
+            &::before { content: $fa-var-list-ol; }
         }
 
         .jstb_bq {
             @extend %jstb-icon;
 
-            &:before { content: $fa-var-indent; }
+            &::before { content: $fa-var-indent; }
         }
 
         .jstb_unbq {
             @extend %jstb-icon;
 
-            &:before { content: $fa-var-outdent; }
+            &::before { content: $fa-var-outdent; }
         }
 
         .jstb_pre {
             @extend %jstb-icon;
 
-            &:before { content: $fa-var-terminal; }
+            &::before { content: $fa-var-terminal; }
         }
 
         .jstb_link {
             @extend %jstb-icon;
 
-            &:before { content: $fa-var-link; }
+            &::before { content: $fa-var-link; }
         }
 
         .jstb_img {
             @extend %jstb-icon;
 
-            &:before { content: $fa-var-image; }
+            &::before { content: $fa-var-image; }
         }
 
         .jstb_cut {
             @extend %jstb-icon;
 
-            &:before { content: $fa-var-scissors; }
+            &::before { content: $fa-var-scissors; }
         }
 
         .jstb_precode,
@@ -161,7 +158,7 @@
             @extend %jstb-icon;
             color: $brand-danger;
 
-            &:before { content: $fa-var-code; }
+            &::before { content: $fa-var-code; }
         }
 
         button.jstb_help {
@@ -172,7 +169,7 @@
                 color: $link-hover-color;
             }
 
-            &:before { content: $fa-var-question-circle; }
+            &::before { content: $fa-var-question-circle; }
         }
     }
 }

@@ -32,9 +32,8 @@
 }
 
 
-/**
- * Groups
- */
+//== Groups
+//
 
 table.members,
 table.memberships {
@@ -44,9 +43,8 @@ table.memberships {
 }
 
 
-/**
- * Permissions
- */
+//== Permissions
+//
 
 table.permissions {
     td.role {
@@ -58,9 +56,8 @@ table.permissions {
 }
 
 
-/**
- * Workflows
- */
+//== Workflows
+//
 
 table.transitions {
     td.enabled {
@@ -88,9 +85,8 @@ table.fields_permissions {
 }
 
 
-/**
- * Enumerations
- */
+//== Enumerations
+//
 
 .controller-enumerations.action-index {
     #content {
@@ -106,18 +102,16 @@ table.fields_permissions {
 }
 
 
-/**
- * Settings labels
- */
+//== Settings labels
+//
 
 fieldset.settings label {
     display: block;
 }
 
 
-/**
- * Settings -> Notifications
- */
+//== Settings -> Notifications
+//
 
 fieldset#notified_events {
     .parent {
@@ -126,9 +120,8 @@ fieldset#notified_events {
 }
 
 
-/**
- * Settings -> Repositories
- */
+//== Settings -> Repositories
+//
 
 .settings.enabled_scm {
     table {

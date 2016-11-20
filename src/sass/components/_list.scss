@@ -7,6 +7,10 @@ table.list {
     margin-bottom: $line-height-computed;
     font-size: $font-size-list;
 
+    .autoscroll & {
+        margin-bottom: 0;
+    }
+
     th,
     .table-list-header {
         padding: $table-cell-padding;
@@ -22,12 +26,6 @@ table.list {
 
     tr.ui-sortable-helper {
         background-color: $highlight-bg;
-    }
-}
-
-table.list {
-    .autoscroll & {
-        margin-bottom: 0;
     }
 
     @if $table-list-highlight-rows {
@@ -282,9 +280,9 @@ tr.entry {
 }
 
 
-/**
- * Priorities
- */
+//== Priorities
+//
+
 // scss-lint:disable SpaceAfterComma
 @if $color-priorities {
     @include priority(".priority-lowest",  $priority-lowest-bg,  $priority-lowest-text,  $priority-lowest-link);
@@ -325,7 +323,7 @@ tr.entry {
             color: mix($tracker-default-text, $tracker-default-bg, 75%);
             text-decoration: none;
 
-            &:after {
+            &::after {
                 display: block;
                 position: absolute;
                 right: 5px;
@@ -338,7 +336,7 @@ tr.entry {
                 @include transition(border-color .1s);
             }
 
-            &:hover:after {
+            &:hover::after {
                 border-top-color: rgba($tracker-default-text, .25);
             }
         }
@@ -348,7 +346,7 @@ tr.entry {
         display: block;
         padding: $tracker-list-padding;
 
-        &:before {
+        &::before {
             color: mix($tracker-default-text, $tracker-default-bg, 50%);
             content: "#";
         }
@@ -386,9 +384,8 @@ tr.entry {
 }
 
 
-/**
- * List groups
- */
+//== List groups
+//
 
 tr.group {
     > td {
@@ -429,9 +426,8 @@ tr.group {
 }
 
 
-/**
- * Time entry in report
- */
+//== Time entry in report
+//
 
 tr.time-entry {
     text-align: center;
@@ -484,9 +480,8 @@ tr.time-entry {
     }
 }
 
-/**
- * Wiki page history entry
- */
+//== Wiki page history entry
+//
 
 tr.wiki-page-version {
     td.updated_on,
@@ -495,9 +490,8 @@ tr.wiki-page-version {
     }
 }
 
-/**
- * Project versions list
- */
+//== Project versions list
+//
 
 tr.version {
     &.closed {
@@ -519,9 +513,8 @@ tr.version {
 }
 
 
-/**
- * Users list
- */
+//== Users list
+//
 
 tr.user {
     td {
@@ -549,9 +542,8 @@ tr.user {
 }
 
 
-/**
- * Plugins list
- */
+//== Plugins list
+//
 
 table.plugins {
     .configure {
@@ -571,9 +563,8 @@ table.plugins {
 }
 
 
-/**
- * Files list
- */
+//== Files list
+//
 
 table.files {
     tbody th {
@@ -593,9 +584,8 @@ table.files {
 }
 
 
-/**
- * Admin lists
- */
+//== Admin lists
+//
 
 .controller-enumerations {
     td.name {
@@ -610,9 +600,8 @@ table.files {
 }
 
 
-/**
- * Totals
- */
+//== Totals
+//
 
 .query-totals {
     > span {

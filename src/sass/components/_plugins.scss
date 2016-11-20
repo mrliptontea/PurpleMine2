@@ -62,7 +62,7 @@
                 color: $icon-success-color;
             }
 
-            &:before {
+            &::before {
                 content: $fa-var-clock-o;
             }
         }
@@ -75,7 +75,7 @@
                 color: $icon-danger-color;
             }
 
-            &:before {
+            &::before {
                 content: $fa-var-history;
             }
         }

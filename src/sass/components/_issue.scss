@@ -12,8 +12,7 @@
         color: $issue-text;
         word-wrap: break-word;
 
-        @if $use-gravatars
-        {
+        @if $use-gravatars {
             > img.gravatar {
                 width: $issue-gravatar-size;
                 height: $issue-gravatar-size;
@@ -324,7 +323,7 @@ div.thumbnails {
     &.hide-details {
         .journal,
         .details,
-        .first-of-notes:before {
+        .first-of-notes::before {
             display: none;
         }
 
@@ -336,7 +335,7 @@ div.thumbnails {
     &.hide-notes {
         .journal,
         .wiki,
-        .first-of-details:before {
+        .first-of-details::before {
             display: none;
         }
 
@@ -354,7 +353,7 @@ div.thumbnails {
         margin-left: $bubble-gravatar-size + $bubble-gravatar-space;
     }
 
-    &:before {
+    &::before {
         display: block;
         position: absolute;
         top: -($line-height-computed + 2px);
@@ -366,7 +365,7 @@ div.thumbnails {
         z-index: -1;
     }
 
-    .tabs + &:before {
+    .tabs + &::before {
         display: none;
     }
 
@@ -378,7 +377,7 @@ div.thumbnails {
             border-color: darken($issue-border, 25%);
 
             @if $use-gravatars {
-                h4:before {
+                h4::before {
                     border-right-color: darken($issue-border, 25%);
                 }
             }
@@ -410,8 +409,8 @@ div.thumbnails {
         h4 {
             position: relative;
 
-            &:before,
-            &:after {
+            &::before,
+            &::after {
                 display: block;
                 position: absolute;
                 top: 9px;
@@ -425,14 +424,14 @@ div.thumbnails {
                 pointer-events: none;
             }
 
-            &:after {
+            &::after {
                 margin-top: 1px;
                 margin-left: 2px;
                 border-width: 6px;
                 border-right-color: $issue-bg;
             }
 
-            &:before {
+            &::before {
                 border-width: 7px;
                 border-right-color: $issue-border;
             }
@@ -461,7 +460,7 @@ div.thumbnails {
                 margin-bottom: 0;
             }
 
-            &:before {
+            &::before {
                 display: block;
                 position: absolute;
                 top: 5px;
@@ -539,7 +538,7 @@ div.thumbnails {
     > div {
         border-left-color: $brand-warning;
 
-        h4:before {
+        h4::before {
             border-right-color: $brand-warning;
         }
     }

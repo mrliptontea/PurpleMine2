@@ -3,9 +3,8 @@
 // --------------------------------------------------
 
 
-/**
- * Collapsible
- */
+//== Collapsible
+//
 
 a.collapsible,
 .collapsible > legend {
@@ -17,7 +16,7 @@ a.collapsible,
         color: $link-hover-color;
     }
 
-    &:before {
+    &::before {
         display: inline-block;
         position: relative;
         top: -1px;
@@ -39,7 +38,7 @@ a.collapsible,
 
 a.collapsible.collapsed,
 .collapsible.collapsed > legend {
-    &:before {
+    &::before {
         @include rotate(-90deg);
     }
 }
@@ -73,18 +72,16 @@ a.collapsible.collapsed,
 }
 
 
-/**
- * Elements with context menus (doesn't really work on Windows)
- */
+//== Elements with context menus (doesn't really work on Windows)
+//
 
 .hascontextmenu {
     cursor: context-menu;
 }
 
 
-/**
- * Actions for block
- */
+//== Actions for block
+//
 
 .contextual {
     padding-left: $padding-base-vertical;
@@ -106,9 +103,8 @@ a.collapsible.collapsed,
 }
 
 
-/**
- * Accessibility specific styles
- */
+//== Accessibility specific styles
+//
 
 .hidden-for-sighted {
     position: absolute;
@@ -120,9 +116,8 @@ a.collapsible.collapsed,
 }
 
 
-/**
- * Responsive autoscroll
- */
+//== Responsive autoscroll
+//
 
 .autoscroll {
     overflow-x: auto;
@@ -130,9 +125,8 @@ a.collapsible.collapsed,
 }
 
 
-/**
- * Container
- */
+//== Container
+//
 
 .box {
     margin-bottom: $line-height-computed;
@@ -161,9 +155,8 @@ a.collapsible.collapsed,
 }
 
 
-/**
- * Column form layout
- */
+//== Column form layout
+//
 
 .splitcontent {
     @extend %clearfix;
@@ -186,9 +179,8 @@ a.collapsible.collapsed,
 }
 
 
-/**
- * Watchers selection list
- */
+//== Watchers selection list
+//
 
 #users_for_watcher {
     height: 200px;
@@ -201,9 +193,8 @@ a.collapsible.collapsed,
 }
 
 
-/**
- * Watchers list
- */
+//== Watchers list
+//
 
 #watchers {
     select {
@@ -250,9 +241,8 @@ a.collapsible.collapsed,
 }
 
 
-/**
- * Subtitle paragraph (can be seen on activity list)
- */
+//== Subtitle paragraph (can be seen on activity list)
+//
 
 p.subtitle {
     margin-top: ($line-height-computed / -2);
@@ -261,18 +251,8 @@ p.subtitle {
 }
 
 
-/**
- * Breadcrumbs (can be seen in time entries report)
- * No need to style them, but let this selector be here.
- */
-
-// p.breadcrumb {
-// }
-
-
-/**
- * My page layout
- */
+//== My page layout
+//
 
 #block-form {
     display: inline;
@@ -335,9 +315,9 @@ a.close-icon {
 }
 
 
-/**
- * Resetting font for SCM (repository files)
- */
+//== Resetting font for SCM (repository files)
+//
+
 #content table.filecontent {
     width: 100%;
     background: $body-bg;
@@ -410,9 +390,8 @@ a.close-icon {
 }
 
 
-/**
- * Projects list
- */
+//== Projects list
+//
 
 ul.projects {
     padding-left: $padding-side;
@@ -466,9 +445,8 @@ ul.projects {
 }
 
 
-/**
- * Time report
- */
+//== Time report
+//
 
 #time-report {
     th {
@@ -513,9 +491,8 @@ ul.projects {
 }
 
 
-/**
- * Version issue list and page layout
- */
+//== Version issue list and page layout
+//
 
 div#roadmap {
     .related-issues {
@@ -569,9 +546,8 @@ div#version-summary {
 }
 
 
-/**
- * Add form bottom space
- */
+//== Add form bottom space
+//
 
 #new_document,
 #add-message,
@@ -581,9 +557,8 @@ div#version-summary {
 }
 
 
-/**
- * Ajax indicator
- */
+//== Ajax indicator
+//
 
 #ajax-indicator {
     position: fixed;
@@ -611,9 +586,8 @@ div#version-summary {
 }
 
 
-/**
- * Boards (forum)
- */
+//== Boards (forum)
+//
 
 tr.message {
     &.locked {
@@ -662,9 +636,8 @@ div.table-list.boards {
 }
 
 
-/**
- * Topic page
- */
+//== Topic page
+//
 
 .controller-messages.action-show {
     h2 {
@@ -727,8 +700,8 @@ div.table-list.boards {
             > h4 {
                 position: relative;
 
-                &:before,
-                &:after {
+                &::before,
+                &::after {
                     display: block;
                     position: absolute;
                     top: 9px;
@@ -742,14 +715,14 @@ div.table-list.boards {
                     pointer-events: none;
                 }
 
-                &:after {
+                &::after {
                     margin-top: 1px;
                     margin-left: 2px;
                     border-width: 6px;
                     border-right-color: $panel-bg;
                 }
 
-                &:before {
+                &::before {
                     border-width: 7px;
                     border-right-color: $panel-border;
                 }
@@ -769,9 +742,9 @@ div.table-list.boards {
 }
 
 
-/**
- * News
- */
+//== News
+//
+
 .news-article {
     margin-bottom: $line-height-computed;
 
@@ -792,9 +765,8 @@ div.table-list.boards {
 }
 
 
-/**
- * News comments
- */
+//== News comments
+//
 
 #comments {
     > h4 {
@@ -812,9 +784,8 @@ div.table-list.boards {
 }
 
 
-/**
- * Diff
- */
+//== Diff
+//
 
 .text-diff {
     margin-bottom: $line-height-computed;
@@ -842,9 +813,8 @@ div.table-list.boards {
 }
 
 
-/**
- * Repository view
- */
+//== Repository view
+//
 
 .revision-info {
     margin-bottom: $line-height-computed;
@@ -916,12 +886,6 @@ tr.changeset {
     }
 }
 
-.revision-graph {
-    circle {
-        // @include translate(0, $table-cell-padding - 1px);
-    }
-}
-
 #content #changes-legend {
     font-size: 1em;
 
@@ -947,22 +911,22 @@ tr.changeset {
     }
 
     .change-A {
-        &:before { color: $changeset-add-color; }
+        &::before { color: $changeset-add-color; }
         a { @include link-variant($changeset-add-color); }
     }
 
     .change-M {
-        &:before { color: $changeset-modified-color; }
+        &::before { color: $changeset-modified-color; }
         a { @include link-variant($changeset-modified-color); }
     }
 
     .change-C {
-        &:before { color: $changeset-copied-color; }
+        &::before { color: $changeset-copied-color; }
         a { @include link-variant($changeset-copied-color); }
     }
 
     .change-R {
-        &:before { color: $changeset-renamed-color; }
+        &::before { color: $changeset-renamed-color; }
         a { @include link-variant($changeset-renamed-color); }
     }
 

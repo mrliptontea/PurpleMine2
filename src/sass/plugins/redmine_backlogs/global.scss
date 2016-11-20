@@ -43,9 +43,8 @@ a {
 }
 
 
-/**
- * Form elements
- */
+//== Form elements
+//
 
 button,
 input,
@@ -119,9 +118,8 @@ button.ui-multiselect {
 }
 
 
-/**
- * Top toolbar
- */
+//== Top toolbar
+//
 
 #toolbar {
     display: block;
@@ -214,9 +212,8 @@ button.ui-multiselect {
 }
 
 
-/**
- * Other elements
- */
+//== Other elements
+//
 
 .clearfix {
     @include clearfix;
@@ -234,12 +231,9 @@ button.ui-multiselect {
     display: none;
 }
 
-/**
- * .editor is the classname for field editors of sprint,
- * story, task, impediment. These field editors get created
- * at runtime whenever any of the above models are edited.
- */
-
+// .editor is the classname for field editors of sprint,
+// story, task, impediment. These field editors get created
+// at runtime whenever any of the above models are edited.
 .ui-dialog .editor {
     display: block;
 }
@@ -248,9 +242,9 @@ ul.ui-sortable {
     min-height: 20px;
 }
 
-/**
- * Story tooltip
- */
+//== Story tooltip
+//
+
 .ui-tooltip {
     .ui-tooltip-content {
         hr {
@@ -294,9 +288,8 @@ ul.ui-sortable {
     display: none;
 }
 
-/**
- * drag-drop effect: disabled dropzones are greyed out
- */
+//== drag-drop effect: disabled dropzones are greyed out
+//
 
 .rb-sortable-disabled,
 .ui-sortable-disabled {
@@ -310,9 +303,8 @@ ul.ui-sortable {
 }
 
 
-/**
- * Fix jQuery-UI datepicker
- */
+//== Fix jQuery-UI datepicker
+//
 
 body {
     .ui-widget {

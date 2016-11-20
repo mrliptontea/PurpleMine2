@@ -43,14 +43,14 @@ $swimlane-width:                $issue-width + 2 * ($issue-margin + $issue-paddi
 }
 
 
-/**
- * swimlane class is used by:
- * - #board_header
- * - .board
- *
- * Also use by the Column Width preference to determine the unit width of the
- * swimlanes. See RB.Taskboard.initialize()
- */
+//== Swimlane
+//
+// Swimlane class is used by:
+// - #board_header
+// - .board
+// Also use by the Column Width preference to determine the unit width of the
+// swimlanes. See RB.Taskboard.initialize()
+//
 
 .swimlane {
     width: $swimlane-width;
@@ -58,7 +58,9 @@ $swimlane-width:                $issue-width + 2 * ($issue-margin + $issue-paddi
     padding: 5px;
 }
 
-/* status labels */
+
+//== Status labels
+//
 
 #board_header {
     position: absolute;
@@ -208,7 +210,9 @@ $swimlane-width:                $issue-width + 2 * ($issue-margin + $issue-paddi
     }
 }
 
-/* item styles used by .task and .impediment */
+
+//== Item styles used by .task and .impediment
+//
 
 #taskboard {
     .issue,
@@ -361,7 +365,9 @@ $swimlane-width:                $issue-width + 2 * ($issue-margin + $issue-paddi
     }
 }
 
-/* dialog */
+
+//== Dialog
+//
 
 .rb_editor_dialog.ui-dialog {
     .ui-dialog-titlebar-close {
@@ -392,7 +398,9 @@ $swimlane-width:                $issue-width + 2 * ($issue-margin + $issue-paddi
     }
 }
 
-/* item editor */
+
+//== Item editor
+//
 
 .rb_editor {
     label {
@@ -432,7 +440,9 @@ $swimlane-width:                $issue-width + 2 * ($issue-margin + $issue-paddi
     }
 }
 
-/* others */
+
+//== Others
+//
 
 #impediment_template,
 #task_template {

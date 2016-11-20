@@ -154,18 +154,18 @@
         &.closed {
             color: mix($color, $background, 75%);
 
-            &:after {
+            &::after {
                 border-top-color: rgba($color, .95);
             }
 
-            &:hover:after {
+            &:hover::after {
                 border-top-color: rgba($color, .25);
             }
         }
     }
 
     tr#{$parent} .id > a {
-        &:before {
+        &::before {
             color: mix($color, $background, 50%);
         }
     }

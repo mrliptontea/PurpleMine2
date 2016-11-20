@@ -17,7 +17,7 @@
     @if $use-font-awesome {
         @extend %fa-icon;
 
-        &:before {
+        &::before {
             margin-left: -(8px + 16px);
             float: left;
             line-height: $line-height-computed;
@@ -38,11 +38,15 @@
     border-color: $border;
 
     @if $use-font-awesome {
-        @if     $icon == "true"        { $icon: $fa-var-check; }
-        @elseif $icon == "warning"     { $icon: $fa-var-warning; }
-        @elseif $icon == "exclamation" { $icon: $fa-var-exclamation-circle; }
+        @if $icon == "true" {
+            $icon: $fa-var-check;
+        } @elseif $icon == "warning" {
+            $icon: $fa-var-warning;
+        } @elseif $icon == "exclamation" {
+            $icon: $fa-var-exclamation-circle;
+        }
 
-        &:before {
+        &::before {
             content: $icon;
         }
     } @else {
@@ -75,7 +79,7 @@
     text-align: center;
 
     @if $use-font-awesome {
-        &:before {
+        &::before {
             margin-left: 0;
             float: none;
         }

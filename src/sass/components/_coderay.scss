@@ -302,36 +302,13 @@
 
     .insert {
         background: hsla(120, 100%, 50%, .12);
-    }
 
-    .delete {
-        background: hsla(0, 100%, 50%, .12);
-    }
-
-    .change {
-        background: #007;
-        color: #bbf;
-    }
-
-    .head {
-        background: #505;
-        color: #f8f;
-
-        .filename {
-            color: #fff;
+        .insert {
+            background: transparent;
+            color: #0c0;
+            font-weight: $font-weight-bold;
         }
-    }
 
-    .delete .eyecatcher {
-        margin: -1px;
-        border: 1px solid hsla(0, 100%, 45%, .5);
-        border-bottom: 0 none;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        background-color: hsla(0, 100%, 50%, .2);
-    }
-
-    .insert {
         .eyecatcher {
             margin: -1px;
             border: 1px solid hsla(120, 100%, 25%, .5);
@@ -340,25 +317,46 @@
             border-bottom-right-radius: 5px;
             background-color: hsla(120, 100%, 50%, .2);
         }
+    }
 
-        .insert {
+    .delete {
+        background: hsla(0, 100%, 50%, .12);
+
+        .delete {
             background: transparent;
-            color: #0c0;
+            color: #c00;
             font-weight: $font-weight-bold;
+        }
+
+        .eyecatcher {
+            margin: -1px;
+            border: 1px solid hsla(0, 100%, 45%, .5);
+            border-bottom: 0 none;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            background-color: hsla(0, 100%, 50%, .2);
         }
     }
 
-    .delete .delete {
-        background: transparent;
-        color: #c00;
-        font-weight: $font-weight-bold;
+    .change {
+        background: #007;
+        color: #bbf;
+
+        .change {
+            color: #88f;
+        }
     }
 
-    .change .change {
-        color: #88f;
-    }
+    .head {
+        background: #505;
+        color: #f8f;
 
-    .head .head {
-        color: #f4f;
+        .head {
+            color: #f4f;
+        }
+
+        .filename {
+            color: #fff;
+        }
     }
 }

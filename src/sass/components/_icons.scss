@@ -7,14 +7,14 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 
 @if $use-font-awesome {
     %fa-icon {
-        &:before {
+        &::before {
             @include fa-icon();
             margin-right: $padding-small-vertical;
         }
     }
 
     %fa-icon-after {
-        &:after {
+        &::after {
             display: inline-block;
             margin-left: $padding-small-vertical;
             font: normal normal normal 14px/1 FontAwesome; // shortening font declaration
@@ -49,15 +49,15 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
         }
     }
 
-    table.list .buttons > a:before {
+    table.list .buttons > a::before {
         font-size: 14px;
     }
 }
 
 
-/**
- * Context menu
- */
+//== Context menu
+//
+
 #context-menu {
     > ul,
     > ul > li > ul {
@@ -70,7 +70,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
         a {
             @extend %fa-icon;
 
-            &:before {
+            &::before {
                 margin-top: 3px;
                 margin-left: -16px;
                 float: left;
@@ -87,19 +87,18 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     }
 }
 
-/**
- * Buttons icons
- */
 
-@if $use-font-awesome
-{
+//== Buttons icons
+//
+
+@if $use-font-awesome {
     .icon {
         @extend %fa-icon;
         padding-left: 20px;
         background-repeat: no-repeat;
         background-position: 0% 50%;
 
-        &:before {
+        &::before {
             margin-left: -20px;
         }
     }
@@ -109,69 +108,67 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
         font-size: 0;
         white-space: nowrap;
 
-        &:before {
+        &::before {
             font-size: $font-size-base;
         }
     }
 
-    .icon-add:before                   { content: $fa-var-plus-square; }
-    .icon-edit:before                  { content: $fa-var-pencil; }
-    .icon-copy:before                  { content: $fa-var-copy; }
-    .icon-duplicate:before             { content: $fa-var-clipboard; }
-    .icon-del:before                   { content: $fa-var-trash; }
-    .icon-move:before                  { content: $fa-var-arrows; }
-    .icon-save:before                  { content: $fa-var-save; }
-    .icon-cancel:before                { content: $fa-var-ban; }
-    .icon-multiple:before              { content: $fa-var-plus-circle; }
-    .icon-folder:before                { content: $fa-var-folder; }
-    .open .icon-folder:before          { content: $fa-var-folder-open; }
-    .icon-package:before               { content: $fa-var-cube; }
-    .icon-user:before                  { content: $fa-var-user; }
-    .icon-projects:before              { content: $fa-var-cubes; }
-    .icon-help:before                  { content: $fa-var-info-circle; }
-    .icon-attachment:before            { content: $fa-var-paperclip; }
-    .icon-history:before               { content: $fa-var-history; }
-    .icon-time:before                  { content: $fa-var-clock-o; }
-    .icon-time-add:before              { content: $fa-var-clock-o; }
-    .icon-stats:before                 { content: $fa-var-line-chart; }
-    .icon-warning:before               { content: $fa-var-warning; }
-    .icon-error:before                 { content: $fa-var-exclamation; }
-    .icon-fav:before                   { content: $fa-var-star; }
-    .icon-fav-off:before               { content: $fa-var-star-o; }
-    .icon-reload:before                { content: $fa-var-refresh; }
-    .icon-lock:before                  { content: $fa-var-lock; }
-    .icon-unlock:before                { content: $fa-var-unlock; }
-    .icon-checked:before               { content: $fa-var-check; }
-    .icon-details:before               { content: $fa-var-search-plus; }
-    .icon-report:before                { content: $fa-var-pie-chart; }
-    .icon-comment:before               { content: $fa-var-comment; }
-    .icon-summary:before               { content: $fa-var-file-text; }
-    .icon-server-authentication:before { content: $fa-var-key; }
-    .icon-issue:before                 { content: $fa-var-ticket; }
-    .icon-zoom-in:before               { content: $fa-var-search-plus; }
-    .icon-zoom-out:before              { content: $fa-var-search-minus; }
-    .icon-passwd:before                { content: $fa-var-key; }
-    .icon-test:before                  { content: $fa-var-arrow-circle-right; }
-    .icon-phone:before                 { content: $fa-var-phone; }
-    .icon-email:before                 { content: $fa-var-envelope; }
-    .icon-skype:before                 { content: $fa-var-skype; }
-    .icon-facebook:before              { content: $fa-var-facebook-square; }
-    .icon-linkedin:before              { content: $fa-var-linkedin-square; }
-    .icon-twitter:before               { content: $fa-var-twitter-square; }
-    .icon-magnifier:before             { content: $fa-var-search; }
-    .icon-email:before                 { content: $fa-var-envelope; }
-    .icon-email-disabled:before        { content: $fa-var-envelope-o; }
-    .icon-move-up:before               { content: $fa-var-angle-up; }
-    .icon-move-top:before              { content: $fa-var-angle-double-up; }
-    .icon-move-down:before             { content: $fa-var-angle-down; }
-    .icon-move-bottom:before           { content: $fa-var-angle-double-down; }
-    .icon-ok:before                    { content: $fa-var-check; }
-    .icon-not-ok:before                { content: $fa-var-times; }
-    .icon-link-break:before            { content: $fa-var-chain-broken; }
-    .icon-list:before                  { content: $fa-var-list-ul; }
-}
-@else
-{
+    .icon-add::before                   { content: $fa-var-plus-square; }
+    .icon-edit::before                  { content: $fa-var-pencil; }
+    .icon-copy::before                  { content: $fa-var-copy; }
+    .icon-duplicate::before             { content: $fa-var-clipboard; }
+    .icon-del::before                   { content: $fa-var-trash; }
+    .icon-move::before                  { content: $fa-var-arrows; }
+    .icon-save::before                  { content: $fa-var-save; }
+    .icon-cancel::before                { content: $fa-var-ban; }
+    .icon-multiple::before              { content: $fa-var-plus-circle; }
+    .icon-folder::before                { content: $fa-var-folder; }
+    .open .icon-folder::before          { content: $fa-var-folder-open; }
+    .icon-package::before               { content: $fa-var-cube; }
+    .icon-user::before                  { content: $fa-var-user; }
+    .icon-projects::before              { content: $fa-var-cubes; }
+    .icon-help::before                  { content: $fa-var-info-circle; }
+    .icon-attachment::before            { content: $fa-var-paperclip; }
+    .icon-history::before               { content: $fa-var-history; }
+    .icon-time::before                  { content: $fa-var-clock-o; }
+    .icon-time-add::before              { content: $fa-var-clock-o; }
+    .icon-stats::before                 { content: $fa-var-line-chart; }
+    .icon-warning::before               { content: $fa-var-warning; }
+    .icon-error::before                 { content: $fa-var-exclamation; }
+    .icon-fav::before                   { content: $fa-var-star; }
+    .icon-fav-off::before               { content: $fa-var-star-o; }
+    .icon-reload::before                { content: $fa-var-refresh; }
+    .icon-lock::before                  { content: $fa-var-lock; }
+    .icon-unlock::before                { content: $fa-var-unlock; }
+    .icon-checked::before               { content: $fa-var-check; }
+    .icon-details::before               { content: $fa-var-search-plus; }
+    .icon-report::before                { content: $fa-var-pie-chart; }
+    .icon-comment::before               { content: $fa-var-comment; }
+    .icon-summary::before               { content: $fa-var-file-text; }
+    .icon-server-authentication::before { content: $fa-var-key; }
+    .icon-issue::before                 { content: $fa-var-ticket; }
+    .icon-zoom-in::before               { content: $fa-var-search-plus; }
+    .icon-zoom-out::before              { content: $fa-var-search-minus; }
+    .icon-passwd::before                { content: $fa-var-key; }
+    .icon-test::before                  { content: $fa-var-arrow-circle-right; }
+    .icon-phone::before                 { content: $fa-var-phone; }
+    .icon-email::before                 { content: $fa-var-envelope; }
+    .icon-skype::before                 { content: $fa-var-skype; }
+    .icon-facebook::before              { content: $fa-var-facebook-square; }
+    .icon-linkedin::before              { content: $fa-var-linkedin-square; }
+    .icon-twitter::before               { content: $fa-var-twitter-square; }
+    .icon-magnifier::before             { content: $fa-var-search; }
+    .icon-email::before                 { content: $fa-var-envelope; }
+    .icon-email-disabled::before        { content: $fa-var-envelope-o; }
+    .icon-move-up::before               { content: $fa-var-angle-up; }
+    .icon-move-top::before              { content: $fa-var-angle-double-up; }
+    .icon-move-down::before             { content: $fa-var-angle-down; }
+    .icon-move-bottom::before           { content: $fa-var-angle-double-down; }
+    .icon-ok::before                    { content: $fa-var-check; }
+    .icon-not-ok::before                { content: $fa-var-times; }
+    .icon-link-break::before            { content: $fa-var-chain-broken; }
+    .icon-list::before                  { content: $fa-var-list-ul; }
+} @else {
     .icon {
         padding-top: 2px;
         padding-bottom: 3px;
@@ -195,7 +192,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
         overflow: hidden;
         vertical-align: text-bottom;
 
-        &:after {
+        &::after {
             content: "&nbsp;";
         }
     }
@@ -252,20 +249,16 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 }
 
 
-/**
- * Checkbox toggler
- */
+//== Checkbox toggler
+//
 
-@if $use-font-awesome
-{
+@if $use-font-awesome {
     a.toggle-checkboxes {
         @extend %fa-icon;
 
-        &:before { content: $fa-var-check-square-o; }
+        &::before { content: $fa-var-check-square-o; }
     }
-}
-else
-{
+} @else {
     a.toggle-checkboxes {
         margin-left: 5px;
         padding-left: 12px;
@@ -274,9 +267,8 @@ else
 }
 
 
-/**
- * Colorize some actions
- */
+//== Colorize some actions
+//
 
 .icon-add,
 .icon-edit,
@@ -290,62 +282,58 @@ else
 }
 
 
-/**
- * File types
- */
+//== File types
+//
 
-@if $use-font-awesome
-{
+@if $use-font-awesome {
     .icon-folder,
     .icon-file {
-        &:before {
+        &::before {
             width: 16px;
             text-align: center;
         }
     }
 
     .icon-file {
-        &:before {
+        &::before {
             color: $gray;
             content: $fa-var-file-o;
         }
 
-        &.text-plain:before         { content: $fa-var-file-text-o; }
-        &.text-x-c:before           { content: $fa-var-file-code-o; }
-        &.text-x-csharp:before      { content: $fa-var-file-code-o; }
-        &.text-x-java:before        { content: $fa-var-file-code-o; }
-        &.text-x-php:before         { content: $fa-var-file-code-o; }
-        &.text-x-ruby:before        { content: $fa-var-file-code-o; }
-        &.text-xml:before           { content: $fa-var-file-code-o; }
-        &.text-css:before           { content: $fa-var-file-code-o; }
-        &.text-html:before          { content: $fa-var-file-code-o; }
-        &.text-x-sh:before          { content: $fa-var-file-text-o; }
+        &.text-plain::before         { content: $fa-var-file-text-o; }
+        &.text-x-c::before           { content: $fa-var-file-code-o; }
+        &.text-x-csharp::before      { content: $fa-var-file-code-o; }
+        &.text-x-java::before        { content: $fa-var-file-code-o; }
+        &.text-x-php::before         { content: $fa-var-file-code-o; }
+        &.text-x-ruby::before        { content: $fa-var-file-code-o; }
+        &.text-xml::before           { content: $fa-var-file-code-o; }
+        &.text-css::before           { content: $fa-var-file-code-o; }
+        &.text-html::before          { content: $fa-var-file-code-o; }
+        &.text-x-sh::before          { content: $fa-var-file-text-o; }
 
-        &.application-javascript:before,
-        &.text-x-javascript:before { content: $fa-var-file-code-o; }
+        &.application-javascript::before,
+        &.text-x-javascript::before { content: $fa-var-file-code-o; }
 
-        &.application-pdf:before    { content: $fa-var-file-pdf-o; }
-        &.application-msword:before { content: $fa-var-file-word-o; }
+        &.application-pdf::before    { content: $fa-var-file-pdf-o; }
+        &.application-msword::before { content: $fa-var-file-word-o; }
 
-        &.application-vnd\.openxmlformats-officedocument\.spreadsheetml\.sheet:before,
-        &.application-vnd\.ms-excel:before { content: $fa-var-file-excel-o; }
+        &.application-vnd\.openxmlformats-officedocument\.spreadsheetml\.sheet::before,
+        &.application-vnd\.ms-excel::before { content: $fa-var-file-excel-o; }
 
-        &.image-vnd\.microsoft\.icon:before,
-        &.image-gif:before,
-        &.image-jpeg:before,
-        &.image-png:before,
-        &.image-tiff:before {
+        &.image-vnd\.microsoft\.icon::before,
+        &.image-gif::before,
+        &.image-jpeg::before,
+        &.image-png::before,
+        &.image-tiff::before {
             content: $fa-var-file-image-o;
         }
 
-        &.application-zip:before,
-        &.application-x-gzip:before {
+        &.application-zip::before,
+        &.application-x-gzip::before {
             content: $fa-var-file-zip-o;
         }
     }
-}
-@else
-{
+} @else {
     .icon-file {
         background-image: url("../../../images/files/default.png");
 
@@ -376,26 +364,25 @@ else
 }
 
 
-/**
- * Admininistration menu sections
- */
-@if $use-font-awesome
-{
+//== Admininistration menu sections
+//
+
+@if $use-font-awesome {
     %admin-icon {
         @extend %fa-icon;
 
-        &:before {
+        &::before {
             width: 20px;
             margin-left: -(5px + 20px);
             color: $gray;
             text-align: center;
         }
 
-        &:hover:before {
+        &:hover::before {
             color: $gray-darker;
         }
 
-        &.selected:before {
+        &.selected::before {
             color: $gray-darkest;
         }
     }
@@ -416,84 +403,82 @@ else
         .projects {
             @extend %admin-icon;
 
-            &:before { content: $fa-var-cubes; }
+            &::before { content: $fa-var-cubes; }
         }
 
         .users {
             @extend %admin-icon;
 
-            &:before { content: $fa-var-user; }
+            &::before { content: $fa-var-user; }
         }
 
         .groups {
             @extend %admin-icon;
 
-            &:before { content: $fa-var-group; }
+            &::before { content: $fa-var-group; }
         }
 
         .roles {
             @extend %admin-icon;
 
-            &:before { content: $fa-var-eye; }
+            &::before { content: $fa-var-eye; }
         }
 
         .trackers {
             @extend %admin-icon;
 
-            &:before { content: $fa-var-ticket; }
+            &::before { content: $fa-var-ticket; }
         }
 
         .issue_statuses {
             @extend %admin-icon;
 
-            &:before { content: $fa-var-pencil-square; }
+            &::before { content: $fa-var-pencil-square; }
         }
 
         .workflows {
             @extend %admin-icon;
 
-            &:before { content: $fa-var-sitemap; }
+            &::before { content: $fa-var-sitemap; }
         }
 
         .custom_fields {
             @extend %admin-icon;
 
-            &:before { content: $fa-var-edit; }
+            &::before { content: $fa-var-edit; }
         }
 
         .enumerations {
             @extend %admin-icon;
 
-            &:before { content: $fa-var-list; }
+            &::before { content: $fa-var-list; }
         }
 
         .settings {
             @extend %admin-icon;
 
-            &:before { content: $fa-var-gear; }
+            &::before { content: $fa-var-gear; }
         }
 
         .plugins {
             @extend %admin-icon;
 
-            &:before { content: $fa-var-puzzle-piece; }
+            &::before { content: $fa-var-puzzle-piece; }
         }
 
         .info {
             @extend %admin-icon;
 
-            &:before { content: $fa-var-info-circle; }
+            &::before { content: $fa-var-info-circle; }
         }
 
         .server_authentication {
             @extend %admin-icon;
 
-            &:before { content: $fa-var-key; }
+            &::before { content: $fa-var-key; }
         }
     }
-}
-@else
-{
+} @else {
     #admin-menu {
         .projects              { background-image: url("../../../images/projects.png"); }
         .users                 { background-image: url("../../../images/user.png"); }
@@ -512,26 +497,24 @@ else
 }
 
 
-/**
- * Drag-and-drop sorting
- */
+//== Drag-and-drop sorting
+//
 
-@if $use-font-awesome
-{
+@if $use-font-awesome {
     .sort-handle {
         @extend %fa-icon;
         @include link-variant($icon-success-color, $icon-success-hover-color);
-        cursor: move;
         text-align: center;
+        cursor: move;
 
-        &:before {
+        &::before {
             width: 16px;
             margin: 0;
             content: $fa-var-arrows-v;
         }
 
         &.ajax-loading {
-            &:before {
+            &::before {
                 color: $gray;
                 -webkit-animation: spin 1s linear infinite;
                 animation: spin 1s linear infinite;
@@ -539,16 +522,14 @@ else
             }
         }
     }
-}
-else
-{
+} @else {
     .sort-handle {
         display: inline-block;
         width: 16px;
         height: 16px;
         background: url("../../../images/reorder.png") no-repeat 0 50%;
-        vertical-align: middle;
         cursor: move;
+        vertical-align: middle;
 
         &.ajax-loading {
             background-image: url("../../../images/loading.gif");
@@ -557,12 +538,10 @@ else
 }
 
 
-/**
- * Headers with icons
- */
+//== Headers with icons
+//
 
-@if $use-font-awesome
-{
+@if $use-font-awesome {
     h3.version,
     h3.comments,
     div.issues h3,
@@ -571,7 +550,7 @@ else
     div.projects h3 {
         @extend %fa-icon;
 
-        &:before {
+        &::before {
             width: 1em;
             margin-right: .5em;
             color: $gray-dark;
@@ -579,15 +558,13 @@ else
         }
     }
 
-    h3.version:before      { content: $fa-var-cube; }
-    h3.comments:before     { content: $fa-var-comments; }
-    div.issues h3:before   { content: $fa-var-ticket; }
-    div.members h3:before  { content: $fa-var-user; }
-    div.news h3:before     { content: $fa-var-newspaper-o; }
-    div.projects h3:before { content: $fa-var-cubes; }
-}
-@else
-{
+    h3.version::before      { content: $fa-var-cube; }
+    h3.comments::before     { content: $fa-var-comments; }
+    div.issues h3::before   { content: $fa-var-ticket; }
+    div.members h3::before  { content: $fa-var-user; }
+    div.news h3::before     { content: $fa-var-newspaper-o; }
+    div.projects h3::before { content: $fa-var-cubes; }
+} @else {
     h3.version,
     h3.comments,
     div.issues h3,
@@ -606,12 +583,10 @@ else
 }
 
 
-/**
- * Activity types icons
- */
+//== Activity types icons
+//
 
-@if $use-font-awesome
-{
+@if $use-font-awesome {
     dt {
         &.issue,
         &.issue-edit,
@@ -629,31 +604,29 @@ else
         &.time-entry {
             @extend %fa-icon;
 
-            &:before {
+            &::before {
                 margin-left: -$padding-side;
                 float: left;
                 line-height: $line-height-computed;
             }
         }
 
-        &.issue:before        { content: $fa-var-ticket; }
-        &.issue-edit:before   { content: $fa-var-edit; }
-        &.issue.closed:before { content: $fa-var-ticket; }
-        &.issue-closed:before { content: $fa-var-ticket; }
-        &.issue-note:before   { content: $fa-var-comment; }
-        &.changeset:before    { content: $fa-var-upload; }
-        &.news:before         { content: $fa-var-newspaper-o; }
-        &.message:before      { content: $fa-var-comment; }
-        &.reply:before        { content: $fa-var-comment-o; }
-        &.wiki-page:before    { content: $fa-var-file-text-o; }
-        &.attachment:before   { content: $fa-var-paperclip; }
-        &.document:before     { content: $fa-var-file-text; }
-        &.project:before      { content: $fa-var-cube; }
-        &.time-entry:before   { content: $fa-var-clock-o; }
+        &.issue::before        { content: $fa-var-ticket; }
+        &.issue-edit::before   { content: $fa-var-edit; }
+        &.issue.closed::before { content: $fa-var-ticket; }
+        &.issue-closed::before { content: $fa-var-ticket; }
+        &.issue-note::before   { content: $fa-var-comment; }
+        &.changeset::before    { content: $fa-var-upload; }
+        &.news::before         { content: $fa-var-newspaper-o; }
+        &.message::before      { content: $fa-var-comment; }
+        &.reply::before        { content: $fa-var-comment-o; }
+        &.wiki-page::before    { content: $fa-var-file-text-o; }
+        &.attachment::before   { content: $fa-var-paperclip; }
+        &.document::before     { content: $fa-var-file-text; }
+        &.project::before      { content: $fa-var-cube; }
+        &.time-entry::before   { content: $fa-var-clock-o; }
     }
-}
-@else
-{
+} @else {
     dt {
         &.issue        { background-image: url("../../../images/ticket.png"); }
         &.issue-edit   { background-image: url("../../../images/ticket_edit.png"); }
@@ -673,22 +646,20 @@ else
 }
 
 
-/**
- * Alternative icons
- */
+//== Alternative icons
+//
 
-@if $use-font-awesome
-{
+@if $use-font-awesome {
     .search_for_watchers > a {
         @extend %fa-icon;
 
-        &:before {
+        &::before {
             color: $icon-success-color;
             content: $fa-var-plus;
         }
 
-        &:hover:before,
-        &:focus:before {
+        &:hover::before,
+        &:focus::before {
             color: $icon-success-hover-color;
         }
 
@@ -700,7 +671,7 @@ else
     .atom {
         @extend %fa-icon;
 
-        &:before {
+        &::before {
             content: $fa-var-rss-square;
         }
     }
@@ -710,7 +681,7 @@ else
         &[data-method="delete"] {
             @extend %fa-icon;
 
-            &:before {
+            &::before {
                 content: $fa-var-chain-broken;
             }
 
@@ -732,7 +703,7 @@ else
             color: $icon-danger-hover-color;
         }
 
-        &:before {
+        &::before {
             content: $fa-var-remove;
         }
     }
@@ -740,7 +711,7 @@ else
     .my-project {
         @extend %fa-icon-after;
 
-        &:after {
+        &::after {
             color: #f6ab02;
             font-size: $font-size-small;
             content: $fa-var-star;
@@ -750,7 +721,7 @@ else
     .sort {
         @extend %fa-icon-after;
 
-        &:after {
+        &::after {
             margin-left: .2em;
         }
 
@@ -759,11 +730,11 @@ else
             background-image: none;
         }
 
-        &.asc:after {
+        &.asc::after {
             content: $fa-var-sort-amount-asc;
         }
 
-        &.desc:after {
+        &.desc::after {
             content: $fa-var-sort-amount-desc;
         }
 
@@ -771,14 +742,14 @@ else
         .sort-by-done-ratio &,
         .sort-by-estimated-hours &,
         .sort-by-spent-hours & {
-            &.asc:after  { content: $fa-var-sort-numeric-asc; }
-            &.desc:after { content: $fa-var-sort-numeric-desc; }
+            &.asc::after  { content: $fa-var-sort-numeric-asc; }
+            &.desc::after { content: $fa-var-sort-numeric-desc; }
         }
 
         .sort-by-assigned-to &,
         .sort-by-subject & {
-            &.asc:after  { content: $fa-var-sort-alpha-asc; }
-            &.desc:after { content: $fa-var-sort-alpha-desc; }
+            &.asc::after  { content: $fa-var-sort-alpha-asc; }
+            &.desc::after { content: $fa-var-sort-alpha-desc; }
         }
     }
 
@@ -795,7 +766,7 @@ else
             opacity: 1;
         }
 
-        &:before {
+        &::before {
             content: $fa-var-trash;
         }
     }
@@ -803,7 +774,7 @@ else
     em.info.error {
         @extend %fa-icon;
 
-        &:before {
+        &::before {
             content: $fa-var-exclamation-circle;
         }
     }
@@ -819,7 +790,7 @@ else
             }
 
             &:nth-child(1) {
-                &:before {
+                &::before {
                     content: $fa-var-comment;
                 }
             }
@@ -827,7 +798,7 @@ else
             &:nth-child(2) {
                 @include link-variant($icon-success-color, $icon-success-hover-color);
 
-                &:before {
+                &::before {
                     content: $fa-var-pencil;
                 }
             }
@@ -835,7 +806,7 @@ else
             &:nth-child(3) {
                 @include link-variant($icon-danger-color, $icon-danger-hover-color);
 
-                &:before {
+                &::before {
                     content: $fa-var-trash;
                 }
             }
@@ -856,7 +827,7 @@ else
             color: $gray;
 
             td.subject {
-                &:before {
+                &::before {
                     content: $fa-var-lock;
                 }
             }
@@ -865,7 +836,7 @@ else
         &.sticky td.subject {
             font-weight: $font-weight-bold;
 
-            &:before {
+            &::before {
                 content: $fa-var-bookmark;
             }
         }
@@ -874,7 +845,7 @@ else
     tr.version.shared td.name {
         @extend %fa-icon;
 
-        &:before {
+        &::before {
             content: $fa-var-link;
         }
     }
@@ -883,7 +854,7 @@ else
         a.board {
             @extend %fa-icon;
 
-            &:before {
+            &::before {
                 content: $fa-var-comments;
             }
         }
@@ -895,7 +866,7 @@ else
         td.groupanonymous {
             @extend %fa-icon;
 
-            &:before {
+            &::before {
                 content: $fa-var-group;
             }
         }
@@ -905,7 +876,7 @@ else
         .external {
             @extend %fa-icon;
 
-            &:before {
+            &::before {
                 display: inline;
                 margin-right: 3px;
                 font-size: 10px;
@@ -918,7 +889,7 @@ else
         @extend %fa-icon;
         @include link-variant($icon-success-color, $icon-success-hover-color);
 
-        &:before {
+        &::before {
             content: $fa-var-pencil;
         }
 
@@ -930,14 +901,14 @@ else
     #attach_files_link {
         @extend %fa-icon;
 
-        &:before {
+        &::before {
             margin-right: .3em;
             color: $icon-success-color;
             content: $fa-var-plus;
         }
 
-        &:hover:before,
-        &:focus:before {
+        &:hover::before,
+        &:focus::before {
             color: $icon-success-hover-color;
         }
     }
@@ -946,7 +917,7 @@ else
         %other-format {
             @extend %fa-icon;
 
-            &:before {
+            &::before {
                 margin-right: .3em;
             }
         }
@@ -954,7 +925,7 @@ else
         .pdf {
             @extend %other-format;
 
-            &:before {
+            &::before {
                 content: $fa-var-file-pdf-o;
             }
         }
@@ -962,7 +933,7 @@ else
         .html {
             @extend %other-format;
 
-            &:before {
+            &::before {
                 content: $fa-var-file-code-o;
             }
         }
@@ -970,7 +941,7 @@ else
         .txt {
             @extend %other-format;
 
-            &:before {
+            &::before {
                 content: $fa-var-file-text-o;
             }
         }
@@ -978,7 +949,7 @@ else
         .csv {
             @extend %other-format;
 
-            &:before {
+            &::before {
                 content: $fa-var-file-excel-o;
             }
         }
@@ -986,7 +957,7 @@ else
         .png {
             @extend %other-format;
 
-            &:before {
+            &::before {
                 content: $fa-var-file-image-o;
             }
         }
@@ -997,38 +968,36 @@ else
         @extend %fa-icon;
         background: transparent;
 
-        &:before {
+        &::before {
             position: relative;
             top: -.12em;
             font-size: .7143em;
             content: $fa-var-circle;
         }
 
-        &.folder:before          { top: 0; font-size: 1em; content: $fa-var-folder; }
-        &.folder.change-A:before { content: $fa-var-folder-open; }
-        &.folder.change-M:before { content: $fa-var-folder-open; }
-        &.change-A:before        { content: $fa-var-plus-circle; }
-        &.change-M:before        { content: $fa-var-circle; }
-        &.change-C:before        { content: $fa-var-arrow-circle-right; }
-        &.change-R:before        { content: $fa-var-check-circle; }
-        &.change-D:before        { content: $fa-var-minus-circle; }
+        &.folder::before          { top: 0; font-size: 1em; content: $fa-var-folder; }
+        &.folder.change-A::before { content: $fa-var-folder-open; }
+        &.folder.change-M::before { content: $fa-var-folder-open; }
+        &.change-A::before        { content: $fa-var-plus-circle; }
+        &.change-M::before        { content: $fa-var-circle; }
+        &.change-C::before        { content: $fa-var-arrow-circle-right; }
+        &.change-R::before        { content: $fa-var-check-circle; }
+        &.change-D::before        { content: $fa-var-minus-circle; }
     }
 
     .changeset-changes ul > li.change {
-        &.folder:before {
+        &.folder::before {
             top: $table-condensed-cell-padding - 2px;
             margin-left: -20px;
         }
 
-        &:before {
+        &::before {
             top: $table-condensed-cell-padding;
             margin-left: -(20px - $table-condensed-cell-padding);
             float: left;
         }
     }
-}
-@else
-{
+} @else {
     .search_for_watchers > a {
         padding-left: 20px;
         background: url("../../../images/add.png") no-repeat 0 50%;
@@ -1130,28 +1099,24 @@ else
 }
 
 
-/**
- * Hacks and overrides for Font Awesome
- */
+//== Hacks and overrides for Font Awesome
+//
 
-@if $use-font-awesome
-{
-    /**
-     * Attachments and watchers delete icon
-     */
+@if $use-font-awesome {
+    // Attachments and watchers delete icon
 
     .attachments,
     .watchers {
         a.delete {
             @extend %fa-icon;
 
-            &:before {
+            &::before {
                 color: $icon-danger-color;
                 content: $fa-var-trash;
             }
 
-            &:hover:before,
-            &:focus:before {
+            &:hover::before,
+            &:focus::before {
                 color: $icon-danger-hover-color;
             }
 
@@ -1162,27 +1127,25 @@ else
     }
 
 
-    /**
-     * Issue edit form icon
-     */
+    // Issue edit form icon
 
     #all_attributes label[for="issue_description"] + a {
         @extend %fa-icon;
 
-        &:before {
+        &::before {
             color: $icon-success-color;
             content: $fa-var-pencil;
         }
 
-        &:hover:before,
-        &:focus:before {
+        &:hover::before,
+        &:focus::before {
             color: $icon-success-hover-color;
         }
 
         .icon {
             padding-left: 0;
 
-            &:before {
+            &::before {
                 margin: 0;
                 content: "";
             }
@@ -1194,15 +1157,13 @@ else
     }
 
 
-    /**
-     * Issue journal contextual icons
-     */
+    // Issue journal contextual icons
 
     .journal .contextual {
         a {
             @extend %fa-icon;
 
-            &:before {
+            &::before {
                 content: $fa-var-comment;
             }
 
@@ -1213,7 +1174,7 @@ else
             &:nth-child(2) {
                 @include link-variant($icon-success-color, $icon-success-hover-color);
 
-                &:before {
+                &::before {
                     content: $fa-var-pencil;
                 }
             }
@@ -1221,7 +1182,7 @@ else
             &:nth-child(3) {
                 @include link-variant($icon-danger-color, $icon-danger-hover-color);
 
-                &:before {
+                &::before {
                     content: $fa-var-trash;
                 }
             }
@@ -1229,21 +1190,19 @@ else
     }
 
 
-    /**
-     * Category and target vesion add icon
-     */
+    // Category and target vesion add icon
 
     #issue_category_id + a,
     #issue_fixed_version_id + a {
         @extend %fa-icon;
 
-        &:before {
+        &::before {
             color: $icon-success-color;
             content: $fa-var-plus-square;
         }
 
-        &:hover:before,
-        &:focus:before {
+        &:hover::before,
+        &:focus::before {
             color: $icon-success-hover-color;
         }
 
@@ -1253,9 +1212,7 @@ else
     }
 
 
-    /**
-     * jQuery UI datepicker trigger button
-     */
+    // jQuery UI datepicker trigger button
 
     img.ui-datepicker-trigger {
         position: relative;
@@ -1269,14 +1226,12 @@ else
     }
 
 
-    /**
-     * Lists toggle checkbox icon
-     */
+    // Lists toggle checkbox icon
 
     table.list th.checkbox > a {
         @extend %fa-icon;
 
-        &:before {
+        &::before {
             margin-right: 0;
             color: $icon-success-color;
             content: $fa-var-check;
@@ -1288,19 +1243,17 @@ else
     }
 
 
-    /**
-     * Time entries list icons
-     */
+    // Time entries list icons
 
     .time-entry .buttons > a {
         @extend %fa-icon;
 
-        &[href*="edit"]:before {
+        &[href*="edit"]::before {
             color: $icon-success-color;
             content: $fa-var-pencil;
         }
 
-        &[data-method="delete"]:before {
+        &[data-method="delete"]::before {
             color: $icon-danger-color;
             content: $fa-var-trash;
         }
@@ -1311,14 +1264,12 @@ else
     }
 
 
-    /**
-     * Files list
-     */
+    // Files list
 
     .file .buttons > a {
         @extend %fa-icon;
 
-        &[data-method="delete"]:before {
+        &[data-method="delete"]::before {
             color: $icon-danger-color;
             content: $fa-var-trash;
         }
@@ -1329,15 +1280,13 @@ else
     }
 
 
-    /**
-     * Commit keywords
-     */
+    // Commit keywords
 
     .delete-commit-keywords {
         @extend %fa-icon;
         font-size: $font-size-base;
 
-        &:before {
+        &::before {
             color: $icon-danger-color;
             content: $fa-var-trash;
         }
@@ -1351,7 +1300,7 @@ else
         @extend %fa-icon;
         font-size: $font-size-base;
 
-        &:before {
+        &::before {
             color: $icon-success-color;
             content: $fa-var-plus-square;
         }

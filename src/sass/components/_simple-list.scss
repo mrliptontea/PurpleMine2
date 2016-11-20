@@ -20,7 +20,7 @@
         background-position: 0 center;
     }
 
-    span.project:after {
+    span.project::after {
         content: " -";
     }
 

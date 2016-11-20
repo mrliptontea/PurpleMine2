@@ -18,7 +18,8 @@ img.gravatar {
 }
 
 
-// For Administration -> /users
+//== Administration -> /users
+//
 
 .username img.gravatar {
     position: relative;
@@ -27,7 +28,9 @@ img.gravatar {
     vertical-align: top;
 }
 
-/* Used on 12px Gravatar img tags without the icon background */
+//== Gravatar
+//   Used on 12px Gravatar img tags without the icon background
+
 .icon-gravatar {
     margin-right: 5px;
     float: left;

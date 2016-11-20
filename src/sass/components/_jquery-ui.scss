@@ -3,9 +3,8 @@
 // --------------------------------------------------
 
 
-/**
- * Component containers
- */
+//== Component containers
+//
 
 .ui-widget {
     &,
@@ -19,9 +18,8 @@
 }
 
 
-/**
- * Widgets
- */
+//== Widgets
+//
 
 .ui-widget-content {
     border: 1px solid $panel-border;
@@ -64,9 +62,8 @@
 }
 
 
-/**
- * Interaction states
- */
+//== Interaction states
+//
 
 .ui-state-default,
 .ui-widget-content .ui-state-default,
@@ -134,9 +131,8 @@
 }
 
 
-/**
- * Menu (e.g. autocomplete)
- */
+//== Menu (e.g. autocomplete)
+//
 
 .ui-menu {
     padding: 3px;
@@ -149,9 +145,8 @@
 }
 
 
-/**
- * Dialogs
- */
+//== Dialogs
+//
 
 .modal {
     background: $body-bg;
@@ -192,9 +187,8 @@
 }
 
 
-/**
- * Datepicker
- */
+//== Datepicker
+//
 
 img.ui-datepicker-trigger {
     margin-left: 4px;

@@ -24,10 +24,10 @@
             display: -ms-flexbox;
             display: -webkit-flex;
             display: flex;
-            height: $line-height-computed + $tab-padding-vertical * 2 + 1px;
             -webkit-flex-wrap: nowrap;
             -ms-flex-wrap: nowrap;
             flex-wrap: nowrap;
+            height: $line-height-computed + $tab-padding-vertical * 2 + 1px;
         } @else {
             width: 2000px;
             @extend %clearfix;
@@ -114,9 +114,8 @@
     }
 }
 
-/**
- * Specific tabs content layout
- */
+//== Specific tabs content layout
+//
 
 #tab-content-modules fieldset p {
     margin: 3px 0 4px;

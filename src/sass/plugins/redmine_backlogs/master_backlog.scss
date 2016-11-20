@@ -23,7 +23,7 @@ $story-sp-input-width:          50px;
         background-color: $background;
         color: $color;
 
-        &:before {
+        &::before {
             color: mix($color, $background, 50%);
         }
 
@@ -38,21 +38,18 @@ $story-sp-input-width:          50px;
 }
 
 
-/**
- * reserved classes are
- * .backlog (used in master_backlog.js to initialize all backlogs)
- * .model (used in backlog.js editable_inplace.js model.js)
- * .sprint (used in backlog.js
- * .stories (used in backlog.js for sortable)
- * .editor
- * .editable (bind click on)
- * .close_sprint (bind click on)
- */
+// Reserved classes are
+// .backlog (used in master_backlog.js to initialize all backlogs)
+// .model (used in backlog.js editable_inplace.js model.js)
+// .sprint (used in backlog.js
+// .stories (used in backlog.js for sortable)
+// .editor
+// .editable (bind click on)
+// .close_sprint (bind click on)
 
 
-/**
- * fluid, 2-colum layout
- */
+//== Fluid, 2-colum layout
+//
 
 #backlogs_container {
     padding: ($padding-side / 2) ($padding-side / 4);
@@ -92,9 +89,8 @@ $story-sp-input-width:          50px;
 }
 
 
-/**
- * Fixed-Fluid-Fixed layout
- */
+//== Fixed-Fluid-Fixed layout
+//
 
 .fff-wrapmiddle {
     width: 100%;
@@ -146,18 +142,16 @@ $story-sp-input-width:          50px;
 }
 
 
-/**
- * Just some space at the bottom of the page
- */
+//== Just some space at the bottom of the page
+//
 
 #dummy_backlog_container {
     height: 150px;
 }
 
 
-/**
- * Base backlog container
- */
+//== Base backlog container
+//
 
 #backlogs_container {
     .closedbacklog,
@@ -176,9 +170,8 @@ $story-sp-input-width:          50px;
 }
 
 
-/**
- * Backlog header
- */
+//== Backlog header
+//
 
 #backlogs_container {
     .header {
@@ -419,15 +412,13 @@ $story-sp-input-width:          50px;
 
         .headertext {
             cursor: default;
-            /*we have model class here, but are not editable*/
         }
     }
 }
 
 
-/**
- * Backlog items
- */
+//== Backlog items
+//
 
 #backlogs_container {
     .stories {
@@ -501,7 +492,7 @@ $story-sp-input-width:          50px;
                     font-weight: $font-weight-bold;
                     text-align: right;
 
-                    &:before {
+                    &::before {
                         margin-left: -1em;
                         @if $color-trackers {
                             color: mix($tracker-default-text, $tracker-default-bg, 50%);
@@ -689,10 +680,7 @@ $story-sp-input-width:          50px;
         cursor: default;
     }
 
-    /**
-     * override: display story subject in multiple lines
-     */
-
+    // Override: display story subject in multiple lines
     .rb-multilinesubject & .subject {
         height: auto;
         white-space: normal;
@@ -711,9 +699,8 @@ $story-sp-input-width:          50px;
 }
 
 
-/**
- * dialog
- */
+//== Dialog
+//
 
 .ui-dialog {
     .ui-dialog-titlebar-close {
@@ -753,9 +740,8 @@ $story-sp-input-width:          50px;
 }
 
 
-/**
- * In-place Sprint Editor
- */
+//== In-place Sprint Editor
+//
 
 #backlogs_container {
 
@@ -798,7 +784,9 @@ $story-sp-input-width:          50px;
     }
 }
 
-/* In-place Story Editor */
+
+//== In-place Story Editor
+//
 
 .debug {
     .story {
@@ -826,18 +814,20 @@ $story-sp-input-width:          50px;
     }
 }
 
-/* Naive but light handling of colors by user stories tracker */
 
-/* datepicker bugfix: hide until it opens itself */
-
-.ui-datepicker {
-    display: none;
-}
-
-/* show completed sprints */
+//== Completed sprints
+//
 
 #show_completed_sprints {
     margin-left: $padding-side / 2;
     color: $gray-darkest;
     cursor: pointer;
+}
+
+
+//== Datepicker bugfix: hide until it opens itself
+//
+
+.ui-datepicker {
+    display: none;
 }
