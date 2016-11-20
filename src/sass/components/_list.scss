@@ -11,6 +11,10 @@ table.list {
     margin-bottom: 0;
   }
 
+  &.changesets {
+    margin-bottom: $line-height-computed;
+  }
+
   th,
   .table-list-header {
     padding: $table-cell-padding;
