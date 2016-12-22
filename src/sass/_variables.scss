@@ -15,7 +15,7 @@ $colored-issue:                 true !default;
 $color-status:                  true !default;
 $use-gravatars:                 true !default;
 $use-font-awesome:              true !default;
-$use-logo:                      false !default;
+$use-logo:                      true !default;
 $use-retina-logo:               false !default;
 $issue-subject-large:           true !default;
 $enable-sidebar-toggler:        true !default;
@@ -68,7 +68,7 @@ $link-color-user-locked:        $gray !default;
 //== Typography
 //
 
-$font-family-sans-serif:        "Helvetica Neue", Helvetica, Arial, freesans, sans-serif !default;
+$font-family-sans-serif:        "Droid sans", sans-serif, Helvetica, Arial, freesans, !default;
 
 $font-family-monospace:         Consolas, "Liberation Mono", Menlo, "Courier New", Courier, monospace !default;
 $font-family-base:              $font-family-sans-serif !default;
@@ -310,7 +310,7 @@ $input-border:                  #ccc !default;
 $input-border-radius:           $border-radius-small !default;
 $input-border-radius-large:     $border-radius-large !default;
 
-$input-border-focus:            #51a7e8 !default; 
+$input-border-focus:            #51a7e8 !default;
 $input-color-placeholder:       #999 !default;
 
 $input-padding-vertical:        $btn-padding-vertical !default;

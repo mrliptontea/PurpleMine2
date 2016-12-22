@@ -43,8 +43,9 @@ a {
 
 h1 {
   margin: 0;
-  font-size: 2em;             // ~28px
-  line-height: 30px;
+  font-size: 18px;             // ~28px
+  font-weight: $font-weight-normal;
+//  line-height: 30px;
 }
 
 h2 {
