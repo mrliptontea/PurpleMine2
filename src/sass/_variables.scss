@@ -35,7 +35,7 @@ $gray-light:                    lighten($gray-base, 17%) !default;
 $gray-lighter:                  lighten($gray-base, 35%) !default;
 $gray-lightest:                 lighten($gray-base, 46%) !default;
 
-$brand-primary:                 #584492 !default;
+$brand-primary:                 #1b7daa !default;
 $brand-text:                    #fff !default;
 $brand-accent:                  #deddef !default;
 
@@ -310,7 +310,7 @@ $input-border:                  #ccc !default;
 $input-border-radius:           $border-radius-small !default;
 $input-border-radius-large:     $border-radius-large !default;
 
-$input-border-focus:            #51a7e8 !default;
+$input-border-focus:            #51a7e8 !default; 
 $input-color-placeholder:       #999 !default;
 
 $input-padding-vertical:        $btn-padding-vertical !default;
