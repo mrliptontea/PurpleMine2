@@ -60,6 +60,10 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
+Latest (master):
+
+* Fixed #42: override some styles from [RM+](http://rmplus.pro) plugins
+
 v1.8.0 (2016-11-20):
 
 * Fixed #19: missing text wrapping for long text custom fields

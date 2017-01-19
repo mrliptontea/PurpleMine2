@@ -93,6 +93,13 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     font-size: 0;
     white-space: nowrap;
 
+    @at-root a#{&} {
+      // scss-lint:disable ImportantRule
+      width: auto !important;
+      height: auto !important;
+      font-size: 0 !important;
+    }
+
     &::before {
       font-size: $font-size-base;
     }

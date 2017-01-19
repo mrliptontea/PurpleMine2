@@ -6,7 +6,6 @@
   $tabs-buttons-width: 40px;
 
   position: relative;
-  margin-bottom: $line-height-computed;
   overflow: hidden;
 
   @if not $flexbox-layout {
@@ -16,7 +15,6 @@
   > ul {
     margin: 0;
     padding-left: 0;
-    border-bottom: 1px solid $tab-border;
     list-style: none;
 
     @if $flexbox-layout {
@@ -29,8 +27,6 @@
     }
 
     > li {
-      margin-bottom: -1px;
-
       @if $flexbox-layout {
         flex: 0 1 auto;
       } @else {
@@ -46,19 +42,6 @@
         border-radius: $border-radius-base $border-radius-base 0 0;
         text-align: center;
         white-space: nowrap;
-
-        &:hover,
-        &:focus {
-          border-color: $tab-hover-border $tab-hover-border $tab-border;
-          background-color: $tab-hover-bg;
-          text-decoration: none;
-        }
-
-        &.selected {
-          border-color: $tab-active-border $tab-active-border $tab-active-bg;
-          background: $tab-active-bg;
-          color: $tab-active-text;
-        }
       }
     }
   }
@@ -103,6 +86,44 @@
 
     .tab-right {
       @extend %image-arrow-right;
+    }
+  }
+}
+
+div.tabs:not(#main-menu) {
+  height: $line-height-computed + $tab-padding-vertical * 2 + 1px + 1px;
+  margin-bottom: $line-height-computed;
+
+  > ul {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid $tab-border;
+
+    > li {
+      margin: 0 0 -1px;
+      background: transparent;
+
+      > a {
+        padding: $tab-padding-vertical $tab-padding-horizontal;
+        border-color: transparent;
+        background: transparent;
+        color: $link-color;
+        font: inherit;
+
+        &:hover,
+        &:focus {
+          border-color: $tab-hover-border $tab-hover-border $tab-border;
+          background-color: $tab-hover-bg;
+          color: $link-hover-color;
+          text-decoration: none;
+        }
+
+        &.selected {
+          border-color: $tab-active-border $tab-active-border $tab-active-bg;
+          background: $tab-active-bg;
+          color: $tab-active-text;
+        }
+      }
     }
   }
 }
