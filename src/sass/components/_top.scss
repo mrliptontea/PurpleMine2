@@ -225,6 +225,47 @@
   }
 }
 
+#project-jump {
+  display: block;
+  line-height: 2.5em;
+  position:relative;
+
+  .drdn-trigger {
+    font-weight: bold;
+  }
+
+  .drdn-content {
+    display: none;
+    padding: .5em 1em;
+    background-color: $header-bg;
+
+    a {
+      display: block;
+      padding: 0 1em;
+    }
+    a:active,
+    a:focus,
+    a:hover {
+      border-color: darken($header-bg, 15%);
+      background: darken($header-bg, 10%);
+      text-decoration: none;
+    }
+
+    .all-projects a {
+      font-weight: bold;
+    }
+  }
+}
+
+#project-jump:hover {
+  .drdn-content {
+    display: block;
+    position: absolute;
+    z-index: 9999;
+  }
+}
+
+
 #main-menu {
   clear: both;
   background-color: $main-menu-bg;
