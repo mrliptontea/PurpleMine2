@@ -422,7 +422,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
       &::before { content: $fa-var-ticket; }
     }
 
-    .issue_statuses {
+    .issue-statuses {
       @extend %admin-icon;
 
       &::before { content: $fa-var-pencil-square; }
@@ -434,7 +434,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
       &::before { content: $fa-var-sitemap; }
     }
 
-    .custom_fields {
+    .custom-fields {
       @extend %admin-icon;
 
       &::before { content: $fa-var-edit; }
@@ -464,7 +464,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
       &::before { content: $fa-var-info-circle; }
     }
 
-    .server_authentication {
+    .ldap-authentication {
       @extend %admin-icon;
 
       &::before { content: $fa-var-key; }
