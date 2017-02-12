@@ -409,6 +409,33 @@ ul.projects {
 }
 
 #projects-index ul.projects {
+  @if $use-project-tiles {
+    &.root {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -($padding-side / 2);
+      margin-left: -($padding-side / 2);
+
+      > li {
+        display: block;
+        flex: 0 1 auto;
+        width: 100%;
+        margin-right: $padding-side / 2;
+        margin-left: $padding-side / 2;
+        box-sizing: border-box;
+        padding: $panel-body-padding;
+        border: 1px solid $panel-border;
+        border-radius: $border-radius-base;
+        background-color: $panel-bg;
+        color: $panel-color;
+
+        @media screen and (min-width: $screen-sm-min) { width: calc(50% - #{$padding-side}); }
+        @media screen and (min-width: $screen-md-min) { width: calc(33.333% - #{$padding-side}); }
+        @media screen and (min-width: $screen-lg-min) { width: calc(25% - #{$padding-side}); }
+      }
+    }
+  }
+
   ul.projects {
     border-left: 2px solid $gray-lighter;
   }
