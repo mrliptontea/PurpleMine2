@@ -196,8 +196,9 @@
   }
 
   div.attachments {
-    margin: $issue-padding (-$issue-padding) (-$issue-padding);
+    margin: -$issue-padding;
     padding: $issue-padding;
+    border-top: 0;
   }
 }
 

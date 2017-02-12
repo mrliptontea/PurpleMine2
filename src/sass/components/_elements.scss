@@ -83,21 +83,21 @@ a.collapsible.collapsed,
 //
 
 .contextual {
-  padding-left: $padding-base-vertical;
   float: right;
-  white-space: nowrap;
   cursor: default;
 
   input,
   select {
     font-size: .9em;
   }
-}
 
-.contextual,
-.buttons {
-  > .icon:not(:first-child) {
-    margin-left: $padding-small-vertical;
+  a {
+    display: inline-block;
+    white-space: nowrap;
+
+    &:not(:first-child) {
+      margin-left: $padding-small-vertical;
+    }
   }
 }
 
@@ -165,6 +165,10 @@ a.collapsible.collapsed,
 .splitcontentright {
   width: 50%;
   box-sizing: border-box;
+
+  > .wiki {
+    margin-bottom: $line-height-computed;
+  }
 }
 
 .splitcontentleft {

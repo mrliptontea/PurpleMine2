@@ -603,6 +603,18 @@ table.files {
   }
 }
 
+table.list.enumerations {
+  table-layout: fixed;
+
+  + h3 {
+    margin-top: $line-height-computed * 2;
+  }
+
+  + p {
+    margin-bottom: $line-height-computed * 2;
+  }
+}
+
 
 //== Totals
 //

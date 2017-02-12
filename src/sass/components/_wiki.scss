@@ -379,9 +379,18 @@ p.footnote {
     float: left;
   }
 
-  #add_attachment_form {
+  > form {
     padding-top: $line-height-computed;
     clear: left;
+  }
+
+  .collapsible & {
+    padding-top: 0;
+    border-top: 0;
+
+    > form {
+      padding-top: 0;
+    }
   }
 }
 

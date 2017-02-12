@@ -2,20 +2,59 @@
 // Login form
 // --------------------------------------------------
 
-$login-form-width:              350px;
-$login-input-width:             200px;
+$login-form-width:              300px;
 
 #login-form {
   margin: $line-height-computed * 2 auto;
 
-  table {
-    margin: auto;
+  label,
+  input {
+    width: 100%;
   }
 
-  @media screen and (min-width: $screen-sm-min) {
-    width: $login-form-width;
+  label {
+    display: block;
+    margin-bottom: $padding-base-vertical;
+    font-weight: $font-weight-bold;
 
-    padding: $panel-body-padding;
+    > a {
+      float: right;
+      font-weight: $font-weight-normal;
+    }
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    margin-bottom: $panel-body-padding-vertical;
+  }
+
+  table {
+    margin: auto;
+    table-layout: fixed;
+  }
+
+  td {
+    padding: 0;
+
+    &:first-child {
+      width: floor($login-form-width / 4);
+      padding-right: $table-cell-padding;
+      white-space: nowrap;
+    }
+
+    > label {
+      margin-bottom: $panel-body-padding-vertical;
+    }
+
+    > input[type="submit"] {
+      width: auto;
+      margin-right: 0;
+    }
+  }
+
+  @media screen and (min-width: $screen-xs-min) {
+    width: $login-form-width;
+    padding: $padding-side;
     border: 1px solid $panel-border;
     border-radius: $border-radius-base;
     background-color: $panel-bg;
@@ -25,30 +64,12 @@ $login-input-width:             200px;
     table {
       width: 100%;
     }
-
-    td {
-      width: 90%; // make columns expand
-      padding: $table-cell-padding;
-    }
   }
 }
 
-#username,
-#password,
 #openid_url {
-  width: $login-input-width;
-}
-
-#openid_url {
-  padding-right: 8px + 24px;
+  padding-right: $input-padding-horizontal + 24px;
   background-image: url("../../../images/openid-bg.gif");
   background-repeat: no-repeat;
-  background-position: ($login-input-width - 24px) center;
-}
-
-#login-form input[type=text],
-#login-form input[type=password],
-#login-form label {
-  display: block;
-  margin: $padding-large-vertical 0
+  background-position: right $input-padding-horizontal center;
 }

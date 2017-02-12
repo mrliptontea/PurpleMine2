@@ -95,8 +95,10 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 
     @at-root a#{&} {
       // scss-lint:disable ImportantRule
+      display: inline;
       width: auto !important;
       height: auto !important;
+      padding-left: 0 !important;
       font-size: 0 !important;
     }
 
@@ -122,6 +124,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   .icon-help::before                  { content: $fa-var-info-circle; }
   .icon-attachment::before            { content: $fa-var-paperclip; }
   .icon-history::before               { content: $fa-var-history; }
+  .icon-time-entry::before            { content: $fa-var-clock-o; }
   .icon-time::before                  { content: $fa-var-clock-o; }
   .icon-time-add::before              { content: $fa-var-clock-o; }
   .icon-stats::before                 { content: $fa-var-line-chart; }
@@ -130,11 +133,13 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   .icon-fav::before                   { content: $fa-var-star; }
   .icon-fav-off::before               { content: $fa-var-star-o; }
   .icon-reload::before                { content: $fa-var-refresh; }
+  .icon-locked::before                { content: $fa-var-lock; }
   .icon-lock::before                  { content: $fa-var-lock; }
   .icon-unlock::before                { content: $fa-var-unlock; }
   .icon-checked::before               { content: $fa-var-check; }
   .icon-details::before               { content: $fa-var-search-plus; }
   .icon-report::before                { content: $fa-var-pie-chart; }
+  .icon-comments::before              { content: $fa-var-comment; }
   .icon-comment::before               { content: $fa-var-comment; }
   .icon-summary::before               { content: $fa-var-file-text; }
   .icon-server-authentication::before { content: $fa-var-key; }
@@ -160,6 +165,30 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   .icon-not-ok::before                { content: $fa-var-times; }
   .icon-link-break::before            { content: $fa-var-chain-broken; }
   .icon-list::before                  { content: $fa-var-list-ul; }
+  .icon-sticky::before                { content: $fa-var-thumb-tack; }
+  .icon-arrow-right::before           { content: $fa-var-arrow-right; }
+  .icon-close::before                 { content: $fa-var-times-circle; }
+  .icon-close:hover::before           { content: $fa-var-times-circle-o; }
+  .icon-settings::before              { content: $fa-var-cog; }
+  .icon-group::before                 { content: $fa-var-users; }
+  .icon-groupnonmember::before        { content: $fa-var-users; }
+  .icon-groupanonymous::before        { content: $fa-var-users; }
+  .icon-roles::before                 { content: $fa-var-eye; }
+  .icon-issue-edit::before            { content: $fa-var-edit; }
+  .icon-workflows::before             { content: $fa-var-sitemap; }
+  .icon-custom-fields::before         { content: $fa-var-edit; }
+  .icon-plugins::before               { content: $fa-var-puzzle-piece; }
+  .icon-news::before                  { content: $fa-var-newspaper-o; }
+  .icon-issue-closed::before          { content: $fa-var-ticket; }
+  .icon-issue-note::before            { content: $fa-var-comment; }
+  .icon-changeset::before             { content: $fa-var-upload; }
+  .icon-message::before               { content: $fa-var-comment; }
+  .icon-reply::before                 { content: $fa-var-comment-o; }
+  .icon-wiki-page::before             { content: $fa-var-file-text-o; }
+  .icon-document::before              { content: $fa-var-file-text; }
+  .icon-project::before               { content: $fa-var-cube; }
+  .icon-add-bullet::before            { content: $fa-var-plus-circle; }
+  .icon-shared::before                { content: $fa-var-link; }
 } @else {
   .icon {
     padding-top: 2px;
@@ -206,6 +235,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   .icon-help                  { background-image: url("../../../images/help.png"); }
   .icon-attachment            { background-image: url("../../../images/attachment.png"); }
   .icon-history               { background-image: url("../../../images/history.png"); }
+  .icon-time-entry            { background-image: url("../../../images/time.png"); }
   .icon-time                  { background-image: url("../../../images/time.png"); }
   .icon-time-add              { background-image: url("../../../images/time_add.png"); }
   .icon-stats                 { background-image: url("../../../images/stats.png"); }
@@ -214,11 +244,13 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   .icon-fav                   { background-image: url("../../../images/fav.png"); }
   .icon-fav-off               { background-image: url("../../../images/fav_off.png"); }
   .icon-reload                { background-image: url("../../../images/reload.png"); }
+  .icon-locked                { background-image: url("../../../images/locked.png"); }
   .icon-lock                  { background-image: url("../../../images/locked.png"); }
   .icon-unlock                { background-image: url("../../../images/unlock.png"); }
   .icon-checked               { background-image: url("../../../images/true.png"); }
   .icon-details               { background-image: url("../../../images/zoom_in.png"); }
   .icon-report                { background-image: url("../../../images/report.png"); }
+  .icon-comments              { background-image: url("../../../images/comment.png"); }
   .icon-comment               { background-image: url("../../../images/comment.png"); }
   .icon-summary               { background-image: url("../../../images/lightning.png"); }
   .icon-server-authentication { background-image: url("../../../images/server_key.png"); }
@@ -238,6 +270,30 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   .icon-not-ok                { background-image: url("../../../images/false.png"); }
   .icon-link-break            { background-image: url("../../../images/link_break.png"); }
   .icon-list                  { background-image: url("../../../images/text_list_bullets.png"); }
+  .icon-sticky                { background-image: url("../../../images/bullet_go.png"); }
+  .icon-arrow-right           { background-image: url("../../../images/bullet_go.png"); }
+  .icon-close                 { background-image: url("../../../images/close.png"); }
+  .icon-close:hover           { background-image: url("../../../images/close_hl.png"); }
+  .icon-settings              { background-image: url("../../../images/changeset.png"); }
+  .icon-group                 { background-image: url("../../../images/group.png"); }
+  .icon-groupnonmember        { background-image: url("../../../images/group.png"); }
+  .icon-groupanonymous        { background-image: url("../../../images/group.png"); }
+  .icon-roles                 { background-image: url("../../../images/database_key.png"); }
+  .icon-issue-edit            { background-image: url("../../../images/ticket_edit.png"); }
+  .icon-workflows             { background-image: url("../../../images/ticket_go.png"); }
+  .icon-custom-fields         { background-image: url("../../../images/textfield.png"); }
+  .icon-plugins               { background-image: url("../../../images/plugin.png"); }
+  .icon-news                  { background-image: url("../../../images/news.png"); }
+  .icon-issue-closed          { background-image: url("../../../images/ticket_checked.png"); }
+  .icon-issue-note            { background-image: url("../../../images/ticket_note.png"); }
+  .icon-changeset             { background-image: url("../../../images/changeset.png"); }
+  .icon-message               { background-image: url("../../../images/message.png"); }
+  .icon-reply                 { background-image: url("../../../images/comments.png"); }
+  .icon-wiki-page             { background-image: url("../../../images/wiki_edit.png"); }
+  .icon-document              { background-image: url("../../../images/document.png"); }
+  .icon-project               { background-image: url("../../../images/projects.png"); }
+  .icon-add-bullet            { background-image: url("../../../images/bullet_add.png"); }
+  .icon-shared                { background-image: url("../../../images/link.png"); }
 }
 
 
@@ -422,7 +478,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
       &::before { content: $fa-var-ticket; }
     }
 
-    .issue-statuses {
+    .issue-statuses,
+    .issue_statuses {
       @extend %admin-icon;
 
       &::before { content: $fa-var-pencil-square; }
@@ -434,7 +491,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
       &::before { content: $fa-var-sitemap; }
     }
 
-    .custom-fields {
+    .custom-fields,
+    .custom_fields {
       @extend %admin-icon;
 
       &::before { content: $fa-var-edit; }
@@ -464,7 +522,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
       &::before { content: $fa-var-info-circle; }
     }
 
-    .ldap-authentication {
+    .ldap-authentication,
+    .server_authentication {
       @extend %admin-icon;
 
       &::before { content: $fa-var-key; }
@@ -700,9 +759,9 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   }
 
   .my-project {
-    @extend %fa-icon-after;
+    @extend %fa-icon;
 
-    &::after {
+    &::before {
       color: #f6ab02;
       font-size: $font-size-small;
       content: $fa-var-star;
@@ -1000,8 +1059,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   }
 
   .my-project {
-    padding-right: 18px;
-    background: url("../../../images/fav.png") no-repeat right center;
+    padding-left: 18px;
+    background: url("../../../images/fav.png") no-repeat left center;
   }
 
   .sort {

@@ -40,22 +40,14 @@
       user-select: none;
 
       @if $use-font-awesome {
-        font-size: 14px;
-
-        &::before {
-          content: $fa-var-caret-square-o-down;
-        }
-      } @else {
-        @extend %image-arrow-down-white;
-      }
-
-      @if $use-font-awesome {
         @extend %fa-icon;
         color: mix($top-menu-link, $top-menu-bg, 33%);
+        font-size: 14px;
         line-height: 1;
 
         &::before {
           margin-right: 0;
+          content: $fa-var-caret-square-o-down;
         }
 
         &:hover,
@@ -64,6 +56,7 @@
           color: mix($top-menu-link-hover, $top-menu-bg, 50%);
         }
       } @else {
+        @extend %image-arrow-down-white;
         width: 15px;
         height: 15px;
         border-radius: $border-radius-base;
@@ -185,29 +178,20 @@
   float: right;
   color: $header-text;
 
-  label {
-    font-weight: 500;
-  }
-
   form {
-    display: inline;
+    display: inline-block;
   }
 
-  input,
-  select {
-    margin-left: 5px;
-    transition: color ease-in-out .1s,
-                background-color ease-in-out .1s,
-                border-color ease-in-out .1s;
-    border-color: darken($header-bg, 15%);
-    background: darken($header-bg, 10%);
-    color: $header-root;
+  input {
+    width: $quick-search-width;
+  }
+
+  > form > input,
+  > select {
+    border-color: $quick-search-border;
 
     &:focus {
-      border-color: darken($header-bg, 35%);
-      background-color: $input-bg;
-      color: $input-color;
-      box-shadow: inset 0 1px 3px rgba(0, 0, 0, .3);
+      border-color: $quick-search-border-focus;
     }
   }
 
@@ -219,54 +203,65 @@
       color: $gray-lighter;
     }
   }
-
-  input {
-    width: 200px;
-  }
 }
 
 #project-jump {
-  display: block;
-  line-height: 2.5em;
-  position:relative;
+  display: inline-block;
 
-  .drdn-trigger {
-    font-weight: bold;
+  &.expanded {
+    .drdn-trigger {
+      height: auto;
+      padding-bottom: $header-padding-horizontal / 2;
+      border-color: $quick-search-dropdown-bg;
+      background-color: $quick-search-dropdown-bg;
+      z-index: 1003;
+    }
   }
 
-  .drdn-content {
-    display: none;
-    padding: .5em 1em;
-    background-color: $header-bg;
-
-    a {
-      display: block;
-      padding: 0 1em;
+  .drdn {
+    &-trigger {
+      min-width: $quick-search-width;
+      border-color: $quick-search-border;
     }
-    a:active,
-    a:focus,
-    a:hover {
-      border-color: darken($header-bg, 15%);
-      background: darken($header-bg, 10%);
+
+    &-content {
+      min-width: $quick-search-box-width;
+      background: $quick-search-dropdown-bg;
+
+      > .quick-search {
+        padding: $header-padding-horizontal / 2;
+
+        > input {
+          width: 100%;
+        }
+      }
+    }
+
+    &-items {
+      border-top: 1px solid $quick-search-dropdown-border;
+    }
+  }
+
+  a {
+    color: $main-menu-link;
+
+    &:hover,
+    &:focus {
+      outline: 0 none;
+      background-color: $component-active-bg;
+      color: $component-active-color;
       text-decoration: none;
     }
+  }
 
-    .all-projects a {
-      font-weight: bold;
-    }
+  .all-projects a {
+    font-weight: $font-weight-bold;
   }
 }
-
-#project-jump:hover {
-  .drdn-content {
-    display: block;
-    position: absolute;
-    z-index: 9999;
-  }
-}
-
 
 #main-menu {
+  $tabs-height: $main-menu-padding-vertical * 2 + $line-height-computed;
+
   clear: both;
   background-color: $main-menu-bg;
   color: $text-color;
@@ -277,10 +272,11 @@
     overflow: inherit;
 
     > ul {
-      height: auto;
+      height: $tabs-height;
 
       > li {
         > a {
+          height: $tabs-height;
           border: 0 none;
           border-radius: 0;
           background: transparent;
@@ -342,7 +338,7 @@
 
         &.new-object {
           position: relative;
-          min-width: 1.1em;
+          min-width: 1.6em;
           padding-bottom: $main-menu-padding-vertical - 1px;
           border: 1px solid $main-menu-border;
           border-width: 0 1px;
@@ -408,8 +404,9 @@
     background-color: $main-menu-bg;
 
     > button {
-      height: $main-menu-padding-vertical * 2 + $line-height-computed - 1px;
+      height: $tabs-height;
       background-color: $main-menu-bg;
+      box-sizing: border-box;
     }
   }
 

@@ -1,0 +1,196 @@
+.theme-Purplemine2 {
+  @media screen and (max-width: $redmine-responsive-max) {
+    .flyout-menu + div {
+      #header {
+        height: $responsive-header-height;
+        background-color: $header-bg;
+
+        .jump-box-arrow {
+          &::before {
+            line-height: $responsive-header-height;
+          }
+        }
+
+        #quick-search {
+          select {
+            top: 0;
+            height: $responsive-header-height;
+            box-shadow: none;
+          }
+        }
+      }
+
+      #main {
+        padding-top: $responsive-header-height;
+      }
+    }
+
+    #header {
+      #project-jump {
+        padding: 0 $responsive-header-height 0 0;
+
+        .drdn-trigger {
+          display: block;
+          height: $responsive-header-height;
+          padding: 0 0 0 ($padding-base-horizontal + 30px);
+          background-color: transparent;
+          line-height: $responsive-header-height;
+          box-shadow: none;
+
+          &::before {
+            padding-left: $padding-base-horizontal;
+            font-size: 1.2em;
+            font-weight: normal;
+            line-height: $responsive-header-height * .9;
+          }
+
+          @if $use-font-awesome {
+            &::after {
+              display: none;
+            }
+          }
+        }
+
+        .drdn-content {
+          top: $responsive-header-height;
+        }
+      }
+    }
+
+    .mobile-toggle-button {
+      width: $responsive-header-height;
+      height: $responsive-header-height;
+      line-height: $responsive-header-height;
+
+      &:focus {
+        text-decoration: none;
+      }
+    }
+
+    .flyout-menu {
+      background-color: $flyout-menu-bg;
+      color: $flyout-menu-text;
+
+      &__search {
+        height: $responsive-header-height;
+        padding: ($padding-side / 2);
+        line-height: normal;
+
+        input[type='text'] {
+          height: $responsive-header-height - $padding-side;
+          line-height: $responsive-header-height - $padding-side;
+        }
+      }
+
+      a {
+        &,
+        &:hover,
+        &:focus {
+          color: $flyout-menu-link;
+        }
+      }
+
+      h3 {
+        border-top: 1px solid $flyout-menu-header-border;
+        border-bottom: 1px solid $flyout-menu-header-border;
+        background-color: $flyout-menu-header-bg;
+        color: $flyout-menu-header-text;
+      }
+
+      #admin-menu {
+        a {
+          background-position: 8px center;
+
+          @if $use-font-awesome {
+            &,
+            &:hover,
+            &:focus {
+              &::before {
+                color: $flyout-menu-link;
+              }
+            }
+          }
+
+          &.selected {
+            background-color: $body-bg;
+            color: $text-color;
+
+            @if $use-font-awesome {
+              &::before {
+                color: $text-color;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    #query_form_content {
+      fieldset {
+        margin-bottom: $line-height-computed;
+      }
+    }
+
+    .search-magnifier {
+      &--flyout {
+        line-height: normal;
+      }
+    }
+
+    .splitcontentleft {
+      margin-bottom: $line-height-computed;
+      padding-right: 0;
+      float: none;
+
+    }
+
+    .splitcontentright {
+      padding-left: 0;
+      float: none;
+    }
+
+    p.buttons,
+    .other-formats > span,
+    #wiki_add_attachment > p,
+    #content > .contextual {
+      margin-bottom: $line-height-computed - $padding-small-horizontal;
+      padding: 0;
+      float: none;
+      text-align: left;
+
+      a {
+        display: inline-block;
+        margin: 0 $padding-small-vertical $padding-small-horizontal 0;
+        padding: ($btn-padding-vertical * 2) $btn-padding-horizontal;
+        border: 1px solid $pagination-border;
+        border-radius: $border-radius-base;
+        background-color: $pagination-bg;
+        background-position: $btn-padding-horizontal center;
+        font-weight: $btn-font-weight;
+
+        &:active,
+        &:hover,
+        &:focus {
+          border-color: $pagination-hover-border;
+          outline: 0;
+          background-color: $pagination-hover-bg;
+          text-decoration: none;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &.icon {
+          padding-left: 20px + $btn-padding-horizontal;
+        }
+
+        @if $use-font-awesome == false {
+          &.atom {
+            padding-left: 20px + $btn-padding-horizontal;
+          }
+        }
+      }
+    }
+  }
+}
