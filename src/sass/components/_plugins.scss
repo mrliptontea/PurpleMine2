@@ -333,3 +333,33 @@
     }
   }
 }
+
+
+//
+// Redmine WikiNG
+// https://github.com/martin-denizet/wiking
+// --------------------------------------------------
+
+div.wiking {
+  &.flash {
+    @if $use-font-awesome {
+      &.warning,
+      &.notice,
+      &.tip {
+        background-image: none;
+      }
+
+      &.tip {
+        &::before {
+          content: $fa-var-lightbulb-o;
+        }
+      }
+    } @else {
+      &.warning,
+      &.notice,
+      &.tip {
+        background-position: $padding-large-horizontal 50%;
+      }
+    }
+  }
+}

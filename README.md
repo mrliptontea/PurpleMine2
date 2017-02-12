@@ -65,6 +65,7 @@ Latest (master):
 * Fixed #42: override some styles from [RM+](http://rmplus.pro) plugins
 * Merged #43: fixes for Redmine 3.3.2.devel
 * Support for responsive menu and further changes for Redmine 3.3.2.devel (fixes #26)
+* Improved styles for custom flash messages in wiki content (e.g. for [WikiNG](http://www.redmine.org/plugins/wiking) plugin)
 
 v1.8.0 (2016-11-20):
 

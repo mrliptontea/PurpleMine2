@@ -13,6 +13,8 @@
   padding-left: $padding-large-horizontal + 8px + 16px;
   border: 1px solid;
   border-radius: $border-radius-large;
+  background-repeat: no-repeat;
+  background-position: $padding-large-horizontal 50%;
 
   @if $use-font-awesome {
     @extend %fa-icon;
@@ -22,9 +24,6 @@
       float: left;
       line-height: $line-height-computed;
     }
-  } @else {
-    background-repeat: no-repeat;
-    background-position: $padding-large-horizontal 50%;
   }
 
   >:last-child {

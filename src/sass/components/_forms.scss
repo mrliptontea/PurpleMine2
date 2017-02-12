@@ -48,9 +48,9 @@ input[type="search"],
 input[type="email"],
 input[type="text"],
 input[type="password"] {
+  @extend %form-field;
   @include form-control-focus;
   @include placeholder;
-  @extend %form-field;
   transition: border-color ease-in-out .1s, box-shadow ease-in-out .1s;
 
   &[disabled],
