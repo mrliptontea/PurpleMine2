@@ -203,32 +203,32 @@ $tracker-default-text:          $brand-text !default;
 
 $tracker-default-colors-map: (
   1: (
-    background:             $brand-danger,
-    color:                  $brand-text
+    background:                 $brand-danger,
+    color:                      $brand-text
   ),
   2: (
-    background:             $brand-info,
-    color:                  $brand-text
+    background:                 $brand-info,
+    color:                      $brand-text
   ),
   3: (
-    background:             $brand-success,
-    color:                  $brand-text
+    background:                 $brand-success,
+    color:                      $brand-text
   ),
   4: (
-    background:             $brand-primary,
-    color:                  $brand-text
+    background:                 $brand-primary,
+    color:                      $brand-text
   ),
   5: (
-    background:             $brand-warning,
-    color:                  $brand-text
+    background:                 $brand-warning,
+    color:                      $brand-text
   ),
   6: (
-    background:             mix($brand-success, $brand-info, 50%),
-    color:                  $brand-text
+    background:                 mix($brand-success, $brand-info, 50%),
+    color:                      $brand-text
   ),
   7: (
-    background:             mix($brand-primary, $brand-warning, 50%),
-    color:                  $brand-text
+    background:                 mix($brand-primary, $brand-warning, 50%),
+    color:                      $brand-text
   )
 ) !default;
 $tracker-custom-colors-map:     () !default;
@@ -534,6 +534,19 @@ $redmine-responsive-max:        899px !default;
 $redmine-responsive-min:        900px !default;
 
 $top-menu-collapse-breakpoint:  $screen-lg-min !default;
+
+
+//== Login form
+//
+
+$login-form-width:              24em !default;
+$login-form-label-width:        8em !default;
+$login-form-box-breakpoint:     $screen-xs-min !default;
+$login-form-adjustments-map: (
+  -2: da en en-GB ko pl tr uk,
+  1: fr hr nl sr-YU sv,
+  2: el eu lt pt sk sr th
+) !default;
 
 
 //== Content widths

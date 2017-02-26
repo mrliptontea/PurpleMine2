@@ -67,6 +67,7 @@ Latest (master):
 * Support for responsive menu and further changes for Redmine 3.3.2.devel (fixes #26)
 * Improved styles for custom flash messages in wiki content (e.g. for [WikiNG](http://www.redmine.org/plugins/wiking) plugin)
 * Introduce project tiles on projects list page (enabled by default, can be switched off by setting `$use-project-tiles` to `false`)
+* Fixed #44: adjust width of the label column on the login form
 
 v1.8.0 (2016-11-20):
 

@@ -2,10 +2,9 @@
 // Login form
 // --------------------------------------------------
 
-$login-form-width:              300px;
-
 #login-form {
   margin: $line-height-computed * 2 auto;
+  box-sizing: border-box;
 
   label,
   input {
@@ -37,7 +36,7 @@ $login-form-width:              300px;
     padding: 0;
 
     &:first-child {
-      width: floor($login-form-width / 4);
+      width: $login-form-label-width;
       padding-right: $table-cell-padding;
       white-space: nowrap;
     }
@@ -52,7 +51,7 @@ $login-form-width:              300px;
     }
   }
 
-  @media screen and (min-width: $screen-xs-min) {
+  @media screen and (min-width: $login-form-box-breakpoint) {
     width: $login-form-width;
     padding: $padding-side;
     border: 1px solid $panel-border;
@@ -63,6 +62,14 @@ $login-form-width:              300px;
 
     table {
       width: 100%;
+    }
+  }
+
+  @each $adjustment, $languages in $login-form-adjustments-map {
+    @each $language in $languages {
+      html[lang="#{$language}"] & td:first-child {
+        width: $login-form-label-width + $adjustment * 1em;
+      }
     }
   }
 }
