@@ -68,6 +68,7 @@ Latest (master):
 * Improved styles for custom flash messages in wiki content (e.g. for [WikiNG](http://www.redmine.org/plugins/wiking) plugin)
 * Introduce project tiles on projects list page (enabled by default, can be switched off by setting `$use-project-tiles` to `false`)
 * Fixed #44: adjust width of the label column on the login form
+* Merged #49: German translations
 
 v1.8.0 (2016-11-20):
 
