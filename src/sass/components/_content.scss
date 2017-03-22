@@ -86,8 +86,6 @@
 
     @if $sidebar-position == "left" {
       margin-right: -($sidebar-padding-horizontal);
-    } @else {
-      margin-left: -($sidebar-padding-horizontal);
     }
   }
 

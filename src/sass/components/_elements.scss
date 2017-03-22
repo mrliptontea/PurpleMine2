@@ -220,16 +220,20 @@ a.collapsible.collapsed,
       > a {
         display: inline;
         padding: 0;
-        background: transparent;
+        //background: transparent;
       }
 
       > .delete {
-        float: right;
+        //float: right;
+        display: inline-block;
+        text-indent: -9999px;
+        width: 12px;
         opacity: .5;
         vertical-align: middle;
 
         &:hover {
           opacity: 1;
+          backgroup-color: #fff;
         }
       }
 
