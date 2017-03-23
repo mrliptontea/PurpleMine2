@@ -199,7 +199,7 @@ div.wiki {
   code {
     padding: .2em .33em;
     border-radius: $border-radius-base;
-    background-color: rgba(#000, .04);
+    //background-color: rgba(#000, .04);
     font-size: $font-size-small;
   }
 
@@ -210,7 +210,7 @@ div.wiki {
     border: 1px solid #e7e7e7;
     border-radius: $border-radius-base;
     border-color: rgba(#000, .068);
-    //background-color: rgba(#000, .03);
+    background-color: rgba(#000, .03);
     overflow-x: auto;
     overflow-y: hidden;
     font-size: $font-size-small;
