@@ -199,7 +199,7 @@ div.wiki {
   code {
     padding: .2em .33em;
     border-radius: $border-radius-base;
-    background-color: rgba(#000, .04);
+    //background-color: rgba(#000, .04);
     font-size: $font-size-small;
   }
 
@@ -218,7 +218,7 @@ div.wiki {
     code {
       padding: 0;
       border-radius: 0;
-      background-color: transparent;
+      //background-color: transparent;
       font-size: 1em;
     }
   }
@@ -359,8 +359,8 @@ p.footnote {
 }
 
 .preview {
-  margin-top: $line-height-computed;
-  padding: $padding-wiki;
+  //margin-top: $line-height-computed;
+  //padding: $padding-wiki;
   background-color: #fffbe5;
   background-image: url("../images/draft.png");
   background-position: center center;

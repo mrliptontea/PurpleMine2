@@ -196,6 +196,45 @@ a.collapsible.collapsed,
 }
 
 
+//== watcher groups list
+
+#watcher_groups {
+  > .watcher-groups {
+    > li {
+      @extend %clearfix;
+      display: block;
+      margin-bottom: $sidebar-padding-vertical;
+
+      @if $sidebar-position == "left" {
+        padding-right: $sidebar-padding-horizontal;
+      } @else {
+        padding-left: $sidebar-padding-horizontal;
+      }
+
+      > a {
+        display: inline;
+        padding: 0;
+        //background: transparent;
+      }
+
+      > .delete {
+        //float: right;
+        display: inline-block;
+        text-indent: -9999px;
+        width: 12px;
+        opacity: .5;
+        vertical-align: -3px;
+
+        &:hover {
+          opacity: 1;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}
+
+
 //== Watchers list
 //
 
@@ -220,16 +259,20 @@ a.collapsible.collapsed,
       > a {
         display: inline;
         padding: 0;
-        background: transparent;
+        //background: transparent;
       }
 
       > .delete {
-        float: right;
+        //float: right;
+        display: inline-block;
+        text-indent: -9999px;
+        width: 12px;
         opacity: .5;
         vertical-align: middle;
 
         &:hover {
           opacity: 1;
+          background-color: #fff;
         }
       }
 
@@ -767,7 +810,7 @@ div.table-list.boards {
 }
 
 #message_content {
-  height: $line-height-computed * 6;
+  //height: $line-height-computed * 6;
 }
 
 
