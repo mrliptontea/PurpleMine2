@@ -49,6 +49,15 @@
 #wrapper .button-login-text {
   background-image: none; }
 
+/* My Page -> Issues assigned to me *******************************************/
+/* Hide "New issue" link by default */
+a.icon.new-issue {
+  display: none; }
+
+/* Only show "New issue" link on project pages */
+body[class^="theme-Purplemine2 project-"] a.icon.new-issue {
+  display: inline-block; }
+
 .clear:after, .tabular p:after, label[for=closed]:after, #watchers_form label.floating:after, .check_box_group.bool_cf label:after, #tab-content-members fieldset label:after,
 #tab-content-memberships fieldset label:after,
 #tab-content-users fieldset label:after, #search-results-counts ul:after, #search-form label:after, .issue .attribute:after, .splitcontent:after, #users_for_watcher label:after, #watchers > .watchers > li:after, #top-menu:after, #header:after, #main-menu > ul:after, .jstElements:after {

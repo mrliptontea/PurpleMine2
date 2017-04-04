@@ -65,3 +65,14 @@ $brand-primary: #D5D5D5; /* header background color */
     background-image: none;
   }
 }
+
+/* My Page -> Issues assigned to me *******************************************/
+
+/* Hide "New issue" link by default */
+a.icon.new-issue {
+  display: none;
+}
+/* Only show "New issue" link on project pages */
+body[class^="theme-Purplemine2 project-"] a.icon.new-issue {
+  display: inline-block;
+}
