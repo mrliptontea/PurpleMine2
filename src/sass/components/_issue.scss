@@ -385,7 +385,7 @@ div.thumbnails {
     }
   }
 
-  h4 {
+  > div > h4 {
     margin: 0;
     padding: $bubble-padding-vertical $bubble-padding-horizontal;
     border-radius: $panel-border-radius $panel-border-radius 0 0;
@@ -407,7 +407,7 @@ div.thumbnails {
   }
 
   @if $use-gravatars {
-    h4 {
+    > div > h4 {
       position: relative;
 
       &::before,
