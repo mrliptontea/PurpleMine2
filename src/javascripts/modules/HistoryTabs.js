@@ -19,6 +19,11 @@ PurpleMine.HistoryTabs = (function () {
       all: 'Alles',
       notes: 'Kommentare',
       details: 'Änderungen'
+    },
+    ja: {
+      all: 'すべて',
+      notes: '注記',
+      details: '変更'
     }
   }
 

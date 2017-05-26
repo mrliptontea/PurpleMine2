@@ -10,6 +10,9 @@ PurpleMine.SidebarToggler = (function () {
     },
     pl: {
       toggler: 'Pokaż/ukryj panel boczny'
+    },
+    ja: {
+      toggler: 'サイドバーの切り替え'
     }
   }
 

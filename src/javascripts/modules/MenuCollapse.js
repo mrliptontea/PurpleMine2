@@ -13,6 +13,9 @@ PurpleMine.MenuCollapse = (function () {
     },
     de: {
       topMenuToggler: 'Ein-/Ausklappen Hauptmenu'
+    },
+    ja: {
+      topMenuToggler: 'トップメニューの展開/折りたたみ'
     }
   }
 
