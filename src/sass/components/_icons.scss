@@ -157,6 +157,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   .icon-magnifier::before             { content: $fa-var-search; }
   .icon-email::before                 { content: $fa-var-envelope; }
   .icon-email-disabled::before        { content: $fa-var-envelope-o; }
+  .icon-email-add::before             { content: $fa-var-envelope; }
   .icon-move-up::before               { content: $fa-var-angle-up; }
   .icon-move-top::before              { content: $fa-var-angle-double-up; }
   .icon-move-down::before             { content: $fa-var-angle-down; }
@@ -262,6 +263,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   .icon-magnifier             { background-image: url("../../../images/magnifier.png"); }
   .icon-email                 { background-image: url("../../../images/email.png"); }
   .icon-email-disabled        { background-image: url("../../../images/email_disabled.png"); }
+  .icon-email-add             { background-image: url("../../../images/email_add.png"); }
   .icon-move-up               { background-image: url("../../../images/1uparrow.png"); }
   .icon-move-top              { background-image: url("../../../images/2uparrow.png"); }
   .icon-move-down             { background-image: url("../../../images/1downarrow.png"); }
