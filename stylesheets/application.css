@@ -58,6 +58,12 @@ a.icon.new-issue {
 body[class^="theme-Purplemine2 project-"] a.icon.new-issue {
   display: inline-block; }
 
+/* Bestest Timer **************************************************************/
+.bestest_timer_button {
+  background-color: grey;
+  box-shadow: 0 1px 0 #555;
+  height: inherit; }
+
 .clear:after, .tabular p:after, label[for=closed]:after, #watchers_form label.floating:after, .check_box_group.bool_cf label:after, #tab-content-members fieldset label:after,
 #tab-content-memberships fieldset label:after,
 #tab-content-users fieldset label:after, #search-results-counts ul:after, #search-form label:after, .issue .attribute:after, .splitcontent:after, #users_for_watcher label:after, #watchers > .watchers > li:after, #top-menu:after, #header:after, #main-menu > ul:after, .jstElements:after {
