@@ -192,5 +192,20 @@
         }
       }
     }
+
+    // For Redmine 3.4+
+    #my-page {
+      #list-left {
+        width: 100%;
+        padding-right: 0;
+        float: none;
+      }
+
+      #list-right {
+        width: 100%;
+        padding-left: 0;
+        float: none;
+      }
+    }
   }
 }
