@@ -72,6 +72,7 @@ table.list {
     &.category,
     &.comments,
     &.description,
+    &.last_notes,
     &.fixed_version,
     &.name,
     &.priority,
@@ -199,7 +200,8 @@ tr.issue {
 }
 
 .issues {
-  .description {
+  .description,
+  .last_notes {
     padding: 0;
     text-align: left;
 
