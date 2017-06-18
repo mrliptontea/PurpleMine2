@@ -67,6 +67,7 @@ table.list {
     }
 
     &.assigned_to,
+    &.attachments,
     &.author,
     &.activity,
     &.category,
@@ -97,6 +98,10 @@ table.list {
 
     &.reorder {
       white-space: nowrap;
+    }
+
+    &.attachments a {
+      display: block;
     }
   }
 
