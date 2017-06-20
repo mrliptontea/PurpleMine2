@@ -7,6 +7,20 @@
 
   $border-color: darken(desaturate($background, 30%), 13.5%);
 
+  table.list:not(.odd-even) tbody tr#{$parent} {
+    @if $table-list-color-odd-rows {
+      &:nth-child(odd) {
+        background: darken($background, $table-accent-factor * 100%);
+      }
+    }
+
+    @if $table-list-color-even-rows {
+      &:nth-child(even) {
+        background: darken($background, $table-accent-factor * 100%);
+      }
+    }
+  }
+
   tr#{$parent} {
     background: $background;
 

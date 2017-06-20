@@ -290,6 +290,20 @@ tr.entry {
   }
 }
 
+@if $table-list-color-odd-rows {
+  table.list:not(.odd-even) tbody tr:nth-child(odd),
+  .odd {
+    background-color: $table-bg-accent;
+  }
+}
+
+@if $table-list-color-even-rows {
+  table.list:not(.odd-even) tbody tr:nth-child(even),
+  .even {
+    background-color: $table-bg-accent;
+  }
+}
+
 
 //== Priorities
 //
@@ -379,20 +393,6 @@ tr.entry {
       map-get($tracker-colors, background),
       map-get($tracker-colors, color)
     );
-  }
-}
-
-@if $table-list-color-odd-rows {
-  table.list:not(.odd-even) tbody tr:nth-child(odd),
-  .odd {
-    background-color: $table-bg-accent;
-  }
-}
-
-@if $table-list-color-even-rows {
-  table.list:not(.odd-even) tbody tr:nth-child(even),
-  .even {
-    background-color: $table-bg-accent;
   }
 }
 
