@@ -208,7 +208,7 @@ tr.issue {
 .issues {
   .description,
   .last_notes {
-    padding: 0;
+    padding: $table-cell-padding;
     text-align: left;
 
     @media screen and (min-width: $screen-sm-min) {
