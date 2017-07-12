@@ -2,7 +2,7 @@
 
 A free Redmine theme for modern browsers.
 
-![The MIT License](https://img.shields.io/badge/license-MIT-584492.svg?style=flat-square) [![Release](https://img.shields.io/github/release/mrliptontea/PurpleMine2.svg?style=flat-square)](https://github.com/mrliptontea/PurpleMine2/releases) [![Issues](https://img.shields.io/github/issues/mrliptontea/PurpleMine2.svg?style=flat-square)](https://github.com/mrliptontea/PurpleMine2/issues) [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+![The MIT License](https://img.shields.io/badge/license-MIT-584492.svg?style=flat-square) [![Build Status](https://travis-ci.org/mrliptontea/PurpleMine2.svg?branch=master)](https://travis-ci.org/mrliptontea/PurpleMine2) [![Issues](https://img.shields.io/github/issues/mrliptontea/PurpleMine2.svg?style=flat-square)](https://github.com/mrliptontea/PurpleMine2/issues) [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 ---
 
