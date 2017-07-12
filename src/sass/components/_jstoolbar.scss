@@ -95,13 +95,13 @@
     .jstb_h2 {
       @extend %jstb-icon;
 
-      &::before { font-size: .7857em; content: $fa-var-header; }
+      &::before { content: $fa-var-header; font-size: .7857em; }
     }
 
     .jstb_h3 {
       @extend %jstb-icon;
 
-      &::before { font-size: .6429em; content: $fa-var-header; }
+      &::before { content: $fa-var-header; font-size: .6429em; }
     }
 
     .jstb_ul {

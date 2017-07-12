@@ -6,10 +6,10 @@
   position: absolute;
   top: 0;
   height: 16px;
+  overflow: hidden;
   border: 1px solid $gray-lighter;
   border-left-width: 0;
   text-align: center;
-  overflow: hidden;
 
   &.nwday {
     background-color: $gray-lightest;

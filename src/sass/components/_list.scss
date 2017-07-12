@@ -350,6 +350,7 @@ tr.entry {
       text-decoration: none;
 
       &::after {
+        content: "";
         display: block;
         position: absolute;
         right: 5px;
@@ -359,7 +360,6 @@ tr.entry {
         transform: rotate(-4deg);
         transition: border-color .1s;
         border-top: 2px solid rgba($tracker-default-text, .95);
-        content: "";
       }
 
       &:hover::after {
@@ -373,8 +373,8 @@ tr.entry {
     padding: $tracker-list-padding;
 
     &::before {
-      color: mix($tracker-default-text, $tracker-default-bg, 50%);
       content: "#";
+      color: mix($tracker-default-text, $tracker-default-bg, 50%);
     }
   }
 

@@ -3,8 +3,8 @@
 // --------------------------------------------------
 
 #login-form {
-  margin: $line-height-computed * 2 auto;
   box-sizing: border-box;
+  margin: $line-height-computed * 2 auto;
 
   label,
   input {
@@ -57,8 +57,8 @@
     border: 1px solid $panel-border;
     border-radius: $border-radius-base;
     background-color: $panel-bg;
-    color: $panel-color;
     box-shadow: $panel-shadow;
+    color: $panel-color;
 
     table {
       width: 100%;

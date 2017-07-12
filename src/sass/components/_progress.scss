@@ -7,8 +7,8 @@ table.progress {
   margin-top: 1px;
   margin-right: 5px;
   float: left;
-  border: 1px solid rgba(#000, .1);
   empty-cells: show;
+  border: 1px solid rgba(#000, .1);
 
   .version-overview & {
     width: 40em;

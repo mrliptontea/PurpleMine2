@@ -15,10 +15,10 @@ $tabs-height: $line-height-computed + $tab-padding-vertical * 2 + 1px + 1px;
   }
 
   > ul {
+    box-sizing: border-box;
     margin: 0;
     padding-left: 0;
     list-style: none;
-    box-sizing: border-box;
 
     @if $flexbox-layout {
       display: flex;
@@ -38,6 +38,7 @@ $tabs-height: $line-height-computed + $tab-padding-vertical * 2 + 1px + 1px;
 
       > a {
         display: block;
+        box-sizing: border-box;
         min-width: 3em;
         height: $tabs-height;
         margin-right: 2px;
@@ -46,7 +47,6 @@ $tabs-height: $line-height-computed + $tab-padding-vertical * 2 + 1px + 1px;
         border-radius: $border-radius-base $border-radius-base 0 0;
         text-align: center;
         white-space: nowrap;
-        box-sizing: border-box;
       }
     }
   }
@@ -68,11 +68,11 @@ $tabs-height: $line-height-computed + $tab-padding-vertical * 2 + 1px + 1px;
       border: 0 none;
       border-bottom: 1px solid $tab-border;
       border-radius: 0;
+      opacity: .8;
       background-color: $body-bg;
       background-repeat: no-repeat;
       background-position: center center;
       box-shadow: none;
-      opacity: .8;
 
       &:hover,
       &:active {

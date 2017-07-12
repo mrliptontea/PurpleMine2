@@ -22,10 +22,10 @@
 .ui-helper-reset {
   margin: 0;
   padding: 0;
+  list-style: none;
   border: 0;
   outline: 0;
   font-size: 100%;
-  list-style: none;
   text-decoration: none;
 }
 
@@ -33,11 +33,11 @@
   display: inline-block;
 
   &::after {
+    content: ".";
     display: block;
+    visibility: hidden;
     height: 0;
     clear: both;
-    content: ".";
-    visibility: hidden;
   }
 }
 
@@ -76,9 +76,9 @@
 
 .ui-icon {
   display: block;
+  overflow: hidden;
   background-repeat: no-repeat;
   text-indent: -9999px;
-  overflow: hidden;
 }
 
 /* Misc visuals
@@ -156,9 +156,9 @@
 .ui-widget-header .ui-state-default {
   border: 1px solid $component-border;
   background: $component-bg;
+  box-shadow: none;
   color: $component-color;
   font-weight: normal;
-  box-shadow: none;
 }
 
 .ui-state-default a,
@@ -250,14 +250,14 @@
 
 .ui-priority-secondary,
 .ui-widget-content .ui-priority-secondary {
-  font-weight: normal;
   opacity: .7;
+  font-weight: normal;
 }
 
 .ui-state-disabled,
 .ui-widget-content .ui-state-disabled {
-  background-image: none;
   opacity: .35;
+  background-image: none;
 }
 
 /* Icons
@@ -520,16 +520,16 @@
 /* Overlays */
 
 .ui-widget-overlay {
-  background: #000;
   opacity: .3;
+  background: #000;
 }
 
 .ui-widget-shadow {
   margin: -8px 0 0 -8px;
   padding: 8px;
   border-radius: 8px;
-  background: #aaa;
   opacity: .3;
+  background: #aaa;
 }
 
 /* Resizable
@@ -542,8 +542,8 @@
 .ui-resizable-handle {
   display: block;
   position: absolute;
-  font-size: .1px;
   z-index: 9999;
+  font-size: .1px;
 }
 
 .ui-resizable-disabled .ui-resizable-handle,
@@ -660,9 +660,9 @@
     margin-top: -2px;
     margin-bottom: 2px;
     padding: 1em 2.2em;
-    border-top: 0;
     overflow: auto;
     zoom: 1;
+    border-top: 0;
   }
 
   .ui-accordion-content-active {
@@ -731,11 +731,11 @@
   position: relative;
   margin-right: .1em;
   padding: 0;
+  overflow: visible;
+  zoom: 1;
   text-align: center;
   text-decoration: none !important; // scss-lint:disable ImportantRule
   cursor: pointer;
-  overflow: visible;
-  zoom: 1;
 }
 
 /* the overflow property removes extra width in IE */
@@ -881,10 +881,10 @@ button.ui-button::-moz-focus-inner {
   .ui-dialog-content {
     position: relative;
     padding: .5em 1em;
-    border: 0 none;
-    background: none;
     overflow: auto;
     zoom: 1;
+    border: 0 none;
+    background: none;
   }
 
   .ui-dialog-buttonpane {
@@ -899,9 +899,9 @@ button.ui-button::-moz-focus-inner {
       margin: .5em .4em .5em 0;
       padding: .2em .6em .3em;
       float: right;
+      overflow: visible;
       line-height: 1.4em;
       cursor: pointer;
-      overflow: visible;
     }
   }
 
@@ -926,19 +926,19 @@ button.ui-button::-moz-focus-inner {
 
   .ui-slider-handle {
     position: absolute;
+    z-index: 2;
     width: 1.2em;
     height: 1.2em;
     cursor: default;
-    z-index: 2;
   }
 
   .ui-slider-range {
     display: block;
     position: absolute;
+    z-index: 1;
     border: 0 none;
     background-position: 0 0;
     font-size: .7em;
-    z-index: 1;
   }
 }
 
@@ -1006,8 +1006,8 @@ button.ui-button::-moz-focus-inner {
       margin: 0 .2em 1px 0;
       padding: 0;
       float: left;
-      border-bottom: 0 !important; // scss-lint:disable ImportantRule
       list-style: none;
+      border-bottom: 0 !important; // scss-lint:disable ImportantRule
       white-space: nowrap;
 
       a {
@@ -1081,9 +1081,9 @@ button.ui-button::-moz-focus-inner {
   .ui-state-default {
     border: 1px solid $body-bg;
     background: $body-bg;
+    box-shadow: none;
     color: $component-color;
     font-weight: normal;
-    box-shadow: none;
 
     a,
     a:link,
@@ -1169,8 +1169,8 @@ button.ui-button::-moz-focus-inner {
   table {
     width: 100%;
     margin: 0 0 .4em;
-    font-size: .9em;
     border-collapse: collapse;
+    font-size: .9em;
   }
 
   th {
@@ -1220,8 +1220,8 @@ button.ui-button::-moz-focus-inner {
       margin: .5em .2em .4em;
       padding: .2em .6em .3em;
       float: right;
-      cursor: pointer;
       overflow: visible;
+      cursor: pointer;
 
       &.ui-datepicker-current {
         float: left;

@@ -105,12 +105,12 @@ div.wiki {
     + h5,
     + h6 {
       &::before {
+        content: "#";
         display: inline-block;
         width: .7em;
         margin-left: -.7em;
         color: $headings-anchor-color-active;
         font-weight: normal;
-        content: "#";
       }
     }
   }
@@ -207,12 +207,12 @@ div.wiki {
     width: auto;
     margin-bottom: 1.15em;
     padding: 4px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
     border: 1px solid #e7e7e7;
     border-radius: $border-radius-base;
     border-color: rgba(#000, .068);
     background-color: rgba(#000, .03);
-    overflow-x: auto;
-    overflow-y: hidden;
     font-size: $font-size-small;
 
     code {
@@ -241,8 +241,8 @@ div.wiki {
       border: 1px solid $highlight-border;
       border-radius: $border-radius-base;
       background-color: $highlight-bg;
-      font-size: $font-size-small;
       box-shadow: $panel-shadow;
+      font-size: $font-size-small;
 
       a {
         color: $highlight-text;
@@ -283,8 +283,8 @@ div.wiki {
       margin: 0;
 
       li {
-        list-style-type: disc;
         margin-left: 1.5em;
+        list-style-type: disc;
 
         li {
           list-style-type: circle;
@@ -345,12 +345,12 @@ p.footnote {
   margin-bottom: 5px;
 
   &::before {
+    content: "";
     display: block;
     width: 300px;
     margin-top:  $line-height-computed;
     padding-top: $line-height-computed / 2;
     border-top: 1px solid $gray-lighter;
-    content: "";
   }
 
   + p.footnote::before {

@@ -348,8 +348,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 
   .icon-file {
     &::before {
-      color: $gray;
       content: $fa-var-file-o;
+      color: $gray;
     }
 
     &.text-plain::before         { content: $fa-var-file-text-o; }
@@ -563,16 +563,16 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     cursor: move;
 
     &::before {
+      content: $fa-var-arrows-v;
       width: 16px;
       margin: 0;
-      content: $fa-var-arrows-v;
     }
 
     &.ajax-loading {
       &::before {
-        color: $gray;
-        animation: spin 1s linear infinite;
         content: $fa-var-refresh;
+        animation: spin 1s linear infinite;
+        color: $gray;
       }
     }
   }
@@ -582,8 +582,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     width: 16px;
     height: 16px;
     background: url("../../../images/reorder.png") no-repeat 0 50%;
-    cursor: move;
     vertical-align: middle;
+    cursor: move;
 
     &.ajax-loading {
       background-image: url("../../../images/loading.gif");
@@ -708,8 +708,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     @extend %fa-icon;
 
     &::before {
-      color: $icon-success-color;
       content: $fa-var-plus;
+      color: $icon-success-color;
     }
 
     &:hover::before,
@@ -766,9 +766,9 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     @extend %fa-icon;
 
     &::before {
+      content: $fa-var-star;
       color: #f6ab02;
       font-size: $font-size-small;
-      content: $fa-var-star;
     }
   }
 
@@ -809,15 +809,15 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 
   a.remove-upload {
     @extend %fa-icon;
+    opacity: .75;
     color: $icon-danger-color;
     text-align: center;
-    opacity: .75;
 
     &:hover,
     &:focus {
+      opacity: 1;
       color: $icon-danger-hover-color;
       text-decoration: none;
-      opacity: 1;
     }
 
     &::before {
@@ -931,10 +931,10 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
       @extend %fa-icon;
 
       &::before {
+        content: $fa-var-external-link;
         display: inline;
         margin-right: 3px;
         font-size: 10px;
-        content: $fa-var-external-link;
       }
     }
   }
@@ -956,9 +956,9 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     @extend %fa-icon;
 
     &::before {
+      content: $fa-var-plus;
       margin-right: .3em;
       color: $icon-success-color;
-      content: $fa-var-plus;
     }
 
     &:hover::before,
@@ -1023,13 +1023,13 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     background: transparent;
 
     &::before {
+      content: $fa-var-circle;
       position: relative;
       top: -.12em;
       font-size: .7143em;
-      content: $fa-var-circle;
     }
 
-    &.folder::before          { top: 0; font-size: 1em; content: $fa-var-folder; }
+    &.folder::before          { content: $fa-var-folder; top: 0; font-size: 1em; }
     &.folder.change-A::before { content: $fa-var-folder-open; }
     &.folder.change-M::before { content: $fa-var-folder-open; }
     &.change-A::before        { content: $fa-var-plus-circle; }
@@ -1164,8 +1164,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
       @extend %fa-icon;
 
       &::before {
-        color: $icon-danger-color;
         content: $fa-var-trash;
+        color: $icon-danger-color;
       }
 
       &:hover::before,
@@ -1186,8 +1186,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     @extend %fa-icon;
 
     &::before {
-      color: $icon-success-color;
       content: $fa-var-pencil;
+      color: $icon-success-color;
     }
 
     &:hover::before,
@@ -1199,8 +1199,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
       padding-left: 0;
 
       &::before {
-        margin: 0;
         content: "";
+        margin: 0;
       }
     }
 
@@ -1250,8 +1250,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     @extend %fa-icon;
 
     &::before {
-      color: $icon-success-color;
       content: $fa-var-plus-square;
+      color: $icon-success-color;
     }
 
     &:hover::before,
@@ -1271,10 +1271,10 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     @extend %image-calendar;
     position: relative;
     top: -1px;
+    box-sizing: border-box;
     width: 14px;
     height: 14px;
     padding-left: 14px;
-    box-sizing: border-box;
     background-repeat: no-repeat;
   }
 
@@ -1285,9 +1285,9 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     @extend %fa-icon;
 
     &::before {
+      content: $fa-var-check;
       margin-right: 0;
       color: $icon-success-color;
-      content: $fa-var-check;
     }
 
     img {
@@ -1302,13 +1302,13 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     @extend %fa-icon;
 
     &[href*="edit"]::before {
-      color: $icon-success-color;
       content: $fa-var-pencil;
+      color: $icon-success-color;
     }
 
     &[data-method="delete"]::before {
-      color: $icon-danger-color;
       content: $fa-var-trash;
+      color: $icon-danger-color;
     }
 
     img {
@@ -1323,8 +1323,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     @extend %fa-icon;
 
     &[data-method="delete"]::before {
-      color: $icon-danger-color;
       content: $fa-var-trash;
+      color: $icon-danger-color;
     }
 
     img {
@@ -1340,8 +1340,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     font-size: $font-size-base;
 
     &::before {
-      color: $icon-danger-color;
       content: $fa-var-trash;
+      color: $icon-danger-color;
     }
 
     img {
@@ -1354,8 +1354,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     font-size: $font-size-base;
 
     &::before {
-      color: $icon-success-color;
       content: $fa-var-plus-square;
+      color: $icon-success-color;
     }
 
     img {

@@ -46,8 +46,8 @@
         line-height: 1;
 
         &::before {
-          margin-right: 0;
           content: $fa-var-caret-square-o-down;
+          margin-right: 0;
         }
 
         &:hover,
@@ -210,11 +210,11 @@
 
   &.expanded {
     .drdn-trigger {
+      z-index: 1003;
       height: auto;
       padding-bottom: $header-padding-horizontal / 2;
       border-color: $quick-search-dropdown-bg;
       background-color: $quick-search-dropdown-bg;
-      z-index: 1003;
     }
   }
 
@@ -264,8 +264,8 @@
 
   clear: both;
   background-color: $main-menu-bg;
-  color: $text-color;
   box-shadow: inset 0 -1px $main-menu-border;
+  color: $text-color;
 
   &.tabs {
     margin-bottom: 0;
@@ -289,8 +289,8 @@
     @extend %clearfix;
     margin: 0;
     padding: 0 ($padding-side - $main-menu-padding-horizontal);
-    color: $main-menu-link;
     list-style: none;
+    color: $main-menu-link;
 
     > li {
       position: relative;
@@ -299,8 +299,8 @@
 
       &:hover {
         > .new-object {
-          border-bottom: 1px solid $main-menu-dropdown-bg;
           z-index: 100;
+          border-bottom: 1px solid $main-menu-dropdown-bg;
         }
 
         > .menu-children {
@@ -324,16 +324,16 @@
         &:hover,
         &:focus {
           outline: 0 none;
-          text-decoration: none;
           box-shadow: inset 0 (-$main-menu-shadow-width) 0 $main-menu-shadow-hover;
+          text-decoration: none;
         }
 
         &.selected {
           padding-bottom: $main-menu-padding-vertical - $main-menu-shadow-width;
           border-bottom: 3px solid $main-menu-shadow-active;
+          box-shadow: none;
           color: $main-menu-link-active;
           font-weight: $font-weight-bold;
-          box-shadow: none;
         }
 
         &.new-object {
@@ -365,14 +365,14 @@
     @include nice-shadow(2);
     display: none;
     position: absolute;
+    z-index: 1001;
     min-width: 130px;
     margin: 0 1px;
     padding: 0;
+    overflow: hidden;
+    list-style: none;
     border-radius: 0 0 $border-radius-base $border-radius-base;
     background: $main-menu-dropdown-bg;
-    list-style: none;
-    overflow: hidden;
-    z-index: 1001;
 
     &.visible {
       display: block;
@@ -404,9 +404,9 @@
     background-color: $main-menu-bg;
 
     > button {
+      box-sizing: border-box;
       height: $tabs-height;
       background-color: $main-menu-bg;
-      box-sizing: border-box;
     }
   }
 
