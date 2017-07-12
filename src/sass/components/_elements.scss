@@ -316,6 +316,48 @@ a.close-icon {
   }
 }
 
+// For Redmine 3.4+
+#my-page {
+  .block-receiver {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+  }
+
+  &.dragging .block-receiver {
+    min-height: 20px;
+    margin: $padding-side / -2;
+    margin-bottom: $line-height-computed;
+    padding: $padding-side / 2;
+    box-sizing: border-box;
+    outline: 2px dashed $gray-light;
+  }
+
+  .mypage-box {
+    > .contextual {
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    &:hover > .contextual {
+      opacity: 1;
+    }
+  }
+
+  #list-left {
+    width: 50%;
+    padding-right: ($padding-side / 2);
+    float: left;
+  }
+
+  #list-right {
+    width: 50%;
+    padding-left: ($padding-side / 2);
+    float: right;
+  }
+}
+
 
 //== Resetting font for SCM (repository files)
 //

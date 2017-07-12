@@ -38,7 +38,9 @@ PurpleMine.SidebarToggler = (function () {
 
     // Fix issue with context menu position
     if (this.$main.css('position') === 'relative') {
-      $('#context-menu').appendTo('#wrapper3')
+      $(window).load(function () {
+        $('#context-menu').appendTo('#wrapper3')
+      })
     }
 
     handleSidebar()

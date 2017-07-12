@@ -67,12 +67,15 @@ table.list {
     }
 
     &.assigned_to,
+    &.attachments,
     &.author,
     &.activity,
     &.category,
     &.comments,
     &.description,
     &.fixed_version,
+    &.last_notes,
+    &.last_updated_by,
     &.name,
     &.priority,
     &.relations,
@@ -96,6 +99,10 @@ table.list {
 
     &.reorder {
       white-space: nowrap;
+    }
+
+    &.attachments a {
+      display: block;
     }
   }
 
@@ -199,8 +206,9 @@ tr.issue {
 }
 
 .issues {
-  .description {
-    padding: 0;
+  .description,
+  .last_notes {
+    padding: $table-cell-padding;
     text-align: left;
 
     @media screen and (min-width: $screen-sm-min) {
@@ -280,6 +288,20 @@ tr.entry {
     &.filename_no_report a {
       margin-left: 16px;
     }
+  }
+}
+
+@if $table-list-color-odd-rows {
+  table.list:not(.odd-even) tbody tr:nth-child(odd),
+  .odd {
+    background-color: $table-bg-accent;
+  }
+}
+
+@if $table-list-color-even-rows {
+  table.list:not(.odd-even) tbody tr:nth-child(even),
+  .even {
+    background-color: $table-bg-accent;
   }
 }
 
@@ -372,18 +394,6 @@ tr.entry {
       map-get($tracker-colors, background),
       map-get($tracker-colors, color)
     );
-  }
-}
-
-@if $table-list-color-odd-rows {
-  .odd {
-    background-color: $table-bg-accent;
-  }
-}
-
-@if $table-list-color-even-rows {
-  .even {
-    background-color: $table-bg-accent;
   }
 }
 
