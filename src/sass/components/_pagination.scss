@@ -54,11 +54,11 @@
 
   .page.current,
   .current > span {
+    z-index: 2;
     border-color: $pagination-active-border;
     background-color: $pagination-active-bg;
     color: $pagination-active-color;
     cursor: default;
-    z-index: 2;
   }
 
   .items,

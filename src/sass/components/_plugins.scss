@@ -196,8 +196,8 @@
       td a {
         display: block;
         max-width: floor($sidebar-width / 3);
-        text-overflow: ellipsis;
         overflow: hidden;
+        text-overflow: ellipsis;
 
         &:hover {
           position: absolute;

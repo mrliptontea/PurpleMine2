@@ -22,17 +22,17 @@
     display: inline-block;
     position: relative;
     box-sizing: border-box;
-    user-select: none;
     cursor: pointer;
+    user-select: none;
 
     @if $use-font-awesome {
       @extend %fa-icon-after;
 
       &::after {
+        content: $fa-var-caret-down;
         position: absolute;
         top: ($font-size-base / 2);
         right: $input-padding-horizontal;
-        content: $fa-var-caret-down;
       }
     } @else {
       @extend %image-arrow-down;
@@ -45,18 +45,18 @@
     @include nice-shadow(2);
     display: none;
     position: absolute;
+    z-index: 1002;
     top: $input-height-base + $btn-padding-vertical;
     right: 0;
+    overflow: hidden;
     border-radius: $border-radius-base;
     background: $main-menu-dropdown-bg;
-    overflow: hidden;
-    z-index: 1002;
   }
 
   &-items {
     max-height: 400px;
-    color: $gray-light;
     overflow: auto;
+    color: $gray-light;
 
     &:empty {
       border: 0;
@@ -66,10 +66,10 @@
       > a,
       > span {
         &::before {
+          content: " ";
           display: inline-block;
           width: 1em;
           font-weight: bold;
-          content: " ";
         }
 
         @if $use-font-awesome {
@@ -90,9 +90,9 @@
     > span {
       display: block;
       padding: $btn-padding-vertical $btn-padding-horizontal;
+      overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      overflow: hidden;
     }
   }
 }

@@ -17,6 +17,7 @@ a.collapsible,
   }
 
   &::before {
+    content: "";
     display: inline-block;
     position: relative;
     top: -1px;
@@ -27,7 +28,6 @@ a.collapsible,
     border-top:   6px solid;
     border-right: 4px solid transparent;
     border-left:  4px solid transparent;
-    content: "";
     vertical-align: middle;
 
     @if $collapsible-animation-time > 0 {
@@ -47,14 +47,14 @@ a.collapsible.collapsed,
   fieldset.collapsible {
     min-height: $line-height-computed;
     max-height: 2500px; // should be enough with all the possible filters
-    transition: max-height $collapsible-animation-time ease-out;
     overflow: hidden;
+    transition: max-height $collapsible-animation-time ease-out;
 
     > div {
       display: block !important; // scss-lint:disable ImportantRule
+      visibility: visible;
       transition: visibility 0s 0s, opacity $collapsible-animation-time;
       opacity: 1;
-      visibility: visible;
     }
 
     &.collapsed {
@@ -62,9 +62,9 @@ a.collapsible.collapsed,
       transition: max-height $collapsible-animation-time;
 
       > div {
+        visibility: hidden;
         transition: visibility 0s $collapsible-animation-time, opacity $collapsible-animation-time;
         opacity: 0;
-        visibility: hidden;
       }
     }
   }
@@ -119,8 +119,8 @@ a.collapsible.collapsed,
 //
 
 .autoscroll {
-  overflow-x: auto;
   margin-bottom: $line-height-computed;
+  overflow-x: auto;
 }
 
 
@@ -163,8 +163,8 @@ a.collapsible.collapsed,
 
 .splitcontentleft,
 .splitcontentright {
-  width: 50%;
   box-sizing: border-box;
+  width: 50%;
 
   > .wiki {
     margin-bottom: $line-height-computed;
@@ -277,8 +277,8 @@ p.subtitle {
   }
 
   &.ui-sortable-handle {
-    outline: 1px solid $gray-lighter;
     overflow: hidden;
+    outline: 1px solid $gray-lighter;
 
     &:hover {
       outline: 1px solid $gray-light;
@@ -286,9 +286,9 @@ p.subtitle {
   }
 
   &.ui-sortable-placeholder {
+    visibility: visible !important; // scss-lint:disable ImportantRule
     outline: 1px dashed $highlight-border;
     background: $highlight-bg;
-    visibility: visible !important; // scss-lint:disable ImportantRule
   }
 
   &.ui-sortable-helper {
@@ -306,10 +306,10 @@ a.close-icon {
   width: 12px;
   height: 12px;
   margin-top: 5px;
+  overflow: hidden;
   background-image: url("../../../images/close.png");
   background-repeat: no-repeat;
   cursor: pointer;
-  overflow: hidden;
 
   &:hover {
     background-image: url("../../../images/close_hl.png");
@@ -319,25 +319,25 @@ a.close-icon {
 // For Redmine 3.4+
 #my-page {
   .block-receiver {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     outline: none;
   }
 
   &.dragging .block-receiver {
+    box-sizing: border-box;
     min-height: 20px;
     margin: $padding-side / -2;
     margin-bottom: $line-height-computed;
     padding: $padding-side / 2;
-    box-sizing: border-box;
     outline: 2px dashed $gray-light;
   }
 
   .mypage-box {
     > .contextual {
+      transition: opacity .2s;
       opacity: 0;
-      transition: opacity 0.2s;
     }
 
     &:hover > .contextual {
@@ -460,11 +460,11 @@ ul.projects {
 
       > li {
         display: block;
+        box-sizing: border-box;
         flex: 0 1 auto;
         width: 100%;
         margin-right: $padding-side / 2;
         margin-left: $padding-side / 2;
-        box-sizing: border-box;
         padding: $panel-body-padding;
         border: 1px solid $panel-border;
         border-radius: $border-radius-base;
@@ -634,18 +634,18 @@ div#version-summary {
 #ajax-indicator {
   @include nice-shadow(3);
   position: fixed;
+  z-index: 100;
   top: 50%;
   left: 50%;
   width: 200px;
   margin: (($line-height-computed + $padding-large-vertical * 2 + 1px * 2) / -2) ((200px + $padding-large-horizontal * 2 + 1px * 2) / -2);
   padding: $padding-large-vertical $padding-large-horizontal;
   border: 1px solid $highlight-border;
+  opacity: .9;
   background-color: $highlight-bg;
   color: $highlight-text;
   font-weight: $font-weight-bold;
   text-align: center;
-  opacity: .9;
-  z-index: 100;
 
   span {
     padding-left: 26px;
@@ -745,8 +745,8 @@ div.table-list.boards {
 
     .contextual {
       position: relative;
-      margin-right: $bubble-padding-vertical;
       z-index: 1;
+      margin-right: $bubble-padding-vertical;
 
       @if $use-font-awesome {
         margin-top: $padding-small-vertical;
@@ -773,6 +773,7 @@ div.table-list.boards {
 
         &::before,
         &::after {
+          content: " ";
           display: block;
           position: absolute;
           top: 9px;
@@ -782,7 +783,6 @@ div.table-list.boards {
           height: 0;
           border-style: solid solid outset;
           border-color: transparent;
-          content: " ";
           pointer-events: none;
         }
 

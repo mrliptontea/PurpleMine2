@@ -32,9 +32,9 @@ button {
   &.disabled,
   &[disabled],
   fieldset[disabled] & {
-    pointer-events: none; // Future-proof disabling of clicks
-    box-shadow: none;
     opacity: .65;
+    box-shadow: none;
+    pointer-events: none; // Future-proof disabling of clicks
   }
 }
 
@@ -181,8 +181,8 @@ a[data-expands],
   border-radius: $border-radius-base;
   background-repeat: no-repeat;
   background-position: 2px 2px;
-  cursor: pointer;
   vertical-align: top;
+  cursor: pointer;
   user-select: none;
   @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border); // scss-lint:disable DeclarationOrder
 }

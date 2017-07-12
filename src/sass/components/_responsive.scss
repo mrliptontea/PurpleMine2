@@ -34,8 +34,8 @@
           height: $responsive-header-height;
           padding: 0 0 0 ($padding-base-horizontal + 30px);
           background-color: transparent;
-          line-height: $responsive-header-height;
           box-shadow: none;
+          line-height: $responsive-header-height;
 
           &::before {
             padding-left: $padding-base-horizontal;
