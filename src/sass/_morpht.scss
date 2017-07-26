@@ -76,3 +76,14 @@ a.icon.new-issue {
 body[class^="theme-Purplemine2 project-"] a.icon.new-issue {
   display: inline-block;
 }
+
+/* Bestest Timer **************************************************************/
+
+.bestest_timer_button:not(:hover) {
+  background-color: grey !important;
+  box-shadow: 0 1px 0 #555 !important;
+}
+
+.bestest_timer_button {
+  height: inherit !important;
+}
