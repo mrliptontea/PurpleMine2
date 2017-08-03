@@ -13,6 +13,29 @@
     word-wrap: break-word;
 
     @if $use-gravatars {
+      // For Redmine 3.4+
+      .gravatar-with-child {
+        position: relative;
+
+        > img.gravatar {
+          width: $issue-gravatar-size;
+          height: $issue-gravatar-size;
+          margin-right: 10px;
+          margin-bottom: $line-height-computed / 2;
+          float: left;
+
+          &:nth-child(2) {
+            position: absolute;
+            top: $issue-gravatar-size * .6;
+            left: $issue-gravatar-size * .6;
+            width: $issue-gravatar-size * .5;
+            height: $issue-gravatar-size * .5;
+            border: 2px solid rgba(255, 255, 255, .9);
+            border-radius: 20%;
+          }
+        }
+      }
+
       > img.gravatar {
         width: $issue-gravatar-size;
         height: $issue-gravatar-size;
@@ -29,7 +52,7 @@
 
       > .subject,
       > .author {
-        padding-left: $issue-gravatar-size + 10px;
+        padding-left: $issue-gravatar-size * 1.1 + 10px;
       }
     }
 
@@ -196,8 +219,9 @@
   }
 
   div.attachments {
-    margin: $issue-padding (-$issue-padding) (-$issue-padding);
+    margin: -$issue-padding;
     padding: $issue-padding;
+    border-top: 0;
   }
 }
 
@@ -354,15 +378,15 @@ div.thumbnails {
   }
 
   &::before {
+    content: "";
     display: block;
     position: absolute;
+    z-index: -1;
     top: -($line-height-computed + 2px);
     left: 22px;
     width: 4px;
     height: $line-height-computed;
     background-color: darken($body-bg, 5%);
-    content: "";
-    z-index: -1;
   }
 
   .tabs + &::before {
@@ -384,7 +408,7 @@ div.thumbnails {
     }
   }
 
-  h4 {
+  > div > h4 {
     margin: 0;
     padding: $bubble-padding-vertical $bubble-padding-horizontal;
     border-radius: $panel-border-radius $panel-border-radius 0 0;
@@ -406,11 +430,12 @@ div.thumbnails {
   }
 
   @if $use-gravatars {
-    h4 {
+    > div > h4 {
       position: relative;
 
       &::before,
       &::after {
+        content: " ";
         display: block;
         position: absolute;
         top: 9px;
@@ -420,7 +445,6 @@ div.thumbnails {
         height: 0;
         border-style: solid solid outset;
         border-color: transparent;
-        content: " ";
         pointer-events: none;
       }
 
@@ -448,9 +472,9 @@ div.thumbnails {
     margin: 0;
     padding: $bubble-padding-vertical 0;
     padding-left: $bubble-padding-horizontal * 3;
+    list-style: none;
     border-top: 1px solid mix($body-bg, $issue-border, 50%);
     font-size: $font-size-list;
-    list-style: none;
 
     li {
       position: relative;
@@ -461,6 +485,7 @@ div.thumbnails {
       }
 
       &::before {
+        content: "";
         display: block;
         position: absolute;
         top: 5px;
@@ -469,7 +494,6 @@ div.thumbnails {
         height: 6px;
         border-radius: 50%;
         background-color: $gray-light;
-        content: "";
       }
     }
 
@@ -579,11 +603,11 @@ span.private {
 
   div.changeset {
     margin-top: $line-height-computed / 2 + 2px * 2;
+    overflow: hidden;
     border: 1px solid $issue-border;
     border-radius: $panel-border-radius;
     background-color: $issue-bg;
     font-size: $font-size-list;
-    overflow: hidden;
 
     &:first-of-type {
       margin-top: 0;

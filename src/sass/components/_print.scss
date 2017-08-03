@@ -23,9 +23,9 @@
     width: 100%;
     margin: 0;
     padding: 0;
+    overflow: visible !important; // scss-lint:disable ImportantRule
     border: 0;
     background: #fff;
-    overflow: visible !important; // scss-lint:disable ImportantRule
   }
 
   .autoscroll {

@@ -2,11 +2,12 @@
 // Tabs
 // --------------------------------------------------
 
+$tabs-height: $line-height-computed + $tab-padding-vertical * 2 + 1px + 1px;
+
 .tabs {
   $tabs-buttons-width: 40px;
 
   position: relative;
-  margin-bottom: $line-height-computed;
   overflow: hidden;
 
   @if not $flexbox-layout {
@@ -14,23 +15,21 @@
   }
 
   > ul {
+    box-sizing: border-box;
     margin: 0;
     padding-left: 0;
-    border-bottom: 1px solid $tab-border;
     list-style: none;
 
     @if $flexbox-layout {
       display: flex;
       flex-wrap: nowrap;
-      height: $line-height-computed + $tab-padding-vertical * 2 + 1px;
+      height: $tabs-height;
     } @else {
       width: 2000px;
       @extend %clearfix;
     }
 
     > li {
-      margin-bottom: -1px;
-
       @if $flexbox-layout {
         flex: 0 1 auto;
       } @else {
@@ -39,26 +38,15 @@
 
       > a {
         display: block;
-        min-width: 2em;
+        box-sizing: border-box;
+        min-width: 3em;
+        height: $tabs-height;
         margin-right: 2px;
         padding: $tab-padding-vertical $tab-padding-horizontal;
         border: 1px solid transparent;
         border-radius: $border-radius-base $border-radius-base 0 0;
         text-align: center;
         white-space: nowrap;
-
-        &:hover,
-        &:focus {
-          border-color: $tab-hover-border $tab-hover-border $tab-border;
-          background-color: $tab-hover-bg;
-          text-decoration: none;
-        }
-
-        &.selected {
-          border-color: $tab-active-border $tab-active-border $tab-active-bg;
-          background: $tab-active-bg;
-          color: $tab-active-text;
-        }
       }
     }
   }
@@ -68,24 +56,23 @@
     top: 0;
     right: 0;
     width: $tabs-buttons-width;
-    padding-left: 5px;
-    border-bottom: 1px solid $tab-border;
     background-color: $body-bg;
 
     > button {
       width: 50%;
-      height: $tab-padding-vertical * 2 + $line-height-computed + 1px;
+      height: $tabs-height;
       margin: 0;
       padding: 0;
       float: left;
       transition: opacity .1s;
       border: 0 none;
+      border-bottom: 1px solid $tab-border;
       border-radius: 0;
+      opacity: .8;
       background-color: $body-bg;
       background-repeat: no-repeat;
       background-position: center center;
       box-shadow: none;
-      opacity: .8;
 
       &:hover,
       &:active {
@@ -103,6 +90,44 @@
 
     .tab-right {
       @extend %image-arrow-right;
+    }
+  }
+}
+
+div.tabs:not(#main-menu) {
+  height: $tabs-height;
+  margin-bottom: $line-height-computed;
+
+  > ul {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid $tab-border;
+
+    > li {
+      margin: 0 0 -1px;
+      background: transparent;
+
+      > a {
+        padding: $tab-padding-vertical $tab-padding-horizontal;
+        border-color: transparent;
+        background: transparent;
+        color: $link-color;
+        font: inherit;
+
+        &:hover,
+        &:focus {
+          border-color: $tab-hover-border $tab-hover-border $tab-border;
+          background-color: $tab-hover-bg;
+          color: $link-hover-color;
+          text-decoration: none;
+        }
+
+        &.selected {
+          border-color: $tab-active-border $tab-active-border $tab-active-bg;
+          background: $tab-active-bg;
+          color: $tab-active-text;
+        }
+      }
     }
   }
 }

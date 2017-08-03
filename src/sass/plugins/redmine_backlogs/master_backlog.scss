@@ -189,9 +189,9 @@ $story-sp-input-width:          50px;
 
       &:focus {
         border-color: lighten($header-bg, 25%);
-        color: $gray-darkest;
         box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2),
               0 0 0 1px lighten($header-bg, 25%);
+        color: $gray-darkest;
       }
     }
 
@@ -203,8 +203,8 @@ $story-sp-input-width:          50px;
 
     .name {
       padding-left: $padding-base-horizontal;
-      font-weight: $font-weight-bold;
       overflow: hidden;
+      font-weight: $font-weight-bold;
     }
 
     .date {
@@ -247,13 +247,13 @@ $story-sp-input-width:          50px;
       .editors {
         display: block;
         position: absolute;
+        z-index: 1;
         top: 0;
         left: 0;
         width: 100%;
         padding-top: $editor-padding;
         border-radius: $border-radius-large $border-radius-large 0 0;
         background-color: $header-bg;
-        z-index: 1;
       }
 
       label,
@@ -299,6 +299,7 @@ $story-sp-input-width:          50px;
     .menu {
       position: relative;
       height: $header-line-height;
+      overflow: visible;
       transition: background-color 0s .1s, border-color 0s .1s;
       border-right: 1px solid #888;
       border-bottom: 1px solid $header-bg;
@@ -306,13 +307,12 @@ $story-sp-input-width:          50px;
       font-size: $font-size-small;
       line-height: $line-height-base;
       cursor: pointer;
-      overflow: visible;
 
       &:hover {
+        z-index: 1000;
         transition: background-color 0s 0s, border-color 0s 0s;
         border-color: $body-bg;
         background-color: $body-bg;
-        z-index: 1000;
       }
 
       .icon {
@@ -325,20 +325,20 @@ $story-sp-input-width:          50px;
       }
 
       ul {
+        visibility: hidden;
         position: absolute;
+        z-index: 999;
         top: $header-line-height + 1px;
         left: -1px;
         margin: 0;
         padding: $padding-small-vertical 0;
+        list-style: none;
         transition: visibility 0s .1s;
         border: 1px solid $header-bg;
         border-top-width: 0;
         border-radius: 0 0 $border-radius-base $border-radius-base;
         background-color: $body-bg;
-        list-style: none;
         box-shadow: 0 2px 1px rgba(#000, .1);
-        visibility: hidden;
-        z-index: 999;
 
         a {
           color: $gray-darker;
@@ -346,8 +346,8 @@ $story-sp-input-width:          50px;
       }
 
       &:hover .items {
-        transition: visibility 0s 0s;
         visibility: visible;
+        transition: visibility 0s 0s;
       }
 
       .item {
@@ -385,8 +385,8 @@ $story-sp-input-width:          50px;
           background-color: darken($body-bg, 8%);
 
           ul {
-            transition: visibility 0s 0s;
             visibility: visible;
+            transition: visibility 0s 0s;
           }
         }
       }
@@ -399,9 +399,9 @@ $story-sp-input-width:          50px;
 
   .close_sprint {
     float: left;
+    overflow: hidden;
     color: $header-link;
     white-space: nowrap;
-    overflow: hidden;
   }
 
   .closedbacklog {
@@ -425,8 +425,8 @@ $story-sp-input-width:          50px;
     min-height: ($line-height-computed + $table-condensed-cell-padding * 2);
     margin: 0;
     padding: 0;
-    font-size: $font-size-list;
     list-style: none;
+    font-size: $font-size-list;
 
     .v {
       display: none;
@@ -492,6 +492,7 @@ $story-sp-input-width:          50px;
           text-align: right;
 
           &::before {
+            content: "#";
             margin-left: -1em;
             @if $color-trackers {
               color: mix($tracker-default-text, $tracker-default-bg, 50%);
@@ -499,7 +500,6 @@ $story-sp-input-width:          50px;
               color: $gray-light;
             }
             font-weight: normal;
-            content: "#";
           }
 
           &:hover {
@@ -527,9 +527,9 @@ $story-sp-input-width:          50px;
       width: $story-project-width;
       padding: $table-condensed-cell-padding 0 $table-condensed-cell-padding $table-condensed-cell-padding;
       float: left;
+      overflow: hidden;
       text-align: center;
       white-space: nowrap;
-      overflow: hidden;
 
       .t {
         overflow: hidden;
@@ -592,9 +592,9 @@ $story-sp-input-width:          50px;
 
         &:focus {
           border-color: darken($highlight-border, 15%);
-          color: $gray-darkest;
           box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075),
                 0 0 5px rgba(darken($highlight-border, 15%), .5);
+          color: $gray-darkest;
         }
       }
 
@@ -646,8 +646,8 @@ $story-sp-input-width:          50px;
           width: calc(100% - #{$subject-width-minus}) !important; // scss-lint:disable ImportantRule
           height: 60px;
           float: left;
-          white-space: normal;
           overflow: auto;
+          white-space: normal;
         }
 
         &.category_id {
@@ -682,8 +682,8 @@ $story-sp-input-width:          50px;
   // Override: display story subject in multiple lines
   .rb-multilinesubject & .subject {
     height: auto;
-    white-space: normal;
     overflow: show;
+    white-space: normal;
   }
 
   @if $color-trackers {

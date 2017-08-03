@@ -30,6 +30,14 @@
     }
   }
 
+  .flyout-menu & {
+    a {
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+
   .burndown_chart {
     max-width: $sidebar-width-computed;
   }
@@ -188,8 +196,8 @@
       td a {
         display: block;
         max-width: floor($sidebar-width / 3);
-        text-overflow: ellipsis;
         overflow: hidden;
+        text-overflow: ellipsis;
 
         &:hover {
           position: absolute;
@@ -322,6 +330,36 @@
       width: 20%;
       font-size: $font-size-small;
       text-align: right;
+    }
+  }
+}
+
+
+//
+// Redmine WikiNG
+// https://github.com/martin-denizet/wiking
+// --------------------------------------------------
+
+div.wiking {
+  &.flash {
+    @if $use-font-awesome {
+      &.warning,
+      &.notice,
+      &.tip {
+        background-image: none;
+      }
+
+      &.tip {
+        &::before {
+          content: $fa-var-lightbulb-o;
+        }
+      }
+    } @else {
+      &.warning,
+      &.notice,
+      &.tip {
+        background-position: $padding-large-horizontal 50%;
+      }
     }
   }
 }

@@ -10,6 +10,12 @@ PurpleMine.MenuCollapse = (function () {
     },
     pl: {
       topMenuToggler: 'Zwiń/rozwiń górne menu'
+    },
+    de: {
+      topMenuToggler: 'Ein-/Ausklappen Hauptmenu'
+    },
+    ja: {
+      topMenuToggler: 'トップメニューの展開/折りたたみ'
     }
   }
 

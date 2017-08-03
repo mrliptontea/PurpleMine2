@@ -2,46 +2,81 @@
 // Login form
 // --------------------------------------------------
 
-$login-form-width:              350px;
-$login-input-width:             200px;
-
 #login-form {
+  box-sizing: border-box;
   margin: $line-height-computed * 2 auto;
+
+  label,
+  input {
+    width: 100%;
+  }
+
+  label {
+    display: block;
+    margin-bottom: $padding-base-vertical;
+    font-weight: $font-weight-bold;
+
+    > a {
+      float: right;
+      font-weight: $font-weight-normal;
+    }
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    margin-bottom: $panel-body-padding-vertical;
+  }
 
   table {
     margin: auto;
+    table-layout: fixed;
   }
 
-  @media screen and (min-width: $screen-sm-min) {
-    width: $login-form-width;
+  td {
+    padding: 0;
 
-    padding: $panel-body-padding;
+    &:first-child {
+      width: $login-form-label-width;
+      padding-right: $table-cell-padding;
+      white-space: nowrap;
+    }
+
+    > label {
+      margin-bottom: $panel-body-padding-vertical;
+    }
+
+    > input[type="submit"] {
+      width: auto;
+      margin-right: 0;
+    }
+  }
+
+  @media screen and (min-width: $login-form-box-breakpoint) {
+    width: $login-form-width;
+    padding: $padding-side;
     border: 1px solid $panel-border;
     border-radius: $border-radius-base;
     background-color: $panel-bg;
-    color: $panel-color;
     box-shadow: $panel-shadow;
+    color: $panel-color;
 
     table {
       width: 100%;
     }
+  }
 
-    td {
-      width: 90%; // make columns expand
-      padding: $table-cell-padding;
+  @each $adjustment, $languages in $login-form-adjustments-map {
+    @each $language in $languages {
+      html[lang="#{$language}"] & td:first-child {
+        width: $login-form-label-width + $adjustment * 1em;
+      }
     }
   }
 }
 
-#username,
-#password,
 #openid_url {
-  width: $login-input-width;
-}
-
-#openid_url {
-  padding-right: 8px + 24px;
+  padding-right: $input-padding-horizontal + 24px;
   background-image: url("../../../images/openid-bg.gif");
   background-repeat: no-repeat;
-  background-position: ($login-input-width - 24px) center;
+  background-position: right $input-padding-horizontal center;
 }

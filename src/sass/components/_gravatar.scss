@@ -3,9 +3,9 @@
 // --------------------------------------------------
 
 img.gravatar {
+  overflow: hidden;
   border-radius: $border-radius-large;
   line-height: 1;
-  overflow: hidden;
   vertical-align: middle;
 
   h2 &,

@@ -72,8 +72,8 @@
   }
 
   dd {
-    font-size: $font-size-small;
     overflow: hidden;
+    font-size: $font-size-small;
 
     &.grouped {
       margin-left: $activity-indent;

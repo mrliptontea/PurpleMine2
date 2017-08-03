@@ -93,6 +93,15 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     font-size: 0;
     white-space: nowrap;
 
+    @at-root a#{&} {
+      // scss-lint:disable ImportantRule
+      display: inline;
+      width: auto !important;
+      height: auto !important;
+      padding-left: 0 !important;
+      font-size: 0 !important;
+    }
+
     &::before {
       font-size: $font-size-base;
     }
@@ -105,6 +114,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   .icon-del::before                   { content: $fa-var-trash; }
   .icon-move::before                  { content: $fa-var-arrows; }
   .icon-save::before                  { content: $fa-var-save; }
+  .icon-download::before              { content: $fa-var-download; }
   .icon-cancel::before                { content: $fa-var-ban; }
   .icon-multiple::before              { content: $fa-var-plus-circle; }
   .icon-folder::before                { content: $fa-var-folder; }
@@ -115,6 +125,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   .icon-help::before                  { content: $fa-var-info-circle; }
   .icon-attachment::before            { content: $fa-var-paperclip; }
   .icon-history::before               { content: $fa-var-history; }
+  .icon-time-entry::before            { content: $fa-var-clock-o; }
   .icon-time::before                  { content: $fa-var-clock-o; }
   .icon-time-add::before              { content: $fa-var-clock-o; }
   .icon-stats::before                 { content: $fa-var-line-chart; }
@@ -123,11 +134,13 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   .icon-fav::before                   { content: $fa-var-star; }
   .icon-fav-off::before               { content: $fa-var-star-o; }
   .icon-reload::before                { content: $fa-var-refresh; }
+  .icon-locked::before                { content: $fa-var-lock; }
   .icon-lock::before                  { content: $fa-var-lock; }
   .icon-unlock::before                { content: $fa-var-unlock; }
   .icon-checked::before               { content: $fa-var-check; }
   .icon-details::before               { content: $fa-var-search-plus; }
   .icon-report::before                { content: $fa-var-pie-chart; }
+  .icon-comments::before              { content: $fa-var-comment; }
   .icon-comment::before               { content: $fa-var-comment; }
   .icon-summary::before               { content: $fa-var-file-text; }
   .icon-server-authentication::before { content: $fa-var-key; }
@@ -145,6 +158,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   .icon-magnifier::before             { content: $fa-var-search; }
   .icon-email::before                 { content: $fa-var-envelope; }
   .icon-email-disabled::before        { content: $fa-var-envelope-o; }
+  .icon-email-add::before             { content: $fa-var-envelope; }
   .icon-move-up::before               { content: $fa-var-angle-up; }
   .icon-move-top::before              { content: $fa-var-angle-double-up; }
   .icon-move-down::before             { content: $fa-var-angle-down; }
@@ -153,6 +167,30 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   .icon-not-ok::before                { content: $fa-var-times; }
   .icon-link-break::before            { content: $fa-var-chain-broken; }
   .icon-list::before                  { content: $fa-var-list-ul; }
+  .icon-sticky::before                { content: $fa-var-thumb-tack; }
+  .icon-arrow-right::before           { content: $fa-var-arrow-right; }
+  .icon-close::before                 { content: $fa-var-times-circle; }
+  .icon-close:hover::before           { content: $fa-var-times-circle-o; }
+  .icon-settings::before              { content: $fa-var-cog; }
+  .icon-group::before                 { content: $fa-var-users; }
+  .icon-groupnonmember::before        { content: $fa-var-users; }
+  .icon-groupanonymous::before        { content: $fa-var-users; }
+  .icon-roles::before                 { content: $fa-var-eye; }
+  .icon-issue-edit::before            { content: $fa-var-edit; }
+  .icon-workflows::before             { content: $fa-var-sitemap; }
+  .icon-custom-fields::before         { content: $fa-var-edit; }
+  .icon-plugins::before               { content: $fa-var-puzzle-piece; }
+  .icon-news::before                  { content: $fa-var-newspaper-o; }
+  .icon-issue-closed::before          { content: $fa-var-ticket; }
+  .icon-issue-note::before            { content: $fa-var-comment; }
+  .icon-changeset::before             { content: $fa-var-upload; }
+  .icon-message::before               { content: $fa-var-comment; }
+  .icon-reply::before                 { content: $fa-var-comment-o; }
+  .icon-wiki-page::before             { content: $fa-var-file-text-o; }
+  .icon-document::before              { content: $fa-var-file-text; }
+  .icon-project::before               { content: $fa-var-cube; }
+  .icon-add-bullet::before            { content: $fa-var-plus-circle; }
+  .icon-shared::before                { content: $fa-var-link; }
 } @else {
   .icon {
     padding-top: 2px;
@@ -189,6 +227,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   .icon-del                   { background-image: url("../../../images/delete.png"); }
   .icon-move                  { background-image: url("../../../images/move.png"); }
   .icon-save                  { background-image: url("../../../images/save.png"); }
+  .icon-download              { background-image: url("../../../images/download.png"); }
   .icon-cancel                { background-image: url("../../../images/cancel.png"); }
   .icon-multiple              { background-image: url("../../../images/table_multiple.png"); }
   .icon-folder                { background-image: url("../../../images/folder.png"); }
@@ -199,6 +238,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   .icon-help                  { background-image: url("../../../images/help.png"); }
   .icon-attachment            { background-image: url("../../../images/attachment.png"); }
   .icon-history               { background-image: url("../../../images/history.png"); }
+  .icon-time-entry            { background-image: url("../../../images/time.png"); }
   .icon-time                  { background-image: url("../../../images/time.png"); }
   .icon-time-add              { background-image: url("../../../images/time_add.png"); }
   .icon-stats                 { background-image: url("../../../images/stats.png"); }
@@ -207,11 +247,13 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   .icon-fav                   { background-image: url("../../../images/fav.png"); }
   .icon-fav-off               { background-image: url("../../../images/fav_off.png"); }
   .icon-reload                { background-image: url("../../../images/reload.png"); }
+  .icon-locked                { background-image: url("../../../images/locked.png"); }
   .icon-lock                  { background-image: url("../../../images/locked.png"); }
   .icon-unlock                { background-image: url("../../../images/unlock.png"); }
   .icon-checked               { background-image: url("../../../images/true.png"); }
   .icon-details               { background-image: url("../../../images/zoom_in.png"); }
   .icon-report                { background-image: url("../../../images/report.png"); }
+  .icon-comments              { background-image: url("../../../images/comment.png"); }
   .icon-comment               { background-image: url("../../../images/comment.png"); }
   .icon-summary               { background-image: url("../../../images/lightning.png"); }
   .icon-server-authentication { background-image: url("../../../images/server_key.png"); }
@@ -223,6 +265,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   .icon-magnifier             { background-image: url("../../../images/magnifier.png"); }
   .icon-email                 { background-image: url("../../../images/email.png"); }
   .icon-email-disabled        { background-image: url("../../../images/email_disabled.png"); }
+  .icon-email-add             { background-image: url("../../../images/email_add.png"); }
   .icon-move-up               { background-image: url("../../../images/1uparrow.png"); }
   .icon-move-top              { background-image: url("../../../images/2uparrow.png"); }
   .icon-move-down             { background-image: url("../../../images/1downarrow.png"); }
@@ -231,6 +274,30 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   .icon-not-ok                { background-image: url("../../../images/false.png"); }
   .icon-link-break            { background-image: url("../../../images/link_break.png"); }
   .icon-list                  { background-image: url("../../../images/text_list_bullets.png"); }
+  .icon-sticky                { background-image: url("../../../images/bullet_go.png"); }
+  .icon-arrow-right           { background-image: url("../../../images/bullet_go.png"); }
+  .icon-close                 { background-image: url("../../../images/close.png"); }
+  .icon-close:hover           { background-image: url("../../../images/close_hl.png"); }
+  .icon-settings              { background-image: url("../../../images/changeset.png"); }
+  .icon-group                 { background-image: url("../../../images/group.png"); }
+  .icon-groupnonmember        { background-image: url("../../../images/group.png"); }
+  .icon-groupanonymous        { background-image: url("../../../images/group.png"); }
+  .icon-roles                 { background-image: url("../../../images/database_key.png"); }
+  .icon-issue-edit            { background-image: url("../../../images/ticket_edit.png"); }
+  .icon-workflows             { background-image: url("../../../images/ticket_go.png"); }
+  .icon-custom-fields         { background-image: url("../../../images/textfield.png"); }
+  .icon-plugins               { background-image: url("../../../images/plugin.png"); }
+  .icon-news                  { background-image: url("../../../images/news.png"); }
+  .icon-issue-closed          { background-image: url("../../../images/ticket_checked.png"); }
+  .icon-issue-note            { background-image: url("../../../images/ticket_note.png"); }
+  .icon-changeset             { background-image: url("../../../images/changeset.png"); }
+  .icon-message               { background-image: url("../../../images/message.png"); }
+  .icon-reply                 { background-image: url("../../../images/comments.png"); }
+  .icon-wiki-page             { background-image: url("../../../images/wiki_edit.png"); }
+  .icon-document              { background-image: url("../../../images/document.png"); }
+  .icon-project               { background-image: url("../../../images/projects.png"); }
+  .icon-add-bullet            { background-image: url("../../../images/bullet_add.png"); }
+  .icon-shared                { background-image: url("../../../images/link.png"); }
 }
 
 
@@ -281,8 +348,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 
   .icon-file {
     &::before {
-      color: $gray;
       content: $fa-var-file-o;
+      color: $gray;
     }
 
     &.text-plain::before         { content: $fa-var-file-text-o; }
@@ -415,6 +482,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
       &::before { content: $fa-var-ticket; }
     }
 
+    .issue-statuses,
     .issue_statuses {
       @extend %admin-icon;
 
@@ -427,6 +495,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
       &::before { content: $fa-var-sitemap; }
     }
 
+    .custom-fields,
     .custom_fields {
       @extend %admin-icon;
 
@@ -457,6 +526,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
       &::before { content: $fa-var-info-circle; }
     }
 
+    .ldap-authentication,
     .server_authentication {
       @extend %admin-icon;
 
@@ -493,16 +563,16 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     cursor: move;
 
     &::before {
+      content: $fa-var-arrows-v;
       width: 16px;
       margin: 0;
-      content: $fa-var-arrows-v;
     }
 
     &.ajax-loading {
       &::before {
-        color: $gray;
-        animation: spin 1s linear infinite;
         content: $fa-var-refresh;
+        animation: spin 1s linear infinite;
+        color: $gray;
       }
     }
   }
@@ -512,8 +582,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     width: 16px;
     height: 16px;
     background: url("../../../images/reorder.png") no-repeat 0 50%;
-    cursor: move;
     vertical-align: middle;
+    cursor: move;
 
     &.ajax-loading {
       background-image: url("../../../images/loading.gif");
@@ -638,8 +708,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     @extend %fa-icon;
 
     &::before {
-      color: $icon-success-color;
       content: $fa-var-plus;
+      color: $icon-success-color;
     }
 
     &:hover::before,
@@ -693,12 +763,12 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   }
 
   .my-project {
-    @extend %fa-icon-after;
+    @extend %fa-icon;
 
-    &::after {
+    &::before {
+      content: $fa-var-star;
       color: #f6ab02;
       font-size: $font-size-small;
-      content: $fa-var-star;
     }
   }
 
@@ -739,15 +809,15 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 
   a.remove-upload {
     @extend %fa-icon;
+    opacity: .75;
     color: $icon-danger-color;
     text-align: center;
-    opacity: .75;
 
     &:hover,
     &:focus {
+      opacity: 1;
       color: $icon-danger-hover-color;
       text-decoration: none;
-      opacity: 1;
     }
 
     &::before {
@@ -861,10 +931,10 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
       @extend %fa-icon;
 
       &::before {
+        content: $fa-var-external-link;
         display: inline;
         margin-right: 3px;
         font-size: 10px;
-        content: $fa-var-external-link;
       }
     }
   }
@@ -886,9 +956,9 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     @extend %fa-icon;
 
     &::before {
+      content: $fa-var-plus;
       margin-right: .3em;
       color: $icon-success-color;
-      content: $fa-var-plus;
     }
 
     &:hover::before,
@@ -953,13 +1023,13 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     background: transparent;
 
     &::before {
+      content: $fa-var-circle;
       position: relative;
       top: -.12em;
       font-size: .7143em;
-      content: $fa-var-circle;
     }
 
-    &.folder::before          { top: 0; font-size: 1em; content: $fa-var-folder; }
+    &.folder::before          { content: $fa-var-folder; top: 0; font-size: 1em; }
     &.folder.change-A::before { content: $fa-var-folder-open; }
     &.folder.change-M::before { content: $fa-var-folder-open; }
     &.change-A::before        { content: $fa-var-plus-circle; }
@@ -993,8 +1063,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   }
 
   .my-project {
-    padding-right: 18px;
-    background: url("../../../images/fav.png") no-repeat right center;
+    padding-left: 18px;
+    background: url("../../../images/fav.png") no-repeat left center;
   }
 
   .sort {
@@ -1094,8 +1164,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
       @extend %fa-icon;
 
       &::before {
-        color: $icon-danger-color;
         content: $fa-var-trash;
+        color: $icon-danger-color;
       }
 
       &:hover::before,
@@ -1116,8 +1186,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     @extend %fa-icon;
 
     &::before {
-      color: $icon-success-color;
       content: $fa-var-pencil;
+      color: $icon-success-color;
     }
 
     &:hover::before,
@@ -1129,8 +1199,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
       padding-left: 0;
 
       &::before {
-        margin: 0;
         content: "";
+        margin: 0;
       }
     }
 
@@ -1180,8 +1250,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     @extend %fa-icon;
 
     &::before {
-      color: $icon-success-color;
       content: $fa-var-plus-square;
+      color: $icon-success-color;
     }
 
     &:hover::before,
@@ -1201,10 +1271,10 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     @extend %image-calendar;
     position: relative;
     top: -1px;
+    box-sizing: border-box;
     width: 14px;
     height: 14px;
     padding-left: 14px;
-    box-sizing: border-box;
     background-repeat: no-repeat;
   }
 
@@ -1215,9 +1285,9 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     @extend %fa-icon;
 
     &::before {
+      content: $fa-var-check;
       margin-right: 0;
       color: $icon-success-color;
-      content: $fa-var-check;
     }
 
     img {
@@ -1232,13 +1302,13 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     @extend %fa-icon;
 
     &[href*="edit"]::before {
-      color: $icon-success-color;
       content: $fa-var-pencil;
+      color: $icon-success-color;
     }
 
     &[data-method="delete"]::before {
-      color: $icon-danger-color;
       content: $fa-var-trash;
+      color: $icon-danger-color;
     }
 
     img {
@@ -1253,8 +1323,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     @extend %fa-icon;
 
     &[data-method="delete"]::before {
-      color: $icon-danger-color;
       content: $fa-var-trash;
+      color: $icon-danger-color;
     }
 
     img {
@@ -1270,8 +1340,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     font-size: $font-size-base;
 
     &::before {
-      color: $icon-danger-color;
       content: $fa-var-trash;
+      color: $icon-danger-color;
     }
 
     img {
@@ -1284,8 +1354,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     font-size: $font-size-base;
 
     &::before {
-      color: $icon-success-color;
       content: $fa-var-plus-square;
+      color: $icon-success-color;
     }
 
     img {

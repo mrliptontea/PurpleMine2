@@ -13,13 +13,13 @@
   @include nice-shadow(2);
   position: relative;
   padding: 10px;
+  overflow: hidden;
   border: 1px solid $tooltip-border;
   background-color: $tooltip-bg;
   color: $tooltip-text;
   font-size: $font-size-list;
   text-align: left;
   word-wrap: break-word;
-  overflow: hidden;
 }
 
 .ui-tooltip-tip {
@@ -29,9 +29,9 @@
 
 .ui-tooltip-tip {
   position: absolute;
+  z-index: 10;
   margin: 0 auto;
+  overflow: hidden;
   border: 0 none;
   background: transparent;
-  overflow: hidden;
-  z-index: 10;
 }

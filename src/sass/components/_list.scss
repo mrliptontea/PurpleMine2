@@ -67,12 +67,15 @@ table.list {
     }
 
     &.assigned_to,
+    &.attachments,
     &.author,
     &.activity,
     &.category,
     &.comments,
     &.description,
     &.fixed_version,
+    &.last_notes,
+    &.last_updated_by,
     &.name,
     &.priority,
     &.relations,
@@ -96,6 +99,10 @@ table.list {
 
     &.reorder {
       white-space: nowrap;
+    }
+
+    &.attachments a {
+      display: block;
     }
   }
 
@@ -199,8 +206,9 @@ tr.issue {
 }
 
 .issues {
-  .description {
-    padding: 0;
+  .description,
+  .last_notes {
+    padding: $table-cell-padding;
     text-align: left;
 
     @media screen and (min-width: $screen-sm-min) {
@@ -283,6 +291,20 @@ tr.entry {
   }
 }
 
+@if $table-list-color-odd-rows {
+  table.list:not(.odd-even) tbody tr:nth-child(odd),
+  .odd {
+    background-color: $table-bg-accent;
+  }
+}
+
+@if $table-list-color-even-rows {
+  table.list:not(.odd-even) tbody tr:nth-child(even),
+  .even {
+    background-color: $table-bg-accent;
+  }
+}
+
 
 //== Priorities
 //
@@ -328,6 +350,7 @@ tr.entry {
       text-decoration: none;
 
       &::after {
+        content: "";
         display: block;
         position: absolute;
         right: 5px;
@@ -337,7 +360,6 @@ tr.entry {
         transform: rotate(-4deg);
         transition: border-color .1s;
         border-top: 2px solid rgba($tracker-default-text, .95);
-        content: "";
       }
 
       &:hover::after {
@@ -351,8 +373,8 @@ tr.entry {
     padding: $tracker-list-padding;
 
     &::before {
-      color: mix($tracker-default-text, $tracker-default-bg, 50%);
       content: "#";
+      color: mix($tracker-default-text, $tracker-default-bg, 50%);
     }
   }
 
@@ -372,18 +394,6 @@ tr.entry {
       map-get($tracker-colors, background),
       map-get($tracker-colors, color)
     );
-  }
-}
-
-@if $table-list-color-odd-rows {
-  .odd {
-    background-color: $table-bg-accent;
-  }
-}
-
-@if $table-list-color-even-rows {
-  .even {
-    background-color: $table-bg-accent;
   }
 }
 
@@ -600,6 +610,18 @@ table.files {
   td.reorder {
     width: 15%;
     text-align: center;
+  }
+}
+
+table.list.enumerations {
+  table-layout: fixed;
+
+  + h3 {
+    margin-top: $line-height-computed * 2;
+  }
+
+  + p {
+    margin-bottom: $line-height-computed * 2;
   }
 }
 

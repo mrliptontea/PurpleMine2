@@ -32,9 +32,9 @@ button {
   &.disabled,
   &[disabled],
   fieldset[disabled] & {
-    pointer-events: none; // Future-proof disabling of clicks
-    box-shadow: none;
     opacity: .65;
+    box-shadow: none;
+    pointer-events: none; // Future-proof disabling of clicks
   }
 }
 
@@ -85,17 +85,15 @@ form[action*="repository/diff"] {
 
 //== Button links
 //
-
 p.buttons,
 .other-formats > span,
 #wiki_add_attachment > p {
   > a {
     display: inline-block;
-    padding: $input-padding-vertical $input-padding-horizontal;
+    padding: $btn-padding-vertical $btn-padding-horizontal-small;
     border: 1px solid $pagination-border;
-    border-radius: $input-border-radius;
+    border-radius: $border-radius-base;
     background-color: $pagination-bg;
-    text-shadow: 1px 1px 0 #fff;
 
     &:hover,
     &:focus {
@@ -110,15 +108,15 @@ p.buttons,
       box-shadow: inset 0 3px 4px -2px rgba(#000, .1);
     }
 
-    @if $use-font-awesome {
-      &.icon {
-        padding-left: 20px + $padding-small-vertical + $input-padding-vertical;
-      }
-    } @else {
-      &.icon,
+    &.icon {
+      padding-left: 20px + $btn-padding-horizontal-small;
+      background-position: $btn-padding-horizontal-small 50%;
+    }
+
+    @if $use-font-awesome == false {
       &.atom {
-        padding-left: 20px + $input-padding-vertical;
-        background-position: $padding-small-vertical 50%;
+        padding-left: 20px + $btn-padding-horizontal-small;
+        background-position: $btn-padding-horizontal-small 50%;
       }
     }
   }
@@ -183,8 +181,8 @@ a[data-expands],
   border-radius: $border-radius-base;
   background-repeat: no-repeat;
   background-position: 2px 2px;
-  cursor: pointer;
   vertical-align: top;
+  cursor: pointer;
   user-select: none;
   @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border); // scss-lint:disable DeclarationOrder
 }

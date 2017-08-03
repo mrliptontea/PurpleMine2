@@ -56,7 +56,7 @@
     }
 
     .ui-icon {
-      background-image: url("/stylesheets/jquery/images/ui-icons_ffffff_256x240.png");
+      background-image: url("../../../stylesheets/jquery/images/ui-icons_ffffff_256x240.png");
     }
   }
 }
@@ -70,9 +70,9 @@
 .ui-widget-header .ui-state-default {
   border: 1px solid $component-border;
   background: $component-bg;
+  box-shadow: none;
   color: $component-color;
   font-weight: normal;
-  box-shadow: none;
 }
 
 .ui-state-default a,
@@ -115,7 +115,7 @@
   font-weight: normal;
 
   .ui-icon {
-    background-image: url("/stylesheets/jquery/images/ui-icons_ffffff_256x240.png");
+    background-image: url("../../../stylesheets/jquery/images/ui-icons_ffffff_256x240.png");
   }
 }
 
@@ -149,8 +149,8 @@
 //
 
 .modal {
-  background: $body-bg;
   z-index: 50;
+  background: $body-bg;
 
   h3.title {
     display: none;
@@ -192,8 +192,8 @@
 
 img.ui-datepicker-trigger {
   margin-left: 4px;
-  cursor: pointer;
   vertical-align: middle;
+  cursor: pointer;
 }
 
 .ui-datepicker {

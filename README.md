@@ -2,13 +2,13 @@
 
 A free Redmine theme for modern browsers.
 
-![The MIT License](https://img.shields.io/badge/license-MIT-584492.svg?style=flat-square) [![Release](https://img.shields.io/github/release/mrliptontea/PurpleMine2.svg?style=flat-square)](https://github.com/mrliptontea/PurpleMine2/releases) [![Issues](https://img.shields.io/github/issues/mrliptontea/PurpleMine2.svg?style=flat-square)](https://github.com/mrliptontea/PurpleMine2/issues) [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+![The MIT License](https://img.shields.io/badge/license-MIT-584492.svg) [![Build Status](https://travis-ci.org/mrliptontea/PurpleMine2.svg?branch=master)](https://travis-ci.org/mrliptontea/PurpleMine2) [![Issues](https://img.shields.io/github/issues/mrliptontea/PurpleMine2.svg)](https://github.com/mrliptontea/PurpleMine2/issues) [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 ---
 
 ![Screenshot](https://github.com/mrliptontea/PurpleMine2/raw/master/screenshots/issues-list.png)
 
-Compatible with Redmine 2.5+ and browsers: IE10+/Edge, latest Firefox and Google Chrome (others were not tested).
+Compatible with Redmine 2.6+ and browsers: IE10+/Edge, latest Firefox and Google Chrome (others were not tested).
 
 It's written in [SCSS]. It uses [normalize.css] and benefits from some parts of [Bootstrap][bootstrap-sass] like mixins, structure, and stuff.
 
@@ -59,6 +59,16 @@ The path `src/sass/_custom-variables.scss` is added to `.gitignore` so it should
 If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remember to include your `_custom-variables.scss` in `src/sass/plugins/redmine_backlogs/_common.scss`.
 
 ## Changelog
+
+Latest (master):
+
+* Fixed #42: override some styles from [RM+](http://rmplus.pro) plugins
+* Merged #43: fixes for Redmine 3.3.2.devel
+* Support for responsive menu and further changes for Redmine 3.3.2.devel (fixes #26)
+* Improved styles for custom flash messages in wiki content (e.g. for [WikiNG](http://www.redmine.org/plugins/wiking) plugin)
+* Introduce project tiles on projects list page (enabled by default, can be switched off by setting `$use-project-tiles` to `false`)
+* Fixed #44: adjust width of the label column on the login form
+* Merged #49: German translations
 
 v1.8.0 (2016-11-20):
 
