@@ -32,7 +32,10 @@
     "standard": "^8.5.0"
   },
   "standard": {
-    "globals": [ "$", "localStorage" ],
+    "globals": [
+      "$",
+      "localStorage"
+    ],
     "ignore": [
       "/javascripts"
     ]
