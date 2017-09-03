@@ -572,7 +572,7 @@ label[for=closed] {
 }
 
 
-//== Custom logic (boolean) field displayed as radio buttons
+//== Custom fields
 //
 
 .check_box_group {
@@ -589,6 +589,7 @@ label[for=closed] {
     text-align: left;
   }
 
+  // Custom logic (boolean) field displayed as radio buttons
   &.bool_cf {
     label {
       @extend %clearfix;
@@ -602,6 +603,22 @@ label[for=closed] {
         top: 0;
         margin-left: -20px;
         float: left;
+      }
+    }
+  }
+
+  // Custom list field displayed as checkboxes
+  &.list_cf {
+    width: 90%;
+    max-height: $list-max-height;
+    padding-top: $input-padding-vertical + 1px;
+
+    label {
+      @include checkbox;
+      margin-top: 0;
+
+      input[type="checkbox"] {
+        top: -1px;
       }
     }
   }
