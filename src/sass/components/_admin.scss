@@ -23,7 +23,7 @@
   li {
     list-style-type: none;
 
-    > a {
+    > a:not(.icon-only) {
       padding-left: $sidebar-padding-horizontal + 5px + 20px;
       background-repeat: no-repeat;
       background-position: $sidebar-padding-horizontal center;
