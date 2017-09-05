@@ -152,12 +152,31 @@ p.buttons {
 .query-columns {
   select {
     width: auto !important; // scss-lint:disable ImportantRule
+    min-width: 130px;
+  }
+
+  @at-root span#{&} {
+    > span {
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+
+    label {
+      display: block;
+      margin-bottom: $line-height-computed / 2;
+    }
   }
 
   .buttons {
     vertical-align: middle;
 
+    br {
+      display: none;
+    }
+
     input[type="button"] {
+      display: block;
       width: 32px;
       margin-bottom: 4px;
       padding-right: 1px;
