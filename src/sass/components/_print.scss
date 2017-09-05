@@ -15,7 +15,16 @@
     display: none;
   }
 
+  .pagination {
+    .pages,
+    .per-page {
+      display: none;
+    }
+  }
+
   #main {
+    display: block;
+    overflow: visible !important; // scss-lint:disable ImportantRule
     background: #fff;
   }
 
@@ -32,10 +41,39 @@
     overflow-x: visible;
   }
 
+  a {
+    // scss-lint:disable ImportantRule
+    padding: 0 !important;
+    background-color: transparent !important;
+    color: #000 !important;
+
+    &::before,
+    &::after {
+      display: none !important;
+    }
+
+    &.issue.closed {
+      text-decoration: line-through;
+    }
+  }
+
   table.list {
+    tr {
+      background-color: transparent;
+    }
+
     th,
     td {
       border: 1px solid #aaa;
+      background-color: transparent;
+
+      &.buttons {
+        padding: 0;
+
+        a {
+          display: none;
+        }
+      }
     }
   }
 }

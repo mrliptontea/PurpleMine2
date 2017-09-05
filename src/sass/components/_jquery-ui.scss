@@ -167,10 +167,10 @@
     @include nice-shadow(5);
     padding: 3px;
     border: 0 none;
-  }
 
-  .ui-dialog-content {
-    padding: 1em;
+    .ui-dialog-content {
+      padding: 1em;
+    }
   }
 
   .ui-dialog-titlebar-close {

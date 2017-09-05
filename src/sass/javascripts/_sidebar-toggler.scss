@@ -1,115 +1,119 @@
 @if $enable-sidebar-toggler {
-    $toggler-position-v:        1px;
-    $toggler-position-h:        1px;
+  $toggler-position-v:          1px;
+  $toggler-position-h:          1px;
 
-    #main {
-        position: relative;
+  #main {
+    position: relative;
+  }
+
+  #sidebar {
+    @if $fixed-layout {
+      will-change: margin, opacity;
+      transition: margin .5s, opacity .5s;
+      opacity: 1;
+    } @else {
+      will-change: margin;
+      transition: margin .5s;
     }
 
-    #sidebar {
-        @if $fixed-layout {
-            will-change: margin, opacity;
-            transition: margin .5s, opacity .5s;
-            opacity: 1;
-        } @else {
-            will-change: margin;
-            transition: margin .5s;
-        }
-
-        &.sidebar-hiding {
-            @if $fixed-layout {
-                opacity: 0;
-            }
-            @if $sidebar-position == "left" {
-                margin-left: -$sidebar-width;
-            } @else {
-                margin-right: -$sidebar-width;
-            }
-        }
-
-        &.sidebar-hidden {
-            display: none;
-        }
+    &.sidebar-hiding {
+      @if $fixed-layout {
+        opacity: 0;
+      }
+      @if $sidebar-position == "left" {
+        margin-left: -$sidebar-width;
+      } @else {
+        margin-right: -$sidebar-width;
+      }
     }
 
-    .sidebar-toggler {
-        display: block;
-        position: absolute;
-        top: $toggler-position-v;
-        user-select: none;
+    &.sidebar-hidden {
+      display: none;
+    }
+  }
 
+  .sidebar-toggler {
+    display: block;
+    position: absolute;
+    top: $toggler-position-v;
+    user-select: none;
+
+    @media print {
+      display: none;
+    }
+
+    @if $use-font-awesome {
+      @extend %fa-icon;
+      color: $gray-light;
+      line-height: 1;
+
+      &::before {
+        margin-right: 0;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $gray;
+      }
+    } @else {
+      width: 15px;
+      height: 15px;
+      border-radius: $border-radius-base;
+      background-repeat: no-repeat;
+      background-position: center center;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $gray-lighter;
+      }
+    }
+
+    @if $sidebar-position == "left" {
+      left: $toggler-position-h;
+
+      @if $use-font-awesome {
+        &::before {
+          content: $fa-var-caret-square-o-left;
+        }
+      } @else {
+        @extend %image-arrow-left;
+      }
+    } @else {
+      right: $toggler-position-h;
+
+      @if $use-font-awesome {
+        &::before {
+          content: $fa-var-caret-square-o-right;
+        }
+      } @else {
+        @extend %image-arrow-right;
+      }
+    }
+
+    &.sidebar-hidden {
+      @if $sidebar-position == "left" {
         @if $use-font-awesome {
-            @extend %fa-icon;
-            color: $gray-light;
-            line-height: 1;
-
-            &::before {
-                margin-right: 0;
-            }
-
-            &:hover,
-            &:focus,
-            &:active {
-                color: $gray;
-            }
+          &::before {
+            content: $fa-var-caret-square-o-right;
+          }
         } @else {
-            width: 15px;
-            height: 15px;
-            border-radius: $border-radius-base;
-            background-repeat: no-repeat;
-            background-position: center center;
-
-            &:hover,
-            &:focus,
-            &:active {
-                background-color: $gray-lighter;
-            }
+          @extend %image-arrow-right;
         }
-
-        @if $sidebar-position == "left" {
-            left: $toggler-position-h;
-
-            @if $use-font-awesome {
-                &::before {
-                    content: $fa-var-caret-square-o-left;
-                }
-            } @else {
-                @extend %image-arrow-left;
-            }
+      } @else {
+        @if $use-font-awesome {
+          &::before {
+            content: $fa-var-caret-square-o-left;
+          }
         } @else {
-            right: $toggler-position-h;
-
-            @if $use-font-awesome {
-                &::before {
-                    content: $fa-var-caret-square-o-right;
-                }
-            } @else {
-                @extend %image-arrow-right;
-            }
+          @extend %image-arrow-left;
         }
-
-        &.sidebar-hidden {
-            @if $sidebar-position == "left" {
-                @if $use-font-awesome {
-                    &::before {
-                        content: $fa-var-caret-square-o-right;
-                    }
-                } @else {
-                    @extend %image-arrow-right;
-                }
-            } @else {
-                @if $use-font-awesome {
-                    &::before {
-                        content: $fa-var-caret-square-o-left;
-                    }
-                } @else {
-                    @extend %image-arrow-left;
-                }
-            }
-        }
+      }
     }
+  }
 } @else {
-    .sidebar-toggler {
-        display: none;
-    }
+  .sidebar-toggler {
+    display: none;
+  }
 }
