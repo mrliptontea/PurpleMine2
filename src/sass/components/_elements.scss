@@ -217,7 +217,7 @@ a.collapsible.collapsed,
         padding-left: $sidebar-padding-horizontal;
       }
 
-      > a {
+      > a:not(.icon-only) {
         display: inline;
         padding: 0;
         background: transparent;

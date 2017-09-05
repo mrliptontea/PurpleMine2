@@ -96,7 +96,7 @@
     padding: 0;
     list-style-type: none;
 
-    > a {
+    > a:not(.icon-only) {
       display: block;
       padding: $sidebar-padding-vertical $sidebar-padding-horizontal;
       border: 1px solid transparent;
