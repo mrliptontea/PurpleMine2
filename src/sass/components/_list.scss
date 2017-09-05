@@ -45,6 +45,12 @@ table.list {
     text-align: center;
     vertical-align: top;
 
+    @if $use-font-awesome {
+      &.icon {
+        padding-left: $table-cell-padding + 20px;
+      }
+    }
+
     &.checkbox {
       width: 15px;
       padding: $table-cell-padding 0 0;
