@@ -542,83 +542,47 @@ label[for=closed] {
 }
 
 
-#watchers_form {
-  overflow: hidden;
-
-  .search_for_watchers {
-    display: block;
-  }
-
-  #watchers_inputs {
-    display: block;
-    max-width: 64em;
-    margin-top: $input-padding-vertical + 1px;
-    margin-bottom: $line-height-computed / 2;
-    overflow: auto;
-    columns: 18em 3;
-  }
+#watchers_inputs {
+  display: block;
+  max-width: 64em;
+  max-height: $check-list-max-height;
+  margin-bottom: $line-height-computed / 2;
+  padding-top: $check-list-offset-top;
+  overflow: auto;
+  columns: 18em 3;
 
   label.floating {
-    @include checkbox;
-    display: block;
-    width: auto;
-    margin: 0;
-    float: none;
-
-    input[type="checkbox"] {
-      top: -1px;
-    }
+    @include check-list;
   }
 }
 
 
-//== Custom fields
+//== List of custom field values
 //
 
 .check_box_group {
   display: block;
+  width: 90%;
+  max-height: $check-list-max-height;
+  padding-top: $check-list-offset-top;
   overflow-y: auto;
 
   label {
-    display: block;
-    width: auto;
-    margin-bottom: 0;
-    margin-left: 0;
-    float: none;
-    font-weight: normal;
-    text-align: left;
+    @include check-list;
   }
 
-  // Custom logic (boolean) field displayed as radio buttons
+  // Boolean field displayed as inline radio buttons
   &.bool_cf {
+    overflow: initial;
+
     label {
-      @extend %clearfix;
       display: inline-block;
-      margin-right: 10px;
-      padding-left: 20px;
-      user-select: none;
+      margin-right: $padding-base-horizontal;
 
       input[type="checkbox"],
       input[type="radio"] {
-        top: 0;
         margin-left: -20px;
         float: left;
-      }
-    }
-  }
-
-  // Custom list field displayed as checkboxes
-  &.list_cf {
-    width: 90%;
-    max-height: $list-max-height;
-    padding-top: $input-padding-vertical + 1px;
-
-    label {
-      @include checkbox;
-      margin-top: 0;
-
-      input[type="checkbox"] {
-        top: -1px;
       }
     }
   }
