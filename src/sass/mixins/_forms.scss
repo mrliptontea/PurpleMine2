@@ -41,12 +41,40 @@
 }
 
 @mixin checkbox() {
+  @include check;
+}
+
+@mixin radio() {
+  @include check;
+}
+
+@mixin check() {
   @extend %clearfix;
   padding-left: 20px;
-  user-select: none;
+  text-align: left;
+  font-weight: $font-weight-normal;
 
-  input[type="checkbox"] {
+  input[type="checkbox"],
+  input[type="radio"] {
+    width: auto;
     margin-left: -20px;
     float: left;
+  }
+}
+
+@mixin check-list() {
+  @include check;
+  display: block;
+  width: auto;
+  margin: $btn-padding-vertical 0;
+  float: none;
+
+  @media screen and (min-width: $screen-sm-min) {
+    margin: 0;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    top: -1px;
   }
 }
