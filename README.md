@@ -70,6 +70,7 @@ Latest (master):
 * Fixed #44: adjust width of the label column on the login form
 * Merged #49: German translations
 * Fixed #50: printed content on second page onwards was missing in Firefox
+* Fixed #51: a plugin dropdown in top menu could be too narrow
 * Fixed #52: delete watcher icon in the sidebar was missing
 * Fixed #54: long checkbox lists will be scrollable
 * Fixed #62: anchors won't scroll the page
