@@ -74,6 +74,7 @@ Latest (master):
 * Fixed #52: delete watcher icon in the sidebar was missing
 * Fixed #54: long checkbox lists will be scrollable
 * Fixed #62: anchors won't scroll the page
+* Fixed #69: fixed "remember me" checkbox layout on login page
 
 v1.8.0 (2016-11-20):
 
