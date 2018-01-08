@@ -3,176 +3,173 @@
 // --------------------------------------------------
 
 .jstElements {
-    @extend %clearfix;
+  @extend %clearfix;
 
-    .box & {
-        padding: 0;
-    }
+  .box & {
+    padding: 0;
 
     button {
-        margin-bottom: 5px;
-        box-shadow: none;
-        vertical-align: top;
+      margin-right: 2px;
     }
 
-    .box & {
-        button {
-            margin-right: 2px;
-        }
-
-        .jstSpacer {
-            margin-right: 4px;
-        }
-
-        @media (min-width: $screen-md) {
-            .jstb_help {
-                margin-right: 0;
-                margin-left: -6px;
-                float: right;
-            }
-        }
-
-        @media (min-width: $screen-lg) {
-            button {
-                margin-right: 4px;
-            }
-
-            .jstSpacer {
-                margin-right: 6px;
-            }
-        }
+    .jstSpacer {
+      margin-right: 4px;
     }
+
+    @media (min-width: $screen-md) {
+      .jstb_help {
+        margin-right: 0;
+        margin-left: -6px;
+        float: right;
+      }
+    }
+
+    @media (min-width: $screen-lg) {
+      button {
+        margin-right: 4px;
+      }
+
+      .jstSpacer {
+        margin-right: 6px;
+      }
+    }
+  }
+
+  button {
+    margin-bottom: 5px;
+    box-shadow: none;
+    vertical-align: top;
+  }
 }
 
-@if $use-font-awesome
-{
-    .jstElements {
-        %jstb-icon {
-            padding: 0;
-            background: $body-bg;
-            background-image: none;
-            color: $btn-default-color;
-            @include fa-icon();
+@if $use-font-awesome {
+  .jstElements {
+    %jstb-icon {
+      @include fa-icon;
+      padding: 0;
+      background: $body-bg;
+      background-image: none;
+      color: $btn-default-color;
 
-            &:before {
-                text-align: center;
-            }
-        }
-
-        .jstb_strong {
-            @extend %jstb-icon;
-
-            &:before { content: $fa-var-bold; }
-        }
-
-        .jstb_em {
-            @extend %jstb-icon;
-
-            &:before { content: $fa-var-italic; }
-        }
-
-        .jstb_ins {
-            @extend %jstb-icon;
-
-            &:before { content: $fa-var-underline; }
-        }
-
-        .jstb_del {
-            @extend %jstb-icon;
-
-            &:before { content: $fa-var-strikethrough; }
-        }
-
-        .jstb_code {
-            @extend %jstb-icon;
-
-            &:before { content: $fa-var-code; }
-        }
-
-        .jstb_h1 {
-            @extend %jstb-icon;
-
-            &:before { content: $fa-var-header; }
-        }
-
-        .jstb_h2 {
-            @extend %jstb-icon;
-
-            &:before { font-size: .7857em; content: $fa-var-header; }
-        }
-
-        .jstb_h3 {
-            @extend %jstb-icon;
-
-            &:before { font-size: .6429em; content: $fa-var-header; }
-        }
-
-        .jstb_ul {
-            @extend %jstb-icon;
-
-            &:before { content: $fa-var-list-ul; }
-        }
-
-        .jstb_ol {
-            @extend %jstb-icon;
-
-            &:before { content: $fa-var-list-ol; }
-        }
-
-        .jstb_bq {
-            @extend %jstb-icon;
-
-            &:before { content: $fa-var-indent; }
-        }
-
-        .jstb_unbq {
-            @extend %jstb-icon;
-
-            &:before { content: $fa-var-outdent; }
-        }
-
-        .jstb_pre {
-            @extend %jstb-icon;
-
-            &:before { content: $fa-var-terminal; }
-        }
-
-        .jstb_link {
-            @extend %jstb-icon;
-
-            &:before { content: $fa-var-link; }
-        }
-
-        .jstb_img {
-            @extend %jstb-icon;
-
-            &:before { content: $fa-var-image; }
-        }
-
-        .jstb_cut {
-            @extend %jstb-icon;
-
-            &:before { content: $fa-var-scissors; }
-        }
-
-        .jstb_precode,
-        // For plugin https://github.com/mediatainment/redmine_codebutton
-        .jstb_codehighlight {
-            @extend %jstb-icon;
-            color: $brand-danger;
-
-            &:before { content: $fa-var-code; }
-        }
-
-        button.jstb_help {
-            @extend %jstb-icon;
-            color: $link-color;
-
-            &:hover {
-                color: $link-hover-color;
-            }
-
-            &:before { content: $fa-var-question-circle; }
-        }
+      &::before {
+        text-align: center;
+      }
     }
+
+    .jstb_strong {
+      @extend %jstb-icon;
+
+      &::before { content: $fa-var-bold; }
+    }
+
+    .jstb_em {
+      @extend %jstb-icon;
+
+      &::before { content: $fa-var-italic; }
+    }
+
+    .jstb_ins {
+      @extend %jstb-icon;
+
+      &::before { content: $fa-var-underline; }
+    }
+
+    .jstb_del {
+      @extend %jstb-icon;
+
+      &::before { content: $fa-var-strikethrough; }
+    }
+
+    .jstb_code {
+      @extend %jstb-icon;
+
+      &::before { content: $fa-var-code; }
+    }
+
+    .jstb_h1 {
+      @extend %jstb-icon;
+
+      &::before { content: $fa-var-header; }
+    }
+
+    .jstb_h2 {
+      @extend %jstb-icon;
+
+      &::before { content: $fa-var-header; font-size: .7857em; }
+    }
+
+    .jstb_h3 {
+      @extend %jstb-icon;
+
+      &::before { content: $fa-var-header; font-size: .6429em; }
+    }
+
+    .jstb_ul {
+      @extend %jstb-icon;
+
+      &::before { content: $fa-var-list-ul; }
+    }
+
+    .jstb_ol {
+      @extend %jstb-icon;
+
+      &::before { content: $fa-var-list-ol; }
+    }
+
+    .jstb_bq {
+      @extend %jstb-icon;
+
+      &::before { content: $fa-var-indent; }
+    }
+
+    .jstb_unbq {
+      @extend %jstb-icon;
+
+      &::before { content: $fa-var-outdent; }
+    }
+
+    .jstb_pre {
+      @extend %jstb-icon;
+
+      &::before { content: $fa-var-terminal; }
+    }
+
+    .jstb_link {
+      @extend %jstb-icon;
+
+      &::before { content: $fa-var-link; }
+    }
+
+    .jstb_img {
+      @extend %jstb-icon;
+
+      &::before { content: $fa-var-image; }
+    }
+
+    .jstb_cut {
+      @extend %jstb-icon;
+
+      &::before { content: $fa-var-scissors; }
+    }
+
+    .jstb_precode,
+    // For plugin https://github.com/mediatainment/redmine_codebutton
+    .jstb_codehighlight {
+      @extend %jstb-icon;
+      color: $brand-danger;
+
+      &::before { content: $fa-var-code; }
+    }
+
+    button.jstb_help {
+      @extend %jstb-icon;
+      color: $link-color;
+
+      &:hover {
+        color: $link-hover-color;
+      }
+
+      &::before { content: $fa-var-question-circle; }
+    }
+  }
 }

@@ -1,23 +1,19 @@
 // Some really nice looking shadows
 
 @mixin nice-shadow($depth: 1) {
-    $shadow: none;
-    @if ($depth == 1) {
-        // $shadow: 0 3px 1px -2px rgba(#000, .14), 0 2px 2px 0 rgba(#000, .098), 0 1px 5px 0 rgba(#000, .082);
-        $shadow: 0 1px 3px rgba(#000, .12), 0 1px 2px rgba(#000, .24);
-    } @elseif ($depth == 2) {
-        // $shadow: 0 2px 4px -1px rgba(#000, .14), 0 4px 5px 0 rgba(#000, .098), 0 1px 10px 0 rgba(#000, .082)
-        $shadow: 0 3px 6px rgba(#000, .16), 0 3px 6px rgba(#000, .23);
-    } @elseif ($depth == 3) {
-        // $shadow: 0 3px 5px -1px rgba(#000, .14), 0 6px 10px 0 rgba(#000, .098), 0 1px 18px 0 rgba(#000, .082)
-        $shadow: 0 10px 18px rgba(#000, .19), 0 6px 8px rgba(#000, .23);
-    } @elseif ($depth == 4) {
-        // $shadow: 0 5px 5px -3px rgba(#000, .14), 0 8px 10px 1px rgba(#000, .098), 0 3px 14px 2px rgba(#000, .082)
-        $shadow: 0 14px 28px rgba(#000, .25), 0 10px 10px rgba(#000, .22);
-    } @elseif ($depth == 5) {
-        // $shadow: 0 8px 10px -5px rgba(#000, .14), 0 16px 24px 2px rgba(#000, .098), 0 6px 30px 5px rgba(#000, .082)
-        $shadow: 0 19px 38px rgba(#000, .30), 0 15px 12px rgba(#000, .22);
-    }
+  $shadow: none;
 
-    box-shadow: $shadow;
+  @if ($depth == 1) {
+    $shadow: 0 1px 3px rgba(#000, .12), 0 1px 2px rgba(#000, .24);
+  } @elseif ($depth == 2) {
+    $shadow: 0 3px 6px rgba(#000, .16), 0 3px 6px rgba(#000, .23);
+  } @elseif ($depth == 3) {
+    $shadow: 0 10px 18px rgba(#000, .19), 0 6px 8px rgba(#000, .23);
+  } @elseif ($depth == 4) {
+    $shadow: 0 14px 28px rgba(#000, .25), 0 10px 10px rgba(#000, .22);
+  } @elseif ($depth == 5) {
+    $shadow: 0 19px 38px rgba(#000, .3), 0 15px 12px rgba(#000, .22);
+  }
+
+  box-shadow: $shadow;
 }

@@ -3,40 +3,77 @@
 // --------------------------------------------------
 
 @media print {
-    #top-menu,
-    #header,
-    #main-menu,
-    #sidebar,
-    #footer,
-    #wiki_add_attachment,
-    .hide-when-print,
-    .contextual,
-    .other-formats {
-        display: none;
+  #top-menu,
+  #header,
+  #main-menu,
+  #sidebar,
+  #footer,
+  #wiki_add_attachment,
+  .hide-when-print,
+  .contextual,
+  .other-formats {
+    display: none;
+  }
+
+  .pagination {
+    .pages,
+    .per-page {
+      display: none;
+    }
+  }
+
+  #main {
+    display: block;
+    overflow: visible !important; // scss-lint:disable ImportantRule
+    background: #fff;
+  }
+
+  #content {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: visible !important; // scss-lint:disable ImportantRule
+    border: 0;
+    background: #fff;
+  }
+
+  .autoscroll {
+    overflow-x: visible;
+  }
+
+  a {
+    // scss-lint:disable ImportantRule
+    padding: 0 !important;
+    background-color: transparent !important;
+    color: #000 !important;
+
+    &::before,
+    &::after {
+      display: none !important;
     }
 
-    #main {
-        background: #fff;
+    &.issue.closed {
+      text-decoration: line-through;
+    }
+  }
+
+  table.list {
+    tr {
+      background-color: transparent;
     }
 
-    #content {
-        // scss-lint:disable ImportantRule
-        width: 100%;
-        margin: 0;
+    th,
+    td {
+      border: 1px solid #aaa;
+      background-color: transparent;
+
+      &.buttons {
         padding: 0;
-        border: 0;
-        background: #fff;
-        overflow: visible !important;
-    }
 
-    .autoscroll {
-        overflow-x: visible;
-    }
-
-    table.list {
-        th,
-        td {
-            border: 1px solid #aaa;
+        a {
+          display: none;
         }
+      }
     }
+  }
 }

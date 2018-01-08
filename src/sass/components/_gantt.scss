@@ -3,75 +3,53 @@
 // --------------------------------------------------
 
 .gantt_hdr {
-    position: absolute;
-    top: 0;
-    height: 16px;
-    border: 1px solid $gray-lighter;
-    border-left-width: 0;
-    text-align: center;
-    overflow: hidden;
+  position: absolute;
+  top: 0;
+  height: 16px;
+  overflow: hidden;
+  border: 1px solid $gray-lighter;
+  border-left-width: 0;
+  text-align: center;
 
-    &.nwday {
-        background-color: $gray-lightest;
-    }
+  &.nwday {
+    background-color: $gray-lightest;
+  }
 }
 
 .gantt_subjects {
-    font-size: $font-size-small;
+  font-size: $font-size-small;
 
-    div {
-        height: 16px;
-        line-height: 16px;
-        @include text-overflow;
-    }
+  div {
+    @include text-overflow;
+    height: 16px;
+    line-height: 16px;
+  }
 }
 
 .task {
-    position: absolute;
-    height: 8px;
-    margin: 2px 0 0;
-    padding: 0;
-    font-size: 11px;
-    line-height: 16px;
-    white-space: nowrap;
+  position: absolute;
+  height: 8px;
+  margin: 2px 0 0;
+  padding: 0;
+  font-size: 11px;
+  line-height: 16px;
+  white-space: nowrap;
 
-    &.label {
-        width: 100%;
-        margin-top: 0;
+  &.label {
+    width: 100%;
+    margin-top: 0;
 
-        &.project,
-        &.version {
-            font-weight: $font-weight-bold;
-        }
+    &.project,
+    &.version {
+      font-weight: $font-weight-bold;
     }
-}
+  }
 
-.task_late {
-    border: 1px solid darken($progress-bar-danger-bg, 10%);
-    background-color: $progress-bar-danger-bg;
-}
-
-.task_done {
-    border: 1px solid darken($progress-bar-success-bg, 10%);
-    background-color: $progress-bar-success-bg;
-}
-
-.task_todo {
-    border: 1px solid darken($progress-bg, 20%);
-    background-color: $progress-bg;
-
-    &.parent {
-        border: 1px solid darken($progress-bg, 30%);
-        background-color: darken($progress-bg, 10%);
-    }
-}
-
-.task.parent {
+  &.parent {
     height: 3px;
-}
 
-.task.parent.marker {
-    &.starting {
+    &.marker {
+      &.starting {
         position: absolute;
         top: -1px;
         left: 0;
@@ -79,9 +57,9 @@
         height: 16px;
         margin-left: -4px;
         background: url("../../../images/task_parent_end.png") no-repeat 0 0;
-    }
+      }
 
-    &.ending {
+      &.ending {
         position: absolute;
         top: -1px;
         right: 0;
@@ -89,82 +67,102 @@
         height: 16px;
         margin-left: -4px;
         background: url("../../../images/task_parent_end.png") no-repeat 0 0;
+      }
     }
+  }
+}
+
+.task_late {
+  border: 1px solid darken($progress-bar-danger-bg, 10%);
+  background-color: $progress-bar-danger-bg;
+}
+
+.task_done {
+  border: 1px solid darken($progress-bar-success-bg, 10%);
+  background-color: $progress-bar-success-bg;
+}
+
+.task_todo {
+  border: 1px solid darken($progress-bg, 20%);
+  background-color: $progress-bg;
+
+  &.parent {
+    border: 1px solid darken($progress-bg, 30%);
+    background-color: darken($progress-bg, 10%);
+  }
 }
 
 .project,
 .version {
-    &.task_late,
-    &.task_done,
-    &.task_todo {
-        height: 2px;
-        margin-top: 3px;
-    }
+  &.task_late,
+  &.task_done,
+  &.task_todo {
+    height: 2px;
+    margin-top: 3px;
+  }
 
-    &.task_todo {
-        border: 1px solid darken($progress-bar-info-bg, 10%);
-        background-color: $progress-bar-info-bg;
-    }
+  &.task_todo {
+    border: 1px solid darken($progress-bar-info-bg, 10%);
+    background-color: $progress-bar-info-bg;
+  }
 
-    &.marker {
-        margin-top: 1px;
-        margin-left: -4px;
-        border: 0 none;
-        background-image: url("../../../images/version_marker.png");
-        background-repeat: no-repeat;
-    }
+  &.marker {
+    margin-top: 1px;
+    margin-left: -4px;
+    border: 0 none;
+    background-image: url("../../../images/version_marker.png");
+    background-repeat: no-repeat;
+  }
 }
 
 .version-behind-schedule,
 .issue-behind-schedule {
-    color: $brand-warning;
+  color: $brand-warning;
 }
 
 .version-overdue,
 .issue-overdue,
 .project-overdue {
-    color: $brand-danger;
+  color: $brand-danger;
 }
 
-/**
- * Tooltips
- */
+
+//== Tooltips
+//
 
 .tooltip {
-    position: relative;
-    z-index: 24;
+  position: relative;
+  z-index: 24;
 
-    &:hover {
-        z-index: 25;
-    }
+  &:hover {
+    z-index: 25;
 
     .tip {
-        display: none;
-        position: absolute;
-        top: 9px;
-        left: 24px;
-        width: 270px;
-        padding: $padding-base-vertical;
-        border: $tooltip-border-width solid $tooltip-border;
-        background-color: $tooltip-bg;
-        color: $tooltip-text;
-        font-size: $font-size-small;
-        text-align: left;
-        @include nice-shadow(3);
+      display: block;
     }
+  }
 
-    @if $sidebar-position == "left" {
-        tr > td:last-child & {
-            .tip {
-                right: 2px;
-                left: auto;
-            }
-        }
-    }
+  .tip {
+    @include nice-shadow(3);
+    display: none;
+    position: absolute;
+    top: 9px;
+    left: 24px;
+    width: 270px;
+    padding: $padding-base-vertical;
+    border: $tooltip-border-width solid $tooltip-border;
+    background-color: $tooltip-bg;
+    color: $tooltip-text;
+    font-size: $font-size-small;
+    text-align: left;
+  }
 
-    &:hover {
-        .tip {
-            display: block;
-        }
+  @if $sidebar-position == "left" {
+    tr > td:last-child & {
+      .tip {
+        right: 2px;
+        left: auto;
+      }
     }
+  }
 }

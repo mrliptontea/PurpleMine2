@@ -3,86 +3,83 @@
 // --------------------------------------------------
 
 
-/**
- * Component containers
- */
+//== Component containers
+//
 
 .ui-widget {
-    &,
-    input,
-    select,
-    textarea,
-    button {
-        font-family: inherit;
-        font-size: inherit;
-    }
+  &,
+  input,
+  select,
+  textarea,
+  button {
+    font-family: inherit;
+    font-size: inherit;
+  }
 }
 
 
-/**
- * Widgets
- */
+//== Widgets
+//
 
 .ui-widget-content {
-    border: 1px solid $panel-border;
-    background: $body-bg;
-    color: $text-color;
+  border: 1px solid $panel-border;
+  background: $body-bg;
+  color: $text-color;
 
-    a {
-        color: $text-color;
-    }
+  a {
+    color: $text-color;
+  }
 }
 
 .ui-widget-header {
-    border: 0 none;
-    background: $header-bg;
+  border: 0 none;
+  background: $header-bg;
+  color: $header-text;
+  font-weight: $font-weight-bold;
+
+  a {
     color: $header-text;
-    font-weight: $font-weight-bold;
+  }
 
-    a {
-        color: $header-text;
+  a,
+  button {
+    &.ui-state-default {
+      border-color: $header-bg;
+      background: $header-bg;
+      color: $header-text;
     }
 
-    a,
-    button {
-        &.ui-state-default {
-            border-color: $header-bg;
-            background: $header-bg;
-            color: $header-text;
-        }
-
-        &.ui-state-hover,
-        &.ui-state-focus {
-            border-color: darken($header-bg, 12%);
-            background: darken($header-bg, 10%);
-        }
-
-        .ui-icon {
-            background-image: url("/stylesheets/jquery/images/ui-icons_ffffff_256x240.png");
-        }
+    &.ui-state-hover,
+    &.ui-state-focus {
+      border-color: darken($header-bg, 12%);
+      background: darken($header-bg, 10%);
     }
+
+    .ui-icon {
+      background-image: url("../../../stylesheets/jquery/images/ui-icons_ffffff_256x240.png");
+    }
+  }
 }
 
 
-/**
- * Interaction states
- */
+//== Interaction states
+//
 
 .ui-state-default,
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default {
-    border: 1px solid $component-border;
-    background: $component-bg;
-    color: $component-color;
-    font-weight: normal;
-    box-shadow: none;
+  border: 1px solid $component-border;
+  background: $component-bg;
+  box-shadow: none;
+  color: $component-color;
+  font-weight: normal;
 }
 
 .ui-state-default a,
 .ui-state-default a:link,
 .ui-state-default a:visited {
-    color: $component-color;
-    text-decoration: none;
+  color: $component-color;
+  text-decoration: none;
 }
 
 .ui-state-hover,
@@ -91,10 +88,10 @@
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
-    border: 1px solid $component-active-border;
-    background: $component-active-bg;
-    color: $component-active-color;
-    font-weight: normal;
+  border: 1px solid $component-active-border;
+  background: $component-active-bg;
+  color: $component-active-color;
+  font-weight: normal;
 }
 
 .ui-state-hover a,
@@ -105,202 +102,199 @@
 .ui-state-focus a:hover,
 .ui-state-focus a:link,
 .ui-state-focus a:visited {
-    color: $component-active-color;
-    text-decoration: none;
+  color: $component-active-color;
+  text-decoration: none;
 }
 
 .ui-state-active,
 .ui-widget-content .ui-state-active,
 .ui-widget-header .ui-state-active {
-    border: 1px solid $component-active-border;
-    background: $component-active-bg;
-    color: $component-active-color;
-    font-weight: normal;
+  border: 1px solid $component-active-border;
+  background: $component-active-bg;
+  color: $component-active-color;
+  font-weight: normal;
 
-    .ui-icon {
-        background-image: url("/stylesheets/jquery/images/ui-icons_ffffff_256x240.png");
-    }
+  .ui-icon {
+    background-image: url("../../../stylesheets/jquery/images/ui-icons_ffffff_256x240.png");
+  }
 }
 
 .ui-state-active a,
 .ui-state-active a:link,
 .ui-state-active a:visited {
-    color: $component-active-color;
-    text-decoration: none;
+  color: $component-active-color;
+  text-decoration: none;
 }
 
 .ui-sortable-helper {
-    @include nice-shadow(4);
+  @include nice-shadow(4);
 }
 
 
-/**
- * Menu (e.g. autocomplete)
- */
+//== Menu (e.g. autocomplete)
+//
 
 .ui-menu {
-    padding: 3px;
-    border-radius: $panel-border-radius;
-    @include nice-shadow(2);
+  @include nice-shadow(2);
+  padding: 3px;
+  border-radius: $panel-border-radius;
 }
 
 .ui-menu-item {
-    border-radius: $panel-border-radius;
+  border-radius: $panel-border-radius;
 }
 
 
-/**
- * Dialogs
- */
+//== Dialogs
+//
 
 .modal {
-    background: $body-bg;
-    z-index: 50;
+  z-index: 50;
+  background: $body-bg;
 
-    h3.title {
-        display: none;
-    }
+  h3.title {
+    display: none;
+  }
 
-    p.buttons {
-        margin-bottom: 0;
-        text-align: right;
-    }
+  p.buttons {
+    margin-bottom: 0;
+    text-align: right;
+  }
 }
 
 .ui-dialog {
-    &.ui-widget-content {
-        padding: 3px;
-        border: 0 none;
-        @include nice-shadow(5);
-    }
+  &.ui-widget-content {
+    @include nice-shadow(5);
+    padding: 3px;
+    border: 0 none;
 
     .ui-dialog-content {
-        padding: 1em;
+      padding: 1em;
     }
+  }
 
-    .ui-dialog-titlebar-close {
-        right: .5em;
-    }
+  .ui-dialog-titlebar-close {
+    right: .5em;
+  }
 
-    input[type="button"] {
-        @include button-variant($btn-link-color, $btn-link-bg, $btn-link-border);
-    }
+  input[type="button"] {
+    @include button-variant($btn-link-color, $btn-link-bg, $btn-link-border);
+  }
 }
 
 .ui-widget-overlay {
-    background: #000;
+  background: #000;
 }
 
 
-/**
- * Datepicker
- */
+//== Datepicker
+//
 
 img.ui-datepicker-trigger {
-    margin-left: 4px;
-    cursor: pointer;
-    vertical-align: middle;
+  margin-left: 4px;
+  vertical-align: middle;
+  cursor: pointer;
 }
 
 .ui-datepicker {
-    padding: .3em .6em .6em;
+  @include nice-shadow(3);
+  padding: .3em .6em .6em;
+  border: 0 none;
+
+  .ui-datepicker-header {
+    margin: 0 -.3em;
+    padding: .3em;
+  }
+
+  .ui-datepicker-prev {
+    left: .3em;
+  }
+
+  .ui-datepicker-next {
+    right: .3em;
+  }
+
+  .ui-datepicker-prev,
+  .ui-datepicker-next {
+    top: .3em;
     border: 0 none;
-    @include nice-shadow(3);
+    background: transparent;
+  }
 
-    .ui-datepicker-header {
-        margin: 0 -.3em;
-        padding: .3em;
+  .ui-datepicker-title {
+    margin: 0 (1.8em + .3em);
+  }
+
+  select.ui-datepicker-month,
+  select.ui-datepicker-year {
+    width: 49%;
+    height: 1.8em;
+    margin: 0;
+  }
+
+  select.ui-datepicker-year {
+    margin-left: 1%;
+  }
+
+  .ui-datepicker-calendar {
+    margin: 0;
+    table-layout: fixed;
+
+    .ui-state-default {
+      border-color: $body-bg;
+      background: $body-bg;
     }
 
-    .ui-datepicker-prev {
-        left: .3em;
+    .ui-state-focus,
+    .ui-state-hover {
+      border-color: $component-active-bg;
+      background: $component-active-bg;
+      color: $component-active-color;
     }
 
-    .ui-datepicker-next {
-        right: .3em;
+    .ui-state-active {
+      border-color: $highlight-border;
+      background: $highlight-bg;
+      color: $highlight-text;
     }
 
-    .ui-datepicker-prev,
-    .ui-datepicker-next {
-        top: .3em;
-        border: 0 none;
-        background: transparent;
+    .ui-datepicker-today {
+      .ui-state-highlight {
+        border-color: $component-active-border;
+      }
     }
 
-    .ui-datepicker-title {
-        margin: 0 (1.8em + .3em);
+    .ui-datepicker-current-day {
+      .ui-state-active {
+        border-color: $highlight-border;
+      }
     }
 
-    select.ui-datepicker-month,
-    select.ui-datepicker-year {
-        width: 49%;
-        height: 1.8em;
-        margin: 0;
+    td {
+      padding: 0 1px 1px 0;
+      text-align: right;
+
+      a {
+        padding-right: .4em;
+        padding-left: 0;
+        border-radius: $border-radius-base;
+      }
+
+      &.ui-datepicker-week-col {
+        padding-right: $table-condensed-cell-padding;
+        color: $gray-light;
+      }
     }
+  }
 
-    select.ui-datepicker-year {
-        margin-left: 1%;
+  .ui-datepicker-buttonpane {
+    @include clearfix;
+    margin: .6em 0 0;
+    padding: .6em 0 0;
+
+    button {
+      margin: 0;
+      padding: $btn-padding-vertical $btn-padding-horizontal;
     }
-
-    .ui-datepicker-calendar {
-        margin: 0;
-        table-layout: fixed;
-
-        .ui-state-default {
-            border-color: $body-bg;
-            background: $body-bg;
-        }
-
-        .ui-state-focus,
-        .ui-state-hover {
-            border-color: $component-active-bg;
-            background: $component-active-bg;
-            color: $component-active-color;
-        }
-
-        .ui-state-active {
-            border-color: $highlight-border;
-            background: $highlight-bg;
-            color: $highlight-text;
-        }
-
-        .ui-datepicker-today {
-            .ui-state-highlight {
-                border-color: $component-active-border;
-            }
-        }
-
-        .ui-datepicker-current-day {
-            .ui-state-active {
-                border-color: $highlight-border;
-            }
-        }
-
-        td {
-            padding: 0 1px 1px 0;
-            text-align: right;
-
-            a {
-                padding-right: .4em;
-                padding-left: 0;
-                border-radius: $border-radius-base;
-            }
-
-            &.ui-datepicker-week-col {
-                padding-right: $table-condensed-cell-padding;
-                color: $gray-light;
-            }
-        }
-    }
-
-    .ui-datepicker-buttonpane {
-        margin: .6em 0 0;
-        padding: .6em 0 0;
-        @include clearfix;
-
-        button {
-            margin: 0;
-            padding: $btn-padding-vertical $btn-padding-horizontal;
-        }
-    }
+  }
 }

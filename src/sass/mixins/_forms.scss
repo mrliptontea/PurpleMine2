@@ -1,43 +1,80 @@
 // Form control focus state
 //
 @mixin form-control-focus($color: $input-border-focus) {
-    &:focus {
-        border-color: $color;
-        outline: 0;
-        box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075), 0 0 5px rgba($color, .5);
-    }
+  &:focus {
+    border-color: rgba($input-border-focus, $input-border-focus-alpha);
+    outline: 0;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075), 0 0 0 2px rgba($input-border-focus, $input-shadow-focus-alpha);
+  }
+}
+
+// Placeholder text
+//
+@mixin placeholder($color: $input-color-placeholder) {
+  &::placeholder {
+    opacity: 1; // See https://github.com/twbs/bootstrap/pull/11526
+    color: $color;
+  }
 }
 
 
 // Form control sizing
 //
 @mixin input-size($parent, $input-height, $padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
-    #{$parent} {
-        height: $input-height;
-        padding: $padding-vertical $padding-horizontal;
-        border-radius: $border-radius;
-        font-size: $font-size;
-        line-height: $line-height;
-    }
+  #{$parent} {
+    height: $input-height;
+    padding: $padding-vertical $padding-horizontal;
+    border-radius: $border-radius;
+    font-size: $font-size;
+    line-height: $line-height;
+  }
 
-    select#{$parent} {
-        height: $input-height;
-        line-height: $input-height;
-    }
+  select#{$parent} {
+    height: $input-height;
+    line-height: $input-height;
+  }
 
-    textarea#{$parent},
-    select[multiple]#{$parent} {
-        height: auto;
-    }
+  textarea#{$parent},
+  select[multiple]#{$parent} {
+    height: auto;
+  }
 }
 
 @mixin checkbox() {
-    padding-left: 20px;
-    @include user-select(none);
-    @extend %clearfix;
+  @include check;
+}
 
-    input[type="checkbox"] {
-        margin-left: -20px;
-        float: left;
-    }
+@mixin radio() {
+  @include check;
+}
+
+@mixin check() {
+  @extend %clearfix;
+  padding-left: 20px;
+  text-align: left;
+  font-weight: $font-weight-normal;
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    width: auto;
+    margin-left: -20px;
+    float: left;
+  }
+}
+
+@mixin check-list() {
+  @include check;
+  display: block;
+  width: auto;
+  margin: $btn-padding-vertical 0;
+  float: none;
+
+  @media screen and (min-width: $screen-sm-min) {
+    margin: 0;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    top: -1px;
+  }
 }

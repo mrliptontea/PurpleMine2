@@ -3,23 +3,33 @@
 // --------------------------------------------------
 
 form {
-    td {
-        padding: $table-condensed-cell-padding;
-    }
+  td {
+    padding: $table-condensed-cell-padding;
+  }
 
-    .contextual > & {
-        display: inline;
-    }
+  .contextual > & {
+    display: inline-block;
+  }
 }
 
 button,
 input,
 select,
 textarea {
-    font-family: inherit;
-    font-size: $font-size-base;
-    line-height: $line-height-base;
-    @include box-sizing(border-box);
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
+
+%form-field {
+  height: $input-height-base;
+  padding: $input-padding-vertical $input-padding-horizontal;
+  border: 1px solid $input-border;
+  border-radius: $input-border-radius;
+  background-color: $input-bg;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075);
+  color: $input-color;
 }
 
 select,
@@ -33,326 +43,334 @@ input[type="week"],
 input[type="number"],
 input[type="url"],
 input[type="tel"],
-input[type="color"]
+input[type="color"],
 input[type="search"],
 input[type="email"],
 input[type="text"],
 input[type="password"] {
-    height: $input-height-base;
-    padding: $input-padding-vertical $input-padding-horizontal;
-    border: 1px solid $input-border;
-    border-radius: $input-border-radius;
-    background-color: $input-bg;
-    color: $input-color;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075);
-    @include transition(border-color ease-in-out .1s, box-shadow ease-in-out .1s);
-    @include form-control-focus();
-    @include placeholder();
+  @extend %form-field;
+  @include form-control-focus;
+  @include placeholder;
+  transition: border-color ease-in-out .1s, box-shadow ease-in-out .1s;
 
-    &[disabled],
-    &[readonly],
-    fieldset[disabled] & {
-        border-color: $input-border;
-        background-color: $input-bg-disabled;
-        box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075);
-        opacity: 1;
-    }
+  &[disabled],
+  &[readonly],
+  fieldset[disabled] & {
+    border-color: $input-border;
+    opacity: 1;
+    background-color: $input-bg-disabled;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075);
+  }
 }
 
 textarea {
+  height: auto;
+  resize: vertical;
+
+  &.text_cf {
+    width: 100%;
     resize: vertical;
-    height: auto;
+  }
 }
 
 input[type="search"] {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
 input[type="radio"],
 input[type="checkbox"] {
-    margin: 4px 5px 0 0;
-    margin-top: 1px \9; // IE8-9
-    line-height: normal;
+  margin: 4px 5px 0 0;
+  margin-top: 1px \9; // IE8-9
+  line-height: normal;
 }
 
 input[type="file"] {
-    display: block;
+  display: block;
 }
 
 input[type="range"] {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 }
 
-input.autocomplete {
-    padding-right: 30px;
+input {
+  &.autocomplete {
     @extend %image-aci;
+    padding-right: 30px;
     background-repeat: no-repeat;
     background-position: right center;
 
     &.ajax-loading {
-        background-image: url("../images/preloader.gif");
+      background-image: url("../images/preloader.gif");
     }
+  }
+
+  &.string_cf,
+  &.link_cf {
+    width: 100%;
+  }
 }
 
 select {
-    &[multiple],
-    &[size] {
-        height: auto;
-    }
+  &[multiple],
+  &[size] {
+    height: auto;
+  }
 
-    &[size="1"] {
-        height: $input-height-base;
-    }
+  &[size="1"] {
+    height: $input-height-base;
+  }
 
-    option[disabled] {
-        color: $gray-lighter;
-    }
+  option[disabled] {
+    color: $gray-lighter;
+  }
+
+  &.expandable {
+    vertical-align: top;
+  }
+
+  &.bool_cf {
+    width: auto !important; // scss-lint:disable ImportantRule
+  }
 }
 
 
-/**
- * Browser hacks: unfortunately every browser has different capabilities when it
- * comes to styling <select> and <option> tags.
- */
+//== Browser hacks: unfortunately every browser has different capabilities when
+//   it comes to styling <select> and <option> tags.
+//
 
 // Mozilla Firefox
+
 @-moz-document url-prefix() {
-    select {
-        &[multiple] {
-            padding: 0;
-        }
-
-        option,
-        optgroup:before {
-            padding: $input-padding-vertical $input-padding-horizontal;
-            border-bottom: 1px dotted $gray-lighter;
-        }
-
-        optgroup > option {
-            padding-right: $input-padding-horizontal * 2;
-            padding-left: $input-padding-horizontal * 2;
-        }
+  select {
+    &[multiple] {
+      padding: 0;
     }
+
+    option,
+    optgroup::before {
+      padding: $input-padding-vertical $input-padding-horizontal;
+      border-bottom: 1px dotted $gray-lighter;
+    }
+
+    optgroup > option {
+      padding-right: $input-padding-horizontal * 2;
+      padding-left: $input-padding-horizontal * 2;
+    }
+  }
 }
 
 // Google Chrome and Safari
-@supports (-webkit-appearance: none) {
-    select[multiple] {
-        padding: 0;
-    }
 
-    // For some reason nested selectors will not work
-    select[multiple] option {
-        padding: $input-padding-vertical $input-padding-horizontal;
-        border-bottom: 1px dotted $gray-lighter;
-    }
+@supports (-webkit-appearance: none) {
+  select[multiple] {
+    padding: 0;
+  }
+
+  // For some reason nested selectors will not work
+  select[multiple] option {
+    padding: $input-padding-vertical $input-padding-horizontal;
+    border-bottom: 1px dotted $gray-lighter;
+  }
 }
 
 select:-moz-focusring {
-    color: transparent;
-    text-shadow: 0 0 0 #000;
-}
-
-select.expandable {
-    vertical-align: top;
+  color: transparent;
+  text-shadow: 0 0 0 #000;
 }
 
 fieldset {
-    min-width: 0;
-    margin: 0;
-    padding: ($line-height-computed / 2) 0;
-    border: 0 none;
-    border-top: 1px solid $legend-border-color;
+  min-width: 0;
+  margin: 0;
+  padding: ($line-height-computed / 2) 0;
+  border: 0 none;
+  border-top: 1px solid $legend-border-color;
+
+  > p > label:first-child {
+    margin-right: $label-space;
+  }
 }
 
 legend {
-    padding-right: 5px;
-    color: $legend-color;
+  padding-right: 5px;
+  color: $legend-color;
 }
 
 
-/**
- * Required fields' asterisk
- */
+//== Required fields' asterisk
+//
 
 span.required {
-    position: relative;
-    top: 3px;
-    margin-left: -.2em;
-    color: #d00;
-    font-size: 1.5em;
-    font-weight: normal;
-    line-height: 0;
+  position: relative;
+  top: 3px;
+  margin-left: -.2em;
+  color: #d00;
+  font-size: 1.5em;
+  font-weight: normal;
+  line-height: 0;
 }
 
 
-/**
- * Field's hint
- */
+//== Field's hint
+//
 
 em.info {
-    display: block;
-    padding: 2px 0;
-    color: $gray;
-    font-size: $font-size-small;
-    font-style: normal;
+  display: block;
+  padding: 2px 0;
+  color: $gray;
+  font-size: $font-size-small;
+  font-style: normal;
 }
 
 
-/**
- * Wiki editor
- */
+//== Wiki editor
+//
+
 .wiki-edit {
-    color: $wiki-text;
-    font-family: $font-family-monospace;
-    line-height: $wiki-line-height;
+  color: $wiki-text;
+  font-family: $font-family-monospace;
+  line-height: $wiki-line-height;
 }
 
 
-/**
- * Tabular forms
- */
+//== Tabular forms
+//
 
 .tabular {
-    &.settings {
-        p {
-            padding-left: $label-wide-width + $label-space;
-        }
-
-        label {
-            width: $label-wide-width;
-            margin-left: -($label-wide-width + $label-space);
-        }
-    }
-
+  &.settings {
     p {
-        margin: 0 0 ($line-height-computed / 2);
-        padding-left: $label-width + $label-space;
-        clear: left;
-        @extend %clearfix;
-
-        .jstEditor {
-            margin-bottom: 0;
-        }
-    }
-
-    input,
-    select {
-        max-width: 100%;
-    }
-
-    textarea {
-        display: block;
-        width: 100%;
-        resize: vertical;
-    }
-
-    input[type="radio"],
-    input[type="checkbox"] {
-        position: relative;
-        top: 3px;
-        vertical-align: baseline;
-    }
-
-    span[title] {
-        border-bottom: 1px dotted #aaa;
+      padding-left: $label-wide-width + $label-space;
     }
 
     label {
-        width: $label-width;
-        margin-top: $input-padding-vertical + 1px;
-        margin-bottom: $input-padding-vertical + 1px;
-        margin-left: -($label-width + $label-space);
-        float: left;
-        text-align: right;
-        @include user-select(none);
-
-        &.floating {
-            width: 270px;
-            margin-left: 0;
-            text-align: left;
-        }
-
-        &.block,
-        &.inline {
-            display: block;
-            width: auto;
-            margin-left: 0;
-            padding-left: 16px;
-            float: none;
-            text-align: left;
-            cursor: pointer;
-        }
-
-        &.inline {
-            display: inline-block;
-        }
-
-        &.role-visibility {
-            padding-left: 34px;
-        }
-
-        > input[type="radio"],
-        > input[type="checkbox"] {
-            top: 1px;
-        }
+      width: $label-wide-width;
+      margin-left: -($label-wide-width + $label-space);
     }
+  }
+
+  p {
+    @extend %clearfix;
+    margin: 0 0 ($line-height-computed / 2);
+    padding-left: $label-width + $label-space;
+    clear: left;
+
+    .jstEditor {
+      margin-bottom: 0;
+    }
+  }
+
+  input,
+  select {
+    max-width: 100%;
+  }
+
+  textarea {
+    display: block;
+    width: 100%;
+    resize: vertical;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    position: relative;
+    top: 3px;
+    vertical-align: baseline;
+  }
+
+  span[title] {
+    border-bottom: 1px dotted #aaa;
+  }
+
+  label {
+    width: $label-width;
+    margin-top: $input-padding-vertical + 1px;
+    margin-bottom: $input-padding-vertical + 1px;
+    margin-left: -($label-width + $label-space);
+    float: left;
+    text-align: right;
+    user-select: none;
+
+    &.floating {
+      width: 270px;
+      margin-left: 0;
+      text-align: left;
+    }
+
+    &.block,
+    &.inline {
+      display: block;
+      width: auto;
+      margin-left: 0;
+      padding-left: 16px;
+      float: none;
+      clear: left;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    &.inline {
+      display: inline-block;
+    }
+
+    &.role-visibility {
+      padding-left: 34px;
+    }
+
+    > input[type="radio"],
+    > input[type="checkbox"] {
+      top: 1px;
+    }
+  }
 }
 
 label.inline {
-    display: inline-block;
-    margin-right: $padding-base-horizontal;
-    padding-left: 16px;
-    float: none;
-    text-align: left;
-    cursor: pointer;
+  display: inline-block;
+  margin-right: $padding-base-horizontal;
+  padding-left: 16px;
+  float: none;
+  text-align: left;
+  cursor: pointer;
 
-    &:last-child {
-        margin-right: 0;
-    }
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 label.inline,
 label.block {
-    > input {
-        margin-top: .2em;
-        margin-left: -16px;
-        float: left;
-    }
-}
-
-fieldset > p > label:first-child {
-    margin-right: $padding-base-horizontal;
+  > input {
+    margin-top: .2em;
+    margin-left: -16px;
+    float: left;
+  }
 }
 
 
-/**
- * Hack: align description edit icon with label
- */
+//== Hack: align description edit icon with label
+//
+
 label[for=issue_description] + a {
-    display: inline-block;
-    margin-top: $input-padding-vertical + 1px;
+  display: inline-block;
+  margin-top: $input-padding-vertical + 1px;
 
-    img {
-        vertical-align: middle;
-    }
+  img {
+    vertical-align: middle;
+  }
 }
 
 
-/**
- * Hack: better looking filter checkbox in sidebar in projects list
- */
+//== Hack: better looking filter checkbox in sidebar in projects list
+//
+
 label[for=closed] {
-    display: block;
-    margin-bottom: $line-height-computed / 2;
-    @include checkbox;
+  @include checkbox;
+  display: block;
+  margin-bottom: $line-height-computed / 2;
 }
 
 
-/**
- * Input sizes
- */
+//== Input sizes
+//
 
 .wiki-edit,
 #principal_search,
@@ -368,306 +386,271 @@ label[for=closed] {
 #user_form select,
 #user_identity_url,
 #custom_field_possible_values {
-    width: 100%;
-}
-
-textarea.text_cf {
-    width: 100%;
-    resize: vertical;
-}
-
-input {
-    &.string_cf,
-    &.link_cf {
-        width: 100%;
-    }
-}
-
-select.bool_cf {
-    // scss-lint:disable ImportantRule
-    width: auto !important;
+  width: 100%;
 }
 
 @if $issue-subject-large {
-    $input-padding-large-vertical:   8px;
-    $input-padding-large-horizontal: 12px;
-    $input-height-large:             (ceil($font-size-large-px * $line-height-large) + ($input-padding-large-vertical * 2) + 2);
+  $input-padding-large-vertical:   8px;
+  $input-padding-large-horizontal: 12px;
+  $input-height-large:             (ceil($font-size-large-px * $line-height-large) + ($input-padding-large-vertical * 2) + 2);
 
-    label[for="issue_subject"] {
-        margin-top: floor($input-padding-large-vertical * $line-height-large + 1px);
-    }
+  label[for="issue_subject"] {
+    margin-top: floor($input-padding-large-vertical * $line-height-large + 1px);
+  }
 
-    #issue_subject {
-        height: $input-height-large;
-        padding: $input-padding-large-vertical $input-padding-large-horizontal;
-        border-radius: $input-border-radius-large;
-        font-size: $font-size-large;
-        line-height: $line-height-large;
-    }
+  #issue_subject {
+    height: $input-height-large;
+    padding: $input-padding-large-vertical $input-padding-large-horizontal;
+    border-radius: $input-border-radius-large;
+    font-size: $font-size-large;
+    line-height: $line-height-large;
+  }
 }
 
-/**
- * Add space below WYSIWYG
- */
+//== Add space below WYSIWYG
+//
 
 .jstEditor {
-    margin-bottom: $line-height-computed / 2;
+  margin-bottom: $line-height-computed / 2;
+}
+
+//== User form
+//
+
+#user_form {
+  @extend %clearfix;
+  margin-bottom: $line-height-computed;
+
+  ~ p {
+    margin-bottom: 0;
+  }
 }
 
 
-/**
- * Attachments
- */
+//== Attachments
+//
 
 #attachments_fields {
-    > span {
-        display: block;
-        margin-bottom: $line-height-computed / 4;
-    }
+  > span {
+    display: block;
+    margin-bottom: $line-height-computed / 4;
+  }
 
-    input {
-        width: 21.5em;
-        margin-right: .5em;
-        margin-bottom: $line-height-computed / 4;
-    }
+  input {
+    width: 21.5em;
+    margin-right: .5em;
+    margin-bottom: $line-height-computed / 4;
 
-    input.filename {
-        padding-left: $input-padding-horizontal + 16px;
-        background-image: url("../../../images/attachment.png");
-        background-repeat: no-repeat;
-        background-position: 4px center;
+    &.filename {
+      padding-left: $input-padding-horizontal + 16px;
+      background-image: url("../../../images/attachment.png");
+      background-repeat: no-repeat;
+      background-position: 4px center;
     }
+  }
 
-    .ajax-waiting input.filename {
-        background-image: url("../../../images/hourglass.png");
-    }
+  .ajax-waiting input.filename {
+    background-image: url("../../../images/hourglass.png");
+  }
 
-    .ajax-loading input.filename {
-        background-image: url("../../../images/loading.gif");
-    }
+  .ajax-loading input.filename {
+    background-image: url("../../../images/loading.gif");
+  }
 
-    div.ui-progressbar {
-        display: inline-block;
-        width: 100px;
-        height: 14px;
-        margin: 2px 0 -5px 8px;
-    }
+  div.ui-progressbar {
+    display: inline-block;
+    width: 100px;
+    height: 14px;
+    margin: 2px 0 -5px 8px;
+  }
 }
 
 #add_attachment_form {
-    p {
+  p {
+    margin-bottom: 0;
+  }
+}
+
+
+//== Issue form elements
+//
+
+#issue-form {
+  fieldset {
+    &:last-child {
+      padding-bottom: 0;
+
+      p {
         margin-bottom: 0;
+      }
     }
+  }
+
+  .splitcontentleft,
+  .splitcontentright {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    float: left;
+
+    @media screen and (min-width: $screen-sm-min) {
+      width: auto;
+      min-width: 36em;
+    }
+
+    textarea.text_cf,
+    input.string_cf,
+    input.link_cf,
+    select {
+      width: 90%;
+    }
+  }
+
+  .splitcontentleft {
+    @media screen and (min-width: $screen-sm-min) {
+      margin-right: $padding-side;
+    }
+  }
+
+  #issue_estimated_hours,
+  #issue_done_ratio {
+    width: 5.5em;
+    min-width: 1em;
+    padding-left: .2em;
+    text-align: right;
+  }
 }
 
 
-/**
- * Issue form elements
- */
+//== #all_attributes > p[style] is targeting Redmine 2.x
+//
 
-#issue-form {
-    fieldset {
-        &:last-child {
-            padding-bottom: 0;
-
-            p {
-                margin-bottom: 0;
-            }
-        }
-    }
-}
-
-#issue-form {
-    .splitcontentleft,
-    .splitcontentright {
-        width: 100%;
-        padding-right: 0;
-        padding-left: 0;
-        float: left;
-
-        @media screen and (min-width: $screen-sm-min) {
-            width: auto;
-            min-width: 36em;
-        }
-
-        textarea.text_cf,
-        input.string_cf,
-        input.link_cf,
-        select {
-            width: 90%;
-        }
-    }
-
-    .splitcontentleft {
-        @media screen and (min-width: $screen-sm-min) {
-            margin-right: $padding-side;
-        }
-    }
-
-    #issue_estimated_hours,
-    #issue_done_ratio {
-        width: 5.5em;
-        min-width: 1em;
-        padding-left: .2em;
-        text-align: right;
-    }
-}
-
-
-/**
- * #all_attributes > p[style] is targeting Redmine 2.x
- */
 #issue_is_private_wrap,
 #all_attributes > p[style] {
-    // scss-lint:disable ImportantRule
-    margin-right: 0 !important;
-    margin-bottom: 0;
+  margin-right: 0 !important; // scss-lint:disable ImportantRule
+  margin-bottom: 0;
+  padding-left: 0;
+  float: right;
+
+  input {
+    top: 2px;
+  }
+
+  label {
+    margin-right: 0;
     padding-left: 0;
-    float: right;
-
-    input {
-        top: 2px;
-    }
-
-    label {
-        margin-right: 0;
-        padding-left: 0;
-    }
+  }
 }
 
 
-#watchers_form {
-    overflow: hidden;
+#watchers_inputs {
+  display: block;
+  max-width: 64em;
+  max-height: $check-list-max-height;
+  margin-bottom: $line-height-computed / 2;
+  padding-top: $check-list-offset-top;
+  overflow: auto;
+  columns: 18em 3;
 
-    .search_for_watchers {
-        display: block;
-    }
-
-    // scss-lint:disable VendorPrefix
-    #watchers_inputs {
-        display: block;
-        max-width: 64em;
-        margin-top: $input-padding-vertical + 1px;
-        margin-bottom: $line-height-computed / 2;
-        -webkit-columns: 18em 3;
-           -moz-columns: 18em 3;
-                columns: 18em 3;
-        overflow: auto;
-    }
-
-    label.floating {
-        display: block;
-        width: auto;
-        margin: 0;
-        float: none;
-        @include checkbox;
-
-        input[type="checkbox"] {
-            top: -1px;
-        }
-    }
+  label.floating {
+    @include check-list;
+  }
 }
 
 
-/**
- * Custom logic (boolean) field displayed as radio buttons
- */
+//== List of custom field values
+//
 
 .check_box_group {
-    display: block;
-    overflow-y: auto;
+  display: block;
+  width: 90%;
+  max-height: $check-list-max-height;
+  padding-top: $check-list-offset-top;
+  overflow-y: auto;
+
+  label {
+    @include check-list;
+  }
+
+  // Boolean field displayed as inline radio buttons
+  &.bool_cf {
+    overflow: initial;
 
     label {
-        display: block;
-        width: auto;
-        margin-bottom: 0;
-        margin-left: 0;
-        float: none;
-        font-weight: normal;
-        text-align: left;
-    }
+      display: inline-block;
+      margin-right: $padding-base-horizontal;
 
-    &.bool_cf {
-        label {
-            display: inline-block;
-            margin-right: 10px;
-            padding-left: 20px;
-            @include user-select(none);
-            @extend %clearfix;
-
-            input[type="checkbox"],
-            input[type="radio"] {
-                top: 0;
-                margin-left: -20px;
-                float: left;
-            }
-        }
+      input[type="checkbox"],
+      input[type="radio"] {
+        margin-left: -20px;
+        float: left;
+      }
     }
+  }
 }
 
 
-/**
- * Filters
- */
+//== Filters
+//
 
 fieldset#filters {
-    table {
-        td {
-            vertical-align: top;
-        }
-    }
-
+  table {
     td {
-        &.field {
-            min-width: 180px;
-            padding-right: $table-cell-padding * 2;
-        }
+      vertical-align: top;
+    }
+  }
 
-        &.operator {
-            min-width: 180px;
-            padding-right: $table-cell-padding * 2;
+  .add-filter {
+    text-align: right;
+  }
 
-            select {
-                width: 100%;
-            }
-        }
-
-        &.values {
-            white-space: nowrap;
-
-            select {
-                min-width: 130px;
-            }
-        }
+  td {
+    &.field {
+      min-width: 180px;
+      padding-right: $table-cell-padding * 2;
     }
 
-    .add-filter {
-        text-align: right;
+    &.operator {
+      min-width: 180px;
+      padding-right: $table-cell-padding * 2;
+
+      select {
+        width: 100%;
+      }
     }
 
-    td.add-filter {
-        padding-top: $table-condensed-cell-padding * 2;
-        vertical-align: top;
+    &.values {
+      white-space: nowrap;
+
+      select {
+        min-width: 130px;
+      }
     }
 
-    div.add-filter {
-        padding-top: $table-condensed-cell-padding;
+    &.add-filter {
+      padding-top: $table-condensed-cell-padding * 2;
+      vertical-align: top;
     }
+  }
+
+  div.add-filter {
+    padding-top: $table-condensed-cell-padding;
+    float: right;
+  }
 }
 
 #filters-table {
-    float: left;
+  float: left;
 }
 
 
-/**
- * Reset label style for trackers selector in custom field editor
- */
+//== Reset label style for trackers selector in custom field editor
+//
 
 label.no-css {
-    width: auto;
-    margin-left: 0;
-    float: none;
-    font-weight: inherit;
-    text-align: left;
+  width: auto;
+  margin-left: 0;
+  float: none;
+  font-weight: inherit;
+  text-align: left;
 }

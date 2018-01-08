@@ -2,13 +2,13 @@
 
 A free Redmine theme for modern browsers.
 
-![The MIT License](https://img.shields.io/badge/license-MIT-584492.svg?style=flat-square) [![Release](https://img.shields.io/github/release/mrliptontea/PurpleMine2.svg?style=flat-square)](https://github.com/mrliptontea/PurpleMine2/releases) [![Issues](https://img.shields.io/github/issues/mrliptontea/PurpleMine2.svg?style=flat-square)](https://github.com/mrliptontea/PurpleMine2/issues)
+![The MIT License](https://img.shields.io/badge/license-MIT-584492.svg) [![Build Status](https://travis-ci.org/mrliptontea/PurpleMine2.svg?branch=master)](https://travis-ci.org/mrliptontea/PurpleMine2) [![Issues](https://img.shields.io/github/issues/mrliptontea/PurpleMine2.svg)](https://github.com/mrliptontea/PurpleMine2/issues) [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 ---
 
 ![Screenshot](https://github.com/mrliptontea/PurpleMine2/raw/master/screenshots/issues-list.png)
 
-Compatible with Redmine 2.5+ and browsers: IE10+/Edge, latest Firefox and Google Chrome (others were not tested).
+Compatible with Redmine 2.6+ and browsers: IE10+/Edge, latest Firefox and Google Chrome (others were not tested).
 
 It's written in [SCSS]. It uses [normalize.css] and benefits from some parts of [Bootstrap][bootstrap-sass] like mixins, structure, and stuff.
 
@@ -62,6 +62,22 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 Latest (master):
 
+* Fixed #42: override some styles from [RM+](http://rmplus.pro) plugins
+* Merged #43: fixes for Redmine 3.3.2.devel
+* Support for responsive menu and further changes for Redmine 3.3.2.devel (fixes #26)
+* Improved styles for custom flash messages in wiki content (e.g. for [WikiNG](http://www.redmine.org/plugins/wiking) plugin)
+* Introduce project tiles on projects list page (enabled by default, can be switched off by setting `$use-project-tiles` to `false`)
+* Fixed #44: adjust width of the label column on the login form
+* Merged #49: German translations
+* Fixed #50: printed content on second page onwards was missing in Firefox
+* Fixed #51: a plugin dropdown in top menu could be too narrow
+* Fixed #52: delete watcher icon in the sidebar was missing
+* Fixed #54: long checkbox lists will be scrollable
+* Fixed #62: anchors won't scroll the page
+* Fixed #69: fixed "remember me" checkbox layout on login page
+
+v1.8.0 (2016-11-20):
+
 * Fixed #19: missing text wrapping for long text custom fields
 * Fixed #20: applied Font Awesome font-family for icons in Time Tracker overview
 * Fixed duplicated pencil icon for Description in issue form in Redmine 3.1.2+
@@ -72,6 +88,15 @@ Latest (master):
 * Fixed #30: styles will now compile with latest Sass
 * Fixed #32, #33: improve @shawndibble's styles for new main menu styles in Redmine 3.3
 * Various small visual tweaks
+* Fixed #34: project breadcrumbs in the header should wrap nicely
+* Fixed #35: `.icon-only` class should now display only icons, buttons with icons should de displayed correctly with Font-Awesome disabled
+* Fixed #36: npm dependencies can be installed on production environments + update grunt to its latest version
+* Fixed #37: added support for drag'n'drop re-ordering in issue statuses, roles, and trackers settings
+* Fixed #38: corrected z-index for dropdown new item menu on backlogs page (thanks to @futaz, see PR #39)
+* Changed indentation to 2 spaces (to match with Redmine's coding style)
+* Introduced [autoprefixer](https://github.com/postcss/autoprefixer) via [PostCSS](http://postcss.org)
+* Updated [scss-lint](https://github.com/brigade/scss-lint) rules
+* Added [JavaScript Standard Style](http://standardjs.com)
 
 v1.7.2 (2015-10-12):
 

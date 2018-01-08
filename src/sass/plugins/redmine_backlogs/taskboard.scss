@@ -7,451 +7,461 @@ $issue-padding:                 5px;
 $swimlane-width:                $issue-width + 2 * ($issue-margin + $issue-padding + 1px);
 
 #content {
-    overflow: visible;
+  overflow: visible;
 }
 
 #taskboard {
-    position: relative;
-    margin-bottom: $padding-side;
+  position: relative;
+  margin-bottom: $padding-side;
 
-    table {
-        margin-right: $padding-side;
-        margin-left: $padding-side;
-        border-collapse: separate;
-    }
+  table {
+    margin-right: $padding-side;
+    margin-left: $padding-side;
+    border-collapse: separate;
+  }
 
-    .issue .subject {
-        white-space: normal;
-    }
+  .issue .subject {
+    white-space: normal;
+  }
 }
 
 #impediments {
-    padding-top: 30px;
+  padding-top: 30px;
 }
 
 #assigned_to_id_options {
-    display: none;
+  display: none;
 }
 
 #col_width {
-    margin-left: 5px;
+  margin-left: 5px;
 
-    input {
-        width: 40px;
-        text-align: right;
-    }
+  input {
+    width: 40px;
+    text-align: right;
+  }
 }
 
 
-/**
- * swimlane class is used by:
- * - #board_header
- * - .board
- *
- * Also use by the Column Width preference to determine the unit width of the
- * swimlanes. See RB.Taskboard.initialize()
- */
+//== Swimlane
+//
+// Swimlane class is used by:
+// - #board_header
+// - .board
+// Also use by the Column Width preference to determine the unit width of the
+// swimlanes. See RB.Taskboard.initialize()
+//
 
 .swimlane {
-    width: $swimlane-width;
-    min-width: $swimlane-width;
-    padding: 5px;
+  width: $swimlane-width;
+  min-width: $swimlane-width;
+  padding: 5px;
 }
 
-/* status labels */
+
+//== Status labels
+//
 
 #board_header {
-    position: absolute;
-    margin-right: 10px;
-    margin-bottom: 0;
-    border: 1px solid darken($header-bg, 5%);
+  position: absolute;
+  z-index: 200;
+  margin-right: 10px;
+  margin-bottom: 0;
+  border: 1px solid darken($header-bg, 5%);
+  background-color: $header-bg;
+
+  td {
+    height: 20px;
+    border-right: 1px dotted mix($header-bg, $header-text, 70%);
     background-color: $header-bg;
-    z-index: 200;
+    color: $header-text;
+    font-weight: $font-weight-bold;
+    text-align: center;
+    vertical-align: middle;
 
-    td {
-        height: 20px;
-        border-right: 1px dotted mix($header-bg, $header-text, 70%);
-        background-color: $header-bg;
-        color: $header-text;
-        font-weight: $font-weight-bold;
-        text-align: center;
-        vertical-align: middle;
-
-        &:last-child {
-            border-right: 0 none;
-        }
+    &:last-child {
+      border-right: 0 none;
     }
+  }
 }
 
 .board {
-    border: 1px solid $gray;
-    border-top: 0 none;
-    background-color: $body-bg;
-    color: $text-color;
+  border: 1px solid $gray;
+  border-top: 0 none;
+  background-color: $body-bg;
+  color: $text-color;
 
-    td {
-        border-right: 1px dotted $table-border-color;
-        border-bottom: 1px dotted $table-border-color;
-        vertical-align: top;
+  td {
+    border-right: 1px dotted $table-border-color;
+    border-bottom: 1px dotted $table-border-color;
+    vertical-align: top;
 
-        &:last-child {
-            border-right: 0 none;
-        }
+    &:last-child {
+      border-right: 0 none;
     }
+  }
 
-    tr:last-child td {
-        border-bottom: 0 none;
+  tr:last-child td {
+    border-bottom: 0 none;
+  }
+
+  .add_new {
+    display: inline-block;
+    vertical-align: middle;
+
+    &:hover {
+      background-color: #ffc;
+      cursor: pointer;
     }
-
-    .add_new {
-        display: inline-block;
-        vertical-align: middle;
-
-        &:hover {
-            background-color: #ffc;
-            cursor: pointer;
-        }
-    }
+  }
 }
 
 #board_header,
 .board {
-    td:first-child {
-        width: (($issue-width + $issue-margin + $issue-padding) * 2);
-        min-width: (($issue-width + $issue-margin + $issue-padding) * 2);
-        padding: $issue-padding;
-    }
+  td:first-child {
+    width: (($issue-width + $issue-margin + $issue-padding) * 2);
+    min-width: (($issue-width + $issue-margin + $issue-padding) * 2);
+    padding: $issue-padding;
+  }
 }
 
 .story,
 .label_sprint_impediments {
+  display: block;
+  position: relative;
+  width: $issue-width * 2;
+  min-height: $issue-height;
+  margin: $issue-margin;
+  padding: $issue-padding;
+  float: left;
+  border: 0 none;
+  border-radius: $border-radius-large;
+  background-color: $highlight-bg;
+  font-size: $font-size-small-px;
+}
+
+.story {
+  color: $gray-darker;
+
+  .id {
+    margin-bottom: 5px;
+    padding: 0 3px;
+    overflow: hidden;
+    border-radius: $border-radius-base;
+    opacity: .8;
+    background-color: $body-bg;
+    font-size: .9em;
+    line-height: 16px;
+
+    a,
+    .remaininghours {
+      margin-left: 4px;
+      float: right;
+      font-weight: normal;
+    }
+
+    a {
+      color: $gray-darkest;
+      font-size: $font-size-small-px;
+      font-weight: $font-weight-bold;
+    }
+
+    .assignee {
+      font-size: 9px;
+    }
+  }
+
+  .subject {
+    height: $issue-height * .6;
+    padding: 2px;
+    overflow: hidden;
+    line-height: 1.3;
+  }
+
+  &.closed .subject {
+    text-decoration: line-through;
+  }
+
+  .project {
+    text-align: left;
+  }
+
+  .id .v {
+    display: none;
+  }
+
+  .story_points.editable {
+    position: absolute;
+    right: -$issue-padding;
+    bottom: -$issue-padding;
+    width: 36px;
+    height: 36px;
+    border: 2px solid $body-bg;
+    border-radius: 50%;
+    background-color: $brand-warning;
+    color: $brand-text;
+    font-weight: $font-weight-bold;
+    line-height: 36px;
+    text-align: center;
+
+    &:empty {
+      display: none;
+    }
+  }
+}
+
+
+//== Item styles used by .task and .impediment
+//
+
+#taskboard {
+  .issue,
+  .placeholder {
     display: block;
     position: relative;
-    width: $issue-width * 2;
-    min-height: $issue-height;
+    width: $issue-width;
+    height: $issue-height;
     margin: $issue-margin;
     padding: $issue-padding;
     float: left;
     border: 0 none;
     border-radius: $border-radius-large;
-    background-color: $highlight-bg;
-    font-size: $font-size-small-px;
-}
-
-.story {
+    background-color: $gray-lighter;
     color: $gray-darker;
+    font-size: 10px;
+    line-height: 1.3;
+    cursor: move;
+  }
 
-    .id {
-        margin-bottom: 5px;
-        padding: 0 3px;
-        border-radius: $border-radius-base;
-        background-color: $body-bg;
-        font-size: .9em;
-        line-height: 16px;
-        opacity: .8;
-        overflow: hidden;
-
-        a,
-        .remaininghours {
-            margin-left: 4px;
-            float: right;
-            font-weight: normal;
-        }
-
-        a {
-            color: $gray-darkest;
-            font-size: $font-size-small-px;
-            font-weight: $font-weight-bold;
-        }
-
-        .assignee {
-            font-size: 9px;
-        }
-    }
-
-    .subject {
-        height: $issue-height * .6;
-        padding: 2px;
-        line-height: 1.3;
-        overflow: hidden;
-    }
-
-    &.closed .subject {
-        text-decoration: line-through;
-    }
-
-    .project {
-        text-align: left;
-    }
-
-    .id .v {
-        display: none;
-    }
-
-    .story_points.editable {
-        position: absolute;
-        right: -$issue-padding;
-        bottom: -$issue-padding;
-        width: 36px;
-        height: 36px;
-        border: 2px solid $body-bg;
-        border-radius: 50%;
-        background-color: $brand-warning;
-        color: $brand-text;
-        font-weight: $font-weight-bold;
-        line-height: 36px;
-        text-align: center;
-
-        &:empty {
-            display: none;
-        }
-    }
-}
-
-/* item styles used by .task and .impediment */
-
-#taskboard {
-    .issue,
-    .placeholder {
-        display: block;
-        position: relative;
-        width: $issue-width;
-        height: $issue-height;
-        margin: $issue-margin;
-        padding: $issue-padding;
-        float: left;
-        border: 0 none;
-        border-radius: $border-radius-large;
-        background-color: $gray-lighter;
-        color: $gray-darker;
-        font-size: 10px;
-        line-height: 1.3;
-        cursor: move;
-    }
-
-    .placeholder {
-        width: 83px;
-        height: 78px;
-        border: 1px dashed $highlight-border;
-        background-color: $highlight-bg;
-    }
+  .placeholder {
+    width: 83px;
+    height: 78px;
+    border: 1px dashed $highlight-border;
+    background-color: $highlight-bg;
+  }
 }
 
 .issue {
-    .id {
-        margin-bottom: 5px;
-        padding: 0 3px;
-        border-radius: $border-radius-base;
-        background-color: $body-bg;
-        font-size: $font-size-small-px;
-        font-weight: $font-weight-bold;
-        line-height: 16px;
-        text-align: right;
-        opacity: .8;
-        overflow: hidden;
+  .id {
+    margin-bottom: 5px;
+    padding: 0 3px;
+    overflow: hidden;
+    border-radius: $border-radius-base;
+    opacity: .8;
+    background-color: $body-bg;
+    font-size: $font-size-small-px;
+    font-weight: $font-weight-bold;
+    line-height: 16px;
+    text-align: right;
 
-        .v {
-            display: none;
-        }
-
-        a {
-            color: $gray-darkest;
-        }
+    .v {
+      display: none;
     }
 
-    .editable:hover {
-        background-color: transparent;
+    a {
+      color: $gray-darkest;
+    }
+  }
+
+  .editable:hover {
+    background-color: transparent;
+  }
+
+  .subject.editable {
+    height: $issue-height * .5;
+    padding: 2px;
+    overflow: hidden;
+  }
+
+  &.closed .subject.editable {
+    text-decoration: line-through;
+  }
+
+  .assigned_to_id {
+    &.editable {
+      width: 81px;
+      height: 10px;
+      margin-top: 2px;
+      padding: 2px;
+      padding-top: 0;
+      overflow: hidden;
+      font-size: 9px;
+      white-space: nowrap;
     }
 
-    .subject.editable {
-        height: $issue-height * .5;
-        padding: 2px;
-        overflow: hidden;
+    .v {
+      display: none;
+    }
+  }
+
+  .priority_id {
+    &.editable {
+      position: absolute;
+      right: -5px;
+      bottom: 10px;
+      height: 13px;
+      padding-right: 5px;
+      padding-left: 5px;
+      border: 2px solid #fff;
+      border-radius: 15px;
+      background-color: #00e;
+      color: #fff;
+      font-size: 9px;
     }
 
-    &.closed .subject.editable {
-        text-decoration: line-through;
+    .v {
+      display: none;
     }
+  }
 
-    .assigned_to_id {
-        &.editable {
-            width: 81px;
-            height: 10px;
-            margin-top: 2px;
-            padding: 2px;
-            padding-top: 0;
-            font-size: 9px;
-            white-space: nowrap;
-            overflow: hidden;
-        }
+  .remaining_hours.editable {
+    position: absolute;
+    right: -5px;
+    bottom: -5px;
+    height: 13px;
+    padding-right: 5px;
+    padding-left: 5px;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    background-color: #e00;
+    color: #fff;
+    font-size: 9px;
+  }
 
-        .v {
-            display: none;
-        }
-    }
+  .blocks,
+  .remaining_hours.editable:empty {
+    display: none;
+  }
 
-    .priority_id {
-        &.editable {
-            position: absolute;
-            right: -5px;
-            bottom: 10px;
-            height: 13px;
-            padding-right: 5px;
-            padding-left: 5px;
-            border: 2px solid #fff;
-            border-radius: 15px;
-            background-color: #00e;
-            color: #fff;
-            font-size: 9px;
-        }
+  .indicator {
+    display: none;
+    position: absolute;
+    top: 38px;
+    left: 36px;
+    width: 16px;
+    height: 16px;
+    padding: 2px;
+    border: 2px solid #000;
+    border-radius: 12px;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 
-        .v {
-            display: none;
-        }
-    }
+  &.saving .indicator {
+    display: block;
+    background-image: url("images/indicator.gif");
+  }
 
-    .remaining_hours.editable {
-        position: absolute;
-        right: -5px;
-        bottom: -5px;
-        height: 13px;
-        padding-right: 5px;
-        padding-left: 5px;
-        border: 2px solid #fff;
-        border-radius: 15px;
-        background-color: #e00;
-        color: #fff;
-        font-size: 9px;
-    }
+  &.error .indicator {
+    display: block;
+    border-color: #c00;
+    background-image: url("images/warning.png");
+    background-position: 2px 0;
+  }
 
-    .blocks,
-    .remaining_hours.editable:empty {
-        display: none;
-    }
-
-    .indicator {
-        display: none;
-        position: absolute;
-        top: 38px;
-        left: 36px;
-        width: 16px;
-        height: 16px;
-        padding: 2px;
-        border: 2px solid #000;
-        border-radius: 12px;
-        background-color: #fff;
-        background-repeat: no-repeat;
-        background-position: center;
-    }
-
-    &.saving .indicator {
-        display: block;
-        background-image: url("images/indicator.gif");
-    }
-
-    &.error .indicator {
-        display: block;
-        border-color: #c00;
-        background-image: url("images/warning.png");
-        background-position: 2px 0;
-    }
-
-    .editors {
-        display: none;
-    }
+  .editors {
+    display: none;
+  }
 }
 
-/* dialog */
+
+//== Dialog
+//
 
 .rb_editor_dialog.ui-dialog {
-    .ui-dialog-titlebar-close {
-        display: none;
-    }
+  .ui-dialog-titlebar-close {
+    display: none;
+  }
 
-    .ui-widget-header {
-        background: none;
-        background-color: #fff;
-        opacity: .5;
-    }
+  .ui-widget-header {
+    opacity: .5;
+    background: none;
+    background-color: #fff;
+  }
 
-    .ui-dialog-title {
-        margin-right: 0;
-        float: right;
-    }
+  .ui-dialog-title {
+    margin-right: 0;
+    float: right;
+  }
 
-    &.ui-widget-content {
-        border: 0 none;
-        background: none;
-        @include nice-shadow(5);
-    }
+  &.ui-widget-content {
+    @include nice-shadow(5);
+    border: 0 none;
+    background: none;
+  }
 
-    .ui-dialog-buttonpane.ui-widget-content {
-        border: 0 none;
-        background: none;
-        background-color: none;
-    }
+  .ui-dialog-buttonpane.ui-widget-content {
+    border: 0 none;
+    background: none;
+    background-color: none;
+  }
 }
 
-/* item editor */
+
+//== Item editor
+//
 
 .rb_editor {
-    label {
-        display: block;
-        width: 100%;
-        font-size: 11px;
-        text-transform: capitalize;
-    }
+  label {
+    display: block;
+    width: 100%;
+    font-size: 11px;
+    text-transform: capitalize;
+  }
 
-    .editor {
-        width: 100%;
-        margin-bottom: 10px;
-        font-size: 11px;
-    }
+  .editor {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 11px;
+  }
 
-    .subject {
-        width: 272px;
-        height: 65px;
-    }
+  .subject {
+    width: 272px;
+    height: 65px;
+  }
 
-    .description {
-        width: 272px;
-        height: 80px;
-    }
+  .description {
+    width: 272px;
+    height: 80px;
+  }
 
-    .remaining_hours,
-    .time_entry_hours,
-    .time_entry_user_id,
-    .time_entry_spent_on,
-    .blocks {
-        width: 268px;
-    }
+  .remaining_hours,
+  .time_entry_hours,
+  .time_entry_user_id,
+  .time_entry_spent_on,
+  .blocks {
+    width: 268px;
+  }
 
-    .time_entry_comments {
-        width: 268px;
-        height: 30px;
-    }
+  .time_entry_comments {
+    width: 268px;
+    height: 30px;
+  }
 }
 
-/* others */
+
+//== Others
+//
 
 #impediment_template,
 #task_template {
-    display: none;
+  display: none;
 }
 
 #preloader {
-    position: absolute;
-    left: -500px;
+  position: absolute;
+  left: -500px;
 }
 
 #spinner {
-    background-image: url("images/indicator.gif");
+  background-image: url("images/indicator.gif");
 }
 
 #warning {
-    background-image: url("images/warning.png");
+  background-image: url("images/warning.png");
 }
 
 #ui-datepicker-div {
-    display: none;
+  display: none;
 }

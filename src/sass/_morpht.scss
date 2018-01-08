@@ -53,8 +53,9 @@ $brand-primary: #D5D5D5; /* header background color */
       color: #333;
     }
   }
-  #header > h1 > .root {
-    color: #333;
+  #header > h1 .root,
+  #header > h1 a.root {
+    color: #333 !important;
   }
 }
 

@@ -1,157 +1,144 @@
-var PurpleMine = PurpleMine || {};
+var PurpleMine = PurpleMine || {}
 /* global Raphael: false, revisionGraph: true */
 /* jshint camelcase: false */
 /* jshint maxstatements: false */
 /* jshint maxlen: 160 */
 
-PurpleMine.RevisionGraph = function(holder, commits_hash, graph_space)
-{
-    "use strict";
+PurpleMine.RevisionGraph = function (holder, commitsHash, graphSpace) {
+  'use strict'
 
-    var XSTEP = 20,
-        CIRCLE_INROW_OFFSET = 17;
-    var commits_by_scmid = commits_hash,
-        commits = $.map(commits_by_scmid, function(val){return val;});
-    var max_rdmid = commits.length - 1;
-    var commit_table_rows = $("table.changesets tr.changeset");
+  var XSTEP = 20
+  var CIRCLE_INROW_OFFSET = 17
+  var commitsByScmid = commitsHash
+  var commits = $.map(commitsByScmid, function (val) { return val })
+  var maxRdmid = commits.length - 1
+  var commitTableRows = $('table.changesets tr.changeset')
 
-    // create graph
-    if (revisionGraph !== null)
-    {
-        revisionGraph.clear();
+  // create graph
+  if (revisionGraph !== null) {
+    revisionGraph.clear()
+  } else {
+    revisionGraph = new Raphael(holder)
+  }
+
+  var top = revisionGraph.set()
+
+  // init dimensions
+  var graphXOffset = commitTableRows.first().find('td').first().position().left - $(holder).position().left
+  var graphYOffset = $(holder).position().top
+  var graphRightSide = graphXOffset + (graphSpace + 1) * XSTEP
+  var graphBottom = commitTableRows.last().position().top + commitTableRows.last().height() - graphYOffset
+
+  revisionGraph.setSize(graphRightSide, graphBottom)
+
+  // init colors
+  var colors = [
+    '#e74c3c',
+    '#584492',
+    '#019851',
+    '#ed820c',
+    '#4183c4'
+  ]
+
+  // get more colors if needed
+  if (graphSpace >= colors.length) {
+    Raphael.getColor.reset()
+
+    for (var k = 0; k <= graphSpace; k++) {
+      colors.push(Raphael.getColor(0.9))
     }
-    else
-    {
-        revisionGraph = new Raphael(holder);
+  }
+
+  var parentCommit
+  var x, y, parentX, parentY
+  var path, title
+  var revisionDotOverlay
+
+  $.each(commits, function (index, commit) {
+    if (!commit.hasOwnProperty('space')) {
+      commit.space = 0
     }
 
-    var top = revisionGraph.set();
+    y = commitTableRows.eq(maxRdmid - commit.rdmid).position().top - graphYOffset + CIRCLE_INROW_OFFSET
+    x = graphXOffset + XSTEP / 2 + XSTEP * commit.space
 
-    // init dimensions
-    var graph_x_offset = commit_table_rows.first().find("td").first().position().left - $(holder).position().left,
-        graph_y_offset = $(holder).position().top,
-        graph_right_side = graph_x_offset + (graph_space + 1) * XSTEP,
-        graph_bottom = commit_table_rows.last().position().top + commit_table_rows.last().height() - graph_y_offset;
+    revisionGraph
+      .circle(x, y, 3.5)
+      .attr({
+        fill: colors[commit.space],
+        stroke: 'none'
+      })
+      .toFront()
 
-    revisionGraph.setSize(graph_right_side, graph_bottom);
+    // paths to parents
+    $.each(commit.parent_scmids, function (index, parentScmid) {
+      parentCommit = commitsByScmid[parentScmid]
 
-    // init colors
-    var colors = [
-        "#e74c3c",
-        "#584492",
-        "#019851",
-        "#ed820c",
-        "#4183c4"
-    ];
-
-    // get more colors if needed
-    if (graph_space >= colors.length)
-    {
-        Raphael.getColor.reset();
-
-        for (var k = 0; k <= graph_space; k++)
-        {
-            colors.push(Raphael.getColor(0.9));
-        }
-    }
-
-    var parent_commit;
-    var x, y, parent_x, parent_y;
-    var path, title;
-    var revision_dot_overlay;
-
-    $.each(commits, function(index, commit)
-    {
-        if (!commit.hasOwnProperty("space"))
-        {
-            commit.space = 0;
-        }
-
-        y = commit_table_rows.eq(max_rdmid - commit.rdmid).position().top - graph_y_offset + CIRCLE_INROW_OFFSET;
-        x = graph_x_offset + XSTEP / 2 + XSTEP * commit.space;
-
-        revisionGraph.circle(x, y, 3.5)
-            .attr({
-                fill: colors[commit.space],
-                stroke: "none"
-            }).toFront();
-
-        // paths to parents
-        $.each(commit.parent_scmids, function(index, parent_scmid)
-        {
-            parent_commit = commits_by_scmid[parent_scmid];
-
-            if (parent_commit)
-            {
-                if (!parent_commit.hasOwnProperty("space"))
-                {
-                    parent_commit.space = 0;
-                }
-
-                parent_y = commit_table_rows.eq(max_rdmid - parent_commit.rdmid).position().top - graph_y_offset + CIRCLE_INROW_OFFSET;
-                parent_x = graph_x_offset + XSTEP / 2 + XSTEP * parent_commit.space;
-
-                if (parent_commit.space === commit.space)
-                {
-                    // vertical path
-                    path = revisionGraph.path([
-                        "M", x, y,
-                        "V", parent_y]);
-                }
-                else
-                {
-                    // path to a commit in a different branch (Bezier curve)
-                    path = revisionGraph.path([
-                        "M", x, y,
-                        "C", x, y, x, y + (parent_y - y) / 2, x + (parent_x - x) / 2, y + (parent_y - y) / 2,
-                        "C", x + (parent_x - x) / 2, y + (parent_y - y) / 2, parent_x, parent_y-(parent_y-y)/2, parent_x, parent_y
-                    ]);
-                }
-            }
-            else
-            {
-                // vertical path ending at the bottom of the revisionGraph
-                path = revisionGraph.path([
-                    "M", x, y,
-                    "V", graph_bottom
-                ]);
-            }
-
-            path.attr({stroke: colors[commit.space], "stroke-width": 1.5}).toBack();
-        });
-
-        revision_dot_overlay = revisionGraph.circle(x, y, 10);
-        revision_dot_overlay
-            .attr({
-                fill   : "#000",
-                opacity: 0,
-                cursor : "pointer",
-                href   : commit.href
-            });
-
-        if (commit.refs !== null && commit.refs.length > 0)
-        {
-            title = document.createElementNS(revisionGraph.canvas.namespaceURI, "title");
-            title.appendChild(document.createTextNode(commit.refs));
-            revision_dot_overlay.node.appendChild(title);
+      if (parentCommit) {
+        if (!parentCommit.hasOwnProperty('space')) {
+          parentCommit.space = 0
         }
 
-        top.push(revision_dot_overlay);
-    });
+        parentY = commitTableRows.eq(maxRdmid - parentCommit.rdmid).position().top - graphYOffset + CIRCLE_INROW_OFFSET
+        parentX = graphXOffset + XSTEP / 2 + XSTEP * parentCommit.space
 
-    top.toFront();
-};
+        if (parentCommit.space === commit.space) {
+          // vertical path
+          path = revisionGraph.path([
+            'M', x, y,
+            'V', parentY])
+        } else {
+          // path to a commit in a different branch (Bezier curve)
+          path = revisionGraph.path([
+            'M', x, y,
+            'C', x, y, x, y + (parentY - y) / 2, x + (parentX - x) / 2, y + (parentY - y) / 2,
+            'C', x + (parentX - x) / 2, y + (parentY - y) / 2, parentX, parentY - (parentY - y) / 2, parentX, parentY
+          ])
+        }
+      } else {
+        // vertical path ending at the bottom of the revisionGraph
+        path = revisionGraph.path([
+          'M', x, y,
+          'V', graphBottom
+        ])
+      }
 
-$(function()
-{
-    "use strict";
+      path
+        .attr({
+          stroke: colors[commit.space],
+          'stroke-width': 1.5
+        })
+        .toBack()
+    })
 
-    if (window.drawRevisionGraph)
-    {
-        // override Redmine's function
-        window.drawRevisionGraph = PurpleMine.RevisionGraph;
-        // make graph redraw itself
-        $(window).resize();
+    revisionDotOverlay = revisionGraph.circle(x, y, 10)
+    revisionDotOverlay
+      .attr({
+        fill: '#000',
+        opacity: 0,
+        cursor: 'pointer',
+        href: commit.href
+      })
+
+    if (commit.refs !== null && commit.refs.length > 0) {
+      title = document.createElementNS(revisionGraph.canvas.namespaceURI, 'title')
+      title.appendChild(document.createTextNode(commit.refs))
+      revisionDotOverlay.node.appendChild(title)
     }
-});
 
+    top.push(revisionDotOverlay)
+  })
+
+  top.toFront()
+}
+
+$(function () {
+  'use strict'
+
+  if (window.drawRevisionGraph) {
+    // override Redmine's function
+    window.drawRevisionGraph = PurpleMine.RevisionGraph
+    // make graph redraw itself
+    $(window).resize()
+  }
+})

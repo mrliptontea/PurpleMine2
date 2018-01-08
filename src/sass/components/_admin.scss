@@ -3,139 +3,115 @@
 // --------------------------------------------------
 
 #admin-menu {
-    #admin-index > & {
-        ul {
-            margin: 0;
-            padding: 0;
-        }
-
-        li {
-            padding: ($sidebar-padding-vertical + 1px) ($sidebar-padding-horizontal + 3px);
-        }
-
-        a {
-            display: inline-block;
-            padding-left: 5px + 20px;
-            background-position: 0 center;
-        }
+  #admin-index > & {
+    ul {
+      margin: 0;
+      padding: 0;
     }
 
     li {
-        list-style-type: none;
-
-        > a {
-            padding-left: $sidebar-padding-horizontal + 5px + 20px;
-            background-repeat: no-repeat;
-            background-position: $sidebar-padding-horizontal center;
-        }
+      padding: ($sidebar-padding-vertical + 1px) ($sidebar-padding-horizontal + 3px);
     }
+
+    a {
+      display: inline-block;
+      padding-left: 5px + 20px;
+      background-position: 0 center;
+    }
+  }
+
+  li {
+    list-style-type: none;
+
+    > a:not(.icon-only) {
+      padding-left: $sidebar-padding-horizontal + 5px + 20px;
+      background-repeat: no-repeat;
+      background-position: $sidebar-padding-horizontal center;
+    }
+  }
 }
 
 
-/**
- * Groups
- */
+//== Groups
+//
 
 table.members,
 table.memberships {
-    td.roles {
-        width: 45%;
-    }
+  td.roles {
+    width: 45%;
+  }
 }
 
 
-/**
- * Permissions
- */
+//== Permissions
+//
 
 table.permissions {
-    td.role {
-        color: $gray;
-        font-weight: normal;
-        text-align: center;
-        vertical-align: bottom;
-    }
+  td.role {
+    color: $gray;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: bottom;
+  }
 }
 
 
-/**
- * Workflows
- */
+//== Workflows
+//
 
 table.transitions {
-    td.enabled {
-        background: $state-success;
-    }
+  td.enabled {
+    background: $state-success;
+  }
 }
 
 #workflow_copy_form select {
-    width: 200px;
+  width: 200px;
 }
 
 #workflow_form table select {
-    width: 90%;
-    min-width: 60px;
+  width: 90%;
+  min-width: 60px;
 }
 
 table.fields_permissions {
-    td.readonly {
-        background: $gray-light;
-    }
+  td.readonly {
+    background: $gray-light;
+  }
 
-    td.required {
-        background: $state-danger;
-    }
+  td.required {
+    background: $state-danger;
+  }
 }
 
 
-/**
- * Enumerations
- */
-
-.controller-enumerations.action-index {
-    #content {
-        > h3,
-        > .list {
-            margin-bottom: $line-height-computed / 2;
-        }
-
-        > p {
-            margin-bottom: $line-height-computed * 2;
-        }
-    }
-}
-
-
-/**
- * Settings labels
- */
+//== Settings labels
+//
 
 fieldset.settings label {
-    display: block;
+  display: block;
 }
 
 
-/**
- * Settings -> Notifications
- */
+//== Settings -> Notifications
+//
 
 fieldset#notified_events {
-    .parent {
-        padding-left: 20px;
-    }
+  .parent {
+    padding-left: 20px;
+  }
 }
 
 
-/**
- * Settings -> Repositories
- */
+//== Settings -> Repositories
+//
 
 .settings.enabled_scm {
-    table {
-        width: 100%;
-    }
+  table {
+    width: 100%;
+  }
 
-    td.scm_name {
-        font-weight: $font-weight-bold;
-    }
+  td.scm_name {
+    font-weight: $font-weight-bold;
+  }
 }

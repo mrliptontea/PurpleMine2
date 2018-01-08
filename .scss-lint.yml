@@ -18,20 +18,21 @@ linters:
     enabled: false
 
   Comment:
-    enabled: false
+    enabled: true
 
   DebugStatement:
     enabled: true
 
   DeclarationOrder:
-    enabled: false
+    enabled: true
 
   DuplicateProperty:
     enabled: true
+    ignore_consecutive:
+      - word-break
 
   ElsePlacement:
-    enabled: false
-    style: same_line
+    enabled: true
 
   EmptyLineBetweenBlocks:
     enabled: true
@@ -67,9 +68,9 @@ linters:
     filename_extension: false
 
   Indentation:
-    enabled: false
+    enabled: true
     character: space
-    width: 4
+    width: 2
 
   LeadingZero:
     enabled: true
@@ -93,6 +94,9 @@ linters:
   PropertySpelling:
     enabled: true
     extra_properties: []
+
+  PseudoElement:
+    enabled: true
 
   QualifyingElement:
     enabled: false
@@ -124,6 +128,12 @@ linters:
   SpaceAfterPropertyName:
     enabled: true
 
+  SpaceAfterVariableName:
+    enabled: true
+
+  SpaceAroundOperator:
+    enabled: true
+
   SpaceBeforeBrace:
     enabled: true
     style: space
@@ -140,8 +150,14 @@ linters:
   TrailingSemicolon:
     enabled: true
 
+  TrailingWhitespace:
+    enabled: true
+
   TrailingZero:
-    enabled: false
+    enabled: true
+
+  TransitionAll:
+    enabled: true
 
   UnnecessaryMantissa:
     enabled: true
@@ -153,4 +169,10 @@ linters:
     enabled: true
 
   UrlQuotes:
+    enabled: true
+
+  VendorPrefix:
+    enabled: true
+
+  ZeroUnit:
     enabled: true

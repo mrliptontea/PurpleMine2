@@ -5,34 +5,42 @@
 // --------------------------------------------------
 
 #backlogs_view_issues_sidebar {
-    > a {
-        display: block;
-        padding: $sidebar-padding-vertical $sidebar-padding-horizontal;
-        border: 1px solid transparent;
+  > a {
+    display: block;
+    padding: $sidebar-padding-vertical $sidebar-padding-horizontal;
+    border: 1px solid transparent;
 
-        @if $sidebar-position == "left" {
-            margin-right: -($sidebar-padding-horizontal);
-            border-left-width: 3px;
-            border-radius: $border-radius-large 0 0 $border-radius-large;
-        } @else {
-            margin-left: -($sidebar-padding-horizontal);
-            border-right-width: 3px;
-            border-radius: 0 $border-radius-large $border-radius-large 0;
-        }
-
-        &:hover {
-            background-color: $sidebar-link-hover-bg;
-            text-decoration: none;
-        }
-
-        + br {
-            display: none;
-        }
+    @if $sidebar-position == "left" {
+      margin-right: -($sidebar-padding-horizontal);
+      border-left-width: 3px;
+      border-radius: $border-radius-large 0 0 $border-radius-large;
+    } @else {
+      margin-left: -($sidebar-padding-horizontal);
+      border-right-width: 3px;
+      border-radius: 0 $border-radius-large $border-radius-large 0;
     }
 
-    .burndown_chart {
-        max-width: $sidebar-width-computed;
+    &:hover {
+      background-color: $sidebar-link-hover-bg;
+      text-decoration: none;
     }
+
+    + br {
+      display: none;
+    }
+  }
+
+  .flyout-menu & {
+    a {
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .burndown_chart {
+    max-width: $sidebar-width-computed;
+  }
 }
 
 
@@ -42,52 +50,52 @@
 // --------------------------------------------------
 
 @if $use-font-awesome {
-    .tt_list_button {
-        font-size: 14px;
-        @extend %fa-icon;
+  .tt_list_button {
+    @extend %fa-icon;
+    font-size: 14px;
+  }
+
+  .icon,
+  .tt_list_button {
+    &.icon-start,
+    &.icon-stop {
+      background-image: none;
     }
 
-    .icon,
-    .tt_list_button {
-        &.icon-start,
-        &.icon-stop {
-            background-image: none;
-        }
+    &.icon-start {
+      color: $icon-success-color;
 
-        &.icon-start {
-            color: $icon-success-color;
+      &:hover,
+      &:focus {
+        color: $icon-success-color;
+      }
 
-            &:hover,
-            &:focus {
-                color: $icon-success-color;
-            }
-
-            &:before {
-                content: $fa-var-clock-o;
-            }
-        }
-
-        &.icon-stop {
-            color: $icon-danger-color;
-
-            &:hover,
-            &:focus {
-                color: $icon-danger-color;
-            }
-
-            &:before {
-                content: $fa-var-history;
-            }
-        }
+      &::before {
+        content: $fa-var-clock-o;
+      }
     }
 
-    .time-tracker-quick-menu:empty {
-        display: none;
-    }
+    &.icon-stop {
+      color: $icon-danger-color;
 
-    #user-time-bookings-list {
-        clear: both;
+      &:hover,
+      &:focus {
+        color: $icon-danger-color;
+      }
+
+      &::before {
+        content: $fa-var-history;
+      }
     }
+  }
+
+  .time-tracker-quick-menu:empty {
+    display: none;
+  }
+
+  #user-time-bookings-list {
+    clear: both;
+  }
 }
 
 
@@ -97,129 +105,129 @@
 // --------------------------------------------------
 
 #people_list {
-    table.index {
-        margin-bottom: $line-height-computed;
-    }
+  table.index {
+    margin-bottom: $line-height-computed;
+  }
 }
 
 #content {
-    .person.details {
-        margin-bottom: $line-height-computed;
-        padding: $issue-padding;
-        border: 1px solid $issue-border;
-        border-radius: $border-radius-base;
-        background-color: $issue-bg;
+  .person.details {
+    margin-bottom: $line-height-computed;
+    padding: $issue-padding;
+    border: 1px solid $issue-border;
+    border-radius: $border-radius-base;
+    background-color: $issue-bg;
 
-        .avatar {
-            width: 64px;
-            max-width: 64px;
-            overflow: hidden;
-        }
-
-        .name,
-        .subject_info {
-            padding: 0 0 0 $issue-padding;
-        }
-
-        .name {
-            > h1 {
-                margin-bottom: 5px;
-            }
-
-            > p {
-                margin-bottom: 0;
-            }
-        }
-
-        .subject_info {
-            border-left: 1px solid $issue-border;
-
-            > ul {
-                margin: 0;
-            }
-        }
-
-        @if $use-font-awesome {
-            .icon {
-                background-image: none;
-            }
-        }
+    .avatar {
+      width: 64px;
+      max-width: 64px;
+      overflow: hidden;
     }
 
-    .department.issue.details {
-        > p {
-            clear: both;
-        }
-
-        > .author {
-            margin-bottom: 0;
-            clear: none;
-        }
+    .name,
+    .subject_info {
+      padding: 0 0 0 $issue-padding;
     }
+
+    .name {
+      > h1 {
+        margin-bottom: 5px;
+      }
+
+      > p {
+        margin-bottom: 0;
+      }
+    }
+
+    .subject_info {
+      border-left: 1px solid $issue-border;
+
+      > ul {
+        margin: 0;
+      }
+    }
+
+    @if $use-font-awesome {
+      .icon {
+        background-image: none;
+      }
+    }
+  }
+
+  .department.issue.details {
+    > p {
+      clear: both;
+    }
+
+    > .author {
+      margin-bottom: 0;
+      clear: none;
+    }
+  }
 }
 
 #sidebar {
-    .person.attributes {
-        font-size: $font-size-list;
+  .person.attributes {
+    font-size: $font-size-list;
 
-        th,
-        td {
-            padding: $table-condensed-cell-padding;
-            text-align: left;
-            vertical-align: top;
-        }
-
-        .icon {
-            padding-left: $table-condensed-cell-padding + 20px;
-            background-position: $table-condensed-cell-padding $table-condensed-cell-padding;
-        }
-
-        @if $use-font-awesome {
-            .icon {
-                background-image: none;
-
-                > a {
-                    @extend %fa-icon;
-                }
-            }
-        }
-
-        .email {
-            td a {
-                display: block;
-                max-width: floor($sidebar-width / 3);
-                text-overflow: ellipsis;
-                overflow: hidden;
-
-                &:hover {
-                    position: absolute;
-                    max-width: 100%;
-                    margin: -$table-condensed-cell-padding;
-                    padding: $table-condensed-cell-padding;
-                    background: $body-bg;
-                    box-shadow: $panel-shadow;
-                }
-            }
-        }
+    th,
+    td {
+      padding: $table-condensed-cell-padding;
+      text-align: left;
+      vertical-align: top;
     }
 
-    .person_data {
-        td.avatar,
-        td.name {
-            padding: 0 0 $table-cell-padding;
-        }
-
-        td.avatar {
-            width: 40px;
-        }
-
-        td.name {
-            h4 {
-                margin: 0;
-                letter-spacing: 0;
-            }
-        }
+    .icon {
+      padding-left: $table-condensed-cell-padding + 20px;
+      background-position: $table-condensed-cell-padding $table-condensed-cell-padding;
     }
+
+    @if $use-font-awesome {
+      .icon {
+        background-image: none;
+
+        > a {
+          @extend %fa-icon;
+        }
+      }
+    }
+
+    .email {
+      td a {
+        display: block;
+        max-width: floor($sidebar-width / 3);
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &:hover {
+          position: absolute;
+          max-width: 100%;
+          margin: -$table-condensed-cell-padding;
+          padding: $table-condensed-cell-padding;
+          background: $body-bg;
+          box-shadow: $panel-shadow;
+        }
+      }
+    }
+  }
+
+  .person_data {
+    td.avatar,
+    td.name {
+      padding: 0 0 $table-cell-padding;
+    }
+
+    td.avatar {
+      width: 40px;
+    }
+
+    td.name {
+      h4 {
+        margin: 0;
+        letter-spacing: 0;
+      }
+    }
+  }
 }
 
 
@@ -229,13 +237,13 @@
 // --------------------------------------------------
 
 #toolbar-code-options {
-    select {
-        width: 100%;
-    }
+  select {
+    width: 100%;
+  }
 
-    .buttons {
-        white-space: nowrap;
-    }
+  .buttons {
+    white-space: nowrap;
+  }
 }
 
 
@@ -245,83 +253,113 @@
 // --------------------------------------------------
 
 #stuff-to-do {
-    p {
-        @if $sidebar-position == "left" {
-            margin-right: -($sidebar-padding-horizontal);
-        } @else {
-            margin-left: -($sidebar-padding-horizontal);
-        }
-
-        > a {
-            display: block;
-            padding: $sidebar-padding-vertical $sidebar-padding-horizontal;
-
-            @if $sidebar-position == "left" {
-                border-radius: $border-radius-large 0 0 $border-radius-large;
-            } @else {
-                border-radius: 0 $border-radius-large $border-radius-large 0;
-            }
-
-            &:hover {
-                background-color: $sidebar-link-hover-bg;
-                text-decoration: none;
-            }
-        }
-
-        > br {
-            display: none;
-        }
+  p {
+    @if $sidebar-position == "left" {
+      margin-right: -($sidebar-padding-horizontal);
+    } @else {
+      margin-left: -($sidebar-padding-horizontal);
     }
+
+    > a {
+      display: block;
+      padding: $sidebar-padding-vertical $sidebar-padding-horizontal;
+
+      @if $sidebar-position == "left" {
+        border-radius: $border-radius-large 0 0 $border-radius-large;
+      } @else {
+        border-radius: 0 $border-radius-large $border-radius-large 0;
+      }
+
+      &:hover {
+        background-color: $sidebar-link-hover-bg;
+        text-decoration: none;
+      }
+    }
+
+    > br {
+      display: none;
+    }
+  }
 }
 
 // Note: the following applies to the latest version
 // of Stuff To Do plugin from the master branch.
 
 .controller-stuff_to_do {
-    .menu {
-        label,
-        select {
-            margin-bottom: 5px;
-        }
+  .menu {
+    label,
+    select {
+      margin-bottom: 5px;
+    }
+  }
+
+  .stuff-to-do-item {
+    padding: $table-cell-padding;
+    border: 1px solid $table-border-color;
+    border-width: $table-list-item-border;
+    background-color: $body-bg;
+  }
+
+  .pane {
+    ol {
+      padding: 0;
     }
 
-    .stuff-to-do-item {
-        padding: $table-cell-padding;
-        border: 1px solid $table-border-color;
-        border-width: $table-list-item-border;
-        background-color: $body-bg;
+    .issue-details {
+      width: 80%;
+      margin: 0;
+
+      @if $use-font-awesome {
+        a {
+          img {
+            display: none;
+          }
+        }
+      }
     }
 
-    .pane {
-        ol {
-            padding: 0;
-        }
-
-        .issue-details {
-            width: 80%;
-            margin: 0;
-
-            @if $use-font-awesome {
-                a {
-                    img {
-                        display: none;
-                    }
-                }
-            }
-        }
-
-        .progress {
-            width: 20%;
-            margin: 0;
-        }
-
-        .estimate {
-            top: $table-cell-padding - 1px;
-            right: $table-cell-padding;
-            left: auto;
-            width: 20%;
-            font-size: $font-size-small;
-            text-align: right;
-        }
+    .progress {
+      width: 20%;
+      margin: 0;
     }
+
+    .estimate {
+      top: $table-cell-padding - 1px;
+      right: $table-cell-padding;
+      left: auto;
+      width: 20%;
+      font-size: $font-size-small;
+      text-align: right;
+    }
+  }
+}
+
+
+//
+// Redmine WikiNG
+// https://github.com/martin-denizet/wiking
+// --------------------------------------------------
+
+div.wiking {
+  &.flash {
+    @if $use-font-awesome {
+      &.warning,
+      &.notice,
+      &.tip {
+        background-image: none;
+      }
+
+      &.tip {
+        &::before {
+          content: $fa-var-lightbulb-o;
+        }
+      }
+    } @else {
+      &.warning,
+      &.notice,
+      &.tip {
+        background-position: $padding-large-horizontal 50%;
+      }
+    }
+  }
 }

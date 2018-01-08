@@ -17,6 +17,7 @@ $use-gravatars:                 true !default;
 $use-font-awesome:              true !default;
 $use-logo:                      false !default;
 $use-retina-logo:               false !default;
+$use-project-tiles:             true !default;
 $issue-subject-large:           true !default;
 $enable-sidebar-toggler:        true !default;
 $wiki-page-more-vertical-space: true !default;
@@ -201,34 +202,34 @@ $tracker-default-bg:            #668 !default;
 $tracker-default-text:          $brand-text !default;
 
 $tracker-default-colors-map: (
-    1: (
-        background:             $brand-danger,
-        color:                  $brand-text
-    ),
-    2: (
-        background:             $brand-info,
-        color:                  $brand-text
-    ),
-    3: (
-        background:             $brand-success,
-        color:                  $brand-text
-    ),
-    4: (
-        background:             $brand-primary,
-        color:                  $brand-text
-    ),
-    5: (
-        background:             $brand-warning,
-        color:                  $brand-text
-    ),
-    6: (
-        background:             mix($brand-success, $brand-info, 50%),
-        color:                  $brand-text
-    ),
-    7: (
-        background:             mix($brand-primary, $brand-warning, 50%),
-        color:                  $brand-text
-    )
+  1: (
+    background:                 $brand-danger,
+    color:                      $brand-text
+  ),
+  2: (
+    background:                 $brand-info,
+    color:                      $brand-text
+  ),
+  3: (
+    background:                 $brand-success,
+    color:                      $brand-text
+  ),
+  4: (
+    background:                 $brand-primary,
+    color:                      $brand-text
+  ),
+  5: (
+    background:                 $brand-warning,
+    color:                      $brand-text
+  ),
+  6: (
+    background:                 mix($brand-success, $brand-info, 50%),
+    color:                      $brand-text
+  ),
+  7: (
+    background:                 mix($brand-primary, $brand-warning, 50%),
+    color:                      $brand-text
+  )
 ) !default;
 $tracker-custom-colors-map:     () !default;
 $tracker-colors-map:            map-merge($tracker-default-colors-map, $tracker-custom-colors-map);
@@ -248,6 +249,7 @@ $diff-in-bg-light:              rgba($diff-in-bg, .3) !default;
 
 //== Journal changes
 //
+
 $journal-old-value-color:       #430 !default;
 $journal-old-value-bg:          rgba(#ffeaaa, .3) !default;
 $journal-new-value-color:       #350 !default;
@@ -270,6 +272,7 @@ $changeset-deleted-color:       $brand-danger !default;
 $btn-font-weight:               normal !default;
 $btn-padding-vertical:          3px !default;
 $btn-padding-horizontal:        12px !default;
+$btn-padding-horizontal-small:  8px !default;
 
 $btn-link-color:                $link-color !default;
 $btn-link-bg:                   $body-bg !default;
@@ -309,7 +312,9 @@ $input-border:                  #ccc !default;
 $input-border-radius:           $border-radius-small !default;
 $input-border-radius-large:     $border-radius-large !default;
 
-$input-border-focus:            #51a7e8 !default;
+$input-border-focus:            $brand-primary !default;
+$input-border-focus-alpha:      .6 !default;
+$input-shadow-focus-alpha:      .2 !default;
 $input-color-placeholder:       #999 !default;
 
 $input-padding-vertical:        $btn-padding-vertical !default;
@@ -324,6 +329,8 @@ $label-space:                   10px !default;
 $legend-color:                  $gray-dark !default;
 $legend-border-color:           #e5e5e5 !default;
 
+$check-list-max-height:         20 * $line-height-computed;
+$check-list-offset-top:         $input-padding-vertical + 1px;
 
 //== Top
 //
@@ -341,6 +348,24 @@ $header-padding-vertical:       10px !default;
 $header-padding-horizontal:     $padding-side !default;
 $header-title-size:             $font-size-h3 !default;
 $header-title-line-height:      $line-height-computed * 1.5 !default;
+
+$responsive-header-height:      54px !default;
+
+$flyout-menu-bg:                darken($header-bg, 15%) !default;
+$flyout-menu-text:              #fff !default;
+$flyout-menu-link:              #fff !default;
+$flyout-menu-link-active-bg:    $header-bg !default;
+$flyout-menu-link-active:       #fff !default;
+$flyout-menu-header-bg:         darken($header-bg, 25%) !default;
+$flyout-menu-header-border:     darken($header-bg, 25%) !default;
+$flyout-menu-header-text:       #fff !default;
+
+$quick-search-width:            200px !default;
+$quick-search-border:           darken($header-bg, 15%) !default;
+$quick-search-border-focus:     lighten($header-bg, 25%) !default;
+$quick-search-box-width:        300px !default;
+$quick-search-dropdown-bg:      $body-bg !default;
+$quick-search-dropdown-border:  $gray-lighter !default;
 
 $logo-image-width:              60px !default;
 $logo-image-height:             40px !default;
@@ -368,7 +393,7 @@ $pagination-padding-vertical:   $btn-padding-vertical !default;
 $pagination-padding-horizontal: 10px !default;
 
 $pagination-color:              $link-color !default;
-$pagination-bg:                 #f9f9f9 !default;
+$pagination-bg:                 #fafafa !default;
 $pagination-border:             #ddd !default;
 
 $pagination-hover-color:        $link-hover-color !default;
@@ -481,6 +506,7 @@ $issue-attribute-padding-h:     5px !default;
 
 //== Speech "bubbles"
 //
+
 $bubble-gravatar-size:          24px !default;
 $bubble-gravatar-space:         12px !default;
 $bubble-padding-vertical:       8px !default;
@@ -491,6 +517,7 @@ $bubble-padding-horizontal:     15px !default;
 //
 
 $screen-xs:                     480px !default;
+$screen-xs-min:                 $screen-xs !default;
 
 $screen-sm:                     768px !default;
 $screen-sm-min:                 $screen-sm !default;
@@ -505,7 +532,23 @@ $screen-xs-max:                 ($screen-sm-min - 1) !default;
 $screen-sm-max:                 ($screen-md-min - 1) !default;
 $screen-md-max:                 ($screen-lg-min - 1) !default;
 
+$redmine-responsive-max:        899px !default;
+$redmine-responsive-min:        900px !default;
+
 $top-menu-collapse-breakpoint:  $screen-lg-min !default;
+
+
+//== Login form
+//
+
+$login-form-width:              24em !default;
+$login-form-label-width:        8em !default;
+$login-form-box-breakpoint:     $screen-xs-min !default;
+$login-form-adjustments-map: (
+  -2: da en en-GB ko pl tr uk,
+  1: fr hr nl sr-YU sv,
+  2: el eu lt pt sk sr th
+) !default;
 
 
 //== Content widths

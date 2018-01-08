@@ -1,306 +1,308 @@
 .wiki.wiki-page {
-    margin-bottom: $line-height-computed;
-    font-size: $wiki-font-size;
+  margin-bottom: $line-height-computed;
+  font-size: $wiki-font-size;
 
-    @if $wiki-page-more-vertical-space {
-        /**
-         * Anchors will make headers more separated,
-         * and it will look better when you open page with hash in URL
-         */
-        a[name]:empty {
-            display: block;
-            overflow: hidden;
+  @if $wiki-page-more-vertical-space {
+    // Add some space between list items
+    ul,
+    ol {
+      li {
+        margin-top: .25em;
+      }
+
+      ul,
+      ol {
+        margin-top: .25em;
+        margin-bottom: .25em;
+
+        li {
+          margin-top: .125em;
         }
-
-        /**
-         * Add some space between list items
-         */
-        ul,
-        ol {
-            li {
-                margin-top: .25em;
-            }
-
-            ul,
-            ol {
-                margin-top: .25em;
-                margin-bottom: .25em;
-
-                li {
-                    margin-top: .125em;
-                }
-            }
-        }
+      }
     }
+  }
 }
 
 .controller-wiki .wiki > .preview {
-    font-size: $wiki-font-size;
+  font-size: $wiki-font-size;
 }
 
 div.wiki {
-    color: $wiki-text;
-    line-height: $wiki-line-height;
+  color: $wiki-text;
+  line-height: $wiki-line-height;
 
-    //scss-lint:disable SingleLinePerSelector
-    h1, .h1,
-    h2, .h2,
-    h3, .h3,
-    h4, .h4,
-    h5, .h5,
-    h6, .h6 {
-        margin-top: 1em;
-        margin-bottom: $wiki-font-size;
-        font-weight: $headings-font-weight;
-        line-height: $headings-line-height;
+  //scss-lint:disable SingleLinePerSelector
+  h1, .h1,
+  h2, .h2,
+  h3, .h3,
+  h4, .h4,
+  h5, .h5,
+  h6, .h6 {
+    margin-top: 1em;
+    margin-bottom: $wiki-font-size;
+    font-weight: $headings-font-weight;
+    line-height: $headings-line-height;
+  }
+
+  h1, .h1 {
+    padding-bottom: .3em;
+    border-bottom: 1px solid $gray-lighter;
+    font-size: $font-size-h1;
+    line-height: 1.2;
+  }
+
+  h2, .h2 {
+    padding-bottom: .3em;
+    border-bottom: 1px solid $gray-lighter;
+    font-size: $font-size-h2;
+    line-height: 1.225;
+  }
+
+  h3, .h3 {
+    font-size: $font-size-h3;
+    line-height: 1.43;
+  }
+
+  h4, .h4 {
+    font-size: $font-size-h4;
+  }
+
+  h5, .h5 {
+    font-size: $font-size-h5;
+  }
+
+  h6, .h6 {
+    color: $gray;
+    font-size: $font-size-h6;
+  }
+
+  .text-normal {
+    font-weight: normal;
+  }
+
+  > a:first-child {
+    + h1,
+    + h2,
+    + h3,
+    + h4,
+    + h5,
+    + h6 {
+      margin-top: 0;
     }
+  }
 
-    h1, .h1 { font-size: $font-size-h1; line-height: 1.2; }
-    h2, .h2 { font-size: $font-size-h2; line-height: 1.225; }
-    h3, .h3 { font-size: $font-size-h3; line-height: 1.43; }
-    h4, .h4 { font-size: $font-size-h4; }
-    h5, .h5 { font-size: $font-size-h5; }
-    h6, .h6 { font-size: $font-size-h6; }
-
-    h1, .h1,
-    h2, .h2 {
-        padding-bottom: .3em;
-        border-bottom: 1px solid $gray-lighter;
-    }
-
-    h6, .h6 {
-        color: $gray;
-    }
-
-    .text-normal {
+  > a:target {
+    + h2,
+    + h3,
+    + h4,
+    + h5,
+    + h6 {
+      &::before {
+        content: "#";
+        display: inline-block;
+        width: .7em;
+        margin-left: -.7em;
+        color: $headings-anchor-color-active;
         font-weight: normal;
+      }
     }
+  }
 
-    > a:first-child {
-        + h1,
-        + h2,
-        + h3,
-        + h4,
-        + h5,
-        + h6 {
-            margin-top: 0;
-        }
-    }
+  >:last-child {
+    margin-bottom: 0;
+  }
 
-    > a:target {
-        + h2,
-        + h3,
-        + h4,
-        + h5,
-        + h6 {
-            &:before {
-                display: inline-block;
-                width: .7em;
-                margin-left: -.7em;
-                color: $headings-anchor-color-active;
-                font-weight: normal;
-                content: "#";
-            }
-        }
+  blockquote {
+    >:first-child {
+      margin-top: 0;
     }
 
     >:last-child {
-        margin-bottom: 0;
+      margin-bottom: 0;
     }
+  }
 
-    blockquote {
-        >:first-child {
-            margin-top: 0;
-        }
-
-        >:last-child {
-            margin-bottom: 0;
-        }
-    }
-
-    .contextual {
-        a {
-            opacity: .4;
-
-            &:hover {
-                opacity: 1;
-            }
-        }
-    }
-
+  .contextual {
     a {
-        // scss-lint:disable DuplicateProperty
-        word-break: break-all;
-        word-break: break-word;
-    }
+      opacity: .4;
 
-    p,
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  a {
+    word-break: break-all;
+    word-break: break-word;
+  }
+
+  p,
+  ul,
+  ol {
+    margin-bottom: 1em;
+  }
+
+  ul,
+  ol {
+    padding-left: 1.5em;
+
     ul,
     ol {
-        margin-bottom: 1em;
+      margin-bottom: 0;
     }
+  }
 
-    ul,
-    ol {
-        padding-left: 1.5em;
+  li > p {
+    margin-top: ($line-height-computed / 2);
+  }
 
-        ul,
-        ol {
-            margin-bottom: 0;
-        }
-    }
+  table {
+    display: block;
+    width: 100%;
+    margin-bottom: $line-height-computed;
+    overflow: auto;
+    word-break: normal;
+    word-break: keep-all;
+  }
 
-    li > p {
-        margin-top: ($line-height-computed / 2);
-    }
+  tr:nth-child(2n) {
+    background-color: $table-bg-accent;
+  }
 
-    table {
-        // scss-lint:disable DuplicateProperty
-        display: block;
-        width: 100%;
-        margin-bottom: $line-height-computed;
-        overflow: auto;
-        word-break: normal;
-        word-break: keep-all;
-    }
+  td,
+  th {
+    padding: $table-cell-padding;
+    border: 1px solid $table-border-color;
+  }
 
-    tr:nth-child(2n) {
-        background-color: $table-bg-accent;
-    }
+  .noborder {
+    border: 0 none;
 
     td,
     th {
-        padding: $table-cell-padding;
-        border: 1px solid $table-border-color;
+      border: 0 none;
     }
+  }
 
-    .noborder {
-        border: 0 none;
+  a.new {
+    color: $brand-danger;
+  }
 
-        td,
-        th {
-            border: 0 none;
-        }
-    }
+  code {
+    padding: .2em .33em;
+    border-radius: $border-radius-base;
+    background-color: rgba(#000, .04);
+    font-size: $font-size-small;
+  }
 
-    a.new {
-        color: $brand-danger;
-    }
+  pre {
+    width: auto;
+    margin-bottom: 1.15em;
+    padding: 4px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border: 1px solid #e7e7e7;
+    border-radius: $border-radius-base;
+    border-color: rgba(#000, .068);
+    background-color: rgba(#000, .03);
+    font-size: $font-size-small;
 
     code {
-        padding: .2em .33em;
-        border-radius: $border-radius-base;
-        background-color: rgba(#000, .04);
-        font-size: $font-size-small;
+      padding: 0;
+      border-radius: 0;
+      background-color: transparent;
+      font-size: 1em;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    vertical-align: middle;
+  }
+
+  .toc {
+    margin-bottom: $line-height-computed;
+    margin-left: 0;
+    padding: 0;
+    list-style-type: none;
+
+    &.right,
+    &.left {
+      max-width: 45%;
+      padding: 8px;
+      border: 1px solid $highlight-border;
+      border-radius: $border-radius-base;
+      background-color: $highlight-bg;
+      box-shadow: $panel-shadow;
+      font-size: $font-size-small;
+
+      a {
+        color: $highlight-text;
+        font-weight: normal;
+        text-decoration: none;
+
+        &:hover {
+          color: darken($highlight-text, 10%);
+          text-decoration: underline;
+        }
+      }
     }
 
-    pre {
-        width: auto;
-        margin-bottom: 1.15em;
-        padding: 4px 8px;
-        border: 1px solid #e7e7e7;
-        border-radius: $border-radius-base;
-        border-color: rgba(#000, .068);
-        background-color: rgba(#000, .03);
-        overflow-x: auto;
-        overflow-y: hidden;
-        font-size: $font-size-small;
-
-        code {
-            padding: 0;
-            border-radius: 0;
-            background-color: transparent;
-            font-size: 1em;
-        }
+    &.right {
+      margin-right: 0;
+      margin-left: $line-height-computed;
+      float: right;
     }
 
-    img {
-        max-width: 100%;
-        vertical-align: middle;
+    &.left {
+      margin-right: $line-height-computed;
+      margin-left: 0;
+      float: left;
     }
 
-    .toc {
-        margin-bottom: $line-height-computed;
-        margin-left: 0;
-        padding: 0;
-        list-style-type: none;
+    ul {
+      margin: 0;
+      padding: 0;
+      font-size: $font-size-small;
 
-        &.right,
-        &.left {
-            max-width: 45%;
-            padding: 8px;
-            border: 1px solid $highlight-border;
-            border-radius: $border-radius-base;
-            background-color: $highlight-bg;
-            font-size: $font-size-small;
-            box-shadow: $panel-shadow;
+      ul {
+        font-size: 1em;
+      }
+    }
 
-            a {
-                color: $highlight-text;
-                font-weight: normal;
-                text-decoration: none;
+    li {
+      // scss-lint:disable SelectorDepth
+      margin: 0;
 
-                &:hover {
-                    color: darken($highlight-text, 10%);
-                    text-decoration: underline;
-                }
-            }
-        }
-
-        &.right {
-            margin-right: 0;
-            margin-left: $line-height-computed;
-            float: right;
-        }
-
-        &.left {
-            margin-right: $line-height-computed;
-            margin-left: 0;
-            float: left;
-        }
-
-        ul {
-            margin: 0;
-            padding: 0;
-            font-size: $font-size-small;
-
-            ul {
-                font-size: 1em;
-            }
-        }
+      li {
+        margin-left: 1.5em;
+        list-style-type: disc;
 
         li {
-            // scss-lint:disable SelectorDepth
-            margin: 0;
+          list-style-type: circle;
 
-            li {
-                list-style-type: disc;
-                margin-left: 1.5em;
-
-                li {
-                    list-style-type: circle;
-
-                    li {
-                        list-style-type: square;
-                    }
-                }
-            }
+          li {
+            list-style-type: square;
+          }
         }
+      }
     }
+  }
 
-    .toc-active-prev + .toc {
-        padding-left: $padding-large-horizontal;
-        border-left: 4px solid $toc-active-border;
+  .toc-active-prev + .toc {
+    padding-left: $padding-large-horizontal;
+    border-left: 4px solid $toc-active-border;
 
-        a {
-            color: $toc-active-link;
+    a {
+      color: $toc-active-link;
 
-            &:focus,
-            &:hover {
-                color: $toc-active-link-hover;
-            }
-        }
+      &:focus,
+      &:hover {
+        color: $toc-active-link-hover;
+      }
     }
+  }
 }
 
 h1,
@@ -309,72 +311,80 @@ h3,
 h4,
 h5,
 h6 {
+  .wiki-anchor {
+    display: none;
+    position: relative;
+    top: -(1em - $font-size-small);
+    margin-left: 5px;
+    color: $headings-anchor-color !important; // scss-lint:disable ImportantRule
+    font-size: $font-size-small;
+    text-decoration: none !important; // scss-lint:disable ImportantRule
+  }
+
+  &:hover {
     .wiki-anchor {
-        // scss-lint:disable ImportantRule
-        display: none;
-        position: relative;
-        top: -(1em - $font-size-small);
-        margin-left: 5px;
-        color: $headings-anchor-color !important;
-        font-size: $font-size-small;
-        text-decoration: none !important;
+      display: inline;
     }
+  }
 
-    &:hover {
-        .wiki-anchor {
-            display: inline;
-        }
-    }
-
-    img {
-        display: inline-block;
-        max-width: 100%;
-        vertical-align: middle;
-    }
+  img {
+    display: inline-block;
+    max-width: 100%;
+    vertical-align: middle;
+  }
 }
 
 p.footnote {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 
-    &:before {
-        display: block;
-        width: 300px;
-        margin-top:  $line-height-computed;
-        padding-top: $line-height-computed / 2;
-        border-top: 1px solid $gray-lighter;
-        content: "";
-    }
+  &::before {
+    content: "";
+    display: block;
+    width: 300px;
+    margin-top:  $line-height-computed;
+    padding-top: $line-height-computed / 2;
+    border-top: 1px solid $gray-lighter;
+  }
 
-    + p.footnote:before {
-        display: none;
-    }
+  + p.footnote::before {
+    display: none;
+  }
 }
 
 .preview {
-    margin-top: $line-height-computed;
-    padding: $padding-wiki;
-    background-color: #fffbe5;
-    background-image: url("../images/draft.png");
-    background-position: center center;
+  margin-top: $line-height-computed;
+  padding: $padding-wiki;
+  background-color: #fffbe5;
+  background-image: url("../images/draft.png");
+  background-position: center center;
 
-    html[lang="pl"] & {
-        background-image: url("../images/draft-pl.png");
-    }
+  html[lang="pl"] & {
+    background-image: url("../images/draft-pl.png");
+  }
 }
 
 #wiki_add_attachment {
+  padding-top: $line-height-computed;
+  border-top: 1px solid $gray-lighter;
+
+  > p {
+    margin-bottom: 0;
+    float: left;
+  }
+
+  > form {
     padding-top: $line-height-computed;
-    border-top: 1px solid $gray-lighter;
+    clear: left;
+  }
 
-    > p {
-        margin-bottom: 0;
-        float: left;
-    }
+  .collapsible & {
+    padding-top: 0;
+    border-top: 0;
 
-    #add_attachment_form {
-        padding-top: $line-height-computed;
-        clear: left;
+    > form {
+      padding-top: 0;
     }
+  }
 }
 
 
@@ -382,76 +392,80 @@ p.footnote {
 // Custom classes for Bootstrap-like features
 // --------------------------------------------------
 
-/**
- * Pager
- * see: http://getbootstrap.com/components/#pagination-pager
- */
+
+// Pager
+// see: http://getbootstrap.com/components/#pagination-pager
+
 .wiki-pager {
-    > a {
-        display: inline-block;
-        padding: $padding-base-vertical $padding-base-horizontal;
-        border: 1px solid $btn-default-border;
-        border-radius: ceil($font-size-base + ($padding-base-vertical + 1px) * 2) / 2;
-        background-color: $body-bg;
-        line-height: 1;
-        white-space: nowrap;
+  > a {
+    display: inline-block;
+    padding: $padding-base-vertical $padding-base-horizontal;
+    border: 1px solid $btn-default-border;
+    border-radius: ceil($font-size-base + ($padding-base-vertical + 1px) * 2) / 2;
+    background-color: $body-bg;
+    line-height: 1;
+    white-space: nowrap;
 
-        &:hover,
-        &:focus,
-        &:active {
-            background-color: $btn-default-bg;
-            text-decoration: none;
-        }
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $btn-default-bg;
+      text-decoration: none;
+    }
+  }
+
+  &.wiki-pager--aligned {
+    overflow: hidden;
+
+    > a:first-child {
+      float: left;
     }
 
-    &.wiki-pager--aligned {
-        overflow: hidden;
-
-        > a:first-child {
-            float: left;
-        }
-
-        > a:last-child {
-            float: right;
-        }
+    > a:last-child {
+      float: right;
     }
+  }
 }
 
-/**
- * Typographic helper classes
- */
+
+//== Typographic helper classes
+//
 
 // Lead body copy
 // see: http://getbootstrap.com/css/#lead-body-copy
-.lead {
-    margin-bottom: $line-height-computed;
-    font-size: floor(($font-size-base * 1.15));
-    font-weight: 300;
-    line-height: 1.4;
 
-    @media (min-width: $screen-sm-min) {
-        font-size: ($font-size-base * 1.5);
-    }
+.lead {
+  margin-bottom: $line-height-computed;
+  font-size: floor(($font-size-base * 1.15));
+  font-weight: 300;
+  line-height: 1.4;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: ($font-size-base * 1.5);
+  }
 }
+
 
 // Alignment
 // see: http://getbootstrap.com/css/#type-alignment
+
 .text-left       { text-align: left; }
 .text-right      { text-align: right; }
 .text-center     { text-align: center; }
 .text-justify    { text-align: justify; }
 .text-nowrap     { white-space: nowrap; }
 
+
 // Transformation
 // see: http://getbootstrap.com/css/#type-transformation
+
 .text-lowercase  { text-transform: lowercase; }
 .text-uppercase  { text-transform: uppercase; }
 .text-capitalize { text-transform: capitalize; }
 
-/**
- * Other helper classes
- * see: http://getbootstrap.com/css/#helper-classes
- */
+
+// Other helper classes
+// see: http://getbootstrap.com/css/#helper-classes
 
 .text-muted      { color: $gray-light; }
 .text-primary    { color: $brand-primary; }
@@ -467,11 +481,11 @@ p.footnote {
 .bg-danger       { background-color: $state-danger; }
 
 p {
-    &.bg-primary,
-    &.bg-success,
-    &.bg-info,
-    &.bg-warning,
-    &.bg-danger {
-        padding: $panel-body-padding;
-    }
+  &.bg-primary,
+  &.bg-success,
+  &.bg-info,
+  &.bg-warning,
+  &.bg-danger {
+    padding: $panel-body-padding;
+  }
 }

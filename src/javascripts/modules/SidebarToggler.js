@@ -1,154 +1,140 @@
-var PurpleMine = PurpleMine || {};
+var PurpleMine = PurpleMine || {}
 
-PurpleMine.SidebarToggler = (function()
-{
-    "use strict";
+PurpleMine.SidebarToggler = (function () {
+  'use strict'
 
-    var self;
-    var translations = {
-        en: {
-            toggler: "Toggle sidebar"
-        },
-        pl: {
-            toggler: "Pokaż/ukryj panel boczny"
-        }
-    };
+  var instance
+  var translations = {
+    en: {
+      toggler: 'Toggle sidebar'
+    },
+    pl: {
+      toggler: 'Pokaż/ukryj panel boczny'
+    },
+    ja: {
+      toggler: 'サイドバーの切り替え'
+    }
+  }
 
-    function SidebarToggler()
-    {
-        if (self)
-        {
-            return self;
-        }
-
-        self = this;
-
-        this.sidebarVisible = true;
-        this.sidebarHiding  = null;
-        this.$toggler       = null;
-        this.$main          = $("#main");
-        this.$sidebar       = $("#sidebar");
-        this.lang           = document.documentElement.lang;
-
-        if (typeof translations[this.lang] === "undefined")
-        {
-            this.lang = "en";
-        }
-
-        this._ = translations[this.lang];
-
-        // Fix issue with context menu position
-        if ("relative" === this.$main.css("position"))
-        {
-            $("#context-menu").appendTo("#wrapper3");
-        }
-
-        handleSidebar();
+  function SidebarToggler () {
+    if (instance) {
+      return instance
     }
 
-    function handleSidebar()
-    {
-        if (window.localStorage)
-        {
-            self.sidebarVisible =
-                null === localStorage.getItem("PurpleMine:sidebarHidden");
-        }
+    instance = this
 
-        if (self.$sidebar.length > 0 &&
-            false === self.$main.hasClass("nosidebar"))
-        {
-            buildButton();
-            bindKeyHandler();
+    this.sidebarVisible = true
+    this.sidebarHiding = null
+    this.$toggler = null
+    this.$main = $('#main')
+    this.$sidebar = $('#sidebar')
+    this.lang = document.documentElement.lang
 
-            if (false === self.sidebarVisible)
-            {
-                self.hideSidebar(true);
-            }
-        }
+    if (typeof translations[this.lang] === 'undefined') {
+      this.lang = 'en'
     }
 
-    function bindKeyHandler()
-    {
-        var body = document.getElementsByTagName("body")[0];
+    this._ = translations[this.lang]
 
-        window.onkeydown = function(event)
-        {
-            if (body === event.target && 83 === event.keyCode && // "s"
-                false === event.ctrlKey && false === event.altKey &&
-                false === event.shiftKey)
-            {
-                self.toggleSidebar();
-            }
-        };
+    // Fix issue with context menu position
+    if (this.$main.css('position') === 'relative') {
+      $(window).load(function () {
+        $('#context-menu').appendTo('#wrapper3')
+      })
     }
 
-    function buildButton()
-    {
-        var togglerClass = "sidebar-toggler",
-            togglerHtml;
+    handleSidebar()
+  }
 
-        togglerHtml = "<a href=\"javascript:;\" class=\"" + togglerClass +
-                        "\" title=\"" + self._.toggler + "\"></a>";
-        self.$toggler = $(togglerHtml);
-
-        self.$main.append(self.$toggler);
-        self.$toggler.on("click", self.toggleSidebar);
+  function handleSidebar () {
+    if (window.localStorage) {
+      instance.sidebarVisible =
+        localStorage.getItem('PurpleMine:sidebarHidden') === null
     }
 
-    SidebarToggler.prototype.toggleSidebar = function()
-    {
-        if (self.sidebarVisible)
-        {
-            self.hideSidebar();
-        }
-        else
-        {
-            self.showSidebar();
-        }
-    };
+    if (
+      instance.$sidebar.length > 0 &&
+      instance.$main.hasClass('nosidebar') === false
+    ) {
+      buildButton()
+      bindKeyHandler()
 
-    SidebarToggler.prototype.hideSidebar = function(immediate)
-    {
-        if (true === immediate)
-        {
-            this.$sidebar.addClass("sidebar-hiding sidebar-hidden");
-        }
-        else
-        {
-            this.$sidebar.addClass("sidebar-hiding");
-            this.sidebarHiding = setTimeout(function sidebarTimeout()
-            {
-                self.$sidebar.addClass("sidebar-hidden");
-            }, 500);
-        }
+      if (instance.sidebarVisible === false) {
+        instance.hideSidebar(true)
+      }
+    }
+  }
 
-        this.$toggler.addClass("sidebar-hidden");
-        this.sidebarVisible = false;
+  function bindKeyHandler () {
+    var body = document.getElementsByTagName('body')[0]
 
-        if (window.localStorage)
-        {
-            localStorage.setItem("PurpleMine:sidebarHidden", "x");
-        }
-    };
+    window.onkeydown = function (event) {
+      if (
+        body === event.target &&
+        event.keyCode === 83 && // "s"
+        event.ctrlKey === false &&
+        event.altKey === false &&
+        event.shiftKey === false
+      ) {
+        instance.toggleSidebar()
+      }
+    }
+  }
 
-    SidebarToggler.prototype.showSidebar = function()
-    {
-        clearTimeout(this.sidebarHiding);
+  function buildButton () {
+    var togglerClass = 'sidebar-toggler'
+    var togglerHtml = '<a href="javascript:;" class="' +
+      togglerClass +
+      '" title="' +
+      instance._.toggler +
+      '"></a>'
+    instance.$toggler = $(togglerHtml)
 
-        self.$sidebar.removeClass("sidebar-hidden");
-        setTimeout(function sidebarTimeout()
-        {
-            self.$sidebar.removeClass("sidebar-hiding");
-        }, 50);
+    instance.$main.append(instance.$toggler)
+    instance.$toggler.on('click', instance.toggleSidebar)
+  }
 
-        this.$toggler.removeClass("sidebar-hidden");
-        this.sidebarVisible = true;
+  SidebarToggler.prototype.toggleSidebar = function () {
+    if (instance.sidebarVisible) {
+      instance.hideSidebar()
+    } else {
+      instance.showSidebar()
+    }
+  }
 
-        if (window.localStorage)
-        {
-            localStorage.removeItem("PurpleMine:sidebarHidden");
-        }
-    };
+  SidebarToggler.prototype.hideSidebar = function (immediate) {
+    if (immediate === true) {
+      this.$sidebar.addClass('sidebar-hiding sidebar-hidden')
+    } else {
+      this.$sidebar.addClass('sidebar-hiding')
+      this.sidebarHiding = setTimeout(function sidebarTimeout () {
+        instance.$sidebar.addClass('sidebar-hidden')
+      }, 500)
+    }
 
-    return SidebarToggler;
-}());
+    this.$toggler.addClass('sidebar-hidden')
+    this.sidebarVisible = false
+
+    if (window.localStorage) {
+      localStorage.setItem('PurpleMine:sidebarHidden', 'x')
+    }
+  }
+
+  SidebarToggler.prototype.showSidebar = function () {
+    clearTimeout(this.sidebarHiding)
+
+    instance.$sidebar.removeClass('sidebar-hidden')
+    setTimeout(function sidebarTimeout () {
+      instance.$sidebar.removeClass('sidebar-hiding')
+    }, 50)
+
+    this.$toggler.removeClass('sidebar-hidden')
+    this.sidebarVisible = true
+
+    if (window.localStorage) {
+      localStorage.removeItem('PurpleMine:sidebarHidden')
+    }
+  }
+
+  return SidebarToggler
+}())
