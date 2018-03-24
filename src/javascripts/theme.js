@@ -7,28 +7,33 @@ $(function () {
 	    return this.hostname != window.location.hostname;
 	}).attr('target', '_blank');
 
-  
   // use pretty checkbox/radio elements
   function replaceRadiosAndCheckboxElements() {
-    $('label').each(function(){
+    $('[type="checkbox"],[type="radio"]').each(function(){
       var _this = $(this);
-      var _txt = _this.text();
-      var _input = _this.find('input');
-      var _span = _this.find('label-text');
-
-      if ( _input.length > 0 && _span.length == 0 ) {
-        _this.text('')
-        .append(_input.clone())
-        .append('<span class="label-text">' + _txt + '</span>');
+      if ( _this.hasClass('pretty-checkbox-radio') === false ) {
+        _this.addClass('pretty-checkbox-radio');
+        $('<span class="pretty-checkbox-radio-wrap">').insertBefore(_this)
+        .append(_this.clone())
+        .append($('<span class="label-text">'));
+        _this.remove();
       }
     });
   }
 
+  // trigger input skinning upon ajax calls
   $(document).ajaxComplete(function(){
     replaceRadiosAndCheckboxElements();
   });
 
+  // skin all radio/checkbox inputs
   replaceRadiosAndCheckboxElements();
+
+  // bind click event for input/radio for the <span class="label-text"> DOM element to trigger the status toggle
+  // this is usefull when the input is not wrapped inside a <label> tag
+  $('body').on('click', '.label-text', function(){
+    $(this).prev().trigger('click');
+  });
 
   /* eslint-disable no-new */
   new PurpleMine.SidebarToggler()

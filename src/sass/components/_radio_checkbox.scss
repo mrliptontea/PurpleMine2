@@ -1,17 +1,15 @@
 /**
  * customize input radio & checkbox
- * in order to apply this skinning the input element needs to be wrapped
- * in the <label> tag
  *
  * @author https://bootsnipp.com/snippets/featured/simple-css-custom-checkboxes-and-radios
  */
-label input[type="checkbox"], label input[type="radio"]{
+input[type="checkbox"], input[type="radio"]{
 	position: absolute;
 	right: 9000px;
 }
 
 /*Check box*/
-label input[type="checkbox"] + .label-text:before{
+input[type="checkbox"] + .label-text:before{
 	content: "\f096";
 	font-family: "FontAwesome";
 	speak: none;
@@ -23,27 +21,28 @@ label input[type="checkbox"] + .label-text:before{
 	-webkit-font-smoothing:antialiased;
 	width: 1em;
 	display: inline-block;
+	font-size: 1.1em;
 	//margin-right: 5px;
 }
 
-label input[type="checkbox"]:checked + .label-text:before{
+input[type="checkbox"]:checked + .label-text:before{
 	content: "\f14a";
 	color: #2980b9;
 	animation: effect 250ms ease-in;
 }
 
-label input[type="checkbox"]:disabled + .label-text{
+input[type="checkbox"]:disabled + .label-text{
 	color: #aaa;
 }
 
-label input[type="checkbox"]:disabled + .label-text:before{
+input[type="checkbox"]:disabled + .label-text:before{
 	content: "\f0c8";
 	color: #ccc;
 }
 
 /*Radio box*/
 
-label input[type="radio"] + .label-text:before{
+input[type="radio"] + .label-text:before{
 	content: "\f10c";
 	font-family: "FontAwesome";
 	speak: none;
@@ -55,20 +54,21 @@ label input[type="radio"] + .label-text:before{
 	-webkit-font-smoothing:antialiased;
 	width: 1em;
 	display: inline-block;
+	font-size: 1.1em;
 	//margin-right: 5px;
 }
 
-label input[type="radio"]:checked + .label-text:before{
+input[type="radio"]:checked + .label-text:before{
 	content: "\f192";
 	color: #8e44ad;
 	animation: effect 250ms ease-in;
 }
 
-label input[type="radio"]:disabled + .label-text{
+input[type="radio"]:disabled + .label-text{
 	color: #aaa;
 }
 
-label input[type="radio"]:disabled + .label-text:before{
+input[type="radio"]:disabled + .label-text:before{
 	content: "\f111";
 	color: #ccc;
 }
