@@ -4,8 +4,8 @@
  * @author https://bootsnipp.com/snippets/featured/simple-css-custom-checkboxes-and-radios
  */
 input[type="checkbox"], input[type="radio"]{
-	position: absolute;
-	right: 9000px;
+	position: absolute !important;
+	right: 9000px !important;
 }
 
 /*Check box*/
@@ -22,7 +22,7 @@ input[type="checkbox"] + .label-text:before{
 	width: 1em;
 	display: inline-block;
 	font-size: 1.1em;
-	//margin-right: 5px;
+	margin: 4px 5px 0 0;
 }
 
 input[type="checkbox"]:checked + .label-text:before{
@@ -55,7 +55,7 @@ input[type="radio"] + .label-text:before{
 	width: 1em;
 	display: inline-block;
 	font-size: 1.1em;
-	//margin-right: 5px;
+	margin-right: 5px;
 }
 
 input[type="radio"]:checked + .label-text:before{
