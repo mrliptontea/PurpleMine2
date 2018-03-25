@@ -8,6 +8,12 @@ PurpleMine.SidebarToggler = (function () {
     en: {
       toggler: 'Toggle sidebar'
     },
+    ro: {
+      toggler: 'Deschide/închide bara laterală'
+    },
+    fr: {
+      toggler: 'Basculer la barre latérale'
+    },
     pl: {
       toggler: 'Pokaż/ukryj panel boczny'
     },
