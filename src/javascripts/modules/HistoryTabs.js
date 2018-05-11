@@ -1,4 +1,4 @@
-var PurpleMine = PurpleMine || {}
+var PurpleMine = PurpleMine || {} // eslint-disable-line no-use-before-define
 
 PurpleMine.HistoryTabs = (function () {
   'use strict'
@@ -83,8 +83,8 @@ PurpleMine.HistoryTabs = (function () {
     $this.addClass('selected')
 
     instance.$history
-        .removeClass('hide-details')
-        .removeClass('hide-notes')
+      .removeClass('hide-details')
+      .removeClass('hide-notes')
 
     if (tab === 'notes') {
       instance.$history.addClass('hide-details')
