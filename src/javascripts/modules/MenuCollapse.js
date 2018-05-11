@@ -1,4 +1,4 @@
-var PurpleMine = PurpleMine || {}
+var PurpleMine = PurpleMine || {} // eslint-disable-line no-use-before-define
 
 PurpleMine.MenuCollapse = (function () {
   'use strict'

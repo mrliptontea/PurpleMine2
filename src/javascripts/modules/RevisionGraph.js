@@ -1,8 +1,5 @@
-var PurpleMine = PurpleMine || {}
+var PurpleMine = PurpleMine || {} // eslint-disable-line no-use-before-define
 /* global Raphael: false, revisionGraph: true */
-/* jshint camelcase: false */
-/* jshint maxstatements: false */
-/* jshint maxlen: 160 */
 
 PurpleMine.RevisionGraph = function (holder, commitsHash, graphSpace) {
   'use strict'
