@@ -233,6 +233,11 @@ div.attachments {
   padding: $line-height-computed 0;
   border-top: 1px solid $issue-border;
 
+  @at-root .collapsible #{&} {
+    padding-top: 0;
+    border-top: 0;
+  }
+
   p {
     margin: 10px 0 0;
   }
