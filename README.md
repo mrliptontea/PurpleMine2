@@ -71,6 +71,7 @@ Latest (master):
 * Fixed #54: long checkbox lists will be scrollable
 * Fixed #62: anchors won't scroll the page
 * Fixed #69: fixed "remember me" checkbox layout on login page
+* Fixed #78: files not visible on list in wiki when there is a lot of them
 * Updated dependencies
 
 v1.8.0 (2016-11-20):

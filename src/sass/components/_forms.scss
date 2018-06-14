@@ -430,7 +430,9 @@ label[for=closed] {
 //== Attachments
 //
 
-#attachments_fields {
+#attachments_fields,
+#existing-attachments,
+.attachments_fields {
   > span {
     display: block;
     margin-bottom: $line-height-computed / 4;
