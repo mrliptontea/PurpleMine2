@@ -85,6 +85,8 @@ a.collapsible.collapsed,
 .contextual {
   float: right;
   cursor: default;
+  position: relative;
+  z-index: 1;
 
   input,
   select {
@@ -99,6 +101,10 @@ a.collapsible.collapsed,
       margin-left: $padding-small-vertical;
     }
   }
+}
+
+.journal .contextual {
+  padding: 8px 15px;
 }
 
 
