@@ -99,6 +99,8 @@
 // Search form
 
 #search-form {
+  margin-bottom: $line-height-computed;
+
   input,
   select {
     margin-right: 5px;
