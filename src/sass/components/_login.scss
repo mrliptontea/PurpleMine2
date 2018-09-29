@@ -17,7 +17,7 @@
     font-weight: $font-weight-bold;
 
     &[for="autologin"] {
-      @include checkbox;
+      @include check;
       margin-bottom: $line-height-computed;
     }
 

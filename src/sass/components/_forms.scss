@@ -303,7 +303,6 @@ em.info {
       margin-left: 0;
       padding-left: 16px;
       float: none;
-      clear: left;
       text-align: left;
       cursor: pointer;
     }
@@ -363,7 +362,7 @@ label[for=issue_description] + a {
 //
 
 label[for=closed] {
-  @include checkbox;
+  @include check;
   display: block;
   margin-bottom: $line-height-computed / 2;
 }
@@ -580,13 +579,7 @@ label[for=closed] {
 
     label {
       display: inline-block;
-      margin-right: $padding-base-horizontal;
-
-      input[type="checkbox"],
-      input[type="radio"] {
-        margin-left: -20px;
-        float: left;
-      }
+      margin-right: $check-input-margin-horizontal;
     }
   }
 }

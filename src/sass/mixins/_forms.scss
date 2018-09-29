@@ -40,26 +40,26 @@
   }
 }
 
-@mixin checkbox() {
-  @include check;
-}
-
-@mixin radio() {
-  @include check;
-}
-
 @mixin check() {
   @extend %clearfix;
-  padding-left: 20px;
+  position: relative;
+  padding-left: $check-input-gutter;
   text-align: left;
   font-weight: $font-weight-normal;
 
   input[type="checkbox"],
   input[type="radio"] {
+    position: absolute;
     width: auto;
-    margin-left: -20px;
-    float: left;
+    margin-top: $check-input-margin-vertical;
+    margin-left: -$check-input-gutter;
   }
+}
+
+@mixin check-inline() {
+  @include check;
+  display: inline-block;
+  margin-right: $check-input-margin-horizontal;
 }
 
 @mixin check-list() {
@@ -71,10 +71,5 @@
 
   @media screen and (min-width: $screen-sm-min) {
     margin: 0;
-  }
-
-  input[type="checkbox"],
-  input[type="radio"] {
-    top: -1px;
   }
 }
