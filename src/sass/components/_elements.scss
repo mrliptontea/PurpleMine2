@@ -190,7 +190,7 @@ a.collapsible.collapsed,
   overflow: auto;
 
   label {
-    @include checkbox;
+    @include check;
     display: block;
   }
 }
@@ -240,6 +240,23 @@ a.collapsible.collapsed,
         vertical-align: top;
       }
     }
+  }
+}
+
+
+//== Users selection list
+//
+
+#principals {
+  label {
+    @include check;
+    display: block;
+  }
+}
+
+.roles-selection {
+  label {
+    @include check-inline;
   }
 }
 

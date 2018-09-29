@@ -73,6 +73,8 @@ Latest (master):
 * Fixed #69: fixed "remember me" checkbox layout on login page
 * Fixed #78: files not visible on list in wiki when there is a lot of them
 * Updated dependencies
+* Fixed #81: top watchers checkboxes were not visible on Firefox
+* Removed `checkbox` and `radio` mixins in favour of `check`
 
 v1.8.0 (2016-11-20):
 

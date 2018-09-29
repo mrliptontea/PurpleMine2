@@ -330,6 +330,10 @@ $label-space:                   10px !default;
 $legend-color:                  $gray-dark !default;
 $legend-border-color:           #e5e5e5 !default;
 
+$check-input-gutter:            20px !default;
+$check-input-margin-vertical:   3px !default;
+$check-input-margin-horizontal: 8px !default;
+
 $check-list-max-height:         20 * $line-height-computed;
 $check-list-offset-top:         $input-padding-vertical + 1px;
 
