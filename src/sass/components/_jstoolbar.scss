@@ -2,6 +2,63 @@
 // WYSIWYG icons
 // --------------------------------------------------
 
+// For Redmine 4.0+
+#content {
+  div.jstTabs.tabs {
+    height: auto;
+    @if $flexbox-layout {
+      @media screen and (max-width: $redmine-responsive-max) {
+        clear: both;
+      }
+    }
+
+    ul {
+      width: 100%;
+      height: auto;
+
+      li {
+        height: auto;
+        margin: 0;
+
+        &::before {
+          content: none;
+        }
+
+        &:not(.tab-elements) {
+          @if $flexbox-layout {
+            align-self: flex-end;
+          }
+
+          .selected {
+            border-color: $input-border $input-border $tab-active-bg;
+          }
+        }
+
+        &.tab-elements {
+          margin-left: 5px;
+        }
+      }
+    }
+
+    .jstElements {
+      height: auto;
+    }
+  }
+
+  .jstEditor {
+    .wiki-preview {
+      padding: $input-padding-vertical $input-padding-horizontal;
+      border: 1px solid $input-border;
+      border-radius: $input-border-radius;
+      background-color: $wiki-preview-bg;
+
+      p {
+        padding: 0;
+      }
+    }
+  }
+}
+
 .jstElements {
   @extend %clearfix;
 

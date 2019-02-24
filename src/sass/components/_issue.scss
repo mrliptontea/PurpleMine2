@@ -413,6 +413,31 @@ div.thumbnails {
     }
   }
 
+  // For Redmine 4.0+
+  > div > .contextual {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: $bubble-padding-vertical $bubble-padding-horizontal;
+    font-size: $font-size-list;
+
+    > .journal-actions > a {
+      opacity: .5;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    > a.journal-link {
+      color: $gray;
+
+      &::before {
+        content: "";
+      }
+    }
+  }
+
   > div > h4 {
     margin: 0;
     padding: $bubble-padding-vertical $bubble-padding-horizontal;
