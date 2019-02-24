@@ -23,15 +23,16 @@
     "lint": "standard && scss-lint"
   },
   "dependencies": {
-    "autoprefixer": "^8.5.0",
-    "grunt": "^1.0.2",
-    "grunt-contrib-uglify": "^3.3.0",
+    "autoprefixer": "^9.4.8",
+    "grunt": "^1.0.3",
+    "grunt-contrib-uglify": "^4.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-postcss": "^0.9.0",
-    "grunt-sass": "^2.1.0"
+    "grunt-sass": "^3.0.2",
+    "node-sass": "^4.11.0"
   },
   "devDependencies": {
-    "standard": "^11.0.1"
+    "standard": "^12.0.1"
   },
   "standard": {
     "globals": [

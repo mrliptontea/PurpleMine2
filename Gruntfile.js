@@ -4,6 +4,7 @@ module.exports = function (grunt) {
 
     sass: {
       options: {
+        implementation: require('node-sass'),
         sourceMap: false,
         outputStyle: 'compressed'
       },
