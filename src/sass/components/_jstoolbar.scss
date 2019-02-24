@@ -5,30 +5,37 @@
 // For Redmine 4.0+
 #content {
   div.jstTabs.tabs {
-    width: 100%;
     height: auto;
+    @if $flexbox-layout {
+      @media screen and (max-width: $redmine-responsive-max) {
+        clear: both;
+      }
+    }
 
     ul {
+      width: 100%;
       height: auto;
 
       li {
         height: auto;
         margin: 0;
-      }
 
-      li:not(.tab-elements) {
-        a {
-          margin-bottom: 5px;
+        &::before {
+          content: none;
+        }
 
-          &.selected {
-            border: 1px solid $tab-active-border;
-            border-radius: $border-radius-base;
+        &:not(.tab-elements) {
+          @if $flexbox-layout {
+            align-self: flex-end;
           }
 
-          &:not(.selected):hover {
-            border: 1px solid transparent;
-            border-radius: $border-radius-base;
+          .selected {
+            border-color: $input-border $input-border $tab-active-bg;
           }
+        }
+
+        &.tab-elements {
+          margin-left: 5px;
         }
       }
     }
