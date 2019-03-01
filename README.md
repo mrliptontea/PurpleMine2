@@ -56,7 +56,7 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
-Latest (master):
+v1.9.0 (2019-03-01):
 
 * Fixed #42: override some styles from [RM+](http://rmplus.pro) plugins
 * Merged #43: fixes for Redmine 3.3.2.devel
