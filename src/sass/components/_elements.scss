@@ -93,11 +93,12 @@ a.collapsible.collapsed,
 
   a {
     display: inline-block;
+    margin-left: $padding-small-vertical;
     white-space: nowrap;
+  }
 
-    &:not(:first-child) {
-      margin-left: $padding-small-vertical;
-    }
+  > :first-child {
+    margin-left: 0;
   }
 }
 

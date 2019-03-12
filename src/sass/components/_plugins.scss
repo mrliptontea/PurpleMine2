@@ -45,6 +45,58 @@
 
 
 //
+// Redmine Hearts
+// https://github.com/cat-in-136/redmine_hearts
+// --------------------------------------------------
+
+.journal > div + .contextual {
+  border: 0;
+
+  > .heart-link-with-count {
+    display: block;
+    position: relative;
+    margin: -($line-height-computed / 2 + 1px) $bubble-padding-vertical 0;
+    float: right;
+    border: 0;
+    background-color: $body-bg;
+    text-align: right;
+  }
+}
+
+@if $use-font-awesome {
+  .icon.icon-heart,
+  .icon.icon-heart-off {
+    background-image: none;
+  }
+
+  .icon.icon-heart {
+    &::before {
+      color: #eb5286;
+    }
+  }
+
+  .heart-link-with-count {
+    margin-left: $padding-small-vertical;
+
+    > .heart-count-number {
+      display: inline-block;
+      min-width: 1em;
+      margin: 0 0 0 3px;
+      padding: 1px 4px;
+      border-radius: $border-radius-base;
+      background-color: $btn-default-bg;
+      color: $btn-default-color;
+      text-align: center;
+
+      &::before {
+        content: "";
+      }
+    }
+  }
+}
+
+
+//
 // Redmine Time Tracker
 // https://github.com/fernandokosh/redmine_time_tracker
 // --------------------------------------------------

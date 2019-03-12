@@ -56,6 +56,10 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
+v1.10.0 (2019-03-12):
+
+* Fixed #86: added support for redmine_hearts plugin
+
 v1.9.0 (2019-03-01):
 
 * Fixed #42: override some styles from [RM+](http://rmplus.pro) plugins

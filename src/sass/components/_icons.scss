@@ -133,6 +133,8 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   .icon-error::before                 { content: $fa-var-exclamation; }
   .icon-fav::before                   { content: $fa-var-star; }
   .icon-fav-off::before               { content: $fa-var-star-o; }
+  .icon-heart::before                 { content: $fa-var-heart; }
+  .icon-heart-off::before             { content: $fa-var-heart-o; }
   .icon-reload::before                { content: $fa-var-refresh; }
   .icon-locked::before                { content: $fa-var-lock; }
   .icon-lock::before                  { content: $fa-var-lock; }
@@ -1212,32 +1214,34 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 
   // Issue journal contextual icons
 
-  .journal .contextual {
-    a {
+  .journal .wiki .contextual {
+    > a {
       @extend %fa-icon;
 
-      &::before {
-        content: $fa-var-comment;
+      &:not([class*="icon"]) {
+        &::before {
+          content: $fa-var-comment;
+        }
+
+        &:nth-child(2) {
+          @include link-variant($icon-success-color, $icon-success-hover-color);
+
+          &::before {
+            content: $fa-var-pencil;
+          }
+        }
+
+        &:nth-child(3) {
+          @include link-variant($icon-danger-color, $icon-danger-hover-color);
+
+          &::before {
+            content: $fa-var-trash;
+          }
+        }
       }
 
       img {
         display: none;
-      }
-
-      &:nth-child(2) {
-        @include link-variant($icon-success-color, $icon-success-hover-color);
-
-        &::before {
-          content: $fa-var-pencil;
-        }
-      }
-
-      &:nth-child(3) {
-        @include link-variant($icon-danger-color, $icon-danger-hover-color);
-
-        &::before {
-          content: $fa-var-trash;
-        }
       }
     }
   }
