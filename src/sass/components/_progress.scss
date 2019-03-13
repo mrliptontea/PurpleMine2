@@ -4,11 +4,11 @@
 
 table.progress {
   width: 80px;
-  margin-top: 1px;
+  margin-top: 3px;
   margin-right: 5px;
   float: left;
   empty-cells: show;
-  border: 1px solid rgba(#000, .1);
+  border: 0 none;
 
   .version-overview & {
     width: 40em;
@@ -21,20 +21,30 @@ table.progress {
   }
 
   td {
-    height: 12px;
+    height: $progress-height;
     padding: 0;
     border: 0 none;
 
-    &.closed {
-      background-color: $progress-bar-success-bg;
+    &:first-child {
+      border-top-left-radius: $progress-height / 2;
+      border-bottom-left-radius: $progress-height / 2;
+    }
+
+    &:last-child {
+      border-top-right-radius: $progress-height / 2;
+      border-bottom-right-radius: $progress-height / 2;
     }
 
     &.done {
-      background-color: mix($progress-bar-success-bg, $progress-bg, 50%);
+      background-color: $progress-bar-bg !important; // scss-lint:disable ImportantRule
+    }
+
+    &.closed {
+      background-color: $progress-bar-success-bg !important; // scss-lint:disable ImportantRule
     }
 
     &.todo {
-      background-color: $progress-bg;
+      background-color: $progress-bg !important; // scss-lint:disable ImportantRule
     }
   }
 
@@ -53,7 +63,7 @@ p {
     margin-top: -4px;
     margin-bottom: 0;
     clear: left;
-    color: #777;
+    color: $gray-700;
     font-size: 80%;
   }
 }

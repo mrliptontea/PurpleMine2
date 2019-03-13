@@ -6,7 +6,13 @@ module.exports = function (grunt) {
       options: {
         implementation: require('node-sass'),
         sourceMap: false,
-        outputStyle: 'compressed'
+        outputStyle: 'compressed',
+        functions: {
+          'inline-svg': require('sass-inline-svg')('./svg', {
+            optimize: true,
+            encodingFormat: 'uri'
+          })
+        }
       },
 
       theme: {

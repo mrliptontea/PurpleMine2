@@ -1,144 +1,23 @@
-// Priority highlight
+// Priority icon
 
-@mixin priority($parent, $background, $color, $link) {
-  @if lightness($background) < 85% {
-    $background: lighten($background, 6%);
+@mixin priority-icon-base() {
+  &::before {
+    content: "\00a0";
+    display: inline-block;
+    width: $priority-icon-size;
+    margin-right: $priority-icon-space;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: $priority-icon-size;
   }
+}
 
-  $border-color: darken(desaturate($background, 30%), 13.5%);
-
-  table.list:not(.odd-even) tbody tr#{$parent} {
-    @if $table-list-color-odd-rows {
-      &:nth-child(odd) {
-        background: darken($background, $table-accent-factor * 100%);
-      }
-    }
-
-    @if $table-list-color-even-rows {
-      &:nth-child(even) {
-        background: darken($background, $table-accent-factor * 100%);
-      }
-    }
-  }
-
-  tr#{$parent} {
-    background: $background;
-
-    @if ".priority-default" == $parent {
-      color: $color;
-    } @else {
-      color: darken($color, 10%);
-    }
-
-    @if $table-list-color-odd-rows {
-      &.odd {
-        background: darken($background, $table-accent-factor * 100%);
-      }
-    }
-
-    @if $table-list-color-even-rows {
-      &.even {
-        background: darken($background, $table-accent-factor * 100%);
-      }
-    }
-
-    td {
-      border-color: $border-color;
-    }
-
-    a {
-      color: $link;
-
-      &:hover {
-        color: darken($link, 10%);
-      }
-    }
-  }
-
-  @if $table-list-highlight-rows {
-    table.list > tbody > tr#{$parent}:hover {
-      background: darken($background, $table-hover-factor * 100%);
-    }
-
-    @if $table-list-color-odd-rows {
-      &.odd {
-        background: darken($background, ($table-accent-factor + $table-hover-factor) * 100%);
-      }
-    }
-
-    @if $table-list-color-even-rows {
-      &.even {
-        background: darken($background, ($table-accent-factor + $table-hover-factor) * 100%);
-      }
-    }
-  }
-
-  @if $colored-issue {
-    .issue.details#{$parent} {
-      color: $color;
-
-      @if ".priority-default" == $parent {
-        $border-color: $issue-border;
-        background: $issue-bg;
-      } @else {
-        background: $background;
-      }
-
-      &,
-      hr {
-        border-color: $border-color;
-      }
-
-      a {
-        color: $link;
-
-        &:hover {
-          color: darken($link, 10%);
-        }
-      }
-
-      .next-prev-links {
-        color: mix($color, $gray-light, 25%);
-      }
-
-      > .description > .wiki {
-        border-top-color: $border-color;
-      }
-
-      .wiki {
-        a {
-          color: $link-color;
-          text-decoration: none;
-
-          &:hover,
-          &:focus {
-            color: $link-hover-color;
-            text-decoration: $link-hover-decoration;
-          }
-
-          &.new {
-            color: $brand-danger;
-          }
-        }
-      }
-
-      > .attachments {
-        border-top-color: lighten($border-color, 5%);
-
-        @if ".priority-default" == $parent {
-          background-color: lighten($issue-bg, 1.5%);
-        } @else {
-          background-color: lighten($background, 5%);
-        }
-
-        span.author {
-          color: mix($color, $gray, 25%);
-        }
-      }
-
-      .list td {
-        border-bottom-color: $border-color;
-      }
+@mixin priority-icon($parent, $color, $icon) {
+  table.list tbody tr#{$parent} .priority,
+  .issue.details#{$parent} .attributes td.priority,
+  .issue.details#{$parent} .attribute.priority .value {
+    &::before {
+      background-image: inline-svg($icon, (path: (fill: $color)));
     }
   }
 }
@@ -181,16 +60,6 @@
   tr#{$parent} .id > a {
     &::before {
       color: mix($color, $background, 50%);
-    }
-  }
-
-  @if $colored-issue {
-    .issue.details a#{$parent},
-    .issue.details .wiki a#{$parent} {
-      &,
-      &:hover {
-        color: $color;
-      }
     }
   }
 }

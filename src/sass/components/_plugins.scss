@@ -55,7 +55,7 @@
   > .heart-link-with-count {
     display: block;
     position: relative;
-    margin: -($line-height-computed / 2 + 1px) $bubble-padding-vertical 0;
+    margin: -($line-height-computed / 2 + 1px) ($bubble-padding-horizontal - $padding-small-vertical) 0;
     float: right;
     border: 0;
     background-color: $body-bg;
@@ -63,19 +63,15 @@
   }
 }
 
-@if $use-font-awesome {
-  .icon.icon-heart,
-  .icon.icon-heart-off {
+.contextual {
+  .icon-heart,
+  .icon-heart-off {
+    margin-left: $padding-small-vertical;
     background-image: none;
   }
 
-  .icon.icon-heart {
-    &::before {
-      color: #eb5286;
-    }
-  }
-
   .heart-link-with-count {
+    margin-right: $padding-small-vertical;
     margin-left: $padding-small-vertical;
 
     > .heart-count-number {
@@ -95,60 +91,92 @@
   }
 }
 
+#content > .contextual {
+  > span.heart-link-with-count {
+    padding: 0;
+    border: 0;
+    background: transparent;
+
+    > a:first-child {
+      margin-right: 0;
+      margin-left: 4px;
+      padding-right: floor($btn-padding-horizontal-small / 2);
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+
+      + a {
+        min-width: unset;
+        margin-left: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+}
+
 
 //
 // Redmine Time Tracker
 // https://github.com/fernandokosh/redmine_time_tracker
 // --------------------------------------------------
 
-@if $use-font-awesome {
-  .tt_list_button {
-    @extend %fa-icon;
-    font-size: 14px;
+.tt_list_button {
+  @extend %fa-icon;
+  font-size: $fa-font-size-base;
+}
+
+.icon,
+.tt_list_button {
+  &.icon-start,
+  &.icon-stop {
+    background-image: none;
   }
 
-  .icon,
-  .tt_list_button {
-    &.icon-start,
-    &.icon-stop {
-      background-image: none;
-    }
+  &.icon-start {
+    @include link-variant(success);
 
-    &.icon-start {
-      color: $icon-success-color;
-
-      &:hover,
-      &:focus {
-        color: $icon-success-color;
-      }
-
-      &::before {
-        content: $fa-var-clock-o;
-      }
-    }
-
-    &.icon-stop {
-      color: $icon-danger-color;
-
-      &:hover,
-      &:focus {
-        color: $icon-danger-color;
-      }
-
-      &::before {
-        content: $fa-var-history;
-      }
+    &::before {
+      content: $fa-var-clock-o;
     }
   }
 
-  .time-tracker-quick-menu:empty {
-    display: none;
-  }
+  &.icon-stop {
+    @include link-variant(danger);
 
-  #user-time-bookings-list {
-    clear: both;
+    &::before {
+      content: $fa-var-history;
+    }
   }
 }
+
+.time-tracker-quick-menu:empty {
+  display: none;
+}
+
+#user-time-bookings-list {
+  clear: both;
+}
+
+
+//
+// Redmine Checklists
+// https://www.redmineup.com/pages/plugins/checklists
+// --------------------------------------------------
+
+#checklist_form_items {
+  .checklist-item {
+    display: block;
+    margin: 0;
+    padding-top: $check-list-offset-top;
+    line-height: initial;
+
+    &.new {
+      padding-top: $padding-base-vertical;
+      line-height: inherit;
+    }
+  }
+}
+
 
 
 //
@@ -199,10 +227,8 @@
       }
     }
 
-    @if $use-font-awesome {
-      .icon {
-        background-image: none;
-      }
+    .icon {
+      background-image: none;
     }
   }
 
@@ -231,16 +257,10 @@
 
     .icon {
       padding-left: $table-condensed-cell-padding + 20px;
-      background-position: $table-condensed-cell-padding $table-condensed-cell-padding;
-    }
+      background-image: none;
 
-    @if $use-font-awesome {
-      .icon {
-        background-image: none;
-
-        > a {
-          @extend %fa-icon;
-        }
+      > a {
+        @extend %fa-icon;
       }
     }
 
@@ -361,11 +381,9 @@
       width: 80%;
       margin: 0;
 
-      @if $use-font-awesome {
-        a {
-          img {
-            display: none;
-          }
+      a {
+        img {
+          display: none;
         }
       }
     }
@@ -394,23 +412,15 @@
 
 div.wiking {
   &.flash {
-    @if $use-font-awesome {
-      &.warning,
-      &.notice,
-      &.tip {
-        background-image: none;
-      }
+    &.warning,
+    &.notice,
+    &.tip {
+      background-image: none;
+    }
 
-      &.tip {
-        &::before {
-          content: $fa-var-lightbulb-o;
-        }
-      }
-    } @else {
-      &.warning,
-      &.notice,
-      &.tip {
-        background-position: $padding-large-horizontal 50%;
+    &.tip {
+      &::before {
+        content: $fa-var-lightbulb-o;
       }
     }
   }
