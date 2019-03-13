@@ -1,10 +1,29 @@
 // Link variant
 
-@mixin link-variant($default-color, $hover-color: darken($default-color, 10%)) {
-  color: $default-color;
+@mixin link-variant($variant, $focus-hover: true) {
+  $colors: map-get($icon-color-map, $variant);
+
+  color: map-get($colors, normal);
+
+  @if $focus-hover {
+    &:focus,
+    &:hover {
+      color: map-get($colors, hover);
+    }
+  }
+}
+
+@mixin icon-variant($variant) {
+  $colors: map-get($icon-color-map, $variant);
+
+  &::before {
+    color: map-get($colors, normal);
+  }
 
   &:focus,
   &:hover {
-    color: $hover-color;
+    &::before {
+      color: map-get($colors, hover);
+    }
   }
 }

@@ -11,7 +11,7 @@ table.cal {
   thead th {
     width: 14%;
     padding: $table-condensed-cell-padding;
-    background-color: $table-bg-hover;
+    background-color: $table-bg-active;
 
     &.week-number {
       width: auto;
@@ -30,7 +30,7 @@ table.cal {
 
     &.week-number {
       border: 0 none;
-      background-color: $table-bg-hover;
+      background-color: $table-bg-active;
       font-size: 1em;
       text-align: right;
     }
@@ -42,7 +42,7 @@ table.cal {
     }
 
     &.odd p.day-num {
-      color: $gray-light;
+      color: $gray-600;
     }
 
     &.today {
@@ -59,22 +59,30 @@ table.cal .starting a,
 p.cal.legend .starting,
 table.cal .ending a,
 p.cal.legend .ending {
-  padding-left: 20px;
-  background-image: url("../../../images/bullet_go.png");
-  background-repeat: no-repeat;
-  background-position: 0 center;
+  @extend %fa-icon;
+
+  &::before {
+    content: $fa-var-caret-right;
+    width: 10px;
+    text-align: right;
+  }
 }
 
 table.cal .ending a,
 p.cal.legend .ending {
-  padding-left: 20px;
-  background-image: url("../../../images/bullet_end.png");
+  &::before {
+    content: $fa-var-caret-left;
+    text-align: left;
+  }
 }
 
 table.cal .starting.ending a,
 p.cal.legend .starting.ending {
-  padding-left: 20px;
-  background-image: url("../../../images/bullet_diamond.png");
+  &::before {
+    content: $fa-var-square;
+    transform: scale(.6) rotate(45deg);
+    text-align: center;
+  }
 }
 
 p.cal.legend {

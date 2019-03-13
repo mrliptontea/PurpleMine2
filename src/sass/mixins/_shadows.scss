@@ -4,15 +4,15 @@
   $shadow: none;
 
   @if ($depth == 1) {
-    $shadow: 0 1px 3px rgba(#000, .12), 0 1px 2px rgba(#000, .24);
+    $shadow: 0 1px 2px rgba(#000, .25);
   } @elseif ($depth == 2) {
-    $shadow: 0 3px 6px rgba(#000, .16), 0 3px 6px rgba(#000, .23);
+    $shadow: 0 5px 8px -2px rgba(#000, .25), 0 1px 2px rgba(#000, .3);
   } @elseif ($depth == 3) {
-    $shadow: 0 10px 18px rgba(#000, .19), 0 6px 8px rgba(#000, .23);
+    $shadow: 0 8px 16px -3px rgba(#000, .25), 0 2px 4px rgba(#000, .3);
   } @elseif ($depth == 4) {
-    $shadow: 0 14px 28px rgba(#000, .25), 0 10px 10px rgba(#000, .22);
+    $shadow: 0 14px 24px -4px rgba(#000, .25), 0 3px 10px rgba(#000, .3);
   } @elseif ($depth == 5) {
-    $shadow: 0 19px 38px rgba(#000, .3), 0 15px 12px rgba(#000, .22);
+    $shadow: 0 20px 32px -2px rgba(#000, .25), 0 4px 12px rgba(#000, .3);
   }
 
   box-shadow: $shadow;

@@ -160,7 +160,7 @@ $story-sp-input-width:          50px;
     position: relative;
     margin: 0 0 ($padding-side / 2);
     border-radius: $border-radius-large $border-radius-large 0 0;
-    background-color: $gray-lightest;
+    background-color: $gray-100;
 
     @media screen and (min-width: $screen-md-min) {
       margin: 0 0 $padding-side;
@@ -191,7 +191,7 @@ $story-sp-input-width:          50px;
         border-color: lighten($header-bg, 25%);
         box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2),
               0 0 0 1px lighten($header-bg, 25%);
-        color: $gray-darkest;
+        color: $gray-950;
       }
     }
 
@@ -341,7 +341,7 @@ $story-sp-input-width:          50px;
         box-shadow: 0 2px 1px rgba(#000, .1);
 
         a {
-          color: $gray-darker;
+          color: $gray-900;
         }
       }
 
@@ -434,7 +434,7 @@ $story-sp-input-width:          50px;
 
     .placeholder {
       min-height: ($line-height-computed + $table-condensed-cell-padding * 2);
-      background-color: $gray;
+      background-color: $gray-700;
     }
   }
 
@@ -442,14 +442,14 @@ $story-sp-input-width:          50px;
     display: block;
     margin: 0;
     padding: 0 $table-condensed-cell-padding;
-    border-top: 1px solid $gray-lighter;
+    border-top: 1px solid $gray-400;
     background-color: $body-bg;
     background-repeat: no-repeat;
     background-position: center;
     cursor: move;
 
     &:nth-child(2n) {
-      background-color: $gray-lightest;
+      background-color: $gray-100;
     }
 
     &:hover {
@@ -458,7 +458,7 @@ $story-sp-input-width:          50px;
 
     &.saving {
       background-image: url("images/ajax.gif");
-      color: $gray-light;
+      color: $gray-600;
     }
 
     &.error {
@@ -485,8 +485,8 @@ $story-sp-input-width:          50px;
             background-color: $tracker-default-bg;
             color: $tracker-default-text;
           } @else {
-            background-color: darken($gray-lightest, 3%);
-            color: $gray-dark;
+            background-color: darken($gray-100, 3%);
+            color: $gray-800;
           }
           font-weight: $font-weight-bold;
           text-align: right;
@@ -497,16 +497,16 @@ $story-sp-input-width:          50px;
             @if $color-trackers {
               color: mix($tracker-default-text, $tracker-default-bg, 50%);
             } @else {
-              color: $gray-light;
+              color: $gray-600;
             }
-            font-weight: normal;
+            font-weight: $font-weight-normal;
           }
 
           &:hover {
             @if $color-trackers {
               background-color: darken($tracker-default-bg, 10%);
             } @else {
-              background-color: $gray-lighter;
+              background-color: $gray-400;
             }
             text-decoration: none;
           }
@@ -594,7 +594,7 @@ $story-sp-input-width:          50px;
           border-color: darken($highlight-border, 15%);
           box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075),
                 0 0 5px rgba(darken($highlight-border, 15%), .5);
-          color: $gray-darkest;
+          color: $gray-950;
         }
       }
 
@@ -821,7 +821,7 @@ $story-sp-input-width:          50px;
 
 #show_completed_sprints {
   margin-left: $padding-side / 2;
-  color: $gray-darkest;
+  color: $gray-950;
   cursor: pointer;
 }
 

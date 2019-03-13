@@ -44,6 +44,7 @@
   @extend %clearfix;
   position: relative;
   padding-left: $check-input-gutter;
+  line-height: $line-height-base;
   text-align: left;
   font-weight: $font-weight-normal;
 
@@ -66,10 +67,12 @@
   @include check;
   display: block;
   width: auto;
-  margin: $btn-padding-vertical 0;
+  margin: 0;
+  padding-top: $check-list-offset-top;
+  padding-bottom: $check-list-offset-top;
   float: none;
 
   @media screen and (min-width: $screen-sm-min) {
-    margin: 0;
+    padding-bottom: 0;
   }
 }

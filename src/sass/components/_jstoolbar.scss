@@ -6,35 +6,50 @@
 #content {
   div.jstTabs.tabs {
     height: auto;
+
     @if $flexbox-layout {
       @media screen and (max-width: $redmine-responsive-max) {
         clear: both;
       }
     }
 
-    ul {
+    > ul {
       width: 100%;
       height: auto;
 
-      li {
+      > li {
         height: auto;
         margin: 0;
+
+        > a {
+          &:hover,
+          &:focus {
+            border-color: darken($tab-hover-border, 3%) darken($tab-hover-border, 3%) $tab-border;
+            background-color: darken($tab-hover-bg, 3%);
+          }
+
+          &.selected {
+            border-color: $tab-active-border $tab-active-border $tab-active-bg;
+            background: $tab-active-bg;
+            color: $tab-active-text;
+
+            &.tab-preview {
+              border-bottom-color: $wiki-preview-bg;
+              background-color: $wiki-preview-bg;
+            }
+          }
+        }
+
+        @if $flexbox-layout {
+          align-self: flex-end;
+        }
 
         &::before {
           content: none;
         }
 
-        &:not(.tab-elements) {
-          @if $flexbox-layout {
-            align-self: flex-end;
-          }
-
-          .selected {
-            border-color: $input-border $input-border $tab-active-bg;
-          }
-        }
-
         &.tab-elements {
+          flex: 1;
           margin-left: 5px;
         }
       }
@@ -47,7 +62,7 @@
 
   .jstEditor {
     .wiki-preview {
-      padding: $input-padding-vertical $input-padding-horizontal;
+      padding: $panel-body-padding;
       border: 1px solid $input-border;
       border-radius: $input-border-radius;
       background-color: $wiki-preview-bg;
@@ -61,13 +76,11 @@
 
 .jstElements {
   @extend %clearfix;
+  line-height: normal;
 
   .box & {
+    display: block;
     padding: 0;
-
-    button {
-      margin-right: 2px;
-    }
 
     .jstSpacer {
       margin-right: 4px;
@@ -80,153 +93,150 @@
         float: right;
       }
     }
-
-    @media (min-width: $screen-lg) {
-      button {
-        margin-right: 4px;
-      }
-
-      .jstSpacer {
-        margin-right: 6px;
-      }
-    }
   }
 
   button {
-    margin-bottom: 5px;
+    margin-right: 2px;
+    margin-bottom: 4px;
     box-shadow: none;
     vertical-align: top;
   }
 }
 
-@if $use-font-awesome {
-  .jstElements {
-    %jstb-icon {
-      @include fa-icon;
-      padding: 0;
-      background: $body-bg;
-      background-image: none;
-      color: $btn-default-color;
+.jstElements {
+  %jstb-icon {
+    @include fa-icon;
+    padding: 0;
+    border: 0;
+    opacity: 1;
+    background: transparent;
+    background-image: none;
+    color: $gray-800;
 
-      &::before {
-        text-align: center;
-      }
+    &::before {
+      text-align: center;
     }
 
-    .jstb_strong {
-      @extend %jstb-icon;
+    &:hover,
+    &:focus {
+      background-color: darken($tab-hover-bg, 3%);
+      color: $gray-900;
+    }
+  }
 
-      &::before { content: $fa-var-bold; }
+  .jstb_strong {
+    @extend %jstb-icon;
+
+    &::before { content: $fa-var-bold; }
+  }
+
+  .jstb_em {
+    @extend %jstb-icon;
+
+    &::before { content: $fa-var-italic; }
+  }
+
+  .jstb_ins {
+    @extend %jstb-icon;
+
+    &::before { content: $fa-var-underline; }
+  }
+
+  .jstb_del {
+    @extend %jstb-icon;
+
+    &::before { content: $fa-var-strikethrough; }
+  }
+
+  .jstb_code {
+    @extend %jstb-icon;
+
+    &::before { content: $fa-var-code; }
+  }
+
+  .jstb_h1 {
+    @extend %jstb-icon;
+
+    &::before { content: $fa-var-header; }
+  }
+
+  .jstb_h2 {
+    @extend %jstb-icon;
+
+    &::before { content: $fa-var-header; font-size: .7857em; }
+  }
+
+  .jstb_h3 {
+    @extend %jstb-icon;
+
+    &::before { content: $fa-var-header; font-size: .6429em; }
+  }
+
+  .jstb_ul {
+    @extend %jstb-icon;
+
+    &::before { content: $fa-var-list-ul; }
+  }
+
+  .jstb_ol {
+    @extend %jstb-icon;
+
+    &::before { content: $fa-var-list-ol; }
+  }
+
+  .jstb_bq {
+    @extend %jstb-icon;
+
+    &::before { content: $fa-var-indent; }
+  }
+
+  .jstb_unbq {
+    @extend %jstb-icon;
+
+    &::before { content: $fa-var-outdent; }
+  }
+
+  .jstb_pre {
+    @extend %jstb-icon;
+
+    &::before { content: $fa-var-terminal; }
+  }
+
+  .jstb_link {
+    @extend %jstb-icon;
+
+    &::before { content: $fa-var-link; }
+  }
+
+  .jstb_img {
+    @extend %jstb-icon;
+
+    &::before { content: $fa-var-image; }
+  }
+
+  .jstb_cut {
+    @extend %jstb-icon;
+
+    &::before { content: $fa-var-scissors; }
+  }
+
+  .jstb_precode,
+  // For plugin https://github.com/mediatainment/redmine_codebutton
+  .jstb_codehighlight {
+    @extend %jstb-icon;
+    color: $brand-danger;
+
+    &::before { content: $fa-var-code; }
+  }
+
+  button.jstb_help {
+    @extend %jstb-icon;
+    color: $link-color;
+
+    &:hover {
+      color: $link-hover-color;
     }
 
-    .jstb_em {
-      @extend %jstb-icon;
-
-      &::before { content: $fa-var-italic; }
-    }
-
-    .jstb_ins {
-      @extend %jstb-icon;
-
-      &::before { content: $fa-var-underline; }
-    }
-
-    .jstb_del {
-      @extend %jstb-icon;
-
-      &::before { content: $fa-var-strikethrough; }
-    }
-
-    .jstb_code {
-      @extend %jstb-icon;
-
-      &::before { content: $fa-var-code; }
-    }
-
-    .jstb_h1 {
-      @extend %jstb-icon;
-
-      &::before { content: $fa-var-header; }
-    }
-
-    .jstb_h2 {
-      @extend %jstb-icon;
-
-      &::before { content: $fa-var-header; font-size: .7857em; }
-    }
-
-    .jstb_h3 {
-      @extend %jstb-icon;
-
-      &::before { content: $fa-var-header; font-size: .6429em; }
-    }
-
-    .jstb_ul {
-      @extend %jstb-icon;
-
-      &::before { content: $fa-var-list-ul; }
-    }
-
-    .jstb_ol {
-      @extend %jstb-icon;
-
-      &::before { content: $fa-var-list-ol; }
-    }
-
-    .jstb_bq {
-      @extend %jstb-icon;
-
-      &::before { content: $fa-var-indent; }
-    }
-
-    .jstb_unbq {
-      @extend %jstb-icon;
-
-      &::before { content: $fa-var-outdent; }
-    }
-
-    .jstb_pre {
-      @extend %jstb-icon;
-
-      &::before { content: $fa-var-terminal; }
-    }
-
-    .jstb_link {
-      @extend %jstb-icon;
-
-      &::before { content: $fa-var-link; }
-    }
-
-    .jstb_img {
-      @extend %jstb-icon;
-
-      &::before { content: $fa-var-image; }
-    }
-
-    .jstb_cut {
-      @extend %jstb-icon;
-
-      &::before { content: $fa-var-scissors; }
-    }
-
-    .jstb_precode,
-    // For plugin https://github.com/mediatainment/redmine_codebutton
-    .jstb_codehighlight {
-      @extend %jstb-icon;
-      color: $brand-danger;
-
-      &::before { content: $fa-var-code; }
-    }
-
-    button.jstb_help {
-      @extend %jstb-icon;
-      color: $link-color;
-
-      &:hover {
-        color: $link-hover-color;
-      }
-
-      &::before { content: $fa-var-question-circle; }
-    }
+    &::before { content: $fa-var-question-circle; }
   }
 }

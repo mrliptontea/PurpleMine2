@@ -20,16 +20,19 @@
   "scripts": {
     "build": "grunt",
     "watch": "grunt watch",
-    "lint": "standard && scss-lint"
+    "lint:js": "standard",
+    "lint:sass": "scss-lint",
+    "lint": "npm run -S lint:js && npm run -S lint:sass"
   },
   "dependencies": {
-    "autoprefixer": "^9.4.8",
+    "autoprefixer": "^9.4.10",
     "grunt": "^1.0.3",
     "grunt-contrib-uglify": "^4.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-postcss": "^0.9.0",
     "grunt-sass": "^3.0.2",
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.11.0",
+    "sass-inline-svg": "^1.2.0"
   },
   "devDependencies": {
     "standard": "^12.0.1"

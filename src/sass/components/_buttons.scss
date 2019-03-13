@@ -4,16 +4,18 @@
 
 input[type="button"],
 input[type="submit"],
+input[type="reset"],
 button {
   @include button-size($btn-padding-vertical, $btn-padding-horizontal, $font-size-base, $line-height-base, $border-radius-base);
   display: inline-block;
   margin-bottom: 0;
-  transition: background-color ease-in-out .07s,
-              border-color ease-in-out .07s,
-              box-shadow ease-in-out .07s;
+  transition: border-color $transition-time ease-in-out,
+              background-color $transition-time ease-in-out,
+              box-shadow $transition-time ease-in-out;
   border: 1px solid;
   font-weight: $btn-font-weight;
   text-align: center;
+  vertical-align: top;
   white-space: nowrap;
   cursor: pointer;
   user-select: none;
@@ -21,12 +23,7 @@ button {
 
   &:hover,
   &:focus {
-    outline: 0;
     text-decoration: none;
-  }
-
-  &:active {
-    outline: 0;
   }
 
   &.disabled,
@@ -44,17 +41,21 @@ button {
 
 form {
   input[type="submit"] {
-    margin-right: 5px;
+    margin-right: 2px;
 
     + input {
       @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
     }
 
     + a {
-      margin-right: 5px;
+      display: inline-block;
+      margin-right: 2px;
+      padding-top: $btn-padding-vertical + 1px;
+      padding-bottom: $btn-padding-vertical + 1px;
+      line-height: $line-height-base;
 
       + a {
-        margin-left: 5px;
+        margin-left: 2px;
       }
     }
   }
@@ -87,38 +88,55 @@ form[action*="repository/diff"] {
 //
 p.buttons,
 .other-formats > span,
-#wiki_add_attachment > p {
-  > a {
+#wiki_add_attachment > p,
+#content > .contextual,
+#content > .contextual > span:not(.drdn),
+#query_form > .contextual,
+#query_form_with_buttons > .contextual {
+  > a,
+  > span:not(.drdn) {
     display: inline-block;
+    margin-right: 1px;
+    margin-left: 1px;
     padding: $btn-padding-vertical $btn-padding-horizontal-small;
-    border: 1px solid $pagination-border;
+    transition: border-color $transition-time ease-in-out,
+                background-color $transition-time ease-in-out,
+                color $transition-time ease-in-out;
+    border: 1px solid;
     border-radius: $border-radius-base;
-    background-color: $pagination-bg;
-
-    &:hover,
-    &:focus {
-      border-color: $pagination-hover-border;
-      outline: 0;
-      background-color: $pagination-hover-bg;
-      text-decoration: none;
-    }
-
-    &:active {
-      outline: 0;
-      box-shadow: inset 0 3px 4px -2px rgba(#000, .1);
-    }
 
     &.icon {
       padding-left: 20px + $btn-padding-horizontal-small;
       background-position: $btn-padding-horizontal-small 50%;
     }
+  }
 
-    @if $use-font-awesome == false {
-      &.atom {
-        padding-left: 20px + $btn-padding-horizontal-small;
-        background-position: $btn-padding-horizontal-small 50%;
-      }
+  > a {
+    border-color: $pagination-border;
+    background-color: $pagination-bg;
+    color: $pagination-color;
+
+    &:first-child {
+      margin-left: 0;
     }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $pagination-hover-border;
+      background-color: $pagination-hover-bg;
+      color: $pagination-hover-color;
+      text-decoration: none;
+    }
+  }
+
+  > span:not(.drdn) {
+    border-color: $pagination-inactive-border;
+    background-color: $pagination-inactive-bg;
+    color: $pagination-inactive-color;
   }
 }
 
@@ -138,10 +156,21 @@ p.buttons {
   margin: $line-height-computed 0 0;
   text-align: right;
 
-  .pagination + &,
-  #wiki_add_attachment + & {
-    margin-top: 0;
-    float: right;
+  > span {
+    margin-right: 1px;
+    margin-left: 1px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @media screen and (min-width: $redmine-responsive-min) {
+    .pagination + &,
+    #wiki_add_attachment + & {
+      margin-top: 0;
+      float: right;
+    }
   }
 }
 
@@ -192,14 +221,16 @@ p.buttons {
 
 a[data-expands],
 .toggle-multiselect {
-  @extend %image-toggle-plus;
+  display: inline-block;
   position: relative;
   top: 3px;
-  padding: 2px 8px;
+  padding: 10px;
   border: 1px solid;
   border-radius: $border-radius-base;
+  background-image: inline-svg("plus.svg", (path: (fill: $btn-default-icon-color)));
   background-repeat: no-repeat;
   background-position: 2px 2px;
+  font-size: 0;
   vertical-align: top;
   cursor: pointer;
   user-select: none;
@@ -207,9 +238,7 @@ a[data-expands],
 }
 
 a[data-expands] {
-  display: inline-block;
   margin-right: 10px;
-  padding: 10px;
 
   > .toggle-multiselect {
     padding: 0;

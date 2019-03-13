@@ -8,7 +8,7 @@ A free Redmine theme for modern browsers.
 
 ![Screenshot](https://github.com/mrliptontea/PurpleMine2/raw/master/screenshots/issues.png)
 
-Compatible with Redmine 2.6+ and browsers: IE10+/Edge, latest Firefox and Google Chrome (others were not tested).
+Compatible with Redmine 3.0+ and browsers: IE10+/Edge, latest Firefox and Google Chrome (others were not tested).
 
 It's written in [SCSS]. It uses [normalize.css] and benefits from some parts of [Bootstrap][bootstrap-sass] like mixins, structure, and stuff.
 
@@ -55,6 +55,14 @@ The path `src/sass/_custom-variables.scss` is added to `.gitignore` so it should
 If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remember to include your `_custom-variables.scss` in `src/sass/plugins/redmine_backlogs/_common.scss`.
 
 ## Changelog
+
+v2.0 (2019-03-13):
+
+* Refreshed, modernized look & feel
+* Added priority icons
+* Removed `$color-priorities` setting and styles
+* Improved Redmine 4.0 compatibility
+* Updated Font Awesome icons to 4.7.0
 
 v1.10.0 (2019-03-12):
 

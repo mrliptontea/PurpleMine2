@@ -1,6 +1,6 @@
 @if $enable-sidebar-toggler {
   $toggler-position-v:          1px;
-  $toggler-position-h:          1px;
+  $toggler-position-h:          -3px;
 
   #main {
     position: relative;
@@ -36,79 +36,38 @@
     display: block;
     position: absolute;
     top: $toggler-position-v;
+    width: 14px;
+    height: 16px;
+    border: 2px solid $gray-700;
+    border-radius: $border-radius-base;
+    background-color: $gray-200;
+    background-position: center;
+    line-height: 1;
     user-select: none;
 
     @media print {
       display: none;
     }
 
-    @if $use-font-awesome {
-      @extend %fa-icon;
-      color: $gray-light;
-      line-height: 1;
-
-      &::before {
-        margin-right: 0;
-      }
-
-      &:hover,
-      &:focus,
-      &:active {
-        color: $gray;
-      }
-    } @else {
-      width: 15px;
-      height: 15px;
-      border-radius: $border-radius-base;
-      background-repeat: no-repeat;
-      background-position: center center;
-
-      &:hover,
-      &:focus,
-      &:active {
-        background-color: $gray-lighter;
-      }
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $gray-300;
     }
 
     @if $sidebar-position == "left" {
       left: $toggler-position-h;
-
-      @if $use-font-awesome {
-        &::before {
-          content: $fa-var-caret-square-o-left;
-        }
-      } @else {
-        @extend %image-arrow-left;
-      }
+      background-image: inline-svg("chevron-left.svg", (path: (fill: $gray-700)));
     } @else {
       right: $toggler-position-h;
-
-      @if $use-font-awesome {
-        &::before {
-          content: $fa-var-caret-square-o-right;
-        }
-      } @else {
-        @extend %image-arrow-right;
-      }
+      background-image: inline-svg("chevron-right.svg", (path: (fill: $gray-700)));
     }
 
     &.sidebar-hidden {
       @if $sidebar-position == "left" {
-        @if $use-font-awesome {
-          &::before {
-            content: $fa-var-caret-square-o-right;
-          }
-        } @else {
-          @extend %image-arrow-right;
-        }
+        background-image: inline-svg("chevron-right.svg", (path: (fill: $gray-700)));
       } @else {
-        @if $use-font-awesome {
-          &::before {
-            content: $fa-var-caret-square-o-left;
-          }
-        } @else {
-          @extend %image-arrow-left;
-        }
+        background-image: inline-svg("chevron-left.svg", (path: (fill: $gray-700)));
       }
     }
   }
