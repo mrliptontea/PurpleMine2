@@ -1,6 +1,7 @@
 /* Header *********************************************************************/
 
-$brand-primary: #D5D5D5; /* header background color */
+/* Header background color. */
+$brand-primary: #D5D5D5;
 
 #wrapper {
   #top-menu {
@@ -12,7 +13,7 @@ $brand-primary: #D5D5D5; /* header background color */
         color: #85C7FF;
       }
     }
-    /* hide "Logged in as" */
+    /* Hide "Logged in as". */
     #loggedas {
       color: transparent;
       pointer-events: none;
@@ -28,7 +29,7 @@ $brand-primary: #D5D5D5; /* header background color */
     background-position: 20px 5px, 0 0;
     background-size: auto 38px;
     @media (max-width: 899px) {
-      background-position: 15px 13px, 0 0;
+      background-position: 15px 10px, 0 0;
       background-color: #D5D5D5;
     }
     a.mobile-toggle-button {
@@ -39,6 +40,7 @@ $brand-primary: #D5D5D5; /* header background color */
       color: #333;
       font-size: 1.5em;
       font-weight: normal;
+      padding: 12px 20px;
       margin-left: 170px !important;
       border-left: 1px solid #BCBCBC;
     }
@@ -69,11 +71,11 @@ $brand-primary: #D5D5D5; /* header background color */
 
 /* My Page -> Issues assigned to me *******************************************/
 
-/* Hide "New issue" link by default */
+/* Hide "New issue" link by default. */
 a.icon.new-issue {
   display: none;
 }
-/* Only show "New issue" link on project pages */
+/* Only show "New issue" link on project pages. */
 body[class^="theme-Purplemine2 project-"] a.icon.new-issue {
   display: inline-block;
 }
