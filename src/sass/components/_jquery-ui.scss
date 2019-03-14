@@ -72,7 +72,7 @@
   background: $component-bg;
   box-shadow: none;
   color: $component-color;
-  font-weight: normal;
+  font-weight: $font-weight-normal;
 }
 
 .ui-state-default a,
@@ -91,7 +91,7 @@
   border: 1px solid $component-active-border;
   background: $component-active-bg;
   color: $component-active-color;
-  font-weight: normal;
+  font-weight: $font-weight-normal;
 }
 
 .ui-state-hover a,
@@ -112,7 +112,7 @@
   border: 1px solid $component-active-border;
   background: $component-active-bg;
   color: $component-active-color;
-  font-weight: normal;
+  font-weight: $font-weight-normal;
 
   .ui-icon {
     background-image: url("../../../stylesheets/jquery/images/ui-icons_ffffff_256x240.png");
@@ -282,7 +282,7 @@ img.ui-datepicker-trigger {
 
       &.ui-datepicker-week-col {
         padding-right: $table-condensed-cell-padding;
-        color: $gray-light;
+        color: $gray-600;
       }
     }
   }

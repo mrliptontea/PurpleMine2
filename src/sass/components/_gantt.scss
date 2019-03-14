@@ -7,12 +7,12 @@
   top: 0;
   height: 16px;
   overflow: hidden;
-  border: 1px solid $gray-lighter;
+  border: 1px solid $gray-400;
   border-left-width: 0;
   text-align: center;
 
   &.nwday {
-    background-color: $gray-lightest;
+    background-color: $gray-100;
   }
 }
 

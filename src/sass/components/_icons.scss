@@ -1,320 +1,167 @@
-$icon-success-color:                 $brand-success;
-$icon-success-hover-color:           darken($brand-success, 10%);
-$icon-warning-color:                 $brand-warning;
-$icon-warning-hover-color:           darken($brand-warning, 10%);
-$icon-danger-color:                  $brand-danger;
-$icon-danger-hover-color:            darken($brand-danger, 10%);
-
-@if $use-font-awesome {
-  %fa-icon {
-    &::before {
-      @include fa-icon;
-      margin-right: $padding-small-vertical;
-    }
-  }
-
-  %fa-icon-after {
-    &::after {
-      display: inline-block;
-      margin-left: $padding-small-vertical;
-      font: normal normal normal 14px/1 FontAwesome; // shortening font declaration
-      font-size: inherit; // can't have font-size inherit on line above, so need to override
-      text-rendering: auto; // optimizelegibility throws things off #1094
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    100% {
-      transform: rotate(359deg);
-    }
-  }
-
-  table.list .buttons > a::before {
-    font-size: 14px;
+%fa-icon {
+  &::before {
+    @include fa-icon;
+    margin-right: $padding-small-vertical;
   }
 }
 
+%fa-icon-after {
+  &::after {
+    display: inline-block;
+    margin-left: $padding-small-vertical;
+    font: normal normal normal 14px/1 FontAwesome; // shortening font declaration
+    font-size: inherit; // can't have font-size inherit on line above, so need to override
+    text-rendering: auto; // optimizelegibility throws things off #1094
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
 
-//== Context menu
-//
-
-#context-menu {
-  > ul,
-  > ul > li > ul {
-    @include nice-shadow(2);
-    border: 0 none !important; // scss-lint:disable ImportantRule
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
 
-  @if $use-font-awesome {
-    a {
-      @extend %fa-icon;
-
-      &::before {
-        margin-top: 3px;
-        margin-left: -16px;
-        float: left;
-      }
-    }
-
-    li a.icon-checked {
-      background: transparent;
-    }
-
-    ul li a.submenu {
-      @extend %image-arrow-right;
-    }
+  100% {
+    transform: rotate(359deg);
   }
+}
+
+table.list .buttons > a::before {
+  font-size: $fa-font-size-base;
 }
 
 
 //== Buttons icons
 //
 
-@if $use-font-awesome {
-  .icon {
-    @extend %fa-icon;
-    padding-left: 20px;
-    background-repeat: no-repeat;
-    background-position: 0% 50%;
+.icon {
+  @extend %fa-icon;
+  padding-left: 20px;
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
 
-    &::before {
-      margin-left: -20px;
-    }
+  &::before {
+    margin-left: -20px;
   }
-
-  .icon-only {
-    @extend %fa-icon;
-    font-size: 0;
-    white-space: nowrap;
-
-    @at-root a#{&} {
-      // scss-lint:disable ImportantRule
-      display: inline;
-      width: auto !important;
-      height: auto !important;
-      padding-left: 0 !important;
-      font-size: 0 !important;
-    }
-
-    &::before {
-      font-size: $font-size-base;
-    }
-  }
-
-  .icon-add::before                   { content: $fa-var-plus-square; }
-  .icon-edit::before                  { content: $fa-var-pencil; }
-  .icon-copy::before                  { content: $fa-var-copy; }
-  .icon-duplicate::before             { content: $fa-var-clipboard; }
-  .icon-del::before                   { content: $fa-var-trash; }
-  .icon-move::before                  { content: $fa-var-arrows; }
-  .icon-save::before                  { content: $fa-var-save; }
-  .icon-download::before              { content: $fa-var-download; }
-  .icon-cancel::before                { content: $fa-var-ban; }
-  .icon-multiple::before              { content: $fa-var-plus-circle; }
-  .icon-folder::before                { content: $fa-var-folder; }
-  .open .icon-folder::before          { content: $fa-var-folder-open; }
-  .icon-package::before               { content: $fa-var-cube; }
-  .icon-user::before                  { content: $fa-var-user; }
-  .icon-projects::before              { content: $fa-var-cubes; }
-  .icon-help::before                  { content: $fa-var-info-circle; }
-  .icon-attachment::before            { content: $fa-var-paperclip; }
-  .icon-history::before               { content: $fa-var-history; }
-  .icon-time-entry::before            { content: $fa-var-clock-o; }
-  .icon-time::before                  { content: $fa-var-clock-o; }
-  .icon-time-add::before              { content: $fa-var-clock-o; }
-  .icon-stats::before                 { content: $fa-var-line-chart; }
-  .icon-warning::before               { content: $fa-var-warning; }
-  .icon-error::before                 { content: $fa-var-exclamation; }
-  .icon-fav::before                   { content: $fa-var-star; }
-  .icon-fav-off::before               { content: $fa-var-star-o; }
-  .icon-reload::before                { content: $fa-var-refresh; }
-  .icon-locked::before                { content: $fa-var-lock; }
-  .icon-lock::before                  { content: $fa-var-lock; }
-  .icon-unlock::before                { content: $fa-var-unlock; }
-  .icon-checked::before               { content: $fa-var-check; }
-  .icon-details::before               { content: $fa-var-search-plus; }
-  .icon-report::before                { content: $fa-var-pie-chart; }
-  .icon-comments::before              { content: $fa-var-comment; }
-  .icon-comment::before               { content: $fa-var-comment; }
-  .icon-summary::before               { content: $fa-var-file-text; }
-  .icon-server-authentication::before { content: $fa-var-key; }
-  .icon-issue::before                 { content: $fa-var-ticket; }
-  .icon-zoom-in::before               { content: $fa-var-search-plus; }
-  .icon-zoom-out::before              { content: $fa-var-search-minus; }
-  .icon-passwd::before                { content: $fa-var-key; }
-  .icon-test::before                  { content: $fa-var-arrow-circle-right; }
-  .icon-phone::before                 { content: $fa-var-phone; }
-  .icon-email::before                 { content: $fa-var-envelope; }
-  .icon-skype::before                 { content: $fa-var-skype; }
-  .icon-facebook::before              { content: $fa-var-facebook-square; }
-  .icon-linkedin::before              { content: $fa-var-linkedin-square; }
-  .icon-twitter::before               { content: $fa-var-twitter-square; }
-  .icon-magnifier::before             { content: $fa-var-search; }
-  .icon-email::before                 { content: $fa-var-envelope; }
-  .icon-email-disabled::before        { content: $fa-var-envelope-o; }
-  .icon-email-add::before             { content: $fa-var-envelope; }
-  .icon-move-up::before               { content: $fa-var-angle-up; }
-  .icon-move-top::before              { content: $fa-var-angle-double-up; }
-  .icon-move-down::before             { content: $fa-var-angle-down; }
-  .icon-move-bottom::before           { content: $fa-var-angle-double-down; }
-  .icon-ok::before                    { content: $fa-var-check; }
-  .icon-not-ok::before                { content: $fa-var-times; }
-  .icon-link-break::before            { content: $fa-var-chain-broken; }
-  .icon-list::before                  { content: $fa-var-list-ul; }
-  .icon-sticky::before                { content: $fa-var-thumb-tack; }
-  .icon-arrow-right::before           { content: $fa-var-arrow-right; }
-  .icon-close::before                 { content: $fa-var-times-circle; }
-  .icon-close:hover::before           { content: $fa-var-times-circle-o; }
-  .icon-settings::before              { content: $fa-var-cog; }
-  .icon-group::before                 { content: $fa-var-users; }
-  .icon-groupnonmember::before        { content: $fa-var-users; }
-  .icon-groupanonymous::before        { content: $fa-var-users; }
-  .icon-roles::before                 { content: $fa-var-eye; }
-  .icon-issue-edit::before            { content: $fa-var-edit; }
-  .icon-workflows::before             { content: $fa-var-sitemap; }
-  .icon-custom-fields::before         { content: $fa-var-edit; }
-  .icon-plugins::before               { content: $fa-var-puzzle-piece; }
-  .icon-news::before                  { content: $fa-var-newspaper-o; }
-  .icon-issue-closed::before          { content: $fa-var-ticket; }
-  .icon-issue-note::before            { content: $fa-var-comment; }
-  .icon-changeset::before             { content: $fa-var-upload; }
-  .icon-message::before               { content: $fa-var-comment; }
-  .icon-reply::before                 { content: $fa-var-comment-o; }
-  .icon-wiki-page::before             { content: $fa-var-file-text-o; }
-  .icon-document::before              { content: $fa-var-file-text; }
-  .icon-project::before               { content: $fa-var-cube; }
-  .icon-add-bullet::before            { content: $fa-var-plus-circle; }
-  .icon-shared::before                { content: $fa-var-link; }
-} @else {
-  .icon {
-    padding-top: 2px;
-    padding-bottom: 3px;
-    padding-left: 20px;
-    background-repeat: no-repeat;
-    background-position: 0% 50%;
-  }
-
-  .icon-only {
-    padding-left: 16px;
-    background-repeat: no-repeat;
-    background-position: 0% 50%;
-  }
-
-  a.icon-only {
-    display: inline-block;
-    width: 0;
-    height: 16px;
-    padding-top: 0;
-    padding-bottom: 0;
-    overflow: hidden;
-    vertical-align: text-bottom;
-
-    &::after {
-      content: "&nbsp;";
-    }
-  }
-
-  .icon-add                   { background-image: url("../../../images/add.png"); }
-  .icon-edit                  { background-image: url("../../../images/edit.png"); }
-  .icon-copy                  { background-image: url("../../../images/copy.png"); }
-  .icon-duplicate             { background-image: url("../../../images/duplicate.png"); }
-  .icon-del                   { background-image: url("../../../images/delete.png"); }
-  .icon-move                  { background-image: url("../../../images/move.png"); }
-  .icon-save                  { background-image: url("../../../images/save.png"); }
-  .icon-download              { background-image: url("../../../images/download.png"); }
-  .icon-cancel                { background-image: url("../../../images/cancel.png"); }
-  .icon-multiple              { background-image: url("../../../images/table_multiple.png"); }
-  .icon-folder                { background-image: url("../../../images/folder.png"); }
-  .open .icon-folder          { background-image: url("../../../images/folder_open.png"); }
-  .icon-package               { background-image: url("../../../images/package.png"); }
-  .icon-user                  { background-image: url("../../../images/user.png"); }
-  .icon-projects              { background-image: url("../../../images/projects.png"); }
-  .icon-help                  { background-image: url("../../../images/help.png"); }
-  .icon-attachment            { background-image: url("../../../images/attachment.png"); }
-  .icon-history               { background-image: url("../../../images/history.png"); }
-  .icon-time-entry            { background-image: url("../../../images/time.png"); }
-  .icon-time                  { background-image: url("../../../images/time.png"); }
-  .icon-time-add              { background-image: url("../../../images/time_add.png"); }
-  .icon-stats                 { background-image: url("../../../images/stats.png"); }
-  .icon-warning               { background-image: url("../../../images/warning.png"); }
-  .icon-error                 { background-image: url("../../../images/exclamation.png"); }
-  .icon-fav                   { background-image: url("../../../images/fav.png"); }
-  .icon-fav-off               { background-image: url("../../../images/fav_off.png"); }
-  .icon-reload                { background-image: url("../../../images/reload.png"); }
-  .icon-locked                { background-image: url("../../../images/locked.png"); }
-  .icon-lock                  { background-image: url("../../../images/locked.png"); }
-  .icon-unlock                { background-image: url("../../../images/unlock.png"); }
-  .icon-checked               { background-image: url("../../../images/true.png"); }
-  .icon-details               { background-image: url("../../../images/zoom_in.png"); }
-  .icon-report                { background-image: url("../../../images/report.png"); }
-  .icon-comments              { background-image: url("../../../images/comment.png"); }
-  .icon-comment               { background-image: url("../../../images/comment.png"); }
-  .icon-summary               { background-image: url("../../../images/lightning.png"); }
-  .icon-server-authentication { background-image: url("../../../images/server_key.png"); }
-  .icon-issue                 { background-image: url("../../../images/ticket.png"); }
-  .icon-zoom-in               { background-image: url("../../../images/zoom_in.png"); }
-  .icon-zoom-out              { background-image: url("../../../images/zoom_out.png"); }
-  .icon-passwd                { background-image: url("../../../images/textfield_key.png"); }
-  .icon-test                  { background-image: url("../../../images/bullet_go.png"); }
-  .icon-magnifier             { background-image: url("../../../images/magnifier.png"); }
-  .icon-email                 { background-image: url("../../../images/email.png"); }
-  .icon-email-disabled        { background-image: url("../../../images/email_disabled.png"); }
-  .icon-email-add             { background-image: url("../../../images/email_add.png"); }
-  .icon-move-up               { background-image: url("../../../images/1uparrow.png"); }
-  .icon-move-top              { background-image: url("../../../images/2uparrow.png"); }
-  .icon-move-down             { background-image: url("../../../images/1downarrow.png"); }
-  .icon-move-bottom           { background-image: url("../../../images/2downarrow.png"); }
-  .icon-ok                    { background-image: url("../../../images/true.png"); }
-  .icon-not-ok                { background-image: url("../../../images/false.png"); }
-  .icon-link-break            { background-image: url("../../../images/link_break.png"); }
-  .icon-list                  { background-image: url("../../../images/text_list_bullets.png"); }
-  .icon-sticky                { background-image: url("../../../images/bullet_go.png"); }
-  .icon-arrow-right           { background-image: url("../../../images/bullet_go.png"); }
-  .icon-close                 { background-image: url("../../../images/close.png"); }
-  .icon-close:hover           { background-image: url("../../../images/close_hl.png"); }
-  .icon-settings              { background-image: url("../../../images/changeset.png"); }
-  .icon-group                 { background-image: url("../../../images/group.png"); }
-  .icon-groupnonmember        { background-image: url("../../../images/group.png"); }
-  .icon-groupanonymous        { background-image: url("../../../images/group.png"); }
-  .icon-roles                 { background-image: url("../../../images/database_key.png"); }
-  .icon-issue-edit            { background-image: url("../../../images/ticket_edit.png"); }
-  .icon-workflows             { background-image: url("../../../images/ticket_go.png"); }
-  .icon-custom-fields         { background-image: url("../../../images/textfield.png"); }
-  .icon-plugins               { background-image: url("../../../images/plugin.png"); }
-  .icon-news                  { background-image: url("../../../images/news.png"); }
-  .icon-issue-closed          { background-image: url("../../../images/ticket_checked.png"); }
-  .icon-issue-note            { background-image: url("../../../images/ticket_note.png"); }
-  .icon-changeset             { background-image: url("../../../images/changeset.png"); }
-  .icon-message               { background-image: url("../../../images/message.png"); }
-  .icon-reply                 { background-image: url("../../../images/comments.png"); }
-  .icon-wiki-page             { background-image: url("../../../images/wiki_edit.png"); }
-  .icon-document              { background-image: url("../../../images/document.png"); }
-  .icon-project               { background-image: url("../../../images/projects.png"); }
-  .icon-add-bullet            { background-image: url("../../../images/bullet_add.png"); }
-  .icon-shared                { background-image: url("../../../images/link.png"); }
 }
+
+.icon-only {
+  @extend %fa-icon;
+  font-size: 0;
+  white-space: nowrap;
+
+  @at-root a#{&} {
+    // scss-lint:disable ImportantRule
+    display: inline;
+    width: auto !important;
+    height: auto !important;
+    padding-left: 0 !important;
+    font-size: 0 !important;
+  }
+
+  &::before {
+    font-size: $font-size-base;
+  }
+}
+
+.icon-add::before                   { content: $fa-var-plus-square; }
+.icon-edit::before                  { content: $fa-var-pencil; }
+.icon-copy::before                  { content: $fa-var-copy; }
+.icon-duplicate::before             { content: $fa-var-clipboard; }
+.icon-del::before                   { content: $fa-var-trash; }
+.icon-move::before                  { content: $fa-var-arrows; }
+.icon-save::before                  { content: $fa-var-save; }
+.icon-download::before              { content: $fa-var-download; }
+.icon-cancel::before                { content: $fa-var-ban; }
+.icon-multiple::before              { content: $fa-var-plus-circle; }
+.icon-folder::before                { content: $fa-var-folder; }
+.open .icon-folder::before          { content: $fa-var-folder-open; }
+.icon-package::before               { content: $fa-var-cube; }
+.icon-user::before                  { content: $fa-var-user; }
+.icon-project::before               { content: $fa-var-cube; }
+.icon-projects::before              { content: $fa-var-cubes; }
+.icon-help::before                  { content: $fa-var-info-circle; }
+.icon-attachment::before            { content: $fa-var-paperclip; }
+.icon-history::before               { content: $fa-var-history; }
+.icon-time-entry::before            { content: $fa-var-clock-o; }
+.icon-time::before                  { content: $fa-var-clock-o; }
+.icon-time-add::before              { content: $fa-var-clock-o; }
+.icon-stats::before                 { content: $fa-var-line-chart; }
+.icon-warning::before               { content: $fa-var-warning; }
+.icon-error::before                 { content: $fa-var-exclamation; }
+.icon-fav::before                   { content: $fa-var-star; color: $orange; }
+.icon-fav-off::before               { content: $fa-var-star-o; }
+.icon-heart::before                 { content: $fa-var-heart; color: $pink; }
+.icon-heart-off::before             { content: $fa-var-heart-o; }
+.icon-reload::before                { content: $fa-var-refresh; }
+.icon-locked::before                { content: $fa-var-lock; }
+.icon-lock::before                  { content: $fa-var-lock; }
+.icon-unlock::before                { content: $fa-var-unlock; }
+.icon-checked::before               { content: $fa-var-check; }
+.icon-details::before               { content: $fa-var-search-plus; }
+.icon-report::before                { content: $fa-var-pie-chart; }
+.icon-comments::before              { content: $fa-var-comment; }
+.icon-comment::before               { content: $fa-var-comment; }
+.icon-summary::before               { content: $fa-var-file-text; }
+.icon-server-authentication::before { content: $fa-var-key; }
+.icon-issue::before                 { content: $fa-var-ticket; }
+.icon-zoom-in::before               { content: $fa-var-search-plus; }
+.icon-zoom-out::before              { content: $fa-var-search-minus; }
+.icon-passwd::before                { content: $fa-var-key; }
+.icon-test::before                  { content: $fa-var-arrow-circle-right; }
+.icon-phone::before                 { content: $fa-var-phone; }
+.icon-skype::before                 { content: $fa-var-skype; }
+.icon-facebook::before              { content: $fa-var-facebook-square; }
+.icon-linkedin::before              { content: $fa-var-linkedin-square; }
+.icon-twitter::before               { content: $fa-var-twitter-square; }
+.icon-magnifier::before             { content: $fa-var-search; }
+.icon-email::before                 { content: $fa-var-envelope; }
+.icon-email-disabled::before        { content: $fa-var-envelope-o; }
+.icon-email-add::before             { content: $fa-var-envelope; }
+.icon-move-up::before               { content: $fa-var-angle-up; }
+.icon-move-top::before              { content: $fa-var-angle-double-up; }
+.icon-move-down::before             { content: $fa-var-angle-down; }
+.icon-move-bottom::before           { content: $fa-var-angle-double-down; }
+.icon-ok::before                    { content: $fa-var-check; }
+.icon-not-ok::before                { content: $fa-var-times; }
+.icon-link-break::before            { content: $fa-var-chain-broken; }
+.icon-list::before                  { content: $fa-var-list-ul; }
+.icon-sticky::before                { content: $fa-var-thumb-tack; }
+.icon-arrow-right::before           { content: $fa-var-arrow-right; }
+.icon-close::before                 { content: $fa-var-times-circle; }
+.icon-close:hover::before           { content: $fa-var-times-circle-o; }
+.icon-settings::before              { content: $fa-var-cog; }
+.icon-group::before                 { content: $fa-var-users; }
+.icon-groupnonmember::before        { content: $fa-var-users; }
+.icon-groupanonymous::before        { content: $fa-var-users; }
+.icon-roles::before                 { content: $fa-var-eye; }
+.icon-issue-edit::before            { content: $fa-var-edit; }
+.icon-workflows::before             { content: $fa-var-sitemap; }
+.icon-custom-fields::before         { content: $fa-var-edit; }
+.icon-plugins::before               { content: $fa-var-puzzle-piece; }
+.icon-news::before                  { content: $fa-var-newspaper-o; }
+.icon-issue-closed::before          { content: $fa-var-ticket; }
+.icon-issue-note::before            { content: $fa-var-comment; }
+.icon-changeset::before             { content: $fa-var-upload; }
+.icon-message::before               { content: $fa-var-comment; }
+.icon-reply::before                 { content: $fa-var-comment-o; }
+.icon-wiki-page::before             { content: $fa-var-file-text-o; }
+.icon-document::before              { content: $fa-var-file-text; }
+.icon-project::before               { content: $fa-var-cube; }
+.icon-add-bullet::before            { content: $fa-var-plus-circle; }
+.icon-shared::before                { content: $fa-var-link; }
+.icon-actions::before               { content: $fa-var-ellipsis-h; }
 
 
 //== Checkbox toggler
 //
 
-@if $use-font-awesome {
-  a.toggle-checkboxes {
-    @extend %fa-icon;
+a.toggle-checkboxes {
+  @extend %fa-icon;
 
-    &::before { content: $fa-var-check-square-o; }
-  }
-} @else {
-  a.toggle-checkboxes {
-    margin-left: 5px;
-    padding-left: 12px;
-    background: url("../../../images/toggle_check.png") no-repeat 0% 50%;
+  &::before {
+    content: $fa-var-check-square-o;
   }
 }
 
@@ -322,232 +169,192 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 //== Colorize some actions
 //
 
-.icon-add,
-.icon-edit,
-.icon-save,
-.icon-checked {
-  @include link-variant($icon-success-color, $icon-success-hover-color);
+a.icon,
+a.icon-only {
+  @include link-variant(default);
 }
 
-.icon-del {
-  @include link-variant($icon-danger-color, $icon-danger-hover-color);
+.icon-checked {
+  @include link-variant(success, false);
+}
+
+a.icon-add,
+a.icon-save,
+a.icon-checked {
+  @include link-variant(success);
+}
+
+a.icon-del {
+  @include link-variant(danger);
 }
 
 
 //== File types
 //
 
-@if $use-font-awesome {
-  .icon-folder,
-  .icon-file {
-    &::before {
-      width: 16px;
-      text-align: center;
-    }
+.icon-folder,
+.icon-file {
+  &::before {
+    width: 16px;
+    text-align: center;
+  }
+}
+
+.icon-file {
+  &::before {
+    content: $fa-var-file-o;
+    color: $gray-700;
   }
 
-  .icon-file {
-    &::before {
-      content: $fa-var-file-o;
-      color: $gray;
-    }
+  &.text-plain::before         { content: $fa-var-file-text-o; }
+  &.text-x-c::before           { content: $fa-var-file-code-o; }
+  &.text-x-csharp::before      { content: $fa-var-file-code-o; }
+  &.text-x-java::before        { content: $fa-var-file-code-o; }
+  &.text-x-php::before         { content: $fa-var-file-code-o; }
+  &.text-x-ruby::before        { content: $fa-var-file-code-o; }
+  &.text-xml::before           { content: $fa-var-file-code-o; }
+  &.text-css::before           { content: $fa-var-file-code-o; }
+  &.text-html::before          { content: $fa-var-file-code-o; }
+  &.text-x-sh::before          { content: $fa-var-file-text-o; }
 
-    &.text-plain::before         { content: $fa-var-file-text-o; }
-    &.text-x-c::before           { content: $fa-var-file-code-o; }
-    &.text-x-csharp::before      { content: $fa-var-file-code-o; }
-    &.text-x-java::before        { content: $fa-var-file-code-o; }
-    &.text-x-php::before         { content: $fa-var-file-code-o; }
-    &.text-x-ruby::before        { content: $fa-var-file-code-o; }
-    &.text-xml::before           { content: $fa-var-file-code-o; }
-    &.text-css::before           { content: $fa-var-file-code-o; }
-    &.text-html::before          { content: $fa-var-file-code-o; }
-    &.text-x-sh::before          { content: $fa-var-file-text-o; }
+  &.application-javascript::before,
+  &.text-x-javascript::before { content: $fa-var-file-code-o; }
 
-    &.application-javascript::before,
-    &.text-x-javascript::before { content: $fa-var-file-code-o; }
+  &.application-pdf::before    { content: $fa-var-file-pdf-o; }
+  &.application-msword::before { content: $fa-var-file-word-o; }
 
-    &.application-pdf::before    { content: $fa-var-file-pdf-o; }
-    &.application-msword::before { content: $fa-var-file-word-o; }
+  &.application-vnd\.openxmlformats-officedocument\.spreadsheetml\.sheet::before,
+  &.application-vnd\.ms-excel::before { content: $fa-var-file-excel-o; }
 
-    &.application-vnd\.openxmlformats-officedocument\.spreadsheetml\.sheet::before,
-    &.application-vnd\.ms-excel::before { content: $fa-var-file-excel-o; }
-
-    &.image-vnd\.microsoft\.icon::before,
-    &.image-gif::before,
-    &.image-jpeg::before,
-    &.image-png::before,
-    &.image-tiff::before {
-      content: $fa-var-file-image-o;
-    }
-
-    &.application-zip::before,
-    &.application-x-gzip::before {
-      content: $fa-var-file-zip-o;
-    }
+  &.image-vnd\.microsoft\.icon::before,
+  &.image-gif::before,
+  &.image-jpeg::before,
+  &.image-png::before,
+  &.image-tiff::before {
+    content: $fa-var-file-image-o;
   }
-} @else {
-  .icon-file {
-    background-image: url("../../../images/files/default.png");
 
-    &.text-plain        { background-image: url("../../../images/files/text.png"); }
-    &.text-x-c          { background-image: url("../../../images/files/c.png"); }
-    &.text-x-csharp     { background-image: url("../../../images/files/csharp.png"); }
-    &.text-x-java       { background-image: url("../../../images/files/java.png"); }
-    &.text-x-javascript { background-image: url("../../../images/files/js.png"); }
-    &.text-x-php        { background-image: url("../../../images/files/php.png"); }
-    &.text-x-ruby       { background-image: url("../../../images/files/ruby.png"); }
-    &.text-xml          { background-image: url("../../../images/files/xml.png"); }
-    &.text-css          { background-image: url("../../../images/files/css.png"); }
-    &.text-html         { background-image: url("../../../images/files/html.png"); }
-    &.application-pdf   { background-image: url("../../../images/files/pdf.png"); }
-
-    &.image-gif,
-    &.image-jpeg,
-    &.image-png,
-    &.image-tiff {
-      background-image: url("../../../images/files/image.png");
-    }
-
-    &.application-zip,
-    &.application-x-gzip {
-      background-image: url("../../../images/files/zip.png");
-    }
+  &.application-zip::before,
+  &.application-x-gzip::before {
+    content: $fa-var-file-zip-o;
   }
 }
 
 
-//== Admininistration menu sections
+//== Administration menu sections
 //
 
-@if $use-font-awesome {
-  %admin-icon {
-    @extend %fa-icon;
+%admin-icon {
+  @extend %fa-icon;
 
-    &::before {
-      width: 20px;
-      margin-left: -(5px + 20px);
-      color: $gray;
-      text-align: center;
-    }
+  &::before {
+    width: 20px;
+    margin-left: -(5px + 20px);
+    color: $gray-700;
+    text-align: center;
+  }
 
-    &:hover::before {
-      color: $gray-darker;
-    }
+  &:hover::before {
+    color: $gray-900;
+  }
 
-    &.selected::before {
-      color: $gray-darkest;
+  &.selected::before {
+    color: $gray-950;
+  }
+}
+
+#admin-menu {
+  #admin-index > & {
+    a {
+      padding-left: 5px + 20px;
     }
   }
 
-  #admin-menu {
-    #admin-index > & {
-      a {
-        padding-left: 5px + 20px;
-      }
-    }
-
-    li {
-      > a {
-        padding-left: $sidebar-padding-horizontal + 5px + 20px;
-      }
-    }
-
-    .projects {
-      @extend %admin-icon;
-
-      &::before { content: $fa-var-cubes; }
-    }
-
-    .users {
-      @extend %admin-icon;
-
-      &::before { content: $fa-var-user; }
-    }
-
-    .groups {
-      @extend %admin-icon;
-
-      &::before { content: $fa-var-group; }
-    }
-
-    .roles {
-      @extend %admin-icon;
-
-      &::before { content: $fa-var-eye; }
-    }
-
-    .trackers {
-      @extend %admin-icon;
-
-      &::before { content: $fa-var-ticket; }
-    }
-
-    .issue-statuses,
-    .issue_statuses {
-      @extend %admin-icon;
-
-      &::before { content: $fa-var-pencil-square; }
-    }
-
-    .workflows {
-      @extend %admin-icon;
-
-      &::before { content: $fa-var-sitemap; }
-    }
-
-    .custom-fields,
-    .custom_fields {
-      @extend %admin-icon;
-
-      &::before { content: $fa-var-edit; }
-    }
-
-    .enumerations {
-      @extend %admin-icon;
-
-      &::before { content: $fa-var-list; }
-    }
-
-    .settings {
-      @extend %admin-icon;
-
-      &::before { content: $fa-var-gear; }
-    }
-
-    .plugins {
-      @extend %admin-icon;
-
-      &::before { content: $fa-var-puzzle-piece; }
-    }
-
-    .info {
-      @extend %admin-icon;
-
-      &::before { content: $fa-var-info-circle; }
-    }
-
-    .ldap-authentication,
-    .server_authentication {
-      @extend %admin-icon;
-
-      &::before { content: $fa-var-key; }
+  li {
+    > a {
+      padding-left: $sidebar-padding-horizontal + 5px + 20px;
     }
   }
-} @else {
-  #admin-menu {
-    .projects              { background-image: url("../../../images/projects.png"); }
-    .users                 { background-image: url("../../../images/user.png"); }
-    .groups                { background-image: url("../../../images/group.png"); }
-    .roles                 { background-image: url("../../../images/database_key.png"); }
-    .trackers              { background-image: url("../../../images/ticket.png"); }
-    .issue_statuses        { background-image: url("../../../images/ticket_edit.png"); }
-    .workflows             { background-image: url("../../../images/ticket_go.png"); }
-    .custom_fields         { background-image: url("../../../images/textfield.png"); }
-    .enumerations          { background-image: url("../../../images/text_list_bullets.png"); }
-    .settings              { background-image: url("../../../images/changeset.png"); }
-    .plugins               { background-image: url("../../../images/plugin.png"); }
-    .info                  { background-image: url("../../../images/help.png"); }
-    .server_authentication { background-image: url("../../../images/server_key.png"); }
+
+  .projects {
+    @extend %admin-icon;
+
+    &::before { content: $fa-var-cubes; }
+  }
+
+  .users {
+    @extend %admin-icon;
+
+    &::before { content: $fa-var-user; }
+  }
+
+  .groups {
+    @extend %admin-icon;
+
+    &::before { content: $fa-var-group; }
+  }
+
+  .roles {
+    @extend %admin-icon;
+
+    &::before { content: $fa-var-eye; }
+  }
+
+  .trackers {
+    @extend %admin-icon;
+
+    &::before { content: $fa-var-ticket; }
+  }
+
+  .issue-statuses,
+  .issue_statuses {
+    @extend %admin-icon;
+
+    &::before { content: $fa-var-pencil-square; }
+  }
+
+  .workflows {
+    @extend %admin-icon;
+
+    &::before { content: $fa-var-sitemap; }
+  }
+
+  .custom-fields,
+  .custom_fields {
+    @extend %admin-icon;
+
+    &::before { content: $fa-var-edit; }
+  }
+
+  .enumerations {
+    @extend %admin-icon;
+
+    &::before { content: $fa-var-list; }
+  }
+
+  .settings {
+    @extend %admin-icon;
+
+    &::before { content: $fa-var-gear; }
+  }
+
+  .plugins {
+    @extend %admin-icon;
+
+    &::before { content: $fa-var-puzzle-piece; }
+  }
+
+  .info {
+    @extend %admin-icon;
+
+    &::before { content: $fa-var-info-circle; }
+  }
+
+  .ldap-authentication,
+  .server_authentication {
+    @extend %admin-icon;
+
+    &::before { content: $fa-var-key; }
   }
 }
 
@@ -555,38 +362,22 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 //== Drag-and-drop sorting
 //
 
-@if $use-font-awesome {
-  .sort-handle {
-    @extend %fa-icon;
-    @include link-variant($icon-success-color, $icon-success-hover-color);
-    text-align: center;
-    cursor: move;
+.sort-handle {
+  @extend %fa-icon;
+  text-align: center;
+  cursor: move;
 
-    &::before {
-      content: $fa-var-arrows-v;
-      width: 16px;
-      margin: 0;
-    }
-
-    &.ajax-loading {
-      &::before {
-        content: $fa-var-refresh;
-        animation: spin 1s linear infinite;
-        color: $gray;
-      }
-    }
-  }
-} @else {
-  .sort-handle {
-    display: inline-block;
+  &::before {
+    content: $fa-var-arrows-v;
     width: 16px;
-    height: 16px;
-    background: url("../../../images/reorder.png") no-repeat 0 50%;
-    vertical-align: middle;
-    cursor: move;
+    margin: 0;
+  }
 
-    &.ajax-loading {
-      background-image: url("../../../images/loading.gif");
+  &.ajax-loading {
+    &::before {
+      content: $fa-var-refresh;
+      animation: spin 1s linear infinite;
+      color: $gray-700;
     }
   }
 }
@@ -595,558 +386,366 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 //== Headers with icons
 //
 
-@if $use-font-awesome {
-  h3.version,
-  h3.comments,
-  div.issues h3,
-  div.members h3,
-  div.news h3,
-  div.projects h3 {
-    @extend %fa-icon;
+h3.icon,
+h3.version,
+h3.comments,
+div.issues h3,
+div.members h3,
+div.news h3,
+div.projects h3 {
+  @extend %fa-icon;
+  color: $gray-900;
 
-    &::before {
-      width: 1em;
-      margin-right: .5em;
-      color: $gray-dark;
-      text-align: center;
-    }
+  &::before {
+    width: 1em;
+    margin-right: .5em;
+    color: $gray-700;
+    text-align: center;
   }
-
-  h3.version::before      { content: $fa-var-cube; }
-  h3.comments::before     { content: $fa-var-comments; }
-  div.issues h3::before   { content: $fa-var-ticket; }
-  div.members h3::before  { content: $fa-var-user; }
-  div.news h3::before     { content: $fa-var-newspaper-o; }
-  div.projects h3::before { content: $fa-var-cubes; }
-} @else {
-  h3.version,
-  h3.comments,
-  div.issues h3,
-  div.members h3,
-  div.news h3,
-  div.projects h3 {
-    padding-left: 20px;
-  }
-
-  h3.version      { background: url("../../../images/package.png") no-repeat 0 center; }
-  h3.comments     { background: url("../../../images/comment.png") no-repeat 0 center; }
-  div.issues h3   { background: url("../../../images/ticket.png") no-repeat 0 center; }
-  div.members h3  { background: url("../../../images/group.png") no-repeat 0 center; }
-  div.news h3     { background: url("../../../images/news.png") no-repeat 0 center; }
-  div.projects h3 { background: url("../../../images/projects.png") no-repeat 0 center; }
 }
+
+h3.version::before      { content: $fa-var-cube; }
+h3.comments::before     { content: $fa-var-comments; }
+div.issues h3::before   { content: $fa-var-ticket; }
+div.members h3::before  { content: $fa-var-user; }
+div.news h3::before     { content: $fa-var-newspaper-o; }
+div.projects h3::before { content: $fa-var-cubes; }
 
 
 //== Activity types icons
 //
 
-@if $use-font-awesome {
-  dt {
-    &.issue,
-    &.issue-edit,
-    &.issue.closed,
-    &.issue-closed,
-    &.issue-note,
-    &.changeset,
-    &.news,
-    &.message,
-    &.reply,
-    &.wiki-page,
-    &.attachment,
-    &.document,
-    &.project,
-    &.time-entry {
-      @extend %fa-icon;
+dt {
+  &.issue,
+  &.issue-edit,
+  &.issue.closed,
+  &.issue-closed,
+  &.issue-note,
+  &.changeset,
+  &.news,
+  &.message,
+  &.reply,
+  &.wiki-page,
+  &.attachment,
+  &.document,
+  &.project,
+  &.time-entry {
+    @extend %fa-icon;
 
-      &::before {
-        margin-left: -$padding-side;
-        float: left;
-        line-height: $line-height-computed;
-      }
+    &::before {
+      margin-left: -$padding-side;
+      float: left;
+      line-height: $line-height-computed;
     }
+  }
 
-    &.issue::before        { content: $fa-var-ticket; }
-    &.issue-edit::before   { content: $fa-var-edit; }
-    &.issue.closed::before { content: $fa-var-ticket; }
-    &.issue-closed::before { content: $fa-var-ticket; }
-    &.issue-note::before   { content: $fa-var-comment; }
-    &.changeset::before    { content: $fa-var-upload; }
-    &.news::before         { content: $fa-var-newspaper-o; }
-    &.message::before      { content: $fa-var-comment; }
-    &.reply::before        { content: $fa-var-comment-o; }
-    &.wiki-page::before    { content: $fa-var-file-text-o; }
-    &.attachment::before   { content: $fa-var-paperclip; }
-    &.document::before     { content: $fa-var-file-text; }
-    &.project::before      { content: $fa-var-cube; }
-    &.time-entry::before   { content: $fa-var-clock-o; }
-  }
-} @else {
-  dt {
-    &.issue        { background-image: url("../../../images/ticket.png"); }
-    &.issue-edit   { background-image: url("../../../images/ticket_edit.png"); }
-    &.issue.closed { background-image: url("../../../images/ticket_checked.png"); }
-    &.issue-closed { background-image: url("../../../images/ticket_checked.png"); }
-    &.issue-note   { background-image: url("../../../images/ticket_note.png"); }
-    &.changeset    { background-image: url("../../../images/changeset.png"); }
-    &.news         { background-image: url("../../../images/news.png"); }
-    &.message      { background-image: url("../../../images/message.png"); }
-    &.reply        { background-image: url("../../../images/comments.png"); }
-    &.wiki-page    { background-image: url("../../../images/wiki_edit.png"); }
-    &.attachment   { background-image: url("../../../images/attachment.png"); }
-    &.document     { background-image: url("../../../images/document.png"); }
-    &.project      { background-image: url("../../../images/projects.png"); }
-    &.time-entry   { background-image: url("../../../images/time.png"); }
-  }
+  &.issue::before        { content: $fa-var-ticket; }
+  &.issue-edit::before   { content: $fa-var-edit; }
+  &.issue.closed::before { content: $fa-var-ticket; }
+  &.issue-closed::before { content: $fa-var-ticket; }
+  &.issue-note::before   { content: $fa-var-comment; }
+  &.changeset::before    { content: $fa-var-upload; }
+  &.news::before         { content: $fa-var-newspaper-o; }
+  &.message::before      { content: $fa-var-comment; }
+  &.reply::before        { content: $fa-var-comment-o; }
+  &.wiki-page::before    { content: $fa-var-file-text-o; }
+  &.attachment::before   { content: $fa-var-paperclip; }
+  &.document::before     { content: $fa-var-file-text; }
+  &.project::before      { content: $fa-var-cube; }
+  &.time-entry::before   { content: $fa-var-clock-o; }
 }
 
 
 //== Alternative icons
 //
 
-@if $use-font-awesome {
-  .search_for_watchers > a {
+.search_for_watchers > a {
+  @extend %fa-icon;
+  @include icon-variant(success);
+
+  &::before {
+    content: $fa-var-plus;
+  }
+
+  img {
+    display: none;
+  }
+}
+
+.atom {
+  @extend %fa-icon;
+
+  &::before {
+    content: $fa-var-rss-square;
+  }
+}
+
+.issues .buttons a,
+#related-issues li > a {
+  &[data-method="delete"] {
     @extend %fa-icon;
 
     &::before {
-      content: $fa-var-plus;
-      color: $icon-success-color;
-    }
-
-    &:hover::before,
-    &:focus::before {
-      color: $icon-success-hover-color;
+      content: $fa-var-chain-broken;
     }
 
     img {
       display: none;
     }
   }
+}
 
-  .atom {
+#main a.close-icon {
+  @extend %fa-icon;
+  @include link-variant(danger);
+  width: auto;
+  height: auto;
+  background: transparent;
+
+  &::before {
+    content: $fa-var-remove;
+  }
+}
+
+.my-project {
+  @extend %fa-icon;
+
+  &::before {
+    content: $fa-var-star;
+    color: $yellow;
+    font-size: $font-size-small;
+  }
+}
+
+.sort {
+  @extend %fa-icon-after;
+
+  &::after {
+    margin-left: .2em;
+  }
+
+  &.asc,
+  &.desc {
+    background-image: none;
+  }
+
+  &.asc::after {
+    content: $fa-var-sort-amount-asc;
+  }
+
+  &.desc::after {
+    content: $fa-var-sort-amount-desc;
+  }
+
+  .sort-by-id &,
+  .sort-by-done-ratio &,
+  .sort-by-estimated-hours &,
+  .sort-by-spent-hours & {
+    &.asc::after  { content: $fa-var-sort-numeric-asc; }
+    &.desc::after { content: $fa-var-sort-numeric-desc; }
+  }
+
+  .sort-by-assigned-to &,
+  .sort-by-subject & {
+    &.asc::after  { content: $fa-var-sort-alpha-asc; }
+    &.desc::after { content: $fa-var-sort-alpha-desc; }
+  }
+}
+
+a.remove-upload {
+  @extend %fa-icon;
+  @include link-variant(danger);
+  opacity: $icon-opacity;
+  text-align: center;
+
+  &:hover,
+  &:focus {
+    opacity: $icon-hover-opacity;
+    text-decoration: none;
+  }
+
+  &::before {
+    content: $fa-var-trash;
+  }
+}
+
+em.info.error {
+  @extend %fa-icon;
+
+  &::before {
+    content: $fa-var-exclamation-circle;
+  }
+}
+
+.message .contextual {
+  a {
     @extend %fa-icon;
-
-    &::before {
-      content: $fa-var-rss-square;
-    }
-  }
-
-  .issues .buttons a,
-  #related-issues li > a {
-    &[data-method="delete"] {
-      @extend %fa-icon;
-
-      &::before {
-        content: $fa-var-chain-broken;
-      }
-
-      img {
-        display: none;
-      }
-    }
-  }
-
-  #main a.close-icon {
-    @extend %fa-icon;
-    width: auto;
-    height: auto;
-    background: transparent;
-    color: $icon-danger-color;
-
-    &:hover,
-    &:focus {
-      color: $icon-danger-hover-color;
-    }
-
-    &::before {
-      content: $fa-var-remove;
-    }
-  }
-
-  .my-project {
-    @extend %fa-icon;
-
-    &::before {
-      content: $fa-var-star;
-      color: #f6ab02;
-      font-size: $font-size-small;
-    }
-  }
-
-  .sort {
-    @extend %fa-icon-after;
-
-    &::after {
-      margin-left: .2em;
-    }
-
-    &.asc,
-    &.desc {
-      background-image: none;
-    }
-
-    &.asc::after {
-      content: $fa-var-sort-amount-asc;
-    }
-
-    &.desc::after {
-      content: $fa-var-sort-amount-desc;
-    }
-
-    .sort-by-id &,
-    .sort-by-done-ratio &,
-    .sort-by-estimated-hours &,
-    .sort-by-spent-hours & {
-      &.asc::after  { content: $fa-var-sort-numeric-asc; }
-      &.desc::after { content: $fa-var-sort-numeric-desc; }
-    }
-
-    .sort-by-assigned-to &,
-    .sort-by-subject & {
-      &.asc::after  { content: $fa-var-sort-alpha-asc; }
-      &.desc::after { content: $fa-var-sort-alpha-desc; }
-    }
-  }
-
-  a.remove-upload {
-    @extend %fa-icon;
-    opacity: .75;
-    color: $icon-danger-color;
-    text-align: center;
+    opacity: .7;
 
     &:hover,
     &:focus {
       opacity: 1;
-      color: $icon-danger-hover-color;
-      text-decoration: none;
     }
 
-    &::before {
-      content: $fa-var-trash;
-    }
-  }
-
-  em.info.error {
-    @extend %fa-icon;
-
-    &::before {
-      content: $fa-var-exclamation-circle;
-    }
-  }
-
-  .message .contextual {
-    a {
-      @extend %fa-icon;
-      opacity: .5;
-
-      &:hover,
-      &:focus {
-        opacity: 1;
-      }
-
-      &:nth-child(1) {
-        &::before {
-          content: $fa-var-comment;
-        }
-      }
-
-      &:nth-child(2) {
-        @include link-variant($icon-success-color, $icon-success-hover-color);
-
-        &::before {
-          content: $fa-var-pencil;
-        }
-      }
-
-      &:nth-child(3) {
-        @include link-variant($icon-danger-color, $icon-danger-hover-color);
-
-        &::before {
-          content: $fa-var-trash;
-        }
-      }
-
-      img {
-        display: none;
-      }
-    }
-  }
-
-  tr.message {
-    &.locked td.subject,
-    &.sticky td.subject {
-      @extend %fa-icon;
-    }
-
-    &.locked {
-      color: $gray;
-
-      td.subject {
-        &::before {
-          content: $fa-var-lock;
-        }
-      }
-    }
-
-    &.sticky td.subject {
-      font-weight: $font-weight-bold;
-
+    &:nth-child(1) {
       &::before {
-        content: $fa-var-bookmark;
+        content: $fa-var-comment;
       }
     }
-  }
 
-  tr.version.shared td.name {
-    @extend %fa-icon;
-
-    &::before {
-      content: $fa-var-link;
-    }
-  }
-
-  table.boards {
-    a.board {
-      @extend %fa-icon;
-
+    &:nth-child(2) {
       &::before {
-        content: $fa-var-comments;
+        content: $fa-var-pencil;
       }
     }
-  }
 
-  table.members {
-    td.group,
-    td.groupnonmember,
-    td.groupanonymous {
-      @extend %fa-icon;
-
+    &:nth-child(3) {
       &::before {
-        content: $fa-var-group;
+        content: $fa-var-trash;
       }
-    }
-  }
-
-  div.wiki {
-    .external {
-      @extend %fa-icon;
-
-      &::before {
-        content: $fa-var-external-link;
-        display: inline;
-        margin-right: 3px;
-        font-size: 10px;
-      }
-    }
-  }
-
-  .contextual [href*="edit"] {
-    @extend %fa-icon;
-    @include link-variant($icon-success-color, $icon-success-hover-color);
-
-    &::before {
-      content: $fa-var-pencil;
     }
 
     img {
       display: none;
     }
   }
+}
 
-  #attach_files_link {
+tr.message {
+  &.locked td.subject,
+  &.sticky td.subject {
     @extend %fa-icon;
-
-    &::before {
-      content: $fa-var-plus;
-      margin-right: .3em;
-      color: $icon-success-color;
-    }
-
-    &:hover::before,
-    &:focus::before {
-      color: $icon-success-hover-color;
-    }
   }
 
-  .other-formats {
-    %other-format {
-      @extend %fa-icon;
-
-      &::before {
-        margin-right: .3em;
-      }
-    }
-
-    .pdf {
-      @extend %other-format;
-
-      &::before {
-        content: $fa-var-file-pdf-o;
-      }
-    }
-
-    .html {
-      @extend %other-format;
-
-      &::before {
-        content: $fa-var-file-code-o;
-      }
-    }
-
-    .txt {
-      @extend %other-format;
-
-      &::before {
-        content: $fa-var-file-text-o;
-      }
-    }
-
-    .csv {
-      @extend %other-format;
-
-      &::before {
-        content: $fa-var-file-excel-o;
-      }
-    }
-
-    .png {
-      @extend %other-format;
-
-      &::before {
-        content: $fa-var-file-image-o;
-      }
-    }
-  }
-
-  #changes-legend > li.change,
-  .changeset-changes ul > li.change {
-    @extend %fa-icon;
-    background: transparent;
-
-    &::before {
-      content: $fa-var-circle;
-      position: relative;
-      top: -.12em;
-      font-size: .7143em;
-    }
-
-    &.folder::before          { content: $fa-var-folder; top: 0; font-size: 1em; }
-    &.folder.change-A::before { content: $fa-var-folder-open; }
-    &.folder.change-M::before { content: $fa-var-folder-open; }
-    &.change-A::before        { content: $fa-var-plus-circle; }
-    &.change-M::before        { content: $fa-var-circle; }
-    &.change-C::before        { content: $fa-var-arrow-circle-right; }
-    &.change-R::before        { content: $fa-var-check-circle; }
-    &.change-D::before        { content: $fa-var-minus-circle; }
-  }
-
-  .changeset-changes ul > li.change {
-    &.folder::before {
-      top: $table-condensed-cell-padding - 2px;
-      margin-left: -20px;
-    }
-
-    &::before {
-      top: $table-condensed-cell-padding;
-      margin-left: -(20px - $table-condensed-cell-padding);
-      float: left;
-    }
-  }
-} @else {
-  .search_for_watchers > a {
-    padding-left: 20px;
-    background: url("../../../images/add.png") no-repeat 0 50%;
-  }
-
-  .atom {
-    padding: 2px 0 3px 16px;
-    background: url("../../../images/feed.png") no-repeat 1px 50%;
-  }
-
-  .my-project {
-    padding-left: 18px;
-    background: url("../../../images/fav.png") no-repeat left center;
-  }
-
-  .sort {
-    padding-right: 16px;
-    background-repeat: no-repeat;
-    background-position: right center;
-
-    &.asc {
-      background-image: url("../../../images/sort_asc.png");
-    }
-
-    &.desc {
-      background-image: url("../../../images/sort_desc.png");
-    }
-  }
-
-  a.remove-upload {
-    display: inline-block;
-    padding-left: 16px;
-    background: url("../../../images/delete.png") no-repeat 1px 50%;
-
-    &:hover {
-      text-decoration: none !important; // scss-lint:disable ImportantRule
-    }
-  }
-
-  em.info.error {
-    padding-left: 20px;
-    background: url("../../../images/exclamation.png") no-repeat 0 50%;
-  }
-
-  tr.message {
-    &.locked {
-      color: $gray;
-
-      td.subject {
-        background-image: url("../../../images/locked.png");
-      }
-    }
-
-    &.sticky td.subject {
-      background-image: url("../../../images/bullet_go.png");
-      font-weight: $font-weight-bold;
-    }
+  &.locked {
+    color: $gray-700;
 
     td.subject {
-      padding-left: 20px + $table-cell-padding;
-      background-repeat: no-repeat;
-      background-position: $table-cell-padding ($table-cell-padding - 1px);
+      &::before {
+        content: $fa-var-lock;
+      }
     }
   }
 
-  tr.version.shared td.name {
-    padding-left: 20px;
-    background: url("../../../images/link.png") no-repeat 0 center;
+  &.sticky td.subject {
+    font-weight: $font-weight-bold;
+
+    &::before {
+      content: $fa-var-bookmark;
+    }
+  }
+}
+
+tr.version.shared td.name {
+  @extend %fa-icon;
+
+  &::before {
+    content: $fa-var-link;
+  }
+}
+
+table.boards {
+  a.board {
+    @extend %fa-icon;
+
+    &::before {
+      content: $fa-var-comments;
+    }
+  }
+}
+
+table.members {
+  td.group,
+  td.groupnonmember,
+  td.groupanonymous {
+    @extend %fa-icon;
+
+    &::before {
+      content: $fa-var-group;
+    }
+  }
+}
+
+div.wiki {
+  .external {
+    @extend %fa-icon;
+
+    &::before {
+      content: $fa-var-external-link;
+      display: inline;
+      margin-right: 3px;
+      font-size: 10px;
+    }
+  }
+}
+
+.contextual [href*="edit"] {
+  @extend %fa-icon;
+
+  &::before {
+    content: $fa-var-pencil;
   }
 
-  table.boards {
-    a.board {
-      padding-left: 20px;
-      background: url("../../../images/comment.png") no-repeat 0% 50%;
+  img {
+    display: none;
+  }
+}
+
+#attach_files_link {
+  @extend %fa-icon;
+
+  &::before {
+    content: $fa-var-plus;
+    margin-right: .3em;
+  }
+}
+
+.other-formats {
+  %other-format {
+    @extend %fa-icon;
+
+    &::before {
+      margin-right: .3em;
     }
   }
 
-  table.members {
-    td.name {
-      padding-left: 20px;
-    }
+  .pdf {
+    @extend %other-format;
 
-    td.group,
-    td.groupnonmember,
-    td.groupanonymous {
-      background: url("../../../images/group.png") no-repeat 0% center;
+    &::before {
+      content: $fa-var-file-pdf-o;
     }
   }
 
-  div.wiki {
-    .external {
-      padding-left: 12px;
-      background-image: url("../../../images/external.png");
-      background-repeat: no-repeat;
-      background-position: 0% 60%;
+  .html {
+    @extend %other-format;
+
+    &::before {
+      content: $fa-var-file-code-o;
+    }
+  }
+
+  .txt {
+    @extend %other-format;
+
+    &::before {
+      content: $fa-var-file-text-o;
+    }
+  }
+
+  .csv {
+    @extend %other-format;
+
+    &::before {
+      content: $fa-var-file-excel-o;
+    }
+  }
+
+  .png {
+    @extend %other-format;
+
+    &::before {
+      content: $fa-var-file-image-o;
     }
   }
 }
@@ -1155,211 +754,193 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
 //== Hacks and overrides for Font Awesome
 //
 
-@if $use-font-awesome {
-  // Attachments and watchers delete icon
+// Attachments and watchers delete icon
 
-  .attachments,
-  .watchers {
-    a.delete {
-      @extend %fa-icon;
-
-      &::before {
-        content: $fa-var-trash;
-        color: $icon-danger-color;
-      }
-
-      &:hover::before,
-      &:focus::before {
-        color: $icon-danger-hover-color;
-      }
-
-      img {
-        display: none;
-      }
-    }
-  }
-
-
-  // Issue edit form icon
-
-  #all_attributes label[for="issue_description"] + a {
+.attachments,
+.watchers {
+  a.delete {
     @extend %fa-icon;
+    @include icon-variant(danger);
 
     &::before {
-      content: $fa-var-pencil;
-      color: $icon-success-color;
-    }
-
-    &:hover::before,
-    &:focus::before {
-      color: $icon-success-hover-color;
-    }
-
-    .icon {
-      padding-left: 0;
-
-      &::before {
-        content: "";
-        margin: 0;
-      }
+      content: $fa-var-trash;
     }
 
     img {
       display: none;
     }
   }
+}
 
 
-  // Issue journal contextual icons
+// Issue edit form icon
 
-  .journal .contextual {
-    a {
-      @extend %fa-icon;
+#all_attributes label[for="issue_description"] + a {
+  @extend %fa-icon;
 
+  &::before {
+    content: $fa-var-pencil;
+  }
+
+  .icon {
+    padding-left: 0;
+
+    &::before {
+      content: "";
+      margin: 0;
+    }
+  }
+
+  img {
+    display: none;
+  }
+}
+
+
+// Issue journal contextual icons
+
+.journal .wiki .contextual {
+  > a {
+    @extend %fa-icon;
+
+    &:not([class*="icon"]) {
       &::before {
         content: $fa-var-comment;
       }
 
-      img {
-        display: none;
-      }
-
       &:nth-child(2) {
-        @include link-variant($icon-success-color, $icon-success-hover-color);
-
         &::before {
           content: $fa-var-pencil;
         }
       }
 
       &:nth-child(3) {
-        @include link-variant($icon-danger-color, $icon-danger-hover-color);
-
         &::before {
           content: $fa-var-trash;
         }
       }
     }
-  }
-
-
-  // Category and target vesion add icon
-
-  #issue_category_id + a,
-  #issue_fixed_version_id + a {
-    @extend %fa-icon;
-
-    &::before {
-      content: $fa-var-plus-square;
-      color: $icon-success-color;
-    }
-
-    &:hover::before,
-    &:focus::before {
-      color: $icon-success-hover-color;
-    }
 
     img {
       display: none;
     }
   }
+}
 
 
-  // jQuery UI datepicker trigger button
+// Category and target vesion add icon
 
-  img.ui-datepicker-trigger {
-    @extend %image-calendar;
-    position: relative;
-    top: -1px;
-    box-sizing: border-box;
-    width: 14px;
-    height: 14px;
-    padding-left: 14px;
-    background-repeat: no-repeat;
+#issue_category_id + a,
+#issue_fixed_version_id + a {
+  @extend %fa-icon;
+  @include icon-variant(success);
+
+  &::before {
+    content: $fa-var-plus-square;
   }
 
+  img {
+    display: none;
+  }
+}
 
-  // Lists toggle checkbox icon
 
-  table.list th.checkbox > a {
-    @extend %fa-icon;
+// jQuery UI datepicker trigger button
 
-    &::before {
-      content: $fa-var-check;
-      margin-right: 0;
-      color: $icon-success-color;
-    }
+img.ui-datepicker-trigger {
+  position: relative;
+  top: -1px;
+  box-sizing: border-box;
+  width: 14px;
+  height: 14px;
+  padding-left: 14px;
+  background-image: inline-svg("calendar.svg", (path: (fill: $btn-default-icon-color)));
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 
-    img {
-      display: none;
-    }
+
+// Lists toggle checkbox icon
+
+table.list th.checkbox > a {
+  @extend %fa-icon;
+  @include icon-variant(success);
+
+  &::before {
+    content: $fa-var-check;
+    margin-right: 0;
   }
 
+  img {
+    display: none;
+  }
+}
 
-  // Time entries list icons
 
-  .time-entry .buttons > a {
-    @extend %fa-icon;
+// Time entries list icons
 
-    &[href*="edit"]::before {
-      content: $fa-var-pencil;
-      color: $icon-success-color;
-    }
+.time-entry .buttons > a {
+  @extend %fa-icon;
 
-    &[data-method="delete"]::before {
-      content: $fa-var-trash;
-      color: $icon-danger-color;
-    }
-
-    img {
-      display: none;
-    }
+  &[href*="edit"]::before {
+    content: $fa-var-pencil;
   }
 
-
-  // Files list
-
-  .file .buttons > a {
-    @extend %fa-icon;
-
-    &[data-method="delete"]::before {
-      content: $fa-var-trash;
-      color: $icon-danger-color;
-    }
-
-    img {
-      display: none;
-    }
+  &[data-method="delete"]::before {
+    content: $fa-var-trash;
   }
 
+  img {
+    display: none;
+  }
+}
 
-  // Commit keywords
 
-  .delete-commit-keywords {
-    @extend %fa-icon;
-    font-size: $font-size-base;
+// Files list
+
+.file .buttons > a {
+  @extend %fa-icon;
+
+  &[data-method="delete"] {
+    @include icon-variant(danger);
 
     &::before {
       content: $fa-var-trash;
-      color: $icon-danger-color;
-    }
-
-    img {
-      display: none;
     }
   }
 
-  .add-commit-keywords {
-    @extend %fa-icon;
-    font-size: $font-size-base;
+  img {
+    display: none;
+  }
+}
 
-    &::before {
-      content: $fa-var-plus-square;
-      color: $icon-success-color;
-    }
 
-    img {
-      display: none;
-    }
+// Commit keywords
+
+.delete-commit-keywords {
+  @extend %fa-icon;
+  @include icon-variant(danger);
+  font-size: $font-size-base;
+
+  &::before {
+    content: $fa-var-trash;
+  }
+
+  img {
+    display: none;
+  }
+}
+
+.add-commit-keywords {
+  @extend %fa-icon;
+  @include icon-variant(success);
+  font-size: $font-size-base;
+
+  &::before {
+    content: $fa-var-plus-square;
+  }
+
+  img {
+    display: none;
   }
 }

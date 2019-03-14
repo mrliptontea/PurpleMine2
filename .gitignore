@@ -1,5 +1,4 @@
-.sass-cache
-config.codekit
+/.sass-cache
 /node_modules
 /src/sass/_custom-variables.scss
 /.sublime-grunt.cache

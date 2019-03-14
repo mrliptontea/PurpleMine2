@@ -25,7 +25,7 @@
   #main {
     display: block;
     overflow: visible !important; // scss-lint:disable ImportantRule
-    background: #fff;
+    background: $white;
   }
 
   #content {
@@ -34,7 +34,7 @@
     padding: 0;
     overflow: visible !important; // scss-lint:disable ImportantRule
     border: 0;
-    background: #fff;
+    background: $white;
   }
 
   .autoscroll {
@@ -45,7 +45,7 @@
     // scss-lint:disable ImportantRule
     padding: 0 !important;
     background-color: transparent !important;
-    color: #000 !important;
+    color: $black !important;
 
     &::before,
     &::after {
@@ -64,7 +64,7 @@
 
     th,
     td {
-      border: 1px solid #aaa;
+      border: 1px solid $gray-500;
       background-color: transparent;
 
       &.buttons {

@@ -15,9 +15,10 @@
     display: block;
     margin-bottom: $padding-base-vertical;
     font-weight: $font-weight-bold;
+    line-height: inherit;
 
     &[for="autologin"] {
-      @include checkbox;
+      @include check;
       margin-bottom: $line-height-computed;
     }
 

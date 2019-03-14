@@ -23,7 +23,8 @@
   }
 }
 
-.controller-wiki .wiki > .preview {
+.controller-wiki .wiki > .preview,
+.wiki.wiki-preview {
   font-size: $wiki-font-size;
 }
 
@@ -46,14 +47,14 @@ div.wiki {
 
   h1, .h1 {
     padding-bottom: .3em;
-    border-bottom: 1px solid $gray-lighter;
+    border-bottom: 1px solid $gray-400;
     font-size: $font-size-h1;
     line-height: 1.2;
   }
 
   h2, .h2 {
     padding-bottom: .3em;
-    border-bottom: 1px solid $gray-lighter;
+    border-bottom: 1px solid $gray-400;
     font-size: $font-size-h2;
     line-height: 1.225;
   }
@@ -72,12 +73,12 @@ div.wiki {
   }
 
   h6, .h6 {
-    color: $gray;
+    color: $gray-700;
     font-size: $font-size-h6;
   }
 
   .text-normal {
-    font-weight: normal;
+    font-weight: $font-weight-normal;
   }
 
   > a:first-child {
@@ -103,7 +104,7 @@ div.wiki {
         width: .7em;
         margin-left: -.7em;
         color: $headings-anchor-color-active;
-        font-weight: normal;
+        font-weight: $font-weight-normal;
       }
     }
   }
@@ -124,10 +125,10 @@ div.wiki {
 
   .contextual {
     a {
-      opacity: .4;
+      opacity: $icon-opacity;
 
       &:hover {
-        opacity: 1;
+        opacity: $icon-hover-opacity;
       }
     }
   }
@@ -192,7 +193,7 @@ div.wiki {
   code {
     padding: .2em .33em;
     border-radius: $border-radius-base;
-    background-color: rgba(#000, .04);
+    background-color: rgba($black, .04);
     font-size: $font-size-small;
   }
 
@@ -202,10 +203,9 @@ div.wiki {
     padding: 4px 8px;
     overflow-x: auto;
     overflow-y: hidden;
-    border: 1px solid #e7e7e7;
+    border: 1px solid rgba($black, .068);
     border-radius: $border-radius-base;
-    border-color: rgba(#000, .068);
-    background-color: rgba(#000, .03);
+    background-color: rgba($black, .03);
     font-size: $font-size-small;
 
     code {
@@ -239,7 +239,7 @@ div.wiki {
 
       a {
         color: $highlight-text;
-        font-weight: normal;
+        font-weight: $font-weight-normal;
         text-decoration: none;
 
         &:hover {
@@ -343,7 +343,7 @@ p.footnote {
     width: 300px;
     margin-top:  $line-height-computed;
     padding-top: $line-height-computed / 2;
-    border-top: 1px solid $gray-lighter;
+    border-top: 1px solid $gray-400;
   }
 
   + p.footnote::before {
@@ -354,18 +354,13 @@ p.footnote {
 .preview {
   margin-top: $line-height-computed;
   padding: $padding-wiki;
-  background-color: #fffbe5;
-  background-image: url("../images/draft.png");
-  background-position: center center;
-
-  html[lang="pl"] & {
-    background-image: url("../images/draft-pl.png");
-  }
+  border: 1px solid $gray-400;
+  background-color: $body-bg;
 }
 
 #wiki_add_attachment {
   padding-top: $line-height-computed;
-  border-top: 1px solid $gray-lighter;
+  border-top: 1px solid $gray-400;
 
   > p {
     margin-bottom: 0;
@@ -467,7 +462,7 @@ p.footnote {
 // Other helper classes
 // see: http://getbootstrap.com/css/#helper-classes
 
-.text-muted      { color: $gray-light; }
+.text-muted      { color: $gray-600; }
 .text-primary    { color: $brand-primary; }
 .text-success    { color: $brand-success; }
 .text-info       { color: $brand-info; }

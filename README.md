@@ -6,9 +6,9 @@ A free Redmine theme for modern browsers.
 
 ---
 
-![Screenshot](https://github.com/mrliptontea/PurpleMine2/raw/master/screenshots/issues-list.png)
+![Screenshot](https://github.com/mrliptontea/PurpleMine2/raw/master/screenshots/issues.png)
 
-Compatible with Redmine 2.6+ and browsers: IE10+/Edge, latest Firefox and Google Chrome (others were not tested).
+Compatible with Redmine 3.0+ and browsers: IE10+/Edge, latest Firefox and Google Chrome (others were not tested).
 
 It's written in [SCSS]. It uses [normalize.css] and benefits from some parts of [Bootstrap][bootstrap-sass] like mixins, structure, and stuff.
 
@@ -38,21 +38,17 @@ Also, [Redmine Time Tracker][redmine_time_tracker] and [Redmine People][redmine_
 
 If you want to customize PurpleMine to your needs, first, make sure that you have installed [node.js](http://nodejs.org/) and `npm` is available in your terminal.
 
-If haven't yet, you need to install grunt:
-
-    npm install grunt-cli -g
-
 Then, from the directory that contains PurpleMine run:
 
     npm install
 
 Now all the dependencies should be ready to use. Run one more command:
 
-    grunt watch
+    npm run watch
 
-And now the grunt is watching for changes in files placed in `src/` folder. Just change what you need, and it'll run SASS preprocessor automatically.
+And now the grunt is watching for changes in files placed in `src/` folder. Just change what you need, and it'll run Sass preprocessor automatically.
 
-Regrettably, optional file include is not possible in SASS, so I would recommend creating a new file, e.g. `src/sass/_custom-variables.scss` and importing it a the beginning of the `application.scss` file. That way all the variables with the `!default` flag could be overridden.
+Regrettably, optional file include is not possible in Sass, so I would recommend creating a new file, e.g. `src/sass/_custom-variables.scss` and importing it a the beginning of the `application.scss` file. That way all the variables with the `!default` flag could be overridden.
 
 The path `src/sass/_custom-variables.scss` is added to `.gitignore` so it should make upgrading PurpleMine with keeping your changes rather painless, given that the only thing you changed in PurpleMine's source was adding this one line with `@import "custom-variables";`.
 
@@ -60,7 +56,19 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
-Latest (master):
+v2.0 (2019-03-13):
+
+* Refreshed, modernized look & feel
+* Added priority icons
+* Removed `$color-priorities` setting and styles
+* Improved Redmine 4.0 compatibility
+* Updated Font Awesome icons to 4.7.0
+
+v1.10.0 (2019-03-12):
+
+* Fixed #86: added support for redmine_hearts plugin
+
+v1.9.0 (2019-03-01):
 
 * Fixed #42: override some styles from [RM+](http://rmplus.pro) plugins
 * Merged #43: fixes for Redmine 3.3.2.devel
@@ -75,6 +83,11 @@ Latest (master):
 * Fixed #54: long checkbox lists will be scrollable
 * Fixed #62: anchors won't scroll the page
 * Fixed #69: fixed "remember me" checkbox layout on login page
+* Fixed #78: files not visible on list in wiki when there is a lot of them
+* Updated dependencies
+* Fixed #81: top watchers checkboxes were not visible on Firefox
+* Removed `checkbox` and `radio` mixins in favour of `check`
+* Fixed #83: editor tabs layout in Redmine 4.0
 
 v1.8.0 (2016-11-20):
 

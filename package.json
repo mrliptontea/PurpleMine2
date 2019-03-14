@@ -1,6 +1,6 @@
 {
   "name": "PurpleMine2",
-  "description": "A free Redmine 2.5+ theme written in SCSS",
+  "description": "A free Redmine 2.6+ theme written in SCSS",
   "keywords": [
     "redmine",
     "theme",
@@ -18,18 +18,24 @@
   },
   "homepage": "https://github.com/mrliptontea/PurpleMine2",
   "scripts": {
-    "lint": "standard && scss-lint"
+    "build": "grunt",
+    "watch": "grunt watch",
+    "lint:js": "standard",
+    "lint:sass": "scss-lint",
+    "lint": "npm run -S lint:js && npm run -S lint:sass"
   },
   "dependencies": {
-    "autoprefixer": "^6.5.3",
-    "grunt": "^1.0.1",
-    "grunt-contrib-uglify": "^2.0.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-postcss": "^0.8.0",
-    "grunt-sass": "^1.0.0"
+    "autoprefixer": "^9.4.10",
+    "grunt": "^1.0.3",
+    "grunt-contrib-uglify": "^4.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-postcss": "^0.9.0",
+    "grunt-sass": "^3.0.2",
+    "node-sass": "^4.11.0",
+    "sass-inline-svg": "^1.2.0"
   },
   "devDependencies": {
-    "standard": "^8.5.0"
+    "standard": "^12.0.1"
   },
   "standard": {
     "globals": [

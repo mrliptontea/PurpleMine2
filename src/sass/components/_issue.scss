@@ -3,13 +3,18 @@
 // --------------------------------------------------
 
 .issue {
+  @if not $clean-issues {
+    &.details {
+      padding: $issue-padding;
+      border: 1px solid $issue-border;
+      border-radius: $border-radius-base;
+      background-color: $issue-bg;
+      color: $issue-text;
+    }
+  }
+
   &.details {
     margin-bottom: $line-height-computed;
-    padding: $issue-padding;
-    border: 1px solid $issue-border;
-    border-radius: $border-radius-base;
-    background-color: $issue-bg;
-    color: $issue-text;
     word-wrap: break-word;
 
     @if $use-gravatars {
@@ -65,10 +70,10 @@
     > .subject {
       h3 {
         margin-bottom: .3em;
-        color: $gray-darkest;
+        color: $gray-950;
         font-size: $issue-heading-size * 1em;
         font-weight: $font-weight-bold;
-        line-height: 1.2;
+        line-height: 1.1;
       }
 
       p {
@@ -82,7 +87,11 @@
     }
 
     > hr {
-      margin: $issue-padding (-$issue-padding);
+      @if $clean-issues {
+        margin: $issue-padding 0;
+      } @else {
+        margin: $issue-padding (-$issue-padding);
+      }
       border-top-color: $issue-border;
     }
 
@@ -92,15 +101,26 @@
       }
 
       > .wiki {
-        margin: 0 (-$issue-padding) (-$issue-padding);
-        padding: $padding-wiki;
-        border-top: 1px solid $issue-border;
-        background: $body-bg;
+        @if $clean-issues {
+          margin: 0 0 $issue-padding;
+        } @else {
+          margin: 0 (-$issue-padding) (-$issue-padding);
+          padding: $padding-wiki;
+          border-top: 1px solid $issue-border;
+          background: $body-bg;
+        }
       }
     }
 
     .next-prev-links {
-      color: $gray-light;
+      margin: 0 0 $line-height-computed;
+      float: none;
+      color: $gray-600;
+
+      @media screen and (min-width: $screen-md-min) {
+        margin: 0;
+        float: right;
+      }
     }
   }
 
@@ -116,11 +136,12 @@
 
     > tbody > tr {
       th {
-        font-weight: normal;
+        color: $gray-700;
+        font-weight: $font-weight-normal;
       }
 
       td {
-        color: $gray-darkest;
+        color: $gray-950;
       }
     }
 
@@ -158,26 +179,29 @@
       margin-top: $issue-attribute-padding-v;
       padding: 1px $table-cell-padding;
       border-radius: $border-radius-base;
-      background-color: $brand-primary;
-      color: $brand-text;
+      background-color: $status-default-bg;
+      color: $status-default-color;
       font-size: $font-size-small;
       font-weight: $font-weight-bold;
       text-align: center;
       text-transform: uppercase;
     }
 
-    &.status-1 {
-      .attributes td.status,
-      .attribute.status .value {
-        background-color: $brand-info;
+    @each $status, $status-colors in $status-colors-map {
+      &.#{$status} {
+        .attributes td.status,
+        .attribute.status .value {
+          background-color: map-get($status-colors, background);
+          color: map-get($status-colors, color);
+        }
       }
     }
+  }
 
-    &.closed {
-      .attributes td.status,
-      .attribute.status .value {
-        background-color: $brand-danger;
-      }
+  @if $priority-icon {
+    .attributes td.priority,
+    .attribute.priority .value {
+      @include priority-icon-base;
     }
   }
 
@@ -198,6 +222,7 @@
     .label {
       width: 25%;
       float: left;
+      color: $gray-700;
 
       @media screen and (min-width: $screen-lg-min) {
         width: 14em;
@@ -205,7 +230,7 @@
     }
 
     .value {
-      color: $gray-darkest;
+      color: $gray-950;
 
       @media screen and (min-width: $screen-lg-min) {
         width: auto;
@@ -233,6 +258,11 @@ div.attachments {
   padding: $line-height-computed 0;
   border-top: 1px solid $issue-border;
 
+  @at-root .collapsible #{&} {
+    padding-top: 0;
+    border-top: 0;
+  }
+
   p {
     margin: 10px 0 0;
   }
@@ -249,15 +279,15 @@ div.attachments {
   }
 
   .delete {
-    opacity: .5;
+    opacity: $icon-opacity;
 
     &:hover {
-      opacity: 1;
+      opacity: $icon-hover-opacity;
     }
   }
 
   span.author {
-    color: $gray;
+    color: $gray-700;
     font-size: $font-size-small;
   }
 }
@@ -272,12 +302,12 @@ div.thumbnails {
   a {
     display: inline-block;
     margin-right: 2px;
-    border: 1px solid $gray-lighter;
+    border: 1px solid $gray-400;
     border-radius: $border-radius-base;
     background-color: $body-bg;
 
     &:hover {
-      border-color: $gray-light;
+      border-color: $gray-600;
     }
   }
 
@@ -408,16 +438,45 @@ div.thumbnails {
     }
   }
 
+  // For Redmine 4.0+
+  > div > .contextual {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    padding: $bubble-padding-vertical $bubble-padding-horizontal;
+    font-size: $font-size-list;
+
+    > .journal-actions {
+      padding-right: $issue-attribute-padding-h;
+
+      > a {
+        opacity: $icon-opacity;
+
+        &:hover {
+          opacity: $icon-hover-opacity;
+        }
+      }
+    }
+
+    > a.journal-link {
+      color: $gray-700;
+
+      &::before {
+        content: "";
+      }
+    }
+  }
+
   > div > h4 {
     margin: 0;
     padding: $bubble-padding-vertical $bubble-padding-horizontal;
     border-radius: $panel-border-radius $panel-border-radius 0 0;
     background-color: $issue-bg;
-    color: $gray;
+    color: $gray-700;
     font-size: $font-size-list;
 
     a {
-      color: $gray-darker;
+      color: $gray-900;
 
       &.user {
         font-weight: $font-weight-bold;
@@ -425,7 +484,7 @@ div.thumbnails {
     }
 
     .journal-link {
-      color: $gray;
+      color: $gray-700;
     }
   }
 
@@ -471,7 +530,7 @@ div.thumbnails {
   .details {
     margin: 0;
     padding: $bubble-padding-vertical 0;
-    padding-left: $bubble-padding-horizontal * 3;
+    padding-left: $bubble-padding-horizontal * 2.5;
     list-style: none;
     border-top: 1px solid mix($body-bg, $issue-border, 50%);
     font-size: $font-size-list;
@@ -489,11 +548,11 @@ div.thumbnails {
         display: block;
         position: absolute;
         top: 5px;
-        left: -($bubble-padding-horizontal * 1.5 + 6px / 2);
+        left: -($bubble-padding-horizontal + 6px / 2);
         width: 6px;
         height: 6px;
         border-radius: 50%;
-        background-color: $gray-light;
+        background-color: $gray-600;
       }
     }
 
@@ -514,15 +573,19 @@ div.thumbnails {
   .wiki,
   form {
     padding: $issue-padding;
-    border-top: 1px solid mix($body-bg, $issue-border, 50%);
+    border-top: 1px solid $issue-border;
   }
 
   form {
     padding-top: 5px;
-    background-color: $gray-lightest;
+    background-color: $gray-100;
 
     > p {
       margin-bottom: $issue-padding;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
 
     > .wiki {
@@ -617,7 +680,7 @@ span.private {
       @include clearfix;
       margin: 0;
       padding: $padding-base-vertical $padding-base-horizontal;
-      color: $gray;
+      color: $gray-700;
 
       > a {
         font-family: $font-family-monospace;
@@ -625,7 +688,7 @@ span.private {
       }
 
       .author a {
-        color: $gray-darker;
+        color: $gray-900;
 
         &.user {
           font-weight: $font-weight-bold;

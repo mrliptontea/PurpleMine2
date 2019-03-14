@@ -4,6 +4,7 @@
 
 html {
   overflow-y: scroll;
+  tab-size: 4;
 }
 
 body {
@@ -41,18 +42,32 @@ a {
   }
 }
 
+// Remove the tapping delay on clickable elements
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex] {
+  touch-action: manipulation;
+}
+
 h1 {
   margin: 0;
-  font-size: 2em;             // ~28px
-  line-height: 30px;
+  font-size: 2em;
+  font-weight: $font-weight-semi-bold;
+  line-height: $line-height-large * .825;
 }
 
 h2 {
   margin-top: 0;
   margin-bottom: $line-height-computed;
-  font-size: 1.43em;          // ~20px
-  font-weight: 500;
-  line-height: $line-height-computed;
+  font-size: 1.43em;
+  font-weight: $font-weight-semi-bold;
+  line-height: $line-height-large;
 
   img {
     vertical-align: middle;
@@ -62,15 +77,16 @@ h2 {
 h3 {
   margin-top: 0;
   margin-bottom: $line-height-computed;
-  font-size: 1.14em;          // ~16px
-  font-weight: 500;
-  line-height: $line-height-computed;
+  font-size: 1.14em;
+  font-weight: $font-weight-semi-bold;
+  line-height: $line-height-large;
 }
 
 h4 {
   margin-top: 0;
   font-size: 1em;
-  font-weight: 500;
+  font-weight: $font-weight-semi-bold;
+  line-height: $line-height-base;
 }
 
 p {
@@ -82,6 +98,10 @@ small {
 }
 
 table {
+  th {
+    font-weight: $font-weight-bold;
+  }
+
   th,
   td {
     padding: $table-condensed-cell-padding $table-cell-padding;
