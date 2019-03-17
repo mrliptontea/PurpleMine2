@@ -56,6 +56,10 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
+v2.0.1 (2019-03-17):
+
+* Fixed #90: regression in some sidebar layouts
+
 v2.0 (2019-03-13):
 
 * Refreshed, modernized look & feel
