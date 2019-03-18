@@ -201,10 +201,15 @@ a.collapsible.collapsed,
         background: transparent;
       }
 
+      > .icon-only {
+        &::before {
+          line-height: inherit;
+        }
+      }
+
       > .delete {
         float: right;
         opacity: $icon-opacity;
-        vertical-align: middle;
 
         &:hover {
           opacity: $icon-hover-opacity;

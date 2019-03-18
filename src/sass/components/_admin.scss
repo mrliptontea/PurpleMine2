@@ -2,8 +2,8 @@
 // Admin
 // --------------------------------------------------
 
-#main #admin-menu {
-  ul {
+#admin-menu {
+  ul:nth-child(n) {
     li {
       list-style-type: none;
 
@@ -14,22 +14,22 @@
       }
     }
   }
-}
 
-#main #admin-index > #admin-menu {
-  ul {
-    margin: 0;
-    padding: 0;
-  }
+  #admin-index > & {
+    ul {
+      margin: 0;
+      padding: 0;
+    }
 
-  li {
-    padding: ($sidebar-padding-vertical + 1px) ($sidebar-padding-horizontal + 3px);
-  }
+    li {
+      padding: ($sidebar-padding-vertical + 1px) ($sidebar-padding-horizontal + 3px);
+    }
 
-  a {
-    display: inline-block;
-    padding-left: 5px + 20px;
-    background-position: 0 center;
+    a {
+      display: inline-block;
+      padding-left: 5px + 20px;
+      background-position: 0 center;
+    }
   }
 }
 

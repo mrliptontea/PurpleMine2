@@ -149,11 +149,6 @@ hr {
   border-top: 1px solid $hr-border;
 }
 
-abbr[title] {
-  border-bottom: 1px dotted $abbr-border-color;
-  cursor: help;
-}
-
 blockquote {
   margin: 0 0 $line-height-computed;
   padding: floor($line-height-computed / 4) $padding-large-horizontal;
