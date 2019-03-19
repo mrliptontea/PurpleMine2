@@ -703,6 +703,7 @@ div.wiki {
 .other-formats {
   %other-format {
     @extend %fa-icon;
+    background-image: none;
 
     &::before {
       margin-right: .3em;
