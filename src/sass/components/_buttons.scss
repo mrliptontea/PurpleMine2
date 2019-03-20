@@ -104,6 +104,7 @@ p.buttons,
                 color $transition-time ease-in-out;
     border: 1px solid;
     border-radius: $border-radius-base;
+    font-size: $font-size-base;
 
     &.icon {
       padding-left: 20px + $btn-padding-horizontal-small;

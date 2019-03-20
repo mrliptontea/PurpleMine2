@@ -180,6 +180,67 @@
 
 
 //
+// Redmine custom menu
+// http://rmplus.pro/en/redmine/plugins/custom_menu
+// --------------------------------------------------
+
+#top-menu {
+  .cm-menu-header {
+    > li {
+      margin: 0;
+
+      > a,
+      > .title {
+        line-height: $input-height-base;
+      }
+
+      > .cm-menu-divider {
+        height: 18px;
+        margin: 5px 4px 0 5px;
+        border-top: 0;
+        border-left: 1px solid;
+        opacity: .3;
+      }
+    }
+
+    .drdn-trigger {
+      font-size: $font-size-base;
+    }
+  }
+
+  .dropdown {
+    .dropdown-menu > li a:hover,
+    .dropdown-menu > li a:focus,
+    .dropdown-submenu:hover a,
+    .dropdown-submenu:focus a {
+      background-color: $brand-primary;
+      color: $brand-text;
+    }
+  }
+
+  .rm-icon {
+    &::before {
+      font-size: $fa-font-size-base;
+    }
+  }
+
+  #quick-search {
+    margin: 0;
+
+    form > input {
+      width: $quick-search-width / 2;
+      min-width: $quick-search-width / 2;
+    }
+
+    a {
+      line-height: inherit;
+    }
+  }
+}
+
+
+
+//
 // Redmine CRM People
 // http://www.redminecrm.com/projects/people/
 // --------------------------------------------------
