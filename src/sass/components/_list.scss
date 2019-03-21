@@ -161,16 +161,15 @@ tr.project {
     color: $gray-600;
   }
 
-  &.idnt .name span {
-    padding-left: 16px;
+  &.idnt td.name {
     background-image: inline-svg("chevron-right.svg", (path: (fill: $gray-600)));
     background-repeat: no-repeat;
-    background-position: -5px 50%;
   }
 
   @for $i from 1 through 9 {
-    &.idnt-#{$i} .name {
-      padding-left: $table-cell-padding + 16px * ($i - 1);
+    &.idnt-#{$i} td.name {
+      padding-left: $table-cell-padding + 16px * $i;
+      background-position: ($table-cell-padding + 16px * ($i - 1) - 3px) 50%;
     }
   }
 }
@@ -195,13 +194,6 @@ tr.issue {
     }
   }
 
-  &.idnt .subject a {
-    padding-left: 10px;
-    background-image: inline-svg("chevron-right.svg", (path: (fill: $gray-600)));
-    background-repeat: no-repeat;
-    background-position: -5px 0;
-  }
-
   .controller-issues.action-index & {
     &.assigned-to-me {
       .assigned_to,
@@ -213,9 +205,15 @@ tr.issue {
     }
   }
 
+  &.idnt td.subject {
+    background-image: inline-svg("chevron-right.svg", (path: (fill: $gray-600)));
+    background-repeat: no-repeat;
+  }
+
   @for $i from 1 through 9 {
-    &.idnt-#{$i} .subject {
-      padding-left: $table-cell-padding + 16px * ($i - 1);
+    &.idnt-#{$i} td.subject {
+      padding-left: $table-cell-padding + 16px * $i;
+      background-position: ($table-cell-padding + 16px * ($i - 1) - 3px) 50%;
     }
   }
 }
