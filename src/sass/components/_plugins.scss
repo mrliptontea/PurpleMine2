@@ -176,6 +176,14 @@
       order: 3;
     }
   }
+
+  // Page layout on Agile charts is broken, and with "Go to top" link
+  // from https://github.com/alphanodes/additionals plugin enabled
+  // the chart expands and resize event is triggered indefinitely.
+  // Hiding the "Go to top" link fixes this issue.
+  .gototop {
+    display: none;
+  }
 }
 
 
