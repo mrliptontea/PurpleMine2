@@ -1,7 +1,4 @@
 @if $enable-sidebar-toggler {
-  $toggler-position-v:          1px;
-  $toggler-position-h:          -3px;
-
   #main {
     position: relative;
   }
@@ -35,7 +32,7 @@
   .sidebar-toggler {
     display: block;
     position: absolute;
-    top: $toggler-position-v;
+    top: 1px;
     width: 14px;
     height: 16px;
     border: 2px solid $gray-700;
@@ -56,10 +53,16 @@
     }
 
     @if $sidebar-position == "left" {
-      left: $toggler-position-h;
+      left: 0;
+      border-left: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
       background-image: inline-svg("chevron-left.svg", (path: (fill: $gray-700)));
     } @else {
-      right: $toggler-position-h;
+      right: 0;
+      border-right: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
       background-image: inline-svg("chevron-right.svg", (path: (fill: $gray-700)));
     }
 

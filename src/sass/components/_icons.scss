@@ -247,13 +247,6 @@ a.icon-del {
 %admin-icon {
   @extend %fa-icon;
 
-  &::before {
-    width: 20px;
-    margin-left: -(5px + 20px);
-    color: $gray-700;
-    text-align: center;
-  }
-
   &:hover::before {
     color: $gray-900;
   }
@@ -273,6 +266,16 @@ a.icon-del {
   li {
     > a {
       padding-left: $sidebar-padding-horizontal + 5px + 20px;
+
+      &::before {
+        display: inline-block;
+        width: 20px;
+        margin: 0;
+        margin-left: -(5px + 20px);
+        padding: 0;
+        color: $gray-700;
+        text-align: center;
+      }
     }
   }
 

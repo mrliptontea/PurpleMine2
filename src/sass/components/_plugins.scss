@@ -159,6 +159,78 @@
 
 
 //
+// Redmine Agile
+// https://www.redmineup.com/pages/plugins/agile
+// --------------------------------------------------
+
+.controller-agile_charts #main {
+  @if $css-grid-layout {
+    > div:not(#content):not(#sidebar) {
+      grid-area: footer;
+    }
+  } @else if $flexbox-layout {
+    flex-wrap: wrap;
+
+    > #footer {
+      flex: 1 0 auto;
+      order: 3;
+    }
+  }
+}
+
+
+//
+// Redmine Tags
+// https://www.redmineup.com/pages/plugins/tags
+// --------------------------------------------------
+
+.select2 {
+  .filter .values & {
+    min-width: 180px;
+    margin: 0;
+  }
+
+  &.select2-container.select2-container--default {
+    .select2-selection--multiple {
+      line-height: $line-height-base;
+
+      .select2-selection__rendered {
+        padding: 0 3px 3px;
+      }
+
+      .select2-selection__choice {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      .select2-search--inline {
+        input {
+          height: auto;
+          padding-top: 0;
+          padding-bottom: 0;
+          line-height: inherit;
+        }
+      }
+    }
+
+    .select2-selection {
+      transition: border-color $transition-time ease-in-out,
+                  box-shadow $transition-time ease-in-out;
+      border-color: $input-border;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075);
+    }
+
+    &.select2-container--focus {
+      .select2-selection {
+        border-color: rgba($input-border-focus, $input-border-focus-alpha);
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075), 0 0 0 2px rgba($input-border-focus, $input-shadow-focus-alpha);
+      }
+    }
+  }
+}
+
+
+//
 // Redmine Checklists
 // https://www.redmineup.com/pages/plugins/checklists
 // --------------------------------------------------

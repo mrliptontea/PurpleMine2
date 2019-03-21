@@ -74,6 +74,12 @@
     margin-left: 0;
     float: none;
   }
+
+  &.nodata-left {
+    &::before {
+      float: left;
+    }
+  }
 }
 
 #errorExplanation {
