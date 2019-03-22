@@ -335,23 +335,14 @@ div.thumbnails {
       display: none;
     }
 
-    td.subject {
-      padding-left: 0;
+    td.done_ratio {
+      width: 80px;
     }
 
     td.buttons {
+      width: 3em;
       vertical-align: middle;
     }
-  }
-}
-
-#relations {
-  td.checkbox {
-    display: none;
-  }
-
-  td.buttons {
-    padding: 0;
   }
 }
 
