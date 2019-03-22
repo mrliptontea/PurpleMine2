@@ -56,6 +56,10 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
+Latest:
+
+* Fixed sidebar toggler style when fixed layout is enabled
+
 v2.1.0 (2019-03-22):
 
 * Added CSS grid layout support (off by default because of IE support)
