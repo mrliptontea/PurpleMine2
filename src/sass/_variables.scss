@@ -590,7 +590,7 @@ $flash-error-link:              $white !default;
 //
 
 $progress-height:               12px !default;
-$progress-bg:                   $gray-300 !default;
+$progress-bg:                   rgba($gray-500, .5) !default;
 $progress-bar-bg:               $brand-primary !default;
 $progress-bar-success-bg:       $brand-success !default;
 $progress-bar-danger-bg:        $brand-danger !default;
