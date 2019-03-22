@@ -29,7 +29,22 @@
 // --------------------------------------------------
 
 #sidebar {
-  padding: $padding-side $sidebar-padding-horizontal;
+  #main & {
+    padding: $padding-side $sidebar-padding-horizontal;
+  }
+
+  #main.nosidebar & {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+
+    @if $flexbox-layout {
+      flex: 0 0 auto;
+    } @else {
+      width: 0;
+      float: none;
+    }
+  }
 
   @if $flexbox-layout {
     flex: 0 0 $sidebar-width-computed;
@@ -58,19 +73,6 @@
     }
   }
 
-  .nosidebar & {
-    margin: 0;
-    padding: 0;
-    border: 0 none;
-
-    @if $flexbox-layout {
-      flex: 0 0 auto;
-    } @else {
-      width: 0;
-      float: none;
-    }
-  }
-
   h3 {
     margin-top: $line-height-computed * 1.5;
   }
@@ -81,56 +83,70 @@
   }
 
   ul {
-    margin: 0 0 ($line-height-computed / 2);
-    padding: 0;
+    &:nth-child(n) {
+      margin: 0 0 ($line-height-computed / 2);
+      padding: 0;
 
-    @if $sidebar-position == "left" {
-      margin-right: -($sidebar-padding-horizontal);
-    } @else {
-      margin-left: -($sidebar-padding-horizontal);
+      @if $sidebar-position == "left" {
+        margin-right: -($sidebar-padding-horizontal);
+      }
+    }
+
+    &:not(.watchers) {
+      li {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+
+        > a:not(.icon-only) {
+          display: block;
+          padding: $sidebar-padding-vertical $sidebar-padding-horizontal;
+          border: 1px solid transparent;
+
+          @if $sidebar-position == "left" {
+            border-left-width: 3px;
+            border-radius: $border-radius-large 0 0 $border-radius-large;
+          } @else {
+            border-right-width: 3px;
+            border-radius: 0 $border-radius-large $border-radius-large 0;
+          }
+
+          &:hover {
+            background-color: $sidebar-link-hover-bg;
+            text-decoration: none;
+          }
+
+          &.selected {
+            border-color: $sidebar-link-active-border;
+            background-color: $sidebar-link-active-bg;
+            color: $sidebar-link-active-text;
+
+            @if $sidebar-position == "left" {
+              margin-right: -1px;
+              border-right-color: $body-bg;
+              border-left-color: $sidebar-link-active-side;
+              box-shadow: -3px 1px 2px rgba(0, 0, 0, .1);
+            } @else {
+              margin-left: -1px;
+              border-right-color: $sidebar-link-active-side;
+              border-left-color: $body-bg;
+              box-shadow: 3px 1px 2px rgba(0, 0, 0, .1);
+            }
+          }
+        }
+      }
     }
   }
 
-  li {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+  // Special treatment for anchor tags directly under sidebar tag
+  > a {
+    margin: $sidebar-padding-vertical $sidebar-padding-horizontal;
 
-    > a:not(.icon-only) {
-      display: block;
-      padding: $sidebar-padding-vertical $sidebar-padding-horizontal;
-      border: 1px solid transparent;
-
-      @if $sidebar-position == "left" {
-        border-left-width: 3px;
-        border-radius: $border-radius-large 0 0 $border-radius-large;
-      } @else {
-        border-right-width: 3px;
-        border-radius: 0 $border-radius-large $border-radius-large 0;
-      }
-
-      &:hover {
-        background-color: $sidebar-link-hover-bg;
-        text-decoration: none;
-      }
-
-      &.selected {
-        border-color: $sidebar-link-active-border;
-        background-color: $sidebar-link-active-bg;
-        color: $sidebar-link-active-text;
-
-        @if $sidebar-position == "left" {
-          margin-right: -1px;
-          border-right-color: $body-bg;
-          border-left-color: $sidebar-link-active-side;
-          box-shadow: -3px 1px 2px rgba(0, 0, 0, .1);
-        } @else {
-          margin-left: -1px;
-          border-right-color: $sidebar-link-active-side;
-          border-left-color: $body-bg;
-          box-shadow: 3px 1px 2px rgba(0, 0, 0, .1);
-        }
-      }
+    @if $sidebar-position == "left" {
+      margin-left: $sidebar-padding-horizontal + 3px;
+    } @else {
+      margin-right: $sidebar-padding-horizontal + 3px;
+      margin-left: 0;
     }
   }
 }

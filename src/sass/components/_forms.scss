@@ -615,6 +615,7 @@ fieldset#filters {
     }
 
     &.values {
+      min-width: 130px;
       white-space: nowrap;
 
       select {

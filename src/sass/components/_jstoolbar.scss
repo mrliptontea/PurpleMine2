@@ -59,7 +59,7 @@
   }
 }
 
-.jstElements {
+div.jstElements {
   @extend %clearfix;
 
   .box & {
@@ -94,8 +94,15 @@
 
   button {
     margin-bottom: 5px;
+    padding: 0;
+    background-color: $body-bg;
     box-shadow: none;
+    color: $btn-default-color;
     vertical-align: top;
+
+    &::before {
+      text-align: center;
+    }
   }
 }
 
@@ -103,14 +110,7 @@
   .jstElements {
     %jstb-icon {
       @include fa-icon;
-      padding: 0;
-      background: $body-bg;
       background-image: none;
-      color: $btn-default-color;
-
-      &::before {
-        text-align: center;
-      }
     }
 
     .jstb_strong {

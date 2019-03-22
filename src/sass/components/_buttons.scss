@@ -4,6 +4,7 @@
 
 input[type="button"],
 input[type="submit"],
+input[type="reset"],
 button {
   @include button-size($btn-padding-vertical, $btn-padding-horizontal, $font-size-base, $line-height-base, $border-radius-base);
   display: inline-block;

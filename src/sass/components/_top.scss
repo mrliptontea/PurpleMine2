@@ -42,7 +42,7 @@
       @if $use-font-awesome {
         @extend %fa-icon;
         color: mix($top-menu-link, $top-menu-bg, 33%);
-        font-size: 14px;
+        font-size: $fa-font-size-base;
         line-height: 1;
 
         &::before {
@@ -87,14 +87,15 @@
   }
 
   ul {
+    @include clearfix;
     margin: 0;
     padding: 0;
   }
 
   li {
-    display: inline;
     margin: 0 .5em 0 0;
     padding: 0;
+    float: left;
     list-style-type: none;
     white-space: nowrap;
   }
@@ -174,17 +175,19 @@
 }
 
 #quick-search {
-  margin-top: floor(($header-title-line-height + $header-padding-vertical * 2 - $input-height-base) / 2) - 1px;
-  margin-right: $header-padding-horizontal;
-  float: right;
-  color: $header-text;
+  #header & {
+    margin-top: floor(($header-title-line-height + $header-padding-vertical * 2 - $input-height-base) / 2) - 1px;
+    margin-right: $header-padding-horizontal;
+    float: right;
+    color: $header-text;
+  }
 
   form {
     display: inline-block;
-  }
 
-  input {
-    width: $quick-search-width;
+    input {
+      width: $quick-search-width;
+    }
   }
 
   > form > input,
@@ -216,13 +219,37 @@
       padding-bottom: $header-padding-horizontal / 2;
       border-color: $quick-search-dropdown-bg;
       background-color: $quick-search-dropdown-bg;
+
+      @if $use-font-awesome {
+        &::after {
+          content: $fa-var-caret-up;
+        }
+      } @else {
+        @extend %image-arrow-up;
+      }
     }
   }
 
   .drdn {
     &-trigger {
+      @extend %form-field;
       min-width: $quick-search-width;
       border-color: $quick-search-border;
+
+      @if $use-font-awesome {
+        @extend %fa-icon-after;
+
+        &::after {
+          content: $fa-var-caret-down;
+          position: absolute;
+          top: ($font-size-base / 2);
+          right: $input-padding-horizontal;
+        }
+      } @else {
+        @extend %image-arrow-down;
+        background-repeat: no-repeat;
+        background-position: right ($input-padding-horizontal / 2) center;
+      }
     }
 
     &-content {
@@ -240,6 +267,13 @@
 
     &-items {
       border-top: 1px solid $quick-search-dropdown-border;
+
+      > a,
+      > span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
     }
   }
 
@@ -248,7 +282,6 @@
 
     &:hover,
     &:focus {
-      outline: 0 none;
       background-color: $component-active-bg;
       color: $component-active-color;
       text-decoration: none;
@@ -402,11 +435,12 @@
   .tabs-buttons {
     display: none !important; // scss-lint:disable ImportantRule
     padding-left: 0;
+    border-color: $main-menu-border;
     background-color: $main-menu-bg;
 
     > button {
       box-sizing: border-box;
-      height: $tabs-height;
+      height: $tabs-height - 1px;
       background-color: $main-menu-bg;
     }
   }

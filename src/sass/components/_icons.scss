@@ -36,7 +36,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   }
 
   table.list .buttons > a::before {
-    font-size: 14px;
+    font-size: $fa-font-size-base;
   }
 }
 
@@ -121,6 +121,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   .open .icon-folder::before          { content: $fa-var-folder-open; }
   .icon-package::before               { content: $fa-var-cube; }
   .icon-user::before                  { content: $fa-var-user; }
+  .icon-project::before               { content: $fa-var-cube; }
   .icon-projects::before              { content: $fa-var-cubes; }
   .icon-help::before                  { content: $fa-var-info-circle; }
   .icon-attachment::before            { content: $fa-var-paperclip; }
@@ -131,9 +132,9 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   .icon-stats::before                 { content: $fa-var-line-chart; }
   .icon-warning::before               { content: $fa-var-warning; }
   .icon-error::before                 { content: $fa-var-exclamation; }
-  .icon-fav::before                   { content: $fa-var-star; }
+  .icon-fav::before                   { content: $fa-var-star; color: #ed820c; }
   .icon-fav-off::before               { content: $fa-var-star-o; }
-  .icon-heart::before                 { content: $fa-var-heart; }
+  .icon-heart::before                 { content: $fa-var-heart; color: #eb5286; }
   .icon-heart-off::before             { content: $fa-var-heart-o; }
   .icon-reload::before                { content: $fa-var-refresh; }
   .icon-locked::before                { content: $fa-var-lock; }
@@ -152,7 +153,6 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   .icon-passwd::before                { content: $fa-var-key; }
   .icon-test::before                  { content: $fa-var-arrow-circle-right; }
   .icon-phone::before                 { content: $fa-var-phone; }
-  .icon-email::before                 { content: $fa-var-envelope; }
   .icon-skype::before                 { content: $fa-var-skype; }
   .icon-facebook::before              { content: $fa-var-facebook-square; }
   .icon-linkedin::before              { content: $fa-var-linkedin-square; }
@@ -193,6 +193,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   .icon-project::before               { content: $fa-var-cube; }
   .icon-add-bullet::before            { content: $fa-var-plus-circle; }
   .icon-shared::before                { content: $fa-var-link; }
+  .icon-actions::before               { content: $fa-var-ellipsis-h; }
 } @else {
   .icon {
     padding-top: 2px;
@@ -425,13 +426,6 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   %admin-icon {
     @extend %fa-icon;
 
-    &::before {
-      width: 20px;
-      margin-left: -(5px + 20px);
-      color: $gray;
-      text-align: center;
-    }
-
     &:hover::before {
       color: $gray-darker;
     }
@@ -451,6 +445,16 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
     li {
       > a {
         padding-left: $sidebar-padding-horizontal + 5px + 20px;
+
+        &::before {
+          display: inline-block;
+          width: 20px;
+          margin: 0;
+          margin-left: -(5px + 20px);
+          padding: 0;
+          color: $gray;
+          text-align: center;
+        }
       }
     }
 
@@ -972,6 +976,7 @@ $icon-danger-hover-color:            darken($brand-danger, 10%);
   .other-formats {
     %other-format {
       @extend %fa-icon;
+      background-image: none;
 
       &::before {
         margin-right: .3em;

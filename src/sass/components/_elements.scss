@@ -47,7 +47,7 @@ a.collapsible.collapsed,
   fieldset.collapsible {
     min-height: $line-height-computed;
     max-height: $collapsible-max-height;
-    overflow: hidden;
+    overflow: auto;
     transition: max-height $collapsible-animation-time ease-out;
 
     > div {
@@ -59,6 +59,7 @@ a.collapsible.collapsed,
 
     &.collapsed {
       max-height: 0;
+      overflow: hidden;
       transition: max-height $collapsible-animation-time;
 
       > div {
@@ -93,8 +94,12 @@ a.collapsible.collapsed,
 
   a {
     display: inline-block;
-    margin-left: $padding-small-vertical;
     white-space: nowrap;
+  }
+
+  a,
+  .drdn {
+    margin-left: $padding-small-vertical;
   }
 
   > :first-child {
@@ -235,10 +240,7 @@ a.collapsible.collapsed,
       }
 
       img.gravatar {
-        position: relative;
-        top: 1px;
         margin-right: .5em;
-        vertical-align: top;
       }
     }
   }
@@ -834,8 +836,49 @@ div.table-list.boards {
 //== News
 //
 
+.news.box {
+  p > a:not(:last-child) {
+    display: inline-block;
+    margin-bottom: floor($line-height-computed / 4);
+    font-size: $font-size-h4;
+  }
+
+  .summary,
+  .author {
+    display: block;
+    margin-bottom: floor($line-height-computed / 4);
+
+    + br {
+      display: none;
+    }
+  }
+
+  .author {
+    margin-bottom: $line-height-computed;
+  }
+}
+
+#edit-news + p {
+  em {
+    display: block;
+    margin-bottom: floor($line-height-computed / 4);
+
+    + br {
+      display: none;
+    }
+  }
+}
+
+.news.box .summary,
+#edit-news + p em {
+  padding: floor($line-height-computed / 4) $padding-base-horizontal;
+  border-left: 4px solid $blockquote-border-color;
+}
+
 .news-article {
   margin-bottom: $line-height-computed;
+  padding-top: $line-height-computed;
+  border-top: 1px solid $panel-border;
 
   header {
     h3 {
@@ -849,8 +892,12 @@ div.table-list.boards {
   }
 }
 
-.author .user {
-  font-weight: $font-weight-bold;
+.author {
+  color: $gray;
+
+  .user {
+    font-weight: $font-weight-bold;
+  }
 }
 
 

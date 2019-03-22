@@ -123,16 +123,18 @@
       }
 
       > .attachments {
+        span.author {
+          color: mix($color, $gray, 25%);
+        }
+      }
+
+      > .description + .attachments {
         border-top-color: lighten($border-color, 5%);
 
         @if ".priority-default" == $parent {
           background-color: lighten($issue-bg, 1.5%);
         } @else {
           background-color: lighten($background, 5%);
-        }
-
-        span.author {
-          color: mix($color, $gray, 25%);
         }
       }
 
