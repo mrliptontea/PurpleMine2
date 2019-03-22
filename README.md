@@ -65,6 +65,7 @@ Latest:
 * Improved support for [Redmine Tags](https://www.redmineup.com/pages/plugins/tags) plugin
 * Fixed positioning of admin menu icons for some plugins
 * Added separator line between news on the news list
+* Fixed #93: Agile chart expanding indefinitely when Additional "Go to top" link is enabled
 
 v2.0.2 (2019-03-20):
 
