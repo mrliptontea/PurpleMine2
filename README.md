@@ -59,6 +59,7 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 Latest:
 
 * Fixed sidebar toggler style when fixed layout is enabled
+* Fixed contextual dropdown padding in mobile view
 
 v1.11.0 (2019-03-22):
 
