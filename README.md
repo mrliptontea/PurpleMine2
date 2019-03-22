@@ -56,7 +56,7 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
-Latest:
+v2.1.0 (2019-03-22):
 
 * Added CSS grid layout support (off by default because of IE support)
 * Fixed styling of some flash messages
