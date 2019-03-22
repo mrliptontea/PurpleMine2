@@ -56,7 +56,7 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
-Latest:
+v1.11.0 (2019-03-22):
 
 * Backported fixes from v2:
   * Fixed #89: [RM+ custom menu](http://rmplus.pro/en/redmine/plugins/custom_menu) breaking the layout
