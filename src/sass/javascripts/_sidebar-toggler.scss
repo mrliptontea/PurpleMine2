@@ -54,16 +54,22 @@
 
     @if $sidebar-position == "left" {
       left: 0;
-      border-left: 0;
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
       background-image: inline-svg("chevron-left.svg", (path: (fill: $gray-700)));
+
+      @if not $fixed-layout {
+        border-left: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
     } @else {
       right: 0;
-      border-right: 0;
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
       background-image: inline-svg("chevron-right.svg", (path: (fill: $gray-700)));
+
+      @if not $fixed-layout {
+        border-right: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
     }
 
     &.sidebar-hidden {
