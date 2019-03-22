@@ -18,6 +18,7 @@
         position: relative;
 
         > img.gravatar {
+          top: 0;
           width: $issue-gravatar-size;
           height: $issue-gravatar-size;
           margin-right: 10px;
@@ -37,6 +38,7 @@
       }
 
       > img.gravatar {
+        top: 0;
         width: $issue-gravatar-size;
         height: $issue-gravatar-size;
         margin-right: 10px;
@@ -219,9 +221,15 @@
   }
 
   div.attachments {
-    margin: -$issue-padding;
-    padding: $issue-padding;
+    margin: 0;
+    padding: 0;
     border-top: 0;
+  }
+
+  div.description + div.attachments {
+    margin: $issue-padding (-$issue-padding) (-$issue-padding);
+    padding: $issue-padding;
+    border-top: 1px solid $issue-border;
   }
 }
 
@@ -302,6 +310,10 @@ div.thumbnails {
   .issues {
     margin: ($line-height-computed / 2) 0 0;
 
+    tr {
+      background-color: transparent;
+    }
+
     tr:last-child > td {
       border-bottom: 0 none;
     }
@@ -310,23 +322,14 @@ div.thumbnails {
       display: none;
     }
 
-    td.subject {
-      padding-left: 0;
+    td.done_ratio {
+      width: 80px;
     }
 
     td.buttons {
+      width: 3em;
       vertical-align: middle;
     }
-  }
-}
-
-#relations {
-  td.checkbox {
-    display: none;
-  }
-
-  td.buttons {
-    padding: 0;
   }
 }
 
@@ -491,6 +494,7 @@ div.thumbnails {
       }
 
       > .gravatar {
+        top: 0;
         margin-top: $line-height-computed - $bubble-gravatar-size;
         margin-left: -($bubble-gravatar-size + $bubble-gravatar-space + $bubble-padding-horizontal + 1px);
         float: left;

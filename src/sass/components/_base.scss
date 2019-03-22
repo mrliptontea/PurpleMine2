@@ -4,6 +4,7 @@
 
 html {
   overflow-y: scroll;
+  tab-size: 4;
 }
 
 body {
@@ -39,6 +40,19 @@ a {
   &.user.locked {
     color: $link-color-user-locked;
   }
+}
+
+// Remove the tapping delay on clickable elements
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex] {
+  touch-action: manipulation;
 }
 
 h1 {
@@ -127,6 +141,11 @@ hr {
   margin-bottom: $line-height-computed;
   border: 0;
   border-top: 1px solid $hr-border;
+
+  li & {
+    margin-top:    $line-height-computed / 2;
+    margin-bottom: $line-height-computed / 2;
+  }
 }
 
 abbr[title] {

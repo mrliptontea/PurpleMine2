@@ -51,15 +51,6 @@ table.list {
       }
     }
 
-    &.checkbox {
-      width: 15px;
-      padding: $table-cell-padding 0 0;
-
-      input {
-        margin: 2px 0 0;
-      }
-    }
-
     &.id,
     &.parent,
     &.relations,
@@ -72,10 +63,35 @@ table.list {
       text-align: right;
     }
 
+    &.reorder {
+      white-space: nowrap;
+    }
+
+    &.attachments a {
+      display: block;
+    }
+  }
+
+  th,
+  td {
+    &.checkbox {
+      width: 15px;
+      padding-right: $table-cell-padding;
+      padding-left: $table-cell-padding;
+
+      input {
+        margin: 2px 0 0;
+      }
+    }
+
+    &.id {
+      text-align: right;
+    }
+
+    &.activity,
     &.assigned_to,
     &.attachments,
     &.author,
-    &.activity,
     &.category,
     &.comments,
     &.description,
@@ -90,25 +106,18 @@ table.list {
     &.string,
     &.subject,
     &.text,
+    &.tracker,
     &.user {
       text-align: left;
     }
 
     &.estimated_hours,
+    &.float,
+    &.int,
     &.remaining_hours,
     &.spent_hours,
-    &.story_points,
-    &.int,
-    &.float {
+    &.story_points {
       text-align: right;
-    }
-
-    &.reorder {
-      white-space: nowrap;
-    }
-
-    &.attachments a {
-      display: block;
     }
   }
 
@@ -120,6 +129,10 @@ table.list {
 
       a {
         padding-right: 5px;
+
+        &.icon-only {
+          padding: 0;
+        }
       }
 
       img {
@@ -152,16 +165,15 @@ tr.project {
     color: #aaa;
   }
 
-  &.idnt .name span {
+  &.idnt td.name {
     @extend %image-arrow-right;
-    padding-left: 16px;
     background-repeat: no-repeat;
-    background-position: -5px 50%;
   }
 
   @for $i from 1 through 9 {
-    &.idnt-#{$i} .name {
-      padding-left: $table-cell-padding + 16px * ($i - 1);
+    &.idnt-#{$i} td.name {
+      padding-left: $table-cell-padding + 16px * $i;
+      background-position: ($table-cell-padding + 16px * ($i - 1) - 3px) 50%;
     }
   }
 }
@@ -186,13 +198,6 @@ tr.issue {
     }
   }
 
-  &.idnt .subject a {
-    @extend %image-arrow-right;
-    padding-left: 10px;
-    background-repeat: no-repeat;
-    background-position: -5px 0;
-  }
-
   .controller-issues.action-index & {
     &.assigned-to-me {
       .assigned_to,
@@ -204,9 +209,15 @@ tr.issue {
     }
   }
 
+  &.idnt td.subject {
+    @extend %image-arrow-right;
+    background-repeat: no-repeat;
+  }
+
   @for $i from 1 through 9 {
-    &.idnt-#{$i} .subject {
-      padding-left: $table-cell-padding + 16px * ($i - 1);
+    &.idnt-#{$i} td.subject {
+      padding-left: $table-cell-padding + 16px * $i;
+      background-position: ($table-cell-padding + 16px * ($i - 1) - 3px) 50%;
     }
   }
 }

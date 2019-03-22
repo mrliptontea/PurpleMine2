@@ -77,6 +77,12 @@
   padding-left: $padding-large-horizontal;
   text-align: center;
 
+  &.nodata-left {
+    &::before {
+      float: left;
+    }
+  }
+
   @if $use-font-awesome {
     &::before {
       margin-left: 0;

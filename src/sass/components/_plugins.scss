@@ -55,7 +55,7 @@
   > .heart-link-with-count {
     display: block;
     position: relative;
-    margin: -($line-height-computed / 2 + 1px) $bubble-padding-vertical 0;
+    margin: -($line-height-computed / 2 + 1px) ($bubble-padding-horizontal - $padding-small-vertical) 0;
     float: right;
     border: 0;
     background-color: $body-bg;
@@ -69,13 +69,8 @@
     background-image: none;
   }
 
-  .icon.icon-heart {
-    &::before {
-      color: #eb5286;
-    }
-  }
-
   .heart-link-with-count {
+    margin-right: $padding-small-vertical;
     margin-left: $padding-small-vertical;
 
     > .heart-count-number {
@@ -104,7 +99,7 @@
 @if $use-font-awesome {
   .tt_list_button {
     @extend %fa-icon;
-    font-size: 14px;
+    font-size: $fa-font-size-base;
   }
 
   .icon,
@@ -147,6 +142,142 @@
 
   #user-time-bookings-list {
     clear: both;
+  }
+}
+
+
+//
+// Redmine Agile
+// https://www.redmineup.com/pages/plugins/agile
+// --------------------------------------------------
+
+.controller-agile_charts #main {
+  @if $flexbox-layout {
+    flex-wrap: wrap;
+
+    > #footer {
+      flex: 1 0 auto;
+      order: 3;
+    }
+  }
+
+  // Page layout on Agile charts is broken, and with "Go to top" link
+  // from https://github.com/alphanodes/additionals plugin enabled
+  // the chart expands and resize event is triggered indefinitely.
+  // Hiding the "Go to top" link fixes this issue.
+  .gototop {
+    display: none;
+  }
+}
+
+
+//
+// Redmine Tags
+// https://www.redmineup.com/pages/plugins/tags
+// --------------------------------------------------
+
+.select2 {
+  .filter .values & {
+    min-width: 180px;
+    margin: 0;
+  }
+
+  &.select2-container.select2-container--default {
+    .select2-selection--multiple {
+      line-height: $line-height-base;
+
+      .select2-selection__rendered {
+        padding: 0 3px 3px;
+      }
+
+      .select2-selection__choice {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      .select2-search--inline {
+        input {
+          height: auto;
+          padding-top: 0;
+          padding-bottom: 0;
+          line-height: inherit;
+        }
+      }
+    }
+
+    .select2-selection {
+      transition: border-color 50ms ease-in-out,
+                  box-shadow 50ms ease-in-out;
+      border-color: $input-border;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075);
+    }
+
+    &.select2-container--focus {
+      .select2-selection {
+        border-color: rgba($input-border-focus, $input-border-focus-alpha);
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075), 0 0 0 2px rgba($input-border-focus, $input-shadow-focus-alpha);
+      }
+    }
+  }
+}
+
+
+//
+// Redmine custom menu
+// http://rmplus.pro/en/redmine/plugins/custom_menu
+// --------------------------------------------------
+
+#top-menu {
+  .cm-menu-header {
+    > li {
+      margin: 0;
+
+      > a,
+      > .title {
+        line-height: $input-height-base;
+      }
+
+      > .cm-menu-divider {
+        height: 18px;
+        margin: 5px 4px 0 5px;
+        border-top: 0;
+        border-left: 1px solid;
+        opacity: .3;
+      }
+    }
+
+    .drdn-trigger {
+      font-size: $font-size-base;
+    }
+  }
+
+  .dropdown {
+    .dropdown-menu > li a:hover,
+    .dropdown-menu > li a:focus,
+    .dropdown-submenu:hover a,
+    .dropdown-submenu:focus a {
+      background-color: $brand-primary;
+      color: $brand-text;
+    }
+  }
+
+  .rm-icon {
+    &::before {
+      font-size: $fa-font-size-base;
+    }
+  }
+
+  #quick-search {
+    margin: 0;
+
+    form > input {
+      width: $quick-search-width / 2;
+      min-width: $quick-search-width / 2;
+    }
+
+    a {
+      line-height: inherit;
+    }
   }
 }
 

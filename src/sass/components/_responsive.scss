@@ -1,3 +1,4 @@
+// scss-lint:disable SelectorDepth
 .theme-Purplemine2 {
   @media screen and (max-width: $redmine-responsive-max) {
     .flyout-menu + div {
@@ -76,7 +77,7 @@
         padding: ($padding-side / 2);
         line-height: normal;
 
-        input[type='text'] {
+        input[type="text"] {
           height: $responsive-header-height - $padding-side;
           line-height: $responsive-header-height - $padding-side;
         }
@@ -138,6 +139,7 @@
     }
 
     .splitcontentleft {
+      margin-bottom: $line-height-computed;
       padding-right: 0;
       float: none;
     }
@@ -145,6 +147,29 @@
     .splitcontentright {
       padding-left: 0;
       float: none;
+    }
+
+    .attributes .splitcontentleft {
+      margin-bottom: 0;
+    }
+
+    .tabular {
+      input[type="checkbox"],
+      input[type="radio"],
+      input.date {
+        width: auto;
+        max-width: 95%;
+      }
+
+      label {
+        float: none;
+      }
+    }
+
+    .pagination {
+      .pages {
+        display: block;
+      }
     }
 
     p.buttons,
@@ -170,7 +195,6 @@
         &:hover,
         &:focus {
           border-color: $pagination-hover-border;
-          outline: 0;
           background-color: $pagination-hover-bg;
           text-decoration: none;
         }
@@ -186,6 +210,38 @@
         @if $use-font-awesome == false {
           &.atom {
             padding-left: 20px + $btn-padding-horizontal;
+          }
+        }
+      }
+    }
+
+    // For Redmine 4.0+
+    #content > .contextual .drdn {
+      padding: 0;
+      border: 0;
+
+      .drdn-trigger {
+        padding: ($btn-padding-vertical * 2) $btn-padding-horizontal;
+        border: 1px solid $pagination-border;
+        border-radius: $border-radius-base;
+        background-color: $pagination-bg;
+
+        &:active,
+        &:hover,
+        &:focus {
+          border-color: $pagination-hover-border;
+          background-color: $pagination-hover-bg;
+          text-decoration: none;
+        }
+      }
+
+      .drdn-items {
+        a {
+          display: block;
+          margin: 3px 0 0;
+
+          &:first-child {
+            margin-top: 0;
           }
         }
       }
