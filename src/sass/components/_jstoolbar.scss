@@ -74,7 +74,7 @@
   }
 }
 
-.jstElements {
+div.jstElements {
   @extend %clearfix;
   line-height: normal;
 
@@ -98,20 +98,13 @@
   button {
     margin-right: 2px;
     margin-bottom: 4px;
-    box-shadow: none;
-    vertical-align: top;
-  }
-}
-
-.jstElements {
-  %jstb-icon {
-    @include fa-icon;
     padding: 0;
     border: 0;
     opacity: 1;
-    background: transparent;
-    background-image: none;
+    background-color: transparent;
+    box-shadow: none;
     color: $gray-800;
+    vertical-align: top;
 
     &::before {
       text-align: center;
@@ -122,6 +115,12 @@
       background-color: darken($tab-hover-bg, 3%);
       color: $gray-900;
     }
+  }
+
+  %jstb-icon {
+    @include fa-icon;
+    background: transparent;
+    background-image: none;
   }
 
   .jstb_strong {

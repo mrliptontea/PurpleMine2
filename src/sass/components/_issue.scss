@@ -23,6 +23,7 @@
         position: relative;
 
         > img.gravatar {
+          top: 0;
           width: $issue-gravatar-size;
           height: $issue-gravatar-size;
           margin-right: 10px;
@@ -42,6 +43,7 @@
       }
 
       > img.gravatar {
+        top: 0;
         width: $issue-gravatar-size;
         height: $issue-gravatar-size;
         margin-right: 10px;
@@ -511,6 +513,7 @@ div.thumbnails {
       }
 
       > .gravatar {
+        top: 0;
         margin-top: $line-height-computed - $bubble-gravatar-size;
         margin-left: -($bubble-gravatar-size + $bubble-gravatar-space + $bubble-padding-horizontal + 1px);
         float: left;

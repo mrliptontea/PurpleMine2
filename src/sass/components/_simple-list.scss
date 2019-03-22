@@ -64,6 +64,7 @@
 
     @if $use-gravatars {
       .gravatar {
+        top: 0;
         margin-top: -2px;
         margin-right: $activity-avatar-space;
         float: left;

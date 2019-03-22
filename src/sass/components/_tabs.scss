@@ -56,19 +56,19 @@ $tabs-height: $line-height-computed + $tab-padding-vertical * 2 + 1px + 1px;
     top: 0;
     right: 0;
     width: $tabs-buttons-width;
+    border-bottom: 1px solid $tab-border;
     background-color: $body-bg;
 
     > button {
       width: 50%;
-      height: $tabs-height;
+      height: $tabs-height - 1px;
       margin: 0;
       padding: 0;
       float: left;
       transition: opacity $transition-time;
       border: 0 none;
-      border-bottom: 1px solid $tab-border;
       border-radius: 0;
-      opacity: .8;
+      opacity: $icon-opacity;
       background-color: $body-bg;
       background-repeat: no-repeat;
       background-position: center center;
@@ -76,11 +76,15 @@ $tabs-height: $line-height-computed + $tab-padding-vertical * 2 + 1px + 1px;
 
       &:hover,
       &:active {
-        opacity: 1;
+        opacity: $icon-hover-opacity;
       }
 
       &:active {
         background-color: $tab-hover-bg;
+      }
+
+      &.disabled {
+        opacity: $icon-opacity / 2;
       }
     }
 

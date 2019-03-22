@@ -414,11 +414,12 @@
   .tabs-buttons {
     display: none !important; // scss-lint:disable ImportantRule
     padding-left: 0;
+    border-color: $main-menu-border;
     background-color: $main-menu-bg;
 
     > button {
       box-sizing: border-box;
-      height: $tabs-height;
+      height: $tabs-height - 1px;
       background-color: $main-menu-bg;
     }
   }

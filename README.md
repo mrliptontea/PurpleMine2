@@ -66,6 +66,8 @@ Latest:
 * Fixed positioning of admin menu icons for some plugins
 * Added separator line between news on the news list
 * Fixed #93: Agile chart expanding indefinitely when Additional "Go to top" link is enabled
+* Fixed #94: subtasks indentation
+* Improved progress bar styling, avatar positioning, WYSIWYG button styling, wiki preview font sizes
 
 v2.0.2 (2019-03-20):
 

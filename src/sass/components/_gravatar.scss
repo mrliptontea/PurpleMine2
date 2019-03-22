@@ -3,6 +3,8 @@
 // --------------------------------------------------
 
 img.gravatar {
+  position: relative;
+  top: -.15em;
   overflow: hidden;
   border-radius: $border-radius-large;
   line-height: 1;
@@ -11,8 +13,6 @@ img.gravatar {
   h2 &,
   h3 &,
   h4 & {
-    position: relative;
-    top: -1px;
     margin-right: 5px;
   }
 }
@@ -22,10 +22,7 @@ img.gravatar {
 //
 
 .username img.gravatar {
-  position: relative;
-  top: 1px;
   margin-right: .5em;
-  vertical-align: top;
 }
 
 //== Gravatar

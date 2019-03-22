@@ -23,9 +23,11 @@
   }
 }
 
-.controller-wiki .wiki > .preview,
-.wiki.wiki-preview {
-  font-size: $wiki-font-size;
+.controller-wiki {
+  .wiki > .preview,
+  .wiki.wiki-preview {
+    font-size: $wiki-font-size;
+  }
 }
 
 div.wiki {
