@@ -70,15 +70,15 @@
   padding-left: $padding-large-horizontal;
   text-align: center;
 
-  &::before {
-    margin-left: 0;
-    float: none;
-  }
-
   &.nodata-left {
     &::before {
       float: left;
     }
+  }
+
+  &::before {
+    margin-left: 0;
+    float: none;
   }
 }
 

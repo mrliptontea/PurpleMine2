@@ -60,6 +60,22 @@ Latest:
 
 * Fixed sidebar toggler style when fixed layout is enabled
 
+v1.11.0 (2019-03-22):
+
+* Backported fixes from v2:
+  * Fixed #89: [RM+ custom menu](http://rmplus.pro/en/redmine/plugins/custom_menu) breaking the layout
+  * Fixed #90: regression in some sidebar layouts
+  * Fixed #93: Agile chart expanding indefinitely when Additional "Go to top" link is enabled
+  * Fixed #94: subtasks indentation
+  * Fixed styling of some flash messages
+  * Fixed horizontal scrollbar appearing when sidebar is on the right
+  * Fixed footer being mispositioned in Agile charts
+  * Fixed positioning of admin menu icons for some plugins
+  * Improved support for [Redmine Tags](https://www.redmineup.com/pages/plugins/tags) plugin
+  * Added separator line between news on the news list
+  * Improved Redmine 4.0 compatibility
+  * Updated Font Awesome icons to 4.7.0
+
 v2.1.0 (2019-03-22):
 
 * Added CSS grid layout support (off by default because of IE support)
