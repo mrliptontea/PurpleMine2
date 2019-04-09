@@ -56,7 +56,7 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
-Latest changes (master):
+v2.2.0 (2019-04-09):
 
 * Fixed #101, #102: tooltip positioning
 
