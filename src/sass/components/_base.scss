@@ -106,6 +106,10 @@ table {
   td {
     padding: $table-condensed-cell-padding $table-cell-padding;
   }
+
+  p {
+    margin: 0;
+  }
 }
 
 ul,
