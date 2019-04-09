@@ -137,17 +137,16 @@
   &:hover {
     z-index: 25;
 
-    .tip {
+    span.tip {
       display: block;
     }
   }
 
-  .tip {
+  span.tip {
     @include nice-shadow(3);
     display: none;
     position: absolute;
-    top: 9px;
-    left: 24px;
+    top: 12px;
     width: 270px;
     padding: $padding-base-vertical;
     border: $tooltip-border-width solid $tooltip-border;
@@ -158,9 +157,9 @@
   }
 
   @if $sidebar-position == "left" {
-    tr > td:last-child & {
-      .tip {
-        right: 2px;
+    .list & {
+      span.tip {
+        right: 0;
         left: auto;
       }
     }
