@@ -143,6 +143,10 @@ a.collapsible.collapsed,
   > h3 {
     margin-bottom: $panel-body-padding-vertical;
   }
+
+  > pre {
+    overflow-x: auto;
+  }
 }
 
 
