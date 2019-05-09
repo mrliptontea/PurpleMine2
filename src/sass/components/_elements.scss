@@ -25,9 +25,9 @@ a.collapsible,
     height: 0;
     margin-right: 3px;
     transform: rotate(0);
-    border-top:   6px solid;
+    border-top: 6px solid;
     border-right: 4px solid transparent;
-    border-left:  4px solid transparent;
+    border-left: 4px solid transparent;
     vertical-align: middle;
 
     @if $collapsible-animation-time > 0 {
@@ -51,7 +51,7 @@ a.collapsible.collapsed,
     transition: max-height $collapsible-animation-time ease-out;
 
     > div {
-      display: block !important; // scss-lint:disable ImportantRule
+      display: block !important; // stylelint-disable-line declaration-no-important
       visibility: visible;
       transition: visibility 0s 0s, opacity $collapsible-animation-time;
       opacity: 1;
@@ -136,7 +136,7 @@ a.collapsible.collapsed,
   }
 
   &:last-child,
-  >:last-child {
+  > :last-child {
     margin-bottom: 0;
   }
 
@@ -283,7 +283,7 @@ p.subtitle {
   }
 
   &.ui-sortable-placeholder {
-    visibility: visible !important; // scss-lint:disable ImportantRule
+    visibility: visible !important; // stylelint-disable-line declaration-no-important
     outline: 1px dashed $highlight-border;
     background: $highlight-bg;
   }

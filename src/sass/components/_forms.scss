@@ -76,8 +76,9 @@ input[type="password"] {
   @extend %form-field;
   @include form-control-focus;
   @include placeholder;
-  transition: border-color $transition-time ease-in-out,
-              box-shadow $transition-time ease-in-out;
+  transition:
+    border-color $transition-time ease-in-out,
+    box-shadow $transition-time ease-in-out;
   vertical-align: top;
 
   &[disabled],
@@ -101,7 +102,7 @@ textarea {
 }
 
 input[type="search"] {
-  -webkit-appearance: none;
+  -webkit-appearance: none; // stylelint-disable-line property-no-vendor-prefix
 }
 
 input[type="radio"],
@@ -159,7 +160,7 @@ select {
   }
 
   &.bool_cf {
-    width: auto !important; // scss-lint:disable ImportantRule
+    width: auto !important; // stylelint-disable-line declaration-no-important
   }
 }
 
@@ -170,7 +171,7 @@ select {
 
 // Mozilla Firefox
 
-@-moz-document url-prefix() {
+@-moz-document url-prefix("") {
   select {
     &[multiple] {
       padding: 0;
@@ -380,7 +381,7 @@ label.block {
 //== Hack: align description edit icon with label
 //
 
-label[for=issue_description] + a {
+label[for="issue_description"] + a {
   display: inline-block;
   margin-top: $input-padding-vertical + 1px;
 
@@ -558,7 +559,7 @@ label[for="closed"] {
 
 #issue_is_private_wrap,
 #all_attributes > p[style] {
-  margin-right: 0 !important; // scss-lint:disable ImportantRule
+  margin-right: 0 !important; // stylelint-disable-line declaration-no-important
   margin-bottom: 0;
   padding-left: 0;
   float: right;
@@ -569,7 +570,7 @@ label[for="closed"] {
   }
 
   label {
-    display: inline-block !important; // scss-lint:disable ImportantRule
+    display: inline-block !important; // stylelint-disable-line declaration-no-important
     margin-right: 0;
     padding-left: 0;
   }

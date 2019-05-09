@@ -1,4 +1,4 @@
-// scss-lint:disable SelectorDepth
+// stylelint-disable selector-max-compound-selectors
 .theme-Purplemine2 {
   @media screen and (max-width: $redmine-responsive-max) {
     .flyout-menu + div {

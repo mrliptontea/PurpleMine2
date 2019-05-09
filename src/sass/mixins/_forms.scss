@@ -44,9 +44,9 @@
   @extend %clearfix;
   position: relative;
   padding-left: $check-input-gutter;
+  font-weight: $font-weight-normal;
   line-height: $line-height-base;
   text-align: left;
-  font-weight: $font-weight-normal;
 
   input[type="checkbox"],
   input[type="radio"] {

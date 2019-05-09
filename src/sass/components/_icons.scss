@@ -52,7 +52,7 @@ table.list .buttons > a::before {
   white-space: nowrap;
 
   @at-root a#{&} {
-    // scss-lint:disable ImportantRule
+    // stylelint-disable declaration-no-important
     display: inline;
     width: auto !important;
     height: auto !important;
