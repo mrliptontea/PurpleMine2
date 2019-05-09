@@ -1,4 +1,46 @@
 //
+// Additionals
+// https://www.redmine.org/plugins/additionals
+// --------------------------------------------------
+
+#sidebar .sidebar-additionals {
+  ul,
+  ol {
+    margin: 0 0 ($line-height-computed / 2);
+    padding-left: 1.5em;
+
+    ul,
+    ol {
+      margin-bottom: 0;
+    }
+  }
+
+  ul {
+    // scss-lint:disable SelectorDepth
+    li {
+      list-style-type: disc;
+
+      li {
+        list-style-type: circle;
+
+        li {
+          list-style-type: square;
+        }
+      }
+    }
+  }
+}
+
+.action-login .login-additionals {
+  font-size: 1em;
+
+  @media screen and (min-width: $login-form-box-breakpoint) {
+    max-width: $login-form-width;
+  }
+}
+
+
+//
 // Redmine Backlogs
 // https://github.com/HolonGlobe/redmine_backlogs
 // Forked from: https://github.com/backlogs/redmine_backlogs
