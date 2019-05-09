@@ -158,6 +158,36 @@
         }
       }
     }
+
+    &.pages-hierarchy {
+      .pages-hierarchy {
+        margin-left: $sidebar-padding-horizontal + 3px;
+        border-left: 2px solid $gray-400;
+
+        @if $sidebar-position == "right" {
+          margin-left: 3px;
+        }
+
+        li {
+          > a:not(.icon-only) {
+            padding-right: $sidebar-padding-horizontal / 2;
+            padding-left: $sidebar-padding-horizontal / 2;
+
+            @if $sidebar-position == "right" {
+              margin-left: 0;
+            }
+          }
+
+          .pages-hierarchy {
+            margin-left: $sidebar-padding-horizontal / 2 + 3px;
+          }
+        }
+
+        @if $sidebar-position == "left" {
+          margin-right: 0;
+        }
+      }
+    }
   }
 
   // Special treatment for anchor tags directly under sidebar tag
