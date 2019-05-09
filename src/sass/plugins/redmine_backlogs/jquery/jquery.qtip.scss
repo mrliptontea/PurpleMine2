@@ -23,15 +23,12 @@
 }
 
 .ui-tooltip-tip {
-  border-color: $tooltip-border;
-  background-color: $tooltip-bg;
-}
-
-.ui-tooltip-tip {
   position: absolute;
   z-index: 10;
   margin: 0 auto;
   overflow: hidden;
   border: 0 none;
+  border-color: $tooltip-border;
   background: transparent;
+  background-color: $tooltip-bg;
 }

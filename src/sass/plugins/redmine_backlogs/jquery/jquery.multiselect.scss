@@ -11,13 +11,13 @@
 
 .ui-multiselect-single .ui-multiselect-checkboxes {
   input {
-    position: absolute !important; // scss-lint:disable ImportantRule
-    top: auto !important; // scss-lint:disable ImportantRule
+    position: absolute !important; // stylelint-disable-line declaration-no-important
+    top: auto !important; // stylelint-disable-line declaration-no-important
     left: -9999px;
   }
 
   label {
-    padding: 5px !important; // scss-lint:disable ImportantRule
+    padding: 5px !important; // stylelint-disable-line declaration-no-important
   }
 }
 

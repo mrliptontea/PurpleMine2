@@ -412,7 +412,7 @@
   }
 
   .tabs-buttons {
-    display: none !important; // scss-lint:disable ImportantRule
+    display: none !important; // stylelint-disable-line declaration-no-important
     padding-left: 0;
     border-color: $main-menu-border;
     background-color: $main-menu-bg;
@@ -425,6 +425,6 @@
   }
 
   ul + .tabs-buttons {
-    display: block !important; // scss-lint:disable ImportantRule
+    display: block !important; // stylelint-disable-line declaration-no-important
   }
 }

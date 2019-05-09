@@ -34,7 +34,7 @@ div.wiki {
   color: $wiki-text;
   line-height: $wiki-line-height;
 
-  //scss-lint:disable SingleLinePerSelector
+  // stylelint-disable selector-list-comma-newline-after
   h1, .h1,
   h2, .h2,
   h3, .h3,
@@ -111,16 +111,16 @@ div.wiki {
     }
   }
 
-  >:last-child {
+  > :last-child {
     margin-bottom: 0;
   }
 
   blockquote {
-    >:first-child {
+    > :first-child {
       margin-top: 0;
     }
 
-    >:last-child {
+    > :last-child {
       margin-bottom: 0;
     }
   }
@@ -274,7 +274,7 @@ div.wiki {
     }
 
     li {
-      // scss-lint:disable SelectorDepth
+      // stylelint-disable selector-max-compound-selectors
       margin: 0;
 
       li {
@@ -318,9 +318,9 @@ h6 {
     position: relative;
     top: -(1em - $font-size-small);
     margin-left: 5px;
-    color: $headings-anchor-color !important; // scss-lint:disable ImportantRule
+    color: $headings-anchor-color !important; // stylelint-disable-line declaration-no-important
     font-size: $font-size-small;
-    text-decoration: none !important; // scss-lint:disable ImportantRule
+    text-decoration: none !important; // stylelint-disable-line declaration-no-important
   }
 
   &:hover {
@@ -343,7 +343,7 @@ p.footnote {
     content: "";
     display: block;
     width: 300px;
-    margin-top:  $line-height-computed;
+    margin-top: $line-height-computed;
     padding-top: $line-height-computed / 2;
     border-top: 1px solid $gray-400;
   }

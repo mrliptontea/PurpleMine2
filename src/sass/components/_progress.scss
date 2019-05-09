@@ -36,15 +36,15 @@ table.progress {
     }
 
     &.done {
-      background-color: $progress-bar-bg !important; // scss-lint:disable ImportantRule
+      background-color: $progress-bar-bg !important; // stylelint-disable-line declaration-no-important
     }
 
     &.closed {
-      background-color: $progress-bar-success-bg !important; // scss-lint:disable ImportantRule
+      background-color: $progress-bar-success-bg !important; // stylelint-disable-line declaration-no-important
     }
 
     &.todo {
-      background-color: $progress-bg !important; // scss-lint:disable ImportantRule
+      background-color: $progress-bg !important; // stylelint-disable-line declaration-no-important
     }
   }
 

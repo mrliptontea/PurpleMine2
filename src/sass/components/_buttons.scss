@@ -9,9 +9,10 @@ button {
   @include button-size($btn-padding-vertical, $btn-padding-horizontal, $font-size-base, $line-height-base, $border-radius-base);
   display: inline-block;
   margin-bottom: 0;
-  transition: border-color $transition-time ease-in-out,
-              background-color $transition-time ease-in-out,
-              box-shadow $transition-time ease-in-out;
+  transition:
+    border-color $transition-time ease-in-out,
+    background-color $transition-time ease-in-out,
+    box-shadow $transition-time ease-in-out;
   border: 1px solid;
   font-weight: $btn-font-weight;
   text-align: center;
@@ -19,7 +20,7 @@ button {
   white-space: nowrap;
   cursor: pointer;
   user-select: none;
-  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border); // scss-lint:disable DeclarationOrder
+  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 
   &:hover,
   &:focus {
@@ -99,9 +100,10 @@ p.buttons,
     margin-right: 1px;
     margin-left: 1px;
     padding: $btn-padding-vertical $btn-padding-horizontal-small;
-    transition: border-color $transition-time ease-in-out,
-                background-color $transition-time ease-in-out,
-                color $transition-time ease-in-out;
+    transition:
+      border-color $transition-time ease-in-out,
+      background-color $transition-time ease-in-out,
+      color $transition-time ease-in-out;
     border: 1px solid;
     border-radius: $border-radius-base;
     font-size: $font-size-base;
@@ -181,7 +183,7 @@ p.buttons {
 
 .query-columns {
   select {
-    width: auto !important; // scss-lint:disable ImportantRule
+    width: auto !important; // stylelint-disable-line declaration-no-important
     min-width: 130px;
   }
 
@@ -211,7 +213,7 @@ p.buttons {
       margin-bottom: 4px;
       padding-right: 1px;
       padding-left: 1px;
-      @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border); // scss-lint:disable DeclarationOrder
+      @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
     }
   }
 }
@@ -235,7 +237,7 @@ a[data-expands],
   vertical-align: top;
   cursor: pointer;
   user-select: none;
-  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border); // scss-lint:disable DeclarationOrder
+  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
 }
 
 a[data-expands] {

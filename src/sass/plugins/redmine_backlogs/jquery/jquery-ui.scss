@@ -1,4 +1,4 @@
-// scss-lint:disable Comment
+// stylelint-disable comment-whitespace-inside, no-duplicate-selectors
 @import "../common";
 
 /*
@@ -66,7 +66,7 @@
 ----------------------------------*/
 
 .ui-state-disabled {
-  cursor: default !important; // scss-lint:disable ImportantRule
+  cursor: default !important; // stylelint-disable-line declaration-no-important
 }
 
 /* Icons
@@ -631,7 +631,7 @@
   }
 
   .ui-accordion-header-active {
-    border-bottom: 0 !important; // scss-lint:disable ImportantRule
+    border-bottom: 0 !important; // stylelint-disable-line declaration-no-important
   }
 
   .ui-accordion-header a {
@@ -734,7 +734,7 @@
   overflow: visible;
   zoom: 1;
   text-align: center;
-  text-decoration: none !important; // scss-lint:disable ImportantRule
+  text-decoration: none !important; // stylelint-disable-line declaration-no-important
   cursor: pointer;
 }
 
@@ -1007,7 +1007,7 @@ button.ui-button::-moz-focus-inner {
       padding: 0;
       float: left;
       list-style: none;
-      border-bottom: 0 !important; // scss-lint:disable ImportantRule
+      border-bottom: 0 !important; // stylelint-disable-line declaration-no-important
       white-space: nowrap;
 
       a {
@@ -1048,7 +1048,7 @@ button.ui-button::-moz-focus-inner {
   }
 
   .ui-tabs-hide {
-    display: none !important; // scss-lint:disable ImportantRule
+    display: none !important; // stylelint-disable-line declaration-no-important
   }
 }
 
@@ -1361,7 +1361,7 @@ button.ui-button::-moz-focus-inner {
   }
 }
 
- /* Progressbar
+/* Progressbar
 ----------------------------------*/
 
 .ui-progressbar {

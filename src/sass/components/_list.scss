@@ -387,7 +387,7 @@ tr.entry {
         right: 5px;
         bottom: 0;
         left: 5px;
-        height: calc(50% - 2px/2);
+        height: calc(50% - 2px / 2);
         transform: rotate(-4deg);
         transition: border-color $transition-time;
         border-top: 2px solid rgba($tracker-default-text, .95);
