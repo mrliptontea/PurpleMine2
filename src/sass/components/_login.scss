@@ -4,7 +4,7 @@
 
 #login-form {
   box-sizing: border-box;
-  margin: $line-height-computed * 2 auto;
+  margin: $line-height-computed * 2 auto $line-height-computed;
 
   label,
   input:not([type="checkbox"]) {
