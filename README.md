@@ -56,6 +56,10 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
+v2.3.0 (2019-05-09):
+
+* Fixed #107: nested lists in the sidebar via [Additionals](https://www.redmine.org/plugins/additionals) plugin.
+
 v2.2.0 (2019-04-09):
 
 * Fixed #101, #102: tooltip positioning
