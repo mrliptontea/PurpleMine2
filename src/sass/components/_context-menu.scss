@@ -2,8 +2,8 @@
   .context-menu-selection {
     &,
     > td {
-      background-color: $brand-primary !important; // scss-lint:disable ImportantRule
-      color: $brand-text !important; // scss-lint:disable ImportantRule
+      background-color: $brand-primary !important; // stylelint-disable-line declaration-no-important
+      color: $brand-text !important; // stylelint-disable-line declaration-no-important
     }
   }
 
@@ -11,7 +11,7 @@
     > ul,
     > ul > li > ul {
       @include nice-shadow(2);
-      border: 0 none !important; // scss-lint:disable ImportantRule
+      border: 0 none !important; // stylelint-disable-line declaration-no-important
     }
 
     ul {

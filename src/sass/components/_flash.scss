@@ -23,21 +23,21 @@
     line-height: $line-height-computed;
   }
 
-  >:last-child {
+  > :last-child {
     margin-bottom: 0;
   }
 }
 
 @mixin flash($color, $background, $border, $link, $icon) {
-  color: $color;
-  background-color: $background;
   border-color: $border;
+  background-color: $background;
+  color: $color;
 
   @if $icon == "true" {
     $icon: $fa-var-check;
-  } @elseif $icon == "warning" {
+  } @else if $icon == "warning" {
     $icon: $fa-var-warning;
-  } @elseif $icon == "exclamation" {
+  } @else if $icon == "exclamation" {
     $icon: $fa-var-exclamation-circle;
   }
 

@@ -4,12 +4,14 @@
     grid-template-rows: auto 1fr;
 
     @if $sidebar-position == "left" {
-      grid-template-areas:  "sidebar content"
-                            "footer footer";
+      grid-template-areas:
+        "sidebar content"
+        "footer footer";
       grid-template-columns: auto 1fr;
     } @else {
-      grid-template-areas:  "content sidebar"
-                            "footer footer";
+      grid-template-areas:
+        "content sidebar"
+        "footer footer";
       grid-template-columns: 1fr auto;
     }
   } @else if $flexbox-layout {
