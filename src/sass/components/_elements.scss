@@ -920,6 +920,16 @@ div.table-list.boards {
   }
 }
 
+.text-diff {
+  .diff_out {
+    background: $diff-out-bg;
+  }
+
+  .diff_in {
+    background: $diff-in-bg;
+  }
+}
+
 
 //== Repository view
 //
