@@ -56,6 +56,10 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
+v2.3.1 (2019-05-09):
+
+* Fixed #112: improved highlight contrast in text diffs.
+
 v2.3.0 (2019-05-09):
 
 * Fixed #107: nested lists in the sidebar via [Additionals](https://www.redmine.org/plugins/additionals) plugin.
