@@ -56,6 +56,11 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
+v2.4.0 (2019-06-02):
+
+* Synchronized most application styles with Redmine's default theme.
+* Fixed #115: color overdue date in issue lists.
+
 v2.3.1 (2019-05-09):
 
 * Fixed #112: improved highlight contrast in text diffs.
