@@ -563,11 +563,21 @@ ul.projects {
 //
 
 div#roadmap {
+  article {
+    margin-bottom: $line-height-computed;
+  }
+
   .related-issues {
     margin-bottom: $line-height-computed;
 
     td.checkbox {
       display: none;
+    }
+
+    td.assigned_to {
+      width: 1px;
+      padding-right: 0;
+      white-space: nowrap;
     }
   }
 
@@ -580,6 +590,12 @@ div#roadmap {
       position: relative;
       top: 0;
     }
+  }
+
+  h2,
+  h3 {
+    display: inline;
+    padding-right: 0;
   }
 
   .wiki {

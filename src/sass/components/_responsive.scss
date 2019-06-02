@@ -1,3 +1,7 @@
+.mobile-show {
+  display: none;
+}
+
 // stylelint-disable selector-max-compound-selectors
 .theme-Purplemine2 {
   @media screen and (max-width: $redmine-responsive-max) {

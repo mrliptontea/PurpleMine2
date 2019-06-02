@@ -179,7 +179,8 @@ div.wiki {
     border: 1px solid $table-border-color;
   }
 
-  .noborder {
+  .noborder,
+  .wiki-class-noborder {
     border: 0 none;
 
     td,
@@ -195,7 +196,7 @@ div.wiki {
   code {
     padding: .2em .33em;
     border-radius: $border-radius-base;
-    background-color: rgba($black, .04);
+    background-color: rgba($gray-500, .3);
     font-size: $font-size-small;
   }
 
@@ -205,9 +206,9 @@ div.wiki {
     padding: 4px 8px;
     overflow-x: auto;
     overflow-y: hidden;
-    border: 1px solid rgba($black, .068);
+    border: 1px solid rgba($gray-500, .45);
     border-radius: $border-radius-base;
-    background-color: rgba($black, .03);
+    background-color: rgba($gray-500, .15);
     font-size: $font-size-small;
 
     code {
@@ -351,6 +352,16 @@ p.footnote {
   + p.footnote::before {
     display: none;
   }
+}
+
+.ltr,
+.wiki-class-ltr {
+  direction: ltr;
+}
+
+.rtl,
+.wiki-class-rtl {
+  direction: rtl;
 }
 
 .preview {

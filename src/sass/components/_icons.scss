@@ -152,7 +152,15 @@ table.list .buttons > a::before {
 .icon-add-bullet::before            { content: $fa-var-plus-circle; }
 .icon-shared::before                { content: $fa-var-link; }
 .icon-actions::before               { content: $fa-var-ellipsis-h; }
-
+.icon-sort-handle::before           { content: $fa-var-arrows-v; }
+.icon-expended::before              { content: $fa-var-chevron-down; }
+.icon-collapsed::before             { content: $fa-var-chevron-right; }
+.icon-bookmark::before              { content: $fa-var-bookmark; }
+.icon-bookmark-off::before          { content: $fa-var-bookmark-o; }
+.icon-sorted-asc::before            { content: $fa-var-sort-amount-asc; }
+.icon-sorted-desc::before           { content: $fa-var-sort-amount-desc; }
+.icon-toggle-plus::before           { content: $fa-var-plus-square; }
+.icon-toggle-minus::before          { content: $fa-var-minus-square; }
 
 //== Checkbox toggler
 //
@@ -237,6 +245,22 @@ a.icon-del {
   &.application-zip::before,
   &.application-x-gzip::before {
     content: $fa-var-file-zip-o;
+  }
+}
+
+.icon-expended,
+.icon-collapsed {
+  &::before {
+    width: 1em;
+    text-align: center;
+  }
+
+  &.icon {
+    padding-left: 20px;
+  }
+
+  &.expander {
+    background-image: none;
   }
 }
 
@@ -522,6 +546,11 @@ dt {
 
 .sort {
   @extend %fa-icon-after;
+  padding-left: 0;
+
+  &::before {
+    content: none;
+  }
 
   &::after {
     margin-left: .2em;

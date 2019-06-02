@@ -55,10 +55,11 @@
       }
     }
 
-    > a,
-    > span {
+    > * {
       display: block;
-      padding: $btn-padding-vertical $btn-padding-horizontal-small;
+      margin: 1px;
+      padding: ($btn-padding-vertical - 1px) ($btn-padding-horizontal-small - 1px);
+      border-radius: $border-radius-base - 1px;
 
       &.icon {
         padding-left: 20px + $btn-padding-horizontal-small;
