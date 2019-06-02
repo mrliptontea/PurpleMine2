@@ -211,6 +211,10 @@ tr.issue {
     background-repeat: no-repeat;
   }
 
+  &.overdue td.due_date {
+    color: $brand-danger;
+  }
+
   @for $i from 1 through 9 {
     &.idnt-#{$i} td.subject {
       padding-left: $table-cell-padding + 16px * $i;
@@ -220,10 +224,23 @@ tr.issue {
 }
 
 .issues {
+  .block_column,
   .description,
   .last_notes {
-    padding: $table-cell-padding;
+    padding: 0;
     text-align: left;
+    white-space: normal;
+
+    > span {
+      display: block;
+      margin-bottom: $line-height-computed / 4;
+      padding: $table-cell-padding;
+      font-weight: $font-weight-bold;
+    }
+
+    pre {
+      white-space: normal;
+    }
 
     @media screen and (min-width: $screen-sm-min) {
       > .wiki {
@@ -231,10 +248,6 @@ tr.issue {
         padding: $padding-wiki;
         overflow: auto;
       }
-    }
-
-    pre {
-      white-space: normal;
     }
   }
 }
@@ -261,6 +274,26 @@ td.center {
 
 .issue-report {
   table-layout: fixed;
+}
+
+.issue-report-graph {
+  width: 75%;
+  margin: $line-height-computed auto;
+}
+
+.sample-data {
+  margin: $line-height-computed / 2;
+  margin-bottom: $line-height-computed;
+  border: 1px solid $table-border-color;
+
+  td {
+    border: 1px solid $table-border-color;
+  }
+
+  tr:first-child td {
+    font-weight: $font-weight-bold;
+    text-align: center;
+  }
 }
 
 tr.builtin td.name {
@@ -441,18 +474,6 @@ tr.group {
 
   &:hover .toggle-all {
     display: inline;
-  }
-
-  .count {
-    display: inline-block;
-    min-width: 1em;
-    margin: 0 5px;
-    padding: 1px 4px;
-    border-radius: $border-radius-small;
-    background-color: $brand-primary;
-    color: $brand-text;
-    font-size: $font-size-small;
-    text-align: center;
   }
 }
 

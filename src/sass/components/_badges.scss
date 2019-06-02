@@ -1,0 +1,54 @@
+tr.group .count,
+span.private,
+.badge {
+  display: inline-block;
+  position: relative;
+  top: -1px;
+  box-sizing: border-box;
+  min-width: 1em;
+  margin-right: $badge-space;
+  margin-left: $badge-space;
+  padding: $badge-padding-v $badge-padding-h;
+  border: 1px solid;
+  border-radius: $badge-border-radius;
+  font-size: $badge-font-size;
+  font-weight: $badge-font-weight;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+span.private,
+.badge-private {
+  padding: ($badge-padding-v + 1px) ($badge-padding-h + 1px);
+  border: 0;
+  background: $brand-warning;
+  color: $brand-text;
+
+  h3 & {
+    font-size: $font-size-small-px;
+  }
+}
+
+tr.group .count,
+.badge-count {
+  padding: ($badge-padding-v + 1px) ($badge-padding-h + 1px);
+  border: 0;
+  background: $brand-primary;
+  color: $brand-text;
+}
+
+.badge-status-open {
+  border-color: $blue;
+  color: $blue;
+}
+
+.badge-status-locked {
+  border-color: $gray-600;
+  color: $gray-600;
+}
+
+.badge-status-closed {
+  border-color: $green;
+  color: $green;
+}

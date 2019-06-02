@@ -45,6 +45,10 @@ table.cal {
       color: $gray-600;
     }
 
+    &.nwday {
+      background: $table-bg-accent;
+    }
+
     &.today {
       background: $highlight-bg;
 

@@ -2,25 +2,109 @@
 // Gantt chart
 // --------------------------------------------------
 
+div.gantt_content {
+  overflow: auto;
+}
+
+.controller-gantts form + table,
+table.gantt-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  td {
+    padding: 0;
+    vertical-align: top;
+  }
+}
+
 .gantt_hdr {
   position: absolute;
   top: 0;
   height: 16px;
   overflow: hidden;
-  border: 1px solid $gray-400;
-  border-left-width: 0;
+  border: 1px solid $gray-500;
   text-align: center;
 
+  &[style*="background"] {
+    background: $gray-200 !important; // stylelint-disable-line declaration-no-important
+  }
+
   &.nwday {
-    background-color: $gray-100;
+    background-color: $gray-200;
+    color: $gray-950;
+  }
+
+  #gantt_area & {
+    border-right-width: 1px;
+    border-left-width: 0;
+  }
+
+  .gantt_subjects_container:not(.draw_selected_columns) &,
+  .last_gantt_selected_column & {
+    z-index: 1;
+  }
+}
+
+.gantt_subjects_container .gantt_subjects {
+  z-index: 2;
+}
+
+.gantt_subjects_column {
+  .gantt_hdr {
+    border-left: 1px solid $gray-500 !important; // stylelint-disable-line declaration-no-important
   }
 }
 
 .gantt_subjects {
-  font-size: $font-size-small;
+  .issue-subject {
+    &:hover {
+      background-color: $table-bg-hover;
+    }
 
+    img.icon-gravatar {
+      float: none;
+    }
+  }
+}
+
+.gantt_hdr_selected_column_name {
+  @include text-overflow;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  font-size: $font-size-small;
+}
+
+td.gantt_selected_column {
+  width: 60px;
+}
+
+td.gantt_selected_column .gantt_hdr,
+.gantt_selected_column_container {
+  width: 60px - 1px;
+  border-left-width: 0;
+}
+
+.gantt_subjects {
+  position: relative;
+  z-index: 1;
+  font-size: $font-size-small;
+}
+
+.gantt_selected_column_content {
+  div {
+    box-sizing: border-box;
+    padding-right: $table-condensed-cell-padding;
+    padding-left: $table-condensed-cell-padding;
+  }
+}
+
+.gantt_subjects,
+.gantt_selected_column_content {
   div {
     @include text-overflow;
+    width: 100%;
     height: 16px;
     line-height: 16px;
   }
@@ -118,12 +202,20 @@
 .version-behind-schedule,
 .issue-behind-schedule {
   color: $brand-warning;
+
+  .context-menu-selection & {
+    color: $brand-text;
+  }
 }
 
 .version-overdue,
 .issue-overdue,
 .project-overdue {
   color: $brand-danger;
+
+  .context-menu-selection & {
+    color: $brand-text;
+  }
 }
 
 

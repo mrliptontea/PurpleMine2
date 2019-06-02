@@ -26,6 +26,11 @@ form {
     }
   }
 
+  .add-filter label,
+  .filter label {
+    line-height: $input-height-base;
+  }
+
   .contextual > & {
     display: inline-block;
     line-height: $input-height-base;
@@ -706,6 +711,13 @@ fieldset#filters {
       vertical-align: middle;
     }
   }
+}
+
+.query_sort_criteria_count {
+  display: inline-block;
+  min-width: 1em;
+  margin-bottom: $line-height-computed / 4;
+  line-height: $input-height-base;
 }
 
 
