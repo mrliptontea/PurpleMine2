@@ -56,6 +56,10 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
+v2.5.0 (2019-06-05):
+
+* Fixed #117, #118 and added many improvements to the responsive layout.
+
 v2.4.0 (2019-06-02):
 
 * Synchronized most application styles with Redmine's default theme.
