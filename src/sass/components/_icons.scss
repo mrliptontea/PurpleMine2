@@ -426,6 +426,7 @@ div.projects h3 {
   &::before {
     width: 1em;
     margin-right: .5em;
+    transform: translateY(-.1em);
     color: $gray-700;
     text-align: center;
   }

@@ -197,6 +197,7 @@ p.buttons {
     label {
       display: block;
       margin-bottom: $line-height-computed / 2;
+      line-height: initial;
     }
   }
 
@@ -238,6 +239,10 @@ a[data-expands],
   cursor: pointer;
   user-select: none;
   @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+
+  &.icon-only::before {
+    content: none;
+  }
 }
 
 a[data-expands] {
@@ -252,4 +257,9 @@ a[data-expands] {
   img {
     display: none;
   }
+}
+
+a.icon-toggle-minus[data-expands],
+select[multiple="multiple"] + .toggle-multiselect {
+  background-image: inline-svg("minus.svg", (path: (fill: $btn-default-icon-color)));
 }

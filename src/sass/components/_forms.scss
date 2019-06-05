@@ -7,6 +7,15 @@ form {
     padding: $table-condensed-cell-padding;
   }
 
+  fieldset {
+    > button,
+    > input,
+    > select {
+      margin-right: 5px;
+      margin-bottom: $line-height-computed / 2;
+    }
+  }
+
   label {
     line-height: $input-height-base;
     vertical-align: top;
