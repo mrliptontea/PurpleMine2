@@ -105,10 +105,17 @@
   input,
   select {
     margin-right: 5px;
+    margin-bottom: $line-height-computed / 2;
   }
 
   label {
     @include check-inline;
+    line-height: $input-height-base;
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      margin-top: $check-input-margin-btn-v;
+    }
   }
 
   p:last-child {

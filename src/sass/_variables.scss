@@ -481,13 +481,13 @@ $header-title-line-height:      $line-height-computed * 1.5 !default;
 
 $responsive-header-height:      54px !default;
 
-$flyout-menu-bg:                shade($header-bg, 800) !default;
+$flyout-menu-bg:                shade($header-bg, 700) !default;
 $flyout-menu-text:              $white !default;
 $flyout-menu-link:              $white !default;
-$flyout-menu-link-active-bg:    $header-bg !default;
-$flyout-menu-link-active:       $white !default;
-$flyout-menu-header-bg:         shade($header-bg, 900) !default;
-$flyout-menu-header-border:     shade($header-bg, 900) !default;
+$flyout-menu-link-active-bg:    shade($header-bg, 50) !default;
+$flyout-menu-link-active:       $text-color !default;
+$flyout-menu-header-bg:         shade($header-bg, 800) !default;
+$flyout-menu-header-border:     shade($header-bg, 800) !default;
 $flyout-menu-header-text:       $white !default;
 
 $quick-search-width:            200px !default;

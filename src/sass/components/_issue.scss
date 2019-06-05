@@ -670,6 +670,7 @@ span.private {
 
   div.changeset {
     margin-top: $line-height-computed / 2 + 2px * 2;
+    padding: 0;
     overflow: hidden;
     border: 1px solid $issue-border;
     border-radius: $panel-border-radius;
