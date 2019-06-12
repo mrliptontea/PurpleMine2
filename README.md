@@ -56,6 +56,10 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
+v2.6.0 (2019-06-13):
+
+* Resolved #121: added support for [redmine_wiki_page_tree](https://github.com/ledsun/redmine_wiki_page_tree) plugin.
+
 v2.5.0 (2019-06-05):
 
 * Fixed #117, #118 and added many improvements to the responsive layout.
