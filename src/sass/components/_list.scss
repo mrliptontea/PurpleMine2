@@ -50,13 +50,17 @@ table.list {
     }
 
     &.id,
+    &.issue_id,
+    &.legacy_id,
     &.parent,
     &.relations,
     &.tracker {
       width: 2%;
     }
 
-    &.id {
+    &.id,
+    &.issue_id,
+    &.legacy_id {
       font-weight: $font-weight-bold;
     }
 
@@ -79,10 +83,6 @@ table.list {
       input {
         margin: 2px 0 0;
       }
-    }
-
-    &.id {
-      text-align: right;
     }
 
     &.activity,
@@ -108,6 +108,8 @@ table.list {
       text-align: left;
     }
 
+    &.id,
+    &.legacy_id,
     &.estimated_hours,
     &.float,
     &.int,
@@ -384,6 +386,8 @@ tr.entry {
 
 @if $color-trackers {
   tr.issue .id > a,
+  tr.issue .issue_id > a,
+  tr.issue .legacy_id > a,
   a.issue,
   .relations > span > a.issue,
   .parent > a.issue {
@@ -432,7 +436,8 @@ tr.entry {
     }
   }
 
-  tr.issue .id > a {
+  tr.issue .id > a,
+  tr.issue .legacy_id > a {
     display: block;
     padding: $tracker-list-padding;
 
@@ -440,6 +445,11 @@ tr.entry {
       content: "#";
       color: mix($tracker-default-text, $tracker-default-bg, 50%);
     }
+  }
+
+  tr.issue .issue_id > a {
+    display: inline-block;
+    padding: $tracker-list-padding;
   }
 
   @each $tracker-id, $tracker-colors in $tracker-colors-map {
