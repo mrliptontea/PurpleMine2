@@ -1,8 +1,4 @@
 /* Header *********************************************************************/
-
-/* Header background color. */
-$brand-primary: #D5D5D5;
-
 #wrapper {
   #top-menu {
     background: #111;
@@ -24,13 +20,13 @@ $brand-primary: #D5D5D5;
   }
   #header {
     background-image: url('/themes/PurpleMine2/images/logo-morpht.svg'); /* fallback */
-    background-image: url('/themes/PurpleMine2/images/logo-morpht.svg'), linear-gradient(#E6E6E6, #D5D5D5); /* W3C */
+    background-image: url('/themes/PurpleMine2/images/logo-morpht.svg'), linear-gradient(#E6E6E6, $brand-primary); /* W3C */
     background-repeat: no-repeat, repeat-x;
     background-position: 20px 5px, 0 0;
     background-size: auto 38px;
     @media (max-width: 899px) {
       background-position: 15px 10px, 0 0;
-      background-color: #D5D5D5;
+      background-color: $brand-primary;
     }
     a.mobile-toggle-button {
       color: #333;
