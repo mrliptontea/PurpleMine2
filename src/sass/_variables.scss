@@ -256,15 +256,18 @@ $priority-icon-space:           5px !default;
 $priority-default-icons-map: (
   lowest: (
     icon:                       "priority-minor.svg",
-    color:                      $green
+    color:                      $green,
+    color-bg:                   shade($green, 50)
   ),
   low2: (
     icon:                       "priority-lowest.svg",
-    color:                      mix($teal, $green)
+    color:                      mix($teal, $green),
+    color-bg:                   shade($green, 100)
   ),
   low3: (
     icon:                       "priority-low.svg",
-    color:                      $teal
+    color:                      $teal,
+    color-bg:                   shade($green, 200)
   ),
   default: (
     icon:                       "priority-medium.svg",
@@ -272,23 +275,28 @@ $priority-default-icons-map: (
   ),
   high5: (
     icon:                       "priority-high.svg",
-    color:                      $purple
+    color:                      $purple,
+    color-bg:                   shade($purple, 50)
   ),
   high4: (
     icon:                       "priority-high.svg",
-    color:                      $orange
+    color:                      $orange,
+    color-bg:                   shade($purple, 100)
   ),
   high3: (
     icon:                       "priority-highest.svg",
-    color:                      mix($red, $orange)
+    color:                      mix($blue, $orange),
+    color-bg:                   shade($blue, 50)
   ),
   high2: (
     icon:                       "priority-major.svg",
-    color:                      $red
+    color:                      $blue,
+    color-bg:                   shade($blue, 100)
   ),
   highest: (
     icon:                       "priority-critical.svg",
-    color:                      shade($red, 600)
+    color:                      shade($blue, 600),
+    color-bg:                   shade($red, 100)
   )
 ) !default;
 $priority-custom-icons-map:     () !default;

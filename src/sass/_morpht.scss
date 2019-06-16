@@ -90,3 +90,12 @@ body[class^="theme-Purplemine2 project-"] a.icon.new-issue {
 .bestest_timer_button {
   height: inherit !important;
 }
+
+/* Background colors for task lists. ******************************************/
+@each $priority-id, $priority-color in $priority-icons-map {
+  $priority-color: map-get($priority-color, color-bg);
+
+  table.list tbody tr.priority-#{$priority-id} {
+    background: $priority-color;
+  }
+}
