@@ -594,9 +594,9 @@ div#roadmap {
     }
   }
 
-  h2,
-  h3 {
-    display: inline;
+  header > h3,
+  h3.version {
+    margin-bottom: 0;
     padding-right: 0;
   }
 
