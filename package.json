@@ -48,5 +48,10 @@
     "ignore": [
       "/javascripts"
     ]
-  }
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "not dead"
+  ]
 }
