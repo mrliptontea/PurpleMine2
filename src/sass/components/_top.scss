@@ -6,8 +6,8 @@
   @extend %clearfix;
   position: relative;
   padding: $padding-small-vertical $padding-side;
-  background: $top-menu-bg;
-  color: $top-menu-text;
+  background: #f6f6f9;
+  color: #3e425a;
   font-size: $font-size-small;
 
   @if $top-menu-collapse {
@@ -81,7 +81,7 @@
   }
 
   a {
-    color: $top-menu-link;
+    color: #3e425a;
     font-weight: $font-weight-bold;
 
     &:hover {
@@ -113,7 +113,7 @@
 #header {
   @extend %clearfix;
   position: relative;
-  background-color: $header-bg;
+  background-color: #f6f6f9;
   color: $header-text;
 
   > h1 {
@@ -150,7 +150,11 @@
   }
 
   a {
-    color: $header-link;
+    color: #3e425a;
+  }
+  img {
+    margin-left: 15px;
+    margin-top: 10px !important;
   }
 }
 
@@ -159,7 +163,7 @@
     margin-top: floor(($header-title-line-height + $header-padding-vertical * 2 - $input-height-base) / 2) - 1px;
     margin-right: $header-padding-horizontal;
     float: right;
-    color: $header-text;
+    color: #3e425a;
   }
 
   > * {
@@ -299,6 +303,10 @@
     padding: 0 ($padding-side - $main-menu-padding-horizontal);
     list-style: none;
     color: $main-menu-link;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 
     > li {
       position: relative;
