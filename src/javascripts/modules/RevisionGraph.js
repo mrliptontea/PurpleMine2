@@ -52,6 +52,7 @@ PurpleMine.RevisionGraph = function (holder, commitsHash, graphSpace) {
   var revisionDotOverlay
 
   $.each(commits, function (index, commit) {
+    // eslint-disable-next-line no-prototype-builtins
     if (!commit.hasOwnProperty('space')) {
       commit.space = 0
     }
@@ -72,6 +73,7 @@ PurpleMine.RevisionGraph = function (holder, commitsHash, graphSpace) {
       parentCommit = commitsByScmid[parentScmid]
 
       if (parentCommit) {
+        // eslint-disable-next-line no-prototype-builtins
         if (!parentCommit.hasOwnProperty('space')) {
           parentCommit.space = 0
         }

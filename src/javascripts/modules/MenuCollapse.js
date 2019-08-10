@@ -47,6 +47,7 @@ PurpleMine.MenuCollapse = (function () {
     }
 
     for (var menu in this.menus) {
+      // eslint-disable-next-line no-prototype-builtins
       if (this.menus.hasOwnProperty(menu) && this.menus[menu].$el.length > 0) {
         handleMenu(menu)
       }
