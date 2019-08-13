@@ -59,6 +59,7 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 Latest (master):
 
 * Resolved #132: fixed spacing for headers on roadmap pages.
+* Merged fix #136: broken layout with large image attachment
 
 v2.7.0 (2019-06-13):
 
