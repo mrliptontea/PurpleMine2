@@ -1,0 +1,33 @@
+name: Run linters
+
+on:
+  push:
+    paths:
+      - src/*
+      - svg/*
+      - package*.json
+
+jobs:
+  lint:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          version: 10.x
+
+      - name: Install npm dependencies
+        run: npm ci
+
+      - name: Lint JavaScript
+        run: npm run lint:js
+
+      - name: Lint Sass
+        run: npm run lint:sass
+
+      - name: Check build
+        run: npm run build
