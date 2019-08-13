@@ -108,6 +108,20 @@ a.collapsible.collapsed,
   // stylelint-enable declaration-no-important
 }
 
+img {
+  image-orientation: from-image;
+}
+
+.filecontent-container {
+  position: relative;
+  min-height: 200px;
+  margin-bottom: 20px;
+}
+.filecontent-container > .filecontent {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+}
 
 //== Responsive autoscroll
 //
