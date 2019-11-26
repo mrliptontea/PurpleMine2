@@ -4,6 +4,7 @@
 
 html {
   overflow-y: scroll;
+  tab-size: 4;
 }
 
 body {
@@ -41,19 +42,32 @@ a {
   }
 }
 
+// Remove the tapping delay on clickable elements
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex] {
+  touch-action: manipulation;
+}
+
 h1 {
   margin: 0;
-  font-size: 18px;             // ~28px
-  font-weight: $font-weight-normal;
-//  line-height: 30px;
+  font-size: 2em;
+  font-weight: $font-weight-semi-bold;
+  line-height: $line-height-large * .825;
 }
 
 h2 {
   margin-top: 0;
   margin-bottom: $line-height-computed;
-  font-size: 1.43em;          // ~20px
-  font-weight: 500;
-  line-height: $line-height-computed;
+  font-size: 1.43em;
+  font-weight: $font-weight-semi-bold;
+  line-height: $line-height-large;
 
   img {
     vertical-align: middle;
@@ -63,15 +77,16 @@ h2 {
 h3 {
   margin-top: 0;
   margin-bottom: $line-height-computed;
-  font-size: 1.14em;          // ~16px
-  font-weight: 500;
-  line-height: $line-height-computed;
+  font-size: 1.14em;
+  font-weight: $font-weight-semi-bold;
+  line-height: $line-height-large;
 }
 
 h4 {
   margin-top: 0;
   font-size: 1em;
-  font-weight: 500;
+  font-weight: $font-weight-semi-bold;
+  line-height: $line-height-base;
 }
 
 p {
@@ -83,9 +98,17 @@ small {
 }
 
 table {
+  th {
+    font-weight: $font-weight-bold;
+  }
+
   th,
   td {
     padding: $table-condensed-cell-padding $table-cell-padding;
+  }
+
+  p {
+    margin: 0;
   }
 }
 
@@ -93,6 +116,7 @@ ul,
 ol {
   margin-top: 0;
   margin-bottom: ($line-height-computed / 2);
+  padding-left: 1.5em;
 
   ul,
   ol {
@@ -124,15 +148,15 @@ samp {
 }
 
 hr {
-  margin-top:    $line-height-computed;
+  margin-top: $line-height-computed;
   margin-bottom: $line-height-computed;
   border: 0;
   border-top: 1px solid $hr-border;
-}
 
-abbr[title] {
-  border-bottom: 1px dotted $abbr-border-color;
-  cursor: help;
+  li & {
+    margin-top: $line-height-computed / 2;
+    margin-bottom: $line-height-computed / 2;
+  }
 }
 
 blockquote {
@@ -140,11 +164,11 @@ blockquote {
   padding: floor($line-height-computed / 4) $padding-large-horizontal;
   border-left: 4px solid $blockquote-border-color;
 
-  >:first-child {
+  > :first-child {
     margin-top: 0;
   }
 
-  >:last-child {
+  > :last-child {
     margin-bottom: 0;
   }
 }

@@ -1,5 +1,20 @@
 #main {
-  @if $flexbox-layout {
+  @if $css-grid-layout {
+    display: grid;
+    grid-template-rows: auto 1fr;
+
+    @if $sidebar-position == "left" {
+      grid-template-areas:
+        "sidebar content"
+        "footer footer";
+      grid-template-columns: auto 1fr;
+    } @else {
+      grid-template-areas:
+        "content sidebar"
+        "footer footer";
+      grid-template-columns: 1fr auto;
+    }
+  } @else if $flexbox-layout {
     display: flex;
   } @else {
     @extend %clearfix;
@@ -14,7 +29,9 @@
 #content {
   padding: $padding-side;
 
-  @if $flexbox-layout {
+  @if $css-grid-layout {
+    grid-area: content;
+  } @else if $flexbox-layout {
     $side-space: $sidebar-width + $padding-side * 2;
     flex: 1 1 auto;
     width: calc(100% - #{$side-space});
@@ -29,9 +46,29 @@
 // --------------------------------------------------
 
 #sidebar {
-  padding: $padding-side $sidebar-padding-horizontal;
+  #main & {
+    padding: $padding-side $sidebar-padding-horizontal;
+  }
 
-  @if $flexbox-layout {
+  #main.nosidebar & {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+
+    @if $css-grid-layout {
+      width: 0;
+    } @else if $flexbox-layout {
+      flex: 0 0 auto;
+    } @else {
+      width: 0;
+      float: none;
+    }
+  }
+
+  @if $css-grid-layout {
+    grid-area: sidebar;
+    width: $sidebar-width-computed;
+  } @else if $flexbox-layout {
     flex: 0 0 $sidebar-width-computed;
 
     @if $sidebar-position == "left" {
@@ -58,78 +95,213 @@
     }
   }
 
-  .nosidebar & {
-    margin: 0;
-    padding: 0;
-    border: 0 none;
-
-    @if $flexbox-layout {
-      flex: 0 0 auto;
-    } @else {
-      width: 0;
-      float: none;
-    }
-  }
-
   h3 {
     margin-top: $line-height-computed * 1.5;
   }
 
   > h3:first-child,
   > form:first-child > h3 {
-    margin-top: 0;
+    margin-top: $line-height-computed * .25;
   }
 
   ul {
-    margin: 0 0 ($line-height-computed / 2);
-    padding: 0;
+    &:nth-child(n) {
+      margin: 0 0 ($line-height-computed / 2);
+      padding: 0;
 
-    @if $sidebar-position == "left" {
-      margin-right: -($sidebar-padding-horizontal);
-    } @else {
-      margin-left: -($sidebar-padding-horizontal);
+      @if $sidebar-position == "left" {
+        margin-right: -($sidebar-padding-horizontal);
+      }
+    }
+
+    &:not(.watchers) {
+      li {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+
+        > a:not(.icon-only) {
+          display: block;
+          padding: $sidebar-padding-vertical $sidebar-padding-horizontal;
+          border: 1px solid transparent;
+
+          @if $sidebar-position == "left" {
+            border-left-width: 3px;
+            border-radius: $border-radius-large 0 0 $border-radius-large;
+          } @else {
+            margin-left: -($sidebar-padding-horizontal);
+            border-right-width: 3px;
+            border-radius: 0 $border-radius-large $border-radius-large 0;
+          }
+
+          &:hover {
+            background-color: $sidebar-link-hover-bg;
+            color: $sidebar-link-hover-text;
+            text-decoration: none;
+          }
+
+          &.selected {
+            border-color: $sidebar-link-active-border;
+            background-color: $sidebar-link-active-bg;
+            color: $sidebar-link-active-text;
+
+            @if $sidebar-position == "left" {
+              margin-right: -1px;
+              border-right-color: $body-bg;
+              border-left-color: $sidebar-link-active-side;
+              box-shadow: -3px 1px 2px rgba(0, 0, 0, .1);
+            } @else {
+              margin-left: -($sidebar-padding-horizontal + 1px);
+              border-right-color: $sidebar-link-active-side;
+              border-left-color: $body-bg;
+              box-shadow: 3px 1px 2px rgba(0, 0, 0, .1);
+            }
+          }
+        }
+      }
+    }
+
+    &.pages-hierarchy {
+      .pages-hierarchy {
+        margin-left: $sidebar-padding-horizontal + 3px;
+        border-left: 2px solid $gray-400;
+
+        @if $sidebar-position == "right" {
+          margin-left: 3px;
+        } @else {
+          margin-right: 0;
+        }
+
+        li {
+          > a:not(.icon-only) {
+            padding-right: $sidebar-padding-horizontal / 2;
+            padding-left: $sidebar-padding-horizontal / 2;
+
+            @if $sidebar-position == "right" {
+              margin-left: 0;
+            }
+          }
+
+          .pages-hierarchy {
+            margin-left: $sidebar-padding-horizontal / 2 + 3px;
+          }
+        }
+      }
     }
   }
 
-  li {
+  // Special treatment for anchor tags directly under sidebar tag
+  > a {
+    margin: $sidebar-padding-vertical $sidebar-padding-horizontal;
+
+    @if $sidebar-position == "left" {
+      margin-left: $sidebar-padding-horizontal + 3px;
+    } @else {
+      margin-right: $sidebar-padding-horizontal + 3px;
+      margin-left: 0;
+    }
+  }
+
+  // For plugin https://github.com/ledsun/redmine_wiki_page_tree
+  div.page-tree {
     margin: 0;
     padding: 0;
-    list-style-type: none;
 
-    > a {
-      display: block;
-      padding: $sidebar-padding-vertical $sidebar-padding-horizontal;
-      border: 1px solid transparent;
+    .page-tree__title {
+      margin-left: 0;
+    }
 
-      @if $sidebar-position == "left" {
-        border-left-width: 3px;
-        border-radius: $border-radius-large 0 0 $border-radius-large;
-      } @else {
-        border-right-width: 3px;
-        border-radius: 0 $border-radius-large $border-radius-large 0;
+    .page-tree__list {
+      .page-tree__list {
+        margin-left: $sidebar-padding-horizontal + 3px;
+        border-left: 2px solid $gray-400;
+
+        @if $sidebar-position == "right" {
+          margin-left: 3px;
+        } @else {
+          margin-right: 0;
+        }
+
+        .page-tree__list {
+          margin-left: $sidebar-padding-horizontal / 2 + 3px;
+        }
+
+        summary {
+          padding-left: $sidebar-padding-horizontal + 8px;
+
+          @if $sidebar-position == "right" {
+            margin-left: 0;
+          }
+
+          &::before {
+            left: 6px;
+          }
+        }
       }
 
-      &:hover {
-        background-color: $sidebar-link-hover-bg;
-        text-decoration: none;
-      }
+      li {
+        > a:not(.icon-only) {
+          padding-right: $sidebar-padding-horizontal / 2;
+          padding-left: $sidebar-padding-horizontal / 2;
 
-      &.selected {
-        border-color: $sidebar-link-active-border;
-        background-color: $sidebar-link-active-bg;
-        color: $sidebar-link-active-text;
+          @if $sidebar-position == "right" {
+            margin-left: 0;
+          }
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    details {
+      summary {
+        display: block;
+        position: relative;
+        padding: 0 $sidebar-padding-horizontal;
+        padding-left: $sidebar-padding-horizontal * 1.5 + 8px;
 
         @if $sidebar-position == "left" {
-          margin-right: -1px;
-          border-right-color: $body-bg;
-          border-left-color: $sidebar-link-active-side;
-          box-shadow: -3px 1px 2px rgba(0, 0, 0, .1);
+          border-radius: $border-radius-large 0 0 $border-radius-large;
         } @else {
-          margin-left: -1px;
-          border-right-color: $sidebar-link-active-side;
-          border-left-color: $body-bg;
-          box-shadow: 3px 1px 2px rgba(0, 0, 0, .1);
+          margin-left: -($sidebar-padding-horizontal);
+          border-radius: 0 $border-radius-large $border-radius-large 0;
         }
+
+        &::-webkit-details-marker {
+          display: none;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: ($sidebar-padding-vertical + 1px) + ($line-height-computed - 16px) / 2;
+          left: $sidebar-padding-horizontal / 2 + 6px;
+          width: 16px;
+          height: 16px;
+          background-image: inline-svg("chevron-right.svg", (path: (fill: $btn-default-icon-color)));
+          background-repeat: no-repeat;
+        }
+
+        &:hover {
+          background-color: $sidebar-link-hover-bg;
+        }
+
+        a {
+          display: inline-block;
+          padding-top: ($sidebar-padding-vertical + 1px);
+          padding-bottom: ($sidebar-padding-vertical + 1px);
+
+          &:hover {
+            color: $sidebar-link-hover-text;
+            text-decoration: underline;
+          }
+        }
+      }
+
+      &[open] > summary::before {
+        transform: rotate(90deg);
       }
     }
   }
@@ -138,9 +310,13 @@
 #footer {
   margin: 0 $padding-side $line-height-computed;
   padding-top: $line-height-computed;
-  border-top: 1px solid $gray-lighter;
-  color: $gray-light;
+  border-top: 1px solid $gray-400;
+  color: $gray-600;
   font-size: $font-size-small;
+
+  @if $css-grid-layout {
+    grid-area: footer;
+  }
 }
 
 @if $fixed-layout {

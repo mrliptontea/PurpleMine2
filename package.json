@@ -1,6 +1,6 @@
 {
-  "name": "PurpleMine2",
-  "description": "A free Redmine 2.5+ theme written in SCSS",
+  "name": "purplemine",
+  "description": "A free Redmine 2.6+ theme written in SCSS",
   "keywords": [
     "redmine",
     "theme",
@@ -18,23 +18,40 @@
   },
   "homepage": "https://github.com/mrliptontea/PurpleMine2",
   "scripts": {
-    "lint": "standard && scss-lint"
+    "build": "grunt",
+    "watch": "grunt watch",
+    "lint:js": "standard",
+    "lint:sass": "stylelint src/sass/**/*.scss",
+    "lint": "npm run -S lint:js && npm run -S lint:sass"
   },
   "dependencies": {
-    "autoprefixer": "^6.5.3",
-    "grunt": "^1.0.1",
-    "grunt-contrib-uglify": "^2.0.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-postcss": "^0.8.0",
-    "grunt-sass": "^1.0.0"
+    "autoprefixer": "^9.6.1",
+    "grunt": "^1.0.4",
+    "grunt-contrib-uglify": "^4.0.1",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-postcss": "^0.9.0",
+    "grunt-sass": "^3.0.2",
+    "node-sass": "^4.12.0",
+    "sass-inline-svg": "^1.2.0"
   },
   "devDependencies": {
-    "standard": "^8.5.0"
+    "standard": "^13.1.0",
+    "stylelint": "^10.1.0",
+    "stylelint-order": "^3.0.1",
+    "stylelint-scss": "^3.9.3"
   },
   "standard": {
-    "globals": [ "$", "localStorage" ],
+    "globals": [
+      "$",
+      "localStorage"
+    ],
     "ignore": [
       "/javascripts"
     ]
-  }
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "not dead"
+  ]
 }

@@ -26,7 +26,7 @@
 
   span.description {
     display: block;
-    color: $gray;
+    color: $gray-700;
     font-style: italic;
   }
 }
@@ -44,9 +44,9 @@
   h4 {
     margin: 0 0 $line-height-computed;
     padding-bottom: .2em;
-    border-bottom: 1px dotted $gray-light;
+    border-bottom: 1px dotted $gray-600;
     font-size: $font-size-h4;
-    font-weight: normal;
+    font-weight: $font-weight-normal;
   }
 
   dt {
@@ -55,15 +55,16 @@
     }
 
     &.me .time {
-      border-bottom: 1px solid $gray-lighter;
+      border-bottom: 1px solid $gray-400;
     }
 
     .time {
-      color: $gray;
+      color: $gray-700;
     }
 
     @if $use-gravatars {
       .gravatar {
+        top: 0;
         margin-top: -2px;
         margin-right: $activity-avatar-space;
         float: left;
@@ -99,15 +100,22 @@
 // Search form
 
 #search-form {
+  margin-bottom: $line-height-computed;
+
   input,
   select {
     margin-right: 5px;
+    margin-bottom: $line-height-computed / 2;
   }
 
   label {
-    @include checkbox;
-    display: inline-block;
-    margin-right: 5px;
+    @include check-inline;
+    line-height: $input-height-base;
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      margin-top: $check-input-margin-btn-v;
+    }
   }
 
   p:last-child {
@@ -119,9 +127,21 @@
 // Search results highlight
 
 .highlight {
-  background-color: #fe8;
+  background-color: saturate(shade($yellow, 100), 25%);
+  color: saturate(shade($yellow, 800), 25%);
 
-  &.token-1 { background-color: #fba; }
-  &.token-2 { background-color: #afb; }
-  &.token-3 { background-color: #aef; }
+  &.token-1 {
+    background-color: saturate(shade($red, 100), 25%);
+    color: saturate(shade($red, 800), 25%);
+  }
+
+  &.token-2 {
+    background-color: saturate(shade($green, 100), 25%);
+    color: saturate(shade($green, 800), 25%);
+  }
+
+  &.token-3 {
+    background-color: saturate(shade($blue, 100), 25%);
+    color: saturate(shade($blue, 800), 25%);
+  }
 }

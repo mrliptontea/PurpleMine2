@@ -1,4 +1,4 @@
-// scss-lint:disable Comment
+// stylelint-disable comment-whitespace-inside, no-duplicate-selectors
 @import "../common";
 
 /*
@@ -66,7 +66,7 @@
 ----------------------------------*/
 
 .ui-state-disabled {
-  cursor: default !important; // scss-lint:disable ImportantRule
+  cursor: default !important; // stylelint-disable-line declaration-no-important
 }
 
 /* Icons
@@ -158,7 +158,7 @@
   background: $component-bg;
   box-shadow: none;
   color: $component-color;
-  font-weight: normal;
+  font-weight: $font-weight-normal;
 }
 
 .ui-state-default a,
@@ -177,7 +177,7 @@
   border: 1px solid $component-active-border;
   background: $component-active-bg;
   color: $component-active-color;
-  font-weight: normal;
+  font-weight: $font-weight-normal;
 
   .ui-icon {
     background-image: url("../images/ui-icons_ffffff_256x240.png");
@@ -202,7 +202,7 @@
   border: 1px solid $component-active-border;
   background: $component-active-bg;
   color: $component-active-color;
-  font-weight: normal;
+  font-weight: $font-weight-normal;
 }
 
 .ui-state-active a,
@@ -222,24 +222,24 @@
 
 .ui-state-highlight,
 .ui-widget-content .ui-state-highlight {
-  border: 1px solid #fcefa1;
-  background: #fbf9ee;
-  color: #363636;
+  border: 1px solid shade($yellow, 600);
+  background: shade($yellow, 200);
+  color: shade($yellow, 800);
 
   a {
-    color: #363636;
+    color: shade($yellow, 800);
   }
 }
 
 
 .ui-state-error,
 .ui-widget-content .ui-state-error {
-  border: 1px solid #cd0a0a;
-  background: #fef1ec;
-  color: #cd0a0a;
+  border: 1px solid $red;
+  background: shade($red, 50);
+  color: $red;
 
   a {
-    color: #cd0a0a;
+    color: $red;
   }
 }
 
@@ -251,7 +251,7 @@
 .ui-priority-secondary,
 .ui-widget-content .ui-priority-secondary {
   opacity: .7;
-  font-weight: normal;
+  font-weight: $font-weight-normal;
 }
 
 .ui-state-disabled,
@@ -521,7 +521,7 @@
 
 .ui-widget-overlay {
   opacity: .3;
-  background: #000;
+  background: $black;
 }
 
 .ui-widget-shadow {
@@ -529,7 +529,7 @@
   padding: 8px;
   border-radius: 8px;
   opacity: .3;
-  background: #aaa;
+  background: $gray-600;
 }
 
 /* Resizable
@@ -631,7 +631,7 @@
   }
 
   .ui-accordion-header-active {
-    border-bottom: 0 !important; // scss-lint:disable ImportantRule
+    border-bottom: 0 !important; // stylelint-disable-line declaration-no-important
   }
 
   .ui-accordion-header a {
@@ -734,7 +734,7 @@
   overflow: visible;
   zoom: 1;
   text-align: center;
-  text-decoration: none !important; // scss-lint:disable ImportantRule
+  text-decoration: none !important; // stylelint-disable-line declaration-no-important
   cursor: pointer;
 }
 
@@ -1007,7 +1007,7 @@ button.ui-button::-moz-focus-inner {
       padding: 0;
       float: left;
       list-style: none;
-      border-bottom: 0 !important; // scss-lint:disable ImportantRule
+      border-bottom: 0 !important; // stylelint-disable-line declaration-no-important
       white-space: nowrap;
 
       a {
@@ -1048,7 +1048,7 @@ button.ui-button::-moz-focus-inner {
   }
 
   .ui-tabs-hide {
-    display: none !important; // scss-lint:disable ImportantRule
+    display: none !important; // stylelint-disable-line declaration-no-important
   }
 }
 
@@ -1083,7 +1083,7 @@ button.ui-button::-moz-focus-inner {
     background: $body-bg;
     box-shadow: none;
     color: $component-color;
-    font-weight: normal;
+    font-weight: $font-weight-normal;
 
     a,
     a:link,
@@ -1098,7 +1098,7 @@ button.ui-button::-moz-focus-inner {
     border: 1px solid $component-active-border;
     background: $component-active-bg;
     color: $component-active-color;
-    font-weight: normal;
+    font-weight: $font-weight-normal;
   }
 
   .ui-datepicker-prev,
@@ -1361,7 +1361,7 @@ button.ui-button::-moz-focus-inner {
   }
 }
 
- /* Progressbar
+/* Progressbar
 ----------------------------------*/
 
 .ui-progressbar {

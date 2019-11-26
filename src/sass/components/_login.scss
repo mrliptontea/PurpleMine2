@@ -4,10 +4,10 @@
 
 #login-form {
   box-sizing: border-box;
-  margin: $line-height-computed * 2 auto;
+  margin: $line-height-computed * 2 auto $line-height-computed;
 
   label,
-  input {
+  input:not([type="checkbox"]) {
     width: 100%;
   }
 
@@ -15,6 +15,12 @@
     display: block;
     margin-bottom: $padding-base-vertical;
     font-weight: $font-weight-bold;
+    line-height: inherit;
+
+    &[for="autologin"] {
+      @include check;
+      margin-bottom: $line-height-computed;
+    }
 
     > a {
       float: right;

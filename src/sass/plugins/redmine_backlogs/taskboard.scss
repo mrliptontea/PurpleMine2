@@ -86,7 +86,7 @@ $swimlane-width:                $issue-width + 2 * ($issue-margin + $issue-paddi
 }
 
 .board {
-  border: 1px solid $gray;
+  border: 1px solid $gray-700;
   border-top: 0 none;
   background-color: $body-bg;
   color: $text-color;
@@ -141,7 +141,7 @@ $swimlane-width:                $issue-width + 2 * ($issue-margin + $issue-paddi
 }
 
 .story {
-  color: $gray-darker;
+  color: $gray-900;
 
   .id {
     margin-bottom: 5px;
@@ -157,11 +157,11 @@ $swimlane-width:                $issue-width + 2 * ($issue-margin + $issue-paddi
     .remaininghours {
       margin-left: 4px;
       float: right;
-      font-weight: normal;
+      font-weight: $font-weight-normal;
     }
 
     a {
-      color: $gray-darkest;
+      color: $gray-950;
       font-size: $font-size-small-px;
       font-weight: $font-weight-bold;
     }
@@ -226,8 +226,8 @@ $swimlane-width:                $issue-width + 2 * ($issue-margin + $issue-paddi
     float: left;
     border: 0 none;
     border-radius: $border-radius-large;
-    background-color: $gray-lighter;
-    color: $gray-darker;
+    background-color: $gray-400;
+    color: $gray-900;
     font-size: 10px;
     line-height: 1.3;
     cursor: move;
@@ -259,7 +259,7 @@ $swimlane-width:                $issue-width + 2 * ($issue-margin + $issue-paddi
     }
 
     a {
-      color: $gray-darkest;
+      color: $gray-950;
     }
   }
 

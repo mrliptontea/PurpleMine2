@@ -1,4 +1,4 @@
-var PurpleMine = PurpleMine || {}
+var PurpleMine = PurpleMine || {} // eslint-disable-line no-use-before-define
 
 PurpleMine.MenuCollapse = (function () {
   'use strict'
@@ -7,6 +7,12 @@ PurpleMine.MenuCollapse = (function () {
   var translations = {
     en: {
       topMenuToggler: 'Expand/collapse top menu'
+    },
+    ro: {
+      topMenuToggler: 'Deschide/închide meniul de sus'
+    },
+    fr: {
+      topMenuToggler: 'Développer/réduire le menu principal'
     },
     pl: {
       topMenuToggler: 'Zwiń/rozwiń górne menu'
@@ -41,6 +47,7 @@ PurpleMine.MenuCollapse = (function () {
     }
 
     for (var menu in this.menus) {
+      // eslint-disable-next-line no-prototype-builtins
       if (this.menus.hasOwnProperty(menu) && this.menus[menu].$el.length > 0) {
         handleMenu(menu)
       }

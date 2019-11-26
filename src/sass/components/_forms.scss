@@ -7,8 +7,47 @@ form {
     padding: $table-condensed-cell-padding;
   }
 
+  fieldset {
+    > button,
+    > input,
+    > select {
+      margin-right: 5px;
+      margin-bottom: $line-height-computed / 2;
+    }
+  }
+
+  label {
+    line-height: $input-height-base;
+    vertical-align: top;
+
+    > input[type="checkbox"],
+    > input[type="radio"] {
+      margin-top: $check-input-margin-btn-v;
+    }
+  }
+
+  .box label {
+    line-height: $line-height-base;
+
+    > input[type="checkbox"],
+    > input[type="radio"] {
+      margin-top: $check-input-margin-vertical;
+    }
+  }
+
+  .add-filter label,
+  .filter label {
+    line-height: $input-height-base;
+  }
+
   .contextual > & {
     display: inline-block;
+    line-height: $input-height-base;
+    vertical-align: top;
+
+    label {
+      line-height: inherit;
+    }
   }
 }
 
@@ -51,7 +90,10 @@ input[type="password"] {
   @extend %form-field;
   @include form-control-focus;
   @include placeholder;
-  transition: border-color ease-in-out .1s, box-shadow ease-in-out .1s;
+  transition:
+    border-color $transition-time ease-in-out,
+    box-shadow $transition-time ease-in-out;
+  vertical-align: top;
 
   &[disabled],
   &[readonly],
@@ -74,14 +116,15 @@ textarea {
 }
 
 input[type="search"] {
-  -webkit-appearance: none;
+  -webkit-appearance: none; // stylelint-disable-line property-no-vendor-prefix
 }
 
 input[type="radio"],
 input[type="checkbox"] {
-  margin: 4px 5px 0 0;
+  margin: 4px 1px 0 0;
   margin-top: 1px \9; // IE8-9
   line-height: normal;
+  vertical-align: top;
 }
 
 input[type="file"] {
@@ -115,6 +158,7 @@ select {
   &[multiple],
   &[size] {
     height: auto;
+    min-height: $input-height-base;
   }
 
   &[size="1"] {
@@ -122,7 +166,7 @@ select {
   }
 
   option[disabled] {
-    color: $gray-lighter;
+    color: $gray-400;
   }
 
   &.expandable {
@@ -130,7 +174,7 @@ select {
   }
 
   &.bool_cf {
-    width: auto !important; // scss-lint:disable ImportantRule
+    width: auto !important; // stylelint-disable-line declaration-no-important
   }
 }
 
@@ -141,7 +185,7 @@ select {
 
 // Mozilla Firefox
 
-@-moz-document url-prefix() {
+@-moz-document url-prefix("") {
   select {
     &[multiple] {
       padding: 0;
@@ -150,7 +194,7 @@ select {
     option,
     optgroup::before {
       padding: $input-padding-vertical $input-padding-horizontal;
-      border-bottom: 1px dotted $gray-lighter;
+      border-bottom: 1px dotted $gray-400;
     }
 
     optgroup > option {
@@ -170,7 +214,7 @@ select {
   // For some reason nested selectors will not work
   select[multiple] option {
     padding: $input-padding-vertical $input-padding-horizontal;
-    border-bottom: 1px dotted $gray-lighter;
+    border-bottom: 1px dotted $gray-400;
   }
 }
 
@@ -204,9 +248,9 @@ span.required {
   position: relative;
   top: 3px;
   margin-left: -.2em;
-  color: #d00;
+  color: $red;
   font-size: 1.5em;
-  font-weight: normal;
+  font-weight: $font-weight-normal;
   line-height: 0;
 }
 
@@ -217,7 +261,7 @@ span.required {
 em.info {
   display: block;
   padding: 2px 0;
-  color: $gray;
+  color: $gray-700;
   font-size: $font-size-small;
   font-style: normal;
 }
@@ -253,9 +297,16 @@ em.info {
     margin: 0 0 ($line-height-computed / 2);
     padding-left: $label-width + $label-space;
     clear: left;
+    line-height: $input-height-base;
 
     .jstEditor {
       margin-bottom: 0;
+    }
+
+    .bool_cf:not(.check_box_group) {
+      display: block;
+      padding-top: $input-padding-vertical + 1px;
+      line-height: $line-height-base;
     }
   }
 
@@ -270,23 +321,17 @@ em.info {
     resize: vertical;
   }
 
-  input[type="radio"],
-  input[type="checkbox"] {
-    position: relative;
-    top: 3px;
-    vertical-align: baseline;
-  }
-
   span[title] {
-    border-bottom: 1px dotted #aaa;
+    border-bottom: 1px dotted $gray-600;
   }
 
   label {
     width: $label-width;
-    margin-top: $input-padding-vertical + 1px;
     margin-bottom: $input-padding-vertical + 1px;
     margin-left: -($label-width + $label-space);
+    padding-top: $input-padding-vertical + 1px;
     float: left;
+    line-height: $line-height-base;
     text-align: right;
     user-select: none;
 
@@ -301,7 +346,7 @@ em.info {
       display: block;
       width: auto;
       margin-left: 0;
-      padding-left: 16px;
+      padding-left: $check-input-gutter;
       float: none;
       text-align: left;
       cursor: pointer;
@@ -315,20 +360,23 @@ em.info {
       padding-left: 34px;
     }
 
-    > input[type="radio"],
-    > input[type="checkbox"] {
-      top: 1px;
+    > input[type="checkbox"],
+    > input[type="radio"] {
+      margin-top: $check-input-margin-vertical;
+    }
+
+    ~ input[type="checkbox"],
+    ~ input[type="radio"] {
+      margin-top: $check-input-margin-btn-v;
     }
   }
 }
 
 label.inline {
   display: inline-block;
-  margin-right: $padding-base-horizontal;
-  padding-left: 16px;
+  margin-right: $check-input-margin-horizontal;
+  padding-left: $check-input-gutter;
   float: none;
-  text-align: left;
-  cursor: pointer;
 
   &:last-child {
     margin-right: 0;
@@ -338,8 +386,7 @@ label.inline {
 label.inline,
 label.block {
   > input {
-    margin-top: .2em;
-    margin-left: -16px;
+    margin-left: -$check-input-gutter;
     float: left;
   }
 }
@@ -348,7 +395,7 @@ label.block {
 //== Hack: align description edit icon with label
 //
 
-label[for=issue_description] + a {
+label[for="issue_description"] + a {
   display: inline-block;
   margin-top: $input-padding-vertical + 1px;
 
@@ -361,9 +408,7 @@ label[for=issue_description] + a {
 //== Hack: better looking filter checkbox in sidebar in projects list
 //
 
-label[for=closed] {
-  @include checkbox;
-  display: block;
+label[for="closed"] {
   margin-bottom: $line-height-computed / 2;
 }
 
@@ -394,7 +439,7 @@ label[for=closed] {
   $input-height-large:             (ceil($font-size-large-px * $line-height-large) + ($input-padding-large-vertical * 2) + 2);
 
   label[for="issue_subject"] {
-    margin-top: floor($input-padding-large-vertical * $line-height-large + 1px);
+    padding-top: $input-padding-large-vertical;
   }
 
   #issue_subject {
@@ -429,7 +474,9 @@ label[for=closed] {
 //== Attachments
 //
 
-#attachments_fields {
+#attachments_fields,
+#existing-attachments,
+.attachments_fields {
   > span {
     display: block;
     margin-bottom: $line-height-computed / 4;
@@ -526,82 +573,63 @@ label[for=closed] {
 
 #issue_is_private_wrap,
 #all_attributes > p[style] {
-  margin-right: 0 !important; // scss-lint:disable ImportantRule
+  margin-right: 0 !important; // stylelint-disable-line declaration-no-important
   margin-bottom: 0;
   padding-left: 0;
   float: right;
 
   input {
-    top: 2px;
+    margin-top: $check-input-margin-btn-v;
+    margin-right: 3px;
   }
 
   label {
+    display: inline-block !important; // stylelint-disable-line declaration-no-important
     margin-right: 0;
     padding-left: 0;
   }
 }
 
 
-#watchers_form {
-  overflow: hidden;
+#users_for_watcher,
+#watchers_inputs {
+  display: block;
+  max-height: $check-list-max-height;
+  margin-bottom: $line-height-computed / 2;
+  overflow: auto;
 
-  .search_for_watchers {
-    display: block;
-  }
-
-  #watchers_inputs {
-    display: block;
-    max-width: 64em;
-    margin-top: $input-padding-vertical + 1px;
-    margin-bottom: $line-height-computed / 2;
-    overflow: auto;
-    columns: 18em 3;
-  }
-
-  label.floating {
-    @include checkbox;
-    display: block;
-    width: auto;
-    margin: 0;
-    float: none;
-
-    input[type="checkbox"] {
-      top: -1px;
-    }
+  label {
+    @include check-list;
   }
 }
 
+#watchers_inputs {
+  max-width: 64em;
+  columns: 18em 3;
+}
 
-//== Custom logic (boolean) field displayed as radio buttons
+
+//== List of custom field values
 //
 
 .check_box_group {
   display: block;
+  width: 90%;
+  max-height: $check-list-max-height;
   overflow-y: auto;
 
   label {
-    display: block;
-    width: auto;
-    margin-bottom: 0;
-    margin-left: 0;
-    float: none;
-    font-weight: normal;
-    text-align: left;
+    @include check-list;
   }
 
-  &.bool_cf {
-    label {
-      @extend %clearfix;
-      display: inline-block;
-      margin-right: 10px;
-      padding-left: 20px;
-      user-select: none;
+  @media screen and (min-width: $redmine-responsive-min) {
+    // Boolean field displayed as inline radio buttons
+    &.bool_cf {
+      overflow: initial;
 
-      input[type="checkbox"],
-      input[type="radio"] {
-        top: 0;
-        margin-left: -20px;
-        float: left;
+      label {
+        display: inline-block;
+        margin-right: $check-input-margin-horizontal;
       }
     }
   }
@@ -618,14 +646,14 @@ fieldset#filters {
     }
   }
 
-  .add-filter {
-    text-align: right;
-  }
-
   td {
     &.field {
-      min-width: 180px;
       padding-right: $table-cell-padding * 2;
+      white-space: nowrap;
+
+      @media screen and (min-width: $screen-sm-min) {
+        min-width: 180px;
+      }
     }
 
     &.operator {
@@ -638,6 +666,7 @@ fieldset#filters {
     }
 
     &.values {
+      min-width: 130px;
       white-space: nowrap;
 
       select {
@@ -647,17 +676,57 @@ fieldset#filters {
 
     &.add-filter {
       padding-top: $table-condensed-cell-padding * 2;
-      vertical-align: top;
+      text-align: right;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      margin-top: $check-input-margin-btn-v;
     }
   }
 
   div.add-filter {
     padding-top: $table-condensed-cell-padding;
+
+    @media screen and (min-width: $redmine-responsive-min) {
+      float: right;
+      text-align: right;
+    }
   }
 }
 
 #filters-table {
   float: left;
+}
+
+
+#activity_scope_form {
+  li {
+    > input[type="checkbox"],
+    > input[type="radio"] {
+      margin-top: $check-input-margin-btn-v;
+    }
+  }
+}
+
+
+#query_form {
+  p {
+    input,
+    select,
+    label,
+    .icon,
+    .icon-only {
+      vertical-align: middle;
+    }
+  }
+}
+
+.query_sort_criteria_count {
+  display: inline-block;
+  min-width: 1em;
+  margin-bottom: $line-height-computed / 4;
+  line-height: $input-height-base;
 }
 
 
@@ -669,5 +738,6 @@ label.no-css {
   margin-left: 0;
   float: none;
   font-weight: inherit;
+  line-height: inherit;
   text-align: left;
 }

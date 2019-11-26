@@ -56,19 +56,19 @@ $tabs-height: $line-height-computed + $tab-padding-vertical * 2 + 1px + 1px;
     top: 0;
     right: 0;
     width: $tabs-buttons-width;
+    border-bottom: 1px solid $tab-border;
     background-color: $body-bg;
 
     > button {
       width: 50%;
-      height: $tabs-height;
+      height: $tabs-height - 1px;
       margin: 0;
       padding: 0;
       float: left;
-      transition: opacity .1s;
+      transition: opacity $transition-time;
       border: 0 none;
-      border-bottom: 1px solid $tab-border;
       border-radius: 0;
-      opacity: .8;
+      opacity: $icon-opacity;
       background-color: $body-bg;
       background-repeat: no-repeat;
       background-position: center center;
@@ -76,20 +76,24 @@ $tabs-height: $line-height-computed + $tab-padding-vertical * 2 + 1px + 1px;
 
       &:hover,
       &:active {
-        opacity: 1;
+        opacity: $icon-hover-opacity;
       }
 
       &:active {
         background-color: $tab-hover-bg;
       }
+
+      &.disabled {
+        opacity: $icon-opacity / 2;
+      }
     }
 
     .tab-left {
-      @extend %image-arrow-left;
+      background-image: inline-svg("chevron-left.svg", (path: (fill: $btn-default-icon-color)));
     }
 
     .tab-right {
-      @extend %image-arrow-right;
+      background-image: inline-svg("chevron-right.svg", (path: (fill: $btn-default-icon-color)));
     }
   }
 }
@@ -118,7 +122,7 @@ div.tabs:not(#main-menu) {
         &:focus {
           border-color: $tab-hover-border $tab-hover-border $tab-border;
           background-color: $tab-hover-bg;
-          color: $link-hover-color;
+          color: $tab-hover-text;
           text-decoration: none;
         }
 
@@ -158,12 +162,12 @@ div.tabs:not(#main-menu) {
     }
 
     label {
-      @include checkbox;
+      @include check;
       display: block;
       margin-bottom: 3px;
     }
 
-    label[for=principal_search] {
+    label[for="principal_search"] {
       padding-left: 0;
     }
   }

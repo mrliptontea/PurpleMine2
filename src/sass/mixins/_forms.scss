@@ -40,13 +40,39 @@
   }
 }
 
-@mixin checkbox() {
+@mixin check() {
   @extend %clearfix;
-  padding-left: 20px;
-  user-select: none;
+  position: relative;
+  padding-left: $check-input-gutter;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-base;
+  text-align: left;
 
-  input[type="checkbox"] {
-    margin-left: -20px;
-    float: left;
+  input[type="checkbox"],
+  input[type="radio"] {
+    position: absolute;
+    width: auto;
+    margin-top: $check-input-margin-vertical;
+    margin-left: -$check-input-gutter;
+  }
+}
+
+@mixin check-inline() {
+  @include check;
+  display: inline-block;
+  margin-right: $check-input-margin-horizontal;
+}
+
+@mixin check-list() {
+  @include check;
+  display: block;
+  width: auto;
+  margin: 0;
+  padding-top: $check-list-offset-top;
+  padding-bottom: $check-list-offset-top;
+  float: none;
+
+  @media screen and (min-width: $screen-sm-min) {
+    padding-bottom: 0;
   }
 }
