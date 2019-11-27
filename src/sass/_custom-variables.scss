@@ -1,0 +1,44 @@
+//== Colors
+//
+$brand-primary:                 #1b7daa !default;
+$brand-text:                    #fff !default;
+$brand-accent:                  #deddef !default;
+
+$brand-success:                 #019851 !default;
+$brand-info:                    #409ae3 !default;
+$brand-warning:                 #ed820c !default;
+$brand-danger:                  #e74c3c !default;
+
+$state-success:                 #b5fbb7 !default;
+$state-info:                    #97cefb !default;
+$state-warning:                 #ffd699 !default;
+$state-danger:                  #f7a6a4 !default;
+
+$blue:                          $brand-primary !default;
+$indigo:                        $brand-info !default;
+$purple:                        $brand-primary !default;
+$pink:                          #eb5286 !default;
+$red:                           $brand-danger !default;
+$orange:                        $brand-warning !default;
+$yellow:                        $brand-warning !default;
+$green:                         $brand-success !default;
+$teal:                          #00b3ad !default;
+
+//== Font
+//
+$font-family-sans-serif:        "Droid sans", sans-serif, Helvetica, Arial, freesans, !default;
+
+$font-family-monospace:         Consolas, "Liberation Mono", Menlo, "Courier New", Courier, monospace !default;
+$font-family-base:              $font-family-sans-serif !default;
+$font-weight-normal:            normal !default;
+$font-weight-bold:              bold !default;
+
+$font-size-base:                13px !default;
+$font-size-large:               1.285em !default;
+$font-size-large-px:            16px !default;
+
+//== Logo
+//
+$use-logo:                      true !default;
+$logo-position-horizontal: 20px !default;
+
