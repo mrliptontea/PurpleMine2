@@ -99,8 +99,8 @@ $tabs-height: $line-height-computed + $tab-padding-vertical * 2 + 1px + 1px;
 }
 
 div.tabs:not(#main-menu) {
-  height: $tabs-height + 8px;
-  margin-bottom: $line-height-computed +2px;
+  height: $tabs-height;
+  margin-bottom: $line-height-computed;
 
   > ul {
     margin: 0;
