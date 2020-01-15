@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [v2.8.0-2] - 2020-01-15
 ### Fixes
-
 - Make Swimlane badge readable (#2)
 - (internal) Delete foreign github action
