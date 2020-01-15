@@ -42,3 +42,5 @@ $font-size-large-px:            16px !default;
 $use-logo:                      true !default;
 $logo-position-horizontal: 20px !default;
 
+// style open and closed swimlanes in some Agile plugin views
+tr.group.swimlane a.issue { color: white; }
