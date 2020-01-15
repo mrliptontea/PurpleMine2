@@ -2,3 +2,5 @@
 /node_modules
 /.sublime-grunt.cache
 /.stylelintcache
+/*.tar.gz
+/.idea/
