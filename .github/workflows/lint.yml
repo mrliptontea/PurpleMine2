@@ -13,12 +13,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v1
 
       - name: Use Node.js 10.x
         uses: actions/setup-node@v1
         with:
-          version: 10.x
+          node-version: "10.x"
 
       - name: Install npm dependencies
         run: npm ci
