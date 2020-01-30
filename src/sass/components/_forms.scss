@@ -381,13 +381,20 @@ label.inline {
   &:last-child {
     margin-right: 0;
   }
-}
 
-label.inline,
-label.block {
   > input {
     margin-left: -$check-input-gutter;
     float: left;
+  }
+}
+
+label.block {
+  display: block;
+  width: auto;
+
+  > input {
+    margin-right: 3px;
+    margin-left: 3px;
   }
 }
 
