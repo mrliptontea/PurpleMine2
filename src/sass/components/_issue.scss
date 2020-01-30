@@ -262,7 +262,7 @@ div.fileover {
   background-color: $highlight-bg;
 }
 
-div.attachments {
+div.attachments:not(.box) {
   padding: $line-height-computed 0;
   border-top: 1px solid $issue-border;
 
@@ -358,6 +358,19 @@ div.thumbnails {
   }
 }
 
+#trackers_description {
+  display: none;
+
+  dt {
+    margin: 0 0 ($line-height-computed / 4);
+  }
+
+  dd {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
 #new-relation-form {
   text-align: right;
 
@@ -368,6 +381,12 @@ div.thumbnails {
       margin-right: 5px;
     }
   }
+}
+
+#update > form {
+  margin-bottom: $line-height-computed;
+  padding-bottom: $line-height-computed;
+  border-bottom: 1px solid $issue-border;
 }
 
 #history {

@@ -56,10 +56,22 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
+Latest (master):
+
+* Fixed #141: improved styling for issue edit form.
+* Fixed #142: TOC assumes `left` by default, also added new variables to control how it looks.
+* Fixed #143: `$main-menu-bg-hover` is now being used.
+* Resolved #144: added `$main-menu-bg-active` variable.
+* Resolved #145: added `$table-list-header-bg` variable.
+* Fixed #147: corrected forum edit attached files icon.
+* Fixed #153: improved styling for `label.block`.
+* Added styling for clear query button.
+* Improved responsive sidebar menu layout.
+
 v2.8.0 (2019-08-13):
 
 * Resolved #132: fixed spacing for headers on roadmap pages.
-* Merged fix #136: broken layout with large image attachment
+* Merged fix #136: broken layout with large image attachment.
 
 v2.7.0 (2019-06-13):
 

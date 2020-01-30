@@ -161,6 +161,8 @@ table.list .buttons > a::before {
 .icon-sorted-desc::before           { content: $fa-var-sort-amount-desc; }
 .icon-toggle-plus::before           { content: $fa-var-plus-square; }
 .icon-toggle-minus::before          { content: $fa-var-minus-square; }
+.icon-clear-query::before           { content: $fa-var-times; }
+.icon-import::before                { content: $fa-var-cloud-upload; }
 
 //== Checkbox toggler
 //
@@ -610,36 +612,42 @@ em.info.error {
   }
 }
 
-.message .contextual {
-  a {
-    @extend %fa-icon;
-    opacity: .7;
+.message {
+  .contextual {
+    a {
+      @extend %fa-icon;
+      opacity: .7;
 
-    &:hover,
-    &:focus {
-      opacity: 1;
-    }
+      &:hover,
+      &:focus {
+        opacity: 1;
+      }
 
-    &:nth-child(1) {
-      &::before {
-        content: $fa-var-comment;
+      img {
+        display: none;
       }
     }
+  }
 
-    &:nth-child(2) {
-      &::before {
-        content: $fa-var-pencil;
+  > .contextual {
+    a {
+      &:nth-child(1) {
+        &::before {
+          content: $fa-var-comment;
+        }
       }
-    }
 
-    &:nth-child(3) {
-      &::before {
-        content: $fa-var-trash;
+      &:nth-child(2) {
+        &::before {
+          content: $fa-var-pencil;
+        }
       }
-    }
 
-    img {
-      display: none;
+      &:nth-child(3) {
+        &::before {
+          content: $fa-var-trash;
+        }
+      }
     }
   }
 }
