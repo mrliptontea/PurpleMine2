@@ -56,7 +56,7 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
-Latest (master):
+v2.9.0 (2020-01-30):
 
 * Fixed #141: improved styling for issue edit form.
 * Fixed #142: TOC assumes `left` by default, also added new variables to control how it looks.
