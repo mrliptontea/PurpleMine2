@@ -609,6 +609,14 @@ div#roadmap {
     }
   }
 
+  header {
+    display: block;
+
+    > h3 {
+      display: inline-block;
+    }
+  }
+
   header > h3,
   h3.version {
     margin-bottom: 0;
