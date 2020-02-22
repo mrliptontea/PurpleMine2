@@ -56,7 +56,7 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
-Latest (master):
+v2.9.1 (2020-02-22):
 
 * Merged fix #155: $.load function removed from jQuery.
 * Fixed badge positioning in roadmap screen.
