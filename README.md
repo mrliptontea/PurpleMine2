@@ -56,6 +56,11 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
+Latest (master):
+
+* Fixed #159: wrapping long text in issue attributes.
+* Fixed a "timeline" positioning in issue notes/changes.
+
 v2.9.1 (2020-02-22):
 
 * Merged fix #155: $.load function removed from jQuery.
