@@ -4,17 +4,17 @@ This repository contains the theme used in the cloudogu redmine dogu.
 :warning: To enhance the upgrade compatibility please do not modify the source of the base theme. Basic changes can be made in _custom-variables.scss.
 
 ## Development
-`docker run -d --name rm-theme -p3000:3000 -v $REPOSITORY_SOURCE:/usr/src/redmine/public/themes redmine:4.0.5` (creates a lokal docker and mounts the repository to the redmine theme folder this creates a fast feedback cycle)
+`docker run -d --name rm-theme -p3000:3000 -v $REPOSITORY_SOURCE:/usr/src/redmine/public/themes redmine:4.0.5`
 
-`npm install` (install dependencies)
+`npm install`
 
-`npm run watch` (rebuild the CSS files on save)
+`npm run watch`
 
-## Build
-:warning: you need to rebuild the CSS files before a release
-`npm run build` (generates the CSS)
+## Build / CSS Generierung
 
-## PurpleRedmine2 further details and changelog  
+`npm run build`
+
+## Further details about PurpleRedmine2
 
 ![The MIT License](https://img.shields.io/badge/license-MIT-584492.svg) [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/) [![Build Status](https://img.shields.io/endpoint.svg?url=https://actions-badge.atrox.dev/mrliptontea/PurpleMine2/badge&label=lint&logo=none)](https://actions-badge.atrox.dev/mrliptontea/PurpleMine2/goto) [![Issues](https://img.shields.io/github/issues/mrliptontea/PurpleMine2.svg)](https://github.com/mrliptontea/PurpleMine2/issues)
 

@@ -1,0 +1,61 @@
+#wrapper {
+  .context-menu-selection {
+    &,
+    > td {
+      background-color: $brand-primary !important; // stylelint-disable-line declaration-no-important
+      color: $brand-text !important; // stylelint-disable-line declaration-no-important
+    }
+  }
+
+  #context-menu {
+    > ul,
+    > ul > li > ul {
+      @include nice-shadow(2);
+      border: 0 none !important; // stylelint-disable-line declaration-no-important
+    }
+
+    ul {
+      padding: 3px;
+    }
+
+    li {
+      padding: 0;
+      border: 0 none;
+      border-radius: $border-radius-small;
+      background: transparent;
+
+      &:hover {
+        background-color: $pagination-hover-bg;
+      }
+    }
+
+    a {
+      @extend %fa-icon;
+      padding: 3px 10px 3px 20px;
+      border-radius: $border-radius-small;
+
+      &::before {
+        margin-top: 2px;
+        margin-left: -16px;
+        float: left;
+      }
+
+      &:hover {
+        border-color: $pagination-hover-border;
+        background-color: $pagination-hover-bg;
+      }
+
+      &.disabled {
+        color: rgba($pagination-color, .5);
+      }
+
+      &.icon-checked {
+        background: transparent;
+      }
+
+      &.submenu {
+        background-image: inline-svg("chevron-right.svg", (path: (fill: $btn-default-icon-color)));
+      }
+    }
+  }
+}
