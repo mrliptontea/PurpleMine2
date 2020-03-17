@@ -127,6 +127,7 @@ img {
 //
 
 .autoscroll {
+  position: relative;
   margin-bottom: $line-height-computed;
   overflow-x: auto;
 }
@@ -608,6 +609,14 @@ div#roadmap {
     }
   }
 
+  header {
+    display: block;
+
+    > h3 {
+      display: inline-block;
+    }
+  }
+
   header > h3,
   h3.version {
     margin-bottom: 0;
@@ -782,6 +791,11 @@ div.table-list.boards {
         margin-left: ceil($bubble-padding-vertical / 2);
       }
     }
+
+    .attachments {
+      padding: $bubble-padding-horizontal;
+      border-top-color: mix($gray-400, $gray-100, 50%);
+    }
   }
 
   .reply {
@@ -934,6 +948,7 @@ div.table-list.boards {
   background: $body-bg;
   color: $panel-color;
   font-family: $font-family-monospace;
+  white-space: pre-wrap;
 }
 
 .diff_out {

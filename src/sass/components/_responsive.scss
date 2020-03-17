@@ -1,3 +1,4 @@
+.hidden,
 .mobile-show {
   display: none;
 }
@@ -78,6 +79,10 @@
       }
     }
 
+    #content {
+      overflow: auto;
+    }
+
     .mobile-toggle-button {
       width: $responsive-header-height;
       height: $responsive-header-height;
@@ -113,6 +118,43 @@
         }
       }
 
+      &__sidebar {
+        p {
+          padding-left: $padding-large-horizontal;
+        }
+      }
+
+      ul {
+        li:nth-child(n) {
+          a {
+            height: auto;
+            padding: $padding-large-vertical $padding-large-horizontal;
+            line-height: $line-height-base;
+          }
+        }
+
+        &.queries {
+          li {
+            display: flex;
+
+            a {
+              flex: 1 1 auto;
+            }
+
+            .icon-only {
+              flex: 0 0 40px;
+              padding-right: 0;
+              padding-left: 0;
+              text-align: center;
+
+              &::before {
+                line-height: inherit;
+              }
+            }
+          }
+        }
+      }
+
       a {
         &,
         &:hover,
@@ -131,11 +173,48 @@
         }
       }
 
-      h3 {
+      h3,
+      h4 {
+        height: auto;
+        margin: 0;
+        padding: $padding-base-vertical $padding-base-horizontal;
         border-top: 1px solid $flyout-menu-header-border;
         border-bottom: 1px solid $flyout-menu-header-border;
         background-color: $flyout-menu-header-bg;
         color: $flyout-menu-header-text;
+        line-height: $line-height-base;
+
+        + p {
+          margin-top: $padding-large-vertical;
+        }
+      }
+
+      h4 {
+        padding: 0 $padding-base-horizontal;
+      }
+
+      form {
+        padding-left: 0;
+
+        > ul {
+          margin-left: 0;
+
+          li:nth-child(n) {
+            padding-left: $padding-large-horizontal;
+            line-height: inherit;
+
+            label {
+              a {
+                display: block;
+                padding: $padding-base-vertical $padding-base-horizontal;
+              }
+            }
+          }
+
+          + p {
+            margin-top: $padding-large-vertical;
+          }
+        }
       }
 
       #admin-menu {

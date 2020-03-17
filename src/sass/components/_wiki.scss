@@ -225,30 +225,27 @@ div.wiki {
   }
 
   .toc {
+    display: table;
+    max-width: 45%;
     margin-bottom: $line-height-computed;
     margin-left: 0;
-    padding: 0;
+    padding: $padding-small-vertical $padding-small-horizontal;
     list-style-type: none;
+    border: 1px solid $toc-border;
+    border-radius: $border-radius-base;
+    background-color: $toc-bg;
+    box-shadow: $toc-shadow;
+    color: $toc-text;
+    font-size: $font-size-small;
 
-    &.right,
-    &.left {
-      max-width: 45%;
-      padding: 8px;
-      border: 1px solid $highlight-border;
-      border-radius: $border-radius-base;
-      background-color: $highlight-bg;
-      box-shadow: $panel-shadow;
-      font-size: $font-size-small;
+    a {
+      color: $toc-link;
+      font-weight: $font-weight-normal;
+      text-decoration: none;
 
-      a {
-        color: $highlight-text;
-        font-weight: $font-weight-normal;
-        text-decoration: none;
-
-        &:hover {
-          color: darken($highlight-text, 10%);
-          text-decoration: underline;
-        }
+      &:hover {
+        color: $toc-link-hover;
+        text-decoration: underline;
       }
     }
 
