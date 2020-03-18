@@ -55,7 +55,7 @@ PurpleMine.HistoryTabs = (function () {
 
     this._ = translations[this.lang]
 
-    if (this.$history.length > 0) {
+    if (this.$history.length > 0 && $('#history > h3').length > 0) {
       buildTabs()
       markFirstOfTypes()
     }

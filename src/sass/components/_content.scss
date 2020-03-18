@@ -161,6 +161,27 @@
       }
     }
 
+    &.queries {
+      > li {
+        position: relative;
+
+        > a.query {
+          padding-right: $sidebar-padding-horizontal * 1.5;
+        }
+
+        > a.icon-only {
+          position: absolute;
+          top: $sidebar-padding-vertical;
+          right: $sidebar-padding-horizontal / 2;
+          line-height: $line-height-computed;
+
+          &::before {
+            line-height: inherit;
+          }
+        }
+      }
+    }
+
     &.pages-hierarchy {
       .pages-hierarchy {
         margin-left: $sidebar-padding-horizontal + 3px;

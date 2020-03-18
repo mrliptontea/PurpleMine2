@@ -33,6 +33,11 @@
     margin-bottom: $panel-body-padding-vertical;
   }
 
+  #login-submit {
+    padding-top: $padding-base-vertical;
+    padding-bottom: $padding-base-vertical;
+  }
+
   table {
     margin: auto;
     table-layout: fixed;
