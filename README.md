@@ -35,29 +35,6 @@ It's written in [SCSS]. It uses [normalize.css] and benefits from some parts of 
 * Toggling sidebar visibility,
 * Easy to customize via variables.
 
-v2.9.1 (2019-02-20):
-
-* Merged fix #155: $.load function removed from jQuery.
-* Fixed badge positioning in roadmap screen.
-
-v2.9.0 (2019-01-30):
-
-* Fixed #141: improved styling for issue edit form.
-* Fixed #142: TOC assumes left by default, also added new variables to control how it looks.
-* Fixed #143: $main-menu-bg-hover is now being used.
-* Resolved #144: added $main-menu-bg-active variable.
-* Resolved #145: added $table-list-header-bg variable.
-* Fixed #147: corrected forum edit attached files icon.
-* Fixed #153: improved styling for label.block.
-
-* New: Added styling for clear query button.
-* New: Improved responsive sidebar menu layout.
-
-Latest (master):
-
-* Fixed #159: wrapping long text in issue attributes.
-* Fixed a "timeline" positioning in issue notes/changes.
-
 v2.9.1 (2020-02-22):
 
 * Merged fix #155: $.load function removed from jQuery.
