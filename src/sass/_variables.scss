@@ -166,6 +166,12 @@ $wiki-font-size:                16px !default;
 $wiki-line-height:              1.6 !default;
 $wiki-preview-bg:               $body-bg !default;
 
+$toc-bg:                        shade($yellow, 50) !default;
+$toc-border:                    mix($yellow, $gray-500, 25%) !default;
+$toc-text:                      $text-color !default;
+$toc-link:                      shade($yellow, 800) !default;
+$toc-link-hover:                shade($yellow, 900) !default;
+$toc-shadow:                    0 1px 3px rgba($black, .07) !default;
 $toc-active-link:               darken($link-color, 10%) !default;
 $toc-active-link-hover:         shade($toc-active-link, 700) !default;
 $toc-active-border:             $link-color !default;
@@ -215,6 +221,7 @@ $collapsible-max-height:        10000px !default;
 $table-cell-padding:            8px !default;
 $table-condensed-cell-padding:  5px !default;
 
+$table-list-header-bg:          $body-bg !default;
 $table-list-header-border:      0 0 2px !default;
 $table-list-item-border:        0 !default;
 $table-list-color-odd-rows:     true !default;
@@ -505,6 +512,7 @@ $logo-space:                    floor($header-padding-vertical / 2) !default;
 
 $main-menu-bg:                  $gray-100 !default;
 $main-menu-bg-hover:            $gray-100 !default;
+$main-menu-bg-active:           transparent !default;
 $main-menu-link:                $gray-900 !default;
 $main-menu-link-active:         $black !default;
 $main-menu-border:              $gray-400 !default;

@@ -88,7 +88,8 @@
       margin-bottom: $line-height-computed;
     }
 
-    > hr {
+    > hr,
+    .attribute > hr {
       @if $clean-issues {
         margin: $issue-padding 0;
       } @else {
@@ -126,7 +127,42 @@
     }
   }
 
-  .attributes {
+  @if $color-status {
+    .attributes td.status,
+    .attributes .attribute.status .value {
+      display: inline-block;
+      width: auto;
+      min-width: 1em;
+      margin-top: $issue-attribute-padding-v;
+      padding: 1px $table-cell-padding;
+      border-radius: $border-radius-base;
+      background-color: $status-default-bg;
+      color: $status-default-color;
+      font-size: $font-size-small;
+      font-weight: $font-weight-bold;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    @each $status, $status-colors in $status-colors-map {
+      &.#{$status} {
+        .attributes td.status,
+        .attributes .attribute.status .value {
+          background-color: map-get($status-colors, background);
+          color: map-get($status-colors, color);
+        }
+      }
+    }
+  }
+
+  @if $priority-icon {
+    .attributes td.priority,
+    .attribute.priority .value {
+      @include priority-icon-base;
+    }
+  }
+
+  table.attributes {
     width: 100%;
 
     th,
@@ -149,67 +185,66 @@
 
     @media screen and (min-width: $screen-md-min) {
       > tbody > tr {
-        > th,
-        > td {
-          width: 25%;
-        }
-      }
-    }
-
-    @media screen and (min-width: $screen-lg-min) {
-      width: auto;
-
-      > tbody > tr {
         > th {
-          width: 14em;
+          width: $label-width;
         }
 
         > td {
+          min-width: $label-width;
+        }
+      }
+    }
+  }
+
+  div.attributes {
+    @if $css-grid-layout {
+      display: grid;
+      grid-gap: 0 $padding-side;
+      grid-template-columns: auto;
+
+      @media screen and (min-width: $screen-lg-min) {
+        grid-template-columns: repeat(2, minmax(auto, max-content));
+
+        .attribute .value {
+          min-width: $label-width;
+        }
+      }
+
+      .splitcontent {
+        display: contents;
+
+        &::after {
+          content: none;
+        }
+      }
+
+      .splitcontentleft {
+        width: auto;
+        padding-right: 0;
+        padding-left: 0;
+        float: none;
+      }
+    } @else {
+      @media screen and (min-width: $screen-lg-min) {
+        .splitcontentleft {
           width: auto;
-          min-width: 16em;
+        }
+
+        .attribute .value {
+          min-width: $label-width;
         }
       }
     }
   }
 
-  @if $color-status {
-    .attributes td.status,
-    .attribute.status .value {
-      display: inline-block;
-      width: auto;
-      min-width: 1em;
-      margin-top: $issue-attribute-padding-v;
-      padding: 1px $table-cell-padding;
-      border-radius: $border-radius-base;
-      background-color: $status-default-bg;
-      color: $status-default-color;
-      font-size: $font-size-small;
-      font-weight: $font-weight-bold;
-      text-align: center;
-      text-transform: uppercase;
-    }
+  .splitcontent {
+    .attribute {
+      padding-left: $label-width;
 
-    @each $status, $status-colors in $status-colors-map {
-      &.#{$status} {
-        .attributes td.status,
-        .attribute.status .value {
-          background-color: map-get($status-colors, background);
-          color: map-get($status-colors, color);
-        }
+      .label {
+        width: $label-width;
+        margin-left: -$label-width;
       }
-    }
-  }
-
-  @if $priority-icon {
-    .attributes td.priority,
-    .attribute.priority .value {
-      @include priority-icon-base;
-    }
-  }
-
-  .splitcontentleft {
-    @media screen and (min-width: $screen-lg-min) {
-      width: auto;
     }
   }
 
@@ -222,21 +257,20 @@
     }
 
     .label {
-      width: 25%;
+      box-sizing: border-box;
       float: left;
       color: $gray-700;
-
-      @media screen and (min-width: $screen-lg-min) {
-        width: 14em;
-      }
     }
 
     .value {
       color: $gray-950;
 
-      @media screen and (min-width: $screen-lg-min) {
-        width: auto;
-        min-width: 14em + 16em;
+      &:empty::after {
+        content: "-";
+      }
+
+      *:last-child {
+        margin-bottom: 0;
       }
     }
   }
@@ -262,7 +296,7 @@ div.fileover {
   background-color: $highlight-bg;
 }
 
-div.attachments {
+div.attachments:not(.box) {
   padding: $line-height-computed 0;
   border-top: 1px solid $issue-border;
 
@@ -358,6 +392,19 @@ div.thumbnails {
   }
 }
 
+#trackers_description {
+  display: none;
+
+  dt {
+    margin: 0 0 ($line-height-computed / 4);
+  }
+
+  dd {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
 #new-relation-form {
   text-align: right;
 
@@ -368,6 +415,12 @@ div.thumbnails {
       margin-right: 5px;
     }
   }
+}
+
+#update > form {
+  margin-bottom: $line-height-computed;
+  padding-bottom: $line-height-computed;
+  border-bottom: 1px solid $issue-border;
 }
 
 #history {
@@ -404,7 +457,7 @@ div.thumbnails {
 
 .journal {
   position: relative;
-  margin-bottom: $line-height-computed + 2px * 2;
+  margin-bottom: $line-height-computed;
 
   @if $use-gravatars {
     margin-left: $bubble-gravatar-size + $bubble-gravatar-space;
@@ -415,10 +468,10 @@ div.thumbnails {
     display: block;
     position: absolute;
     z-index: -1;
-    top: -($line-height-computed + 2px);
+    top: -($line-height-computed - 1px);
     left: 22px;
     width: 4px;
-    height: $line-height-computed;
+    height: $line-height-computed - 2px;
     background-color: darken($body-bg, 5%);
   }
 
