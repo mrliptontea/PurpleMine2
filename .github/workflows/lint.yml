@@ -6,6 +6,11 @@ on:
       - src/*
       - svg/*
       - package*.json
+  pull_request:
+    paths:
+      - src/*
+      - svg/*
+      - package*.json
 
 jobs:
   lint:
@@ -23,11 +28,14 @@ jobs:
       - name: Install npm dependencies
         run: npm ci
 
-      - name: Lint JavaScript
-        run: npm run lint:js
-
-      - name: Lint Sass
-        run: npm run lint:sass
+      - name: Run linters
+        uses: samuelmeuli/lint-action@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          eslint: true
+          eslint_dir: "src/javascripts"
+          stylelint: true
+          stylelint_dir: "src/sass"
 
       - name: Check build
         run: npm run build
