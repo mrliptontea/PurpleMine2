@@ -58,6 +58,7 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 Latest (master):
 
+* Fixed #164: apply responsive overrides more generally
 * Fixed #159: wrapping long text in issue attributes.
 * Fixed a "timeline" positioning in issue notes/changes.
 
