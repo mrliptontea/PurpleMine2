@@ -7,8 +7,7 @@ PurpleMine.SidebarToggler = (function () {
   var translations = {
     en: {
       toggler: 'Toggle sidebar'
-    }
-    ,
+    },
     ro: {
       toggler: 'Deschide/închide bara laterală'
     },

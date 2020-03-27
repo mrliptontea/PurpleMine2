@@ -11,7 +11,7 @@ button {
   margin-bottom: 0;
   transition:
     border-color $transition-time ease-in-out,
-      background-color $transition-time ease-in-out,
+    background-color $transition-time ease-in-out,
     box-shadow $transition-time ease-in-out;
   border: 1px solid;
   font-weight: $btn-font-weight;
