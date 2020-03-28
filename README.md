@@ -60,6 +60,8 @@ Latest (master):
 
 * Fixed #164: apply responsive overrides more generally
 * Fixed #159: wrapping long text in issue attributes.
+* Fixed #150: styling for query totals and expander in Agile plugin.
+* Fixed #148: full screen view for Dashboard plugin.
 * Fixed a "timeline" positioning in issue notes/changes.
 
 v2.9.1 (2020-02-22):
