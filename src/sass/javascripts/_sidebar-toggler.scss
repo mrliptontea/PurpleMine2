@@ -1,6 +1,12 @@
 @if $enable-sidebar-toggler {
   #main {
     position: relative;
+
+    // Fix full screen view for dashboard plugin
+    // https://github.com/jgraichen/redmine_dashboard
+    @at-root .controller-rdb_taskboard & {
+      position: static;
+    }
   }
 
   #sidebar {
