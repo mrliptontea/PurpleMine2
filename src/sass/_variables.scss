@@ -43,7 +43,7 @@ $black:                         #000 !default;
 $gray:                          hsl(hue($indigo), 20%, 85%) !default;
 
 $shade-map: (
-  50:                           90%,
+  50:                           87.5%,
   100:                          80%,
   200:                          65%,
   300:                          40%,
@@ -53,7 +53,7 @@ $shade-map: (
   700:                          40%,
   800:                          65%,
   900:                          80%,
-  950:                          90%
+  950:                          87.5%
 ) !default;
 
 @function shade($color, $shade: 500) {
@@ -612,7 +612,7 @@ $progress-bar-info-bg:          $brand-info !default;
 $panel-body-padding-vertical:   15px !default;
 $panel-body-padding-horizontal: 15px !default;
 $panel-body-padding:            $panel-body-padding-vertical $panel-body-padding-horizontal !default;
-$panel-color:                   $gray-900 !default;
+$panel-color:                   $text-color !default;
 $panel-bg:                      $gray-50 !default;
 $panel-border:                  $gray-400 !default;
 $panel-border-radius:           $border-radius-base !default;
@@ -648,10 +648,15 @@ $issue-attribute-padding-h:     5px !default;
 //== Speech "bubbles"
 //
 
+$bubble-bg:                     $issue-bg !default;
+$bubble-border:                 $issue-border !default;
+$bubble-text:                   $issue-text !default;
 $bubble-gravatar-size:          24px !default;
 $bubble-gravatar-space:         12px !default;
 $bubble-padding-vertical:       8px !default;
-$bubble-padding-horizontal:     15px !default;
+$bubble-padding-horizontal:     12px !default;
+$bubble-target-border:          saturate($brand-primary, 25%) !default;
+$bubble-target-shadow-alpha:    .2 !default;
 
 
 //== Badges

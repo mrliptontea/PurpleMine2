@@ -116,6 +116,8 @@ div.wiki {
   }
 
   blockquote {
+    margin-bottom: 1em;
+
     > :first-child {
       margin-top: 0;
     }
@@ -157,7 +159,8 @@ div.wiki {
   }
 
   li > p {
-    margin-top: ($line-height-computed / 2);
+    margin-top: .25em;
+    margin-bottom: 0;
   }
 
   table {

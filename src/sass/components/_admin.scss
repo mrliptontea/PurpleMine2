@@ -61,6 +61,13 @@ table.permissions {
 //== Workflows
 //
 
+.controller-workflows {
+  table.list,
+  fieldset.collapsible {
+    margin-bottom: $line-height-computed;
+  }
+}
+
 table.transitions {
   td.enabled {
     background: $state-success;
