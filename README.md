@@ -69,6 +69,7 @@ Latest (master):
 * Fixed a "timeline" positioning in issue notes/changes.
 * Changed lightness of shades 50 and 950.
 * Changed loader styles.
+* Changed rouge syntax highlighter color scheme.
 
 v2.9.1 (2020-02-22):
 
