@@ -56,7 +56,7 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
-Latest (master):
+v2.10.0 (2020-04-05):
 
 * Fixed #172 Collapsed/expended icons for completed versions.
 * Fixed #171 "Display" label in Gantt option.
