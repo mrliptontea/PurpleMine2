@@ -7,27 +7,29 @@
 //
 
 a.collapsible,
+a.collapsible.icon,
 .collapsible > legend {
   color: $link-color;
   cursor: pointer;
   user-select: none;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: $link-hover-color;
+    text-decoration: none;
   }
 
   &::before {
-    content: "";
-    display: inline-block;
+    @include fa-icon;
+    content: $fa-var-chevron-down;
     position: relative;
-    top: -1px;
-    width: 0;
-    height: 0;
+    top: -.1em;
+    width: 1em;
+    height: 1em;
     margin-right: 3px;
     transform: rotate(0);
-    border-top: 6px solid;
-    border-right: 4px solid transparent;
-    border-left: 4px solid transparent;
+    color: $gray-600;
+    font-size: 12px;
     vertical-align: middle;
 
     @if $collapsible-animation-time > 0 {
@@ -37,6 +39,7 @@ a.collapsible,
 }
 
 a.collapsible.collapsed,
+a.collapsible.icon-collapsed,
 .collapsible.collapsed > legend {
   &::before {
     transform: rotate(-90deg);
@@ -669,16 +672,22 @@ div#version-summary {
 //== Ajax indicator
 //
 
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 #ajax-indicator {
   @include nice-shadow(3);
   position: fixed;
   z-index: 100;
   top: 50%;
   left: 50%;
+  box-sizing: border-box;
   width: 200px;
-  margin: (($line-height-computed + $padding-large-vertical * 2 + 1px * 2) / -2) ((200px + $padding-large-horizontal * 2 + 1px * 2) / -2);
+  margin: (($padding-large-vertical * 2 + 1px * 2 + $line-height-computed) / -2) (200px / -2);
   padding: $padding-large-vertical $padding-large-horizontal;
   border: 1px solid $highlight-border;
+  border-radius: $border-radius-base;
   opacity: .9;
   background-color: $highlight-bg;
   color: $highlight-text;
@@ -686,11 +695,21 @@ div#version-summary {
   text-align: center;
 
   span {
-    padding-left: 26px;
-    background-image: url("../../../images/loading.gif");
-    background-repeat: no-repeat;
-    background-position: 0% 40%;
-    vertical-align: bottom;
+    line-height: $line-height-computed;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      box-sizing: border-box;
+      width: $line-height-computed;
+      height: $line-height-computed;
+      margin-right: $line-height-computed / 2;
+      animation: spin 1s linear infinite;
+      border: 3px solid rgba($highlight-text, .3);
+      border-radius: 50%;
+      border-top-color: $highlight-text;
+      vertical-align: bottom;
+    }
   }
 }
 
@@ -754,15 +773,14 @@ div.table-list.boards {
   }
 
   .message {
-    border: 1px solid $gray-400;
+    border: 1px solid $bubble-border;
     border-radius: $panel-border-radius;
-    background: $gray-100;
+    background: $bubble-bg;
 
     > h4,
     > p {
       margin-bottom: 0;
       padding: $bubble-padding-vertical $bubble-padding-horizontal;
-      border-bottom: 1px solid mix($gray-400, $gray-100, 50%);
       color: $gray-700;
       font-size: $font-size-list;
 
@@ -776,7 +794,8 @@ div.table-list.boards {
     }
 
     .wiki {
-      padding: $bubble-padding-horizontal;
+      padding: $panel-body-padding;
+      border-top: 1px solid $bubble-border;
       border-radius: 0 0 $panel-border-radius $panel-border-radius;
       background: $body-bg;
     }
@@ -794,7 +813,7 @@ div.table-list.boards {
 
     .attachments {
       padding: $bubble-padding-horizontal;
-      border-top-color: mix($gray-400, $gray-100, 50%);
+      border-top-color: $bubble-border;
     }
   }
 
@@ -828,12 +847,12 @@ div.table-list.boards {
           margin-top: 1px;
           margin-left: 2px;
           border-width: 6px;
-          border-right-color: $panel-bg;
+          border-right-color: $bubble-bg;
         }
 
         &::before {
           border-width: 7px;
-          border-right-color: $panel-border;
+          border-right-color: $bubble-border;
         }
       }
 

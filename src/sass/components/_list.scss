@@ -29,6 +29,12 @@ table.list {
     color: $gray-700;
     vertical-align: bottom;
 
+    @if $table-list-header-bg == $body-bg {
+      @at-root .box & {
+        background-color: $panel-bg;
+      }
+    }
+
     a {
       color: $gray-900;
     }
@@ -79,6 +85,10 @@ table.list {
       width: 15px;
       padding-right: $table-cell-padding;
       padding-left: $table-cell-padding;
+
+      &:first-child {
+        padding-right: 0;
+      }
 
       input {
         margin: 2px 0 0;

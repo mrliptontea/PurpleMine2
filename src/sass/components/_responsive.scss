@@ -83,6 +83,11 @@ body {
       overflow: auto;
     }
 
+    #ajax-indicator {
+      left: 50%;
+      width: 200px;
+    }
+
     .mobile-toggle-button {
       width: $responsive-header-height;
       height: $responsive-header-height;
@@ -412,7 +417,7 @@ body {
       }
     }
 
-    #issue-changesets {
+    div#issue-changesets {
       div.changeset {
         padding: 0;
       }

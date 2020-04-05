@@ -298,3 +298,9 @@ img.ui-datepicker-trigger {
     }
   }
 }
+
+.ui-tooltip {
+  @include nice-shadow(1);
+  padding: $padding-small-vertical $padding-small-horizontal;
+  border: 0 none;
+}

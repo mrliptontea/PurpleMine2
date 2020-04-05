@@ -26,6 +26,8 @@ form {
     }
   }
 
+  span.field label,
+  span.field ~ label,
   .box label {
     line-height: $line-height-base;
 
@@ -121,7 +123,7 @@ input[type="search"] {
 
 input[type="radio"],
 input[type="checkbox"] {
-  margin: 4px 1px 0 0;
+  margin: 4px 3px 0 5px;
   margin-top: 1px \9; // IE8-9
   line-height: normal;
   vertical-align: top;
@@ -264,6 +266,7 @@ em.info {
   color: $gray-700;
   font-size: $font-size-small;
   font-style: normal;
+  line-height: $line-height-base;
 }
 
 
@@ -307,6 +310,11 @@ em.info {
       display: block;
       padding-top: $input-padding-vertical + 1px;
       line-height: $line-height-base;
+
+      > input[type="checkbox"],
+      > input[type="radio"] {
+        margin-left: 0;
+      }
     }
   }
 
@@ -350,6 +358,12 @@ em.info {
       float: none;
       text-align: left;
       cursor: pointer;
+
+      > input[type="checkbox"],
+      > input[type="radio"] {
+        margin-left: -$check-input-gutter;
+        float: left;
+      }
     }
 
     &.inline {
@@ -363,11 +377,13 @@ em.info {
     > input[type="checkbox"],
     > input[type="radio"] {
       margin-top: $check-input-margin-vertical;
+      margin-left: 0;
     }
 
     ~ input[type="checkbox"],
     ~ input[type="radio"] {
       margin-top: $check-input-margin-btn-v;
+      margin-left: 0;
     }
   }
 }
@@ -385,6 +401,10 @@ label.inline {
   > input {
     margin-left: -$check-input-gutter;
     float: left;
+  }
+
+  input + & {
+    padding-left: 0;
   }
 }
 

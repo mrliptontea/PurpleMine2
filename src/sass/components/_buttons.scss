@@ -187,6 +187,10 @@ p.buttons {
     min-width: 130px;
   }
 
+  label + & {
+    margin-left: $padding-side;
+  }
+
   @at-root span#{&} {
     > span {
       display: inline-block;

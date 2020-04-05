@@ -116,6 +116,8 @@ div.wiki {
   }
 
   blockquote {
+    margin-bottom: 1em;
+
     > :first-child {
       margin-top: 0;
     }
@@ -157,7 +159,8 @@ div.wiki {
   }
 
   li > p {
-    margin-top: ($line-height-computed / 2);
+    margin-top: .25em;
+    margin-bottom: 0;
   }
 
   table {
@@ -203,10 +206,9 @@ div.wiki {
   pre {
     width: auto;
     margin-bottom: 1.15em;
-    padding: 4px 8px;
+    padding: 12px 15px;
     overflow-x: auto;
     overflow-y: hidden;
-    border: 1px solid rgba($gray-500, .45);
     border-radius: $border-radius-base;
     background-color: rgba($gray-500, .15);
     font-size: $font-size-small;
