@@ -56,6 +56,10 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
+Latest (master):
+
+* Fixed #160: highlight color in jQuery UI menu, most notably in checklist plugin.
+
 v2.10.0 (2020-04-05):
 
 * Fixed #172 Collapsed/expended icons for completed versions.
