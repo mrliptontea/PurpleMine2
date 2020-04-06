@@ -56,7 +56,7 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
-Latest (master):
+v2.10.1 (2020-04-06):
 
 * Fixed #160: highlight color in jQuery UI menu, most notably in checklist plugin.
 
