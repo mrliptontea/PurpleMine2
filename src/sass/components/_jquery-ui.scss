@@ -138,6 +138,23 @@
   @include nice-shadow(2);
   padding: 3px;
   border-radius: $panel-border-radius;
+
+  .ui-menu-item {
+    &.ui-state-focus,
+    &.ui-state-active {
+      border-color: $pagination-hover-border;
+      background-color: $pagination-hover-bg;
+      color: $pagination-hover-color;
+
+      a {
+        color: $pagination-hover-color;
+      }
+
+      .ui-icon {
+        background-image: url("../../../stylesheets/jquery/images/ui-icons_222222_256x240.png");
+      }
+    }
+  }
 }
 
 .ui-menu-item {
