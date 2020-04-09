@@ -56,7 +56,7 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
-Latest (master):
+v2.10.2 (2020-04-09):
 
 * Fixed #175: couldn't edit note when it's URL target.
 * Improved styling of some inline edit forms.
