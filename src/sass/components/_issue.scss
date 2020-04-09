@@ -505,6 +505,7 @@ div.thumbnails {
         left: 0;
         border-radius: $panel-border-radius - 1px;
         box-shadow: 0 0 0 1px $border, 0 0 0 4px $shadow;
+        pointer-events: none;
       }
 
       @if $use-gravatars {
@@ -666,6 +667,12 @@ div.thumbnails {
       &:last-child {
         margin-bottom: 0;
       }
+    }
+
+    > label {
+      display: inline-block;
+      margin-bottom: $line-height-computed / 2;
+      line-height: $line-height-base;
     }
 
     > .wiki {
