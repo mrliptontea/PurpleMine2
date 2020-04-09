@@ -110,6 +110,16 @@ table {
   p {
     margin: 0;
   }
+
+  form {
+    p {
+      margin-bottom: ($line-height-computed / 2);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
 }
 
 ul,

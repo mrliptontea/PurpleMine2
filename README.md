@@ -56,6 +56,11 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
+Latest (master):
+
+* Fixed #175: couldn't edit note when it's URL target.
+* Improved styling of some inline edit forms.
+
 v2.10.1 (2020-04-06):
 
 * Fixed #160: highlight color in jQuery UI menu, most notably in checklist plugin.

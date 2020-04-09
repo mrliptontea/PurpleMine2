@@ -803,11 +803,10 @@ div.table-list.boards {
     .contextual {
       position: relative;
       z-index: 1;
-      margin-top: $padding-small-vertical;
-      margin-right: $bubble-padding-vertical;
+      padding: ($bubble-padding-vertical - 1px) $bubble-padding-vertical 0 0;
 
       a {
-        margin-left: ceil($bubble-padding-vertical / 2);
+        display: inline-block;
       }
     }
 
