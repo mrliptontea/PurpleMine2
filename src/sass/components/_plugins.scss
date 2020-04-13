@@ -92,6 +92,8 @@
 // --------------------------------------------------
 
 .journal > div + .contextual {
+  padding-top: 0;
+  padding-bottom: 0;
   border: 0;
 
   > .heart-link-with-count {

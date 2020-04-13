@@ -62,10 +62,10 @@
       border-radius: $border-radius-base - 1px;
 
       &.icon {
-        padding-left: 20px + $btn-padding-horizontal-small;
+        padding-left: $icon-width + $btn-padding-horizontal-small;
 
         &::before {
-          width: 20px;
+          width: $icon-width;
           margin-top: 3px;
           float: left;
           text-align: center;
@@ -94,8 +94,8 @@
       color: $pagination-color;
       text-align: center;
 
-      > .icon-only::before {
-        margin: 0 1px;
+      > .icon-only {
+        margin: 0 -4px;
       }
 
       &:hover,

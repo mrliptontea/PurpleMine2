@@ -320,4 +320,12 @@ img.ui-datepicker-trigger {
   @include nice-shadow(1);
   padding: $padding-small-vertical $padding-small-horizontal;
   border: 0 none;
+  background: $black;
+  color: $white;
+  font-size: $font-size-small-px;
+  pointer-events: none;
+
+  &.qtip {
+    pointer-events: initial;
+  }
 }

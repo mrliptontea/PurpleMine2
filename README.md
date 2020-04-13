@@ -56,6 +56,13 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
+Latest (master):
+
+* Fixed #177: changed styling for icon-only buttons to resolve weird behavior on hover.
+* Added `$icon-width` variable.
+* Added margin in some places like after buttons, avatars.
+* Changed tooltip background to black.
+
 v2.10.2 (2020-04-09):
 
 * Fixed #175: couldn't edit note when it's URL target.
