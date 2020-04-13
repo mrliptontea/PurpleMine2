@@ -35,33 +35,28 @@ table.list .buttons > a::before {
 //== Buttons icons
 //
 
-.icon {
+.icon,
+.icon-only:not(.toggle-multiselect) {
   @extend %fa-icon;
-  padding-left: 20px;
+  padding-left: $icon-width;
   background-repeat: no-repeat;
   background-position: 0% 50%;
 
   &::before {
-    margin-left: -20px;
+    margin-left: -$icon-width;
   }
 }
 
 .icon-only {
-  @extend %fa-icon;
-  font-size: 0;
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
+  vertical-align: top;
   white-space: nowrap;
 
-  @at-root a#{&} {
-    // stylelint-disable declaration-no-important
-    display: inline;
-    width: auto !important;
-    height: auto !important;
-    padding-left: 0 !important;
-    font-size: 0 !important;
-  }
-
   &::before {
-    font-size: $font-size-base;
+    width: $icon-width;
+    text-align: center;
   }
 }
 
@@ -205,7 +200,7 @@ a.icon-del {
 .icon-folder,
 .icon-file {
   &::before {
-    width: 16px;
+    width: $icon-width;
     text-align: center;
   }
 }
@@ -253,12 +248,11 @@ a.icon-del {
 .icon-expended,
 .icon-collapsed {
   &::before {
-    width: 1em;
     text-align: center;
   }
 
   &.icon {
-    padding-left: 20px;
+    padding-left: $icon-width;
   }
 
   &.expander {
@@ -267,7 +261,7 @@ a.icon-del {
 }
 
 .icon-zoom-in + .icon-zoom-out {
-  margin-left: 5px;
+  margin-left: $padding-small-vertical;
 }
 
 
@@ -289,19 +283,19 @@ a.icon-del {
 #admin-menu {
   #admin-index > & {
     a {
-      padding-left: 5px + 20px;
+      padding-left: 5px + $icon-width;
     }
   }
 
   li {
     > a {
-      padding-left: $sidebar-padding-horizontal + 5px + 20px;
+      padding-left: $sidebar-padding-horizontal + 5px + $icon-width;
 
       &::before {
         display: inline-block;
-        width: 20px;
+        width: $icon-width;
         margin: 0;
-        margin-left: -(5px + 20px);
+        margin-left: -(5px + $icon-width);
         padding: 0;
         color: $gray-700;
         text-align: center;
@@ -402,8 +396,6 @@ a.icon-del {
 
   &::before {
     content: $fa-var-arrows-v;
-    width: 16px;
-    margin: 0;
   }
 
   &.ajax-loading {
@@ -430,8 +422,8 @@ div.projects h3 {
   color: $gray-900;
 
   &::before {
-    width: 1em;
-    margin-right: .5em;
+    width: $icon-width;
+    margin-right: $padding-small-vertical;
     transform: translateY(-.1em);
     color: $gray-700;
     text-align: center;
@@ -441,7 +433,7 @@ div.projects h3 {
 h3.version::before      { content: $fa-var-cube; }
 h3.comments::before     { content: $fa-var-comments; }
 div.issues h3::before   { content: $fa-var-ticket; }
-div.members h3::before  { content: $fa-var-user; }
+div.members h3::before  { content: $fa-var-users; }
 div.news h3::before     { content: $fa-var-newspaper-o; }
 div.projects h3::before { content: $fa-var-cubes; }
 

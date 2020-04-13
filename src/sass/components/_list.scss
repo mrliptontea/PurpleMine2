@@ -52,7 +52,7 @@ table.list {
     vertical-align: top;
 
     &.icon {
-      padding-left: $table-cell-padding + 20px;
+      padding-left: $table-cell-padding + $icon-width;
     }
 
     &.id,
@@ -137,10 +137,10 @@ table.list {
       white-space: nowrap;
 
       a {
-        padding-right: 5px;
+        margin-right: $padding-small-vertical;
 
         &.icon-only {
-          padding: 0;
+          margin-right: 0;
         }
       }
 
@@ -265,14 +265,31 @@ tr.issue {
 }
 
 tr {
-  span.expander:not(.icon) {
-    margin-left: 0;
-    padding-left: 8px;
-    background-image: inline-svg("plus.svg", (path: (fill: $btn-default-icon-color)));
-    background-repeat: no-repeat;
-    background-position: center center;
-    cursor: pointer;
-    user-select: none;
+  span.expander {
+    display: inline-block;
+    padding: 0;
+    float: left;
+
+    &.icon {
+      padding-left: 18px;
+      text-align: center;
+
+      &::before {
+        margin: 0 0 0 -18px;
+        color: $gray-600;
+        font-size: 12px;
+      }
+    }
+
+    &:not(.icon) {
+      width: 18px;
+      padding: 0;
+      background-image: inline-svg("plus.svg", (path: (fill: $btn-default-icon-color)));
+      background-repeat: no-repeat;
+      background-position: center center;
+      cursor: pointer;
+      user-select: none;
+    }
   }
 
   &.open span.expander:not(.icon) {
@@ -345,7 +362,7 @@ tr.entry {
   &.file td {
     &.filename a,
     &.filename_no_report a {
-      margin-left: 16px;
+      margin-left: 18px;
     }
   }
 }
@@ -649,7 +666,7 @@ table.files {
 
   tr.file td {
     &.filename {
-      padding-left: 20px + $table-cell-padding;
+      padding-left: $icon-width + $table-cell-padding;
       text-align: left;
     }
 

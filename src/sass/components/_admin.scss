@@ -8,7 +8,7 @@
       list-style-type: none;
 
       > a:not(.icon-only) {
-        padding-left: $sidebar-padding-horizontal + 5px + 20px;
+        padding-left: $sidebar-padding-horizontal + 5px + $icon-width;
         background-repeat: no-repeat;
         background-position: $sidebar-padding-horizontal center;
       }
@@ -27,7 +27,7 @@
 
     a {
       display: inline-block;
-      padding-left: 5px + 20px;
+      padding-left: 5px + $icon-width;
       background-position: 0 center;
     }
   }

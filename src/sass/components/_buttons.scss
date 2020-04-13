@@ -148,12 +148,24 @@ p.buttons,
 //
 
 #issue-form,
+.mypage-box,
 .journal,
 .edit_news,
 .edit_content,
 .edit_time_entry,
 .edit_membership {
   input[type="submit"] + a {
+    margin-left: ceil($btn-padding-horizontal-small / 2);
+  }
+}
+
+
+//== Apply + clear
+//
+
+input,
+select {
+  + a {
     margin-left: ceil($btn-padding-horizontal-small / 2);
   }
 }

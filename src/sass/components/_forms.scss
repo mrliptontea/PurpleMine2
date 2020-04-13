@@ -628,6 +628,10 @@ label[for="closed"] {
   label {
     @include check-list;
   }
+
+  .gravatar {
+    margin-right: $padding-small-vertical;
+  }
 }
 
 #watchers_inputs {
