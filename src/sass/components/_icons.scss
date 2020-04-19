@@ -60,6 +60,11 @@ table.list .buttons > a::before {
   }
 }
 
+// A empty icon should behave more like icon-only
+a.icon:empty {
+  display: inline-block;
+}
+
 .icon-add::before                   { content: $fa-var-plus-square; }
 .icon-edit::before                  { content: $fa-var-pencil; }
 .icon-copy::before                  { content: $fa-var-copy; }

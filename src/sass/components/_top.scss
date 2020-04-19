@@ -3,18 +3,21 @@
 // --------------------------------------------------
 
 #top-menu {
+  $top-menu-padding-vertical:   $padding-small-vertical + 1px;
+  $top-menu-padding-horizontal: $padding-side;
   @extend %clearfix;
-  position: relative;
-  padding: $padding-small-vertical $padding-side;
+  box-sizing: border-box;
+  padding: $top-menu-padding-vertical $top-menu-padding-horizontal;
   background: $top-menu-bg;
   color: $top-menu-text;
   font-size: $font-size-small;
 
   @if $top-menu-collapse {
-    $toggler-position-v:    $padding-small-vertical + 1px;
+    $toggler-position-v:    $top-menu-padding-vertical + 1px;
     $toggler-position-h:    1px;
 
-    max-height: floor($font-size-base * $font-size-small-unitless * $line-height-base) + $padding-small-vertical;
+    position: relative;
+    max-height: floor($font-size-base * $font-size-small-unitless * $line-height-base) + $top-menu-padding-vertical * 2;
     padding-bottom: 0;
     overflow: hidden;
 
@@ -24,7 +27,7 @@
 
     a {
       display: inline-block;
-      margin-bottom: $padding-small-vertical;
+      margin-bottom: $top-menu-padding-vertical;
       white-space: nowrap;
     }
 
