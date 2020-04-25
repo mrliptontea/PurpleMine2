@@ -86,8 +86,10 @@ table.list {
       padding-right: $table-cell-padding;
       padding-left: $table-cell-padding;
 
-      &:first-child {
-        padding-right: 0;
+      @if (parse-length($table-list-item-border, right) == 0) {
+        &:first-child {
+          padding-right: 0;
+        }
       }
 
       input {
