@@ -67,6 +67,7 @@ Latest (master):
 * Restored `$color-priorities` variable, `false` by default.
 * Added `parse-length($value, $side)` function for extracting length/width from margin/padding/border.
 * Fixed checkbox cell padding when issue table borders are enabled.
+* Added table icon to jstoolbar styles.
 
 v2.10.2 (2020-04-09):
 
