@@ -388,6 +388,14 @@ tr.entry {
 @if $table-list-highlight-rows {
   table.list > tbody > tr:nth-child(n):hover {
     background-color: $table-bg-hover;
+
+    @if $color-priorities {
+      @each $priority-id, $priority-color in $priority-color-map {
+        &.priority-#{$priority-id} {
+          background-color: rgba(map-get($priority-color, background), $table-color-hover-factor);
+        }
+      }
+    }
   }
 }
 
@@ -408,6 +416,29 @@ tr.entry {
       map-get($priority-icon, color),
       map-get($priority-icon, icon)
     );
+  }
+}
+
+@if $color-priorities {
+  @each $priority-id, $priority-color in $priority-color-map {
+    tr.priority-#{$priority-id} {
+      &.odd td {
+        background-color: rgba(map-get($priority-color, background), $table-color-odd-factor);
+      }
+
+      &.even td {
+        background-color: rgba(map-get($priority-color, background), $table-color-even-factor);
+      }
+
+      td {
+        border-color: map-get($priority-color, border);
+        color: map-get($priority-color, color);
+      }
+
+      a {
+        color: map-get($priority-color, link);
+      }
+    }
   }
 }
 

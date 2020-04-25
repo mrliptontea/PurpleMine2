@@ -64,6 +64,7 @@ Latest (master):
 * Added margin in some places like after buttons, avatars.
 * Changed tooltip background to black.
 * Changed top menu styles.
+* Restored `$color-priorities` variable, `false` by default.
 
 v2.10.2 (2020-04-09):
 

@@ -14,6 +14,7 @@ $sidebar-position:              left !default;
 $clean-issues:                  true !default;
 $color-trackers:                true !default;
 $color-status:                  true !default;
+$color-priorities:              false !default;
 $priority-icon:                 true !default;
 $use-gravatars:                 true !default;
 $use-logo:                      false !default;
@@ -237,6 +238,11 @@ $table-bg-active:               $table-bg-hover !default;
 
 $table-border-color:            $gray-300 !default;
 
+$table-color-odd-factor:        if($table-list-color-odd-rows, $table-accent-factor * .8, $table-accent-factor * .5) !default;
+$table-color-even-factor:       if($table-list-color-even-rows, $table-accent-factor * .8, $table-accent-factor * .5) !default;
+$table-color-hover-factor:      $table-hover-factor * .5 !default;
+$table-color-border-shade:      100 !default;
+
 
 //== Issue statuses
 //
@@ -302,6 +308,65 @@ $priority-default-icons-map: (
 ) !default;
 $priority-custom-icons-map:     () !default;
 $priority-icons-map:            map-merge($priority-default-icons-map, $priority-custom-icons-map);
+
+$priority-default-color-map: (
+  lowest: (
+    border:                     shade($green, $table-color-border-shade),
+    background:                 $green,
+    color:                      $text-color,
+    link:                       shade($green, 700),
+  ),
+  low2: (
+    border:                     shade(mix($teal, $green), $table-color-border-shade),
+    background:                 mix($teal, $green),
+    color:                      $text-color,
+    link:                       shade(mix($teal, $green), 700),
+  ),
+  low3: (
+    border:                     shade($teal, $table-color-border-shade),
+    background:                 $teal,
+    color:                      $text-color,
+    link:                       shade($teal, 700),
+  ),
+  default: (
+    border:                     shade($blue, $table-color-border-shade),
+    background:                 $blue,
+    color:                      $text-color,
+    link:                       shade($blue, 700),
+  ),
+  high5: (
+    border:                     shade($purple, $table-color-border-shade),
+    background:                 $purple,
+    color:                      $text-color,
+    link:                       shade($purple, 700),
+  ),
+  high4: (
+    border:                     shade($orange, $table-color-border-shade),
+    background:                 $orange,
+    color:                      $text-color,
+    link:                       shade($orange, 700),
+  ),
+  high3: (
+    border:                     shade(mix($red, $orange), $table-color-border-shade),
+    background:                 mix($red, $orange),
+    color:                      $text-color,
+    link:                       shade(mix($red, $orange), 700),
+  ),
+  high2: (
+    border:                     shade($red, $table-color-border-shade),
+    background:                 $red,
+    color:                      $text-color,
+    link:                       shade($red, 700),
+  ),
+  highest: (
+    border:                     shade($red, $table-color-border-shade),
+    background:                 $red,
+    color:                      $text-color,
+    link:                       shade($red, 700),
+  )
+) !default;
+$priority-custom-color-map:     () !default;
+$priority-color-map:            map-merge($priority-default-color-map, $priority-custom-color-map);
 
 
 //== Trackers links
