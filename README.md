@@ -56,7 +56,7 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
-Latest (master):
+v2.11.0 (2020-05-08):
 
 * Fixed #179: full screen mode issues when using redmine_wysiwyg_editor plugin.
 * Fixed #177: changed styling for icon-only buttons to resolve weird behavior on hover.
