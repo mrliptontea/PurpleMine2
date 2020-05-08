@@ -87,6 +87,114 @@
 
 
 //
+// Redmine Banner
+// https://github.com/akiko-pusu/redmine_banner
+// --------------------------------------------------
+
+#global_banner {
+  .box {
+    margin-bottom: $line-height-computed;
+  }
+}
+
+.banner_area {
+  @media screen and (max-width: $redmine-responsive-max) {
+    #main #content > & {
+      margin-bottom: $line-height-computed;
+    }
+  }
+
+  .banner {
+    @extend %fa-icon;
+    margin: 0;
+    padding: $padding-large-vertical $padding-large-horizontal;
+    padding-left: $padding-large-horizontal + 8px + 16px;
+    border: 1px solid $component-border;
+    border-radius: $border-radius-base;
+    background: $component-bg;
+    color: $component-color;
+
+    @media screen and (min-width: $redmine-responsive-min) {
+      border-radius: 0;
+    }
+
+    &::before {
+      content: $fa-var-info;
+      margin-left: -(8px + 16px);
+      float: left;
+      line-height: $line-height-computed;
+    }
+
+    &_info {
+      border-color: $flash-info-border;
+      background-color: $flash-info-bg;
+      color: $flash-info-text;
+
+      &::before {
+        content: $fa-var-info-circle;
+      }
+    }
+
+    &_warn {
+      border-color: $flash-warning-border;
+      background-color: $flash-warning-bg;
+      color: $flash-warning-text;
+
+      &::before {
+        content: $fa-var-warning;
+      }
+
+      a,
+      ~ div a {
+        color: $flash-warning-link;
+      }
+    }
+
+    &_alert {
+      border-color: $flash-error-border;
+      background-color: $flash-error-bg;
+      color: $flash-error-text;
+
+      &::before {
+        content: $fa-var-exclamation-circle;
+      }
+
+      a,
+      ~ div a {
+        color: $flash-error-link;
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    ol {
+      margin-bottom: $line-height-computed / 2;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  .banner_edit {
+    a {
+      margin-left: 5px;
+    }
+  }
+}
+
+
+//
 // Redmine Hearts
 // https://github.com/cat-in-136/redmine_hearts
 // --------------------------------------------------

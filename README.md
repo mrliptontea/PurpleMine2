@@ -73,6 +73,7 @@ Latest (master):
 * Improved vertical alignment of certain form elements.
 * Improved styles for sortable elements.
 * Added new `.inline-flex` class.
+* Improved styles for [Redmine Banner](https://github.com/akiko-pusu/redmine_banner) plugin.
 
 v2.10.2 (2020-04-09):
 

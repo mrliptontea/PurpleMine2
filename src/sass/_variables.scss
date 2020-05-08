@@ -651,6 +651,11 @@ $flash-success-border:          shade($green, 500) !default;
 $flash-success-text:            $white !default;
 $flash-success-link:            $white !default;
 
+$flash-info-bg:                 shade($blue, 100) !default;
+$flash-info-border:             shade($blue, 200) !default;
+$flash-info-text:               shade($blue, 800) !default;
+$flash-info-link:               shade($blue, 900) !default;
+
 $flash-warning-bg:              shade($yellow, 200) !default;
 $flash-warning-border:          shade($yellow, 300) !default;
 $flash-warning-text:            shade($yellow, 800) !default;
