@@ -48,12 +48,8 @@ form {
       @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
     }
 
-    + a {
-      display: inline-block;
+    ~ a {
       margin-right: 2px;
-      padding-top: $btn-padding-vertical + 1px;
-      padding-bottom: $btn-padding-vertical + 1px;
-      line-height: $line-height-base;
 
       + a {
         margin-left: 2px;
@@ -163,10 +159,14 @@ p.buttons,
 //== Apply + clear
 //
 
-input,
-select {
-  + a {
-    margin-left: ceil($btn-padding-horizontal-small / 2);
+form {
+  input,
+  button,
+  select {
+    ~ a {
+      margin-left: ceil($btn-padding-horizontal-small / 2);
+      line-height: $input-height-base;
+    }
   }
 }
 

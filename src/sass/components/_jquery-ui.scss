@@ -127,6 +127,7 @@
 }
 
 .ui-sortable-helper {
+  background-color: $body-bg;
   @include nice-shadow(4);
 }
 

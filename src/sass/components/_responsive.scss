@@ -3,6 +3,14 @@
   display: none;
 }
 
+.inline-flex {
+  display: inline-flex;
+
+  body.controller-issues h2 & {
+    padding-right: 0;
+  }
+}
+
 // stylelint-disable selector-max-compound-selectors
 body {
   @media screen and (max-width: $redmine-responsive-max) {

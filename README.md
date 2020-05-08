@@ -68,6 +68,12 @@ Latest (master):
 * Added `parse-length($value, $side)` function for extracting length/width from margin/padding/border.
 * Fixed checkbox cell padding when issue table borders are enabled.
 * Added table icon to jstoolbar styles.
+* Refactored icons code.
+* Improved styles for [RedmineUP](https://www.redmineup.com/pages/plugins) plugins (Agile, Checklists, CRM, Tags).
+* Improved vertical alignment of certain form elements.
+* Improved styles for sortable elements.
+* Added new `.inline-flex` class.
+* Improved styles for [Redmine Banner](https://github.com/akiko-pusu/redmine_banner) plugin.
 
 v2.10.2 (2020-04-09):
 

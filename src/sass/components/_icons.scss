@@ -17,6 +17,120 @@
   }
 }
 
+$icon-map: (
+  icon-add:                     $fa-var-plus-square,
+  icon-edit:                    $fa-var-pencil,
+  icon-copy:                    $fa-var-copy,
+  icon-duplicate:               $fa-var-clipboard,
+  icon-del:                     $fa-var-trash,
+  icon-move:                    $fa-var-arrows,
+  icon-save:                    $fa-var-save,
+  icon-download:                $fa-var-download,
+  icon-cancel:                  $fa-var-ban,
+  icon-multiple:                $fa-var-plus-circle,
+  icon-folder:                  $fa-var-folder,
+  icon-package:                 $fa-var-cube,
+  icon-user:                    $fa-var-user,
+  icon-project:                 $fa-var-cube,
+  icon-projects:                $fa-var-cubes,
+  icon-help:                    $fa-var-info-circle,
+  icon-attachment:              $fa-var-paperclip,
+  icon-history:                 $fa-var-history,
+  icon-time-entry:              $fa-var-clock-o,
+  icon-time:                    $fa-var-clock-o,
+  icon-time-add:                $fa-var-clock-o,
+  icon-stats:                   $fa-var-line-chart,
+  icon-warning:                 $fa-var-warning,
+  icon-error:                   $fa-var-exclamation,
+  icon-fav:                     $fa-var-star,
+  icon-fav-off:                 $fa-var-star-o,
+  icon-heart:                   $fa-var-heart,
+  icon-heart-off:               $fa-var-heart-o,
+  icon-reload:                  $fa-var-refresh,
+  icon-locked:                  $fa-var-lock,
+  icon-lock:                    $fa-var-lock,
+  icon-unlock:                  $fa-var-unlock,
+  icon-checked:                 $fa-var-check,
+  icon-details:                 $fa-var-search-plus,
+  icon-report:                  $fa-var-pie-chart,
+  icon-comments:                $fa-var-comment,
+  icon-comment:                 $fa-var-comment,
+  icon-summary:                 $fa-var-file-text,
+  icon-server-authentication:   $fa-var-key,
+  icon-issue:                   $fa-var-ticket,
+  icon-zoom-in:                 $fa-var-search-plus,
+  icon-zoom-out:                $fa-var-search-minus,
+  icon-magnifier:               $fa-var-search,
+  icon-passwd:                  $fa-var-key,
+  icon-arrow-right:             $fa-var-arrow-right,
+  icon-test:                    $fa-var-arrow-circle-right,
+  icon-sticky:                  $fa-var-thumb-tack,
+  icon-email:                   $fa-var-envelope,
+  icon-email-disabled:          $fa-var-envelope-o,
+  icon-email-add:               $fa-var-envelope,
+  icon-ok:                      $fa-var-check,
+  icon-not-ok:                  $fa-var-times,
+  icon-link-break:              $fa-var-chain-broken,
+  icon-list:                    $fa-var-list-ul,
+  icon-close:                   $fa-var-times-circle,
+  icon-settings:                $fa-var-cog,
+  icon-group:                   $fa-var-users,
+  icon-groupnonmember:          $fa-var-users,
+  icon-groupanonymous:          $fa-var-users,
+  icon-roles:                   $fa-var-eye,
+  icon-issue-edit:              $fa-var-edit,
+  icon-workflows:               $fa-var-sitemap,
+  icon-custom-fields:           $fa-var-edit,
+  icon-plugins:                 $fa-var-puzzle-piece,
+  icon-news:                    $fa-var-newspaper-o,
+  icon-issue-closed:            $fa-var-ticket,
+  icon-issue-note:              $fa-var-comment,
+  icon-changeset:               $fa-var-upload,
+  icon-message:                 $fa-var-comment,
+  icon-reply:                   $fa-var-comment-o,
+  icon-wiki-page:               $fa-var-file-text-o,
+  icon-document:                $fa-var-file-text,
+  icon-add-bullet:              $fa-var-plus-circle,
+  icon-shared:                  $fa-var-link,
+  icon-actions:                 $fa-var-ellipsis-h,
+  icon-sort-handle:             $fa-var-arrows-v,
+  icon-expended:                $fa-var-chevron-down,
+  icon-collapsed:               $fa-var-chevron-right,
+  icon-bookmark:                $fa-var-bookmark,
+  icon-bookmark-off:            $fa-var-bookmark-o,
+  icon-sorted-asc:              $fa-var-sort-amount-asc,
+  icon-sorted-desc:             $fa-var-sort-amount-desc,
+  icon-toggle-plus:             $fa-var-plus-square,
+  icon-toggle-minus:            $fa-var-minus-square,
+  icon-clear-query:             $fa-var-times,
+  icon-import:                  $fa-var-cloud-upload,
+
+  // Plugin icons
+  icon-call:                    $fa-var-phone,
+  icon-contact:                 $fa-var-vcard,
+  icon-erase:                   $fa-var-eraser,
+  icon-facebook:                $fa-var-facebook-square,
+  icon-fullscreen:              $fa-var-arrows-alt,
+  icon-linkedin:                $fa-var-linkedin-square,
+  icon-meeting:                 $fa-var-calendar-check-o,
+  icon-merge:                   $fa-var-code-fork,
+  icon-money-dollar:            $fa-var-usd,
+  icon-money-euro:              $fa-var-eur,
+  icon-money-pound:             $fa-var-gbp,
+  icon-money-yen:               $fa-var-jpy,
+  icon-move-bottom:             $fa-var-angle-double-down,
+  icon-move-down:               $fa-var-angle-down,
+  icon-move-top:                $fa-var-angle-double-up,
+  icon-move-up:                 $fa-var-angle-up,
+  icon-phone:                   $fa-var-phone,
+  icon-skype:                   $fa-var-skype,
+  icon-tags:                    $fa-var-tags,
+  icon-twitter:                 $fa-var-twitter-square,
+  icon-vcard:                   $fa-var-vcard,
+  banner-icon-edit:             $fa-var-edit,
+  banner-icon-off:              $fa-var-times,
+);
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -65,104 +179,38 @@ a.icon:empty {
   display: inline-block;
 }
 
-.icon-add::before                   { content: $fa-var-plus-square; }
-.icon-edit::before                  { content: $fa-var-pencil; }
-.icon-copy::before                  { content: $fa-var-copy; }
-.icon-duplicate::before             { content: $fa-var-clipboard; }
-.icon-del::before                   { content: $fa-var-trash; }
-.icon-move::before                  { content: $fa-var-arrows; }
-.icon-save::before                  { content: $fa-var-save; }
-.icon-download::before              { content: $fa-var-download; }
-.icon-cancel::before                { content: $fa-var-ban; }
-.icon-multiple::before              { content: $fa-var-plus-circle; }
-.icon-folder::before                { content: $fa-var-folder; }
-.open .icon-folder::before          { content: $fa-var-folder-open; }
-.icon-package::before               { content: $fa-var-cube; }
-.icon-user::before                  { content: $fa-var-user; }
-.icon-project::before               { content: $fa-var-cube; }
-.icon-projects::before              { content: $fa-var-cubes; }
-.icon-help::before                  { content: $fa-var-info-circle; }
-.icon-attachment::before            { content: $fa-var-paperclip; }
-.icon-history::before               { content: $fa-var-history; }
-.icon-time-entry::before            { content: $fa-var-clock-o; }
-.icon-time::before                  { content: $fa-var-clock-o; }
-.icon-time-add::before              { content: $fa-var-clock-o; }
-.icon-stats::before                 { content: $fa-var-line-chart; }
-.icon-warning::before               { content: $fa-var-warning; }
-.icon-error::before                 { content: $fa-var-exclamation; }
-.icon-fav::before                   { content: $fa-var-star; color: $orange; }
-.icon-fav-off::before               { content: $fa-var-star-o; }
-.icon-heart::before                 { content: $fa-var-heart; color: $pink; }
-.icon-heart-off::before             { content: $fa-var-heart-o; }
-.icon-reload::before                { content: $fa-var-refresh; }
-.icon-locked::before                { content: $fa-var-lock; }
-.icon-lock::before                  { content: $fa-var-lock; }
-.icon-unlock::before                { content: $fa-var-unlock; }
-.icon-checked::before               { content: $fa-var-check; }
-.icon-details::before               { content: $fa-var-search-plus; }
-.icon-report::before                { content: $fa-var-pie-chart; }
-.icon-comments::before              { content: $fa-var-comment; }
-.icon-comment::before               { content: $fa-var-comment; }
-.icon-summary::before               { content: $fa-var-file-text; }
-.icon-server-authentication::before { content: $fa-var-key; }
-.icon-issue::before                 { content: $fa-var-ticket; }
-.icon-zoom-in::before               { content: $fa-var-search-plus; }
-.icon-zoom-out::before              { content: $fa-var-search-minus; }
-.icon-passwd::before                { content: $fa-var-key; }
-.icon-test::before                  { content: $fa-var-arrow-circle-right; }
-.icon-phone::before                 { content: $fa-var-phone; }
-.icon-skype::before                 { content: $fa-var-skype; }
-.icon-facebook::before              { content: $fa-var-facebook-square; }
-.icon-linkedin::before              { content: $fa-var-linkedin-square; }
-.icon-twitter::before               { content: $fa-var-twitter-square; }
-.icon-magnifier::before             { content: $fa-var-search; }
-.icon-email::before                 { content: $fa-var-envelope; }
-.icon-email-disabled::before        { content: $fa-var-envelope-o; }
-.icon-email-add::before             { content: $fa-var-envelope; }
-.icon-move-up::before               { content: $fa-var-angle-up; }
-.icon-move-top::before              { content: $fa-var-angle-double-up; }
-.icon-move-down::before             { content: $fa-var-angle-down; }
-.icon-move-bottom::before           { content: $fa-var-angle-double-down; }
-.icon-ok::before                    { content: $fa-var-check; }
-.icon-not-ok::before                { content: $fa-var-times; }
-.icon-link-break::before            { content: $fa-var-chain-broken; }
-.icon-list::before                  { content: $fa-var-list-ul; }
-.icon-sticky::before                { content: $fa-var-thumb-tack; }
-.icon-arrow-right::before           { content: $fa-var-arrow-right; }
-.icon-close::before                 { content: $fa-var-times-circle; }
-.icon-close:hover::before           { content: $fa-var-times-circle-o; }
-.icon-settings::before              { content: $fa-var-cog; }
-.icon-group::before                 { content: $fa-var-users; }
-.icon-groupnonmember::before        { content: $fa-var-users; }
-.icon-groupanonymous::before        { content: $fa-var-users; }
-.icon-roles::before                 { content: $fa-var-eye; }
-.icon-issue-edit::before            { content: $fa-var-edit; }
-.icon-workflows::before             { content: $fa-var-sitemap; }
-.icon-custom-fields::before         { content: $fa-var-edit; }
-.icon-plugins::before               { content: $fa-var-puzzle-piece; }
-.icon-news::before                  { content: $fa-var-newspaper-o; }
-.icon-issue-closed::before          { content: $fa-var-ticket; }
-.icon-issue-note::before            { content: $fa-var-comment; }
-.icon-changeset::before             { content: $fa-var-upload; }
-.icon-message::before               { content: $fa-var-comment; }
-.icon-reply::before                 { content: $fa-var-comment-o; }
-.icon-wiki-page::before             { content: $fa-var-file-text-o; }
-.icon-document::before              { content: $fa-var-file-text; }
-.icon-project::before               { content: $fa-var-cube; }
-.icon-add-bullet::before            { content: $fa-var-plus-circle; }
-.icon-shared::before                { content: $fa-var-link; }
-.icon-actions::before               { content: $fa-var-ellipsis-h; }
-.icon-sort-handle::before           { content: $fa-var-arrows-v; }
-.icon-expended::before              { content: $fa-var-chevron-down; }
-.icon-collapsed::before             { content: $fa-var-chevron-right; }
-.icon-bookmark::before              { content: $fa-var-bookmark; }
-.icon-bookmark-off::before          { content: $fa-var-bookmark-o; }
-.icon-sorted-asc::before            { content: $fa-var-sort-amount-asc; }
-.icon-sorted-desc::before           { content: $fa-var-sort-amount-desc; }
-.icon-toggle-plus::before           { content: $fa-var-plus-square; }
-.icon-toggle-minus::before          { content: $fa-var-minus-square; }
-.icon-clear-query::before           { content: $fa-var-times; }
-.icon-import::before                { content: $fa-var-cloud-upload; }
+$icons-selector: ();
+@each $class, $icon in $icon-map {
+  $icons-selector: append($icons-selector, unquote(".#{$class}"), "comma");
+
+  .#{$class} {
+    &::before {
+      content: $icon;
+
+      @if $class == "icon-fav" {
+        color: $orange;
+      } @else if $class == "icon-heart" {
+        color: $pink;
+      }
+    }
+
+    @if $class == "icon-close" {
+      &:hover::before {
+        content: $fa-var-times-circle-o;
+      }
+    } @else if $class == "icon-folder" {
+      .open &::before {
+        content: $fa-var-folder-open;
+      }
+    }
+  }
+}
+
+#{$icons-selector} {
+  &.icon {
+    background-image: none;
+  }
+}
 
 //== Checkbox toggler
 //

@@ -87,6 +87,114 @@
 
 
 //
+// Redmine Banner
+// https://github.com/akiko-pusu/redmine_banner
+// --------------------------------------------------
+
+#global_banner {
+  .box {
+    margin-bottom: $line-height-computed;
+  }
+}
+
+.banner_area {
+  @media screen and (max-width: $redmine-responsive-max) {
+    #main #content > & {
+      margin-bottom: $line-height-computed;
+    }
+  }
+
+  .banner {
+    @extend %fa-icon;
+    margin: 0;
+    padding: $padding-large-vertical $padding-large-horizontal;
+    padding-left: $padding-large-horizontal + 8px + 16px;
+    border: 1px solid $component-border;
+    border-radius: $border-radius-base;
+    background: $component-bg;
+    color: $component-color;
+
+    @media screen and (min-width: $redmine-responsive-min) {
+      border-radius: 0;
+    }
+
+    &::before {
+      content: $fa-var-info;
+      margin-left: -(8px + 16px);
+      float: left;
+      line-height: $line-height-computed;
+    }
+
+    &_info {
+      border-color: $flash-info-border;
+      background-color: $flash-info-bg;
+      color: $flash-info-text;
+
+      &::before {
+        content: $fa-var-info-circle;
+      }
+    }
+
+    &_warn {
+      border-color: $flash-warning-border;
+      background-color: $flash-warning-bg;
+      color: $flash-warning-text;
+
+      &::before {
+        content: $fa-var-warning;
+      }
+
+      a,
+      ~ div a {
+        color: $flash-warning-link;
+      }
+    }
+
+    &_alert {
+      border-color: $flash-error-border;
+      background-color: $flash-error-bg;
+      color: $flash-error-text;
+
+      &::before {
+        content: $fa-var-exclamation-circle;
+      }
+
+      a,
+      ~ div a {
+        color: $flash-error-link;
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    ol {
+      margin-bottom: $line-height-computed / 2;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  .banner_edit {
+    a {
+      margin-left: 5px;
+    }
+  }
+}
+
+
+//
 // Redmine Hearts
 // https://github.com/cat-in-136/redmine_hearts
 // --------------------------------------------------
@@ -203,9 +311,153 @@
 
 
 //
+// RedmineUP
+// https://www.redmineup.com/pages/plugins
+// --------------------------------------------------
+
+h2 {
+  .scope_title,
+  .live_search,
+  .tags {
+    vertical-align: top;
+  }
+
+  .live_search {
+    margin-left: $padding-side / 2;
+  }
+
+  .tags {
+    .tag_list {
+      margin-top: 0;
+    }
+  }
+}
+
+div.details {
+  &.contact,
+  &.product {
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+}
+
+
+//
 // Redmine Agile
 // https://www.redmineup.com/pages/plugins/agile
 // --------------------------------------------------
+
+html.agile-board-fullscreen .icon.icon-fullscreen {
+  padding: ($padding-small-vertical - 1px) $padding-small-vertical;
+  font-size: 0;
+  text-align: center;
+  text-indent: 0;
+  @include nice-shadow(1);
+
+  &::before {
+    margin: 0;
+  }
+}
+
+@if $agile-board-customize {
+  .agile-board {
+    table.list.issues-board {
+      tbody tr {
+        background-color: $body-bg;
+
+        > td.issue-status-col {
+          padding: 0;
+          padding-left: parse-length($agile-issue-card-margin, left);
+          background-color: $agile-board-background;
+
+          &.closed .issue-card {
+            background: $agile-issue-card-closed-background;
+          }
+        }
+      }
+    }
+
+    .issue-card {
+      margin: $agile-issue-card-margin;
+      margin-left: 0;
+      padding: $agile-issue-card-padding;
+      border: 1px solid $agile-issue-card-border;
+      border-width: $agile-issue-card-border-width;
+      border-radius: $agile-issue-card-border-radius;
+      background-color: $agile-issue-card-background;
+      color: $agile-issue-card-color;
+      @include nice-shadow(1);
+
+      &.ui-sortable-helper {
+        @include nice-shadow(4);
+      }
+
+      &:not(.context-menu-selection) {
+        .attributes,
+        em.info,
+        span.hours {
+          color: $text-color;
+        }
+      }
+
+      @each $class, $color in $agile-issue-card-color-map {
+        &.#{$class} {
+          border-color: map-get($color, border);
+          background-color: map-get($color, background);
+        }
+      }
+
+      .checklist,
+      .info,
+      .sub-issues {
+        border-color: rgba($black, .15);
+      }
+
+      p.issue-id,
+      p.name {
+        margin-bottom: 5px;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+
+      p.issue-id {
+        line-height: 1;
+      }
+
+      p.project {
+        border-radius: $agile-issue-card-border-radius - 1px;
+        border-color: rgba($black, .15);
+        background-clip: padding-box;
+      }
+
+      p.name {
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+
+  @each $class, $color in $agile-issue-card-color-map {
+    @if map-get($color, link) != $link-color {
+      .#{$class} {
+        a {
+          color: map-get($color, link);
+        }
+      }
+    }
+  }
+}
+
+.agile-board {
+  .quick-comment {
+    textarea {
+      margin-bottom: parse-length($agile-issue-card-padding, bottom);
+    }
+  }
+}
+
 
 .controller-agile_charts #main {
   @if $css-grid-layout {
@@ -232,6 +484,42 @@
 
 
 //
+// Redmine CRM
+// https://www.redmineup.com/pages/plugins/crm
+// --------------------------------------------------
+
+table.sidebar.attributes {
+  tr {
+    th,
+    td {
+      padding: parse-length($table-condensed-cell-padding, top) 0;
+      vertical-align: top;
+    }
+
+    th {
+      padding-right: parse-length($table-condensed-cell-padding, right);
+    }
+  }
+}
+
+div.add-note {
+  input,
+  textarea {
+    margin-bottom: $line-height-computed;
+  }
+}
+
+@if $table-list-highlight-rows {
+  table.contacts.index,
+  table.contacts.index {
+    > tbody > tr:nth-child(n):hover {
+      background-color: $table-bg-hover;
+    }
+  }
+}
+
+
+//
 // Redmine Tags
 // https://www.redmineup.com/pages/plugins/tags
 // --------------------------------------------------
@@ -242,15 +530,43 @@
     margin: 0;
   }
 
-  &.select2-container.select2-container--default {
-    .select2-selection--multiple {
-      line-height: $line-height-base;
+  &-container.select2-container--default {
+    color: $text-color;
 
+    .select2-selection--single,
+    .select2-selection--multiple {
+      min-height: $input-height-base;
+      line-height: $line-height-base;
+    }
+
+    .select2-selection--single {
+      height: $input-height-base;
+
+      .select2-selection__rendered {
+        padding-top: $input-padding-vertical;
+        padding-bottom: $input-padding-vertical;
+        border: 0;
+        font-size: $font-size-base;
+        line-height: $line-height-base;
+      }
+
+      .select2-selection__arrow {
+        height: $input-height-base;
+      }
+
+      .select2-selection__clear {
+        border: 0;
+      }
+    }
+
+    .select2-selection--multiple {
       .select2-selection__rendered {
         padding: 0 3px 3px;
       }
 
       .select2-selection__choice {
+        margin-top: 3px;
+        margin-right: 3px;
         padding-top: 0;
         padding-bottom: 0;
       }
@@ -271,14 +587,79 @@
         box-shadow $transition-time ease-in-out;
       border-color: $input-border;
       box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075);
-    }
+      background-clip: padding-box;
 
-    &.select2-container--focus {
-      .select2-selection {
-        border-color: rgba($input-border-focus, $input-border-focus-alpha);
-        box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075), 0 0 0 2px rgba($input-border-focus, $input-shadow-focus-alpha);
+      &.icon {
+        padding-left: 18px + 8px;
+
+        &::before {
+          position: absolute;
+          top: 50%;
+          left: 8px;
+          margin: ($fa-font-size-base / -2) 0 0;
+        }
       }
     }
+
+    &.select2-container {
+      &:focus,
+      * {
+        outline: none;
+      }
+
+      &--open,
+      &--focus {
+        .select2-selection {
+          border-color: rgba($input-border-focus, $input-border-focus-alpha);
+          box-shadow: inset 0 1px 2px rgba(0, 0, 0, .075), 0 0 0 2px rgba($input-border-focus, $input-shadow-focus-alpha);
+        }
+      }
+    }
+
+    .select2-search__field {
+      &:focus {
+        border-color: rgba($input-border-focus, $input-border-focus-alpha);
+      }
+    }
+  }
+}
+
+span.tag-label-color {
+  @at-root body & {
+    padding: 0 !important; // stylelint-disable-line declaration-no-important
+    border: 0 !important; // stylelint-disable-line declaration-no-important
+    border-radius: $badge-border-radius;
+    box-shadow: inset 0 -1px 0 rgba($black, .12);
+    font-size: $font-size-small-px;
+
+    a,
+    span {
+      font-family: inherit;
+      font-size: inherit;
+    }
+
+    > a,
+    > span {
+      display: inline-block;
+      padding: 1px 5px;
+      text-shadow: 0 1px 0 rgba($black, .2);
+    }
+
+    a {
+      &:hover {
+        opacity: .8;
+      }
+    }
+  }
+}
+
+.list td.tags {
+  padding-bottom: max(parse-length($table-cell-padding, bottom) - 2px - 1px, 0);
+
+  span.tag-label-color {
+    margin-bottom: 2px;
+    margin-left: 0;
+    transform: translateY(-1px);
   }
 }
 
@@ -288,16 +669,32 @@
 // https://www.redmineup.com/pages/plugins/checklists
 // --------------------------------------------------
 
+.checklist {
+  li {
+    a {
+      margin: 0;
+      line-height: inherit;
+    }
+  }
+}
+
 #checklist_form_items {
   .checklist-item {
     display: block;
-    margin: 0;
-    padding-top: $check-list-offset-top;
-    line-height: initial;
+    margin: 0 0 2px;
 
     &.new {
-      padding-top: $padding-base-vertical;
-      line-height: inherit;
+      margin: $padding-base-vertical 0 0;
+    }
+
+    input[type="checkbox"] {
+      position: relative;
+      top: 2px;
+      vertical-align: baseline;
+    }
+
+    input[type="button"] {
+      margin-right: 4px;
     }
   }
 }
@@ -364,130 +761,6 @@
 
     a {
       line-height: inherit;
-    }
-  }
-}
-
-
-//
-// Redmine CRM People
-// http://www.redminecrm.com/projects/people/
-// --------------------------------------------------
-
-#people_list {
-  table.index {
-    margin-bottom: $line-height-computed;
-  }
-}
-
-#content {
-  .person.details {
-    margin-bottom: $line-height-computed;
-    padding: $issue-padding;
-    border: 1px solid $issue-border;
-    border-radius: $border-radius-base;
-    background-color: $issue-bg;
-
-    .avatar {
-      width: 64px;
-      max-width: 64px;
-      overflow: hidden;
-    }
-
-    .name,
-    .subject_info {
-      padding: 0 0 0 $issue-padding;
-    }
-
-    .name {
-      > h1 {
-        margin-bottom: 5px;
-      }
-
-      > p {
-        margin-bottom: 0;
-      }
-    }
-
-    .subject_info {
-      border-left: 1px solid $issue-border;
-
-      > ul {
-        margin: 0;
-      }
-    }
-
-    .icon {
-      background-image: none;
-    }
-  }
-
-  .department.issue.details {
-    > p {
-      clear: both;
-    }
-
-    > .author {
-      margin-bottom: 0;
-      clear: none;
-    }
-  }
-}
-
-#sidebar {
-  .person.attributes {
-    font-size: $font-size-list;
-
-    th,
-    td {
-      padding: $table-condensed-cell-padding;
-      text-align: left;
-      vertical-align: top;
-    }
-
-    .icon {
-      padding-left: $table-condensed-cell-padding + 20px;
-      background-image: none;
-
-      > a {
-        @extend %fa-icon;
-      }
-    }
-
-    .email {
-      td a {
-        display: block;
-        max-width: floor($sidebar-width / 3);
-        overflow: hidden;
-        text-overflow: ellipsis;
-
-        &:hover {
-          position: absolute;
-          max-width: 100%;
-          margin: -$table-condensed-cell-padding;
-          padding: $table-condensed-cell-padding;
-          background: $body-bg;
-          box-shadow: $panel-shadow;
-        }
-      }
-    }
-  }
-
-  .person_data {
-    td.avatar,
-    td.name {
-      padding: 0 0 $table-cell-padding;
-    }
-
-    td.avatar {
-      width: 40px;
-    }
-
-    td.name {
-      h4 {
-        margin: 0;
-        letter-spacing: 0;
-      }
     }
   }
 }

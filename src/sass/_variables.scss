@@ -24,6 +24,7 @@ $issue-subject-large:           true !default;
 $enable-sidebar-toggler:        true !default;
 $wiki-page-more-vertical-space: true !default;
 $top-menu-collapse:             false !default;
+$agile-board-customize:         true !default;
 
 
 //== Colors
@@ -167,11 +168,11 @@ $wiki-font-size:                16px !default;
 $wiki-line-height:              1.6 !default;
 $wiki-preview-bg:               $body-bg !default;
 
-$toc-bg:                        shade($yellow, 50) !default;
-$toc-border:                    mix($yellow, $gray-500, 25%) !default;
+$toc-bg:                        $gray-50 !default;
+$toc-border:                    $gray-300 !default;
 $toc-text:                      $text-color !default;
-$toc-link:                      shade($yellow, 800) !default;
-$toc-link-hover:                shade($yellow, 900) !default;
+$toc-link:                      $link-color !default;
+$toc-link-hover:                $link-hover-color !default;
 $toc-shadow:                    0 1px 3px rgba($black, .07) !default;
 $toc-active-link:               darken($link-color, 10%) !default;
 $toc-active-link-hover:         shade($toc-active-link, 700) !default;
@@ -650,6 +651,11 @@ $flash-success-border:          shade($green, 500) !default;
 $flash-success-text:            $white !default;
 $flash-success-link:            $white !default;
 
+$flash-info-bg:                 shade($blue, 100) !default;
+$flash-info-border:             shade($blue, 200) !default;
+$flash-info-text:               shade($blue, 800) !default;
+$flash-info-link:               shade($blue, 900) !default;
+
 $flash-warning-bg:              shade($yellow, 200) !default;
 $flash-warning-border:          shade($yellow, 300) !default;
 $flash-warning-text:            shade($yellow, 800) !default;
@@ -780,3 +786,67 @@ $login-form-adjustments-map: (
 $width-sm:                      $screen-sm - ($padding-side * 2) !default;
 $width-md:                      $screen-md - ($padding-side * 2) !default;
 $width-lg:                      $screen-lg - ($padding-side * 2) !default;
+
+
+//== Redmine Agile plugin
+// https://www.redmineup.com/pages/plugins/agile
+//
+
+$agile-board-background:        $gray-100 !default;
+$agile-issue-card-margin:       8px 10px !default;
+$agile-issue-card-padding:      7px !default;
+$agile-issue-card-border:       $gray-500;
+$agile-issue-card-border-width: 0 0 0 5px;
+$agile-issue-card-border-radius: $border-radius-large !default;
+$agile-issue-card-background:   $white !default;
+$agile-issue-card-color:        $text-color !default;
+$agile-issue-card-closed-background: $gray-300 !default;
+$agile-issue-card-default-color-map: (
+  bk-green: (
+    border: $green,
+    background: scale-color($green, $saturation: -5%, $lightness: 80%),
+    link: shade($green, 700),
+  ),
+  bk-blue: (
+    border: $blue,
+    background: scale-color($blue, $saturation: 50%, $lightness: 80%),
+    link: shade($blue, 700),
+  ),
+  bk-turquoise: (
+    border: $teal,
+    background: scale-color($teal, $saturation: -5%, $lightness: 80%),
+    link: shade($teal, 700),
+  ),
+  bk-lightgreen: (
+    border: adjust-color($green, $hue: -45deg),
+    background: scale-color(adjust-color($green, $hue: -45deg), $saturation: 75%, $lightness: 80%),
+    link: shade(adjust-color($green, $hue: -45deg), 700),
+  ),
+  bk-yellow: (
+    border: scale-color($yellow, $hue: 2deg),
+    background: scale-color($yellow, $hue: 2deg, $saturation: 75%, $lightness: 80%),
+    link: shade($yellow, 700),
+  ),
+  bk-orange: (
+    border: $orange,
+    background: scale-color($orange, $saturation: 75%, $lightness: 80%),
+    link: shade($orange, 700),
+  ),
+  bk-red: (
+    border: $red,
+    background: scale-color($red, $saturation: 75%, $lightness: 85%),
+    link: shade($red, 700),
+  ),
+  bk-purple: (
+    border: $purple,
+    background: scale-color($purple, $saturation: 75%, $lightness: 85%),
+    link: shade($purple, 700),
+  ),
+  bk-gray: (
+    border: $gray-600,
+    background: $gray-300,
+    link: $link-color,
+  ),
+) !default;
+$agile-issue-card-custom-color-map: () !default;
+$agile-issue-card-color-map:    map-merge($agile-issue-card-default-color-map, $agile-issue-card-custom-color-map);
