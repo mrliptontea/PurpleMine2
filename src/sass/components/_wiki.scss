@@ -172,7 +172,10 @@ div.wiki {
     word-break: keep-all;
   }
 
-  tr:nth-child(2n) {
+  // Textile
+  tbody:first-child tr:nth-child(2n),
+  // Markdown
+  thead + tbody tr:nth-child(2n-1) {
     background-color: $table-bg-accent;
   }
 
@@ -315,11 +318,8 @@ h5,
 h6 {
   .wiki-anchor {
     display: none;
-    position: relative;
-    top: -(1em - $font-size-small);
     margin-left: 5px;
     color: $headings-anchor-color !important; // stylelint-disable-line declaration-no-important
-    font-size: $font-size-small;
     text-decoration: none !important; // stylelint-disable-line declaration-no-important
   }
 

@@ -424,7 +424,6 @@ label.block {
 
 label[for="issue_description"] + a {
   display: inline-block;
-  margin-top: $input-padding-vertical + 1px;
 
   img {
     vertical-align: middle;
@@ -747,7 +746,9 @@ fieldset#filters {
     select,
     label,
     .icon,
-    .icon-only {
+    .icon-only,
+    > span > a {
+      line-height: inherit;
       vertical-align: middle;
     }
   }

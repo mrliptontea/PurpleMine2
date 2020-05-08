@@ -370,7 +370,7 @@ tr.entry {
 }
 
 @if $table-list-color-odd-rows {
-  table.list:not(.odd-even) tbody tr:nth-child(odd),
+  table.list:not(.odd-even) tbody tr:nth-child(odd):not(.ui-sortable-helper),
   .odd {
     > td {
       background-color: $table-bg-accent;
@@ -379,7 +379,7 @@ tr.entry {
 }
 
 @if $table-list-color-even-rows {
-  table.list:not(.odd-even) tbody tr:nth-child(even),
+  table.list:not(.odd-even) tbody tr:nth-child(even):not(.ui-sortable-helper),
   .even {
     > td {
       background-color: $table-bg-accent;
@@ -388,7 +388,7 @@ tr.entry {
 }
 
 @if $table-list-highlight-rows {
-  table.list > tbody > tr:nth-child(n):hover {
+  table.list > tbody > tr:nth-child(n):hover:not(.ui-sortable-helper) {
     background-color: $table-bg-hover;
 
     @if $color-priorities {

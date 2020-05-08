@@ -94,6 +94,29 @@ table.fields_permissions {
 }
 
 
+//== Custom fields -> Issues -> Key values
+//
+
+#custom_field_enumerations {
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    min-height: $input-height-base;
+    padding: 1px 0;
+
+    .sort-handle,
+    label {
+      line-height: $input-height-base;
+    }
+
+    label input {
+      vertical-align: baseline;
+    }
+  }
+}
+
+
 //== Settings labels
 //
 

@@ -53,6 +53,10 @@ table.gantt-table {
   .gantt_hdr {
     border-left: 1px solid $gray-500 !important; // stylelint-disable-line declaration-no-important
   }
+
+  + td {
+    padding: 0;
+  }
 }
 
 .gantt_subjects {
@@ -242,6 +246,7 @@ td.gantt_selected_column .gantt_hdr,
     width: 270px;
     padding: $padding-base-vertical;
     border: $tooltip-border-width solid $tooltip-border;
+    border-radius: $border-radius-small;
     background-color: $tooltip-bg;
     color: $tooltip-text;
     font-size: $font-size-small;

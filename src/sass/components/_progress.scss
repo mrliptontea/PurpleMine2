@@ -20,6 +20,10 @@ table.progress {
     float: none;
   }
 
+  tr {
+    background: transparent !important; // stylelint-disable-line declaration-no-important
+  }
+
   td {
     height: $progress-height;
     padding: 0;
@@ -45,11 +49,16 @@ table.progress {
 
     &.todo {
       background-color: $progress-bg !important; // stylelint-disable-line declaration-no-important
+      mix-blend-mode: multiply;
     }
   }
 
   .issue & td {
     padding: 0;
+  }
+
+  .context-menu-selection & td.todo {
+    mix-blend-mode: screen;
   }
 }
 

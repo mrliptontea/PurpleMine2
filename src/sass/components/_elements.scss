@@ -921,6 +921,10 @@ div.table-list.boards {
 .author {
   color: $gray-700;
 
+  .flyout-menu & {
+    color: inherit;
+  }
+
   .user {
     font-weight: $font-weight-bold;
   }
