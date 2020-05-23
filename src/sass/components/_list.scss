@@ -466,7 +466,7 @@ tr.entry {
 }
 }
 
-@if $color-trackers {
+@if $color-trackers-text {
   tr.issue {
     .tracker{
     color: $tracker-default-bg;
