@@ -41,6 +41,8 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.6",
     "stylelint": "^13.5.0",
     "stylelint-order": "^4.0.0",
     "stylelint-scss": "^3.17.2"
@@ -49,5 +51,10 @@
     "last 2 versions",
     "> 1%",
     "not dead"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged --relative"
+    }
+  }
 }
