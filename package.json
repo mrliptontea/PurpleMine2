@@ -25,29 +25,36 @@
     "lint": "npm run -S lint:js && npm run -S lint:sass"
   },
   "dependencies": {
-    "autoprefixer": "^9.7.5",
+    "autoprefixer": "^9.8.0",
     "grunt": "^1.1.0",
     "grunt-contrib-uglify": "^4.0.1",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-postcss": "^0.9.0",
     "grunt-sass": "^3.1.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "sass-inline-svg": "^1.2.3"
   },
   "devDependencies": {
-    "eslint": "^6.8.0",
+    "eslint": "^7.1.0",
     "eslint-config-standard": "^14.1.1",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "stylelint": "^10.1.0",
-    "stylelint-order": "^3.1.1",
-    "stylelint-scss": "^3.16.0"
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.6",
+    "stylelint": "^13.5.0",
+    "stylelint-order": "^4.0.0",
+    "stylelint-scss": "^3.17.2"
   },
   "browserslist": [
     "last 2 versions",
     "> 1%",
     "not dead"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged --relative"
+    }
+  }
 }
