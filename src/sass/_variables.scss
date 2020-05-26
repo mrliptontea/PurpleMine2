@@ -12,8 +12,11 @@ $css-grid-layout:               false !default;
 $flexbox-layout:                true !default;
 $sidebar-position:              left !default;
 $clean-issues:                  true !default;
-$color-trackers:                true !default;
+$color-trackers-text:           false !default;
+$color-id-status:               false !default;
+$color-id-trackers:             true !default;
 $color-status:                  true !default;
+$color-status-text:             false !default;
 $color-priorities:              false !default;
 $priority-icon:                 true !default;
 $use-gravatars:                 true !default;
@@ -253,6 +256,18 @@ $status-default-color:          $brand-text !default;
 $status-default-colors-map: (
   status-1: (
     background:                 shade($blue, 500),
+    color:                      $white
+  ),
+  status-3: (
+    background:                 shade($green, 500),
+    color:                      $white
+  ),
+  status-4: (
+    background:                 shade($yellow, 500),
+    color:                      $white
+  ),
+  status-6: (
+    background:                 shade($red, 700),
     color:                      $white
   ),
   closed: (

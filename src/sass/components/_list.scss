@@ -444,7 +444,51 @@ tr.entry {
   }
 }
 
-@if $color-trackers {
+@if $color-status-text {
+  tr.issue {
+    .status{
+    color: $status-default-bg;
+    font-weight: 600
+  }
+
+  :focus,
+    &:active {
+      text-decoration: none;
+    }
+
+  @each $status, $status-colors in $status-colors-map {
+    &.#{$status} {
+        .status{
+        color: map-get($status-colors, background);
+      }}
+  }
+
+}
+}
+
+@if $color-trackers-text {
+  tr.issue {
+    .tracker{
+    color: $tracker-default-bg;
+    font-weight: 600
+  }
+
+  :focus,
+    &:active {
+      text-decoration: none;
+    }
+
+  @each $tracker-id, $tracker-colors in $tracker-colors-map {
+    &.tracker-#{$tracker-id} {
+        .tracker{
+        color: map-get($tracker-colors, background);
+      }}
+  }
+
+}
+}
+
+@if $color-id-trackers {
   tr.issue .id > a,
   tr.issue .issue_id > a,
   tr.issue .legacy_id > a,
@@ -518,6 +562,99 @@ tr.entry {
       map-get($tracker-colors, background),
       map-get($tracker-colors, color)
     );
+  }
+}
+
+@if $color-id-status {
+  tr.issue .id > a,
+  tr.issue .issue_id > a,
+  tr.issue .legacy_id > a,
+  a.issue,
+  .relations > span > a.issue,
+  .parent > a.issue {
+    border-radius: $border-radius-small ($border-radius-small * 3) ($border-radius-small * 3) $border-radius-small;
+    background-color: $status-default-bg;
+    color: $status-default-color;
+
+    &:hover {
+      background-color: darken($status-default-bg, 10%);
+      color: $status-default-color;
+      text-decoration: none;
+    }
+
+    &:focus,
+    &:active {
+      text-decoration: none;
+    }
+  }
+
+  a.issue {
+    margin-right: 1px;
+    padding: $tracker-inline-padding;
+    font-weight: $font-weight-normal;
+
+    &.closed {
+      position: relative;
+      color: mix($tracker-default-text, $tracker-default-bg, 75%);
+      text-decoration: none;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 5px;
+        bottom: 0;
+        left: 5px;
+        height: calc(50% - 2px / 2);
+        transform: rotate(-4deg);
+        transition: border-color $transition-time;
+        border-top: 2px solid rgba($tracker-default-text, .95);
+      }
+
+      &:hover::after {
+        border-top-color: rgba($tracker-default-text, .25);
+      }
+    }
+  }
+
+  tr.issue .id > a,
+  tr.issue .legacy_id > a {
+    display: block;
+    padding: $tracker-list-padding;
+
+    &::before {
+      content: "#";
+      color: mix($status-default-color, $status-default-bg, 50%);
+    }
+  }
+
+  tr.issue .issue_id > a {
+    display: inline-block;
+    padding: $tracker-list-padding;
+  }
+
+  @each $status, $status-colors in $status-colors-map {
+      tr.issue{
+      &.#{$status}{
+       .id > a,
+       .issue_id > a,
+       .legacy_id > a
+        {
+          background-color: map-get($status-colors, background);
+          color: map-get($status-colors, color);
+          &::before {
+            content: "#";
+            color: mix(map-get($status-colors, color), map-get($status-colors, background), 50%);
+            }
+        }
+      }
+    }
+    a.issue{
+      &.#{$status}{
+        background-color: map-get($status-colors, background);
+        color: map-get($status-colors, color);
+      }
+    }
   }
 }
 
