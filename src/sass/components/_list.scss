@@ -193,10 +193,14 @@ tr.issue {
   text-align: center;
   white-space: nowrap;
 
+  .category,
+  .list,
+  .parent-subject,
+  .parent,
+  .relations,
   .string,
-  .text,
   .subject,
-  .category {
+  .text {
     white-space: normal;
   }
 
@@ -301,6 +305,11 @@ tr {
 
 td.center {
   text-align: center;
+}
+
+td.assigned_to,
+td.last_updated_by {
+  white-space: normal;
 }
 
 .issue-report {
