@@ -56,6 +56,10 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
+Latest (master):
+
+* Fixed #196: text wrapping in certain column types.
+
 v2.11.0 (2020-05-08):
 
 * Fixed #179: full screen mode issues when using redmine_wysiwyg_editor plugin.
