@@ -58,7 +58,7 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 Latest (master):
 
-* Fixed #196: text wrapping in certain column types.
+* Fixed #196 and #199: text wrapping in certain column types.
 
 v2.11.0 (2020-05-08):
 
