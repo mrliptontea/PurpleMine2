@@ -124,6 +124,11 @@ img {
     position: absolute;
     max-width: 100%;
     max-height: 100%;
+
+    &.wiki {
+      position: static;
+      padding-bottom: $line-height-computed;
+    }
   }
 }
 
