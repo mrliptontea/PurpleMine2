@@ -56,9 +56,10 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
-Latest (master):
+v2.12.0 (2020-08-01):
 
 * Fixed #196 and #199: text wrapping in certain column types.
+* Merged #203: fixed pagination overlapping wiki content.
 
 v2.11.0 (2020-05-08):
 
