@@ -56,6 +56,10 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
+Latest (master):
+
+* Fixed #204 - missing context menu icons in Easy WBS plugin.
+
 v2.12.0 (2020-08-01):
 
 * Fixed #196 and #199: text wrapping in certain column types.
