@@ -800,3 +800,19 @@ span.private {
     }
   }
 }
+
+#issue-changesets {
+  // GitLab Merge Request Links plugin
+  // Important is needed on these to override the plugin's styles
+  @media screen and (min-width: $redmine-responsive-min) {
+    width: 100% !important;  // stylelint-disable-line declaration-no-important
+  }
+
+  @media screen and (min-width: $screen-md-min) {
+    width: 45% !important;  // stylelint-disable-line declaration-no-important
+  }
+
+  @media screen and (min-width: $screen-lg-min) {
+    width: 33% !important;  // stylelint-disable-line declaration-no-important
+  }
+}
