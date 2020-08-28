@@ -810,9 +810,18 @@ span.private {
 
   @media screen and (min-width: $screen-md-min) {
     width: 45% !important;  // stylelint-disable-line declaration-no-important
+
+    + #history {
+      margin-right: 45%;
+      padding-right: $padding-side;
+    }
   }
 
   @media screen and (min-width: $screen-lg-min) {
     width: 33% !important;  // stylelint-disable-line declaration-no-important
+
+    + #history {
+      margin-right: 33%;
+    }
   }
 }
