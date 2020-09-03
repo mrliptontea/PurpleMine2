@@ -804,6 +804,10 @@ span.private {
 #issue-merge-requests {
   // GitLab Merge Request Links plugin
   // Important is needed on these to override the plugin's styles
+
+  margin: 0 0 20px !important;  // stylelint-disable-line declaration-no-important
+  padding: 0 !important;  // stylelint-disable-line declaration-no-important
+
   @media screen and (min-width: $redmine-responsive-min) {
     width: 100% !important;  // stylelint-disable-line declaration-no-important
   }
