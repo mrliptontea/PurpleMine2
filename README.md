@@ -56,6 +56,11 @@ If you need to customize styles for [Redmine Backlogs][redmine_backlogs] remembe
 
 ## Changelog
 
+Latest (master):
+
+* Replaced node-sass with sass.
+* Resolved issues with `inline-svg` function in Node 14.x.
+
 v2.12.1 (2020-08-11):
 
 * Fixed #204 - missing context menu icons in Easy WBS plugin.
