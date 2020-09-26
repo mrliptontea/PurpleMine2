@@ -4,11 +4,11 @@ module.exports = function (grunt) {
 
     sass: {
       options: {
-        implementation: require('node-sass'),
+        implementation: require('sass'),
         sourceMap: false,
         outputStyle: 'compressed',
         functions: {
-          'inline-svg': require('sass-inline-svg')('./svg', {
+          'inline-svg($path, $selectors: null)': require('@liquid-js/sass-inline-svg')('./svg', {
             optimize: true,
             encodingFormat: 'uri'
           })

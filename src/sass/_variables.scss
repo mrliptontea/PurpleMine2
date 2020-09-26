@@ -823,8 +823,8 @@ $agile-issue-card-default-color-map: (
     link: shade(adjust-color($green, $hue: -45deg), 700),
   ),
   bk-yellow: (
-    border: scale-color($yellow, $hue: 2deg),
-    background: scale-color($yellow, $hue: 2deg, $saturation: 75%, $lightness: 80%),
+    border: adjust-color($yellow, $hue: 2deg),
+    background: scale-color(adjust-color($yellow, $hue: 2deg), $saturation: 75%, $lightness: 80%),
     link: shade($yellow, 700),
   ),
   bk-orange: (
