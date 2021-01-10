@@ -35,6 +35,7 @@
     $side-space: $sidebar-width + $padding-side * 2;
     flex: 1 1 auto;
     width: calc(100% - #{$side-space});
+    overflow-x: auto; // needed for drag & drop of enumerations
   } @else {
     overflow: hidden;
   }
