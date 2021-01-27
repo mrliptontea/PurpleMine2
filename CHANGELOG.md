@@ -1,3 +1,7 @@
+v2.14.0 (2021-01-27):
+
+* Merged #220: fixed drag & drop behavior.
+
 v2.13.0 (2020-09-26):
 
 * Replaced node-sass with sass.
