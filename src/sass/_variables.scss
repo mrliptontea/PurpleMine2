@@ -1,3 +1,5 @@
+@use "sass:math";
+
 //
 // Variables
 // --------------------------------------------------
@@ -60,7 +62,7 @@ $shade-map: (
 
 @function shade($color, $shade: 500) {
   $mixer: if($shade < 500, $white, $black);
-  $saturation: if($shade < 500, 0, ($shade - 500) / 20);
+  $saturation: if($shade < 500, 0, math.div($shade - 500, 20));
   @return saturate(mix($mixer, $color, map-get($shade-map, $shade)), $saturation);
 }
 
@@ -575,7 +577,7 @@ $logo-image-width:              60px !default;
 $logo-image-height:             40px !default;
 $logo-position-horizontal:      $header-padding-vertical !default;
 $logo-position-vertical:        center !default;
-$logo-space:                    floor($header-padding-vertical / 2) !default;
+$logo-space:                    floor($header-padding-vertical * .5) !default;
 
 $main-menu-bg:                  $gray-100 !default;
 $main-menu-bg-hover:            $gray-100 !default;

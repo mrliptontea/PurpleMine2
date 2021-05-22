@@ -6,7 +6,7 @@
 #sidebar .sidebar-additionals {
   ul,
   ol {
-    margin: 0 0 ($line-height-computed / 2);
+    margin: 0 0 ($line-height-computed * .5);
     padding-left: 1.5em;
 
     ul,
@@ -174,7 +174,7 @@
     p,
     ul,
     ol {
-      margin-bottom: $line-height-computed / 2;
+      margin-bottom: $line-height-computed * .5;
 
       &:last-child {
         margin-bottom: 0;
@@ -207,7 +207,7 @@
   > .heart-link-with-count {
     display: block;
     position: relative;
-    margin: -($line-height-computed / 2 + 1px) ($bubble-padding-horizontal - $padding-small-vertical) 0;
+    margin: -($line-height-computed * .5 + 1px) ($bubble-padding-horizontal - $padding-small-vertical) 0;
     float: right;
     border: 0;
     background-color: $body-bg;
@@ -252,7 +252,7 @@
     > a:first-child {
       margin-right: 0;
       margin-left: 4px;
-      padding-right: floor($btn-padding-horizontal-small / 2);
+      padding-right: floor($btn-padding-horizontal-small * .5);
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
 
@@ -323,7 +323,7 @@ h2 {
   }
 
   .live_search {
-    margin-left: $padding-side / 2;
+    margin-left: $padding-side * .5;
   }
 
   .tags {
@@ -596,7 +596,7 @@ div.add-note {
           position: absolute;
           top: 50%;
           left: 8px;
-          margin: ($fa-font-size-base / -2) 0 0;
+          margin: ($fa-font-size-base * -.5) 0 0;
         }
       }
     }
@@ -755,8 +755,8 @@ span.tag-label-color {
     margin: 0;
 
     form > input {
-      width: $quick-search-width / 2;
-      min-width: $quick-search-width / 2;
+      width: $quick-search-width * .5;
+      min-width: $quick-search-width * .5;
     }
 
     a {

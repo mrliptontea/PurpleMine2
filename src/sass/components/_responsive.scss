@@ -116,7 +116,7 @@ body {
 
       &__search {
         height: $responsive-header-height;
-        padding: ($padding-side / 2);
+        padding: ($padding-side * .5);
         line-height: normal;
 
         input[type="text"] {
@@ -249,13 +249,13 @@ body {
 
       #watchers {
         .contextual {
-          padding-top: $line-height-computed / 2;
-          padding-bottom: $line-height-computed / 2;
+          padding-top: $line-height-computed * .5;
+          padding-bottom: $line-height-computed * .5;
         }
 
         .watchers {
           li {
-            margin: ($line-height-computed / 2) 0 0;
+            margin: ($line-height-computed * .5) 0 0;
             padding: 0;
 
             img.gravatar {
@@ -451,7 +451,7 @@ body {
     .query-columns {
       span {
         display: block;
-        margin-bottom: $line-height-computed / 2;
+        margin-bottom: $line-height-computed * .5;
       }
 
       .buttons {

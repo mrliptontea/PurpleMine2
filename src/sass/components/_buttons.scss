@@ -63,7 +63,7 @@ form {
 //
 
 form[action*="repository/diff"] {
-  margin-bottom: $line-height-computed / 2;
+  margin-bottom: $line-height-computed * .5;
 }
 
 
@@ -151,7 +151,7 @@ p.buttons,
 .edit_time_entry,
 .edit_membership {
   input[type="submit"] + a {
-    margin-left: ceil($btn-padding-horizontal-small / 2);
+    margin-left: ceil($btn-padding-horizontal-small * .5);
   }
 }
 
@@ -164,7 +164,7 @@ form {
   button,
   select {
     ~ a {
-      margin-left: ceil($btn-padding-horizontal-small / 2);
+      margin-left: ceil($btn-padding-horizontal-small * .5);
       line-height: $input-height-base;
     }
   }
@@ -227,7 +227,7 @@ p.buttons {
 
     label {
       display: block;
-      margin-bottom: $line-height-computed / 2;
+      margin-bottom: $line-height-computed * .5;
       line-height: initial;
     }
   }

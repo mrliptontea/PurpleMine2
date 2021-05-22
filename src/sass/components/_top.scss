@@ -159,7 +159,7 @@
 
 #quick-search {
   #header & {
-    margin-top: floor(($header-title-line-height + $header-padding-vertical * 2 - $input-height-base) / 2) - 1px;
+    margin-top: floor(($header-title-line-height + $header-padding-vertical * 2 - $input-height-base) * .5) - 1px;
     margin-right: $header-padding-horizontal;
     float: right;
     color: $header-text;
@@ -203,7 +203,7 @@
     .drdn-trigger {
       z-index: 1003;
       height: auto;
-      padding-bottom: $header-padding-horizontal / 2;
+      padding-bottom: $header-padding-horizontal * .5;
       border-color: $quick-search-dropdown-bg;
       background-color: $quick-search-dropdown-bg;
 
@@ -223,7 +223,7 @@
       &::after {
         content: $fa-var-caret-down;
         position: absolute;
-        top: ($font-size-base / 2);
+        top: ($font-size-base * .5);
         right: $input-padding-horizontal;
       }
     }
@@ -233,7 +233,7 @@
       background: $quick-search-dropdown-bg;
 
       > .quick-search {
-        padding: $header-padding-horizontal / 2;
+        padding: $header-padding-horizontal * .5;
 
         > input {
           width: 100%;

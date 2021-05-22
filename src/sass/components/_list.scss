@@ -252,7 +252,7 @@ tr.issue {
 
     > span {
       display: block;
-      margin-bottom: $line-height-computed / 4;
+      margin-bottom: $line-height-computed * .25;
       padding: $table-cell-padding;
       font-weight: $font-weight-bold;
     }
@@ -323,7 +323,7 @@ td.last_updated_by {
 }
 
 .sample-data {
-  margin: $line-height-computed / 2;
+  margin: $line-height-computed * .5;
   margin-bottom: $line-height-computed;
   border: 1px solid $table-border-color;
 
@@ -494,7 +494,7 @@ tr.entry {
         right: 5px;
         bottom: 0;
         left: 5px;
-        height: calc(50% - 2px / 2);
+        height: calc(50% - 2px * .5);
         transform: rotate(-4deg);
         transition: border-color $transition-time;
         border-top: 2px solid rgba($tracker-default-text, .95);
