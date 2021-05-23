@@ -190,12 +190,12 @@ img {
 }
 
 .splitcontentleft {
-  padding-right: ($padding-side / 2);
+  padding-right: ($padding-side * .5);
   float: left;
 }
 
 .splitcontentright {
-  padding-left: ($padding-side / 2);
+  padding-left: ($padding-side * .5);
   float: right;
 }
 
@@ -275,7 +275,7 @@ img {
 //
 
 p.subtitle {
-  margin-top: ($line-height-computed / -2);
+  margin-top: ($line-height-computed * -.5);
   margin-bottom: $line-height-computed;
   font-style: italic;
 }
@@ -360,13 +360,13 @@ a.close-icon {
 
   #list-left {
     width: 50%;
-    padding-right: ($padding-side / 2);
+    padding-right: ($padding-side * .5);
     float: left;
   }
 
   #list-right {
     width: 50%;
-    padding-left: ($padding-side / 2);
+    padding-left: ($padding-side * .5);
     float: right;
   }
 }
@@ -468,16 +468,16 @@ ul.projects {
     &.root {
       display: flex;
       flex-wrap: wrap;
-      margin-right: -($padding-side / 2);
-      margin-left: -($padding-side / 2);
+      margin-right: -($padding-side * .5);
+      margin-left: -($padding-side * .5);
 
       > li {
         display: block;
         box-sizing: border-box;
         flex: 0 1 auto;
         width: 100%;
-        margin-right: $padding-side / 2;
-        margin-left: $padding-side / 2;
+        margin-right: $padding-side * .5;
+        margin-left: $padding-side * .5;
         padding: $panel-body-padding;
         border: 1px solid $panel-border;
         border-radius: $border-radius-base;
@@ -500,7 +500,7 @@ ul.projects {
   }
 
   li.child {
-    margin-top: $line-height-computed / 2;
+    margin-top: $line-height-computed * .5;
   }
 
   a.project {
@@ -680,7 +680,7 @@ div#version-summary {
   left: 50%;
   box-sizing: border-box;
   width: 200px;
-  margin: (($padding-large-vertical * 2 + 1px * 2 + $line-height-computed) / -2) (200px / -2);
+  margin: (($padding-large-vertical * 2 + 1px * 2 + $line-height-computed) * -.5) (200px * -.5);
   padding: $padding-large-vertical $padding-large-horizontal;
   border: 1px solid $highlight-border;
   border-radius: $border-radius-base;
@@ -699,7 +699,7 @@ div#version-summary {
       box-sizing: border-box;
       width: $line-height-computed;
       height: $line-height-computed;
-      margin-right: $line-height-computed / 2;
+      margin-right: $line-height-computed * .5;
       animation: spin 1s linear infinite;
       border: 3px solid rgba($highlight-text, .3);
       border-radius: 50%;
@@ -765,7 +765,7 @@ div.table-list.boards {
 
 .controller-messages.action-show {
   h2 {
-    margin-bottom: $line-height-computed / 2;
+    margin-bottom: $line-height-computed * .5;
   }
 
   .message {
@@ -871,14 +871,14 @@ div.table-list.boards {
 .news.box {
   p > a:not(:last-child) {
     display: inline-block;
-    margin-bottom: floor($line-height-computed / 4);
+    margin-bottom: floor($line-height-computed * .25);
     font-size: $font-size-h4;
   }
 
   .summary,
   .author {
     display: block;
-    margin-bottom: floor($line-height-computed / 4);
+    margin-bottom: floor($line-height-computed * .25);
 
     + br {
       display: none;
@@ -893,7 +893,7 @@ div.table-list.boards {
 #edit-news + p {
   em {
     display: block;
-    margin-bottom: floor($line-height-computed / 4);
+    margin-bottom: floor($line-height-computed * .25);
 
     + br {
       display: none;
@@ -903,7 +903,7 @@ div.table-list.boards {
 
 .news.box .summary,
 #edit-news + p em {
-  padding: floor($line-height-computed / 4) $padding-base-horizontal;
+  padding: floor($line-height-computed * .25) $padding-base-horizontal;
   border-left: 4px solid $blockquote-border-color;
 }
 
@@ -914,7 +914,7 @@ div.table-list.boards {
 
   header {
     h3 {
-      margin-bottom: $line-height-computed / 2;
+      margin-bottom: $line-height-computed * .5;
 
       > a {
         font-weight: $font-weight-bold;
@@ -942,7 +942,7 @@ div.table-list.boards {
 #comments {
   > h4 {
     margin-top: $line-height-computed;
-    margin-bottom: $line-height-computed / 2;
+    margin-bottom: $line-height-computed * .5;
   }
 }
 

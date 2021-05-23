@@ -84,7 +84,7 @@ $tabs-height: $line-height-computed + $tab-padding-vertical * 2 + 1px + 1px;
       }
 
       &.disabled {
-        opacity: $icon-opacity / 2;
+        opacity: $icon-opacity * .5;
       }
     }
 

@@ -30,13 +30,13 @@ table.progress {
     border: 0 none;
 
     &:first-child {
-      border-top-left-radius: $progress-height / 2;
-      border-bottom-left-radius: $progress-height / 2;
+      border-top-left-radius: $progress-height * .5;
+      border-bottom-left-radius: $progress-height * .5;
     }
 
     &:last-child {
-      border-top-right-radius: $progress-height / 2;
-      border-bottom-right-radius: $progress-height / 2;
+      border-top-right-radius: $progress-height * .5;
+      border-bottom-right-radius: $progress-height * .5;
     }
 
     &.done {

@@ -12,7 +12,7 @@ form {
     > input,
     > select {
       margin-right: 5px;
-      margin-bottom: $line-height-computed / 2;
+      margin-bottom: $line-height-computed * .5;
     }
   }
 
@@ -228,7 +228,7 @@ select:-moz-focusring {
 fieldset {
   min-width: 0;
   margin: 0;
-  padding: ($line-height-computed / 2) 0;
+  padding: ($line-height-computed * .5) 0;
   border: 0 none;
   border-top: 1px solid $legend-border-color;
 
@@ -297,7 +297,7 @@ em.info {
 
   p {
     @extend %clearfix;
-    margin: 0 0 ($line-height-computed / 2);
+    margin: 0 0 ($line-height-computed * .5);
     padding-left: $label-width + $label-space;
     clear: left;
     line-height: $input-height-base;
@@ -435,7 +435,7 @@ label[for="issue_description"] + a {
 //
 
 label[for="closed"] {
-  margin-bottom: $line-height-computed / 2;
+  margin-bottom: $line-height-computed * .5;
 }
 
 
@@ -481,7 +481,7 @@ label[for="closed"] {
 //
 
 .jstEditor {
-  margin-bottom: $line-height-computed / 2;
+  margin-bottom: $line-height-computed * .5;
 }
 
 //== User form
@@ -505,13 +505,13 @@ label[for="closed"] {
 .attachments_fields {
   > span {
     display: block;
-    margin-bottom: $line-height-computed / 4;
+    margin-bottom: $line-height-computed * .25;
   }
 
   input {
     width: 21.5em;
     margin-right: .5em;
-    margin-bottom: $line-height-computed / 4;
+    margin-bottom: $line-height-computed * .25;
 
     &.filename {
       padding-left: $input-padding-horizontal + 16px;
@@ -621,7 +621,7 @@ label[for="closed"] {
 #watchers_inputs {
   display: block;
   max-height: $check-list-max-height;
-  margin-bottom: $line-height-computed / 2;
+  margin-bottom: $line-height-computed * .5;
   overflow: auto;
 
   label {
@@ -757,7 +757,7 @@ fieldset#filters {
 .query_sort_criteria_count {
   display: inline-block;
   min-width: 1em;
-  margin-bottom: $line-height-computed / 4;
+  margin-bottom: $line-height-computed * .25;
   line-height: $input-height-base;
 }
 

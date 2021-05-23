@@ -344,7 +344,7 @@ p.footnote {
     display: block;
     width: 300px;
     margin-top: $line-height-computed;
-    padding-top: $line-height-computed / 2;
+    padding-top: $line-height-computed * .5;
     border-top: 1px solid $gray-400;
   }
 
@@ -408,7 +408,7 @@ p.footnote {
     display: inline-block;
     padding: $padding-base-vertical $padding-base-horizontal;
     border: 1px solid $btn-default-border;
-    border-radius: ceil($font-size-base + ($padding-base-vertical + 1px) * 2) / 2;
+    border-radius: ceil($font-size-base + ($padding-base-vertical + 1px) * 2) * .5;
     background-color: $body-bg;
     line-height: 1;
     white-space: nowrap;

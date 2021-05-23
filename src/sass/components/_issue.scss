@@ -27,7 +27,7 @@
           width: $issue-gravatar-size;
           height: $issue-gravatar-size;
           margin-right: 10px;
-          margin-bottom: $line-height-computed / 2;
+          margin-bottom: $line-height-computed * .5;
           float: left;
 
           &:nth-child(2) {
@@ -47,7 +47,7 @@
         width: $issue-gravatar-size;
         height: $issue-gravatar-size;
         margin-right: 10px;
-        margin-bottom: $line-height-computed / 2;
+        margin-bottom: $line-height-computed * .5;
         float: left;
       }
 
@@ -373,7 +373,7 @@ div.thumbnails {
   }
 
   .issues {
-    margin: ($line-height-computed / 2) 0 0;
+    margin: ($line-height-computed * .5) 0 0;
 
     tr {
       background-color: transparent;
@@ -406,7 +406,7 @@ div.thumbnails {
   display: none;
 
   dt {
-    margin: 0 0 ($line-height-computed / 4);
+    margin: 0 0 ($line-height-computed * .25);
   }
 
   dd {
@@ -671,7 +671,7 @@ div.thumbnails {
 
     > label {
       display: inline-block;
-      margin-bottom: $line-height-computed / 2;
+      margin-bottom: $line-height-computed * .5;
       line-height: $line-height-base;
     }
 
@@ -757,7 +757,7 @@ span.private {
   }
 
   div.changeset {
-    margin-top: $line-height-computed / 2 + 2px * 2;
+    margin-top: $line-height-computed * .5 + 2px * 2;
     padding: 0;
     overflow: hidden;
     border: 1px solid $bubble-border;

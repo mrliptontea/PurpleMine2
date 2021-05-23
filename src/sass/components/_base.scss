@@ -90,7 +90,7 @@ h4 {
 }
 
 p {
-  margin: 0 0 ($line-height-computed / 2);
+  margin: 0 0 ($line-height-computed * .5);
 }
 
 small {
@@ -113,7 +113,7 @@ table {
 
   form {
     p {
-      margin-bottom: ($line-height-computed / 2);
+      margin-bottom: ($line-height-computed * .5);
 
       &:last-child {
         margin-bottom: 0;
@@ -125,7 +125,7 @@ table {
 ul,
 ol {
   margin-top: 0;
-  margin-bottom: ($line-height-computed / 2);
+  margin-bottom: ($line-height-computed * .5);
   padding-left: 1.5em;
 
   ul,
@@ -164,14 +164,14 @@ hr {
   border-top: 1px solid $hr-border;
 
   li & {
-    margin-top: $line-height-computed / 2;
-    margin-bottom: $line-height-computed / 2;
+    margin-top: $line-height-computed * .5;
+    margin-bottom: $line-height-computed * .5;
   }
 }
 
 blockquote {
   margin: 0 0 $line-height-computed;
-  padding: floor($line-height-computed / 4) $padding-large-horizontal;
+  padding: floor($line-height-computed * .25) $padding-large-horizontal;
   border-left: 4px solid $blockquote-border-color;
 
   > :first-child {
