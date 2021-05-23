@@ -1,6 +1,7 @@
-Latest (master):
+v2.15.0 (2021-05-23):
 
-* Update styles for Redmine 4.2
+* Updated styles for Redmine 4.2.
+* Merged #225 (via #228): improved documents styles.
 
 v2.14.0 (2021-01-27):
 
