@@ -176,6 +176,10 @@ form {
 
 p.buttons {
   margin-bottom: $line-height-computed;
+
+  a {
+    line-height: $line-height-base;
+  }
 }
 
 

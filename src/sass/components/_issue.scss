@@ -297,7 +297,8 @@
   }
 }
 
-div.fileover {
+div.fileover,
+p.custom-field-filedroplistner.fileover {
   background-color: $highlight-bg;
 }
 
@@ -381,6 +382,10 @@ div.thumbnails {
 
     tr:last-child > td {
       border-bottom: 0 none;
+    }
+
+    td.subject {
+      width: 50%;
     }
 
     td.checkbox {
@@ -535,14 +540,6 @@ div.thumbnails {
     padding: $bubble-padding-vertical $bubble-padding-horizontal;
     font-size: $font-size-list;
 
-    a {
-      opacity: $icon-opacity;
-
-      &:hover {
-        opacity: $icon-hover-opacity;
-      }
-    }
-
     > a.journal-link {
       padding-left: $issue-attribute-padding-h;
       opacity: 1;
@@ -550,6 +547,7 @@ div.thumbnails {
 
       &::before {
         content: "";
+        display: none;
       }
     }
   }
@@ -721,7 +719,16 @@ div.thumbnails {
   clear: left;
 }
 
+.journal-actions > a,
+.journal-actions .drdn-trigger {
+  margin: -3px 3px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
 .journal-link {
+  margin: -3px -3px -3px 0;
+  padding: 3px;
   float: right;
 }
 
