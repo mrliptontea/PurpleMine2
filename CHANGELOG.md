@@ -1,3 +1,7 @@
+Latest (master):
+
+* Update styles for Redmine 4.2
+
 v2.14.0 (2021-01-27):
 
 * Merged #220: fixed drag & drop behavior.

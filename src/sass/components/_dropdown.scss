@@ -76,7 +76,32 @@
 }
 
 .contextual {
-  .drdn {
+  .drdn-items {
+    padding: 3px;
+
+    a,
+    span {
+      padding-top: $pagination-padding-vertical;
+      padding-bottom: $pagination-padding-vertical;
+      border: 1px solid transparent;
+      border-radius: $border-radius-small;
+      color: $pagination-color;
+
+      &:hover,
+      &:focus {
+        border-color: $pagination-hover-border;
+        background-color: $pagination-hover-bg;
+        color: $pagination-hover-color;
+        text-decoration: none;
+
+        &.icon-del {
+          color: map-get(map-get($icon-color-map, danger), normal);
+        }
+      }
+    }
+  }
+
+  &:not(.journal-actions) > .drdn {
     &.expanded {
       > .drdn-trigger {
         border-color: $pagination-active-border;
@@ -85,7 +110,7 @@
       }
     }
 
-    &-trigger {
+    .drdn-trigger {
       padding: $btn-padding-vertical $btn-padding-horizontal-small;
       border: 1px solid $pagination-border;
       border-radius: $border-radius-base;
@@ -105,25 +130,20 @@
         color: $pagination-hover-color;
       }
     }
+  }
+}
 
-    &-items {
-      padding: 3px;
+.journal-actions {
+  .drdn-trigger {
+    color: map-get(map-get($icon-color-map, default), normal);
+  }
 
-      a,
-      span {
-        padding-top: $pagination-padding-vertical;
-        padding-bottom: $pagination-padding-vertical;
-        border: 1px solid transparent;
-        border-radius: $border-radius-small;
-        color: $pagination-color;
+  .drdn-trigger:hover,
+  .drdn.expanded .drdn-trigger {
+    color: map-get(map-get($icon-color-map, default), hover);
+  }
 
-        &:hover {
-          border-color: $pagination-hover-border;
-          background-color: $pagination-hover-bg;
-          color: $pagination-hover-color;
-          text-decoration: none;
-        }
-      }
-    }
+  .drdn-content {
+    top: $input-height-base;
   }
 }

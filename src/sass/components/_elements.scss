@@ -461,6 +461,10 @@ ul.projects {
   li {
     list-style-type: none;
   }
+
+  .archived {
+    color: $gray-600;
+  }
 }
 
 #projects-index ul.projects {
@@ -509,6 +513,14 @@ ul.projects {
 
     &.child {
       font-weight: $font-weight-normal;
+    }
+  }
+}
+
+table.projects {
+  .name {
+    a + span.icon {
+      margin-left: 5px;
     }
   }
 }
