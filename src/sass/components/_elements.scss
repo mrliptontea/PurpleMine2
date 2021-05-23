@@ -877,6 +877,53 @@ div.table-list.boards {
 }
 
 
+//== Documents
+//
+
+.controller-documents {
+  &.action-index {
+    h2 {
+      font-size: $font-size-h2;
+    }
+
+    h4 {
+      margin-bottom: 0;
+      font-size: $font-size-h4;
+    }
+
+    .wiki {
+      + h3,
+      + h4 {
+        margin-top: $line-height-computed;
+        padding-top: $line-height-computed;
+        border-top: 1px solid $panel-border;
+      }
+    }
+  }
+
+  &.action-show {
+    .wiki {
+      margin-bottom: $line-height-computed;
+    }
+  }
+
+  h3 {
+    font-size: $font-size-h3;
+  }
+
+  #content > h2,
+  #content > h4 {
+    + p {
+      color: $gray-700;
+
+      em {
+        font-style: normal;
+      }
+    }
+  }
+}
+
+
 //== News
 //
 
