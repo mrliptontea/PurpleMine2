@@ -43,20 +43,20 @@
 
   a,
   button {
-    &.ui-state-default {
+    &.ui-button {
       border-color: $header-bg;
       background: $header-bg;
+      box-shadow: none;
       color: $header-text;
+
+      .ui-icon {
+        background-image: url("../../../stylesheets/jquery/images/ui-icons_ffffff_256x240.png");
+      }
     }
 
-    &.ui-state-hover,
-    &.ui-state-focus {
+    &.ui-button:hover {
       border-color: darken($header-bg, 12%);
       background: darken($header-bg, 10%);
-    }
-
-    .ui-icon {
-      background-image: url("../../../stylesheets/jquery/images/ui-icons_ffffff_256x240.png");
     }
   }
 }

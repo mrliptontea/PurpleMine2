@@ -245,3 +245,16 @@ div.jstElements {
     &::before { content: $fa-var-question-circle; }
   }
 }
+
+body {
+  .table-generator {
+    td {
+      border-color: $tab-border;
+    }
+
+    td.selected-cell,
+    td:hover {
+      background-color: $brand-primary;
+    }
+  }
+}
