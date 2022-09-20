@@ -3,18 +3,21 @@
 // --------------------------------------------------
 
 #top-menu {
+  $top-menu-padding-vertical:   $padding-small-vertical + 1px;
+  $top-menu-padding-horizontal: $padding-side;
   @extend %clearfix;
-  position: relative;
-  padding: $padding-small-vertical $padding-side;
+  box-sizing: border-box;
+  padding: $top-menu-padding-vertical $top-menu-padding-horizontal;
   background: $top-menu-bg;
   color: $top-menu-text;
   font-size: $font-size-small;
 
   @if $top-menu-collapse {
-    $toggler-position-v:    $padding-small-vertical + 1px;
+    $toggler-position-v:    $top-menu-padding-vertical + 1px;
     $toggler-position-h:    1px;
 
-    max-height: floor($font-size-base * $font-size-small-unitless * $line-height-base) + $padding-small-vertical;
+    position: relative;
+    max-height: floor($font-size-base * $font-size-small-unitless * $line-height-base) + $top-menu-padding-vertical * 2;
     padding-bottom: 0;
     overflow: hidden;
 
@@ -24,7 +27,7 @@
 
     a {
       display: inline-block;
-      margin-bottom: $padding-small-vertical;
+      margin-bottom: $top-menu-padding-vertical;
       white-space: nowrap;
     }
 
@@ -73,7 +76,7 @@
   }
 
   li {
-    margin: 0 .5em 0 0;
+    margin: 0 .8em 0 0;
     padding: 0;
     float: left;
     list-style-type: none;
@@ -101,7 +104,7 @@
 
   > ul > li {
     margin-right: 0;
-    margin-left: .5em;
+    margin-left: .8em;
   }
 }
 
@@ -156,7 +159,7 @@
 
 #quick-search {
   #header & {
-    margin-top: floor(($header-title-line-height + $header-padding-vertical * 2 - $input-height-base) / 2) - 1px;
+    margin-top: floor(($header-title-line-height + $header-padding-vertical * 2 - $input-height-base) * .5) - 1px;
     margin-right: $header-padding-horizontal;
     float: right;
     color: $header-text;
@@ -200,7 +203,7 @@
     .drdn-trigger {
       z-index: 1003;
       height: auto;
-      padding-bottom: $header-padding-horizontal / 2;
+      padding-bottom: $header-padding-horizontal * .5;
       border-color: $quick-search-dropdown-bg;
       background-color: $quick-search-dropdown-bg;
 
@@ -220,7 +223,7 @@
       &::after {
         content: $fa-var-caret-down;
         position: absolute;
-        top: ($font-size-base / 2);
+        top: ($font-size-base * .5);
         right: $input-padding-horizontal;
       }
     }
@@ -230,7 +233,7 @@
       background: $quick-search-dropdown-bg;
 
       > .quick-search {
-        padding: $header-padding-horizontal / 2;
+        padding: $header-padding-horizontal * .5;
 
         > input {
           width: 100%;

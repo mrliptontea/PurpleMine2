@@ -228,6 +228,12 @@ div.jstElements {
     &::before { content: $fa-var-code; }
   }
 
+  .jstb_table {
+    @extend %jstb-icon;
+
+    &::before { content: $fa-var-table; }
+  }
+
   button.jstb_help {
     @extend %jstb-icon;
     color: $link-color;
@@ -237,5 +243,18 @@ div.jstElements {
     }
 
     &::before { content: $fa-var-question-circle; }
+  }
+}
+
+body {
+  .table-generator {
+    td {
+      border-color: $tab-border;
+    }
+
+    td.selected-cell,
+    td:hover {
+      background-color: $brand-primary;
+    }
   }
 }

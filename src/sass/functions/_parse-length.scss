@@ -1,0 +1,49 @@
+// Extract the length of margin/padding/border
+// for given side from a shorthand syntax.
+//
+// Examples:
+// parse-length(1px, top) -> 1px
+// parse-length(1px 2px, right) -> 2px
+// parse-length(1px 2px 3px 4px, bottom) -> 3px
+// parse-length(1px 2px 3px 4px, left) -> 4px
+//
+@function parse-length($value, $side) {
+  $index: 1;
+
+  // Top values are always at index 1. The same for when the list has only one item
+  @if ($side == top or length($value) == 1) {
+    $index: 1;
+  }
+  // Covers "vertical horizontal" style
+  @else if (length($value) == 2) {
+    @if ($side == left or $side == right) {
+      $index: 2;
+    }
+    @if ($side == bottom) {
+      $index: 1;
+    }
+  }
+  // Covers "top horizontal bottom" style
+  @else if (length($value) == 3) {
+    @if ($side == left or $side == right) {
+      $index: 2;
+    }
+    @if ($side == bottom) {
+      $index: 3;
+    }
+  }
+  // Covers "top right bottom left" style
+  @else if (length($value) == 4) {
+    @if ($side == right) {
+      $index: 2;
+    }
+    @if ($side == bottom) {
+      $index: 3;
+    }
+    @if ($side == left) {
+      $index: 4;
+    }
+  }
+
+  @return nth($value, $index);
+}

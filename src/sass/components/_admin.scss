@@ -8,7 +8,7 @@
       list-style-type: none;
 
       > a:not(.icon-only) {
-        padding-left: $sidebar-padding-horizontal + 5px + 20px;
+        padding-left: $sidebar-padding-horizontal + 5px + $icon-width;
         background-repeat: no-repeat;
         background-position: $sidebar-padding-horizontal center;
       }
@@ -27,7 +27,7 @@
 
     a {
       display: inline-block;
-      padding-left: 5px + 20px;
+      padding-left: 5px + $icon-width;
       background-position: 0 center;
     }
   }
@@ -61,6 +61,13 @@ table.permissions {
 //== Workflows
 //
 
+.controller-workflows {
+  table.list,
+  fieldset.collapsible {
+    margin-bottom: $line-height-computed;
+  }
+}
+
 table.transitions {
   td.enabled {
     background: $state-success;
@@ -83,6 +90,29 @@ table.fields_permissions {
 
   td.required {
     background: $state-danger;
+  }
+}
+
+
+//== Custom fields -> Issues -> Key values
+//
+
+#custom_field_enumerations {
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    min-height: $input-height-base;
+    padding: 1px 0;
+
+    .sort-handle,
+    label {
+      line-height: $input-height-base;
+    }
+
+    label input {
+      vertical-align: baseline;
+    }
   }
 }
 

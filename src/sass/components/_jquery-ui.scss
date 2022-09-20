@@ -43,20 +43,20 @@
 
   a,
   button {
-    &.ui-state-default {
+    &.ui-button {
       border-color: $header-bg;
       background: $header-bg;
+      box-shadow: none;
       color: $header-text;
+
+      .ui-icon {
+        background-image: url("../../../stylesheets/jquery/images/ui-icons_ffffff_256x240.png");
+      }
     }
 
-    &.ui-state-hover,
-    &.ui-state-focus {
+    &.ui-button:hover {
       border-color: darken($header-bg, 12%);
       background: darken($header-bg, 10%);
-    }
-
-    .ui-icon {
-      background-image: url("../../../stylesheets/jquery/images/ui-icons_ffffff_256x240.png");
     }
   }
 }
@@ -127,6 +127,7 @@
 }
 
 .ui-sortable-helper {
+  background-color: $body-bg;
   @include nice-shadow(4);
 }
 
@@ -138,6 +139,23 @@
   @include nice-shadow(2);
   padding: 3px;
   border-radius: $panel-border-radius;
+
+  .ui-menu-item {
+    &.ui-state-focus,
+    &.ui-state-active {
+      border-color: $pagination-hover-border;
+      background-color: $pagination-hover-bg;
+      color: $pagination-hover-color;
+
+      a {
+        color: $pagination-hover-color;
+      }
+
+      .ui-icon {
+        background-image: url("../../../stylesheets/jquery/images/ui-icons_222222_256x240.png");
+      }
+    }
+  }
 }
 
 .ui-menu-item {
@@ -296,5 +314,19 @@ img.ui-datepicker-trigger {
       margin: 0;
       padding: $btn-padding-vertical $btn-padding-horizontal;
     }
+  }
+}
+
+.ui-tooltip {
+  @include nice-shadow(1);
+  padding: $padding-small-vertical $padding-small-horizontal;
+  border: 0 none;
+  background: $black;
+  color: $white;
+  font-size: $font-size-small-px;
+  pointer-events: none;
+
+  &.qtip {
+    pointer-events: initial;
   }
 }

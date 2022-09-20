@@ -3,8 +3,16 @@
   display: none;
 }
 
+.inline-flex {
+  display: inline-flex;
+
+  body.controller-issues h2 & {
+    padding-right: 0;
+  }
+}
+
 // stylelint-disable selector-max-compound-selectors
-.theme-Purplemine2 {
+body {
   @media screen and (max-width: $redmine-responsive-max) {
     .flyout-menu + div {
       #header {
@@ -83,6 +91,11 @@
       overflow: auto;
     }
 
+    #ajax-indicator {
+      left: 50%;
+      width: 200px;
+    }
+
     .mobile-toggle-button {
       width: $responsive-header-height;
       height: $responsive-header-height;
@@ -103,7 +116,7 @@
 
       &__search {
         height: $responsive-header-height;
-        padding: ($padding-side / 2);
+        padding: ($padding-side * .5);
         line-height: normal;
 
         input[type="text"] {
@@ -126,7 +139,7 @@
 
       ul {
         li:nth-child(n) {
-          a {
+          a:not(.icon-only) {
             height: auto;
             padding: $padding-large-vertical $padding-large-horizontal;
             line-height: $line-height-base;
@@ -142,13 +155,15 @@
             }
 
             .icon-only {
-              flex: 0 0 40px;
+              flex: 0;
               padding-right: 0;
-              padding-left: 0;
+              padding-left: 40px;
               text-align: center;
+              text-overflow: initial;
 
               &::before {
-                line-height: inherit;
+                width: 40px;
+                margin-left: -40px;
               }
             }
           }
@@ -219,7 +234,7 @@
 
       #admin-menu {
         a {
-          background-position: 8px center;
+          background-position: 8px center !important; // stylelint-disable-line declaration-no-important
 
           &.additionals {
             padding-left: 32px !important; // stylelint-disable-line declaration-no-important
@@ -234,13 +249,13 @@
 
       #watchers {
         .contextual {
-          padding-top: $line-height-computed / 2;
-          padding-bottom: $line-height-computed / 2;
+          padding-top: $line-height-computed * .5;
+          padding-bottom: $line-height-computed * .5;
         }
 
         .watchers {
           li {
-            margin: ($line-height-computed / 2) 0 0;
+            margin: ($line-height-computed * .5) 0 0;
             padding: 0;
 
             img.gravatar {
@@ -254,7 +269,7 @@
             }
 
             .delete {
-              flex: 0 0 24px;
+              margin-right: $padding-large-vertical;
               margin-left: auto;
               float: none;
               text-align: center;
@@ -412,7 +427,7 @@
       }
     }
 
-    #issue-changesets {
+    div#issue-changesets {
       div.changeset {
         padding: 0;
       }
@@ -420,6 +435,10 @@
 
     #admin-index > #admin-menu li {
       padding: 0;
+
+      a {
+        background-position: 8px center !important; // stylelint-disable-line declaration-no-important
+      }
     }
   }
 
@@ -432,7 +451,7 @@
     .query-columns {
       span {
         display: block;
-        margin-bottom: $line-height-computed / 2;
+        margin-bottom: $line-height-computed * .5;
       }
 
       .buttons {

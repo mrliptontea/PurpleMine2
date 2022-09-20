@@ -29,7 +29,7 @@
       }
     }
 
-    a {
+    a:not(.easy-mindmup__icon) {
       @extend %fa-icon;
       padding: 3px 10px 3px 20px;
       border-radius: $border-radius-small;
