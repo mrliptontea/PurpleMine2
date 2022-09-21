@@ -28,6 +28,7 @@
 @mixin tracker($parent, $background, $color) {
   tr#{$parent} .id > a,
   tr#{$parent} .issue_id > a,
+  a#{$parent}.issue,
   a#{$parent},
   .relations > span > a#{$parent},
   .parent > a#{$parent} {

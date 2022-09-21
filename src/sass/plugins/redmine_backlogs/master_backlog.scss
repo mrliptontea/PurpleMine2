@@ -51,17 +51,17 @@ $story-sp-input-width:          50px;
 //
 
 #backlogs_container {
-  padding: ($padding-side / 2) ($padding-side / 4);
+  padding: ($padding-side * .5) ($padding-side * .25);
 
   .backlogs-panel-inner {
-    padding: 0 ($padding-side / 4);
+    padding: 0 ($padding-side * .25);
   }
 
   @media screen and (min-width: $screen-md-min) {
-    padding: $padding-side ($padding-side / 2);
+    padding: $padding-side ($padding-side * .5);
 
     .backlogs-panel-inner {
-      padding: 0 ($padding-side / 2);
+      padding: 0 ($padding-side * .5);
     }
   }
 
@@ -158,7 +158,7 @@ $story-sp-input-width:          50px;
     @include nice-shadow(1);
     display: block;
     position: relative;
-    margin: 0 0 ($padding-side / 2);
+    margin: 0 0 ($padding-side * .5);
     border-radius: $border-radius-large $border-radius-large 0 0;
     background-color: $gray-100;
 
@@ -243,7 +243,7 @@ $story-sp-input-width:          50px;
     }
 
     .editing {
-      $editor-padding: (($header-line-height - $input-height-base) / 2);
+      $editor-padding: (($header-line-height - $input-height-base) * .5);
 
       .editors {
         display: block;
@@ -823,7 +823,7 @@ $story-sp-input-width:          50px;
 //
 
 #show_completed_sprints {
-  margin-left: $padding-side / 2;
+  margin-left: $padding-side * .5;
   color: $gray-950;
   cursor: pointer;
 }

@@ -48,12 +48,8 @@ form {
       @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
     }
 
-    + a {
-      display: inline-block;
+    ~ a {
       margin-right: 2px;
-      padding-top: $btn-padding-vertical + 1px;
-      padding-bottom: $btn-padding-vertical + 1px;
-      line-height: $line-height-base;
 
       + a {
         margin-left: 2px;
@@ -67,7 +63,7 @@ form {
 //
 
 form[action*="repository/diff"] {
-  margin-bottom: $line-height-computed / 2;
+  margin-bottom: $line-height-computed * .5;
 }
 
 
@@ -144,11 +140,46 @@ p.buttons,
 }
 
 
+//== Submit + cancel
+//
+
+#issue-form,
+.mypage-box,
+.journal,
+.edit_news,
+.edit_content,
+.edit_time_entry,
+.edit_membership {
+  input[type="submit"] + a {
+    margin-left: ceil($btn-padding-horizontal-small * .5);
+  }
+}
+
+
+//== Apply + clear
+//
+
+form {
+  input,
+  button,
+  select {
+    ~ a {
+      margin-left: ceil($btn-padding-horizontal-small * .5);
+      line-height: $input-height-base;
+    }
+  }
+}
+
+
 //== Action buttons group
 //
 
 p.buttons {
   margin-bottom: $line-height-computed;
+
+  a {
+    line-height: $line-height-base;
+  }
 }
 
 
@@ -187,6 +218,10 @@ p.buttons {
     min-width: 130px;
   }
 
+  label + & {
+    margin-left: $padding-side;
+  }
+
   @at-root span#{&} {
     > span {
       display: inline-block;
@@ -196,7 +231,7 @@ p.buttons {
 
     label {
       display: block;
-      margin-bottom: $line-height-computed / 2;
+      margin-bottom: $line-height-computed * .5;
       line-height: initial;
     }
   }

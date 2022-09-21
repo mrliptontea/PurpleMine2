@@ -28,6 +28,7 @@
 
 #content {
   padding: $padding-side;
+  overflow-x: auto; // needed for drag & drop of enumerations
 
   @if $css-grid-layout {
     grid-area: content;
@@ -106,7 +107,7 @@
 
   ul {
     &:nth-child(n) {
-      margin: 0 0 ($line-height-computed / 2);
+      margin: 0 0 ($line-height-computed * .5);
       padding: 0;
 
       @if $sidebar-position == "left" {
@@ -172,7 +173,7 @@
         > a.icon-only {
           position: absolute;
           top: $sidebar-padding-vertical;
-          right: $sidebar-padding-horizontal / 2;
+          right: $sidebar-padding-horizontal * .5;
           line-height: $line-height-computed;
 
           &::before {
@@ -195,8 +196,8 @@
 
         li {
           > a:not(.icon-only) {
-            padding-right: $sidebar-padding-horizontal / 2;
-            padding-left: $sidebar-padding-horizontal / 2;
+            padding-right: $sidebar-padding-horizontal * .5;
+            padding-left: $sidebar-padding-horizontal * .5;
 
             @if $sidebar-position == "right" {
               margin-left: 0;
@@ -204,7 +205,7 @@
           }
 
           .pages-hierarchy {
-            margin-left: $sidebar-padding-horizontal / 2 + 3px;
+            margin-left: $sidebar-padding-horizontal * .5 + 3px;
           }
         }
       }
@@ -244,7 +245,7 @@
         }
 
         .page-tree__list {
-          margin-left: $sidebar-padding-horizontal / 2 + 3px;
+          margin-left: $sidebar-padding-horizontal * .5 + 3px;
         }
 
         summary {
@@ -262,8 +263,8 @@
 
       li {
         > a:not(.icon-only) {
-          padding-right: $sidebar-padding-horizontal / 2;
-          padding-left: $sidebar-padding-horizontal / 2;
+          padding-right: $sidebar-padding-horizontal * .5;
+          padding-left: $sidebar-padding-horizontal * .5;
 
           @if $sidebar-position == "right" {
             margin-left: 0;
@@ -297,8 +298,8 @@
         &::before {
           content: "";
           position: absolute;
-          top: ($sidebar-padding-vertical + 1px) + ($line-height-computed - 16px) / 2;
-          left: $sidebar-padding-horizontal / 2 + 6px;
+          top: ($sidebar-padding-vertical + 1px) + ($line-height-computed - 16px) * .5;
+          left: $sidebar-padding-horizontal * .5 + 6px;
           width: 16px;
           height: 16px;
           background-image: inline-svg("chevron-right.svg", (path: (fill: $btn-default-icon-color)));

@@ -7,27 +7,29 @@
 //
 
 a.collapsible,
+a.collapsible.icon,
 .collapsible > legend {
   color: $link-color;
   cursor: pointer;
   user-select: none;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: $link-hover-color;
+    text-decoration: none;
   }
 
   &::before {
-    content: "";
-    display: inline-block;
+    @include fa-icon;
+    content: $fa-var-chevron-down;
     position: relative;
-    top: -1px;
-    width: 0;
-    height: 0;
+    top: -.1em;
+    width: 1em;
+    height: 1em;
     margin-right: 3px;
     transform: rotate(0);
-    border-top: 6px solid;
-    border-right: 4px solid transparent;
-    border-left: 4px solid transparent;
+    color: $gray-600;
+    font-size: 12px;
     vertical-align: middle;
 
     @if $collapsible-animation-time > 0 {
@@ -37,6 +39,7 @@ a.collapsible,
 }
 
 a.collapsible.collapsed,
+a.collapsible.icon-collapsed,
 .collapsible.collapsed > legend {
   &::before {
     transform: rotate(-90deg);
@@ -115,12 +118,18 @@ img {
 .filecontent-container {
   position: relative;
   min-height: 200px;
-  margin-bottom: 20px;
-}
-.filecontent-container > .filecontent {
-  position: absolute;
-  max-width: 100%;
-  max-height: 100%;
+  margin-bottom: $line-height-computed;
+
+  > .filecontent {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+
+    &.wiki {
+      position: static;
+      padding-bottom: $line-height-computed;
+    }
+  }
 }
 
 //== Responsive autoscroll
@@ -181,12 +190,12 @@ img {
 }
 
 .splitcontentleft {
-  padding-right: ($padding-side / 2);
+  padding-right: ($padding-side * .5);
   float: left;
 }
 
 .splitcontentright {
-  padding-left: ($padding-side / 2);
+  padding-left: ($padding-side * .5);
   float: right;
 }
 
@@ -249,6 +258,10 @@ img {
     @include check;
     display: block;
   }
+
+  .gravatar {
+    margin-right: $padding-small-vertical;
+  }
 }
 
 .roles-selection {
@@ -262,7 +275,7 @@ img {
 //
 
 p.subtitle {
-  margin-top: ($line-height-computed / -2);
+  margin-top: ($line-height-computed * -.5);
   margin-bottom: $line-height-computed;
   font-style: italic;
 }
@@ -276,11 +289,13 @@ p.subtitle {
 }
 
 .block-receiver {
+  box-sizing: border-box;
   min-height: 20px;
-  margin: $padding-side / -2;
   margin-bottom: $line-height-computed;
-  padding: $padding-side / 2;
-  outline: 2px dashed $gray-600;
+
+  .dragging & {
+    outline: 2px dashed $gray-600;
+  }
 }
 
 .mypage-box {
@@ -332,22 +347,6 @@ a.close-icon {
 
 // For Redmine 3.4+
 #my-page {
-  .block-receiver {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    outline: none;
-  }
-
-  &.dragging .block-receiver {
-    box-sizing: border-box;
-    min-height: 20px;
-    margin: $padding-side / -2;
-    margin-bottom: $line-height-computed;
-    padding: $padding-side / 2;
-    outline: 2px dashed $gray-600;
-  }
-
   .mypage-box {
     > .contextual {
       transition: opacity $transition-time;
@@ -361,13 +360,13 @@ a.close-icon {
 
   #list-left {
     width: 50%;
-    padding-right: ($padding-side / 2);
+    padding-right: ($padding-side * .5);
     float: left;
   }
 
   #list-right {
     width: 50%;
-    padding-left: ($padding-side / 2);
+    padding-left: ($padding-side * .5);
     float: right;
   }
 }
@@ -462,6 +461,10 @@ ul.projects {
   li {
     list-style-type: none;
   }
+
+  .archived {
+    color: $gray-600;
+  }
 }
 
 #projects-index ul.projects {
@@ -469,16 +472,16 @@ ul.projects {
     &.root {
       display: flex;
       flex-wrap: wrap;
-      margin-right: -($padding-side / 2);
-      margin-left: -($padding-side / 2);
+      margin-right: -($padding-side * .5);
+      margin-left: -($padding-side * .5);
 
       > li {
         display: block;
         box-sizing: border-box;
         flex: 0 1 auto;
         width: 100%;
-        margin-right: $padding-side / 2;
-        margin-left: $padding-side / 2;
+        margin-right: $padding-side * .5;
+        margin-left: $padding-side * .5;
         padding: $panel-body-padding;
         border: 1px solid $panel-border;
         border-radius: $border-radius-base;
@@ -501,7 +504,7 @@ ul.projects {
   }
 
   li.child {
-    margin-top: $line-height-computed / 2;
+    margin-top: $line-height-computed * .5;
   }
 
   a.project {
@@ -510,6 +513,14 @@ ul.projects {
 
     &.child {
       font-weight: $font-weight-normal;
+    }
+  }
+}
+
+table.projects {
+  .name {
+    a + span.icon {
+      margin-left: 5px;
     }
   }
 }
@@ -669,16 +680,22 @@ div#version-summary {
 //== Ajax indicator
 //
 
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 #ajax-indicator {
   @include nice-shadow(3);
   position: fixed;
   z-index: 100;
   top: 50%;
   left: 50%;
+  box-sizing: border-box;
   width: 200px;
-  margin: (($line-height-computed + $padding-large-vertical * 2 + 1px * 2) / -2) ((200px + $padding-large-horizontal * 2 + 1px * 2) / -2);
+  margin: (($padding-large-vertical * 2 + 1px * 2 + $line-height-computed) * -.5) (200px * -.5);
   padding: $padding-large-vertical $padding-large-horizontal;
   border: 1px solid $highlight-border;
+  border-radius: $border-radius-base;
   opacity: .9;
   background-color: $highlight-bg;
   color: $highlight-text;
@@ -686,11 +703,21 @@ div#version-summary {
   text-align: center;
 
   span {
-    padding-left: 26px;
-    background-image: url("../../../images/loading.gif");
-    background-repeat: no-repeat;
-    background-position: 0% 40%;
-    vertical-align: bottom;
+    line-height: $line-height-computed;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      box-sizing: border-box;
+      width: $line-height-computed;
+      height: $line-height-computed;
+      margin-right: $line-height-computed * .5;
+      animation: spin 1s linear infinite;
+      border: 3px solid rgba($highlight-text, .3);
+      border-radius: 50%;
+      border-top-color: $highlight-text;
+      vertical-align: bottom;
+    }
   }
 }
 
@@ -750,19 +777,18 @@ div.table-list.boards {
 
 .controller-messages.action-show {
   h2 {
-    margin-bottom: $line-height-computed / 2;
+    margin-bottom: $line-height-computed * .5;
   }
 
   .message {
-    border: 1px solid $gray-400;
+    border: 1px solid $bubble-border;
     border-radius: $panel-border-radius;
-    background: $gray-100;
+    background: $bubble-bg;
 
     > h4,
     > p {
       margin-bottom: 0;
       padding: $bubble-padding-vertical $bubble-padding-horizontal;
-      border-bottom: 1px solid mix($gray-400, $gray-100, 50%);
       color: $gray-700;
       font-size: $font-size-list;
 
@@ -776,7 +802,8 @@ div.table-list.boards {
     }
 
     .wiki {
-      padding: $bubble-padding-horizontal;
+      padding: $panel-body-padding;
+      border-top: 1px solid $bubble-border;
       border-radius: 0 0 $panel-border-radius $panel-border-radius;
       background: $body-bg;
     }
@@ -784,17 +811,16 @@ div.table-list.boards {
     .contextual {
       position: relative;
       z-index: 1;
-      margin-top: $padding-small-vertical;
-      margin-right: $bubble-padding-vertical;
+      padding: ($bubble-padding-vertical - 1px) $bubble-padding-vertical 0 0;
 
       a {
-        margin-left: ceil($bubble-padding-vertical / 2);
+        display: inline-block;
       }
     }
 
     .attachments {
       padding: $bubble-padding-horizontal;
-      border-top-color: mix($gray-400, $gray-100, 50%);
+      border-top-color: $bubble-border;
     }
   }
 
@@ -828,12 +854,12 @@ div.table-list.boards {
           margin-top: 1px;
           margin-left: 2px;
           border-width: 6px;
-          border-right-color: $panel-bg;
+          border-right-color: $bubble-bg;
         }
 
         &::before {
           border-width: 7px;
-          border-right-color: $panel-border;
+          border-right-color: $bubble-border;
         }
       }
 
@@ -851,20 +877,67 @@ div.table-list.boards {
 }
 
 
+//== Documents
+//
+
+.controller-documents {
+  &.action-index {
+    h2 {
+      font-size: $font-size-h2;
+    }
+
+    h4 {
+      margin-bottom: 0;
+      font-size: $font-size-h4;
+    }
+
+    .wiki {
+      + h3,
+      + h4 {
+        margin-top: $line-height-computed;
+        padding-top: $line-height-computed;
+        border-top: 1px solid $panel-border;
+      }
+    }
+  }
+
+  &.action-show {
+    .wiki {
+      margin-bottom: $line-height-computed;
+    }
+  }
+
+  h3 {
+    font-size: $font-size-h3;
+  }
+
+  #content > h2,
+  #content > h4 {
+    + p {
+      color: $gray-700;
+
+      em {
+        font-style: normal;
+      }
+    }
+  }
+}
+
+
 //== News
 //
 
 .news.box {
   p > a:not(:last-child) {
     display: inline-block;
-    margin-bottom: floor($line-height-computed / 4);
+    margin-bottom: floor($line-height-computed * .25);
     font-size: $font-size-h4;
   }
 
   .summary,
   .author {
     display: block;
-    margin-bottom: floor($line-height-computed / 4);
+    margin-bottom: floor($line-height-computed * .25);
 
     + br {
       display: none;
@@ -879,7 +952,7 @@ div.table-list.boards {
 #edit-news + p {
   em {
     display: block;
-    margin-bottom: floor($line-height-computed / 4);
+    margin-bottom: floor($line-height-computed * .25);
 
     + br {
       display: none;
@@ -889,7 +962,7 @@ div.table-list.boards {
 
 .news.box .summary,
 #edit-news + p em {
-  padding: floor($line-height-computed / 4) $padding-base-horizontal;
+  padding: floor($line-height-computed * .25) $padding-base-horizontal;
   border-left: 4px solid $blockquote-border-color;
 }
 
@@ -900,7 +973,7 @@ div.table-list.boards {
 
   header {
     h3 {
-      margin-bottom: $line-height-computed / 2;
+      margin-bottom: $line-height-computed * .5;
 
       > a {
         font-weight: $font-weight-bold;
@@ -911,6 +984,10 @@ div.table-list.boards {
 
 .author {
   color: $gray-700;
+
+  .flyout-menu & {
+    color: inherit;
+  }
 
   .user {
     font-weight: $font-weight-bold;
@@ -924,7 +1001,7 @@ div.table-list.boards {
 #comments {
   > h4 {
     margin-top: $line-height-computed;
-    margin-bottom: $line-height-computed / 2;
+    margin-bottom: $line-height-computed * .5;
   }
 }
 

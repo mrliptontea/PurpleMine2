@@ -20,19 +20,23 @@ table.progress {
     float: none;
   }
 
+  tr {
+    background: transparent !important; // stylelint-disable-line declaration-no-important
+  }
+
   td {
     height: $progress-height;
     padding: 0;
     border: 0 none;
 
     &:first-child {
-      border-top-left-radius: $progress-height / 2;
-      border-bottom-left-radius: $progress-height / 2;
+      border-top-left-radius: $progress-height * .5;
+      border-bottom-left-radius: $progress-height * .5;
     }
 
     &:last-child {
-      border-top-right-radius: $progress-height / 2;
-      border-bottom-right-radius: $progress-height / 2;
+      border-top-right-radius: $progress-height * .5;
+      border-bottom-right-radius: $progress-height * .5;
     }
 
     &.done {
@@ -45,11 +49,16 @@ table.progress {
 
     &.todo {
       background-color: $progress-bg !important; // stylelint-disable-line declaration-no-important
+      mix-blend-mode: multiply;
     }
   }
 
   .issue & td {
     padding: 0;
+  }
+
+  .context-menu-selection & td.todo {
+    mix-blend-mode: screen;
   }
 }
 
