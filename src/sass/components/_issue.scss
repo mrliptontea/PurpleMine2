@@ -56,11 +56,6 @@
         top: -3px;
         margin-right: 5px;
       }
-
-      > .subject,
-      > .author {
-        padding-left: $issue-gravatar-size * 1.1 + 10px;
-      }
     }
 
     &.assigned-to-me {
@@ -609,9 +604,9 @@ div.thumbnails {
 
       > .gravatar {
         top: 0;
+        width: $bubble-gravatar-size;
+        height: $bubble-gravatar-size;
         margin-top: $line-height-computed - $bubble-gravatar-size;
-        margin-left: -($bubble-gravatar-size + $bubble-gravatar-space + $bubble-padding-horizontal + 1px);
-        float: left;
       }
     }
   }
