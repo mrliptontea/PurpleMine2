@@ -40,6 +40,8 @@ body {
     }
 
     #header {
+      background-color: $header-bg;
+
       #project-jump {
         padding: 0 $responsive-header-height 0 0;
 
