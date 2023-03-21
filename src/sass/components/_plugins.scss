@@ -3,6 +3,18 @@
 // https://www.redmine.org/plugins/additionals
 // --------------------------------------------------
 
+#sidebar .dashboards .dashboard-system-default {
+  position: absolute;
+  transform: translateY(-175%);
+}
+
+.flyout-menu .dashboard-system-default {
+  position: absolute;
+  right: 10px;
+  transform: translateY(-190%);
+}
+
+
 #sidebar .sidebar-additionals {
   ul,
   ol {
