@@ -53,6 +53,23 @@
 
 
 //
+// Redmine Impersonate
+// https://www.redmine.org/plugins/redmine_impersonate
+// --------------------------------------------------
+
+#impersonate::before {
+  content: "\f21b";
+  display: inline-block;
+  margin-right: 5px;
+  font: normal normal normal 14px/1 FontAwesome;
+}
+
+#impersonation-bar {
+  border-radius: 0;
+}
+
+
+//
 // Redmine Backlogs
 // https://github.com/HolonGlobe/redmine_backlogs
 // Forked from: https://github.com/backlogs/redmine_backlogs
