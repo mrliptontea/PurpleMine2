@@ -6,6 +6,9 @@
 #sidebar .dashboards .dashboard-system-default {
   position: absolute;
   transform: translateY(-175%);
+  @if $sidebar-position == "right" {
+    right: 15px;
+  }
 }
 
 .flyout-menu .dashboard-system-default {

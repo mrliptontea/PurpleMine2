@@ -117,6 +117,7 @@
 
     &:not(.watchers) {
       li {
+        position: relative;
         margin: 0;
         padding: 0;
         list-style-type: none;
@@ -330,8 +331,8 @@
 }
 
 #footer {
-  margin: 0 $padding-side $line-height-computed;
-  padding-top: $line-height-computed;
+  margin: 0 $padding-side;
+  padding: $line-height-computed 0;
   border-top: 1px solid $gray-400;
   color: $gray-600;
   font-size: $font-size-small;
@@ -343,24 +344,49 @@
 
 @if $fixed-layout {
   @media screen and (min-width: $screen-sm-min) {
+    body {
+      background: $gray-100;
+    }
+    #top-menu,
+    #header,
     #main-menu ul,
-    #main {
+    #main,
+    #footer {
       width: $width-sm;
       margin-right: auto;
       margin-left: auto;
     }
+    #main {
+      overflow: hidden;
+      background: $white;
+    }
+    #footer {
+      background: $white;
+
+      &::before {
+        content: " ";
+        display: inline-block;
+        width: 20px;
+      }
+    }
   }
 
   @media screen and (min-width: $screen-md-min) {
+    #top-menu,
+    #header,
     #main-menu ul,
-    #main {
+    #main,
+    #footer {
       width: $width-md;
     }
   }
 
   @media screen and (min-width: $screen-lg-min) {
+    #top-menu,
+    #header,
     #main-menu ul,
-    #main {
+    #main,
+    #footer {
       width: $width-lg;
     }
   }
