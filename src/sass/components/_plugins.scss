@@ -54,6 +54,23 @@
   }
 }
 
+#my-page.dashboard {
+  .mypage-box:not(.block-welcome, .block-projectinformation, .block-text, .block-text_async) {
+    margin-bottom: $line-height-computed;
+    padding: $panel-body-padding;
+    border: 1px solid $panel-border;
+    border-radius: $border-radius-base;
+    background-color: $panel-bg;
+    color: $panel-color;
+    font-size: .92em;
+    word-wrap: break-word;
+
+    > h3 {
+      margin-bottom: $panel-body-padding-vertical;
+    }
+  }
+}
+
 
 //
 // Redmine Impersonate
