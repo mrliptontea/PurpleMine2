@@ -473,6 +473,14 @@
   }
 }
 
+.controller-hearts .recent-heart-list li {
+  padding: $padding-large-vertical;
+}
+
+#wiki_form.new_content + .wiki_page--heart,
+#wiki_form.new_content + .heart-link-with-count {
+  display: none;
+}
 
 //
 // Redmine Time Tracker
