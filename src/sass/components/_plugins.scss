@@ -71,6 +71,164 @@
   }
 }
 
+.controller-rdb_taskboard .gototop {
+  margin-right: $padding-side;
+}
+
+
+//
+// Redmine Dashboard
+// https://www.redmine.org/plugins/redmine-dashboard
+// --------------------------------------------------
+
+#rdb-taskboard {
+  #rdb-header {
+    a#rdb-refresh {
+      padding: 2px 0;
+      border-width: 0;
+      background-image: none;
+      line-height: 1.2em;
+
+      &::before {
+        content: "\f021";
+        display: block;
+        width: 1em;
+        margin: 0 auto;
+        color: $green;
+        font-family: FontAwesome;
+        line-height: 1.2em;
+      }
+    }
+
+    .rdb-board .rdb-menu h2 {
+      font-size: 1em;
+    }
+
+    .rdb-board,
+    .rdb-filter,
+    .rdb-option {
+      margin-top: 4px;
+      margin-bottom: 0;
+    }
+  }
+
+  a#rdb-refresh,
+  a#rdb-refresh:focus,
+  a#rdb-refresh:hover,
+  .rdb-menu-link,
+  .rdb-menu-link:focus,
+  .rdb-menu-link:hover,
+  .rdb-menu .rdb-list a,
+  .rdb-menu .rdb-list a:focus,
+  .rdb-menu .rdb-list a:hover {
+    color: $gray-900;
+    text-decoration: none;
+  }
+
+  div:not(.rdb-card-header, .rdb-compact-header, .rdb-card-title) .rdb-menu {
+    .rdb-list {
+      > ul > li > a,
+      .rdb-multicheck a {
+        padding: 3px 5px;
+      }
+
+      .rdb-checkbox-link.rdb-checkbox-link-enabled {
+        background-image: none;
+
+        &::before {
+          content: "\f00c";
+          display: inline-block;
+          color: $green;
+          font-family: FontAwesome;
+        }
+      }
+
+      .rdb-checkbox-link.rdb-checkbox-link-disabled {
+        padding: 0;
+        background-image: none;
+      }
+
+      a {
+        font-size: .9em;
+
+        &#rdb-reset {
+          background-image: none;
+
+          &::before {
+            content: "\f00d";
+            display: inline-block;
+            margin-right: 8px;
+            font-family: FontAwesome;
+          }
+        }
+      }
+    }
+
+    &.rdb-menu-right .rdb-checkbox-link.rdb-checkbox-link-enabled::before {
+      margin-right: 8px;
+    }
+
+    .rdb-container h3 {
+      padding-top: 5px;
+      padding-bottom: 3px;
+    }
+  }
+
+  .rdb-headers .rdb-column h3 {
+    font-size: 1em;
+  }
+
+  .rdb-evt-group-toggle,
+  .rdb-evt-group-toggle:focus,
+  .rdb-evt-group-toggle:hover {
+    color: $text-color;
+  }
+
+  .rdb-card-header .rdb-menu-issue a.rdb-menu-link,
+  .rdb-compact-header .rdb-menu-issue a.rdb-menu-link,
+  .rdb-card-title > a {
+    background-image: none;
+
+    &::after {
+      content: "\f013";
+      display: inline-block;
+      position: absolute;
+      top: 1px;
+      left: 2px;
+      color: $gray-600;
+      font-family: FontAwesome;
+    }
+  }
+
+  .rdb-property-tracker {
+    padding-left: 0;
+    background-image: none;
+
+    &::before {
+      content: "\f145";
+      display: inline-block;
+      margin-right: 4px;
+      font-family: FontAwesome;
+    }
+  }
+
+  .rdb-property-assignee {
+    padding-left: 0;
+    background-image: none;
+
+    &::before {
+      content: "\f007";
+      display: inline-block;
+      margin-right: 4px;
+      font-family: FontAwesome;
+    }
+  }
+}
+
+#rdb-footer #rdb-legend .rdb-overdue {
+  padding-right: 3px;
+}
+
 
 //
 // Redmine Impersonate
