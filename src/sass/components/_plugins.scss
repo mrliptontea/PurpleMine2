@@ -75,6 +75,47 @@
   margin-right: $padding-side;
 }
 
+//
+// Additional tags
+// https://www.redmine.org/plugins/additional_tags
+// --------------------------------------------------
+
+.issue .tags.attribute {
+  padding-left: 160px;
+
+  .label {
+    width: 160px;
+    margin-left: -160px;
+  }
+
+  #tags-data {
+    padding-top: 3px;
+  }
+}
+
+#main {
+  .additional-tag-label-color {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  #admin-menu a.additional-tags::before {
+    font-size: 1em;
+  }
+}
+
+#wiki_tags,
+#edit-tags-form {
+  .select2-container {
+    margin-bottom: 5px;
+
+    &.select2-container--default .select2-selection--multiple .select2-selection__rendered {
+      margin: 0;
+      padding: 3px;
+    }
+  }
+}
+
 
 //
 // Redmine Dashboard
