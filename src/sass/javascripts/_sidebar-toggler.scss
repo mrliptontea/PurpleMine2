@@ -1,7 +1,5 @@
 @if $enable-sidebar-toggler {
   #main {
-    position: relative;
-
     // Fix full screen view for dashboard plugin
     // https://github.com/jgraichen/redmine_dashboard
     @at-root .controller-rdb_taskboard & {
@@ -38,9 +36,11 @@
   .sidebar-toggler {
     display: block;
     position: absolute;
-    top: 1px;
+    z-index: 2;
+    bottom: -1px;
     width: 14px;
     height: 16px;
+    transform: translateY(100%);
     border: 2px solid $gray-700;
     border-radius: $border-radius-base;
     background-color: $gray-200;

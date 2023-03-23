@@ -32,6 +32,7 @@ PurpleMine.SidebarToggler = (function () {
     this.sidebarVisible = true
     this.sidebarHiding = null
     this.$toggler = null
+    this.$header = $('#header')
     this.$main = $('#main')
     this.$sidebar = $('#sidebar')
     this.lang = document.documentElement.lang
@@ -41,13 +42,6 @@ PurpleMine.SidebarToggler = (function () {
     }
 
     this._ = translations[this.lang]
-
-    // Fix issue with context menu position
-    if (this.$main.css('position') === 'relative') {
-      $(window).on('load', function () {
-        $('#context-menu').appendTo('#wrapper')
-      })
-    }
 
     handleSidebar()
   }
@@ -96,7 +90,7 @@ PurpleMine.SidebarToggler = (function () {
       '"></a>'
     instance.$toggler = $(togglerHtml)
 
-    instance.$main.append(instance.$toggler)
+    instance.$header.append(instance.$toggler)
     instance.$toggler.on('click', instance.toggleSidebar)
   }
 
