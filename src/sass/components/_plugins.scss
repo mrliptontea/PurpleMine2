@@ -75,6 +75,7 @@
   margin-right: $padding-side;
 }
 
+
 //
 // Additional tags
 // https://www.redmine.org/plugins/additional_tags
@@ -285,6 +286,20 @@
 
 #impersonation-bar {
   border-radius: 0;
+}
+
+
+//
+// Redmine Recaptcha
+// https://www.redmine.org/plugins/recaptcha
+// --------------------------------------------------
+
+.new-user .g-recaptcha {
+  padding-left: 170px;
+
+  @media screen and (max-width: $redmine-responsive-max) {
+    padding-left: 0;
+  }
 }
 
 
