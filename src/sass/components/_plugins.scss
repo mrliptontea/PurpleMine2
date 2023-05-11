@@ -1,3 +1,5 @@
+@use "sass:math";
+
 //
 // Additionals
 // https://www.redmine.org/plugins/additionals
@@ -5,7 +7,7 @@
 
 #sidebar .dashboards .dashboard-system-default {
   position: absolute;
-  transform: translateY(-175%);
+  transform: translateY(- ($sidebar-padding-vertical + math.div($line-height-computed, 2) + math.div($font-size-base, 2)));
   @if $sidebar-position == "right" {
     right: 15px;
   }
@@ -14,7 +16,7 @@
 .flyout-menu .dashboard-system-default {
   position: absolute;
   right: 10px;
-  transform: translateY(-190%);
+  transform: translateY(- ($padding-large-vertical + math.div($line-height-computed, 2) + math.div($font-size-base, 2)));
 }
 
 
@@ -132,12 +134,11 @@
       line-height: 1.2em;
 
       &::before {
-        content: "\f021";
-        display: block;
+        content: $fa-var-refresh;
+        @include fa-icon;
         width: 1em;
         margin: 0 auto;
         color: $green;
-        font-family: FontAwesome;
         line-height: 1.2em;
       }
     }
@@ -178,10 +179,9 @@
         background-image: none;
 
         &::before {
-          content: "\f00c";
-          display: inline-block;
+          content: $fa-var-check;
+          @include fa-icon;
           color: $green;
-          font-family: FontAwesome;
         }
       }
 
@@ -197,10 +197,9 @@
           background-image: none;
 
           &::before {
-            content: "\f00d";
-            display: inline-block;
+            content: $fa-var-times;
+            @include fa-icon;
             margin-right: 8px;
-            font-family: FontAwesome;
           }
         }
       }
@@ -232,13 +231,12 @@
     background-image: none;
 
     &::after {
-      content: "\f013";
-      display: inline-block;
+      content: $fa-var-cog;
+      @include fa-icon;
       position: absolute;
       top: 1px;
       left: 2px;
       color: $gray-600;
-      font-family: FontAwesome;
     }
   }
 
@@ -247,10 +245,9 @@
     background-image: none;
 
     &::before {
-      content: "\f145";
-      display: inline-block;
+      content: $fa-var-ticket;
+      @include fa-icon;
       margin-right: 4px;
-      font-family: FontAwesome;
     }
   }
 
@@ -259,10 +256,9 @@
     background-image: none;
 
     &::before {
-      content: "\f007";
-      display: inline-block;
+      content: $fa-var-user;
+      @include fa-icon;
       margin-right: 4px;
-      font-family: FontAwesome;
     }
   }
 }
@@ -278,10 +274,9 @@
 // --------------------------------------------------
 
 #impersonate::before {
-  content: "\f21b";
-  display: inline-block;
+  content: $fa-var-user-secret;
+  @include fa-icon;
   margin-right: 5px;
-  font: normal normal normal 14px/1 FontAwesome;
 }
 
 #impersonation-bar {

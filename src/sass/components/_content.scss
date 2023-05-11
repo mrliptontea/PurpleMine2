@@ -358,10 +358,10 @@
     }
     #main {
       overflow: hidden;
-      background: $white;
+      background: $body-bg;
     }
     #footer {
-      background: $white;
+      background: $body-bg;
 
       &::before {
         content: " ";
