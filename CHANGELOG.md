@@ -1,3 +1,8 @@
+v2.16.0 (2023-05-14):
+
+* Update theme to make it work with 5.0.
+* Fixed issues #222, #233, #242, #245, #246, #253, and few others.
+
 v2.15.0 (2021-05-23):
 
 * Updated styles for Redmine 4.2.
