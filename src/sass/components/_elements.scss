@@ -290,10 +290,11 @@ p.subtitle {
 
 .block-receiver {
   box-sizing: border-box;
-  min-height: 20px;
-  margin-bottom: $line-height-computed;
+  flex-basis: 100%;
 
   .dragging & {
+    min-height: 20px;
+    margin-bottom: $line-height-computed;
     outline: 2px dashed $gray-600;
   }
 }
@@ -347,6 +348,9 @@ a.close-icon {
 
 // For Redmine 3.4+
 #my-page {
+  display: flex;
+  flex-wrap: wrap;
+
   .mypage-box {
     > .contextual {
       transition: opacity $transition-time;
@@ -359,15 +363,11 @@ a.close-icon {
   }
 
   #list-left {
-    width: 50%;
-    padding-right: ($padding-side * .5);
-    float: left;
+    flex-basis: 50%;
   }
 
   #list-right {
-    width: 50%;
-    padding-left: ($padding-side * .5);
-    float: right;
+    flex-basis: 50%;
   }
 }
 
@@ -612,11 +612,6 @@ div#roadmap {
   table.progress {
     td {
       height: $progress-height;
-    }
-
-    + .percent {
-      position: relative;
-      top: 0;
     }
   }
 

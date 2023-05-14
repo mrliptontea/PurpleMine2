@@ -1,7 +1,24 @@
+@use "sass:math";
+
 //
 // Additionals
 // https://www.redmine.org/plugins/additionals
 // --------------------------------------------------
+
+#sidebar .dashboards .dashboard-system-default {
+  position: absolute;
+  transform: translateY(- ($sidebar-padding-vertical + math.div($line-height-computed, 2) + math.div($font-size-base, 2)));
+  @if $sidebar-position == "right" {
+    right: 15px;
+  }
+}
+
+.flyout-menu .dashboard-system-default {
+  position: absolute;
+  right: 10px;
+  transform: translateY(- ($padding-large-vertical + math.div($line-height-computed, 2) + math.div($font-size-base, 2)));
+}
+
 
 #sidebar .sidebar-additionals {
   ul,
@@ -36,6 +53,247 @@
 
   @media screen and (min-width: $login-form-box-breakpoint) {
     max-width: $login-form-width;
+  }
+}
+
+#my-page.dashboard {
+  .mypage-box:not(.block-welcome, .block-projectinformation, .block-text, .block-text_async) {
+    margin-bottom: $line-height-computed;
+    padding: $panel-body-padding;
+    border: 1px solid $panel-border;
+    border-radius: $border-radius-base;
+    background-color: $panel-bg;
+    color: $panel-color;
+    font-size: .92em;
+    word-wrap: break-word;
+
+    > h3 {
+      margin-bottom: $panel-body-padding-vertical;
+    }
+  }
+}
+
+.controller-rdb_taskboard .gototop {
+  margin-right: $padding-side;
+}
+
+
+//
+// Additional tags
+// https://www.redmine.org/plugins/additional_tags
+// --------------------------------------------------
+
+.issue .tags.attribute {
+  padding-left: 160px;
+
+  .label {
+    width: 160px;
+    margin-left: -160px;
+  }
+
+  #tags-data {
+    padding-top: 3px;
+  }
+}
+
+#main {
+  .additional-tag-label-color {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  #admin-menu a.additional-tags::before {
+    font-size: 1em;
+  }
+}
+
+#wiki_tags,
+#edit-tags-form {
+  .select2-container {
+    margin-bottom: 5px;
+
+    &.select2-container--default .select2-selection--multiple .select2-selection__rendered {
+      margin: 0;
+      padding: 3px;
+    }
+  }
+}
+
+
+//
+// Redmine Dashboard
+// https://www.redmine.org/plugins/redmine-dashboard
+// --------------------------------------------------
+
+#rdb-taskboard {
+  #rdb-header {
+    a#rdb-refresh {
+      padding: 2px 0;
+      border-width: 0;
+      background-image: none;
+      line-height: 1.2em;
+
+      &::before {
+        content: $fa-var-refresh;
+        @include fa-icon;
+        width: 1em;
+        margin: 0 auto;
+        color: $green;
+        line-height: 1.2em;
+      }
+    }
+
+    .rdb-board .rdb-menu h2 {
+      font-size: 1em;
+    }
+
+    .rdb-board,
+    .rdb-filter,
+    .rdb-option {
+      margin-top: 4px;
+      margin-bottom: 0;
+    }
+  }
+
+  a#rdb-refresh,
+  a#rdb-refresh:focus,
+  a#rdb-refresh:hover,
+  .rdb-menu-link,
+  .rdb-menu-link:focus,
+  .rdb-menu-link:hover,
+  .rdb-menu .rdb-list a,
+  .rdb-menu .rdb-list a:focus,
+  .rdb-menu .rdb-list a:hover {
+    color: $gray-900;
+    text-decoration: none;
+  }
+
+  div:not(.rdb-card-header, .rdb-compact-header, .rdb-card-title) .rdb-menu {
+    .rdb-list {
+      > ul > li > a,
+      .rdb-multicheck a {
+        padding: 3px 5px;
+      }
+
+      .rdb-checkbox-link.rdb-checkbox-link-enabled {
+        background-image: none;
+
+        &::before {
+          content: $fa-var-check;
+          @include fa-icon;
+          color: $green;
+        }
+      }
+
+      .rdb-checkbox-link.rdb-checkbox-link-disabled {
+        padding: 0;
+        background-image: none;
+      }
+
+      a {
+        font-size: .9em;
+
+        &#rdb-reset {
+          background-image: none;
+
+          &::before {
+            content: $fa-var-times;
+            @include fa-icon;
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+
+    &.rdb-menu-right .rdb-checkbox-link.rdb-checkbox-link-enabled::before {
+      margin-right: 8px;
+    }
+
+    .rdb-container h3 {
+      padding-top: 5px;
+      padding-bottom: 3px;
+    }
+  }
+
+  .rdb-headers .rdb-column h3 {
+    font-size: 1em;
+  }
+
+  .rdb-evt-group-toggle,
+  .rdb-evt-group-toggle:focus,
+  .rdb-evt-group-toggle:hover {
+    color: $text-color;
+  }
+
+  .rdb-card-header .rdb-menu-issue a.rdb-menu-link,
+  .rdb-compact-header .rdb-menu-issue a.rdb-menu-link,
+  .rdb-card-title > a {
+    background-image: none;
+
+    &::after {
+      content: $fa-var-cog;
+      @include fa-icon;
+      position: absolute;
+      top: 1px;
+      left: 2px;
+      color: $gray-600;
+    }
+  }
+
+  .rdb-property-tracker {
+    padding-left: 0;
+    background-image: none;
+
+    &::before {
+      content: $fa-var-ticket;
+      @include fa-icon;
+      margin-right: 4px;
+    }
+  }
+
+  .rdb-property-assignee {
+    padding-left: 0;
+    background-image: none;
+
+    &::before {
+      content: $fa-var-user;
+      @include fa-icon;
+      margin-right: 4px;
+    }
+  }
+}
+
+#rdb-footer #rdb-legend .rdb-overdue {
+  padding-right: 3px;
+}
+
+
+//
+// Redmine Impersonate
+// https://www.redmine.org/plugins/redmine_impersonate
+// --------------------------------------------------
+
+#impersonate::before {
+  content: $fa-var-user-secret;
+  @include fa-icon;
+  margin-right: 5px;
+}
+
+#impersonation-bar {
+  border-radius: 0;
+}
+
+
+//
+// Redmine Recaptcha
+// https://www.redmine.org/plugins/recaptcha
+// --------------------------------------------------
+
+.new-user .g-recaptcha {
+  padding-left: 170px;
+
+  @media screen and (max-width: $redmine-responsive-max) {
+    padding-left: 0;
   }
 }
 
@@ -266,6 +524,14 @@
   }
 }
 
+.controller-hearts .recent-heart-list li {
+  padding: $padding-large-vertical;
+}
+
+#wiki_form.new_content + .wiki_page--heart,
+#wiki_form.new_content + .heart-link-with-count {
+  display: none;
+}
 
 //
 // Redmine Time Tracker
