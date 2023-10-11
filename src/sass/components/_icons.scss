@@ -94,7 +94,9 @@ $icon-map: (
   icon-shared:                  $fa-var-link,
   icon-actions:                 $fa-var-ellipsis-h,
   icon-sort-handle:             $fa-var-arrows-v,
+  /* typo "expended" has to be kept for backwards compatibility */
   icon-expended:                $fa-var-chevron-down,
+  icon-expanded:                $fa-var-chevron-down,
   icon-collapsed:               $fa-var-chevron-right,
   icon-bookmark:                $fa-var-bookmark,
   icon-bookmark-off:            $fa-var-bookmark-o,
