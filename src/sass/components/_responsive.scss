@@ -40,6 +40,8 @@ body {
     }
 
     #header {
+      background-color: $header-bg;
+
       #project-jump {
         padding: 0 $responsive-header-height 0 0;
 
@@ -128,6 +130,7 @@ body {
       &__avatar {
         img.gravatar {
           top: 0;
+          padding: 5px;
         }
       }
 
@@ -414,17 +417,7 @@ body {
 
     // For Redmine 3.4+
     #my-page {
-      #list-left {
-        width: 100%;
-        padding-right: 0;
-        float: none;
-      }
-
-      #list-right {
-        width: 100%;
-        padding-left: 0;
-        float: none;
-      }
+      display: block;
     }
 
     div#issue-changesets {
