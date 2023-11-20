@@ -2,7 +2,6 @@
 // Calendar
 // --------------------------------------------------
 
-
 table.cal {
   width: 100%;
   margin-bottom: $line-height-computed;
@@ -59,9 +58,91 @@ table.cal {
   }
 }
 
+ul.cal {
+  display: grid;
+  grid-template-columns: 2rem repeat(7, 1fr);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-spacing: 0;
+  list-style: none;
+  border: 1px solid $table-border-color;
+  border-radius: 3px;
+
+  li {
+    &.calhead {
+      padding: 4px;
+      background-color: $table-bg-active;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    &.week-number {
+      padding: 4px;
+      border: none;
+      background-color: $table-bg-active;
+      font-size: 1em;
+      text-align: center;
+
+      span.label-week {
+        display: none;
+      }
+    }
+
+    &.calbody {
+      min-height: calc(1.2em * 6);
+      padding: 2px;
+      border: 1px solid $table-border-color;
+      border-right: 0;
+      border-bottom: 0;
+      font-size: 1em;
+      line-height: 1.6;
+      vertical-align: top;
+
+      p.day-num {
+        font-size: 1.1em;
+        text-align: right;
+
+        .abbr-day {
+          display: none;
+        }
+      }
+
+      .day-letter {
+        display: none;
+      }
+
+      &.odd {
+        p.day-num {
+          color: $gray-600;
+        }
+      }
+
+      &.today {
+        background: $highlight-bg;
+
+        p.day-num {
+          font-weight: $font-weight-bold;
+        }
+      }
+
+      .icon {
+        padding-top: 2px;
+        padding-bottom: 3px;
+      }
+
+      &.nwday:not(.odd) {
+        background-color: $table-bg-accent;
+      }
+    }
+  }
+}
+
 table.cal .starting a,
+ul.cal .starting a,
 p.cal.legend .starting,
 table.cal .ending a,
+ul.cal .ending a,
 p.cal.legend .ending {
   @extend %fa-icon;
 
@@ -73,6 +154,7 @@ p.cal.legend .ending {
 }
 
 table.cal .ending a,
+ul.cal .ending a,
 p.cal.legend .ending {
   &::before {
     content: $fa-var-caret-left;
@@ -81,6 +163,7 @@ p.cal.legend .ending {
 }
 
 table.cal .starting.ending a,
+ul.cal .starting.ending a,
 p.cal.legend .starting.ending {
   &::before {
     content: $fa-var-square;
