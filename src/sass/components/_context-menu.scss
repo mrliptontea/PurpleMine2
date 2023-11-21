@@ -8,6 +8,7 @@
   }
 
   #context-menu {
+    position: fixed !important,
     > ul,
     > ul > li > ul {
       @include nice-shadow(2);
