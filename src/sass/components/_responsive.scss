@@ -433,6 +433,47 @@ body {
         background-position: 8px center !important; // stylelint-disable-line declaration-no-important
       }
     }
+
+    /* Calendar */
+    ul.cal {
+      display: block;
+
+      .calhead {
+        display: none;
+      }
+
+      .calbody {
+        min-height: calc(1.2em * 3);
+      }
+
+      .calbody .day-letter {
+        display: inline;
+      }
+
+      .week-number {
+        border: none;
+        background-color: $table-bg-active;
+        font-weight: bold;
+        text-align: left;
+
+        span.label-week {
+          display: inline;
+        }
+      }
+
+      .week-number .label-week {
+        display: inline;
+      }
+
+      .calbody p.day-num {
+        font-size: 1.1em;
+        text-align: left;
+
+        .abbr-day {
+          display: inline;
+        }
+      }
+    }
   }
 
   // Tweaks for smartphones, touchscreens
