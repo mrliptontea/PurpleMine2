@@ -1,3 +1,11 @@
+v2.16.2 (2023-11-20):
+
+* Fixed #268 calendar display with Redmine 5.1
+
+v2.16.1 (2023-10-11):
+
+* Fixed #266 typo of expanded icon class
+
 v2.16.0 (2023-05-14):
 
 * Update theme to make it work with 5.0.
