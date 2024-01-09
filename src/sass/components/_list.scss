@@ -218,7 +218,8 @@ tr.issue {
   .controller-issues.action-index & {
     &.assigned-to-me {
       .assigned_to,
-      .subject {
+      .subject,
+      .ticket-data .ticket-name {
         a {
           font-weight: $font-weight-bold;
         }
