@@ -133,6 +133,21 @@ $icon-map: (
   icon-vcard:                   $fa-var-vcard,
   banner-icon-edit:             $fa-var-edit,
   banner-icon-off:              $fa-var-times,
+  icon-helpdesk:                $fa-var-comments,
+  icon-helpdesk-reply:          $fa-var-reply,
+  icon-web:                     $fa-var-globe,
+  icon-preview:                 $fa-var-file,
+  icon-view:                    $fa-var-eye,
+  icon-tag:                     $fa-var-tag,
+  icon-vote:                    $fa-var-thumbs-up,
+  icon-company-contact:         $fa-var-user,
+  icon-pdf:                     $fa-var-file-pdf-o,
+  icon-email-to:                $fa-var-envelope-open,
+  icon-refresh:                 $fa-var-refresh,
+  icon-products:                $fa-var-shopping-cart,
+  /* "redminecrm" icon kept for backwards compatibility */
+  icon-redminecrm-money:        $fa-var-money,
+  icon-redmineup-money:         $fa-var-money,
 );
 
 @keyframes spin {
